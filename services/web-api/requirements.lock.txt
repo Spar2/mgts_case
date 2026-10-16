@@ -17,7 +17,7 @@ pydantic==2.14.0
 pydantic_core==2.50.0
 Pygments==2.21.0
 pytest==9.1.1
-starlette==1.7.0
+starlette==1.8.0
 typing-inspection==0.4.4
 typing_extensions==4.16.0
 uvicorn==0.42.0
