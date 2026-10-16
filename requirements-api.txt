@@ -4,4 +4,4 @@ numpy
 scipy
 PyWavelets
 orjson
-pydantic>=2
+pydantic>=2.14.1
