@@ -1,0 +1,158 @@
+# Add to compose.web.yaml. All published ports remain loopback.
+x-bounded-logging: &bounded-logging
+  driver: json-file
+  options: {max-size: "10m", max-file: "3"}
+services:
+  ml-compat:
+    logging: *bounded-logging
+    build: {context: ., dockerfile: services/web-api/Dockerfile.worker}
+    command: [uvicorn, workbench.ml_compat:app, --host, 0.0.0.0, --port, "8082", --no-access-log]
+    ports: ["127.0.0.1:${DTS_ML_PORT:-8082}:8082"]
+    mem_limit: 768m
+    restart: unless-stopped
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8082/health',timeout=3)"]
+      interval: 10s
+      timeout: 5s
+      start_period: 30s
+  postgres:
+    logging: *bounded-logging
+    image: postgres@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826
+    environment:
+      POSTGRES_DB: workbench
+      POSTGRES_USER: workbench
+      POSTGRES_PASSWORD: ${DTS_POSTGRES_PASSWORD:?Set a private PostgreSQL password}
+    volumes: [platform-db:/var/lib/postgresql/data]
+    ports: ["127.0.0.1:${DTS_PG_PORT:-5434}:5432"]
+    mem_limit: 768m
+    healthcheck:
+      test: [CMD-SHELL, "pg_isready -U workbench -d workbench"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+  api:
+    logging: *bounded-logging
+    environment:
+      DTS_DATABASE_URL: postgresql://workbench:${DTS_POSTGRES_PASSWORD}@postgres:5432/workbench
+      DTS_REDIS_URL: redis://redis:6379/0
+      DTS_INGEST_URL: http://stream-backend:8000
+      DTS_CH_URL: http://clickhouse:8123
+      DTS_RUNTIME: /runtime
+      DTS_ML_URL: ${DTS_ML_URL:-http://ml-compat:8082}
+      DTS_IMPORT_ROOT: /imports
+    volumes:
+      - ${DTS_IMPORT_ROOT:-./.runtime/imports}:/imports:ro
+    depends_on:
+      postgres: {condition: service_healthy}
+      redis: {condition: service_healthy}
+    mem_limit: 768m
+  worker:
+    logging: *bounded-logging
+    build: {context: ., dockerfile: services/web-api/Dockerfile.worker}
+    command: [python, -m, workbench.worker]
+    environment: &worker-env
+      DTS_DATABASE_URL: postgresql://workbench:${DTS_POSTGRES_PASSWORD}@postgres:5432/workbench
+      DTS_RECORDS: /data/records
+      DTS_RUNTIME: /runtime
+      DTS_ML_URL: ${DTS_ML_URL:-http://ml-compat:8082}
+      DTS_INGEST_URL: http://stream-backend:8000
+      DTS_CH_URL: http://clickhouse:8123
+      DTS_JOB_KINDS: detect,prepare_views,import_csv,analysis_field
+      DTS_WORKER_ROLE: compute
+      DTS_IMPORT_ROOT: /imports
+    volumes: &worker-volumes
+      - ${DTS_RECORDS:-./.runtime/records}:/data/records:ro
+      - workbench-runtime:/runtime
+      - ${DTS_IMPORT_ROOT:-./.runtime/imports}:/imports:ro
+    extra_hosts: [host.docker.internal:host-gateway]
+    depends_on:
+      postgres: {condition: service_healthy}
+    mem_limit: 2g
+    restart: unless-stopped
+    stop_grace_period: 30s
+  stream-worker:
+    logging: *bounded-logging
+    profiles: [stream]
+    build: {context: ., dockerfile: services/web-api/Dockerfile}
+    command: [python, -m, workbench.worker]
+    environment:
+      <<: *worker-env
+      DTS_JOB_KINDS: stream_replay
+      DTS_WORKER_ROLE: stream
+    volumes: *worker-volumes
+    depends_on:
+      postgres: {condition: service_healthy}
+      stream-backend: {condition: service_healthy}
+      ingester: {condition: service_started}
+    mem_limit: 768m
+    restart: unless-stopped
+  redis:
+    logging: *bounded-logging
+    image: redis@sha256:858f009f9709ce576febc734aa78b8f6d624b82571f9ddb6bda4377c833b3499
+    command: [redis-server, --appendonly, "yes", --maxmemory, 512mb, --maxmemory-policy, noeviction]
+    volumes: [platform-redis:/data]
+    mem_limit: 640m
+    healthcheck:
+      test: [CMD, redis-cli, ping]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    restart: unless-stopped
+  clickhouse:
+    logging: *bounded-logging
+    profiles: [stream]
+    image: clickhouse/clickhouse-server@sha256:82499fdb60e5bfaefb1e8f06f00a8857d61643fd6081c3f476ab6c7ff6d78766
+    volumes:
+      - platform-ch:/var/lib/clickhouse
+      - ./stack/clickhouse/init.sql:/docker-entrypoint-initdb.d/01-init.sql:ro
+    mem_limit: 2g
+    healthcheck:
+      test: [CMD, clickhouse-client, --query, SELECT 1]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+  stream-backend:
+    logging: *bounded-logging
+    profiles: [stream]
+    build: ./stack/backend
+    environment:
+      REGISTRY_DIR: /registry
+      REDIS_HOST: redis
+      STREAM_PROFILES: dts:platform:profiles
+      STREAM_NO_TRIM: "1"
+      STREAM_BACKLOG_MAX: "500"
+    volumes:
+      - ./stack/registry:/registry:ro
+      - ./stack/lib:/opt/minilib:ro
+    depends_on:
+      redis: {condition: service_healthy}
+    healthcheck:
+      test: [CMD, python3, -c, "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/healthz')"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    mem_limit: 256m
+    restart: unless-stopped
+  ingester:
+    logging: *bounded-logging
+    profiles: [stream]
+    build: ./stack/ingester
+    environment:
+      REDIS_HOST: redis
+      CH_URL: http://clickhouse:8123
+      STREAM_PROFILES: dts:platform:profiles
+      STREAM_NO_TRIM: "1"
+      BATCH: "50"
+      BLOCK_MS: "1000"
+    volumes: [./stack/lib:/opt/minilib:ro]
+    depends_on:
+      redis: {condition: service_healthy}
+      clickhouse: {condition: service_healthy}
+    mem_limit: 256m
+    restart: unless-stopped
+volumes:
+  platform-db:
+  platform-redis:
+  platform-ch:

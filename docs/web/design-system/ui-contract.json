@@ -1,0 +1,202 @@
+{
+  "schema_version": "dts-ui-guidance-v1",
+  "guide_version": "2.2",
+  "updated_on": "2026-10-15",
+  "purpose": "Documentation for contributors and models; not a runtime theme or API schema",
+  "runtime_imported": false,
+  "change_policy": {
+    "status": "frozen_by_user",
+    "baseline_id": "web-ui-2026-10-15",
+    "baseline_ref": "web-ui-freeze-2026-10-15",
+    "rules": "docs/web/UI-FREEZE.md",
+    "prompt": "docs/web/GROK-WEB-GUARDRAILS.md",
+    "verification": "python scripts/check-web-ui-freeze.py",
+    "explicit_scoped_user_authorization_required": true,
+    "automatic_baseline_updates": false
+  },
+  "canonical_guide": "docs/web/STYLE-AND-IDENTITY.md",
+  "conflict_resolution": [
+    "current_user_instructions",
+    "applicable_AGENTS",
+    "verified_source_and_runtime",
+    "this_guide",
+    "historical_designs"
+  ],
+  "identity": {
+    "display_name": "Единая аналитическая платформа сенсорных данных",
+    "historical_name": "DTS Workbench",
+    "design_system": "IBM Carbon",
+    "language": "ru",
+    "fonts": {
+      "ui": "IBM Plex Sans",
+      "technical_values": "IBM Plex Mono",
+      "weights_in_source": [
+        400,
+        600
+      ]
+    }
+  },
+  "surfaces": {
+    "page": {
+      "css": "var(--dts-page-background)",
+      "resolved_reference_hex": "#ffffff",
+      "dark_reference_hex": "#161616"
+    },
+    "working_panel": {
+      "css": "var(--dts-panel-background)",
+      "resolved_reference_hex": "#f4f4f4",
+      "dark_reference_hex": "#262626"
+    },
+    "shell": {
+      "reference_hex": "#161616"
+    },
+    "text_primary": {
+      "reference_hex": "#161616",
+      "dark_reference_hex": "#f4f4f4"
+    },
+    "text_secondary": {
+      "reference_hex": "#525252",
+      "dark_reference_hex": "#c6c6c6"
+    },
+    "interactive": {
+      "reference_hex": "#0f62fe",
+      "dark_reference_hex": "#78a9ff"
+    },
+    "note": "Reference hex values do not override Carbon states, nested layers or scientific colormaps"
+  },
+  "layout": {
+    "spacing_px": [
+      8,
+      16,
+      24,
+      32
+    ],
+    "page_max_width_px": 1920,
+    "landing_content_max_width_px": 1280,
+    "touch_target_min_px": 44,
+    "touch_target_preferred_px": 48,
+    "review_widths_px": [
+      320,
+      390,
+      430,
+      1440
+    ],
+    "shell_breakpoint_px": 1280,
+    "main_workspace_stack_breakpoint_px": 800,
+    "local_breakpoint_rules_require_source_review": true,
+    "page_overflow_hidden_is_not_a_fix": true
+  },
+  "components": {
+    "button": {
+      "package": "@carbon/react",
+      "variant_prop": "kind",
+      "verified_kinds": [
+        "primary",
+        "secondary",
+        "danger",
+        "ghost",
+        "danger--primary",
+        "danger--ghost",
+        "danger--tertiary",
+        "tertiary"
+      ],
+      "verified_sizes": [
+        "xs",
+        "sm",
+        "md",
+        "lg",
+        "xl",
+        "2xl"
+      ],
+      "explicit_type_inside_form": true
+    },
+    "coordinate_input": "apps/web/src/coordinate-input.tsx",
+    "heatmap": "apps/web/src/charts.tsx#Heatmap",
+    "line_chart": "apps/web/src/charts.tsx#LineChart",
+    "api_v1": "apps/web/src/api.ts",
+    "api_v2": "apps/web/src/access.tsx#control",
+    "generated_types": "apps/web/src/api-schema.d.ts",
+    "do_not_edit_generated_types_manually": true
+  },
+  "required_state_review": [
+    "initial_loading",
+    "background_refresh",
+    "empty",
+    "missing_layer",
+    "no_valid_pairs",
+    "saving",
+    "confirmed_success",
+    "network_unknown_outcome",
+    "unauthorized",
+    "forbidden",
+    "not_found",
+    "revision_or_source_conflict",
+    "payload_limit",
+    "rate_or_queue_limit",
+    "stream_disconnected",
+    "graphics_unavailable"
+  ],
+  "data_invariants": [
+    "source_sha_identifies_data",
+    "explicit_run_id_for_processing",
+    "native_coordinates_and_masks",
+    "null_is_not_zero",
+    "sentinel_minus_300_is_not_temperature",
+    "unknown_timezone_stays_unknown",
+    "difference_is_not_proven_noise",
+    "score_is_not_probability_without_evidence",
+    "candidate_is_not_confirmed_incident",
+    "replay_is_not_hardware",
+    "old_case_and_zip_are_immutable"
+  ],
+  "auth_invariants": [
+    "workspace_requires_session",
+    "server_checks_role_and_project",
+    "no_auth_bypass_for_design",
+    "no_credentials_in_localStorage",
+    "clear_account_scoped_cache_on_logout",
+    "no_automatic_author_assignment"
+  ],
+  "publication": {
+    "push_requires_separate_instruction": true,
+    "merge_requires_separate_instruction": true,
+    "deployment_requires_separate_instruction": true
+  },
+  "known_gaps": [
+    "Some legacy labels remain 10 to 12 pixels",
+    "No current synchronized Pen is confirmed; all existing Pen packages are archived",
+    "Some historical documentation describes old public demo behavior",
+    "Latest local UI is not confirmed deployed remotely",
+    "Theme browser acceptance used local Chromium; Firefox/WebKit and remote deployment are not confirmed"
+  ],
+  "verification_scope": {
+    "contract_kind": "guidance_only",
+    "examples": "TypeScript example must be checked against installed React and Carbon; no end-to-end behavior is implied",
+    "zero_error_guarantee": false
+  },
+  "current_design": {
+    "entrypoint": "design/README.md",
+    "implementation": "apps/web/src",
+    "rules": "docs/web/STYLE-AND-IDENTITY.md",
+    "current_synchronized_pen": null,
+    "current_canonical_screenshot_gallery": null,
+    "archive_root": "design/archive",
+    "archive_default_access": "excluded_from_normal_frontend_tasks",
+    "archive_access_requires": "explicit_user_request_for_historical_materials",
+    "verification_states_are_not_design_variants": true
+  },
+  "themes": {
+    "modes": {
+      "light": "Carbon White",
+      "dark": "Carbon Gray 100"
+    },
+    "contract": "docs/web/THEMES.md",
+    "scope": "all live routes, public/auth/private/errors/fullscreen",
+    "storage_key": "dts-ui-theme",
+    "default": "OS preference until explicit choice",
+    "all_components_require_both_modes": true,
+    "invert_filters_forbidden": true,
+    "scientific_palettes_and_values_unchanged": true,
+    "immutable_exports_unchanged": true
+  }
+}

@@ -1,0 +1,293 @@
+{
+  "date": "2026-10-15",
+  "environment": "Local Vite 5173; in-app Chromium; real record 5.csv / review-00018",
+  "published": false,
+  "ci": "Not run; no push performed",
+  "checks": {
+    "unique_steps": true,
+    "heading_outline_removed": true,
+    "transparent_grid": true,
+    "explicit_coordinate_commit": true,
+    "cached_signal_during_disconnect": true,
+    "connection_restored": true,
+    "download_html": true,
+    "download_json": true,
+    "saved_answer_reload": true,
+    "unsaved_draft_warning": true,
+    "guard_leave_disables_mutations": true,
+    "outer_scroll_before": 691,
+    "outer_scroll_after": 691
+  },
+  "numeric_comparison": {
+    "paired_points": 86,
+    "changed_over_0_01_c": 49,
+    "mean_absolute_c": 0.44114777608472244,
+    "max_absolute_c": 2.3014996856689436,
+    "verified_against_downloaded_json": true
+  },
+  "geometry": [
+    {
+      "size": {
+        "width": 320,
+        "height": 900
+      },
+      "results": [
+        {
+          "doc": 1951,
+          "nav": 474.390625,
+          "next": 1526.75,
+          "overflow": false,
+          "stage": 660
+        },
+        {
+          "doc": 1951,
+          "nav": 474.390625,
+          "next": 1526.75,
+          "overflow": false,
+          "stage": 660
+        },
+        {
+          "doc": 1951,
+          "nav": 474.390625,
+          "next": 1526.75,
+          "overflow": false,
+          "stage": 660
+        },
+        {
+          "doc": 1951,
+          "nav": 474.390625,
+          "next": 1526.75,
+          "overflow": false,
+          "stage": 660
+        },
+        {
+          "doc": 1951,
+          "nav": 474.390625,
+          "next": 1526.75,
+          "overflow": false,
+          "stage": 660
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 390,
+        "height": 900
+      },
+      "results": [
+        {
+          "doc": 1812,
+          "nav": 396.59375,
+          "next": 1423.359375,
+          "overflow": false,
+          "stage": 660
+        },
+        {
+          "doc": 1812,
+          "nav": 396.59375,
+          "next": 1423.359375,
+          "overflow": false,
+          "stage": 660
+        },
+        {
+          "doc": 1812,
+          "nav": 396.59375,
+          "next": 1423.359375,
+          "overflow": false,
+          "stage": 660
+        },
+        {
+          "doc": 1812,
+          "nav": 396.59375,
+          "next": 1423.359375,
+          "overflow": false,
+          "stage": 660
+        },
+        {
+          "doc": 1812,
+          "nav": 396.59375,
+          "next": 1423.359375,
+          "overflow": false,
+          "stage": 660
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 430,
+        "height": 900
+      },
+      "results": [
+        {
+          "doc": 1781,
+          "nav": 396.59375,
+          "next": 1397.765625,
+          "overflow": false,
+          "stage": 660
+        },
+        {
+          "doc": 1781,
+          "nav": 396.59375,
+          "next": 1397.765625,
+          "overflow": false,
+          "stage": 660
+        },
+        {
+          "doc": 1781,
+          "nav": 396.59375,
+          "next": 1397.765625,
+          "overflow": false,
+          "stage": 660
+        },
+        {
+          "doc": 1781,
+          "nav": 396.59375,
+          "next": 1397.765625,
+          "overflow": false,
+          "stage": 660
+        },
+        {
+          "doc": 1781,
+          "nav": 396.59375,
+          "next": 1397.765625,
+          "overflow": false,
+          "stage": 660
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 1440,
+        "height": 1000
+      },
+      "results": [
+        {
+          "doc": 1659,
+          "nav": 227.390625,
+          "next": 1298.765625,
+          "overflow": false,
+          "stage": 760
+        },
+        {
+          "doc": 1659,
+          "nav": 227.390625,
+          "next": 1298.765625,
+          "overflow": false,
+          "stage": 760
+        },
+        {
+          "doc": 1659,
+          "nav": 227.390625,
+          "next": 1298.765625,
+          "overflow": false,
+          "stage": 760
+        },
+        {
+          "doc": 1659,
+          "nav": 227.390625,
+          "next": 1298.765625,
+          "overflow": false,
+          "stage": 760
+        },
+        {
+          "doc": 1659,
+          "nav": 227.390625,
+          "next": 1298.765625,
+          "overflow": false,
+          "stage": 760
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 2560,
+        "height": 1440
+      },
+      "results": [
+        {
+          "doc": 1799,
+          "nav": 227.390625,
+          "next": 1438.765625,
+          "overflow": false,
+          "stage": 900
+        },
+        {
+          "doc": 1799,
+          "nav": 227.390625,
+          "next": 1438.765625,
+          "overflow": false,
+          "stage": 900
+        },
+        {
+          "doc": 1799,
+          "nav": 227.390625,
+          "next": 1438.765625,
+          "overflow": false,
+          "stage": 900
+        },
+        {
+          "doc": 1799,
+          "nav": 227.390625,
+          "next": 1438.765625,
+          "overflow": false,
+          "stage": 900
+        },
+        {
+          "doc": 1799,
+          "nav": 227.390625,
+          "next": 1438.765625,
+          "overflow": false,
+          "stage": 900
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 3786,
+        "height": 1958
+      },
+      "results": [
+        {
+          "doc": 1958,
+          "nav": 227.390625,
+          "next": 1438.765625,
+          "overflow": false,
+          "stage": 900
+        },
+        {
+          "doc": 1958,
+          "nav": 227.390625,
+          "next": 1438.765625,
+          "overflow": false,
+          "stage": 900
+        },
+        {
+          "doc": 1958,
+          "nav": 227.390625,
+          "next": 1438.765625,
+          "overflow": false,
+          "stage": 900
+        },
+        {
+          "doc": 1958,
+          "nav": 227.390625,
+          "next": 1438.765625,
+          "overflow": false,
+          "stage": 900
+        },
+        {
+          "doc": 1958,
+          "nav": 227.390625,
+          "next": 1438.765625,
+          "overflow": false,
+          "stage": 900
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "One Chromium browser verified; Firefox and WebKit not run",
+    "Existing server endpoints unchanged",
+    "Reference median processing; no claim of anomaly detection quality"
+  ]
+}

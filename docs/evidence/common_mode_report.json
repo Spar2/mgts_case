@@ -1,0 +1,594 @@
+{
+  "source": "dts_synth_v1",
+  "split": "test",
+  "limit": null,
+  "operational_pair_unchanged": "median_x3 + spatial_z_halo at |Z| >= 3.5. This stage is not wired into analyze_field or METHODS. A higher synth score does not switch the pair.",
+  "method": {
+    "name": "fast_common_mode",
+    "steps": "base = nanmedian over time; cm = nanmedian over space of (field - base); slow = median_filter(cm, size=min(31, (n//2)*2-1), nearest) when n>5; fast = cm - slow; subtract fast from valid cells; then median_x k=3; then the same spatial_z_halo.",
+    "window_source": "artifacts/dts_synth_v1/generator/calibrate.py lines 44-48. Not tuned on the test boxes.",
+    "persistent_jumps": "Jumps of 0.5-3 h can stay in the slow band and remain in the field.",
+    "sigma_x": "not used",
+    "stored_common_mode": "oracle column only"
+  },
+  "scorer_ok": true,
+  "sanity": {
+    "ok": true,
+    "mismatches": {}
+  },
+  "max_abs_delta_z": 4.57763671875e-05,
+  "boxes_quiet_nuisance_zones_cells_identical": false,
+  "fast_abs_mean_c": 0.0600575968132116,
+  "fast_abs_max_c": 1.9339227676391602,
+  "mae_c": {
+    "raw": {
+      "mae_c": 0.6135548096280755,
+      "cells": 136082815,
+      "background_mae_c": 0.6060541629458491,
+      "background_cells": 128555975,
+      "event_mae_c": 0.7416631513208751,
+      "event_cells": 7526840
+    },
+    "median_x3": {
+      "mae_c": 0.5370462151409129,
+      "cells": 136082815,
+      "background_mae_c": 0.5293230774875011,
+      "background_cells": 128555975,
+      "event_mae_c": 0.6689547104416401,
+      "event_cells": 7526840
+    },
+    "fast_common_mode_median_x3": {
+      "mae_c": 0.5256509414863354,
+      "cells": 136082815,
+      "background_mae_c": 0.5179534831519889,
+      "background_cells": 128555975,
+      "event_mae_c": 0.6571207954937411,
+      "event_cells": 7526840
+    },
+    "oracle_median_x3": {
+      "mae_c": 0.3907024076147947,
+      "cells": 136082815,
+      "background_mae_c": 0.38401722546102973,
+      "background_cells": 128555975,
+      "event_mae_c": 0.5048831255535747,
+      "event_cells": 7526840,
+      "note": "noisy minus the stored common_mode, then median_x3. Connector steps remain. The stored series is not available on a cable and is not the method."
+    }
+  },
+  "alarms": {
+    "median_x3": {
+      "box_hit": {
+        "Local_Heating": {
+          "hit": 46,
+          "total": 105
+        },
+        "Local_Cooling": {
+          "hit": 6,
+          "total": 25
+        },
+        "Broad_Shift": {
+          "hit": 22,
+          "total": 42
+        }
+      },
+      "box_hit_total": [
+        74,
+        172
+      ],
+      "by_difficulty": {
+        "hard": {
+          "hit": 8,
+          "total": 27
+        },
+        "easy": {
+          "hit": 63,
+          "total": 123
+        },
+        "medium": {
+          "hit": 3,
+          "total": 22
+        }
+      },
+      "quiet_false_alarm": [
+        84,
+        540
+      ],
+      "quiet_rate": 0.15555555555555556,
+      "nuisance_called_event": [
+        94,
+        124
+      ],
+      "alarm_cells": [
+        6967370,
+        136082815
+      ],
+      "zones": 709,
+      "nuisance_by_label": {
+        "diurnal_section": {
+          "hit": 34,
+          "total": 64
+        },
+        "common_mode_jump": {
+          "hit": 50,
+          "total": 50
+        },
+        "connector_step": {
+          "hit": 10,
+          "total": 10
+        }
+      }
+    },
+    "fast_common_mode_median_x3": {
+      "box_hit": {
+        "Local_Heating": {
+          "hit": 46,
+          "total": 105
+        },
+        "Local_Cooling": {
+          "hit": 6,
+          "total": 25
+        },
+        "Broad_Shift": {
+          "hit": 22,
+          "total": 42
+        }
+      },
+      "box_hit_total": [
+        74,
+        172
+      ],
+      "by_difficulty": {
+        "hard": {
+          "hit": 8,
+          "total": 27
+        },
+        "easy": {
+          "hit": 63,
+          "total": 123
+        },
+        "medium": {
+          "hit": 3,
+          "total": 22
+        }
+      },
+      "quiet_false_alarm": [
+        84,
+        540
+      ],
+      "quiet_rate": 0.15555555555555556,
+      "nuisance_called_event": [
+        94,
+        124
+      ],
+      "alarm_cells": [
+        6967371,
+        136082815
+      ],
+      "zones": 709,
+      "nuisance_by_label": {
+        "diurnal_section": {
+          "hit": 34,
+          "total": 64
+        },
+        "common_mode_jump": {
+          "hit": 50,
+          "total": 50
+        },
+        "connector_step": {
+          "hit": 10,
+          "total": 10
+        }
+      }
+    }
+  },
+  "zone_errors": [],
+  "skipped_time_order": [],
+  "sequences": [
+    {
+      "seq_id": "seq0003",
+      "shape": [
+        487,
+        2185
+      ],
+      "quiet": 12,
+      "max_abs_delta_z": 1.7642974853515625e-05
+    },
+    {
+      "seq_id": "seq0004",
+      "shape": [
+        1066,
+        1695
+      ],
+      "quiet": 12,
+      "max_abs_delta_z": 1.430511474609375e-05
+    },
+    {
+      "seq_id": "seq0015",
+      "shape": [
+        263,
+        10543
+      ],
+      "quiet": 12,
+      "max_abs_delta_z": 2.86102294921875e-06
+    },
+    {
+      "seq_id": "seq0022",
+      "shape": [
+        445,
+        4405
+      ],
+      "quiet": 12,
+      "max_abs_delta_z": 3.337860107421875e-05
+    },
+    {
+      "seq_id": "seq0070",
+      "shape": [
+        133,
+        9078
+      ],
+      "quiet": 12,
+      "max_abs_delta_z": 2.86102294921875e-06
+    },
+    {
+      "seq_id": "seq0073",
+      "shape": [
+        346,
+        1695
+      ],
+      "quiet": 12,
+      "max_abs_delta_z": 3.5762786865234375e-06
+    },
+    {
+      "seq_id": "seq0089",
+      "shape": [
+        454,
+        1766
+      ],
+      "quiet": 12,
+      "max_abs_delta_z": 1.239776611328125e-05
+    },
+    {
+      "seq_id": "seq0090",
+      "shape": [
+        916,
+        3670
+      ],
+      "quiet": 12,
+      "max_abs_delta_z": 3.814697265625e-05
+    },
+    {
+      "seq_id": "seq0095",
+      "shape": [
+        854,
+        11024
+      ],
+      "quiet": 12,
+      "max_abs_delta_z": 5.7220458984375e-06
+    },
+    {
+      "seq_id": "seq0100",
+      "shape": [
+        715,
+        11722
+      ],
+      "quiet": 12,
+      "max_abs_delta_z": 4.291534423828125e-06
+    },
+    {
+      "seq_id": "seq0111",
+      "shape": [
+        300,
+        1695
+      ],
+      "quiet": 12,
+      "max_abs_delta_z": 5.7220458984375e-06
+    },
+    {
+      "seq_id": "seq0115",
+      "shape": [
+        533,
+        1695
+      ],
+      "quiet": 12,
+      "max_abs_delta_z": 7.62939453125e-06
+    },
+    {
+      "seq_id": "seq0117",
+      "shape": [
+        92,
+        10397
+      ],
+      "quiet": 12,
+      "max_abs_delta_z": 4.57763671875e-05
+    },
+    {
+      "seq_id": "seq0127",
+      "shape": [
+        445,
+        1864
+      ],
+      "quiet": 12,
+      "max_abs_delta_z": 7.3909759521484375e-06
+    },
+    {
+      "seq_id": "seq0128",
+      "shape": [
+        864,
+        4115
+      ],
+      "quiet": 12,
+      "max_abs_delta_z": 3.719329833984375e-05
+    },
+    {
+      "seq_id": "seq0134",
+      "shape": [
+        683,
+        1709
+      ],
+      "quiet": 12,
+      "max_abs_delta_z": 4.76837158203125e-06
+    },
+    {
+      "seq_id": "seq0144",
+      "shape": [
+        267,
+        9212
+      ],
+      "quiet": 12,
+      "max_abs_delta_z": 2.86102294921875e-06
+    },
+    {
+      "seq_id": "seq0146",
+      "shape": [
+        503,
+        1695
+      ],
+      "quiet": 12,
+      "max_abs_delta_z": 1.811981201171875e-05
+    },
+    {
+      "seq_id": "seq0155",
+      "shape": [
+        768,
+        9365
+      ],
+      "quiet": 12,
+      "max_abs_delta_z": 6.198883056640625e-06
+    },
+    {
+      "seq_id": "seq0157",
+      "shape": [
+        433,
+        1695
+      ],
+      "quiet": 12,
+      "max_abs_delta_z": 3.337860107421875e-06
+    },
+    {
+      "seq_id": "seq0169",
+      "shape": [
+        201,
+        1695
+      ],
+      "quiet": 12,
+      "max_abs_delta_z": 1.1444091796875e-05
+    },
+    {
+      "seq_id": "seq0179",
+      "shape": [
+        355,
+        1923
+      ],
+      "quiet": 12,
+      "max_abs_delta_z": 9.5367431640625e-06
+    },
+    {
+      "seq_id": "seq0182",
+      "shape": [
+        555,
+        2418
+      ],
+      "quiet": 12,
+      "max_abs_delta_z": 8.58306884765625e-06
+    },
+    {
+      "seq_id": "seq0186",
+      "shape": [
+        1000,
+        3583
+      ],
+      "quiet": 12,
+      "max_abs_delta_z": 1.8596649169921875e-05
+    },
+    {
+      "seq_id": "seq0192",
+      "shape": [
+        197,
+        1695
+      ],
+      "quiet": 12,
+      "max_abs_delta_z": 1.9073486328125e-06
+    },
+    {
+      "seq_id": "seq0193",
+      "shape": [
+        665,
+        2294
+      ],
+      "quiet": 12,
+      "max_abs_delta_z": 2.288818359375e-05
+    },
+    {
+      "seq_id": "seq0194",
+      "shape": [
+        288,
+        2312
+      ],
+      "quiet": 12,
+      "max_abs_delta_z": 8.58306884765625e-06
+    },
+    {
+      "seq_id": "seq0195",
+      "shape": [
+        782,
+        9529
+      ],
+      "quiet": 12,
+      "max_abs_delta_z": 6.198883056640625e-06
+    },
+    {
+      "seq_id": "seq0196",
+      "shape": [
+        820,
+        9914
+      ],
+      "quiet": 12,
+      "max_abs_delta_z": 5.7220458984375e-06
+    },
+    {
+      "seq_id": "seq0205",
+      "shape": [
+        592,
+        3729
+      ],
+      "quiet": 12,
+      "max_abs_delta_z": 1.8596649169921875e-05
+    },
+    {
+      "seq_id": "seq0219",
+      "shape": [
+        776,
+        8877
+      ],
+      "quiet": 12,
+      "max_abs_delta_z": 7.152557373046875e-06
+    },
+    {
+      "seq_id": "seq0221",
+      "shape": [
+        613,
+        1695
+      ],
+      "quiet": 12,
+      "max_abs_delta_z": 6.9141387939453125e-06
+    },
+    {
+      "seq_id": "seq0222",
+      "shape": [
+        700,
+        4226
+      ],
+      "quiet": 12,
+      "max_abs_delta_z": 1.52587890625e-05
+    },
+    {
+      "seq_id": "seq0224",
+      "shape": [
+        459,
+        1695
+      ],
+      "quiet": 12,
+      "max_abs_delta_z": 6.9141387939453125e-06
+    },
+    {
+      "seq_id": "seq0225",
+      "shape": [
+        266,
+        1695
+      ],
+      "quiet": 12,
+      "max_abs_delta_z": 3.814697265625e-06
+    },
+    {
+      "seq_id": "seq0230",
+      "shape": [
+        133,
+        10283
+      ],
+      "quiet": 12,
+      "max_abs_delta_z": 2.86102294921875e-06
+    },
+    {
+      "seq_id": "seq0232",
+      "shape": [
+        692,
+        10188
+      ],
+      "quiet": 12,
+      "max_abs_delta_z": 8.106231689453125e-06
+    },
+    {
+      "seq_id": "seq0245",
+      "shape": [
+        1264,
+        4549
+      ],
+      "quiet": 12,
+      "max_abs_delta_z": 2.47955322265625e-05
+    },
+    {
+      "seq_id": "seq0252",
+      "shape": [
+        228,
+        11722
+      ],
+      "quiet": 12,
+      "max_abs_delta_z": 1.811981201171875e-05
+    },
+    {
+      "seq_id": "seq0267",
+      "shape": [
+        385,
+        1695
+      ],
+      "quiet": 12,
+      "max_abs_delta_z": 1.71661376953125e-05
+    },
+    {
+      "seq_id": "seq0275",
+      "shape": [
+        190,
+        2000
+      ],
+      "quiet": 12,
+      "max_abs_delta_z": 1.239776611328125e-05
+    },
+    {
+      "seq_id": "seq0277",
+      "shape": [
+        497,
+        4445
+      ],
+      "quiet": 12,
+      "max_abs_delta_z": 2.193450927734375e-05
+    },
+    {
+      "seq_id": "seq0278",
+      "shape": [
+        325,
+        1695
+      ],
+      "quiet": 12,
+      "max_abs_delta_z": 2.2411346435546875e-05
+    },
+    {
+      "seq_id": "seq0288",
+      "shape": [
+        969,
+        3757
+      ],
+      "quiet": 12,
+      "max_abs_delta_z": 2.86102294921875e-05
+    },
+    {
+      "seq_id": "seq0059",
+      "shape": [
+        2457,
+        9340
+      ],
+      "quiet": 12,
+      "max_abs_delta_z": 3.814697265625e-06
+    }
+  ],
+  "trust_fast_box_score": true
+}

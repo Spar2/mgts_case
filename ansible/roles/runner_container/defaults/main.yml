@@ -1,0 +1,18 @@
+---
+# Роль runner_container: always-on раннеры в контейнерах (sibling docker).
+# Версия забинена с gh_runner (v2.337.0) — менять синхронно.
+runner_container_version: v2.337.0
+# Тег образа дублирует image в ops/runners/compose.runners.yml.
+runner_container_image: "haklolarp-runner:v2.337.0"
+runner_container_dir: /opt/runners
+runner_container_url: https://github.com/werd0y45/haklolarp
+# Лейблы трёх сервисов compose (team-devops/web/ml).
+runner_container_labels:
+  - team-devops
+  - team-web
+  - team-ml
+# Исходники на контроллере (playbook_dir=ansible/playbooks).
+runner_container_compose_src: "{{ playbook_dir }}/../../ops/runners/compose.runners.yml"
+runner_container_dockerfile_src: "{{ playbook_dir }}/../../ops/runners/Dockerfile.runner"
+# Сколько сервисов обязано быть running после up (3: devops/web/ml).
+runner_container_expected_running: 3

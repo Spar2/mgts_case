@@ -1,0 +1,43 @@
+name: ML PR tests
+
+on:
+  pull_request:
+    branches: [ml]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: test-ml-pr-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: [self-hosted, team-ml]
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - name: Guard branch ref
+        uses: ./.github/actions/guard-ref
+        with:
+          ref_name: ${{ github.ref_name }}
+          event_name: ${{ github.event_name }}
+          fork: ${{ github.event.pull_request.head.repo.fork }}
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: |
+            requirements-api.txt
+            requirements-dev.txt
+      - name: Install CPU test and API dependencies
+        run: python -m pip install -r requirements-dev.txt
+      - name: Tests including API and data contracts
+        run: python -m pytest tests -ra --junitxml=test-results.xml
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: ml-pr-test-results
+          path: test-results.xml

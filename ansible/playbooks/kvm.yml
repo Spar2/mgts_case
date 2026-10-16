@@ -1,0 +1,47 @@
+---
+# KVM: обновление wake-скрипта и forced-команды CI-ключа.
+# FROZEN: KVM/WoL — не трогать (always-on)
+# Пароль root НЕ хранится: только рантаймом (-e kvm_root_password=...).
+# Пример: ansible-playbook -i inventory/hosts.yml playbooks/kvm.yml -e kvm_root_password='***'
+- name: KVM — установка wake-скрипта
+  hosts: kvm
+  gather_facts: false
+  vars:
+    kvm_root_password: ""
+    kvm_files: "{{ playbook_dir }}/../files/kvm"
+    # Паблик wake-ключа (приватный только на дев-ВМ и в секрете KVM_WAKE_KEY).
+    kvm_wake_pub_file: "{{ lookup('env', 'HOME') }}/.ssh/kvm_wake.pub"
+  tasks:
+    - name: KVM | пароль задан
+      ansible.builtin.fail:
+        msg: "Задай пароль: -e kvm_root_password=..."
+      when: kvm_root_password | length == 0
+      delegate_to: localhost
+      become: false
+
+    - name: KVM | файлы установщика
+      ansible.builtin.copy:
+        src: "{{ item.src }}"
+        dest: "{{ item.dst }}"
+        mode: "0644"
+      vars:
+        ansible_user: root
+        ansible_password: "{{ kvm_root_password }}"
+      loop:
+        - src: "{{ kvm_files }}/xeon-wake-only"
+          dst: /tmp/xeon-wake-only
+        - src: "{{ kvm_files }}/kvm_install.py"
+          dst: /tmp/kvm_install.py
+        - src: "{{ kvm_wake_pub_file }}"
+          dst: /tmp/kvm_wake.pub
+      loop_control:
+        label: "{{ item.dst }}"
+
+    - name: KVM | установка
+      ansible.builtin.command: python3 /tmp/kvm_install.py
+      vars:
+        ansible_user: root
+        ansible_password: "{{ kvm_root_password }}"
+      register: kvm_install_result
+      changed_when: "'INSTALL_OK' in kvm_install_result.stdout"
+      failed_when: "'INSTALL_OK' not in kvm_install_result.stdout"

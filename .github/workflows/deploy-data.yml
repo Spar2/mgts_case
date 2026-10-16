@@ -1,0 +1,150 @@
+name: Deploy data (staging)
+
+# Деплой ветки data в /opt/haklolarp-stack. Канон (compose pull/up) не меняется:
+# job deploy — тонкий caller deploy-reusable.yml@f2571f3 (pin: full SHA, bump вручную), mode plain.
+# Job prepare до plain-шага принимает уже работающий /opt/haklolarp-stack
+# (проект haklolarp-stack, те же тома). Пустой проект haklolarp-data снимается.
+# Wake продублирован,
+# потому что reusable нельзя разрезать между своими wake и deploy;
+# повторный probe внутри канона видит, что хост уже жив.
+# Имя workflow и concurrency НЕ менять: их слушает notify-runs.yml
+# (у data ещё и свой inline_notify).
+
+permissions:
+  contents: read
+
+on:
+  push:
+    branches: [data]
+  workflow_dispatch:
+
+concurrency:
+  group: staging-deploy-data-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  wake:
+    # FROZEN: KVM/WoL — не трогать (always-on)
+    # Копия probe/wake из deploy-reusable.yml. Держать в синхроне с каноном.
+    runs-on: [self-hosted, team-devops]
+    timeout-minutes: 15
+    steps:
+      - name: Join Tailscale
+        uses: tailscale/github-action@d1b6cd204f8dceda5b3eaad7f1f767be390056cd # v4
+        with:
+          oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
+          oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
+          tags: tag:ci
+          hostname: data-wake-${{ github.run_id }}
+
+      - name: Probe Xeon (skip wake if up)
+        id: probe
+        continue-on-error: true
+        uses: appleboy/ssh-action@0ff4204d59e8e51228ff73bce53f80d53301dee2 # v1
+        with:
+          host: ${{ secrets.STAGING_HOST }}
+          username: ${{ secrets.STAGING_USER }}
+          key: ${{ secrets.STAGING_SSH_KEY }}
+          port: 22
+          script: echo xeon-up
+
+      - name: Wake via KVM (forced command waits for boot)
+        if: steps.probe.outcome == 'failure'
+        uses: appleboy/ssh-action@0ff4204d59e8e51228ff73bce53f80d53301dee2 # v1
+        with:
+          host: ${{ secrets.KVM_HOST }}
+          username: root
+          key: ${{ secrets.KVM_WAKE_KEY }}
+          port: 22
+          command_timeout: 12m
+          script: echo wake-triggered
+
+  prepare:
+    needs: wake
+    runs-on: [self-hosted, team-devops]
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+
+      - name: Guard branch ref
+        uses: ./.github/actions/guard-ref
+        with:
+          ref_name: ${{ github.ref_name }}
+          event_name: ${{ github.event_name }}
+          fork: ${{ github.event.pull_request.head.repo.fork }}
+
+      - name: Setup Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7
+        with:
+          python-version: "3.12"
+
+      - name: Join Tailscale
+        uses: tailscale/github-action@d1b6cd204f8dceda5b3eaad7f1f767be390056cd # v4
+        with:
+          oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
+          oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
+          tags: tag:ci
+          hostname: data-prepare-${{ github.run_id }}
+
+      - name: Install Ansible
+        run: pip install ansible
+
+      - name: Install collections
+        working-directory: ansible
+        run: ansible-galaxy collection install -r requirements.yml
+
+      - name: Bootstrap data stand
+        working-directory: ansible
+        env:
+          STAGING_HOST: ${{ secrets.STAGING_HOST }}
+          STAGING_USER: ${{ secrets.STAGING_USER }}
+          STAGING_SSH_KEY: ${{ secrets.STAGING_SSH_KEY }}
+          STAGING_BECOME_PASSWORD: ${{ secrets.STAGING_BECOME_PASSWORD }}
+          # ansible.cfg включает host_key_checking. accept-new пишет ключ
+          # в файл раннера и не отключает проверку на следующих коннектах.
+          ANSIBLE_SSH_COMMON_ARGS: -o StrictHostKeyChecking=accept-new -o UserKnownHostsFile=${{ runner.temp }}/known_hosts
+        run: |
+          set -euo pipefail
+          if [ -z "${STAGING_BECOME_PASSWORD}" ]; then
+            echo "Задай секрет STAGING_BECOME_PASSWORD (sudo STAGING_USER на Xeon) и перезапусти workflow_dispatch." >&2
+            exit 1
+          fi
+          umask 077
+          keyfile="${RUNNER_TEMP}/staging_key"
+          extra="${RUNNER_TEMP}/ansible-extra.json"
+          printf '%s\n' "$STAGING_SSH_KEY" > "$keyfile"
+          EXTRA="$extra" python - <<'PY'
+          import json, os
+          with open(os.environ["EXTRA"], "w", encoding="utf-8") as fh:
+              json.dump({
+                  "staging_lan_ip": os.environ["STAGING_HOST"],
+                  "ansible_user": os.environ["STAGING_USER"],
+                  "ansible_become_password": os.environ["STAGING_BECOME_PASSWORD"],
+              }, fh)
+          PY
+          ansible-playbook playbooks/data-stand.yml \
+            --private-key "$keyfile" \
+            -e "@${extra}"
+          rm -f "$keyfile" "$extra"
+
+  deploy:
+    needs: prepare
+    uses: werd0y45/haklolarp/.github/workflows/deploy-reusable.yml@f2571f3c047203a5a9a6f58c2d280996777fa1a9 # main-2026-10-15
+    with:
+      branch: data
+      staging_dir: /opt/haklolarp-stack
+      mode: plain
+      compose_file: stack/compose.yaml
+      run_tests: false
+      inline_notify: true
+      discord_color: "0x16a085"
+    secrets:
+      ts_oauth_client_id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
+      ts_oauth_secret: ${{ secrets.TS_OAUTH_SECRET }}
+      staging_host: ${{ secrets.STAGING_HOST }}
+      kvm_host: ${{ secrets.KVM_HOST }}
+      staging_user: ${{ secrets.STAGING_USER }}
+      staging_ssh_key: ${{ secrets.STAGING_SSH_KEY }}
+      kvm_wake_key: ${{ secrets.KVM_WAKE_KEY }}
+      discord_webhook: ${{ secrets.DISCORD_WEBHOOK_DATA }}

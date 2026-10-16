@@ -1,0 +1,101 @@
+{
+  "files": {
+    "1.csv": {
+      "detector_total": 17,
+      "detector_by_type": {
+        "local_heating (power cable / equipment)": 2,
+        "transient": 12,
+        "other": 3
+      },
+      "opencv_total": 40,
+      "opencv_by_type": {
+        "heating": 34,
+        "unknown": 4,
+        "cooling": 2
+      }
+    },
+    "2.csv": {
+      "detector_total": 21,
+      "detector_by_type": {
+        "local_cooling (AC / ventilation)": 14,
+        "local_heating (power cable / equipment)": 2,
+        "other": 5
+      },
+      "opencv_total": 69,
+      "opencv_by_type": {
+        "heating": 8,
+        "cooling": 35,
+        "unknown": 26
+      }
+    },
+    "3.csv": {
+      "detector_total": 13,
+      "detector_by_type": {
+        "local_heating (power cable / equipment)": 2,
+        "local_cooling (AC / ventilation)": 6,
+        "other": 5
+      },
+      "opencv_total": 66,
+      "opencv_by_type": {
+        "heating": 21,
+        "cooling": 15,
+        "unknown": 30
+      }
+    },
+    "4.csv": {
+      "detector_total": 9,
+      "detector_by_type": {
+        "local_heating (power cable / equipment)": 8,
+        "local_cooling (AC / ventilation)": 1
+      },
+      "opencv_total": 16,
+      "opencv_by_type": {
+        "heating": 11,
+        "unknown": 4,
+        "cooling": 1
+      }
+    },
+    "5.csv": {
+      "detector_total": 69,
+      "detector_by_type": {
+        "transient": 55,
+        "other": 11,
+        "local_heating (power cable / equipment)": 3
+      },
+      "opencv_total": 690,
+      "opencv_by_type": {
+        "heating": 157,
+        "unknown": 480,
+        "cooling": 53
+      }
+    },
+    "6.csv": {
+      "detector_total": 27,
+      "detector_by_type": {
+        "transient": 12,
+        "other": 5,
+        "local_cooling (AC / ventilation)": 6,
+        "local_heating (power cable / equipment)": 3,
+        "extended_mild (possible residual cycle)": 1
+      },
+      "opencv_total": 139,
+      "opencv_by_type": {
+        "unknown": 98,
+        "heating": 23,
+        "cooling": 18
+      }
+    }
+  },
+  "over_mark": [
+    "3.csv",
+    "5.csv",
+    "6.csv"
+  ],
+  "over_mark_rule": "OpenCV components >= 5 times the detector event count",
+  "file4_long_heats_90_115m": [
+    "91.0-93.5 m / 28 min / local_heating (power cable / equipment)",
+    "94.0-100.0 m / 352 min / local_heating (power cable / equipment)",
+    "105.8-114.0 m / 32 min / local_heating (power cable / equipment)",
+    "106.3-113.0 m / 212 min / local_heating (power cable / equipment)"
+  ]
+}

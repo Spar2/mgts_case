@@ -1,0 +1,2674 @@
+{
+  "architecture": "residual2d_context",
+  "ask_recovery_is_in_sample": true,
+  "ask_seed_match_count": 63,
+  "ask_seed_match_label": "63/110",
+  "ask_seed_n_cards": 110,
+  "cards": [
+    {
+      "expert_class": "Local_Heating",
+      "far_cable_median_c": 22.20220947265625,
+      "halo_inside_fraction": 0.0,
+      "id": "review-00034",
+      "match": false,
+      "network_class": "Periodic_Thermal",
+      "presence": "yes",
+      "record": "1",
+      "rectangle_median_c": 29.34171962738037,
+      "rows_half_open": [
+        310,
+        335
+      ],
+      "source": "expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        517.77,
+        523.25
+      ]
+    },
+    {
+      "expert_class": "Local_Heating",
+      "far_cable_median_c": 21.52544116973877,
+      "halo_inside_fraction": 0.0,
+      "id": "review-00098",
+      "match": false,
+      "network_class": "Periodic_Thermal",
+      "presence": "yes",
+      "record": "1",
+      "rectangle_median_c": 36.20372009277344,
+      "rows_half_open": [
+        0,
+        298
+      ],
+      "source": "expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        837.36,
+        851.98
+      ]
+    },
+    {
+      "expert_class": "Local_Heating",
+      "far_cable_median_c": 22.10533332824707,
+      "halo_inside_fraction": 0.375594294770206,
+      "id": "review-00187",
+      "match": false,
+      "network_class": "Periodic_Thermal",
+      "presence": "yes",
+      "record": "1",
+      "rectangle_median_c": 21.3823184967041,
+      "rows_half_open": [
+        35,
+        43
+      ],
+      "source": "expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        230.36,
+        270.36
+      ]
+    },
+    {
+      "expert_class": "Local_Cooling",
+      "far_cable_median_c": 22.058903694152832,
+      "halo_inside_fraction": 0.375594294770206,
+      "id": "review-00223",
+      "match": false,
+      "network_class": "Periodic_Thermal",
+      "presence": "yes",
+      "record": "1",
+      "rectangle_median_c": 19.076688766479492,
+      "rows_half_open": [
+        234,
+        294
+      ],
+      "source": "expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        363.15,
+        403.15
+      ]
+    },
+    {
+      "expert_class": "Local_Heating",
+      "far_cable_median_c": 27.074697494506836,
+      "halo_inside_fraction": 0.0,
+      "id": "next-0001",
+      "match": false,
+      "network_class": "Broad_Shift",
+      "presence": "yes",
+      "record": "3",
+      "rectangle_median_c": 33.90562057495117,
+      "rows_half_open": [
+        705,
+        788
+      ],
+      "source": "expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        372.028,
+        381.418
+      ]
+    },
+    {
+      "expert_class": "Local_Cooling",
+      "far_cable_median_c": 20.53179931640625,
+      "halo_inside_fraction": 0.375,
+      "id": "next-0002",
+      "match": true,
+      "network_class": "Local_Cooling",
+      "presence": "yes",
+      "record": "5",
+      "rectangle_median_c": 18.078899383544922,
+      "rows_half_open": [
+        0,
+        2711
+      ],
+      "source": "expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        234.0,
+        273.0
+      ]
+    },
+    {
+      "expert_class": "Local_Heating",
+      "far_cable_median_c": 26.372060775756836,
+      "halo_inside_fraction": 0.7857142857142857,
+      "id": "next-0003",
+      "match": false,
+      "network_class": "Broad_Shift",
+      "presence": "yes",
+      "record": "3",
+      "rectangle_median_c": 32.059898376464844,
+      "rows_half_open": [
+        618,
+        788
+      ],
+      "source": "expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        111.405,
+        177.386
+      ]
+    },
+    {
+      "expert_class": "Local_Heating",
+      "far_cable_median_c": 18.407241821289062,
+      "halo_inside_fraction": 0.48412698412698413,
+      "id": "next-0004",
+      "match": false,
+      "network_class": "Periodic_Thermal",
+      "presence": "yes",
+      "record": "2",
+      "rectangle_median_c": 23.191919326782227,
+      "rows_half_open": [
+        225,
+        409
+      ],
+      "source": "expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        46.948,
+        93.897
+      ]
+    },
+    {
+      "expert_class": "Background",
+      "far_cable_median_c": 24.678218841552734,
+      "halo_inside_fraction": 0.0,
+      "id": "next-0005",
+      "match": false,
+      "network_class": "Broad_Shift",
+      "presence": "no",
+      "record": "4",
+      "rectangle_median_c": 25.537460327148438,
+      "rows_half_open": [
+        50,
+        201
+      ],
+      "source": "expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        80.0,
+        84.0
+      ]
+    },
+    {
+      "expert_class": "Background",
+      "far_cable_median_c": 21.06795883178711,
+      "halo_inside_fraction": 0.3746031746031746,
+      "id": "next-0006",
+      "match": false,
+      "network_class": "Periodic_Thermal",
+      "presence": "no",
+      "record": "1",
+      "rectangle_median_c": 19.432153701782227,
+      "rows_half_open": [
+        449,
+        508
+      ],
+      "source": "expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        944.162,
+        984.061
+      ]
+    },
+    {
+      "expert_class": "Background",
+      "far_cable_median_c": 18.865772247314453,
+      "halo_inside_fraction": 0.36904761904761907,
+      "id": "next-0007",
+      "match": false,
+      "network_class": "Broad_Shift",
+      "presence": "no",
+      "record": "2",
+      "rectangle_median_c": 18.803129196166992,
+      "rows_half_open": [
+        65,
+        80
+      ],
+      "source": "expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        501.966,
+        541.555
+      ]
+    },
+    {
+      "expert_class": "Local_Heating",
+      "far_cable_median_c": 23.381444931030273,
+      "halo_inside_fraction": 0.0,
+      "id": "next-0008",
+      "match": true,
+      "network_class": "Local_Heating",
+      "presence": "yes",
+      "record": "6",
+      "rectangle_median_c": 25.00725746154785,
+      "rows_half_open": [
+        822,
+        1119
+      ],
+      "source": "expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        586.727,
+        598.4
+      ]
+    },
+    {
+      "expert_class": "Local_Heating",
+      "far_cable_median_c": 24.48562240600586,
+      "halo_inside_fraction": 0.1626984126984127,
+      "id": "next-0009",
+      "match": false,
+      "network_class": "Periodic_Thermal",
+      "presence": "yes",
+      "record": "4",
+      "rectangle_median_c": 27.87100601196289,
+      "rows_half_open": [
+        326,
+        708
+      ],
+      "source": "expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        93.895,
+        120.541
+      ]
+    },
+    {
+      "expert_class": "Background",
+      "far_cable_median_c": 19.03489112854004,
+      "halo_inside_fraction": 0.15873015873015872,
+      "id": "next-0010",
+      "match": false,
+      "network_class": "Local_Cooling",
+      "presence": "no",
+      "record": "2",
+      "rectangle_median_c": 14.315984725952148,
+      "rows_half_open": [
+        0,
+        409
+      ],
+      "source": "expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        291.587,
+        317.979
+      ]
+    },
+    {
+      "expert_class": "Local_Heating",
+      "far_cable_median_c": 21.50638771057129,
+      "halo_inside_fraction": 0.06973058637083994,
+      "id": "next-0011",
+      "match": false,
+      "network_class": "Periodic_Thermal",
+      "presence": "yes",
+      "record": "1",
+      "rectangle_median_c": 39.57529067993164,
+      "rows_half_open": [
+        479,
+        615
+      ],
+      "source": "expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        434.721,
+        455.228
+      ]
+    },
+    {
+      "expert_class": "Background",
+      "far_cable_median_c": 21.69489097595215,
+      "halo_inside_fraction": 1.0,
+      "id": "ask-r1-x0.000-x110.000-t172-258",
+      "match": false,
+      "network_class": "Periodic_Thermal",
+      "presence": "no",
+      "record": "1",
+      "rectangle_median_c": 21.6780424118042,
+      "rows_half_open": [
+        172,
+        258
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        0.0,
+        110.0
+      ]
+    },
+    {
+      "expert_class": "Background",
+      "far_cable_median_c": 20.70760154724121,
+      "halo_inside_fraction": 1.0,
+      "id": "ask-r1-x1045.000-x1125.000-t431-463",
+      "match": false,
+      "network_class": "Periodic_Thermal",
+      "presence": "no",
+      "record": "1",
+      "rectangle_median_c": 23.31489849090576,
+      "rows_half_open": [
+        431,
+        463
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        1045.0,
+        1125.0
+      ]
+    },
+    {
+      "expert_class": "Local_Heating",
+      "far_cable_median_c": 21.566537857055664,
+      "halo_inside_fraction": 0.047619047619047616,
+      "id": "ask-r1-x111.574-x130.761-t0-295",
+      "match": false,
+      "network_class": "Periodic_Thermal",
+      "presence": "yes",
+      "record": "1",
+      "rectangle_median_c": 38.87919235229492,
+      "rows_half_open": [
+        0,
+        295
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        111.574,
+        130.761
+      ]
+    },
+    {
+      "expert_class": "Local_Heating",
+      "far_cable_median_c": 21.936535835266113,
+      "halo_inside_fraction": 0.044444444444444446,
+      "id": "ask-r1-x111.777-x130.761-t306-338",
+      "match": true,
+      "network_class": "Local_Heating",
+      "presence": "yes",
+      "record": "1",
+      "rectangle_median_c": 36.05851364135742,
+      "rows_half_open": [
+        306,
+        338
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        111.777,
+        130.761
+      ]
+    },
+    {
+      "expert_class": "Periodic_Thermal",
+      "far_cable_median_c": 21.56432342529297,
+      "halo_inside_fraction": 0.765017667844523,
+      "id": "ask-r1-x1125.000-x1185.000-t399-431",
+      "match": true,
+      "network_class": "Periodic_Thermal",
+      "presence": "yes",
+      "record": "1",
+      "rectangle_median_c": 24.221088409423828,
+      "rows_half_open": [
+        399,
+        431
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        1125.0,
+        1185.0
+      ]
+    },
+    {
+      "expert_class": "Background",
+      "far_cable_median_c": 21.885639190673828,
+      "halo_inside_fraction": 0.687797147385103,
+      "id": "ask-r1-x150.000-x210.000-t0-86",
+      "match": false,
+      "network_class": "Periodic_Thermal",
+      "presence": "no",
+      "record": "1",
+      "rectangle_median_c": 22.07052993774414,
+      "rows_half_open": [
+        0,
+        86
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        150.0,
+        210.0
+      ]
+    },
+    {
+      "expert_class": "Background",
+      "far_cable_median_c": 21.770461082458496,
+      "halo_inside_fraction": 0.687797147385103,
+      "id": "ask-r1-x150.000-x210.000-t172-258",
+      "match": false,
+      "network_class": "Periodic_Thermal",
+      "presence": "no",
+      "record": "1",
+      "rectangle_median_c": 22.215587615966797,
+      "rows_half_open": [
+        172,
+        258
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        150.0,
+        210.0
+      ]
+    },
+    {
+      "expert_class": "Background",
+      "far_cable_median_c": 21.762919425964355,
+      "halo_inside_fraction": 0.687797147385103,
+      "id": "ask-r1-x150.000-x210.000-t258-344",
+      "match": false,
+      "network_class": "Periodic_Thermal",
+      "presence": "no",
+      "record": "1",
+      "rectangle_median_c": 22.124982833862305,
+      "rows_half_open": [
+        258,
+        344
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        150.0,
+        210.0
+      ]
+    },
+    {
+      "expert_class": "Background",
+      "far_cable_median_c": 21.844552040100098,
+      "halo_inside_fraction": 0.687797147385103,
+      "id": "ask-r1-x150.000-x210.000-t86-172",
+      "match": false,
+      "network_class": "Periodic_Thermal",
+      "presence": "no",
+      "record": "1",
+      "rectangle_median_c": 22.19778823852539,
+      "rows_half_open": [
+        86,
+        172
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        150.0,
+        210.0
+      ]
+    },
+    {
+      "expert_class": "Periodic_Thermal",
+      "far_cable_median_c": 22.525696754455566,
+      "halo_inside_fraction": 1.0,
+      "id": "ask-r1-x285.000-x365.000-t399-431",
+      "match": true,
+      "network_class": "Periodic_Thermal",
+      "presence": "yes",
+      "record": "1",
+      "rectangle_median_c": 20.11337947845459,
+      "rows_half_open": [
+        399,
+        431
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        285.0,
+        365.0
+      ]
+    },
+    {
+      "expert_class": "Periodic_Thermal",
+      "far_cable_median_c": 21.46309471130371,
+      "halo_inside_fraction": 0.6873015873015873,
+      "id": "ask-r1-x375.000-x435.000-t431-463",
+      "match": true,
+      "network_class": "Periodic_Thermal",
+      "presence": "yes",
+      "record": "1",
+      "rectangle_median_c": 18.960834503173828,
+      "rows_half_open": [
+        431,
+        463
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        375.0,
+        435.0
+      ]
+    },
+    {
+      "expert_class": "Periodic_Thermal",
+      "far_cable_median_c": 22.35453701019287,
+      "halo_inside_fraction": 1.0,
+      "id": "ask-r1-x380.000-x460.000-t399-431",
+      "match": true,
+      "network_class": "Periodic_Thermal",
+      "presence": "yes",
+      "record": "1",
+      "rectangle_median_c": 19.4923038482666,
+      "rows_half_open": [
+        399,
+        431
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        380.0,
+        460.0
+      ]
+    },
+    {
+      "expert_class": "Local_Heating",
+      "far_cable_median_c": 21.775114059448242,
+      "halo_inside_fraction": 0.0,
+      "id": "ask-r1-x417.259-x421.015-t0-344",
+      "match": false,
+      "network_class": "Periodic_Thermal",
+      "presence": "yes",
+      "record": "1",
+      "rectangle_median_c": 30.768040657043457,
+      "rows_half_open": [
+        0,
+        344
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        417.259,
+        421.015
+      ]
+    },
+    {
+      "expert_class": "Local_Heating",
+      "far_cable_median_c": 21.72696876525879,
+      "halo_inside_fraction": 0.0,
+      "id": "ask-r1-x425.787-x429.036-t0-230",
+      "match": true,
+      "network_class": "Local_Heating",
+      "presence": "yes",
+      "record": "1",
+      "rectangle_median_c": 40.38471031188965,
+      "rows_half_open": [
+        0,
+        230
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        425.787,
+        429.036
+      ]
+    },
+    {
+      "expert_class": "Periodic_Thermal",
+      "far_cable_median_c": 21.5881929397583,
+      "halo_inside_fraction": 0.07606973058637084,
+      "id": "ask-r1-x434.619-x455.330-t0-244",
+      "match": true,
+      "network_class": "Periodic_Thermal",
+      "presence": "yes",
+      "record": "1",
+      "rectangle_median_c": 43.280799865722656,
+      "rows_half_open": [
+        0,
+        244
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        434.619,
+        455.33
+      ]
+    },
+    {
+      "expert_class": "Periodic_Thermal",
+      "far_cable_median_c": 22.1033992767334,
+      "halo_inside_fraction": 1.0,
+      "id": "ask-r1-x475.000-x555.000-t399-431",
+      "match": true,
+      "network_class": "Periodic_Thermal",
+      "presence": "yes",
+      "record": "1",
+      "rectangle_median_c": 25.1433048248291,
+      "rows_half_open": [
+        399,
+        431
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        475.0,
+        555.0
+      ]
+    },
+    {
+      "expert_class": "Periodic_Thermal",
+      "far_cable_median_c": 21.235824584960938,
+      "halo_inside_fraction": 1.0,
+      "id": "ask-r1-x475.000-x555.000-t431-463",
+      "match": true,
+      "network_class": "Periodic_Thermal",
+      "presence": "yes",
+      "record": "1",
+      "rectangle_median_c": 23.72029399871826,
+      "rows_half_open": [
+        431,
+        463
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        475.0,
+        555.0
+      ]
+    },
+    {
+      "expert_class": "Local_Heating",
+      "far_cable_median_c": 21.753695487976074,
+      "halo_inside_fraction": 0.0,
+      "id": "ask-r1-x491.777-x494.822-t0-344",
+      "match": true,
+      "network_class": "Local_Heating",
+      "presence": "yes",
+      "record": "1",
+      "rectangle_median_c": 27.327004432678223,
+      "rows_half_open": [
+        0,
+        344
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        491.777,
+        494.822
+      ]
+    },
+    {
+      "expert_class": "Background",
+      "far_cable_median_c": 21.940589904785156,
+      "halo_inside_fraction": 0.6873015873015873,
+      "id": "ask-r1-x525.000-x585.000-t258-344",
+      "match": false,
+      "network_class": "Periodic_Thermal",
+      "presence": "no",
+      "record": "1",
+      "rectangle_median_c": 19.781424522399902,
+      "rows_half_open": [
+        258,
+        344
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        525.0,
+        585.0
+      ]
+    },
+    {
+      "expert_class": "Periodic_Thermal",
+      "far_cable_median_c": 22.192214012145996,
+      "halo_inside_fraction": 1.0,
+      "id": "ask-r1-x570.000-x650.000-t0-86",
+      "match": true,
+      "network_class": "Periodic_Thermal",
+      "presence": "yes",
+      "record": "1",
+      "rectangle_median_c": 19.54717254638672,
+      "rows_half_open": [
+        0,
+        86
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        570.0,
+        650.0
+      ]
+    },
+    {
+      "expert_class": "Periodic_Thermal",
+      "far_cable_median_c": 22.077669143676758,
+      "halo_inside_fraction": 1.0,
+      "id": "ask-r1-x570.000-x650.000-t172-258",
+      "match": true,
+      "network_class": "Periodic_Thermal",
+      "presence": "yes",
+      "record": "1",
+      "rectangle_median_c": 19.538912773132324,
+      "rows_half_open": [
+        172,
+        258
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        570.0,
+        650.0
+      ]
+    },
+    {
+      "expert_class": "Periodic_Thermal",
+      "far_cable_median_c": 21.392562866210938,
+      "halo_inside_fraction": 1.0,
+      "id": "ask-r1-x570.000-x650.000-t431-463",
+      "match": true,
+      "network_class": "Periodic_Thermal",
+      "presence": "yes",
+      "record": "1",
+      "rectangle_median_c": 18.882594108581543,
+      "rows_half_open": [
+        431,
+        463
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        570.0,
+        650.0
+      ]
+    },
+    {
+      "expert_class": "Periodic_Thermal",
+      "far_cable_median_c": 22.18111228942871,
+      "halo_inside_fraction": 1.0,
+      "id": "ask-r1-x570.000-x650.000-t86-172",
+      "match": true,
+      "network_class": "Periodic_Thermal",
+      "presence": "yes",
+      "record": "1",
+      "rectangle_median_c": 19.45487689971924,
+      "rows_half_open": [
+        86,
+        172
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        570.0,
+        650.0
+      ]
+    },
+    {
+      "expert_class": "Periodic_Thermal",
+      "far_cable_median_c": 21.84404945373535,
+      "halo_inside_fraction": 0.6873015873015873,
+      "id": "ask-r1-x600.000-x660.000-t258-344",
+      "match": true,
+      "network_class": "Periodic_Thermal",
+      "presence": "yes",
+      "record": "1",
+      "rectangle_median_c": 22.81275177001953,
+      "rows_half_open": [
+        258,
+        344
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        600.0,
+        660.0
+      ]
+    },
+    {
+      "expert_class": "Periodic_Thermal",
+      "far_cable_median_c": 21.88377857208252,
+      "halo_inside_fraction": 1.0,
+      "id": "ask-r1-x620.000-x760.000-t399-431",
+      "match": true,
+      "network_class": "Periodic_Thermal",
+      "presence": "yes",
+      "record": "1",
+      "rectangle_median_c": 22.321945190429688,
+      "rows_half_open": [
+        399,
+        431
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        620.0,
+        760.0
+      ]
+    },
+    {
+      "expert_class": "Local_Heating",
+      "far_cable_median_c": 21.73178195953369,
+      "halo_inside_fraction": 0.0,
+      "id": "ask-r1-x687.208-x691.980-t0-292",
+      "match": true,
+      "network_class": "Local_Heating",
+      "presence": "yes",
+      "record": "1",
+      "rectangle_median_c": 33.360605239868164,
+      "rows_half_open": [
+        0,
+        292
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        687.208,
+        691.98
+      ]
+    },
+    {
+      "expert_class": "Periodic_Thermal",
+      "far_cable_median_c": 20.842634201049805,
+      "halo_inside_fraction": 1.0,
+      "id": "ask-r1-x750.000-x860.000-t431-463",
+      "match": true,
+      "network_class": "Periodic_Thermal",
+      "presence": "yes",
+      "record": "1",
+      "rectangle_median_c": 23.8219575881958,
+      "rows_half_open": [
+        431,
+        463
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        750.0,
+        860.0
+      ]
+    },
+    {
+      "expert_class": "Local_Heating",
+      "far_cable_median_c": 21.585277557373047,
+      "halo_inside_fraction": 0.0,
+      "id": "ask-r1-x803.858-x808.934-t0-344",
+      "match": true,
+      "network_class": "Local_Heating",
+      "presence": "yes",
+      "record": "1",
+      "rectangle_median_c": 28.276419639587402,
+      "rows_half_open": [
+        0,
+        344
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        803.858,
+        808.934
+      ]
+    },
+    {
+      "expert_class": "Local_Heating",
+      "far_cable_median_c": 21.594300270080566,
+      "halo_inside_fraction": 0.0,
+      "id": "ask-r1-x812.893-x816.142-t0-344",
+      "match": false,
+      "network_class": "Periodic_Thermal",
+      "presence": "yes",
+      "record": "1",
+      "rectangle_median_c": 29.836891174316406,
+      "rows_half_open": [
+        0,
+        344
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        812.893,
+        816.142
+      ]
+    },
+    {
+      "expert_class": "Periodic_Thermal",
+      "far_cable_median_c": 21.59701919555664,
+      "halo_inside_fraction": 0.05555555555555555,
+      "id": "ask-r1-x874.518-x894.112-t0-344",
+      "match": true,
+      "network_class": "Periodic_Thermal",
+      "presence": "yes",
+      "record": "1",
+      "rectangle_median_c": 29.260818481445312,
+      "rows_half_open": [
+        0,
+        344
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        874.518,
+        894.112
+      ]
+    },
+    {
+      "expert_class": "Local_Heating",
+      "far_cable_median_c": 21.507843017578125,
+      "halo_inside_fraction": 0.0,
+      "id": "ask-r1-x880.609-x888.629-t399-463",
+      "match": true,
+      "network_class": "Local_Heating",
+      "presence": "yes",
+      "record": "1",
+      "rectangle_median_c": 27.439242362976074,
+      "rows_half_open": [
+        399,
+        463
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        880.609,
+        888.629
+      ]
+    },
+    {
+      "expert_class": "Local_Heating",
+      "far_cable_median_c": 21.535990715026855,
+      "halo_inside_fraction": 0.0,
+      "id": "ask-r1-x889.746-x894.010-t399-463",
+      "match": true,
+      "network_class": "Local_Heating",
+      "presence": "yes",
+      "record": "1",
+      "rectangle_median_c": 27.45464515686035,
+      "rows_half_open": [
+        399,
+        463
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        889.746,
+        894.01
+      ]
+    },
+    {
+      "expert_class": "Broad_Shift",
+      "far_cable_median_c": 18.59903907775879,
+      "halo_inside_fraction": 0.0,
+      "id": "ask-r2-x0.000-x15.226-t372-409",
+      "match": true,
+      "network_class": "Broad_Shift",
+      "presence": "yes",
+      "record": "2",
+      "rectangle_median_c": 25.564424514770508,
+      "rows_half_open": [
+        372,
+        409
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        0.0,
+        15.226
+      ]
+    },
+    {
+      "expert_class": "Local_Heating",
+      "far_cable_median_c": 18.39561176300049,
+      "halo_inside_fraction": 1.0,
+      "id": "ask-r2-x0.000-x80.000-t0-102",
+      "match": false,
+      "network_class": "Periodic_Thermal",
+      "presence": "yes",
+      "record": "2",
+      "rectangle_median_c": 21.00040626525879,
+      "rows_half_open": [
+        0,
+        102
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        0.0,
+        80.0
+      ]
+    },
+    {
+      "expert_class": "Local_Heating",
+      "far_cable_median_c": 18.31768035888672,
+      "halo_inside_fraction": 1.0,
+      "id": "ask-r2-x0.000-x80.000-t102-205",
+      "match": false,
+      "network_class": "Periodic_Thermal",
+      "presence": "yes",
+      "record": "2",
+      "rectangle_median_c": 21.079718589782715,
+      "rows_half_open": [
+        102,
+        205
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        0.0,
+        80.0
+      ]
+    },
+    {
+      "expert_class": "Local_Heating",
+      "far_cable_median_c": 18.429473876953125,
+      "halo_inside_fraction": 1.0,
+      "id": "ask-r2-x0.000-x80.000-t425-456",
+      "match": false,
+      "network_class": "Periodic_Thermal",
+      "presence": "yes",
+      "record": "2",
+      "rectangle_median_c": 21.01151180267334,
+      "rows_half_open": [
+        425,
+        456
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        0.0,
+        80.0
+      ]
+    },
+    {
+      "expert_class": "Local_Heating",
+      "far_cable_median_c": 18.333654403686523,
+      "halo_inside_fraction": 1.0,
+      "id": "ask-r2-x0.000-x80.000-t456-487",
+      "match": false,
+      "network_class": "Periodic_Thermal",
+      "presence": "yes",
+      "record": "2",
+      "rectangle_median_c": 20.56304359436035,
+      "rows_half_open": [
+        456,
+        487
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        0.0,
+        80.0
+      ]
+    },
+    {
+      "expert_class": "Local_Heating",
+      "far_cable_median_c": 18.40865421295166,
+      "halo_inside_fraction": 0.0,
+      "id": "ask-r2-x100.241-x108.362-t425-549",
+      "match": true,
+      "network_class": "Local_Heating",
+      "presence": "yes",
+      "record": "2",
+      "rectangle_median_c": 20.672651290893555,
+      "rows_half_open": [
+        425,
+        549
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        100.241,
+        108.362
+      ]
+    },
+    {
+      "expert_class": "Periodic_Thermal",
+      "far_cable_median_c": 19.497352600097656,
+      "halo_inside_fraction": 1.0,
+      "id": "ask-r2-x190.000-x270.000-t425-456",
+      "match": false,
+      "network_class": "Broad_Shift",
+      "presence": "yes",
+      "record": "2",
+      "rectangle_median_c": 17.00734519958496,
+      "rows_half_open": [
+        425,
+        456
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        190.0,
+        270.0
+      ]
+    },
+    {
+      "expert_class": "Periodic_Thermal",
+      "far_cable_median_c": 19.410701751708984,
+      "halo_inside_fraction": 1.0,
+      "id": "ask-r2-x190.000-x270.000-t456-487",
+      "match": false,
+      "network_class": "Broad_Shift",
+      "presence": "yes",
+      "record": "2",
+      "rectangle_median_c": 16.946367263793945,
+      "rows_half_open": [
+        456,
+        487
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        190.0,
+        270.0
+      ]
+    },
+    {
+      "expert_class": "Periodic_Thermal",
+      "far_cable_median_c": 19.226816177368164,
+      "halo_inside_fraction": 1.0,
+      "id": "ask-r2-x190.000-x270.000-t487-518",
+      "match": true,
+      "network_class": "Periodic_Thermal",
+      "presence": "yes",
+      "record": "2",
+      "rectangle_median_c": 16.841167449951172,
+      "rows_half_open": [
+        487,
+        518
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        190.0,
+        270.0
+      ]
+    },
+    {
+      "expert_class": "Periodic_Thermal",
+      "far_cable_median_c": 19.0106201171875,
+      "halo_inside_fraction": 1.0,
+      "id": "ask-r2-x190.000-x270.000-t518-549",
+      "match": true,
+      "network_class": "Periodic_Thermal",
+      "presence": "yes",
+      "record": "2",
+      "rectangle_median_c": 16.7731990814209,
+      "rows_half_open": [
+        518,
+        549
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        190.0,
+        270.0
+      ]
+    },
+    {
+      "expert_class": "Local_Cooling",
+      "far_cable_median_c": 19.04607391357422,
+      "halo_inside_fraction": 0.43253968253968256,
+      "id": "ask-r2-x276.614-x320.263-t425-549",
+      "match": true,
+      "network_class": "Local_Cooling",
+      "presence": "yes",
+      "record": "2",
+      "rectangle_median_c": 14.82705307006836,
+      "rows_half_open": [
+        425,
+        549
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        276.614,
+        320.263
+      ]
+    },
+    {
+      "expert_class": "Local_Heating",
+      "far_cable_median_c": 18.898868560791016,
+      "halo_inside_fraction": 0.0,
+      "id": "ask-r2-x320.517-x329.907-t0-409",
+      "match": false,
+      "network_class": "Local_Cooling",
+      "presence": "yes",
+      "record": "2",
+      "rectangle_median_c": 20.201095581054688,
+      "rows_half_open": [
+        0,
+        409
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        320.517,
+        329.907
+      ]
+    },
+    {
+      "expert_class": "Background",
+      "far_cable_median_c": 18.57834815979004,
+      "halo_inside_fraction": 1.0,
+      "id": "ask-r2-x380.000-x460.000-t102-205",
+      "match": false,
+      "network_class": "Broad_Shift",
+      "presence": "no",
+      "record": "2",
+      "rectangle_median_c": 18.9279842376709,
+      "rows_half_open": [
+        102,
+        205
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        380.0,
+        460.0
+      ]
+    },
+    {
+      "expert_class": "Background",
+      "far_cable_median_c": 18.796009063720703,
+      "halo_inside_fraction": 1.0,
+      "id": "ask-r2-x380.000-x460.000-t205-307",
+      "match": false,
+      "network_class": "Broad_Shift",
+      "presence": "no",
+      "record": "2",
+      "rectangle_median_c": 19.188578605651855,
+      "rows_half_open": [
+        205,
+        307
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        380.0,
+        460.0
+      ]
+    },
+    {
+      "expert_class": "Background",
+      "far_cable_median_c": 18.666412353515625,
+      "halo_inside_fraction": 1.0,
+      "id": "ask-r2-x380.000-x460.000-t307-410",
+      "match": false,
+      "network_class": "Broad_Shift",
+      "presence": "no",
+      "record": "2",
+      "rectangle_median_c": 18.932401657104492,
+      "rows_half_open": [
+        307,
+        410
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        380.0,
+        460.0
+      ]
+    },
+    {
+      "expert_class": "Background",
+      "far_cable_median_c": 18.605390548706055,
+      "halo_inside_fraction": 1.0,
+      "id": "ask-r2-x380.000-x460.000-t425-456",
+      "match": false,
+      "network_class": "Broad_Shift",
+      "presence": "no",
+      "record": "2",
+      "rectangle_median_c": 19.334030151367188,
+      "rows_half_open": [
+        425,
+        456
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        380.0,
+        460.0
+      ]
+    },
+    {
+      "expert_class": "Background",
+      "far_cable_median_c": 18.522113800048828,
+      "halo_inside_fraction": 1.0,
+      "id": "ask-r2-x380.000-x460.000-t456-487",
+      "match": false,
+      "network_class": "Broad_Shift",
+      "presence": "no",
+      "record": "2",
+      "rectangle_median_c": 19.33839988708496,
+      "rows_half_open": [
+        456,
+        487
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        380.0,
+        460.0
+      ]
+    },
+    {
+      "expert_class": "Background",
+      "far_cable_median_c": 18.436948776245117,
+      "halo_inside_fraction": 1.0,
+      "id": "ask-r2-x380.000-x460.000-t487-518",
+      "match": false,
+      "network_class": "Broad_Shift",
+      "presence": "no",
+      "record": "2",
+      "rectangle_median_c": 19.154298782348633,
+      "rows_half_open": [
+        487,
+        518
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        380.0,
+        460.0
+      ]
+    },
+    {
+      "expert_class": "Local_Heating",
+      "far_cable_median_c": 18.777795791625977,
+      "halo_inside_fraction": 0.0,
+      "id": "ask-r2-x464.915-x472.528-t425-549",
+      "match": true,
+      "network_class": "Local_Heating",
+      "presence": "yes",
+      "record": "2",
+      "rectangle_median_c": 21.3469181060791,
+      "rows_half_open": [
+        425,
+        549
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        464.915,
+        472.528
+      ]
+    },
+    {
+      "expert_class": "Local_Heating",
+      "far_cable_median_c": 18.796728134155273,
+      "halo_inside_fraction": 0.0,
+      "id": "ask-r2-x468.214-x472.274-t0-409",
+      "match": false,
+      "network_class": "Broad_Shift",
+      "presence": "yes",
+      "record": "2",
+      "rectangle_median_c": 23.442697525024414,
+      "rows_half_open": [
+        0,
+        409
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        468.214,
+        472.274
+      ]
+    },
+    {
+      "expert_class": "Local_Cooling",
+      "far_cable_median_c": 18.94248104095459,
+      "halo_inside_fraction": 0.0,
+      "id": "ask-r2-x495.875-x501.712-t425-549",
+      "match": true,
+      "network_class": "Local_Cooling",
+      "presence": "yes",
+      "record": "2",
+      "rectangle_median_c": 14.923436641693115,
+      "rows_half_open": [
+        425,
+        549
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        495.875,
+        501.712
+      ]
+    },
+    {
+      "expert_class": "Local_Heating",
+      "far_cable_median_c": 18.515413284301758,
+      "halo_inside_fraction": 0.0,
+      "id": "ask-r2-x99.987-x108.362-t0-410",
+      "match": true,
+      "network_class": "Local_Heating",
+      "presence": "yes",
+      "record": "2",
+      "rectangle_median_c": 21.52912998199463,
+      "rows_half_open": [
+        0,
+        410
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        99.987,
+        108.362
+      ]
+    },
+    {
+      "expert_class": "Broad_Shift",
+      "far_cable_median_c": 28.092453002929688,
+      "halo_inside_fraction": 0.45634920634920634,
+      "id": "ask-r3-x341.322-x386.747-t0-465",
+      "match": true,
+      "network_class": "Broad_Shift",
+      "presence": "yes",
+      "record": "3",
+      "rectangle_median_c": 30.296345710754395,
+      "rows_half_open": [
+        0,
+        465
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        341.322,
+        386.747
+      ]
+    },
+    {
+      "expert_class": "Broad_Shift",
+      "far_cable_median_c": 27.105192184448242,
+      "halo_inside_fraction": 0.44047619047619047,
+      "id": "ask-r3-x341.830-x386.240-t480-623",
+      "match": true,
+      "network_class": "Broad_Shift",
+      "presence": "yes",
+      "record": "3",
+      "rectangle_median_c": 29.33230495452881,
+      "rows_half_open": [
+        480,
+        623
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        341.83,
+        386.24
+      ]
+    },
+    {
+      "expert_class": "Local_Cooling",
+      "far_cable_median_c": 26.992368698120117,
+      "halo_inside_fraction": 0.0,
+      "id": "ask-r3-x388.016-x399.182-t480-623",
+      "match": false,
+      "network_class": "Broad_Shift",
+      "presence": "yes",
+      "record": "3",
+      "rectangle_median_c": 25.046627044677734,
+      "rows_half_open": [
+        480,
+        623
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        388.016,
+        399.182
+      ]
+    },
+    {
+      "expert_class": "Local_Cooling",
+      "far_cable_median_c": 28.42172622680664,
+      "halo_inside_fraction": 0.17985611510791366,
+      "id": "ask-r3-x406.034-x428.366-t0-465",
+      "match": false,
+      "network_class": "Broad_Shift",
+      "presence": "yes",
+      "record": "3",
+      "rectangle_median_c": 24.860435485839844,
+      "rows_half_open": [
+        0,
+        465
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        406.034,
+        428.366
+      ]
+    },
+    {
+      "expert_class": "Local_Cooling",
+      "far_cable_median_c": 27.1295166015625,
+      "halo_inside_fraction": 0.17391304347826086,
+      "id": "ask-r3-x406.541-x428.366-t480-623",
+      "match": false,
+      "network_class": "Broad_Shift",
+      "presence": "yes",
+      "record": "3",
+      "rectangle_median_c": 24.12649154663086,
+      "rows_half_open": [
+        480,
+        623
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        406.541,
+        428.366
+      ]
+    },
+    {
+      "expert_class": "Broad_Shift",
+      "far_cable_median_c": 27.6809024810791,
+      "halo_inside_fraction": 1.0,
+      "id": "ask-r3-x95.000-x175.000-t0-116",
+      "match": true,
+      "network_class": "Broad_Shift",
+      "presence": "yes",
+      "record": "3",
+      "rectangle_median_c": 30.03235149383545,
+      "rows_half_open": [
+        0,
+        116
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        95.0,
+        175.0
+      ]
+    },
+    {
+      "expert_class": "Broad_Shift",
+      "far_cable_median_c": 27.712158203125,
+      "halo_inside_fraction": 1.0,
+      "id": "ask-r3-x95.000-x175.000-t116-232",
+      "match": true,
+      "network_class": "Broad_Shift",
+      "presence": "yes",
+      "record": "3",
+      "rectangle_median_c": 30.014938354492188,
+      "rows_half_open": [
+        116,
+        232
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        95.0,
+        175.0
+      ]
+    },
+    {
+      "expert_class": "Broad_Shift",
+      "far_cable_median_c": 26.350468635559082,
+      "halo_inside_fraction": 1.0,
+      "id": "ask-r3-x95.000-x175.000-t551-587",
+      "match": true,
+      "network_class": "Broad_Shift",
+      "presence": "yes",
+      "record": "3",
+      "rectangle_median_c": 29.91234588623047,
+      "rows_half_open": [
+        551,
+        587
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        95.0,
+        175.0
+      ]
+    },
+    {
+      "expert_class": "Local_Heating",
+      "far_cable_median_c": 24.761216163635254,
+      "halo_inside_fraction": 0.0,
+      "id": "ask-r4-x0.000-x3.299-t0-417",
+      "match": false,
+      "network_class": "Broad_Shift",
+      "presence": "yes",
+      "record": "4",
+      "rectangle_median_c": 27.95624828338623,
+      "rows_half_open": [
+        0,
+        417
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        0.0,
+        3.299
+      ]
+    },
+    {
+      "expert_class": "Periodic_Thermal",
+      "far_cable_median_c": 24.659154891967773,
+      "halo_inside_fraction": 0.0,
+      "id": "ask-r4-x31.214-x37.812-t0-417",
+      "match": false,
+      "network_class": "Local_Cooling",
+      "presence": "yes",
+      "record": "4",
+      "rectangle_median_c": 23.099544525146484,
+      "rows_half_open": [
+        0,
+        417
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        31.214,
+        37.812
+      ]
+    },
+    {
+      "expert_class": "Local_Heating",
+      "far_cable_median_c": 24.665054321289062,
+      "halo_inside_fraction": 0.0,
+      "id": "ask-r4-x75.116-x78.669-t90-332",
+      "match": true,
+      "network_class": "Local_Heating",
+      "presence": "yes",
+      "record": "4",
+      "rectangle_median_c": 27.335660934448242,
+      "rows_half_open": [
+        90,
+        332
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        75.116,
+        78.669
+      ]
+    },
+    {
+      "expert_class": "Local_Heating",
+      "far_cable_median_c": 20.662399291992188,
+      "halo_inside_fraction": 0.0,
+      "id": "ask-r5-x1021.000-x1036.000-t49-67",
+      "match": true,
+      "network_class": "Local_Heating",
+      "presence": "yes",
+      "record": "5",
+      "rectangle_median_c": 23.619300842285156,
+      "rows_half_open": [
+        49,
+        67
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        1021.0,
+        1036.0
+      ]
+    },
+    {
+      "expert_class": "Local_Heating",
+      "far_cable_median_c": 20.733800888061523,
+      "halo_inside_fraction": 0.0,
+      "id": "ask-r5-x1086.000-x1100.000-t382-403",
+      "match": true,
+      "network_class": "Local_Heating",
+      "presence": "yes",
+      "record": "5",
+      "rectangle_median_c": 24.34709930419922,
+      "rows_half_open": [
+        382,
+        403
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        1086.0,
+        1100.0
+      ]
+    },
+    {
+      "expert_class": "Local_Heating",
+      "far_cable_median_c": 20.75979995727539,
+      "halo_inside_fraction": 0.0,
+      "id": "ask-r5-x1108.000-x1120.000-t397-408",
+      "match": true,
+      "network_class": "Local_Heating",
+      "presence": "yes",
+      "record": "5",
+      "rectangle_median_c": 24.313499450683594,
+      "rows_half_open": [
+        397,
+        408
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        1108.0,
+        1120.0
+      ]
+    },
+    {
+      "expert_class": "Local_Heating",
+      "far_cable_median_c": 20.40964984893799,
+      "halo_inside_fraction": 0.0,
+      "id": "ask-r5-x1146.000-x1150.000-t1328-1339",
+      "match": true,
+      "network_class": "Local_Heating",
+      "presence": "yes",
+      "record": "5",
+      "rectangle_median_c": 25.287200927734375,
+      "rows_half_open": [
+        1328,
+        1339
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        1146.0,
+        1150.0
+      ]
+    },
+    {
+      "expert_class": "Local_Heating",
+      "far_cable_median_c": 20.486249923706055,
+      "halo_inside_fraction": 0.0,
+      "id": "ask-r5-x1147.000-x1151.000-t1461-1469",
+      "match": true,
+      "network_class": "Local_Heating",
+      "presence": "yes",
+      "record": "5",
+      "rectangle_median_c": 24.792699813842773,
+      "rows_half_open": [
+        1461,
+        1469
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        1147.0,
+        1151.0
+      ]
+    },
+    {
+      "expert_class": "Local_Cooling",
+      "far_cable_median_c": 20.312599182128906,
+      "halo_inside_fraction": 0.0,
+      "id": "ask-r5-x128.000-x142.000-t1215-1223",
+      "match": true,
+      "network_class": "Local_Cooling",
+      "presence": "yes",
+      "record": "5",
+      "rectangle_median_c": 20.8733491897583,
+      "rows_half_open": [
+        1215,
+        1223
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        128.0,
+        142.0
+      ]
+    },
+    {
+      "expert_class": "Local_Cooling",
+      "far_cable_median_c": 20.343850135803223,
+      "halo_inside_fraction": 0.03125,
+      "id": "ask-r5-x129.000-x146.000-t1091-1101",
+      "match": true,
+      "network_class": "Local_Cooling",
+      "presence": "yes",
+      "record": "5",
+      "rectangle_median_c": 20.86775016784668,
+      "rows_half_open": [
+        1091,
+        1101
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        129.0,
+        146.0
+      ]
+    },
+    {
+      "expert_class": "Local_Cooling",
+      "far_cable_median_c": 20.706549644470215,
+      "halo_inside_fraction": 0.0,
+      "id": "ask-r5-x133.000-x147.000-t624-648",
+      "match": true,
+      "network_class": "Local_Cooling",
+      "presence": "yes",
+      "record": "5",
+      "rectangle_median_c": 20.79705047607422,
+      "rows_half_open": [
+        624,
+        648
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        133.0,
+        147.0
+      ]
+    },
+    {
+      "expert_class": "Local_Cooling",
+      "far_cable_median_c": 20.70549964904785,
+      "halo_inside_fraction": 0.0,
+      "id": "ask-r5-x134.000-x147.000-t601-616",
+      "match": true,
+      "network_class": "Local_Cooling",
+      "presence": "yes",
+      "record": "5",
+      "rectangle_median_c": 20.789499282836914,
+      "rows_half_open": [
+        601,
+        616
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        134.0,
+        147.0
+      ]
+    },
+    {
+      "expert_class": "Local_Cooling",
+      "far_cable_median_c": 20.59299945831299,
+      "halo_inside_fraction": 0.0,
+      "id": "ask-r5-x135.000-x146.000-t760-782",
+      "match": true,
+      "network_class": "Local_Cooling",
+      "presence": "yes",
+      "record": "5",
+      "rectangle_median_c": 20.729350090026855,
+      "rows_half_open": [
+        760,
+        782
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        135.0,
+        146.0
+      ]
+    },
+    {
+      "expert_class": "Local_Cooling",
+      "far_cable_median_c": 20.59819984436035,
+      "halo_inside_fraction": 0.0,
+      "id": "ask-r5-x135.000-x149.000-t739-756",
+      "match": true,
+      "network_class": "Local_Cooling",
+      "presence": "yes",
+      "record": "5",
+      "rectangle_median_c": 20.679500579833984,
+      "rows_half_open": [
+        739,
+        756
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        135.0,
+        149.0
+      ]
+    },
+    {
+      "expert_class": "Local_Heating",
+      "far_cable_median_c": 20.431299209594727,
+      "halo_inside_fraction": 0.0,
+      "id": "ask-r5-x1350.000-x1354.000-t1299-1309",
+      "match": true,
+      "network_class": "Local_Heating",
+      "presence": "yes",
+      "record": "5",
+      "rectangle_median_c": 24.049400329589844,
+      "rows_half_open": [
+        1299,
+        1309
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        1350.0,
+        1354.0
+      ]
+    },
+    {
+      "expert_class": "Local_Heating",
+      "far_cable_median_c": 20.395549774169922,
+      "halo_inside_fraction": 0.0,
+      "id": "ask-r5-x1372.000-x1381.000-t1217-1241",
+      "match": true,
+      "network_class": "Local_Heating",
+      "presence": "yes",
+      "record": "5",
+      "rectangle_median_c": 23.524149894714355,
+      "rows_half_open": [
+        1217,
+        1241
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        1372.0,
+        1381.0
+      ]
+    },
+    {
+      "expert_class": "Periodic_Thermal",
+      "far_cable_median_c": 20.481800079345703,
+      "halo_inside_fraction": 0.03125,
+      "id": "ask-r5-x1549.000-x1566.000-t1496-1530",
+      "match": false,
+      "network_class": "Local_Heating",
+      "presence": "yes",
+      "record": "5",
+      "rectangle_median_c": 21.539350509643555,
+      "rows_half_open": [
+        1496,
+        1530
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        1549.0,
+        1566.0
+      ]
+    },
+    {
+      "expert_class": "Background",
+      "far_cable_median_c": 20.732999801635742,
+      "halo_inside_fraction": 0.3939393939393939,
+      "id": "ask-r5-x336.000-x376.000-t151-161",
+      "match": false,
+      "network_class": "Broad_Shift",
+      "presence": "no",
+      "record": "5",
+      "rectangle_median_c": 20.918800354003906,
+      "rows_half_open": [
+        151,
+        161
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        336.0,
+        376.0
+      ]
+    },
+    {
+      "expert_class": "Local_Heating",
+      "far_cable_median_c": 20.760900497436523,
+      "halo_inside_fraction": 0.0,
+      "id": "ask-r5-x387.000-x395.000-t126-157",
+      "match": true,
+      "network_class": "Local_Heating",
+      "presence": "yes",
+      "record": "5",
+      "rectangle_median_c": 24.22879981994629,
+      "rows_half_open": [
+        126,
+        157
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        387.0,
+        395.0
+      ]
+    },
+    {
+      "expert_class": "Local_Heating",
+      "far_cable_median_c": 20.75659942626953,
+      "halo_inside_fraction": 0.0,
+      "id": "ask-r5-x410.000-x422.000-t100-124",
+      "match": true,
+      "network_class": "Local_Heating",
+      "presence": "yes",
+      "record": "5",
+      "rectangle_median_c": 24.082700729370117,
+      "rows_half_open": [
+        100,
+        124
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        410.0,
+        422.0
+      ]
+    },
+    {
+      "expert_class": "Local_Heating",
+      "far_cable_median_c": 20.740400314331055,
+      "halo_inside_fraction": 0.0,
+      "id": "ask-r5-x490.000-x504.000-t192-211",
+      "match": true,
+      "network_class": "Local_Heating",
+      "presence": "yes",
+      "record": "5",
+      "rectangle_median_c": 23.57360076904297,
+      "rows_half_open": [
+        192,
+        211
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        490.0,
+        504.0
+      ]
+    },
+    {
+      "expert_class": "Local_Heating",
+      "far_cable_median_c": 20.54199981689453,
+      "halo_inside_fraction": 0.0,
+      "id": "ask-r5-x793.000-x798.000-t1444-1460",
+      "match": true,
+      "network_class": "Local_Heating",
+      "presence": "yes",
+      "record": "5",
+      "rectangle_median_c": 24.147850036621094,
+      "rows_half_open": [
+        1444,
+        1460
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        793.0,
+        798.0
+      ]
+    },
+    {
+      "expert_class": "Local_Heating",
+      "far_cable_median_c": 20.580299377441406,
+      "halo_inside_fraction": 0.0,
+      "id": "ask-r5-x886.000-x891.000-t1430-1441",
+      "match": true,
+      "network_class": "Local_Heating",
+      "presence": "yes",
+      "record": "5",
+      "rectangle_median_c": 25.008649826049805,
+      "rows_half_open": [
+        1430,
+        1441
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        886.0,
+        891.0
+      ]
+    },
+    {
+      "expert_class": "Local_Heating",
+      "far_cable_median_c": 20.517900466918945,
+      "halo_inside_fraction": 0.0,
+      "id": "ask-r5-x980.000-x985.000-t1414-1431",
+      "match": true,
+      "network_class": "Local_Heating",
+      "presence": "yes",
+      "record": "5",
+      "rectangle_median_c": 23.30894947052002,
+      "rows_half_open": [
+        1414,
+        1431
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        980.0,
+        985.0
+      ]
+    },
+    {
+      "expert_class": "Local_Heating",
+      "far_cable_median_c": 20.50255012512207,
+      "halo_inside_fraction": 0.0,
+      "id": "ask-r5-x995.000-x999.000-t1397-1408",
+      "match": true,
+      "network_class": "Local_Heating",
+      "presence": "yes",
+      "record": "5",
+      "rectangle_median_c": 24.937000274658203,
+      "rows_half_open": [
+        1397,
+        1408
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        995.0,
+        999.0
+      ]
+    },
+    {
+      "expert_class": "Local_Heating",
+      "far_cable_median_c": 23.60350513458252,
+      "halo_inside_fraction": 0.27380952380952384,
+      "id": "ask-r6-x1076.765-x1110.263-t753-969",
+      "match": false,
+      "network_class": "Local_Cooling",
+      "presence": "yes",
+      "record": "6",
+      "rectangle_median_c": 19.905059814453125,
+      "rows_half_open": [
+        753,
+        969
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        1076.765,
+        1110.263
+      ]
+    },
+    {
+      "expert_class": "Broad_Shift",
+      "far_cable_median_c": 22.549250602722168,
+      "halo_inside_fraction": 0.2619047619047619,
+      "id": "ask-r6-x1077.019-x1110.263-t0-705",
+      "match": false,
+      "network_class": "Local_Cooling",
+      "presence": "yes",
+      "record": "6",
+      "rectangle_median_c": 19.682488441467285,
+      "rows_half_open": [
+        0,
+        705
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        1077.019,
+        1110.263
+      ]
+    },
+    {
+      "expert_class": "Local_Heating",
+      "far_cable_median_c": 22.763595581054688,
+      "halo_inside_fraction": 0.0,
+      "id": "ask-r6-x1116.100-x1127.774-t418-705",
+      "match": false,
+      "network_class": "Broad_Shift",
+      "presence": "yes",
+      "record": "6",
+      "rectangle_median_c": 23.826404571533203,
+      "rows_half_open": [
+        418,
+        705
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        1116.1,
+        1127.774
+      ]
+    },
+    {
+      "expert_class": "Background",
+      "far_cable_median_c": 23.625078201293945,
+      "halo_inside_fraction": 1.0,
+      "id": "ask-r6-x125.000-x235.000-t753-807",
+      "match": false,
+      "network_class": "Broad_Shift",
+      "presence": "no",
+      "record": "6",
+      "rectangle_median_c": 23.847683906555176,
+      "rows_half_open": [
+        753,
+        807
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        125.0,
+        235.0
+      ]
+    },
+    {
+      "expert_class": "Background",
+      "far_cable_median_c": 23.606207847595215,
+      "halo_inside_fraction": 1.0,
+      "id": "ask-r6-x125.000-x235.000-t807-861",
+      "match": false,
+      "network_class": "Broad_Shift",
+      "presence": "no",
+      "record": "6",
+      "rectangle_median_c": 23.865869522094727,
+      "rows_half_open": [
+        807,
+        861
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        125.0,
+        235.0
+      ]
+    },
+    {
+      "expert_class": "Background",
+      "far_cable_median_c": 22.354310035705566,
+      "halo_inside_fraction": 0.6865079365079365,
+      "id": "ask-r6-x150.000-x210.000-t362-543",
+      "match": false,
+      "network_class": "Broad_Shift",
+      "presence": "no",
+      "record": "6",
+      "rectangle_median_c": 22.582290649414062,
+      "rows_half_open": [
+        362,
+        543
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        150.0,
+        210.0
+      ]
+    },
+    {
+      "expert_class": "Background",
+      "far_cable_median_c": 23.34308433532715,
+      "halo_inside_fraction": 1.0,
+      "id": "ask-r6-x190.000-x270.000-t915-969",
+      "match": false,
+      "network_class": "Broad_Shift",
+      "presence": "no",
+      "record": "6",
+      "rectangle_median_c": 23.65256118774414,
+      "rows_half_open": [
+        915,
+        969
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        190.0,
+        270.0
+      ]
+    },
+    {
+      "expert_class": "Periodic_Thermal",
+      "far_cable_median_c": 23.509368896484375,
+      "halo_inside_fraction": 0.6904761904761905,
+      "id": "ask-r6-x225.000-x285.000-t861-915",
+      "match": true,
+      "network_class": "Periodic_Thermal",
+      "presence": "yes",
+      "record": "6",
+      "rectangle_median_c": 24.076224327087402,
+      "rows_half_open": [
+        861,
+        915
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        225.0,
+        285.0
+      ]
+    },
+    {
+      "expert_class": "Local_Heating",
+      "far_cable_median_c": 22.875028610229492,
+      "halo_inside_fraction": 0.0,
+      "id": "ask-r6-x407.308-x410.607-t461-705",
+      "match": false,
+      "network_class": "Broad_Shift",
+      "presence": "yes",
+      "record": "6",
+      "rectangle_median_c": 28.874710083007812,
+      "rows_half_open": [
+        461,
+        705
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        407.308,
+        410.607
+      ]
+    },
+    {
+      "expert_class": "Local_Heating",
+      "far_cable_median_c": 23.616548538208008,
+      "halo_inside_fraction": 0.0,
+      "id": "ask-r6-x407.308-x410.861-t753-969",
+      "match": false,
+      "network_class": "Broad_Shift",
+      "presence": "yes",
+      "record": "6",
+      "rectangle_median_c": 29.63893985748291,
+      "rows_half_open": [
+        753,
+        969
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        407.308,
+        410.861
+      ]
+    },
+    {
+      "expert_class": "Local_Heating",
+      "far_cable_median_c": 22.41549301147461,
+      "halo_inside_fraction": 0.6837944664031621,
+      "id": "ask-r6-x450.000-x510.000-t362-543",
+      "match": false,
+      "network_class": "Broad_Shift",
+      "presence": "yes",
+      "record": "6",
+      "rectangle_median_c": 22.591493606567383,
+      "rows_half_open": [
+        362,
+        543
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        450.0,
+        510.0
+      ]
+    },
+    {
+      "expert_class": "Local_Heating",
+      "far_cable_median_c": 23.16128921508789,
+      "halo_inside_fraction": 0.6837944664031621,
+      "id": "ask-r6-x450.000-x510.000-t543-724",
+      "match": false,
+      "network_class": "Broad_Shift",
+      "presence": "yes",
+      "record": "6",
+      "rectangle_median_c": 23.275479316711426,
+      "rows_half_open": [
+        543,
+        724
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        450.0,
+        510.0
+      ]
+    },
+    {
+      "expert_class": "Local_Heating",
+      "far_cable_median_c": 23.730645179748535,
+      "halo_inside_fraction": 0.6837944664031621,
+      "id": "ask-r6-x450.000-x510.000-t753-807",
+      "match": false,
+      "network_class": "Broad_Shift",
+      "presence": "yes",
+      "record": "6",
+      "rectangle_median_c": 23.78139877319336,
+      "rows_half_open": [
+        753,
+        807
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        450.0,
+        510.0
+      ]
+    },
+    {
+      "expert_class": "Local_Heating",
+      "far_cable_median_c": 23.72696304321289,
+      "halo_inside_fraction": 0.6837944664031621,
+      "id": "ask-r6-x450.000-x510.000-t807-861",
+      "match": false,
+      "network_class": "Broad_Shift",
+      "presence": "yes",
+      "record": "6",
+      "rectangle_median_c": 23.722712516784668,
+      "rows_half_open": [
+        807,
+        861
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        450.0,
+        510.0
+      ]
+    },
+    {
+      "expert_class": "Local_Heating",
+      "far_cable_median_c": 23.615042686462402,
+      "halo_inside_fraction": 0.6837944664031621,
+      "id": "ask-r6-x450.000-x510.000-t861-915",
+      "match": false,
+      "network_class": "Broad_Shift",
+      "presence": "yes",
+      "record": "6",
+      "rectangle_median_c": 23.62547016143799,
+      "rows_half_open": [
+        861,
+        915
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        450.0,
+        510.0
+      ]
+    },
+    {
+      "expert_class": "Local_Heating",
+      "far_cable_median_c": 23.47520637512207,
+      "halo_inside_fraction": 0.6837944664031621,
+      "id": "ask-r6-x450.000-x510.000-t915-969",
+      "match": false,
+      "network_class": "Broad_Shift",
+      "presence": "yes",
+      "record": "6",
+      "rectangle_median_c": 23.459989547729492,
+      "rows_half_open": [
+        915,
+        969
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        450.0,
+        510.0
+      ]
+    },
+    {
+      "expert_class": "Local_Cooling",
+      "far_cable_median_c": 23.889751434326172,
+      "halo_inside_fraction": 0.376984126984127,
+      "id": "ask-r6-x510.340-x550.340-t705-721",
+      "match": true,
+      "network_class": "Local_Cooling",
+      "presence": "yes",
+      "record": "6",
+      "rectangle_median_c": 19.41642189025879,
+      "rows_half_open": [
+        705,
+        721
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        510.34,
+        550.34
+      ]
+    },
+    {
+      "expert_class": "Local_Cooling",
+      "far_cable_median_c": 23.621359825134277,
+      "halo_inside_fraction": 0.38492063492063494,
+      "id": "ask-r6-x514.908-x555.512-t753-969",
+      "match": true,
+      "network_class": "Local_Cooling",
+      "presence": "yes",
+      "record": "6",
+      "rectangle_median_c": 19.405231475830078,
+      "rows_half_open": [
+        753,
+        969
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        514.908,
+        555.512
+      ]
+    },
+    {
+      "expert_class": "Local_Cooling",
+      "far_cable_median_c": 22.601970672607422,
+      "halo_inside_fraction": 0.3492063492063492,
+      "id": "ask-r6-x515.670-x554.497-t0-705",
+      "match": true,
+      "network_class": "Local_Cooling",
+      "presence": "yes",
+      "record": "6",
+      "rectangle_median_c": 19.177849769592285,
+      "rows_half_open": [
+        0,
+        705
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        515.67,
+        554.497
+      ]
+    },
+    {
+      "expert_class": "Broad_Shift",
+      "far_cable_median_c": 22.56360149383545,
+      "halo_inside_fraction": 0.0,
+      "id": "ask-r6-x54.562-x59.383-t0-724",
+      "match": true,
+      "network_class": "Broad_Shift",
+      "presence": "yes",
+      "record": "6",
+      "rectangle_median_c": 23.86785888671875,
+      "rows_half_open": [
+        0,
+        724
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        54.562,
+        59.383
+      ]
+    },
+    {
+      "expert_class": "Local_Heating",
+      "far_cable_median_c": 22.879657745361328,
+      "halo_inside_fraction": 0.0,
+      "id": "ask-r6-x590.026-x598.400-t460-705",
+      "match": true,
+      "network_class": "Local_Heating",
+      "presence": "yes",
+      "record": "6",
+      "rectangle_median_c": 25.083181381225586,
+      "rows_half_open": [
+        460,
+        705
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        590.026,
+        598.4
+      ]
+    },
+    {
+      "expert_class": "Background",
+      "far_cable_median_c": 23.644474029541016,
+      "halo_inside_fraction": 0.0,
+      "id": "ask-r6-x628.092-x631.391-t753-969",
+      "match": false,
+      "network_class": "Local_Cooling",
+      "presence": "no",
+      "record": "6",
+      "rectangle_median_c": 22.059029579162598,
+      "rows_half_open": [
+        753,
+        969
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        628.092,
+        631.391
+      ]
+    },
+    {
+      "expert_class": "Local_Cooling",
+      "far_cable_median_c": 23.65765380859375,
+      "halo_inside_fraction": 0.0,
+      "id": "ask-r6-x641.542-x654.992-t753-969",
+      "match": true,
+      "network_class": "Local_Cooling",
+      "presence": "yes",
+      "record": "6",
+      "rectangle_median_c": 19.69139289855957,
+      "rows_half_open": [
+        753,
+        969
+      ],
+      "source": "ask_expert_seed",
+      "used_as_fit_seed": true,
+      "x_m": [
+        641.542,
+        654.992
+      ]
+    }
+  ],
+  "context_match_count": 15,
+  "context_match_label": "15/22",
+  "context_n_cards": 22,
+  "context_names": [
+    "rectangle_median_c",
+    "far_cable_median_c",
+    "halo_inside_fraction"
+  ],
+  "expert_cards_are_not_an_untouched_holdout": true,
+  "expert_seed_match_count": 2,
+  "expert_seed_match_label": "2/15",
+  "expert_seed_n_cards": 15,
+  "gap_cards_in_fit": false,
+  "gap_cards_scored": false,
+  "gap_classed_n_cards": 7,
+  "historical_context_match_count": 15,
+  "historical_context_match_label": "15/22",
+  "historical_context_n_cards": 22,
+  "historical_context_weights_sha256": "144dea50ec6aaad4985afb1bbab0fdb4275b9dc89a094cd9403fa04ab31e4216",
+  "note": "Research comparison. Recovery is class match on every ask expert seed, and separately on each of the previous 15. Both counts are in-sample: those cards are fit seeds. A miss stays a miss. This is not an untouched holdout score and not operational accuracy. The two fractions sit beside the historical context comparison 15/22 and the historical expert comparison 10/15. Gap cards are not fit seeds and are not in either count. Unmapped gap answers are not a match or a miss. next-0003 stays Local_Heating. serve=research. analyze_field stays median_x3 and spatial_z_halo at |Z| >= 3.5.",
+  "operational": false,
+  "previous_match_count": 10,
+  "previous_match_label": "10/15",
+  "previous_n_cards": 15,
+  "previous_weights_sha256": "fed62abe36d24bdce9a07be14677506e41606dc4491f00bd3f80462cd87f4e51",
+  "published_match_count": 9,
+  "published_match_label": "9/15",
+  "published_n_cards": 15,
+  "schema": "research_context_cnn_report_v1",
+  "serve": "research",
+  "sets_anomaly_status": false,
+  "trained_classifier_operational": false,
+  "unmapped_gap_ids": [
+    "gap-r5-x0.000-x127.000-t0-1537",
+    "gap-r5-x155.000-x213.000-t0-1537",
+    "gap-r6-x1116.100-x1129.296-t251-383"
+  ],
+  "unmapped_in_match_count": false,
+  "weights": "models/weights/research_context_cnn.pt",
+  "weights_sha256": "0eb6c52b132b4838f85190cc03567c0a2fcbf48c8ef4710a38ea68ee07f0eea5"
+}

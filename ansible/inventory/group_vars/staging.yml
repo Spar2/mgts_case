@@ -1,0 +1,29 @@
+---
+# Переменные staging (изолированный стенд, НЕ прод).
+app_dir: /opt/haklolarp-staging
+
+# LAN-адрес Xeon (br0 на статике .123; точное значение держи
+# в inventory/host_vars/xeon-staging/local.yml на своей машине).
+staging_lan_ip: 192.168.1.123
+
+# Секреты: задавай через --extra-vars, env или ansible-vault.
+# Пустое значение = шаг пропускается с предупреждением (режим заглушки).
+tailscale_auth_key: "{{ lookup('env', 'TAILSCALE_AUTH_KEY') }}"
+tailscale_hostname: xeon-staging
+cloudflared_tunnel_token: "{{ lookup('env', 'CLOUDFLARED_TUNNEL_TOKEN') }}"
+
+# NIC для WoL (KVM будит по этому MAC).
+# FROZEN: KVM/WoL — не трогать (always-on)
+base_wol_macs:
+  - "00:e0:26:5c:23:20"
+
+# Пользователь для Docker (добавится в группу docker).
+docker_users:
+  - "{{ ansible_user }}"
+
+# Публичный ключ GitHub Actions -> staging (приватный лежит в секрете STAGING_SSH_KEY).
+staging_autodeploy_pubkey_src: files/staging_autodeploy.pub
+
+# Read-only deploy-key Xeon -> GitHub (репо приватное).
+# Публичная половина уже добавлена как Deploy Key, приватная — только на машине
+# админа (~/.ssh/haklolarp_deploy), роль app копирует её на стенд 0600.

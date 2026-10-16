@@ -1,0 +1,11 @@
+[Unit]
+Description=haklolarp CI poll every 5min
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=5min
+Persistent=true
+Unit=haklolarp-ci.service
+
+[Install]
+WantedBy=timers.target

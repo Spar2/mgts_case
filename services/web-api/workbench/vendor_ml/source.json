@@ -1,0 +1,18 @@
+{
+  "repository": "https://github.com/werd0y45/haklolarp",
+  "commit": "237168f4d4a3e11260c9f692880cc477cd7af779",
+  "files": {
+    "fiber/__init__.py": "ff6420fd521b08c24aa476332cea1b42b2c60ec24127b6fe2ffed0003a655f95",
+    "fiber/quality.py": "cd1e61900bf1d5dcef22bc2e5a43423b78481d848fa7d11d49aafe6eec2cffd2",
+    "fiber/grid.py": "429351444b64f045d6e0b4c77a5a8f4fcbdacd27c787e57feee601129681a286",
+    "fiber/pipeline.py": "7a32ec9fcb059a2fc581baffc922dffa6487bb0814cfd18a5484040c61657d6e",
+    "fiber/anomaly/__init__.py": "6e75551874ba3866cccaabd0c66bcde09597d31ce42a611cafd42089638039e3",
+    "fiber/anomaly/detect.py": "1529cf6ce75fc458a2cf60c928b15c2212f14bad63f470204e73173f54bf1fb0",
+    "fiber/anomaly/zones.py": "72bcc9f1d559c227f5736fa8ccccf0e8ffd43ff700b8c8e4b99ee1a014b835b2",
+    "fiber/classify/__init__.py": "d2feabdee9a6f0dcb751533ffa2895e84bab7b2e88c9351792bafeabba73f847",
+    "fiber/classify/rules.py": "f5adb540a9a8391a43770246a880edcdb2158ab67c3c590ae5643858f455fa01",
+    "fiber/denoise/__init__.py": "16ffb3ac3038018f086049b0062c502477c327ce4256ebdfc93884fe873c8f42",
+    "fiber/denoise/dsp.py": "f609939f7bece637035abfab7bf54cf48d01eada25d187d5b71bfa4d19ac3aa5",
+    "fiber/denoise/base.py": "b331bb0e89700c950ef10b112d35e2e984db506a666f47886f0ab1059724fe64"
+  }
+}

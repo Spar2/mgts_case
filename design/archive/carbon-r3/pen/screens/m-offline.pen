@@ -1,0 +1,374 @@
+{
+  "version": "2.20",
+  "children": [
+    {
+      "type": "frame",
+      "id": "H9dGx",
+      "x": 0,
+      "y": 0,
+      "name": "Carbon R3 · Нет связи: локальный черновик",
+      "metadata": {
+        "type": "dts-product-r3",
+        "slug": "m-offline",
+        "role": "Эксперт",
+        "prototype": true
+      },
+      "clip": true,
+      "width": 390,
+      "height": 844,
+      "fill": "$dts.background",
+      "layout": "none",
+      "children": [
+        {
+          "type": "frame",
+          "id": "ABgF7",
+          "x": 0,
+          "y": 0,
+          "name": "Мобильная оболочка",
+          "width": 390,
+          "height": 56,
+          "fill": "$dts.shell",
+          "layout": "none"
+        },
+        {
+          "type": "icon",
+          "id": "jggLe",
+          "x": 16,
+          "y": 16,
+          "name": "menu",
+          "width": 24,
+          "height": 24,
+          "icon": "menu",
+          "library": "lucide",
+          "fill": "#ffffff"
+        },
+        {
+          "type": "text",
+          "id": "I9WJD",
+          "x": 56,
+          "y": 18,
+          "name": "DTS Workbench",
+          "fill": "#ffffff",
+          "textGrowth": "fixed-width",
+          "width": 270,
+          "content": "DTS Workbench",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "600"
+        },
+        {
+          "type": "icon",
+          "id": "cJ0yM",
+          "x": 350,
+          "y": 16,
+          "name": "circle-user-round",
+          "width": 24,
+          "height": 24,
+          "icon": "circle-user-round",
+          "library": "lucide",
+          "fill": "#ffffff"
+        },
+        {
+          "type": "text",
+          "id": "urlHD",
+          "x": 16,
+          "y": 80,
+          "name": "Нет связи: локальный черновик",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 358,
+          "content": "Нет связи: локальный черновик",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 24,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "pRkft",
+          "x": 16,
+          "y": 144,
+          "name": "Сохранение разрешено на доверенном устройстве",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 358,
+          "content": "Сохранение разрешено на доверенном устройстве",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 12,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "QRXaL",
+          "x": 16,
+          "y": 200,
+          "name": "Строка / Ответ не отправлен",
+          "width": 358,
+          "height": 88,
+          "fill": "$dts.selection",
+          "layout": "none"
+        },
+        {
+          "type": "text",
+          "id": "V9wprA",
+          "x": 32,
+          "y": 212,
+          "name": "Ответ не отправлен",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 326,
+          "content": "Ответ не отправлен",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 16,
+          "fontWeight": "600"
+        },
+        {
+          "type": "text",
+          "id": "Vowhu",
+          "x": 32,
+          "y": 242,
+          "name": "Не считать опубликованной разметкой",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 326,
+          "content": "Не считать опубликованной разметкой",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 12,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "jTqIY",
+          "x": 16,
+          "y": 296,
+          "name": "Строка / Сигнал уже открыт",
+          "width": 358,
+          "height": 88,
+          "fill": "$dts.layer",
+          "layout": "none"
+        },
+        {
+          "type": "text",
+          "id": "p11hd6",
+          "x": 32,
+          "y": 308,
+          "name": "Сигнал уже открыт",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 326,
+          "content": "Сигнал уже открыт",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 16,
+          "fontWeight": "600"
+        },
+        {
+          "type": "text",
+          "id": "BuMt0",
+          "x": 32,
+          "y": 338,
+          "name": "Кэш только по разрешению проекта",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 326,
+          "content": "Кэш только по разрешению проекта",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 12,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "RqEHa",
+          "x": 16,
+          "y": 392,
+          "name": "Строка / Перед отправкой",
+          "width": 358,
+          "height": 88,
+          "fill": "$dts.layer",
+          "layout": "none"
+        },
+        {
+          "type": "text",
+          "id": "XdHnG",
+          "x": 32,
+          "y": 404,
+          "name": "Перед отправкой",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 326,
+          "content": "Перед отправкой",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 16,
+          "fontWeight": "600"
+        },
+        {
+          "type": "text",
+          "id": "M2pvwg",
+          "x": 32,
+          "y": 434,
+          "name": "Новый вход, проверка прав и ревизии",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 326,
+          "content": "Новый вход, проверка прав и ревизии",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 12,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "rectangle",
+          "id": "zDwNG",
+          "x": 16,
+          "y": 496,
+          "name": "Разделитель",
+          "fill": "$dts.border-subtle",
+          "width": 358,
+          "height": 1
+        },
+        {
+          "type": "text",
+          "id": "atRLN",
+          "x": 32,
+          "y": 512,
+          "name": "Скопировать обоснование",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 326,
+          "content": "Скопировать обоснование",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "rectangle",
+          "id": "TEiUI",
+          "x": 16,
+          "y": 560,
+          "name": "Разделитель",
+          "fill": "$dts.border-subtle",
+          "width": 358,
+          "height": 1
+        },
+        {
+          "type": "text",
+          "id": "Yxu8u",
+          "x": 32,
+          "y": 576,
+          "name": "Удалить локальный черновик",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 326,
+          "content": "Удалить локальный черновик",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "z7aa2w",
+          "x": 0,
+          "y": 768,
+          "name": "Панель основного действия",
+          "width": 390,
+          "height": 76,
+          "fill": "$dts.background",
+          "layout": "none"
+        },
+        {
+          "type": "rectangle",
+          "id": "z1cXJ",
+          "x": 0,
+          "y": 768,
+          "name": "Разделитель панели",
+          "fill": "$dts.border-subtle",
+          "width": 390,
+          "height": 1
+        },
+        {
+          "type": "frame",
+          "id": "Z7o3e",
+          "x": 16,
+          "y": 780,
+          "name": "Действие / Проверить соединение",
+          "width": 358,
+          "height": 48,
+          "fill": "$dts.interactive",
+          "layout": "none",
+          "children": [
+            {
+              "type": "text",
+              "id": "MOnsz",
+              "x": 16,
+              "y": 14,
+              "name": "Проверить соединение",
+              "fill": "#ffffff",
+              "textGrowth": "fixed-width",
+              "width": 326,
+              "content": "Проверить соединение",
+              "lineHeight": 1.3,
+              "fontFamily": "$dts.font",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variables": {
+    "dts.background": {
+      "type": "color",
+      "value": "#ffffff"
+    },
+    "dts.layer": {
+      "type": "color",
+      "value": "#f4f4f4"
+    },
+    "dts.text-primary": {
+      "type": "color",
+      "value": "#161616"
+    },
+    "dts.text-secondary": {
+      "type": "color",
+      "value": "#525252"
+    },
+    "dts.border-subtle": {
+      "type": "color",
+      "value": "#e0e0e0"
+    },
+    "dts.interactive": {
+      "type": "color",
+      "value": "#0f62fe"
+    },
+    "dts.selection": {
+      "type": "color",
+      "value": "#edf5ff"
+    },
+    "dts.shell": {
+      "type": "color",
+      "value": "#161616"
+    },
+    "dts.font": {
+      "type": "string",
+      "value": "IBM Plex Sans"
+    },
+    "dts.font-mono": {
+      "type": "string",
+      "value": "IBM Plex Mono"
+    },
+    "dts.spacing": {
+      "type": "number",
+      "value": 8
+    }
+  },
+  "fileToken": "0a9ba33a-6ce8-4113-ad2f-1f37bedbf467"
+}

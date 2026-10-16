@@ -1,0 +1,61 @@
+# Notify relay stack: relay (Discord forwarder) + AmneziaWG tunnel.
+# Always-on: both services `restart: always`.
+#
+# NETNS DECISION (minimal): `awg` uses `network_mode: "service:relay"`, i.e. it
+# joins the relay's network namespace instead of creating its own. Single port
+# mapping lives on `relay`; the awg process creates the tun device and routes
+# inside that shared namespace, so relay egress (Discord webhook POSTs) leaves
+# through the VPN. No extra bridge juggling.
+#
+# SECRETS / AWG CONFIG — NOT in the repo. On the host, manually:
+#   sudo install -d -m 0700 /etc/notify-relay
+#   sudo install -m 0600 /path/to/awg0.conf /etc/notify-relay/awg.conf
+#   printf 'RELAY_TOKEN=<long-random>\nDISCORD_WEBHOOK_URL=https://discord.com/api/webhooks/<id>/<token>\n' \
+#     | sudo tee /etc/notify-relay/relay.env >/dev/null
+#   sudo chmod 0600 /etc/notify-relay/relay.env
+#
+# Relay-only dry-run (no VPN):  docker compose -f compose.notify.yml up --build relay
+# Full stack:                   docker compose -f compose.notify.yml up -d --build
+# Variables: NOTIFY_RELAY_PORT (default 8080), NOTIFY_AWG_IMAGE (pinned below).
+
+services:
+  relay:
+    build:
+      context: .
+      dockerfile: Dockerfile.relay
+    image: notify-relay:local
+    container_name: notify-relay
+    restart: always
+    env_file:
+      - /etc/notify-relay/relay.env
+    environment:
+      RELAY_HOST: "0.0.0.0"
+      RELAY_PORT: "8080"
+    ports:
+      - "${NOTIFY_RELAY_PORT:-8080}:8080"
+    healthcheck:
+      test: ["CMD-SHELL", "python -c \"import urllib.request,os; urllib.request.urlopen('http://127.0.0.1:'+os.environ.get('RELAY_PORT','8080')+'/healthz',timeout=4)\""]
+      interval: 30s
+      timeout: 5s
+      start_period: 10s
+      retries: 3
+
+  awg:
+    # PINNED default: replace with a verified image digest on the target.
+    # Must contain the amneziawg client (`awg-quick`). Example only — verify!
+    image: "${NOTIFY_AWG_IMAGE:-ghcr.io/amnezia-vpn/amnezia-wg:latest}"
+    container_name: notify-awg
+    restart: always
+    network_mode: "service:relay"
+    depends_on:
+      relay:
+        condition: service_started
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      # Host config, read-only. File must exist BEFORE first up (see header).
+      - /etc/notify-relay/awg.conf:/etc/amneziawg/awg0.conf:ro
+    # Keep the tunnel up for the container lifetime (sleep keeps PID1 alive).
+    command: ["sh", "-c", "awg-quick up /etc/amneziawg/awg0.conf && exec sleep infinity"]

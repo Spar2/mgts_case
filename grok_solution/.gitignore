@@ -1,0 +1,12 @@
+artifacts
+artifacts/
+__pycache__/
+*.pyc
+
+# Веса выпуска не в git. Локально это symlink на read-only store
+# (/workspace/dts_solution/models_release* или /opt/haklolarp-models).
+models_release/*.pt
+models_release/*.joblib
+models_release_gen2/*.pt
+models_release_dom/*.pt
+models_release_mae/*.pt

@@ -1,0 +1,107 @@
+# =============================================================================
+# AGENT EXEC SANDBOX — Dockerfile.agent-sandbox
+# -----------------------------------------------------------------------------
+# Purpose : Minimal, non-root execution cell for subagents working INSIDE one
+#           branch checkout (web | ml | data). Each exec container mounts ONLY
+#           its own branch path (/opt/haklolarp-<branch> -> /workspace) and
+#           MUST NOT see neighbor branches, host sockets, or host root fs.
+# Scope   : web / ml / data ONLY. There is NO service/cell for `main` (REAL
+#           project deploy target, staging-web-1) and NO cell for `preview`.
+#           devops = control plane, never an exec target. See run-subagent.sh
+#           allowlist + docker-compose.agent.yml (no main/preview services).
+# Guardrails (enforced here + compose):
+#   - non-root `agentuser`, fixed UID:GID 10000:10000 (override via build
+#     args UID/GID to match host workspace owner if Xeon policy requires;
+#     compose pins runtime `user: "10000:10000"` — keep both in sync;
+#     run-subagent.sh enforces the sync as a pre-exec gate and refuses on
+#     host-dir ownership mismatch — operator runs EITHER
+#     `chown -R 10000:10000 /opt/haklolarp-<branch>` (stock image) OR a
+#     coordinated `--build-arg UID/GID` rebuild + compose `user:` sync).
+#   - NEVER mount /var/run/docker.sock, /, /etc, /root (asserted by validator
+#     greps + run-subagent.sh pre-exec config check).
+#   - cap_drop ALL, no-new-privileges:true, mem 4g / cpus 2 / pids 256,
+#     NO published ports (all in docker-compose.agent.yml).
+# Base image pinning:
+#   - PREFERRED: FROM <image>@sha256:<digest>. Digest intentionally NOT
+#     hardcoded here: this file was authored on a host without docker access,
+#     and inventing a digest would be worse than a floating tag (stale/wrong
+#     digest = silent supply-chain lie).
+#   - TODO(pin, Xeon verifier): on Xeon run:
+#       docker pull python:3.12-slim-bookworm
+#       docker inspect --format='{{index .RepoDigests 0}}' python:3.12-slim-bookworm
+#     then replace the FROM line below with the printed
+#     `python@sha256:<hex>` value and commit. Re-pin on every base refresh.
+# Tooling (minimal, each justified):
+#   - python3   : exec workload is Python/shell (lint, tests, scripts).
+#                 Comes from the python:-slim base; no extra install.
+#   - git       : agent works in-place in a branch checkout (log/diff/fetch
+#                 of its OWN branch snapshot). No git = no traceable work.
+#   - curl      : loopback/egress health probes (e.g. :8081/:8082/8123) and
+#                 fetching https artifacts. No python dep for simple probes.
+#   - ca-certificates : TLS for git-https / curl / pip. Without it every
+#                 https fetch fails or tempts --insecure / ssl-verify off.
+#   - tmux      : persistent subagent shell sessions across `docker exec`
+#                 attaches. Without it long runs die with the exec call.
+#   - Node/TS   : DELIBERATELY EXCLUDED. Adds ~200 MB and a second toolchain
+#                 for zero exec need (frontend builds, if any, belong in the
+#                 web branch's own image, not in this generic exec cell).
+# Permissions:
+#   - WORKDIR /workspace owned by agentuser:agentuser (0700-ish posture:
+#     owner rwx, group/others stripped where applicable). Image ships NO
+#     secrets; the ONLY host content visible at runtime is the single
+#     /workspace volume mount. Nothing else from the host is readable by
+#     design (no extra COPY of host files into the image).
+# Validation (local, no docker): grep-assert USER set before CMD, no
+#   `USER root` fallback, agentuser exists with fixed UID:GID. Docker-level
+#   checks (build/run/config) are DEFERRED to the Xeon verifier.
+# =============================================================================
+ARG BASE_IMAGE=python:3.12-slim-bookworm
+# TODO(pin): replace with pinned digest, e.g. FROM python@sha256:<hex>
+FROM ${BASE_IMAGE}
+
+ENV DEBIAN_FRONTEND=noninteractive \
+    LANG=C.UTF-8 \
+    LC_ALL=C.UTF-8 \
+    HOME=/tmp \
+    TMPDIR=/tmp \
+    PIP_CACHE_DIR=/tmp/pip-cache \
+    PYTHONDONTWRITEBYTECODE=0
+# HOME=/tmp (not /home/agentuser): compose runs read_only + tmpfs [/tmp], so
+# the image home dir is NOT writable at runtime. Pointing HOME into the /tmp
+# tmpfs keeps pip/git/tmux writes alive; PIP_CACHE_DIR stays under the same
+# tmpfs for consistency (pip auto-creates it if the tmpfs starts empty).
+
+# Tooling install: keep layer small, no recommends, clean apt lists so the
+# image carries no package-manager cache. ca-certificates kept current.
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+        git \
+        curl \
+        ca-certificates \
+        tmux \
+    && rm -rf /var/lib/apt/lists/* \
+    && update-ca-certificates \
+    && git --version && curl --version | head -n 1 && tmux -V
+
+# Fixed non-root identity. Build args allow the Xeon verifier to rebuild with
+# UID:GID matching the host workspace owner without editing the file:
+#   docker build --build-arg UID=$(id -u) --build-arg GID=$(id -g) ...
+# Default 10000:10000 is deliberately ABOVE normal host ranges (host owners
+# are typically 1000) so a stock build cannot accidentally alias a host user;
+# Xeon MUST `chown -R 10000:10000 /opt/haklolarp-<branch>` OR rebuild with
+# matching args AND keep compose `user:` in sync (validator greps both).
+ARG UID=10000
+ARG GID=10000
+RUN groupadd -r -g ${GID} agentuser \
+    && useradd -r -m -u ${UID} -g agentuser -s /bin/bash agentuser \
+    && mkdir -p /workspace /tmp/pip-cache /home/agentuser/.cache \
+    && chown -R agentuser:agentuser /workspace /tmp/pip-cache /home/agentuser \
+    && chmod 755 /workspace \
+    && chmod 700 /home/agentuser
+
+WORKDIR /workspace
+
+# From here on, root is never re-entered: no `USER root` below this line.
+USER agentuser
+
+CMD ["sleep", "infinity"]

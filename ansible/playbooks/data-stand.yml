@@ -1,0 +1,14 @@
+---
+# Принять уже работающий /opt/haklolarp-stack: клон ветки data и stack/.env
+# с COMPOSE_PROJECT_NAME=haklolarp-stack. Без base/tailscale/libvirt/hardening.
+# docker compose up делает следующий plain-шаг канона.
+- name: Data-стенд — клон поверх существующего стека, .env
+  hosts: staging
+  become: true
+  vars:
+    app_data_enabled: true
+  tasks:
+    - name: Data-стенд | клон ветки data и stack/.env
+      ansible.builtin.import_role:
+        name: app
+        tasks_from: data.yml

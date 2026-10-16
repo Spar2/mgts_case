@@ -1,0 +1,355 @@
+{
+  "schema": "temporal-innovation-v1",
+  "operational": {
+    "clean": "median_x3",
+    "detector": "spatial_z_halo",
+    "threshold_z": 3.5,
+    "inner_m": 8.0,
+    "outer_m": 40.0,
+    "bin_m": 2.0,
+    "floor_c": 0.3,
+    "min_width_m": 3.0,
+    "min_profiles": 6,
+    "min_cells": 24,
+    "max_gap_s": 300.0,
+    "adopted_temporal_innovation": false,
+    "status_reads_temporal_innovation": false
+  },
+  "channel": {
+    "name": "temporal_innovation",
+    "function": "fiber.anomaly.detect.temporal_innovation",
+    "same_as": "temporal_z",
+    "window": 8,
+    "min_past": 3,
+    "max_gap_s": 300.0,
+    "floor_c": 0.3,
+    "causal": true,
+    "alarm_compare_abs_z": 3.5,
+    "adopted": false
+  },
+  "files": [
+    {
+      "record": "1",
+      "source_sha256": "3101c6b2716d2a9e14cd32e2e5d758cb8628741cff6f265cc45db2d7e9e8257f",
+      "shape": [
+        615,
+        11707
+      ],
+      "elapsed_s": 4.48,
+      "agreement": {
+        "n_valid": 7199805,
+        "both": 11560,
+        "spatial_only": 287456,
+        "temporal_only": 206501,
+        "neither": 6694288,
+        "spatial_alarm_fraction": 0.041531124801296705,
+        "temporal_alarm_fraction": 0.030287070274819944
+      }
+    },
+    {
+      "record": "2",
+      "source_sha256": "f115579accd114e0c5a0d968aea3d2710da8ead421fc8c35c17472047cefdec4",
+      "shape": [
+        696,
+        2315
+      ],
+      "elapsed_s": 1.22,
+      "agreement": {
+        "n_valid": 1610388,
+        "both": 345,
+        "spatial_only": 101820,
+        "temporal_only": 957,
+        "neither": 1507266,
+        "spatial_alarm_fraction": 0.0634412327960715,
+        "temporal_alarm_fraction": 0.0008085008085008085
+      }
+    },
+    {
+      "record": "3",
+      "source_sha256": "0acc4e41dc16dd829110881641cb17f94bffd0c2d5255d539d8f3589cd8cdde3",
+      "shape": [
+        788,
+        1689
+      ],
+      "elapsed_s": 1.04,
+      "agreement": {
+        "n_valid": 1330932,
+        "both": 25,
+        "spatial_only": 7419,
+        "temporal_only": 755,
+        "neither": 1322733,
+        "spatial_alarm_fraction": 0.00559307312469758,
+        "temporal_alarm_fraction": 0.0005860554859301602
+      }
+    },
+    {
+      "record": "4",
+      "source_sha256": "d2f5b3d90078420aea45bac86df3656987a2ca9c548d478d134d3ee6349fde17",
+      "shape": [
+        708,
+        1691
+      ],
+      "elapsed_s": 0.94,
+      "agreement": {
+        "n_valid": 1196583,
+        "both": 537,
+        "spatial_only": 32846,
+        "temporal_only": 382,
+        "neither": 1162818,
+        "spatial_alarm_fraction": 0.0278986079528123,
+        "temporal_alarm_fraction": 0.0007680202710551629
+      }
+    },
+    {
+      "record": "5",
+      "source_sha256": "98c1d629ed59478c81fa58b60e891f5587ef9d64ad435655e717a27f64767e46",
+      "shape": [
+        2711,
+        2364
+      ],
+      "elapsed_s": 11.19,
+      "agreement": {
+        "n_valid": 4578879,
+        "both": 5149,
+        "spatial_only": 84422,
+        "temporal_only": 132939,
+        "neither": 4356369,
+        "spatial_alarm_fraction": 0.019561774836155312,
+        "temporal_alarm_fraction": 0.030157599709448535
+      }
+    },
+    {
+      "record": "6",
+      "source_sha256": "23e79988fcfb8a186dec06faffa60e6ed7c93ca7cd9969ac4989fd12b9f358c8",
+      "shape": [
+        1231,
+        4534
+      ],
+      "elapsed_s": 3.81,
+      "agreement": {
+        "n_valid": 5581246,
+        "both": 4535,
+        "spatial_only": 422497,
+        "temporal_only": 43942,
+        "neither": 5110272,
+        "spatial_alarm_fraction": 0.0765119473321907,
+        "temporal_alarm_fraction": 0.008685694914719759
+      }
+    }
+  ],
+  "witnesses": {
+    "n_pass": 8,
+    "n_witnesses": 8,
+    "expert_confirmed": false,
+    "rule": "scripts/score_channels.py hot>=0.3, quiet hot and cold <=0.1, dead tail silent",
+    "rows": [
+      {
+        "id": "4-first-heating-core",
+        "record": "4",
+        "role": "positive_hot",
+        "valid_cells": 1472,
+        "hot_fraction": 1.0,
+        "cold_fraction": 0.0,
+        "alarm_cells": 1472,
+        "pass": true,
+        "expert_confirmed": false
+      },
+      {
+        "id": "4-second-heating-core",
+        "record": "4",
+        "role": "positive_hot",
+        "valid_cells": 2440,
+        "hot_fraction": 1.0,
+        "cold_fraction": 0.0,
+        "alarm_cells": 2440,
+        "pass": true,
+        "expert_confirmed": false
+      },
+      {
+        "id": "4-early-quiet-control",
+        "record": "4",
+        "role": "negative_quiet",
+        "valid_cells": 2432,
+        "hot_fraction": 0.0,
+        "cold_fraction": 0.0,
+        "alarm_cells": 0,
+        "pass": true,
+        "expert_confirmed": false
+      },
+      {
+        "id": "5-early-warm-core",
+        "record": "5",
+        "role": "positive_hot",
+        "valid_cells": 910,
+        "hot_fraction": 0.9989,
+        "cold_fraction": 0.0,
+        "alarm_cells": 909,
+        "pass": true,
+        "expert_confirmed": false
+      },
+      {
+        "id": "5-late-warm-core",
+        "record": "5",
+        "role": "positive_hot",
+        "valid_cells": 410,
+        "hot_fraction": 1.0,
+        "cold_fraction": 0.0,
+        "alarm_cells": 410,
+        "pass": true,
+        "expert_confirmed": false
+      },
+      {
+        "id": "5-dead-tail",
+        "record": "5",
+        "role": "negative_invalid",
+        "valid_cells": 0,
+        "hot_fraction": 0.0,
+        "cold_fraction": 0.0,
+        "alarm_cells": 0,
+        "pass": true,
+        "expert_confirmed": false
+      },
+      {
+        "id": "6-heating-core-1",
+        "record": "6",
+        "role": "positive_hot",
+        "valid_cells": 7344,
+        "hot_fraction": 0.5742,
+        "cold_fraction": 0.0,
+        "alarm_cells": 4217,
+        "pass": true,
+        "expert_confirmed": false
+      },
+      {
+        "id": "6-heating-core-2",
+        "record": "6",
+        "role": "positive_hot",
+        "valid_cells": 7344,
+        "hot_fraction": 1.0,
+        "cold_fraction": 0.0,
+        "alarm_cells": 7344,
+        "pass": true,
+        "expert_confirmed": false
+      }
+    ]
+  },
+  "zakhar_cards": {
+    "n_pass": 4,
+    "n_cards": 4,
+    "rows": [
+      {
+        "id": "review-00034",
+        "record": "1",
+        "presence": "yes",
+        "recorded_shape": "Local_Heating",
+        "polarity": "hot",
+        "structure": "one_span",
+        "rows_half_open": [
+          310,
+          335
+        ],
+        "x_m": [
+          517.77,
+          523.25
+        ],
+        "n_valid": 1350,
+        "hot_cells": 115,
+        "cold_cells": 0,
+        "median_spatial_residual_c": 8.519169,
+        "residual_runs": 1,
+        "temperature_peaks": 1,
+        "presence_ok": true,
+        "polarity_ok": true,
+        "structure_ok": true,
+        "pass": true,
+        "expert_confirmed": true
+      },
+      {
+        "id": "review-00098",
+        "record": "1",
+        "presence": "yes",
+        "recorded_shape": "Local_Heating",
+        "polarity": "hot",
+        "structure": "one_span",
+        "rows_half_open": [
+          0,
+          298
+        ],
+        "x_m": [
+          837.36,
+          851.98
+        ],
+        "n_valid": 43210,
+        "hot_cells": 12993,
+        "cold_cells": 0,
+        "median_spatial_residual_c": 12.237612,
+        "residual_runs": 1,
+        "temperature_peaks": 5,
+        "presence_ok": true,
+        "polarity_ok": true,
+        "structure_ok": true,
+        "pass": true,
+        "expert_confirmed": true
+      },
+      {
+        "id": "review-00187",
+        "record": "1",
+        "presence": "yes",
+        "recorded_shape": "несколько Local_Heating",
+        "polarity": "hot",
+        "structure": "several_peaks",
+        "rows_half_open": [
+          35,
+          43
+        ],
+        "x_m": [
+          230.36,
+          270.36
+        ],
+        "n_valid": 3152,
+        "hot_cells": 0,
+        "cold_cells": 0,
+        "median_spatial_residual_c": 1.114305,
+        "residual_runs": 3,
+        "temperature_peaks": 5,
+        "presence_ok": true,
+        "polarity_ok": true,
+        "structure_ok": true,
+        "pass": true,
+        "expert_confirmed": true
+      },
+      {
+        "id": "review-00223",
+        "record": "1",
+        "presence": "yes",
+        "recorded_shape": "Local_Cooling",
+        "polarity": "cold",
+        "structure": "one_span",
+        "rows_half_open": [
+          234,
+          294
+        ],
+        "x_m": [
+          363.15,
+          403.15
+        ],
+        "n_valid": 23640,
+        "hot_cells": 0,
+        "cold_cells": 0,
+        "median_spatial_residual_c": -0.616104,
+        "residual_runs": 1,
+        "temperature_peaks": 2,
+        "presence_ok": true,
+        "polarity_ok": true,
+        "structure_ok": true,
+        "pass": true,
+        "expert_confirmed": true
+      }
+    ]
+  },
+  "plots": [
+    "docs/images/temporal-innovation/agreement_by_file.png",
+    "docs/images/temporal-innovation/alarm_fraction_by_file.png"
+  ],
+  "note": "8/8 localises the development rectangles. It is not class accuracy and does not adopt temporal_innovation."
+}

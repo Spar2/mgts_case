@@ -1,0 +1,46 @@
+---
+# Роль teams: изоляция команд на стенде.
+# У каждой команды свой системный пользователь, свой каталог и свой CI-ключ.
+# Приватные половины — у команд (их GitHub Secrets), сюда кладётся только
+# паблик через teams_ci_pubkeys (имя пользователя -> ключ). Пустое значение =
+# пользователь и каталог создаются, ключ пропускается с предупреждением
+# (заглушка, пока команда не отдала паблик).
+# Временно (пока команды не отдали паблики): общий CI-пользователь состоит
+# в группах команд, каталоги 0770 — старый ключ продолжает деплоить.
+# Как только ключи появятся: убрать задачу CI-пользователя, вернуть 0750.
+# Честная оговорка: пользователь в группе docker видит все контейнеры хоста
+# (docker group ~= root). Настоящая граница — отдельные ВМ (раннеры уже
+# изолированы гипервизором); здесь — аудит, ротация ключей и владельцы файлов.
+teams_list:
+  - name: web
+    user: haklo-web
+    dir: /opt/haklolarp-web
+    # ADDITIVE (rollout preview): per-team flags, defaults = legacy (ml-equivalent).
+    # STRIP-PHASE follow-up (refs P2): wire mode/allow_docker into tasks, then 0750 + drop docker.
+    mode: "0770"
+    allow_docker: true
+  - name: ml
+    user: haklo-ml
+    dir: /opt/haklolarp-ml
+    # ADDITIVE (rollout preview): per-team flags, defaults = legacy (ml-equivalent).
+    mode: "0770"
+    allow_docker: true
+  # ADDITIVE (rollout preview, B1 decision vs P1 target): new principals
+  # preview/main are created WITHOUT docker (allow_docker:false) until strip
+  # justifies each grant. P1 least-privilege target withholds docker~=root
+  # from new principals; dirs/keys stay identical, only docker withheld.
+  # N2 (refs P4 plan): data reuses stack - no dedicated haklo-data principal/dir;
+  # data entry dropped (was /opt/haklolarp-data). Loops/asserts cover remaining 4.
+  # N1: every entry pins allow_docker explicitly, so `| default(true)` below
+  # never triggers; default(true) kept for preview parity only, strip flips to default(false).
+  - name: preview
+    user: haklo-preview
+    dir: /opt/haklolarp-preview
+    mode: "0770"
+    allow_docker: false
+  - name: main
+    user: haklo-main
+    dir: /opt/haklolarp-main
+    mode: "0770"
+    allow_docker: false
+teams_ci_pubkeys: {}

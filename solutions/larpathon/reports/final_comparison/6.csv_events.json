@@ -1,0 +1,233 @@
+[
+  {
+    "meters": [
+      32.223,
+      37.7469
+    ],
+    "duration_min": 20.0,
+    "amplitude": -4.7714,
+    "local_amplitude": -2.8872,
+    "confidence": 0.7407,
+    "type_hypothesis": "local_cooling (AC / ventilation)",
+    "periodic": false,
+    "source": "detector",
+    "t_range": [
+      23,
+      42
+    ],
+    "s_range": [
+      70,
+      82
+    ]
+  },
+  {
+    "meters": [
+      32.223,
+      37.2866
+    ],
+    "duration_min": 16.0,
+    "amplitude": -5.2761,
+    "local_amplitude": -2.2142,
+    "confidence": 0.721,
+    "type_hypothesis": "local_cooling (AC / ventilation)",
+    "periodic": false,
+    "source": "detector",
+    "t_range": [
+      853,
+      868
+    ],
+    "s_range": [
+      70,
+      81
+    ]
+  },
+  {
+    "meters": [
+      33.1436,
+      36.8262
+    ],
+    "duration_min": 20.0,
+    "amplitude": -4.9521,
+    "local_amplitude": -2.1809,
+    "confidence": 0.7108,
+    "type_hypothesis": "local_cooling (AC / ventilation)",
+    "periodic": false,
+    "source": "detector",
+    "t_range": [
+      236,
+      255
+    ],
+    "s_range": [
+      72,
+      80
+    ]
+  },
+  {
+    "meters": [
+      32.223,
+      36.8262
+    ],
+    "duration_min": 13.0,
+    "amplitude": -5.1581,
+    "local_amplitude": -2.0017,
+    "confidence": 0.7092,
+    "type_hypothesis": "transient",
+    "periodic": false,
+    "source": "detector",
+    "t_range": [
+      940,
+      952
+    ],
+    "s_range": [
+      70,
+      80
+    ]
+  },
+  {
+    "meters": [
+      33.6039,
+      36.8262
+    ],
+    "duration_min": 15.0,
+    "amplitude": -5.8206,
+    "local_amplitude": -2.341,
+    "confidence": 0.6957,
+    "type_hypothesis": "other",
+    "periodic": false,
+    "source": "detector",
+    "t_range": [
+      1008,
+      1022
+    ],
+    "s_range": [
+      73,
+      80
+    ]
+  },
+  {
+    "meters": [
+      1117.6764,
+      1122.2797
+    ],
+    "duration_min": 21.0,
+    "amplitude": 1.6772,
+    "local_amplitude": 1.3741,
+    "confidence": 0.6806,
+    "type_hypothesis": "local_heating (power cable / equipment)",
+    "periodic": false,
+    "source": "detector",
+    "t_range": [
+      433,
+      453
+    ],
+    "s_range": [
+      2428,
+      2438
+    ]
+  },
+  {
+    "meters": [
+      33.1436,
+      36.8262
+    ],
+    "duration_min": 18.0,
+    "amplitude": -4.1693,
+    "local_amplitude": -1.4421,
+    "confidence": 0.6533,
+    "type_hypothesis": "local_cooling (AC / ventilation)",
+    "periodic": false,
+    "source": "detector",
+    "t_range": [
+      548,
+      565
+    ],
+    "s_range": [
+      72,
+      80
+    ]
+  },
+  {
+    "meters": [
+      246.2755,
+      250.8788
+    ],
+    "duration_min": 6.0,
+    "amplitude": 1.2019,
+    "local_amplitude": 0.7875,
+    "confidence": 0.6479,
+    "type_hypothesis": "transient",
+    "periodic": false,
+    "source": "detector",
+    "t_range": [
+      446,
+      451
+    ],
+    "s_range": [
+      535,
+      545
+    ]
+  },
+  {
+    "meters": [
+      974.5144,
+      983.2606
+    ],
+    "duration_min": 23.0,
+    "amplitude": 1.3557,
+    "local_amplitude": 0.8306,
+    "confidence": 0.6102,
+    "type_hypothesis": "local_heating (power cable / equipment)",
+    "periodic": false,
+    "source": "detector",
+    "t_range": [
+      720,
+      742
+    ],
+    "s_range": [
+      2117,
+      2136
+    ]
+  },
+  {
+    "meters": [
+      994.3085,
+      999.8324
+    ],
+    "duration_min": 20.0,
+    "amplitude": 1.5834,
+    "local_amplitude": 1.0147,
+    "confidence": 0.5903,
+    "type_hypothesis": "other",
+    "periodic": false,
+    "source": "detector",
+    "t_range": [
+      720,
+      739
+    ],
+    "s_range": [
+      2160,
+      2172
+    ]
+  },
+  {
+    "meters": [
+      501.7575,
+      511.8847
+    ],
+    "duration_min": 8.0,
+    "amplitude": 0.7663,
+    "local_amplitude": 1.0005,
+    "confidence": 0.5898,
+    "type_hypothesis": "other",
+    "periodic": false,
+    "source": "detector",
+    "t_range": [
+      703,
+      710
+    ],
+    "s_range": [
+      1090,
+      1112
+    ]
+  }
+]

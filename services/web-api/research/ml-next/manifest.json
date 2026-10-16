@@ -1,0 +1,10 @@
+{
+  "schema_version": "dts-real-study-pack-v1",
+  "source_commit": "1c09476310bbad92cd832dc65cf339aab3bc8e61",
+  "files": {
+    "report.json": "d0e45c842ad5afa1c5451ad984d1e26865d13b8deb9eeb1c11c4d40c3cca56f4",
+    "protocol.json": "8dca5d52a0b49f7a976fa0e9ae08d7a8f97e77ede39a78f46747a668b9e55b4e",
+    "temporal-report.json": "adb72ffec1db8088a0ff3028049c82a8531b043d3260e600ad993abac8bf6790",
+    "classification-report.json": "e563a985f3aabd7728bb84d7f898393d6ef2fc91a0a49e301bc19cdbdbc1a4b3"
+  }
+}

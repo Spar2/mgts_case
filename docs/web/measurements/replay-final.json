@@ -1,0 +1,2013 @@
+{
+  "startedAt": "2026-10-09T13:07:33.194Z",
+  "started": 3174.2000000476837,
+  "durationMs": 1800000,
+  "done": true,
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+  "viewport": [
+    1440,
+    900
+  ],
+  "devicePixelRatio": 1,
+  "buildAssets": [
+    "/assets/index-DMmd5MNs.js"
+  ],
+  "origin": "http://127.0.0.1:8081",
+  "frameCount": 286331,
+  "longTasks": 0,
+  "longTaskMaxMs": 0,
+  "samples": [
+    {
+      "elapsedS": 0,
+      "heapMiB": 7.794464111328125,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "0",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 15,
+      "heapMiB": 13.098917007446289,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "86",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 30,
+      "heapMiB": 9.757369041442871,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "176",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 45,
+      "heapMiB": 11.644533157348633,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "266",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 60,
+      "heapMiB": 13.429475784301758,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "356",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 75,
+      "heapMiB": 10.420145988464355,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "446",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 90,
+      "heapMiB": 12.56828784942627,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "536",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 105,
+      "heapMiB": 9.017879486083984,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "626",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 120,
+      "heapMiB": 11.114051818847656,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "691",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 135,
+      "heapMiB": 13.753740310668945,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "736",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 150,
+      "heapMiB": 10.467604637145996,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "780",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 165,
+      "heapMiB": 10.9773588180542,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "825",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 180,
+      "heapMiB": 12.155501365661621,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "868",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 195,
+      "heapMiB": 9.532373428344727,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "913",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 210,
+      "heapMiB": 11.22327709197998,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "957",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 225,
+      "heapMiB": 12.270222663879395,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "1002",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 240,
+      "heapMiB": 10.041555404663086,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "1046",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 255,
+      "heapMiB": 11.578428268432617,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "1091",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 270,
+      "heapMiB": 12.598175048828125,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "1135",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 285,
+      "heapMiB": 10.556225776672363,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "1180",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 300,
+      "heapMiB": 11.971879959106445,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "1232",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 315,
+      "heapMiB": 13.953666687011719,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "1322",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 330,
+      "heapMiB": 11.39104175567627,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "1412",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 345,
+      "heapMiB": 11.589201927185059,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "1502",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 360,
+      "heapMiB": 12.922218322753906,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "1592",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 375,
+      "heapMiB": 11.099905014038086,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 181,
+      "visibility": "visible",
+      "row": "1682",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 390,
+      "heapMiB": 12.50783920288086,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "1768",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 405,
+      "heapMiB": 13.209193229675293,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "1858",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 420,
+      "heapMiB": 10.998974800109863,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "1948",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 435,
+      "heapMiB": 12.388724327087402,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "2038",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 450,
+      "heapMiB": 12.949352264404297,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "2128",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 465,
+      "heapMiB": 10.823685646057129,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "2218",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 480,
+      "heapMiB": 12.285890579223633,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "2308",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 495,
+      "heapMiB": 13.33737564086914,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "2398",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 510,
+      "heapMiB": 11.367402076721191,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "2488",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 525,
+      "heapMiB": 11.764161109924316,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "2578",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 540,
+      "heapMiB": 13.31646728515625,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "2668",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 555,
+      "heapMiB": 13.400050163269043,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "35",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 570,
+      "heapMiB": 10.804291725158691,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "122",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 585,
+      "heapMiB": 11.874038696289062,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "212",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 600,
+      "heapMiB": 12.990887641906738,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "302",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 615,
+      "heapMiB": 11.456350326538086,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "392",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 630,
+      "heapMiB": 11.794636726379395,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "482",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 645,
+      "heapMiB": 13.426154136657715,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "572",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 660,
+      "heapMiB": 10.807671546936035,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "662",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 675,
+      "heapMiB": 13.039809226989746,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "709",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 690,
+      "heapMiB": 13.750944137573242,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "754",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 705,
+      "heapMiB": 12.06308364868164,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "798",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 720,
+      "heapMiB": 12.290952682495117,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "843",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 735,
+      "heapMiB": 9.443768501281738,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "887",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 750,
+      "heapMiB": 10.870271682739258,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "930",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 765,
+      "heapMiB": 12.168396949768066,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "975",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 780,
+      "heapMiB": 9.699762344360352,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "1019",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 795,
+      "heapMiB": 11.227398872375488,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "1064",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 810,
+      "heapMiB": 13.83830738067627,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "1109",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 825,
+      "heapMiB": 10.482319831848145,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "1153",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 840,
+      "heapMiB": 11.92509937286377,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "1198",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 855,
+      "heapMiB": 13.288436889648438,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "1268",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 870,
+      "heapMiB": 10.869942665100098,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "1358",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 885,
+      "heapMiB": 12.21740436553955,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "1448",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 900,
+      "heapMiB": 14.672972679138184,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "1538",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 915,
+      "heapMiB": 12.196378707885742,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "1628",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 930,
+      "heapMiB": 12.299205780029297,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "1715",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 945,
+      "heapMiB": 9.749871253967285,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "1805",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 960,
+      "heapMiB": 10.918292999267578,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "1895",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 975,
+      "heapMiB": 12.5996732711792,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "1984",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 990,
+      "heapMiB": 13.172760009765625,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "2074",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 1005,
+      "heapMiB": 11.597464561462402,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "2164",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 1020,
+      "heapMiB": 13.657391548156738,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "2254",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 1035,
+      "heapMiB": 11.274677276611328,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "2344",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 1050,
+      "heapMiB": 11.6851806640625,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "2434",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 1065,
+      "heapMiB": 13.18309497833252,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "2524",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 1080,
+      "heapMiB": 9.99953842163086,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "2614",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 1095,
+      "heapMiB": 12.100896835327148,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "2704",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 1110,
+      "heapMiB": 12.919448852539062,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "71",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 1125,
+      "heapMiB": 10.063146591186523,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "158",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 1140,
+      "heapMiB": 11.526266098022461,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "248",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 1155,
+      "heapMiB": 13.161384582519531,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "338",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 1170,
+      "heapMiB": 11.028402328491211,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "428",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 1185,
+      "heapMiB": 12.146479606628418,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "518",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 1200,
+      "heapMiB": 12.545771598815918,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "608",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 1215,
+      "heapMiB": 10.004338264465332,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "682",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 1230,
+      "heapMiB": 11.700606346130371,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "727",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 1245,
+      "heapMiB": 12.816400527954102,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "771",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 1260,
+      "heapMiB": 10.714648246765137,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "816",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 1275,
+      "heapMiB": 11.11496639251709,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "861",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 1290,
+      "heapMiB": 12.671873092651367,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "905",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 1305,
+      "heapMiB": 9.769875526428223,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "948",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 1320,
+      "heapMiB": 11.689611434936523,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "993",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 1335,
+      "heapMiB": 12.791939735412598,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "1037",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 1350,
+      "heapMiB": 13.863275527954102,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "1082",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 1365,
+      "heapMiB": 10.761736869812012,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "1126",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 1380,
+      "heapMiB": 12.265069007873535,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "1171",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 1395,
+      "heapMiB": 13.32742691040039,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "1215",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 1410,
+      "heapMiB": 12.366082191467285,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "1304",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 1425,
+      "heapMiB": 12.68270492553711,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "1394",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 1440,
+      "heapMiB": 9.690690994262695,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "1484",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 1455,
+      "heapMiB": 11.289811134338379,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "1574",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 1470,
+      "heapMiB": 12.846163749694824,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "1664",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 1485,
+      "heapMiB": 9.939077377319336,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "1751",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 1500,
+      "heapMiB": 10.900189399719238,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "1840",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 1515,
+      "heapMiB": 12.004843711853027,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "1930",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 1530,
+      "heapMiB": 9.38304328918457,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "2020",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 1545,
+      "heapMiB": 11.527341842651367,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "2110",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 1560,
+      "heapMiB": 12.359077453613281,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "2200",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 1575,
+      "heapMiB": 13.938780784606934,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "2290",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 1590,
+      "heapMiB": 10.687707901000977,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "2380",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 1605,
+      "heapMiB": 11.5939302444458,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "2470",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 1620,
+      "heapMiB": 12.914198875427246,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "2560",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 1635,
+      "heapMiB": 11.141805648803711,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "2650",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 1650,
+      "heapMiB": 11.249471664428711,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "17",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 1665,
+      "heapMiB": 12.50186824798584,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "107",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 1680,
+      "heapMiB": 14.220399856567383,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "194",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 1695,
+      "heapMiB": 11.298039436340332,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "284",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 1710,
+      "heapMiB": 12.287856101989746,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "374",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 1725,
+      "heapMiB": 13.319962501525879,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "464",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 1740,
+      "heapMiB": 11.50275993347168,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "554",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 1755,
+      "heapMiB": 12.340310096740723,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "644",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 1770,
+      "heapMiB": 13.831275939941406,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "700",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 1785,
+      "heapMiB": 10.923312187194824,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "745",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 1800,
+      "heapMiB": 12.471454620361328,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "789",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    },
+    {
+      "elapsedS": 1800,
+      "heapMiB": 12.471454620361328,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 180,
+      "visibility": "visible",
+      "row": "789",
+      "graphics": {
+        "webglContexts": 1,
+        "bufferBytes": 589856,
+        "textureBytes": 1024,
+        "canvasSurfaceBytes": 2038880,
+        "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+      }
+    }
+  ],
+  "replayErrors": 0,
+  "runtimeErrors": [],
+  "endedAt": "2026-10-09T13:37:33.198Z",
+  "frameP95Ms": 8.299999999813735,
+  "conditions": "Windows desktop; actual Docker UI/API on loopback 8081; source 5.csv; 60x replay repeated at end; 1440x900 CSS px / DPR1. Other browser QA and isolated Linux CI ran concurrently; source arrays read-only. Not phone hardware or a GPU FPS benchmark.",
+  "source_commit": "6f4609e",
+  "machine": {
+    "cpu_reported_name": "Genuine Intel(R) 0000",
+    "physical_cores": 24,
+    "logical_processors": 32,
+    "ram_bytes": 68002148352
+  },
+  "summary": {
+    "samples": 122,
+    "heap_mib_range": [
+      7.794464111328125,
+      14.672972679138184
+    ],
+    "warm_2_to_10_min_heap_median_mib": 11.874038696289062,
+    "last_10_min_heap_median_mib": 12.134956359863281,
+    "binary_cache_mib_range": [
+      0.21582412719726562,
+      0.21582412719726562
+    ],
+    "canvas_counts": [
+      3
+    ],
+    "webgl_context_counts": [
+      1
+    ],
+    "graphics_buffers_bytes": [
+      589856
+    ],
+    "palette_texture_bytes": [
+      1024
+    ],
+    "canvas_surface_bytes_estimate": [
+      2038880
+    ]
+  }
+}

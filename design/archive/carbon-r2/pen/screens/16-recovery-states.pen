@@ -1,0 +1,712 @@
+{
+  "version": "2.19",
+  "children": [
+    {
+      "type": "frame",
+      "id": "w7Fsl1",
+      "x": 0,
+      "y": 0,
+      "name": "Carbon · Состояния интерфейса и восстановление",
+      "metadata": {
+        "type": "dts-carbon-concept",
+        "title": "Carbon · Состояния и восстановление"
+      },
+      "clip": true,
+      "width": 1440,
+      "height": 1000,
+      "fill": "$dts.background",
+      "layout": "none",
+      "children": [
+        {
+          "type": "frame",
+          "id": "owqTg",
+          "x": 0,
+          "y": 0,
+          "name": "Carbon UI shell",
+          "width": 1440,
+          "height": 48,
+          "fill": "$dts.shell",
+          "layout": "none",
+          "children": [
+            {
+              "type": "text",
+              "id": "Z87T26",
+              "x": 16,
+              "y": 11,
+              "name": "≡",
+              "fill": "#ffffff",
+              "textGrowth": "fixed-width",
+              "width": 28,
+              "content": "≡",
+              "lineHeight": 1.3,
+              "fontFamily": "$dts.font",
+              "fontSize": 20,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "bD1bO",
+              "x": 64,
+              "y": 14,
+              "name": "МГТС / DTS Workbench",
+              "fill": "#ffffff",
+              "textGrowth": "fixed-width",
+              "width": 240,
+              "content": "МГТС / DTS Workbench",
+              "lineHeight": 1.3,
+              "fontFamily": "$dts.font",
+              "fontSize": 14,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "npbnl",
+              "x": 352,
+              "y": 14,
+              "name": "Данные",
+              "fill": "#c6c6c6",
+              "textGrowth": "fixed-width",
+              "width": 124,
+              "content": "Данные",
+              "lineHeight": 1.3,
+              "fontFamily": "$dts.font",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "o5CN6",
+              "x": 496,
+              "y": 14,
+              "name": "Исследование",
+              "fill": "#ffffff",
+              "textGrowth": "fixed-width",
+              "width": 124,
+              "content": "Исследование",
+              "lineHeight": 1.3,
+              "fontFamily": "$dts.font",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "rectangle",
+              "id": "RToYA",
+              "x": 484,
+              "y": 45,
+              "name": "Выбранный раздел",
+              "fill": "$dts.interactive",
+              "width": 128,
+              "height": 3
+            },
+            {
+              "type": "text",
+              "id": "f4Ghm",
+              "x": 640,
+              "y": 14,
+              "name": "Разметка",
+              "fill": "#c6c6c6",
+              "textGrowth": "fixed-width",
+              "width": 124,
+              "content": "Разметка",
+              "lineHeight": 1.3,
+              "fontFamily": "$dts.font",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "gNkqC",
+              "x": 784,
+              "y": 14,
+              "name": "Модели",
+              "fill": "#c6c6c6",
+              "textGrowth": "fixed-width",
+              "width": 124,
+              "content": "Модели",
+              "lineHeight": 1.3,
+              "fontFamily": "$dts.font",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "ku3wC",
+              "x": 1160,
+              "y": 14,
+              "name": "Проект хакатона",
+              "fill": "#c6c6c6",
+              "textGrowth": "fixed-width",
+              "width": 190,
+              "content": "Проект хакатона",
+              "lineHeight": 1.3,
+              "fontFamily": "$dts.font",
+              "fontSize": 12,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "D6z2A",
+          "x": 32,
+          "y": 68,
+          "name": "Рабочая область / Исследование",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 800,
+          "content": "Рабочая область / Исследование",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 12,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "BPZ7Q",
+          "x": 32,
+          "y": 96,
+          "name": "Состояния интерфейса и восстановление",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 980,
+          "content": "Состояния интерфейса и восстановление",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 28,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "rectangle",
+          "id": "h0Jml",
+          "x": 0,
+          "y": 976,
+          "name": "Строка состояния",
+          "fill": "$dts.layer",
+          "width": 1440,
+          "height": 24
+        },
+        {
+          "type": "text",
+          "id": "p2rBI7",
+          "x": 32,
+          "y": 981,
+          "name": "МАКЕТ  ·  Измерения: 5.csv  ·  Сценарии интерфейса не являются экспертной разметкой",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 1376,
+          "content": "МАКЕТ  ·  Измерения: 5.csv  ·  Сценарии интерфейса не являются экспертной разметкой",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 12,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "PPhCy",
+          "x": 32,
+          "y": 216,
+          "name": "01 / Нет измерений",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 672,
+          "content": "01 / Нет измерений",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 16,
+          "fontWeight": "600"
+        },
+        {
+          "type": "rectangle",
+          "id": "zkkXn",
+          "x": 32,
+          "y": 248,
+          "name": "Разделитель / 01 / Нет измерений",
+          "fill": "$dts.border-subtle",
+          "width": 672,
+          "height": 1
+        },
+        {
+          "type": "text",
+          "id": "vXaOe",
+          "x": 32,
+          "y": 272,
+          "name": "В выбранном диапазоне нет доступных наблюдений.",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 640,
+          "content": "В выбранном диапазоне нет доступных наблюдений.",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 20,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "W9dPQ7",
+          "x": 32,
+          "y": 352,
+          "name": "Пустой сигнал не считается отрицательным ответом.",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 640,
+          "content": "Пустой сигнал не считается отрицательным ответом.",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "sqKmJ",
+          "x": 32,
+          "y": 440,
+          "name": "Кнопка / Изменить интервал",
+          "width": 256,
+          "height": 40,
+          "fill": "$dts.interactive",
+          "layout": "none",
+          "children": [
+            {
+              "type": "text",
+              "id": "L8pYFy",
+              "x": 16,
+              "y": 10,
+              "name": "Изменить интервал",
+              "fill": "#ffffff",
+              "textGrowth": "fixed-width",
+              "width": 224,
+              "content": "Изменить интервал",
+              "lineHeight": 1.3,
+              "fontFamily": "$dts.font",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "Yoj8F",
+          "x": 312,
+          "y": 440,
+          "name": "Кнопка / Показать полную запись",
+          "width": 360,
+          "height": 40,
+          "fill": "$dts.layer",
+          "layout": "none",
+          "children": [
+            {
+              "type": "text",
+              "id": "kvO0G",
+              "x": 16,
+              "y": 10,
+              "name": "Показать полную запись",
+              "fill": "$dts.text-primary",
+              "textGrowth": "fixed-width",
+              "width": 328,
+              "content": "Показать полную запись",
+              "lineHeight": 1.3,
+              "fontFamily": "$dts.font",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "dCfSJ",
+          "x": 736,
+          "y": 216,
+          "name": "02 / Анализ выполняется",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 672,
+          "content": "02 / Анализ выполняется",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 16,
+          "fontWeight": "600"
+        },
+        {
+          "type": "rectangle",
+          "id": "K3m8pI",
+          "x": 736,
+          "y": 248,
+          "name": "Разделитель / 02 / Анализ выполняется",
+          "fill": "$dts.border-subtle",
+          "width": 672,
+          "height": 1
+        },
+        {
+          "type": "text",
+          "id": "Diq22",
+          "x": 736,
+          "y": 272,
+          "name": "Чтение → проверка качества → фон → кандидаты зон.",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 640,
+          "content": "Чтение → проверка качества → фон → кандидаты зон.",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 20,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "Cmf3i",
+          "x": 736,
+          "y": 352,
+          "name": "Доступные исходные данные можно изучать до завершения.",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 640,
+          "content": "Доступные исходные данные можно изучать до завершения.",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "gSlyS",
+          "x": 736,
+          "y": 440,
+          "name": "Кнопка / Открыть журнал",
+          "width": 256,
+          "height": 40,
+          "fill": "$dts.interactive",
+          "layout": "none",
+          "children": [
+            {
+              "type": "text",
+              "id": "ZGlu0",
+              "x": 16,
+              "y": 10,
+              "name": "Открыть журнал",
+              "fill": "#ffffff",
+              "textGrowth": "fixed-width",
+              "width": 224,
+              "content": "Открыть журнал",
+              "lineHeight": 1.3,
+              "fontFamily": "$dts.font",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "U4BVTZ",
+          "x": 1016,
+          "y": 440,
+          "name": "Кнопка / Отменить запуск",
+          "width": 360,
+          "height": 40,
+          "fill": "$dts.layer",
+          "layout": "none",
+          "children": [
+            {
+              "type": "text",
+              "id": "fV5bY",
+              "x": 16,
+              "y": 10,
+              "name": "Отменить запуск",
+              "fill": "$dts.text-primary",
+              "textGrowth": "fixed-width",
+              "width": 328,
+              "content": "Отменить запуск",
+              "lineHeight": 1.3,
+              "fontFamily": "$dts.font",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "TTXd7",
+          "x": 32,
+          "y": 568,
+          "name": "03 / Конфликт разметки",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 672,
+          "content": "03 / Конфликт разметки",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 16,
+          "fontWeight": "600"
+        },
+        {
+          "type": "rectangle",
+          "id": "Ho31U",
+          "x": 32,
+          "y": 600,
+          "name": "Разделитель / 03 / Конфликт разметки",
+          "fill": "$dts.border-subtle",
+          "width": 672,
+          "height": 1
+        },
+        {
+          "type": "text",
+          "id": "Rdj9D",
+          "x": 32,
+          "y": 624,
+          "name": "Окно изменено другим сеансом. Ваш черновик сохранён.",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 640,
+          "content": "Окно изменено другим сеансом. Ваш черновик сохранён.",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 20,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "Ks4W6",
+          "x": 32,
+          "y": 704,
+          "name": "Не перезаписывать чужой ответ без сравнения ревизий.",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 640,
+          "content": "Не перезаписывать чужой ответ без сравнения ревизий.",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "xcdF7",
+          "x": 32,
+          "y": 792,
+          "name": "Кнопка / Сравнить версии",
+          "width": 256,
+          "height": 40,
+          "fill": "$dts.interactive",
+          "layout": "none",
+          "children": [
+            {
+              "type": "text",
+              "id": "S8zaB",
+              "x": 16,
+              "y": 10,
+              "name": "Сравнить версии",
+              "fill": "#ffffff",
+              "textGrowth": "fixed-width",
+              "width": 224,
+              "content": "Сравнить версии",
+              "lineHeight": 1.3,
+              "fontFamily": "$dts.font",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "Fr21M",
+          "x": 312,
+          "y": 792,
+          "name": "Кнопка / Вернуться к черновику",
+          "width": 360,
+          "height": 40,
+          "fill": "$dts.layer",
+          "layout": "none",
+          "children": [
+            {
+              "type": "text",
+              "id": "u5xKcU",
+              "x": 16,
+              "y": 10,
+              "name": "Вернуться к черновику",
+              "fill": "$dts.text-primary",
+              "textGrowth": "fixed-width",
+              "width": 328,
+              "content": "Вернуться к черновику",
+              "lineHeight": 1.3,
+              "fontFamily": "$dts.font",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "Lp6KL",
+          "x": 736,
+          "y": 568,
+          "name": "04 / Ошибка импорта",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 672,
+          "content": "04 / Ошибка импорта",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 16,
+          "fontWeight": "600"
+        },
+        {
+          "type": "rectangle",
+          "id": "DK4HE",
+          "x": 736,
+          "y": 600,
+          "name": "Разделитель / 04 / Ошибка импорта",
+          "fill": "$dts.border-subtle",
+          "width": 672,
+          "height": 1
+        },
+        {
+          "type": "text",
+          "id": "gE6hb",
+          "x": 736,
+          "y": 624,
+          "name": "Количество значений не совпадает с координатной осью.",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 640,
+          "content": "Количество значений не совпадает с координатной осью.",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 20,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "nUiRJ",
+          "x": 736,
+          "y": 704,
+          "name": "Исходный файл сохраняется; ошибка относится к разбору.",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 640,
+          "content": "Исходный файл сохраняется; ошибка относится к разбору.",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "rW9ZI",
+          "x": 736,
+          "y": 792,
+          "name": "Кнопка / Посмотреть строку",
+          "width": 256,
+          "height": 40,
+          "fill": "$dts.interactive",
+          "layout": "none",
+          "children": [
+            {
+              "type": "text",
+              "id": "w9HI1M",
+              "x": 16,
+              "y": 10,
+              "name": "Посмотреть строку",
+              "fill": "#ffffff",
+              "textGrowth": "fixed-width",
+              "width": 224,
+              "content": "Посмотреть строку",
+              "lineHeight": 1.3,
+              "fontFamily": "$dts.font",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "BioRJ",
+          "x": 1016,
+          "y": 792,
+          "name": "Кнопка / Исправить сопоставление",
+          "width": 360,
+          "height": 40,
+          "fill": "$dts.layer",
+          "layout": "none",
+          "children": [
+            {
+              "type": "text",
+              "id": "fndbc",
+              "x": 16,
+              "y": 10,
+              "name": "Исправить сопоставление",
+              "fill": "$dts.text-primary",
+              "textGrowth": "fixed-width",
+              "width": 328,
+              "content": "Исправить сопоставление",
+              "lineHeight": 1.3,
+              "fontFamily": "$dts.font",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "muBTR",
+          "x": 32,
+          "y": 932,
+          "name": "Контекст сохраняется: запись, участок, время, комментарий и несохранённый ответ.",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 1376,
+          "content": "Контекст сохраняется: запись, участок, время, комментарий и несохранённый ответ.",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        }
+      ]
+    }
+  ],
+  "variables": {
+    "dts.background": {
+      "type": "color",
+      "value": "#ffffff"
+    },
+    "dts.layer": {
+      "type": "color",
+      "value": "#f4f4f4"
+    },
+    "dts.text-primary": {
+      "type": "color",
+      "value": "#161616"
+    },
+    "dts.text-secondary": {
+      "type": "color",
+      "value": "#525252"
+    },
+    "dts.border-subtle": {
+      "type": "color",
+      "value": "#e0e0e0"
+    },
+    "dts.interactive": {
+      "type": "color",
+      "value": "#0f62fe"
+    },
+    "dts.selection": {
+      "type": "color",
+      "value": "#edf5ff"
+    },
+    "dts.shell": {
+      "type": "color",
+      "value": "#161616"
+    },
+    "dts.font": {
+      "type": "string",
+      "value": "IBM Plex Sans"
+    },
+    "dts.font-mono": {
+      "type": "string",
+      "value": "IBM Plex Mono"
+    },
+    "dts.spacing": {
+      "type": "number",
+      "value": 8
+    }
+  },
+  "fileToken": "0a9ba33a-6ce8-4113-ad2f-1f37bedbf467"
+}

@@ -1,0 +1,14 @@
+{
+  "architecture_probe_no_training": true,
+  "output_spatial_temporal_peak_to_peak_per_patch": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "decoder_is_constant_within_each_patch": true,
+  "zero_score_threshold": 0.0,
+  "zero_score_mask_fraction": 1.0,
+  "synthetic_training_performed": false,
+  "torch_version": "2.14.1+cpu",
+  "note": "Random inputs/weights are contract probes; not learning or accuracy evidence."
+}

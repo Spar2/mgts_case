@@ -1,0 +1,30 @@
+{
+  "browser": "webkit",
+  "work_and_lab": {
+    "work_id": "52b5f7b3414d497fbf49e30b75b52388",
+    "case_id": "1666bdba562348f7a0ca5be3d080709b",
+    "real_work_review_case": true,
+    "real_lab_comparison": true,
+    "real_monitoring_profile": true,
+    "mobile_sizes": [
+      320,
+      390,
+      430,
+      1440
+    ],
+    "page_errors": [],
+    "expert_vote": "technical_QA_only"
+  },
+  "replay_calculation": {
+    "stream_id": "fde8bdf52c444996affa2247f8eb65b3",
+    "verified_profiles": 708,
+    "verified_cells": 1197228,
+    "analysis_job": "0ca772de48264063a2f5ef9eefdf4908",
+    "run_id": "bb39fd957c884cb595660fbba988e24dbb4b2cc3fefa83a91b35d097d36cc5c3",
+    "work_id": "05d945c70d204b1d827c875f65a8357a",
+    "case_id": "8e78dfed2ab340aa97fbbb8cd539653d",
+    "replay_analysis_work_case": true,
+    "no_equipment_claim": true
+  },
+  "conditions": "Real native sources and imported numerical packages in isolated PostgreSQL QA schema; technical QA unknown vote, not expert truth; browser widths emulated on Windows desktop"
+}

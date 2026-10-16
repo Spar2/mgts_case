@@ -1,0 +1,144 @@
+{
+  "records": [
+    {
+      "record": "1",
+      "gaps_gt300s": 0,
+      "catalog_rows": 5598,
+      "event_bbox_crosses_gap": 0,
+      "timestamp_bounds_not_in_source": 0,
+      "invalid_cells_in_native": 0,
+      "examples_crossing_gap": []
+    },
+    {
+      "record": "2",
+      "gaps_gt300s": 2,
+      "catalog_rows": 2139,
+      "event_bbox_crosses_gap": 14,
+      "timestamp_bounds_not_in_source": 0,
+      "invalid_cells_in_native": 852,
+      "examples_crossing_gap": [
+        {
+          "rows_inclusive": [
+            174,
+            444
+          ],
+          "time_start": "2026-04-10 05:54:25+00",
+          "time_end": "2026-04-10 15:25:35+00",
+          "max_gap_s": 1203.0
+        },
+        {
+          "rows_inclusive": [
+            212,
+            419
+          ],
+          "time_start": "2026-04-10 07:12:34+00",
+          "time_end": "2026-04-10 14:35:29+00",
+          "max_gap_s": 1203.0
+        },
+        {
+          "rows_inclusive": [
+            261,
+            412
+          ],
+          "time_start": "2026-04-10 08:50:46+00",
+          "time_end": "2026-04-10 14:21:27+00",
+          "max_gap_s": 1203.0
+        }
+      ]
+    },
+    {
+      "record": "3",
+      "gaps_gt300s": 3,
+      "catalog_rows": 2617,
+      "event_bbox_crosses_gap": 30,
+      "timestamp_bounds_not_in_source": 0,
+      "invalid_cells_in_native": 0,
+      "examples_crossing_gap": [
+        {
+          "rows_inclusive": [
+            324,
+            424
+          ],
+          "time_start": "2026-02-12 10:51:24+00",
+          "time_end": "2026-02-12 14:21:19+00",
+          "max_gap_s": 602.0
+        },
+        {
+          "rows_inclusive": [
+            418,
+            419
+          ],
+          "time_start": "2026-02-12 14:01:16+00",
+          "time_end": "2026-02-12 14:11:18+00",
+          "max_gap_s": 602.0
+        },
+        {
+          "rows_inclusive": [
+            445,
+            554
+          ],
+          "time_start": "2026-02-12 15:03:25+00",
+          "time_end": "2026-02-13 16:12:27+00",
+          "max_gap_s": 77073.0
+        }
+      ]
+    },
+    {
+      "record": "4",
+      "gaps_gt300s": 0,
+      "catalog_rows": 674,
+      "event_bbox_crosses_gap": 0,
+      "timestamp_bounds_not_in_source": 0,
+      "invalid_cells_in_native": 645,
+      "examples_crossing_gap": []
+    },
+    {
+      "record": "5",
+      "gaps_gt300s": 0,
+      "catalog_rows": 56652,
+      "event_bbox_crosses_gap": 0,
+      "timestamp_bounds_not_in_source": 0,
+      "invalid_cells_in_native": 1829925,
+      "examples_crossing_gap": []
+    },
+    {
+      "record": "6",
+      "gaps_gt300s": 2,
+      "catalog_rows": 14290,
+      "event_bbox_crosses_gap": 45,
+      "timestamp_bounds_not_in_source": 0,
+      "invalid_cells_in_native": 108,
+      "examples_crossing_gap": [
+        {
+          "rows_inclusive": [
+            446,
+            927
+          ],
+          "time_start": "2026-02-12 07:26:57+03",
+          "time_end": "2026-02-12 18:56:41+03",
+          "max_gap_s": 12059.0
+        },
+        {
+          "rows_inclusive": [
+            490,
+            1112
+          ],
+          "time_start": "2026-02-12 08:11:03+03",
+          "time_end": "2026-02-12 22:01:47+03",
+          "max_gap_s": 12059.0
+        },
+        {
+          "rows_inclusive": [
+            491,
+            1108
+          ],
+          "time_start": "2026-02-12 08:12:03+03",
+          "time_end": "2026-02-12 21:57:47+03",
+          "max_gap_s": 12059.0
+        }
+      ]
+    }
+  ],
+  "criterion_s": 300,
+  "scope": "reported bounds, not independently reproduced mask"
+}

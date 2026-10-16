@@ -1,0 +1,153 @@
+---
+- name: Teams | группы команд
+  ansible.builtin.group:
+    name: "{{ team.user }}"
+    state: present
+  loop: "{{ teams_list }}"
+  loop_control:
+    loop_var: team
+    label: "{{ team.name }}"
+
+- name: Teams | пользователи команд (без sudo, вход только по ключу)
+  ansible.builtin.user:
+    name: "{{ team.user }}"
+    group: "{{ team.user }}"
+    groups: docker
+    append: true
+    shell: /bin/bash
+    create_home: true
+    password: "!"
+  # ADDITIVE (B1+M1 fix, N1 note): gate legacy docker grant by allow_docker.
+  # `| default(true)` kept for preview parity but never triggers - all 4 entries
+  # pin allow_docker explicitly (web/ml:true unchanged, preview/main:false withheld).
+  # STRIP-PHASE (refs P2): flip default to false (fail-closed). web/ml identical.
+  when: team.allow_docker | default(true)
+  loop: "{{ teams_list }}"
+  loop_control:
+    loop_var: team
+    label: "{{ team.name }}"
+
+# ADDITIVE (B1 fix): withheld principals WITHOUT docker (no groups: docker here).
+# preview/main (allow_docker:false) still get user/group/shell/home; dirs/keys
+# below loop over full teams_list unchanged. web/ml (true) skip here - legacy
+# task above already created them with docker, so their behavior identical.
+# P1 least-privilege: docker~=root withheld from new principals until strip justifies.
+- name: Teams | пользователи без docker (allow_docker=false)
+  ansible.builtin.user:
+    name: "{{ team.user }}"
+    group: "{{ team.user }}"
+    shell: /bin/bash
+    create_home: true
+    password: "!"
+  when: not (team.allow_docker | default(true))
+  loop: "{{ teams_list }}"
+  loop_control:
+    loop_var: team
+    label: "{{ team.name }}"
+
+# ADDITIVE (rollout preview-only, N3 note): CI-shim widens ansible_user to ALL
+# team groups (superset-tolerant: currently 4 after N2 drop, was 2 in legacy).
+# Exact count NOT asserted; strip removes this task once per-team CI keys land.
+# Preview-only: keep until strip, never enforce exact membership.
+- name: Teams | CI-пользователь в группах команд (временно, пока нет ключей команд)
+  ansible.builtin.user:
+    name: "{{ ansible_user }}"
+    groups: "{{ teams_list | map(attribute='user') | list }}"
+    append: true
+  when: ansible_user not in (teams_list | map(attribute='user') | list)
+
+- name: Teams | каталоги команд
+  ansible.builtin.file:
+    path: "{{ team.dir }}"
+    state: directory
+    owner: "{{ team.user }}"
+    group: "{{ team.user }}"
+    mode: "0770"
+  loop: "{{ teams_list }}"
+  loop_control:
+    loop_var: team
+    label: "{{ team.name }}"
+
+- name: Teams | CI-ключи команд
+  ansible.posix.authorized_key:
+    user: "{{ team.user }}"
+    key: "{{ teams_ci_pubkeys[team.user] }}"
+    state: present
+  when: teams_ci_pubkeys[team.user] | default('') | length > 0
+  loop: "{{ teams_list }}"
+  loop_control:
+    loop_var: team
+    label: "{{ team.name }}"
+
+- name: Teams | нет паблика — пропуск с предупреждением
+  ansible.builtin.debug:
+    msg: "Нет паблика для {{ team.user }}: пользователь и каталог созданы, ключ ждёт команду."
+  when: teams_ci_pubkeys[team.user] | default('') | length == 0
+  loop: "{{ teams_list }}"
+  loop_control:
+    loop_var: team
+    label: "{{ team.name }}"
+
+- name: Teams | текущие safe.directory
+  ansible.builtin.command:
+    argv:
+      - git
+      - config
+      - --global
+      - --get-all
+      - safe.directory
+  become: true
+  become_user: "{{ ansible_user }}"
+  register: teams_safe_dirs
+  changed_when: false
+  failed_when: false
+
+- name: Teams | git доверяет каталогам команд (временно, пока деплоит общий ключ)
+  ansible.builtin.command:
+    argv:
+      - git
+      - config
+      - --global
+      - --add
+      - safe.directory
+      - "{{ team.dir }}"
+  become: true
+  become_user: "{{ ansible_user }}"
+  when: team.dir not in teams_safe_dirs.stdout_lines | default([])
+  loop: "{{ teams_list }}"
+  loop_control:
+    loop_var: team
+    label: "{{ team.name }}"
+  changed_when: true
+
+# ADDITIVE (rollout preview, M1 enforcer, N1 note).
+# Flag-gated docker grant: web/ml (allow_docker:true) re-assert docker (legacy
+# task above already granted - no-op, behavior identical). preview/main
+# (allow_docker:false) are skipped here AND in legacy task above; they are
+# created WITHOUT docker by the withheld-principals task. Idempotent
+# (user module, append:true). N1: `| default(true)` kept for preview parity
+# but never triggers (all 4 entries pin allow_docker); STRIP-PHASE (refs P2):
+# flip default to false (fail-closed) + remove legacy `groups: docker`.
+- name: Teams | docker-доступ по флагу allow_docker (пока no-op, legacy уже даёт docker всем)
+  ansible.builtin.user:
+    name: "{{ team.user }}"
+    groups: docker
+    append: true
+  when: team.allow_docker | default(true)
+  loop: "{{ teams_list }}"
+  loop_control:
+    loop_var: team
+    label: "{{ team.name }}"
+
+# ADDITIVE (rollout preview-only, WARN-only, never fails).
+# Existing authorized_key + debug tasks above already loop over teams_list and
+# tolerate empty via `| default('')`, so new principals preview/main (still {} in
+# teams_ci_pubkeys) are covered with stub warnings. This include is a
+# preview of future strip enforcement only (N2: data dropped, 4 principals).
+- name: Teams | split-preview (WARN-only, strip фаза позже)
+  ansible.builtin.include_tasks: assert-split.yml
+
+# Новые группы пользователя видны только в новой SSH-сессии (ControlPersist
+# держит старую), иначе роль app не запишет в каталоги команд (0770).
+- name: Teams | сброс SSH-соединения (подхватить новые группы)
+  ansible.builtin.meta: reset_connection

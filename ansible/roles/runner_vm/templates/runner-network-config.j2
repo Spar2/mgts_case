@@ -1,0 +1,14 @@
+instance-id: {{ vm.name }}-v1
+local-hostname: {{ vm.name }}
+network:
+  version: 2
+  ethernets:
+    eth0:
+      match:
+        macaddress: "{{ vm.mac }}"
+      addresses: [{{ vm.ip }}/24]
+      routes:
+        - to: default
+          via: {{ libvirt_gateway }}
+      nameservers:
+        addresses: {{ libvirt_dns | to_json }}

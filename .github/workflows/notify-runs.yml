@@ -1,0 +1,75 @@
+name: Notify runs
+
+# Результаты ранов -> в те же Discord-вебхуки (devops).
+# ВАЖНО: workflow_run срабатывает только когда этот файл уже в main.
+# До мержа devops -> main уведомления о ранах не приходят.
+
+permissions:
+  contents: read
+
+on:
+  workflow_run:
+    workflows: ["Deploy staging (main -> Xeon)", "Ansible lint", "PR gate", "Preview env (PR)", "Deploy web (staging)", "Deploy ml (staging)", "Deploy data (staging)", "Monitor dual-access (public vs tailnet)"]
+    types: [completed]
+
+jobs:
+  discord:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      # Relay-переключатель: пусто = legacy (прямой webhook, без даунтайма).
+      # Задать vars.NOTIFY_VIA_RELAY=1 + vars.RELAY_URL для перехода на relay.
+      NOTIFY_VIA_RELAY: ${{ vars.NOTIFY_VIA_RELAY }}
+      RELAY_URL: ${{ vars.RELAY_URL }}
+    steps:
+      - name: Send run result to Discord
+        if: env.NOTIFY_VIA_RELAY == '' || env.RELAY_URL == ''
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_DEVOPS }}
+          CONCLUSION: ${{ github.event.workflow_run.conclusion }}
+          WORKFLOW_NAME: ${{ github.event.workflow_run.name }}
+          HEAD_BRANCH: ${{ github.event.workflow_run.head_branch }}
+          HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
+          ACTOR_LOGIN: ${{ github.event.workflow_run.actor.login }}
+          RUN_URL: ${{ github.event.workflow_run.html_url }}
+        run: |
+          # Не падать, если секрет ещё не задан (режим заглушки)
+          [ -n "$DISCORD_WEBHOOK" ] || exit 0
+          case "$CONCLUSION" in
+            success) STATUS="Success"; COLOR=65280 ;;
+            cancelled) STATUS="Cancelled"; COLOR=16711680 ;;
+            *) STATUS="Failure"; COLOR=16711680 ;;
+          esac
+          echo "Conclusion: $CONCLUSION -> $STATUS ($COLOR)"
+          PAYLOAD=$(jq -n \
+            --arg workflow "$WORKFLOW_NAME" \
+            --arg conclusion "$CONCLUSION" \
+            --arg branch "$HEAD_BRANCH" \
+            --arg sha "$HEAD_SHA" \
+            --arg actor "$ACTOR_LOGIN" \
+            --arg url "$RUN_URL" \
+            --argjson color "$COLOR" \
+            --arg username "GitHub • runs" \
+            '{embeds: [{title: "Run: \($workflow) — \($conclusion)", description: "**Ветка:** `\($branch)`\n**Коммит:** `\($sha)`\n**Автор:** \($actor)\n[Смотреть run](\($url))", color: $color}], username: $username}')
+          curl -fsSL -H "Content-Type: application/json" -d "$PAYLOAD" "$DISCORD_WEBHOOK"
+
+      - name: Send run result via relay
+        if: env.NOTIFY_VIA_RELAY != '' && env.RELAY_URL != ''
+        env:
+          RELAY_TOKEN: ${{ secrets.RELAY_TOKEN }}
+        run: |
+          set -euo pipefail
+          payload=$(jq -n \
+            --arg source "notify-runs" \
+            --arg workflow "${{ github.event.workflow_run.name }}" \
+            --arg conclusion "${{ github.event.workflow_run.conclusion }}" \
+            --arg branch "${{ github.event.workflow_run.head_branch }}" \
+            --arg sha "${{ github.event.workflow_run.head_sha }}" \
+            --arg actor "${{ github.event.workflow_run.actor.login }}" \
+            --arg url "${{ github.event.workflow_run.html_url }}" \
+            '{source: $source, workflow: $workflow, conclusion: $conclusion, head_branch: $branch, head_sha: $sha, actor: $actor, html_url: $url}')
+          echo "$payload" | jq .
+          curl -sSL --fail -X POST "$RELAY_URL" \
+            -H "Authorization: Bearer $RELAY_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d "$payload"

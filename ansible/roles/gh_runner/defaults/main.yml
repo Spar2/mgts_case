@@ -1,0 +1,26 @@
+---
+# Роль gh_runner: регистрация ВМ как self-hosted раннера репозитория.
+# Токен регистрации часовой: передаётся только через extra-vars
+# (gh_runner_token), нигде не хранится и не логируется (no_log).
+# Сервис — systemd --user (без root): linger включён cloud-init.
+gh_runner_version: v2.337.0
+gh_runner_user: gha-runner
+gh_runner_dir: /home/gha-runner/actions-runner
+gh_runner_url: https://github.com/werd0y45/haklolarp
+gh_runner_token: ""
+# Базовые лейблы раннера. team-лейбл (team-devops/team-web/team-ml,
+# см. label в libvirt_runner_vms) выводится из inventory_hostname:
+# run-X -> team-X. group_vars/runners.yml не раздуваем — маппинг здесь.
+gh_runner_labels:
+  - self-hosted
+gh_runner_team_label: "team-{{ inventory_hostname | regex_replace('^run-', '') }}"
+# Слаг для имени systemd-сервиса: actions.runner.<org-repo>.<hostname>.service
+gh_runner_svc_slug: "{{ gh_runner_url | regex_replace('https://github.com/', '') | regex_replace('/', '-') }}"
+# LAN-имена для локалки раннеров (legacy: CI-деплой идёт через tailnet
+# по STAGING_HOST/KVM_HOST из секретов и *.lan больше не использует).
+# Управляется ролью, правится здесь.
+gh_runner_lan_hosts:
+  - ip: 192.168.1.123
+    name: xeon-staging.lan
+  - ip: 192.168.1.4
+    name: kvm.lan

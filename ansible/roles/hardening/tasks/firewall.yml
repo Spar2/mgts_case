@@ -1,0 +1,61 @@
+---
+- name: UFW | пакет
+  ansible.builtin.apt:
+    name: ufw
+    state: present
+    update_cache: true
+
+- name: UFW | политика по умолчанию
+  ansible.builtin.command: ufw default deny incoming
+  register: hardening_ufw_default_in
+  changed_when: "'unchanged' not in hardening_ufw_default_in.stdout | lower"
+  failed_when: false
+
+- name: UFW | исходящие разрешены
+  ansible.builtin.command: ufw default allow outgoing
+  register: hardening_ufw_default_out
+  changed_when: "'unchanged' not in hardening_ufw_default_out.stdout | lower"
+  failed_when: false
+
+- name: UFW | разрешить SSH
+  ansible.builtin.command: ufw allow 22/tcp
+  register: hardening_ufw_ssh
+  changed_when: "'skipping' not in hardening_ufw_ssh.stdout | lower"
+  failed_when: hardening_ufw_ssh.rc != 0
+
+- name: UFW | разрешить staging HTTP
+  ansible.builtin.command: ufw allow 8080/tcp
+  register: hardening_ufw_http
+  changed_when: "'skipping' not in hardening_ufw_http.stdout | lower"
+  failed_when: hardening_ufw_http.rc != 0
+
+- name: UFW | разрешить публичный HTTP (dual-access)
+  ansible.builtin.command: ufw allow 80/tcp
+  register: hardening_ufw_http80
+  changed_when: "'skipping' not in hardening_ufw_http80.stdout | lower"
+  failed_when: hardening_ufw_http80.rc != 0
+
+- name: UFW | разрешить публичный HTTPS (dual-access)
+  ansible.builtin.command: ufw allow 443/tcp
+  register: hardening_ufw_https443
+  changed_when: "'skipping' not in hardening_ufw_https443.stdout | lower"
+  failed_when: hardening_ufw_https443.rc != 0
+
+- name: UFW | разрешить весь tailnet
+  ansible.builtin.command: ufw allow in on tailscale0
+  register: hardening_ufw_ts
+  changed_when: "'skipping' not in hardening_ufw_ts.stdout | lower"
+  failed_when: hardening_ufw_ts.rc != 0
+
+- name: UFW | включить
+  ansible.builtin.command: ufw --force enable
+  register: hardening_ufw_enable
+  changed_when: "'is already enabled' not in hardening_ufw_enable.stdout"
+
+- name: UFW | новое соединение живо
+  ansible.builtin.wait_for:
+    host: "{{ staging_lan_ip }}"
+    port: 22
+    timeout: 60
+  delegate_to: localhost
+  become: false

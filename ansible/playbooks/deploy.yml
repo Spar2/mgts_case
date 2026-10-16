@@ -1,0 +1,7 @@
+---
+# Быстрое обновление приложения на staging (используется и в CI-автодеплое).
+- name: Staging — обновить только приложение
+  hosts: staging
+  become: true
+  roles:
+    - role: app

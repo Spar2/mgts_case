@@ -1,0 +1,12 @@
+# Operational viewer. Built-in example only: no records 1–6 and no GPU.
+name: haklolarp-viewer
+services:
+  viewer:
+    build:
+      context: .
+      dockerfile: Dockerfile.ml
+    image: haklolarp-viewer:local
+    container_name: haklolarp-viewer
+    ports:
+      - "8092:8082"
+    command: ["uvicorn", "fiber.viewer_app:app", "--host", "0.0.0.0", "--port", "8082"]

@@ -1,0 +1,173 @@
+[
+  {
+    "index": 1,
+    "id": "L7iPfs",
+    "title": "Язык дизайна",
+    "file": "png/01-design-language.png",
+    "width": 2880,
+    "height": 2000,
+    "sha256": "3a536484679b0eefd3469108c3a13c07bdea79c206befbc429e919c4d9b2ad69"
+  },
+  {
+    "index": 2,
+    "id": "NV1A7",
+    "title": "Чтение данных",
+    "file": "png/02-reading-data.png",
+    "width": 2880,
+    "height": 2000,
+    "sha256": "abaa6993fc2ca68ca4af6812eb64ace77b460138eefdd356c5eea60c7ec0a555"
+  },
+  {
+    "index": 3,
+    "id": "A4X5E4",
+    "title": "Рабочие режимы",
+    "file": "png/03-working-modes.png",
+    "width": 2880,
+    "height": 2000,
+    "sha256": "b16f6427e70ddbde1685093434a5ef721db4476ab7b36119e749c6af76386edf"
+  },
+  {
+    "index": 4,
+    "id": "Vs6C7",
+    "title": "Библиотека",
+    "file": "png/04-records.png",
+    "width": 2880,
+    "height": 2000,
+    "sha256": "8560510545c8136eed46a0f66478dabc5ffc68f6f16bcb23c5280416a1d26a03"
+  },
+  {
+    "index": 5,
+    "id": "qUCbQ",
+    "title": "Исследование",
+    "file": "png/05-research.png",
+    "width": 2880,
+    "height": 2000,
+    "sha256": "75f614fb031171e3dedb38d8ff12a615f056b99ae503284ef6a4ba3e1bf2d807"
+  },
+  {
+    "index": 6,
+    "id": "yRv8z",
+    "title": "Разбор события",
+    "file": "png/06-event-review.png",
+    "width": 2880,
+    "height": 2000,
+    "sha256": "d7f434cc3b0f317d72bf31b54cdcf94a3e75a1b3b1a6e2edb922c003239a450f"
+  },
+  {
+    "index": 7,
+    "id": "b4QoJ",
+    "title": "Слепая проверка",
+    "file": "png/07-blind-review.png",
+    "width": 2880,
+    "height": 2000,
+    "sha256": "ac94dfea83e15ad77e43f9f9ec4b70840addef4b165d04fc2a8ef3caec5ae5d4"
+  },
+  {
+    "index": 8,
+    "id": "hzIX5",
+    "title": "Сравнение",
+    "file": "png/08-comparison.png",
+    "width": 2880,
+    "height": 2000,
+    "sha256": "d315df96e6474e1b2edecafca53d8623f6938bd165f04b12b81032a1b45296ca"
+  },
+  {
+    "index": 9,
+    "id": "bvyQ9",
+    "title": "История",
+    "file": "png/09-history.png",
+    "width": 2880,
+    "height": 2000,
+    "sha256": "777f8cae33e6c93d0c2e16a74ae6181c1be95d318a0409322d1439a016f69339"
+  },
+  {
+    "index": 10,
+    "id": "yx95J",
+    "title": "Импорт",
+    "file": "png/10-csv-import.png",
+    "width": 2880,
+    "height": 2000,
+    "sha256": "f8412802b0717142659e0c89ba5559b9e25c8106bb5dba19c45640a29bf79d26"
+  },
+  {
+    "index": 11,
+    "id": "uapPA",
+    "title": "Запуски",
+    "file": "png/11-analysis-runs.png",
+    "width": 2880,
+    "height": 2000,
+    "sha256": "86d4d094d88b7f7f330f562750334edf4ddfcde0870e945d7a73c4f5164cac49"
+  },
+  {
+    "index": 12,
+    "id": "Kw23R",
+    "title": "Методы",
+    "file": "png/12-methods.png",
+    "width": 2880,
+    "height": 2000,
+    "sha256": "95fa6db0ed1900ba0b77f02a3e88f7b1ece90fc30d339ab153be0991e49249af"
+  },
+  {
+    "index": 13,
+    "id": "oBzVg",
+    "title": "Маршрут",
+    "file": "png/13-fiber-route.png",
+    "width": 2880,
+    "height": 2000,
+    "sha256": "b854236892d098394c80ed08b36f187fec17a1cb71d5b68944aa972c8aba47a8"
+  },
+  {
+    "index": 14,
+    "id": "qjxSd",
+    "title": "Экспорт",
+    "file": "png/14-export.png",
+    "width": 2880,
+    "height": 2000,
+    "sha256": "f9c22130a6895a38839ccbde58e61a2dba1f4b66196ea2dbd8589eb033b99bcd"
+  },
+  {
+    "index": 15,
+    "id": "DvC1f",
+    "title": "Зоны",
+    "file": "png/15-zones.png",
+    "width": 2880,
+    "height": 2000,
+    "sha256": "95c9294c1f4ccf6f3c0dcb58f28107fcdbbeca737f648f006266541942bded70"
+  },
+  {
+    "index": 16,
+    "id": "w7Fsl1",
+    "title": "Состояния восстановления",
+    "file": "png/16-recovery-states.png",
+    "width": 2880,
+    "height": 2000,
+    "sha256": "2acfed1f53a382510558e4dd23a6e1a42a73315cbc3286a57c492c072e883511"
+  },
+  {
+    "index": 17,
+    "id": "k5Z6v2",
+    "title": "Фокусированный вид",
+    "file": "png/17-focused-research.png",
+    "width": 2880,
+    "height": 2000,
+    "sha256": "c039658680c560a1d0e484f256c01f8ec3a11456a7486784cd541d15bb425e1a"
+  },
+  {
+    "index": 18,
+    "id": "TKN90",
+    "title": "1024 px",
+    "file": "png/18-tablet-1024.png",
+    "width": 2048,
+    "height": 1800,
+    "sha256": "2918017b65c743e9f91618bcb9aaef3fe0633bc67ef39ad046a06d45030ad357"
+  },
+  {
+    "index": 19,
+    "id": "kN7CU",
+    "title": "390 px",
+    "file": "png/19-mobile-390.png",
+    "width": 780,
+    "height": 1688,
+    "sha256": "9bb7640c0e245d0c82094a1499f799be125df8cf1e49270eb340d132b06a8924"
+  }
+]

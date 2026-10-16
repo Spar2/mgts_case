@@ -1,0 +1,44 @@
+{
+  "1.csv": {
+    "detector": 17,
+    "opencv": 4,
+    "unique_opencv": 3,
+    "unknown": 0,
+    "min_rectangle_share": 0.6555555555555556
+  },
+  "2.csv": {
+    "detector": 14,
+    "opencv": 36,
+    "unique_opencv": 29,
+    "unknown": 0,
+    "min_rectangle_share": 0.525
+  },
+  "3.csv": {
+    "detector": 9,
+    "opencv": 17,
+    "unique_opencv": 10,
+    "unknown": 0,
+    "min_rectangle_share": 0.5069444444444444
+  },
+  "4.csv": {
+    "detector": 9,
+    "opencv": 10,
+    "unique_opencv": 5,
+    "unknown": 0,
+    "min_rectangle_share": 0.6638655462184874
+  },
+  "5.csv": {
+    "detector": 48,
+    "opencv": 11,
+    "unique_opencv": 3,
+    "unknown": 0,
+    "min_rectangle_share": 0.5
+  },
+  "6.csv": {
+    "detector": 11,
+    "opencv": 11,
+    "unique_opencv": 9,
+    "unknown": 0,
+    "min_rectangle_share": 0.5738636363636364
+  }
+}

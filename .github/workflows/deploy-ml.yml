@@ -1,0 +1,40 @@
+name: Deploy ml (staging)
+
+# Тонкий caller канона deploy-reusable.yml: деплой ветки ml в изолированный
+# каталог /opt/haklolarp-ml (main-стенд не трогает). Вся логика (pytest, wake
+# через KVM, tmux fire/poll/collect, нотификации) — в каноне. Здесь только
+# with/secrets/concurrency. Имя workflow и concurrency НЕ менять: их слушает
+# notify-runs.yml.
+
+permissions:
+  contents: read
+
+on:
+  push:
+    branches: [ml]
+  workflow_dispatch:
+
+concurrency:
+  group: staging-deploy-ml-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    uses: werd0y45/haklolarp/.github/workflows/deploy-reusable.yml@f2571f3c047203a5a9a6f58c2d280996777fa1a9 # main-2026-10-15
+    with:
+      branch: ml
+      staging_dir: /opt/haklolarp-ml
+      mode: tmux
+      poll_rounds: 80
+      run_tests: true
+      inline_notify: true
+      discord_color: "0x9b59b6"
+    secrets:
+      ts_oauth_client_id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
+      ts_oauth_secret: ${{ secrets.TS_OAUTH_SECRET }}
+      staging_host: ${{ secrets.STAGING_HOST }}
+      kvm_host: ${{ secrets.KVM_HOST }}
+      staging_user: ${{ secrets.STAGING_USER }}
+      staging_ssh_key: ${{ secrets.STAGING_SSH_KEY }}
+      kvm_wake_key: ${{ secrets.KVM_WAKE_KEY }}
+      discord_webhook: ${{ secrets.DISCORD_WEBHOOK_ML }}

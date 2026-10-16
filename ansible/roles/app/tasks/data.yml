@@ -1,0 +1,59 @@
+---
+# Клон ветки data в каталог уже работающего стека, sshCommand и stack/.env.
+# docker compose up здесь нет: его делает канонный plain-шаг.
+# Ключ — уже на хосте (app_deploy_key_dest). С control node его не копируем.
+# adopt-haklolarp-stack.sh один раз отодвигает scp-дерево, тома не трогает.
+
+- name: App | data-стенд - принять существующий каталог
+  ansible.builtin.script: "{{ role_path }}/../../adopt-haklolarp-stack.sh"
+
+- name: App | data-стенд - каталог клона
+  ansible.builtin.file:
+    path: "{{ app_data_dir }}"
+    state: directory
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: "0755"
+
+- name: App | data-стенд - HEAD предок origin/data, иначе ff-only не пройдёт
+  ansible.builtin.script: "{{ role_path }}/../../assert-ff-only.sh {{ app_data_dir }} {{ app_data_version }}"
+  become: false
+
+- name: App | data-стенд - клонировать/обновить репо ветки data
+  ansible.builtin.git:
+    repo: "{{ app_repo_url }}"
+    dest: "{{ app_data_dir }}"
+    version: "{{ app_data_version }}"
+    key_file: "{{ app_deploy_key_dest }}"
+    accept_hostkey: true
+    update: true
+  become: false
+
+- name: App | data-стенд - ssh-команда для будущих git pull (CI-автодеплой)
+  ansible.builtin.command:
+    argv:
+      - git
+      - config
+      - core.sshCommand
+      - ssh -i {{ app_deploy_key_dest }} -o StrictHostKeyChecking=yes -o UserKnownHostsFile=/home/{{ ansible_user }}/.ssh/known_hosts
+    chdir: "{{ app_data_dir }}"
+  become: false
+  changed_when: false
+
+# COMPOSE_PROJECT_NAME обязателен: канонный plain-деплой запускает
+# `docker compose -f stack/compose.yaml` без -p, иначе проект зовётся `stack`
+# (basename каталога) и рядом встаёт второй, конфликтующий по портам, стек.
+- name: App | data-стенд - .env (имя compose-проекта + каталог данных)
+  ansible.builtin.copy:
+    dest: "{{ app_data_dir }}/stack/.env"
+    content: |
+      # Создаётся Ansible (роль app). Не коммитится (см. .gitignore).
+      COMPOSE_PROJECT_NAME={{ app_data_compose_project_name }}
+      DATA_DIR={{ app_data_csv_dir }}
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: "0644"
+  become: false
+
+- name: App | data-стенд - вернуть CSV из сохранённого scp-дерева
+  ansible.builtin.script: "{{ role_path }}/../../adopt-haklolarp-stack.sh restore {{ ansible_user }}"

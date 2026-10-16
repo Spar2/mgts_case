@@ -1,0 +1,24 @@
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    {{ libvirt_uplink }}:
+      dhcp4: false
+      dhcp6: false
+  bridges:
+    {{ libvirt_bridge }}:
+      interfaces: [{{ libvirt_uplink }}]
+      parameters:
+        stp: false
+        forward-delay: 0
+{% if libvirt_host_dhcp %}
+      dhcp4: true
+      dhcp6: false
+{% else %}
+      addresses: {{ libvirt_host_addresses | to_json }}
+      routes:
+        - to: default
+          via: {{ libvirt_gateway }}
+      nameservers:
+        addresses: {{ libvirt_dns | to_json }}
+{% endif %}

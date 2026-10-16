@@ -1,0 +1,11 @@
+{
+  "same_replay_id": true,
+  "cancelled_after_profiles": 13,
+  "resumed_profiles": 708,
+  "verified_cells": 1197228,
+  "accepted": 708,
+  "persisted": 708,
+  "analyzed": 708,
+  "source_sha256": "d2f5b3d90078420aea45bac86df3656987a2ca9c548d478d134d3ee6349fde17",
+  "conditions": "Local Docker stack; real 4.csv; explicit cancellation and resume, no expert votes"
+}

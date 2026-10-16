@@ -1,0 +1,340 @@
+{
+  "verification_dates": [
+    "2026-10-10",
+    "2026-10-11"
+  ],
+  "scope": "Local acceptance only; no external deployment or physical-phone benchmark",
+  "load": {
+    "seconds": 1800.0,
+    "users": {
+      "public": 5,
+      "members": 5
+    },
+    "reads": 8240,
+    "writes": 140,
+    "final_revisions": [
+      28,
+      28,
+      28,
+      28,
+      28
+    ],
+    "errors": [],
+    "warm_read_p95_ms": 114.60819991771132,
+    "median_ms": 95.26084997924045,
+    "samples": [
+      {
+        "elapsed_s": 4.5,
+        "memory": [
+          "dts-production-qa-api|183.9MiB / 768MiB",
+          "dts-production-qa-web|29.92MiB / 31.01GiB",
+          "dts-production-qa-worker-1|80.24MiB / 2GiB"
+        ]
+      },
+      {
+        "elapsed_s": 69.9,
+        "memory": [
+          "dts-production-qa-api|187.4MiB / 768MiB",
+          "dts-production-qa-web|31.86MiB / 31.01GiB",
+          "dts-production-qa-worker-1|79.36MiB / 2GiB"
+        ]
+      },
+      {
+        "elapsed_s": 135.7,
+        "memory": [
+          "dts-production-qa-api|188.7MiB / 768MiB",
+          "dts-production-qa-web|31.85MiB / 31.01GiB",
+          "dts-production-qa-worker-1|79.6MiB / 2GiB"
+        ]
+      },
+      {
+        "elapsed_s": 201.0,
+        "memory": [
+          "dts-production-qa-api|189.2MiB / 768MiB",
+          "dts-production-qa-web|34.16MiB / 31.01GiB",
+          "dts-production-qa-worker-1|79.67MiB / 2GiB"
+        ]
+      },
+      {
+        "elapsed_s": 266.6,
+        "memory": [
+          "dts-production-qa-api|189.3MiB / 768MiB",
+          "dts-production-qa-web|34.29MiB / 31.01GiB",
+          "dts-production-qa-worker-1|80.32MiB / 2GiB"
+        ]
+      },
+      {
+        "elapsed_s": 331.1,
+        "memory": [
+          "dts-production-qa-api|188.8MiB / 768MiB",
+          "dts-production-qa-web|35.36MiB / 31.01GiB",
+          "dts-production-qa-worker-1|79.33MiB / 2GiB"
+        ]
+      },
+      {
+        "elapsed_s": 396.7,
+        "memory": [
+          "dts-production-qa-api|190.7MiB / 768MiB",
+          "dts-production-qa-web|34.52MiB / 31.01GiB",
+          "dts-production-qa-worker-1|79.89MiB / 2GiB"
+        ]
+      },
+      {
+        "elapsed_s": 462.2,
+        "memory": [
+          "dts-production-qa-api|189.4MiB / 768MiB",
+          "dts-production-qa-web|36.27MiB / 31.01GiB",
+          "dts-production-qa-worker-1|79.84MiB / 2GiB"
+        ]
+      },
+      {
+        "elapsed_s": 527.8,
+        "memory": [
+          "dts-production-qa-api|191.7MiB / 768MiB",
+          "dts-production-qa-web|37.25MiB / 31.01GiB",
+          "dts-production-qa-worker-1|80.88MiB / 2GiB"
+        ]
+      },
+      {
+        "elapsed_s": 593.5,
+        "memory": [
+          "dts-production-qa-api|190.4MiB / 768MiB",
+          "dts-production-qa-web|37.7MiB / 31.01GiB",
+          "dts-production-qa-worker-1|80.13MiB / 2GiB"
+        ]
+      },
+      {
+        "elapsed_s": 659.1,
+        "memory": [
+          "dts-production-qa-api|191.4MiB / 768MiB",
+          "dts-production-qa-web|37.41MiB / 31.01GiB",
+          "dts-production-qa-worker-1|81.13MiB / 2GiB"
+        ]
+      },
+      {
+        "elapsed_s": 724.7,
+        "memory": [
+          "dts-production-qa-api|192.3MiB / 768MiB",
+          "dts-production-qa-web|36.91MiB / 31.01GiB",
+          "dts-production-qa-worker-1|80.12MiB / 2GiB"
+        ]
+      },
+      {
+        "elapsed_s": 790.2,
+        "memory": [
+          "dts-production-qa-api|192.5MiB / 768MiB",
+          "dts-production-qa-web|37.4MiB / 31.01GiB",
+          "dts-production-qa-worker-1|78.93MiB / 2GiB"
+        ]
+      },
+      {
+        "elapsed_s": 855.8,
+        "memory": [
+          "dts-production-qa-api|192.3MiB / 768MiB",
+          "dts-production-qa-web|36.54MiB / 31.01GiB",
+          "dts-production-qa-worker-1|81.32MiB / 2GiB"
+        ]
+      },
+      {
+        "elapsed_s": 920.6,
+        "memory": [
+          "dts-production-qa-api|194.8MiB / 768MiB",
+          "dts-production-qa-web|37.55MiB / 31.01GiB",
+          "dts-production-qa-worker-1|80.89MiB / 2GiB"
+        ]
+      },
+      {
+        "elapsed_s": 986.2,
+        "memory": [
+          "dts-production-qa-api|193.2MiB / 768MiB",
+          "dts-production-qa-web|37.68MiB / 31.01GiB",
+          "dts-production-qa-worker-1|80.92MiB / 2GiB"
+        ]
+      },
+      {
+        "elapsed_s": 1051.7,
+        "memory": [
+          "dts-production-qa-api|192.2MiB / 768MiB",
+          "dts-production-qa-web|36.79MiB / 31.01GiB",
+          "dts-production-qa-worker-1|80.65MiB / 2GiB"
+        ]
+      },
+      {
+        "elapsed_s": 1117.3,
+        "memory": [
+          "dts-production-qa-api|192.4MiB / 768MiB",
+          "dts-production-qa-web|37.34MiB / 31.01GiB",
+          "dts-production-qa-worker-1|78.93MiB / 2GiB"
+        ]
+      },
+      {
+        "elapsed_s": 1182.8,
+        "memory": [
+          "dts-production-qa-api|192MiB / 768MiB",
+          "dts-production-qa-web|37.17MiB / 31.01GiB",
+          "dts-production-qa-worker-1|80.48MiB / 2GiB"
+        ]
+      },
+      {
+        "elapsed_s": 1248.4,
+        "memory": [
+          "dts-production-qa-api|193.5MiB / 768MiB",
+          "dts-production-qa-web|37.14MiB / 31.01GiB",
+          "dts-production-qa-worker-1|80.1MiB / 2GiB"
+        ]
+      },
+      {
+        "elapsed_s": 1314.0,
+        "memory": [
+          "dts-production-qa-api|193.7MiB / 768MiB",
+          "dts-production-qa-web|38.92MiB / 31.01GiB",
+          "dts-production-qa-worker-1|80.32MiB / 2GiB"
+        ]
+      },
+      {
+        "elapsed_s": 1379.6,
+        "memory": [
+          "dts-production-qa-api|194.4MiB / 768MiB",
+          "dts-production-qa-web|38.12MiB / 31.01GiB",
+          "dts-production-qa-worker-1|80.15MiB / 2GiB"
+        ]
+      },
+      {
+        "elapsed_s": 1445.1,
+        "memory": [
+          "dts-production-qa-api|194.2MiB / 768MiB",
+          "dts-production-qa-web|39.61MiB / 31.01GiB",
+          "dts-production-qa-worker-1|79.21MiB / 2GiB"
+        ]
+      },
+      {
+        "elapsed_s": 1510.8,
+        "memory": [
+          "dts-production-qa-api|195.3MiB / 768MiB",
+          "dts-production-qa-web|38.5MiB / 31.01GiB",
+          "dts-production-qa-worker-1|79.93MiB / 2GiB"
+        ]
+      },
+      {
+        "elapsed_s": 1576.3,
+        "memory": [
+          "dts-production-qa-api|196.2MiB / 768MiB",
+          "dts-production-qa-web|38.79MiB / 31.01GiB",
+          "dts-production-qa-worker-1|79.68MiB / 2GiB"
+        ]
+      },
+      {
+        "elapsed_s": 1641.2,
+        "memory": [
+          "dts-production-qa-api|196.1MiB / 768MiB",
+          "dts-production-qa-web|39.79MiB / 31.01GiB",
+          "dts-production-qa-worker-1|79.71MiB / 2GiB"
+        ]
+      },
+      {
+        "elapsed_s": 1706.9,
+        "memory": [
+          "dts-production-qa-api|195MiB / 768MiB",
+          "dts-production-qa-web|39.66MiB / 31.01GiB",
+          "dts-production-qa-worker-1|80.21MiB / 2GiB"
+        ]
+      },
+      {
+        "elapsed_s": 1772.3,
+        "memory": [
+          "dts-production-qa-api|195.4MiB / 768MiB",
+          "dts-production-qa-web|39.69MiB / 31.01GiB",
+          "dts-production-qa-worker-1|80.17MiB / 2GiB"
+        ]
+      }
+    ],
+    "conditions": "Local Docker Desktop, HTTPS Nginx, real six records warmed; httpx 10 threads, 2s think time; disposable PG and volumes; no physical phone or external network simulated"
+  },
+  "persisted_qa_reviews_after_load": 140,
+  "proxy": {
+    "real_result_bytes": 95001,
+    "result_status": 201,
+    "other_route_70k_status": 413,
+    "result_over_256k_status": 413
+  },
+  "public_browsers": {
+    "Chromium": {
+      "publicJourney": true,
+      "exactInspector": "Точное значение: 22.694599151611328 °C · исходное: 22.6946 · маска: 0 · часовой пояс неизвестен",
+      "mobileWidths": [
+        320,
+        390,
+        430
+      ],
+      "privateDenied": [
+        401,
+        401,
+        401,
+        401
+      ],
+      "offlineRetention": true,
+      "reloadClearsAnswer": true,
+      "pageErrors": []
+    },
+    "Firefox": {
+      "publicJourney": true,
+      "exactInspector": "Точное значение: 22.694599151611328 °C · исходное: 22.6946 · маска: 0 · часовой пояс неизвестен",
+      "mobileWidths": [
+        320,
+        390,
+        430
+      ],
+      "privateDenied": [
+        401,
+        401,
+        401,
+        401
+      ],
+      "offlineRetention": true,
+      "reloadClearsAnswer": true,
+      "pageErrors": []
+    },
+    "WebKit": {
+      "publicJourney": true,
+      "exactInspector": "Точное значение: 22.694599151611328 °C · исходное: 22.6946 · маска: 0 · часовой пояс неизвестен",
+      "mobileWidths": [
+        320,
+        390,
+        430
+      ],
+      "privateDenied": [
+        401,
+        401,
+        401,
+        401
+      ],
+      "offlineRetention": true,
+      "reloadClearsAnswer": true,
+      "pageErrors": []
+    }
+  },
+  "account_webkit": {
+    "invitation": true,
+    "activation": true,
+    "fragment_removed": true,
+    "mobile_login": true,
+    "disable_revokes": true,
+    "enable_keeps_old_cookie_revoked": true,
+    "startup_retry": true,
+    "expectedNetworkWarnings": [],
+    "errors": []
+  },
+  "server_tests": {
+    "passed": 44,
+    "skipped": 0
+  },
+  "client_tests": {
+    "passed": 6,
+    "files": 3
+  },
+  "encrypted_daily_backups_verified": 2,
+  "retention_verified_files": 7,
+  "restore_sessions": 0,
+  "restore_active_links": 0,
+  "local_upgrade_preserved_accounts_roles_reviews": true
+}

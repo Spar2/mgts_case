@@ -1,0 +1,642 @@
+{
+  "schema": "real_noise_diagnostics_v1",
+  "records": [
+    {
+      "record": "1",
+      "source_sha256": "3101c6b2716d2a9e14cd32e2e5d758cb8628741cff6f265cc45db2d7e9e8257f",
+      "shape": [
+        615,
+        11707
+      ],
+      "valid_cells": 7199805,
+      "coverage": 1.0,
+      "dx_m": {
+        "q01": 0.10152284263949696,
+        "q10": 0.10152284263949696,
+        "q50": 0.10152284263961064,
+        "q90": 0.10152284263961064,
+        "q99": 0.10152284263972433
+      },
+      "cadence_s": {
+        "q01": 30.0,
+        "q10": 30.0,
+        "q50": 31.0,
+        "q90": 241.0,
+        "q99": 242.0
+      },
+      "segments": [
+        [
+          0,
+          615
+        ]
+      ],
+      "temperature_c": {
+        "q01": 15.879971733093262,
+        "q10": 17.836619186401368,
+        "q50": 21.7025089263916,
+        "q90": 28.989364624023445,
+        "q99": 43.543736572265615
+      },
+      "profile_median_c": {
+        "q01": 20.67232151031494,
+        "q10": 21.1630558013916,
+        "q50": 21.768455505371094,
+        "q90": 22.14105110168457,
+        "q99": 22.421618728637696
+      },
+      "temporal_increment_abs_c": {
+        "q01": 0.008440017700195312,
+        "q10": 0.0850067138671875,
+        "q50": 0.46619606018066406,
+        "q90": 1.2224502563476562,
+        "q99": 2.082100257873538
+      },
+      "differential_increment_abs_c": {
+        "q01": 0.008312225341796875,
+        "q10": 0.08386802673339844,
+        "q50": 0.4598846435546875,
+        "q90": 1.2067438125610348,
+        "q99": 2.044319496154788
+      },
+      "increment_variability_proxy_c": 0.4821237832318101,
+      "residual_adjacent_space": {
+        "pearson": -0.4875647587786062,
+        "eligible_pairs": 7199190,
+        "sampled_pairs": 199978
+      },
+      "residual_adjacent_time": {
+        "pearson": 0.010441739244874468,
+        "eligible_pairs": 7188098,
+        "sampled_pairs": 199670
+      },
+      "differential_increment_adjacent_space": {
+        "pearson": 0.2410545667265751,
+        "eligible_pairs": 7187484,
+        "sampled_pairs": 199653
+      },
+      "filter": {
+        "abs_change_c": {
+          "q01": 0.0,
+          "q10": 0.0,
+          "q50": 0.06384468078613281,
+          "q90": 0.6623096466064453,
+          "q99": 1.307149887084961
+        },
+        "changed_valid_fraction": 0.573565395173897,
+        "raw_spatial_increment_abs_c": {
+          "q01": 0.0083160400390625,
+          "q10": 0.084136962890625,
+          "q50": 0.4658851623535156,
+          "q90": 1.2677230834960938,
+          "q99": 2.410178070068362
+        },
+        "clean_spatial_increment_abs_c": {
+          "q01": 0.0,
+          "q10": 0.0,
+          "q50": 0.1494598388671875,
+          "q90": 0.7976800918579112,
+          "q99": 2.211752548217781
+        },
+        "interpretation": "filter modification and roughness, not error versus clean truth"
+      },
+      "independent_noise_assumption_verified": false,
+      "interpretation": "real signal and noise are mixed; correlations of median residuals may be introduced by the filter itself"
+    },
+    {
+      "record": "2",
+      "source_sha256": "f115579accd114e0c5a0d968aea3d2710da8ead421fc8c35c17472047cefdec4",
+      "shape": [
+        696,
+        2315
+      ],
+      "valid_cells": 1610388,
+      "coverage": 0.9994712147166158,
+      "dx_m": {
+        "q01": 0.25377447231824135,
+        "q10": 0.25377447231824135,
+        "q50": 0.253774472318284,
+        "q90": 0.2537744723182982,
+        "q99": 0.25377447231835504
+      },
+      "cadence_s": {
+        "q01": 120.0,
+        "q10": 120.0,
+        "q50": 120.0,
+        "q90": 121.0,
+        "q99": 241.0
+      },
+      "segments": [
+        [
+          0,
+          409
+        ],
+        [
+          409,
+          410
+        ],
+        [
+          410,
+          696
+        ]
+      ],
+      "temperature_c": {
+        "q01": 12.813434028625489,
+        "q10": 15.88521728515625,
+        "q50": 18.73461151123047,
+        "q90": 21.151845169067382,
+        "q99": 26.22056844711304
+      },
+      "profile_median_c": {
+        "q01": 18.403864574432372,
+        "q10": 18.4878511428833,
+        "q50": 18.778745651245117,
+        "q90": 18.998960494995117,
+        "q99": 19.128609132766723
+      },
+      "temporal_increment_abs_c": {
+        "q01": 0.005039215087890625,
+        "q10": 0.05036354064941406,
+        "q50": 0.2701759338378906,
+        "q90": 0.6697769165039062,
+        "q99": 1.0880318450927735
+      },
+      "differential_increment_abs_c": {
+        "q01": 0.00477405548095703,
+        "q10": 0.049590110778808594,
+        "q50": 0.26804351806640625,
+        "q90": 0.663620376586914,
+        "q99": 1.0772195434570317
+      },
+      "increment_variability_proxy_c": 0.28100558871036174,
+      "residual_adjacent_space": {
+        "pearson": -0.45170120795123747,
+        "eligible_pairs": 1609692,
+        "sampled_pairs": 178855
+      },
+      "residual_adjacent_time": {
+        "pearson": 0.24041222841309137,
+        "eligible_pairs": 1602599,
+        "sampled_pairs": 178067
+      },
+      "differential_increment_adjacent_space": {
+        "pearson": 0.25856895795961227,
+        "eligible_pairs": 1601906,
+        "sampled_pairs": 177990
+      },
+      "filter": {
+        "abs_change_c": {
+          "q01": 0.0,
+          "q10": 0.0,
+          "q50": 0.026393890380859375,
+          "q90": 0.3616313934326172,
+          "q99": 0.7617936325073238
+        },
+        "changed_valid_fraction": 0.5503034051421148,
+        "raw_spatial_increment_abs_c": {
+          "q01": 0.0050907135009765625,
+          "q10": 0.051539516448974615,
+          "q50": 0.279388427734375,
+          "q90": 0.7364082336425781,
+          "q99": 1.4738836860656765
+        },
+        "clean_spatial_increment_abs_c": {
+          "q01": 0.0,
+          "q10": 0.0,
+          "q50": 0.094635009765625,
+          "q90": 0.49083881378173855,
+          "q99": 1.2735800266265873
+        },
+        "interpretation": "filter modification and roughness, not error versus clean truth"
+      },
+      "independent_noise_assumption_verified": false,
+      "interpretation": "real signal and noise are mixed; correlations of median residuals may be introduced by the filter itself"
+    },
+    {
+      "record": "3",
+      "source_sha256": "0acc4e41dc16dd829110881641cb17f94bffd0c2d5255d539d8f3589cd8cdde3",
+      "shape": [
+        788,
+        1689
+      ],
+      "valid_cells": 1330932,
+      "coverage": 1.0,
+      "dx_m": {
+        "q01": 0.25377103761900344,
+        "q10": 0.25377103761900344,
+        "q50": 0.25377103761901765,
+        "q90": 0.2537710376190603,
+        "q99": 0.2537710376190603
+      },
+      "cadence_s": {
+        "q01": 120.0,
+        "q10": 120.0,
+        "q50": 120.0,
+        "q90": 121.0,
+        "q99": 121.0
+      },
+      "segments": [
+        [
+          0,
+          419
+        ],
+        [
+          419,
+          451
+        ],
+        [
+          451,
+          493
+        ],
+        [
+          493,
+          788
+        ]
+      ],
+      "temperature_c": {
+        "q01": 20.47405693054199,
+        "q10": 23.505151748657227,
+        "q50": 27.867819786071777,
+        "q90": 30.592323112487794,
+        "q99": 33.19456748962402
+      },
+      "profile_median_c": {
+        "q01": 26.813399658203124,
+        "q10": 27.036274337768553,
+        "q50": 27.915477752685547,
+        "q90": 28.503984260559083,
+        "q99": 28.58726707458496
+      },
+      "temporal_increment_abs_c": {
+        "q01": 0.005336761474609375,
+        "q10": 0.05408668518066406,
+        "q50": 0.2918701171875,
+        "q90": 0.7236566543579102,
+        "q99": 1.1766571998596191
+      },
+      "differential_increment_abs_c": {
+        "q01": 0.0049877166748046875,
+        "q10": 0.053371429443359375,
+        "q50": 0.2892570495605469,
+        "q90": 0.7173337936401367,
+        "q99": 1.1684131622314453
+      },
+      "increment_variability_proxy_c": 0.3032449659172373,
+      "residual_adjacent_space": {
+        "pearson": -0.4371354547356103,
+        "eligible_pairs": 1330144,
+        "sampled_pairs": 190021
+      },
+      "residual_adjacent_time": {
+        "pearson": 0.04600461623503259,
+        "eligible_pairs": 1324176,
+        "sampled_pairs": 189168
+      },
+      "differential_increment_adjacent_space": {
+        "pearson": 0.19881396198188103,
+        "eligible_pairs": 1323392,
+        "sampled_pairs": 189056
+      },
+      "filter": {
+        "abs_change_c": {
+          "q01": 0.0,
+          "q10": 0.0,
+          "q50": 0.03538227081298828,
+          "q90": 0.3847576141357427,
+          "q99": 0.7421131134033203
+        },
+        "changed_valid_fraction": 0.564803461033321,
+        "raw_spatial_increment_abs_c": {
+          "q01": 0.0052776336669921875,
+          "q10": 0.05295810699462894,
+          "q50": 0.2866992950439453,
+          "q90": 0.7220458984375,
+          "q99": 1.211262836456299
+        },
+        "clean_spatial_increment_abs_c": {
+          "q01": 0.0,
+          "q10": 0.0,
+          "q50": 0.09427833557128906,
+          "q90": 0.4578565597534179,
+          "q99": 0.9612510871887223
+        },
+        "interpretation": "filter modification and roughness, not error versus clean truth"
+      },
+      "independent_noise_assumption_verified": false,
+      "interpretation": "real signal and noise are mixed; correlations of median residuals may be introduced by the filter itself"
+    },
+    {
+      "record": "4",
+      "source_sha256": "d2f5b3d90078420aea45bac86df3656987a2ca9c548d478d134d3ee6349fde17",
+      "shape": [
+        708,
+        1691
+      ],
+      "valid_cells": 1196583,
+      "coverage": 0.9994612555002055,
+      "dx_m": {
+        "q01": 0.25377103761900344,
+        "q10": 0.25377103761900344,
+        "q50": 0.25377103761901765,
+        "q90": 0.2537710376190603,
+        "q99": 0.2537710376190603
+      },
+      "cadence_s": {
+        "q01": 120.0,
+        "q10": 120.0,
+        "q50": 120.0,
+        "q90": 121.0,
+        "q99": 240.0
+      },
+      "segments": [
+        [
+          0,
+          708
+        ]
+      ],
+      "temperature_c": {
+        "q01": 23.044502563476563,
+        "q10": 23.830255889892577,
+        "q50": 24.7807559967041,
+        "q90": 25.869494247436524,
+        "q99": 30.13923542022704
+      },
+      "profile_median_c": {
+        "q01": 24.603407077789306,
+        "q10": 24.670801734924318,
+        "q50": 24.790904998779297,
+        "q90": 24.886375617980956,
+        "q99": 24.962735328674317
+      },
+      "temporal_increment_abs_c": {
+        "q01": 0.0046138763427734375,
+        "q10": 0.046123504638671875,
+        "q50": 0.24731063842773438,
+        "q90": 0.6036825180053711,
+        "q99": 0.9507802009582522
+      },
+      "differential_increment_abs_c": {
+        "q01": 0.0042591094970703125,
+        "q10": 0.04552268981933594,
+        "q50": 0.24504947662353516,
+        "q90": 0.5987949371337891,
+        "q99": 0.9418678283691406
+      },
+      "increment_variability_proxy_c": 0.25689959950720687,
+      "residual_adjacent_space": {
+        "pearson": -0.4214567986208803,
+        "eligible_pairs": 1195875,
+        "sampled_pairs": 199313
+      },
+      "residual_adjacent_time": {
+        "pearson": 0.08330364036185234,
+        "eligible_pairs": 1194346,
+        "sampled_pairs": 199058
+      },
+      "differential_increment_adjacent_space": {
+        "pearson": 0.2658792401968043,
+        "eligible_pairs": 1193639,
+        "sampled_pairs": 198940
+      },
+      "filter": {
+        "abs_change_c": {
+          "q01": 0.0,
+          "q10": 0.0,
+          "q50": 0.032062530517578125,
+          "q90": 0.3163345336914065,
+          "q99": 0.5893159103393546
+        },
+        "changed_valid_fraction": 0.5714003959608318,
+        "raw_spatial_increment_abs_c": {
+          "q01": 0.004360198974609375,
+          "q10": 0.04371833801269531,
+          "q50": 0.23561477661132812,
+          "q90": 0.5905643463134771,
+          "q99": 1.033428421020508
+        },
+        "clean_spatial_increment_abs_c": {
+          "q01": 0.0,
+          "q10": 0.0,
+          "q50": 0.07197189331054688,
+          "q90": 0.3647186279296877,
+          "q99": 0.846150588989258
+        },
+        "interpretation": "filter modification and roughness, not error versus clean truth"
+      },
+      "independent_noise_assumption_verified": false,
+      "interpretation": "real signal and noise are mixed; correlations of median residuals may be introduced by the filter itself"
+    },
+    {
+      "record": "5",
+      "source_sha256": "98c1d629ed59478c81fa58b60e891f5587ef9d64ad435655e717a27f64767e46",
+      "shape": [
+        2711,
+        2364
+      ],
+      "valid_cells": 4578879,
+      "coverage": 0.7144670050761421,
+      "dx_m": {
+        "q01": 1.0,
+        "q10": 1.0,
+        "q50": 1.0,
+        "q90": 1.0,
+        "q99": 1.0
+      },
+      "cadence_s": {
+        "q01": 10.0,
+        "q10": 10.0,
+        "q50": 10.0,
+        "q90": 20.0,
+        "q99": 21.0
+      },
+      "segments": [
+        [
+          0,
+          2711
+        ]
+      ],
+      "temperature_c": {
+        "q01": 17.535999298095703,
+        "q10": 19.013900756835938,
+        "q50": 20.592199325561523,
+        "q90": 22.810100555419922,
+        "q99": 25.620399475097656
+      },
+      "profile_median_c": {
+        "q01": 20.263409233093263,
+        "q10": 20.388099670410156,
+        "q50": 20.567399978637695,
+        "q90": 20.840499877929688,
+        "q99": 20.99985065460205
+      },
+      "temporal_increment_abs_c": {
+        "q01": 0.015699386596679688,
+        "q10": 0.15740013122558594,
+        "q50": 0.8455009460449219,
+        "q90": 2.076099395751953,
+        "q99": 3.2968006134033203
+      },
+      "differential_increment_abs_c": {
+        "q01": 0.014698028564453125,
+        "q10": 0.1558990478515625,
+        "q50": 0.8405008316040039,
+        "q90": 2.0669994354248047,
+        "q99": 3.2845993041992188
+      },
+      "increment_variability_proxy_c": 0.8811458404225173,
+      "residual_adjacent_space": {
+        "pearson": -0.5302427487792744,
+        "eligible_pairs": 4576168,
+        "sampled_pairs": 198964
+      },
+      "residual_adjacent_time": {
+        "pearson": 0.008687293039812187,
+        "eligible_pairs": 4577190,
+        "sampled_pairs": 199009
+      },
+      "differential_increment_adjacent_space": {
+        "pearson": 0.04730428610867971,
+        "eligible_pairs": 4574480,
+        "sampled_pairs": 198891
+      },
+      "filter": {
+        "abs_change_c": {
+          "q01": 0.0,
+          "q10": 0.0,
+          "q50": 0.24269866943359375,
+          "q90": 1.32080078125,
+          "q99": 2.4153995513916016
+        },
+        "changed_valid_fraction": 0.6505024483066707,
+        "raw_spatial_increment_abs_c": {
+          "q01": 0.015199661254882812,
+          "q10": 0.15289878845214844,
+          "q50": 0.8237991333007812,
+          "q90": 2.0378990173339844,
+          "q99": 3.277599334716797
+        },
+        "clean_spatial_increment_abs_c": {
+          "q01": 0.0,
+          "q10": 0.0,
+          "q50": 0.19919967651367188,
+          "q90": 1.0223007202148438,
+          "q99": 1.9177989959716797
+        },
+        "interpretation": "filter modification and roughness, not error versus clean truth"
+      },
+      "independent_noise_assumption_verified": false,
+      "interpretation": "real signal and noise are mixed; correlations of median residuals may be introduced by the filter itself"
+    },
+    {
+      "record": "6",
+      "source_sha256": "23e79988fcfb8a186dec06faffa60e6ed7c93ca7cd9969ac4989fd12b9f358c8",
+      "shape": [
+        1231,
+        4534
+      ],
+      "valid_cells": 5581246,
+      "coverage": 0.9999806498566477,
+      "dx_m": {
+        "q01": 0.25377447231812766,
+        "q10": 0.25377447231824135,
+        "q50": 0.25377447231828043,
+        "q90": 0.25377447231835504,
+        "q99": 0.25377447231835504
+      },
+      "cadence_s": {
+        "q01": 60.0,
+        "q10": 60.0,
+        "q50": 60.0,
+        "q90": 60.0,
+        "q99": 61.0
+      },
+      "segments": [
+        [
+          0,
+          705
+        ],
+        [
+          705,
+          822
+        ],
+        [
+          822,
+          1231
+        ]
+      ],
+      "temperature_c": {
+        "q01": 17.846783351898193,
+        "q10": 19.804438591003418,
+        "q50": 22.799774169921875,
+        "q90": 24.256556510925293,
+        "q99": 25.782996177673336
+      },
+      "profile_median_c": {
+        "q01": 22.186068630218507,
+        "q10": 22.308423042297363,
+        "q50": 22.81029510498047,
+        "q90": 23.627144813537598,
+        "q99": 23.84055862426758
+      },
+      "temporal_increment_abs_c": {
+        "q01": 0.009866714477539062,
+        "q10": 0.09872245788574219,
+        "q50": 0.5333595275878906,
+        "q90": 1.340183448791505,
+        "q99": 2.1914836311340338
+      },
+      "differential_increment_abs_c": {
+        "q01": 0.009593009948730469,
+        "q10": 0.09799480438232422,
+        "q50": 0.5306529998779297,
+        "q90": 1.3339824676513672,
+        "q99": 2.183162946701053
+      },
+      "increment_variability_proxy_c": 0.556314361590622,
+      "residual_adjacent_space": {
+        "pearson": -0.5016841430564088,
+        "eligible_pairs": 5580015,
+        "sampled_pairs": 199287
+      },
+      "residual_adjacent_time": {
+        "pearson": 0.016210321888065666,
+        "eligible_pairs": 5567644,
+        "sampled_pairs": 198845
+      },
+      "differential_increment_adjacent_space": {
+        "pearson": 0.06832628837393838,
+        "eligible_pairs": 5566416,
+        "sampled_pairs": 198801
+      },
+      "filter": {
+        "abs_change_c": {
+          "q01": 0.0,
+          "q10": 0.0,
+          "q50": 0.14124679565429688,
+          "q90": 0.831019401550293,
+          "q99": 1.5454455375671383
+        },
+        "changed_valid_fraction": 0.6374479820455863,
+        "raw_spatial_increment_abs_c": {
+          "q01": 0.009759902954101562,
+          "q10": 0.09767913818359375,
+          "q50": 0.5283184051513672,
+          "q90": 1.333425521850586,
+          "q99": 2.216563377380373
+        },
+        "clean_spatial_increment_abs_c": {
+          "q01": 0.0,
+          "q10": 0.0,
+          "q50": 0.12905311584472656,
+          "q90": 0.679940414428712,
+          "q99": 1.3872953414917024
+        },
+        "interpretation": "filter modification and roughness, not error versus clean truth"
+      },
+      "independent_noise_assumption_verified": false,
+      "interpretation": "real signal and noise are mixed; correlations of median residuals may be introduced by the filter itself"
+    }
+  ],
+  "clean_ground_truth_available": false,
+  "noise_independence_verified": false,
+  "all_measurements_seen_during_development": true
+}

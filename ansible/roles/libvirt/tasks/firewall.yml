@@ -1,0 +1,32 @@
+---
+# Docker ставит FORWARD DROP: без явных правил гость на br0 отрезан от LAN.
+# Разрешаем форвард между мостом и uplink в обе стороны, сохраняем переживая ребут.
+- name: Пакет сохранения iptables
+  ansible.builtin.apt:
+    name: iptables-persistent
+    state: present
+
+- name: Форвард br0 -> uplink
+  ansible.builtin.iptables:
+    chain: FORWARD
+    in_interface: "{{ libvirt_bridge }}"
+    out_interface: "{{ libvirt_uplink }}"
+    jump: ACCEPT
+    action: insert
+    rule_num: 1
+  register: libvirt_fw_out
+
+- name: Форвард uplink -> br0
+  ansible.builtin.iptables:
+    chain: FORWARD
+    in_interface: "{{ libvirt_uplink }}"
+    out_interface: "{{ libvirt_bridge }}"
+    jump: ACCEPT
+    action: insert
+    rule_num: 1
+  register: libvirt_fw_in
+
+- name: Правила iptables сохранены
+  ansible.builtin.command: netfilter-persistent save
+  changed_when: true
+  when: libvirt_fw_out is changed or libvirt_fw_in is changed

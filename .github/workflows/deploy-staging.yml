@@ -1,0 +1,38 @@
+name: Deploy staging (main -> Xeon)
+
+# Пуш в main = автодеплой на изолированный staging (НЕ прод).
+# Тонкий caller канона deploy-reusable.yml: вся логика (wake через KVM,
+# compose pull/up, нотификации) — там. Здесь только with/secrets/concurrency.
+# Имя workflow и concurrency НЕ менять: их слушает notify-runs.yml,
+# main-деплой добегает до конца, следующий ждёт в очереди.
+
+permissions:
+  contents: read
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: staging-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    uses: werd0y45/haklolarp/.github/workflows/deploy-reusable.yml@f2571f3c047203a5a9a6f58c2d280996777fa1a9 # main-2026-10-15
+    with:
+      branch: main
+      staging_dir: /opt/haklolarp-staging
+      mode: plain
+      compose_file: compose.yaml
+      run_tests: false
+      inline_notify: false # staging уведомляет через notify-runs.yml (workflow_run)
+    secrets:
+      ts_oauth_client_id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
+      ts_oauth_secret: ${{ secrets.TS_OAUTH_SECRET }}
+      staging_host: ${{ secrets.STAGING_HOST }}
+      kvm_host: ${{ secrets.KVM_HOST }}
+      staging_user: ${{ secrets.STAGING_USER }}
+      staging_ssh_key: ${{ secrets.STAGING_SSH_KEY }}
+      kvm_wake_key: ${{ secrets.KVM_WAKE_KEY }}

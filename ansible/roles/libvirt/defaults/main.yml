@@ -1,0 +1,65 @@
+---
+# Роль libvirt: хост виртуализации для ВМ self-hosted раннеров.
+# Сеть ВМ — bridge br0 на физический uplink: ВМ получают LAN-IP,
+# исходящий интернет и прямой путь до стенда без tailscale.
+# Мост применяется фоном (async) + wait_for_connection с откатом;
+# план Б при потере сети — KVM-консоль.
+libvirt_lv_name: libvirt
+libvirt_lv_size: 140G
+libvirt_vg_free_min_gb: 145
+libvirt_data_dir: /var/lib/libvirt
+
+libvirt_bridge: br0
+libvirt_uplink: enp5s0
+# Хост — статика .123 (вне привычного DHCP-диапазона, резерваций нет).
+libvirt_host_dhcp: false
+libvirt_host_addresses:
+  - 192.168.1.123/24
+libvirt_gateway: 192.168.1.1
+libvirt_dns:
+  - 192.168.1.1
+  - 1.1.1.1
+
+# Базовый образ ВМ: Ubuntu 24.04 cloud (совпадает с хостом).
+libvirt_cloud_image_url: https://cloud-images.ubuntu.com/noble/current/noble-server-cloudimg-amd64.img
+libvirt_cloud_image_sha_url: https://cloud-images.ubuntu.com/noble/current/SHA256SUMS
+libvirt_cloud_base_image: "{{ libvirt_data_dir }}/images/noble-base.img"
+
+# osinfo для virt-install (обязателен в новых версиях; переиспользуем в фазе 1).
+libvirt_osinfo: linux2024
+
+# Тестовая ВМ фазы 0: только проверка L2-моста (пинг), потом удаляется.
+# libvirt_test_keep=true оставляет ВМ+диск для ручной диагностики.
+# .29 свободна, .100-.102 зарезервированы под раннеры.
+libvirt_test_vm_name: nettest
+libvirt_test_vm_ip: 192.168.1.29
+libvirt_test_keep: false
+# Фиксированный MAC: cloud-init матчится по нему (имена NIC в госте непредсказуемы).
+# Кавычки обязательны: иначе YAML парсит значение как sexagesimal-число.
+# То же правило — для всех MAC в шаблонах.
+libvirt_test_vm_mac: "52:54:00:29:00:01"
+
+# ВМ self-hosted раннеров (фаза 1): LAN-IP .100+, фиксированные MAC (кавычки!),
+# лейбл команды = селектор runs-on. Ресурсы с запасом от железа (44c/126G).
+libvirt_runner_vms:
+  - name: run-devops
+    ip: 192.168.1.100
+    mac: "52:54:00:64:00:01"
+    label: team-devops
+    vcpus: 2
+    memory_mb: 4096
+    disk_gb: 30
+  - name: run-web
+    ip: 192.168.1.101
+    mac: "52:54:00:65:00:01"
+    label: team-web
+    vcpus: 4
+    memory_mb: 8192
+    disk_gb: 40
+  - name: run-ml
+    ip: 192.168.1.102
+    mac: "52:54:00:66:00:01"
+    label: team-ml
+    vcpus: 4
+    memory_mb: 16384
+    disk_gb: 80

@@ -1,0 +1,56 @@
+name: Deploy web (staging)
+
+# Тонкий caller канона deploy-reusable.yml: деплой ветки web в изолированный
+# каталог /opt/haklolarp-web (main-стенд не трогает). Вся логика (wake через
+# KVM, tmux fire/poll/collect, нотификации) — в каноне. Здесь только
+# with/secrets/concurrency. Имя workflow и concurrency НЕ менять: их слушает
+# notify-runs.yml (см. его workflows).
+
+permissions:
+  contents: read
+
+on:
+  push:
+    branches: [web, main]
+    paths-ignore:
+      - 'docs/**'
+      - '**/*.md'
+  workflow_dispatch:
+    inputs:
+      deploy_local_pilot:
+        description: "Deploy loopback-only pilot after checks; platform settings remain operator-managed"
+        type: boolean
+        default: false
+      deploy_team:
+        description: "Deploy closed team site after checks; requires private PostgreSQL/TLS configuration"
+        type: boolean
+        default: false
+
+concurrency:
+  group: staging-deploy-web-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    uses: ./.github/workflows/web-checks.yml
+  deploy:
+    needs: checks
+    if: (github.event_name == 'workflow_dispatch' && (inputs.deploy_local_pilot || inputs.deploy_team)) || (github.event_name == 'push' && github.ref == 'refs/heads/main')
+    uses: werd0y45/haklolarp/.github/workflows/deploy-reusable.yml@f2571f3c047203a5a9a6f58c2d280996777fa1a9 # main-2026-10-15
+    with:
+      branch: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' && 'main' || 'web' }}
+      staging_dir: /opt/haklolarp-web
+      mode: tmux
+      poll_rounds: 40
+      run_tests: false
+      inline_notify: false
+      discord_color: "0x007bff"
+    secrets:
+      ts_oauth_client_id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
+      ts_oauth_secret: ${{ secrets.TS_OAUTH_SECRET }}
+      staging_host: ${{ secrets.STAGING_HOST }}
+      kvm_host: ${{ secrets.KVM_HOST }}
+      staging_user: ${{ secrets.STAGING_USER }}
+      staging_ssh_key: ${{ secrets.STAGING_SSH_KEY }}
+      kvm_wake_key: ${{ secrets.KVM_WAKE_KEY }}
+      discord_webhook: ${{ secrets.DISCORD_WEBHOOK_WEB }}

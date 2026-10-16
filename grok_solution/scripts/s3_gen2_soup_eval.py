@@ -1,0 +1,386 @@
+"""Weight-average GEN2 seed1+seed2 U-Nets; blend with winner; compare to ens_gen2 on hold41.
+
+ens_gen2 reference = 0.5*(seed1 + winner). Candidate = 0.5*(soup + winner).
+Also reports 0.5*(seed2 + winner) for sanity. Real never used.
+"""
+from __future__ import annotations
+
+import os
+
+for _k in ("OMP_NUM_THREADS", "MKL_NUM_THREADS", "OPENBLAS_NUM_THREADS", "NUMEXPR_NUM_THREADS",
+           "VECLIB_MAXIMUM_THREADS", "BLIS_NUM_THREADS"):
+    os.environ[_k] = "2"
+
+import gc
+import json
+import shutil
+import sys
+import time
+from pathlib import Path
+
+import numpy as np
+import torch
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+sys.path.insert(0, str(ROOT / "scripts"))
+os.chdir(ROOT)
+
+from dts import data, metrics as M, models
+from s3_gen2_train import predict_batched
+
+WINNER = "ens_u2ft_tcn_lgbm"
+WINNER_VAL = 0.38671235821914546
+WINNER_THR = 0.8608087301264272
+HOLD_DROP = ("seq0006", "seq0021", "seq0047", "seq0048")
+BOOT_N = 1000
+BOOT_SEED = 20261016
+SEED1 = Path("artifacts/eval/s3_gen2_unet.pt")
+SEED2 = Path("artifacts/eval/s3_gen2_unet_s2.pt")
+SOUP_OUT = Path("artifacts/eval/s3_gen2_soup.pt")
+OUT = Path("artifacts/eval/s3_gen2_soup.json")
+EVENTS = Path("/workspace/grok_logs/_events.log")
+NAMES = ("ens_gen2", "soup_blend", "seed2_blend", WINNER)
+
+
+def log(msg: str) -> None:
+    print(time.strftime("%H:%M:%S", time.gmtime()) + " " + msg, flush=True)
+
+
+def plain(obj):
+    if isinstance(obj, dict):
+        return {str(k): plain(v) for k, v in obj.items()}
+    if isinstance(obj, (list, tuple)):
+        return [plain(v) for v in obj]
+    if isinstance(obj, np.ndarray):
+        return plain(obj.tolist())
+    if isinstance(obj, np.generic):
+        return obj.item()
+    return obj
+
+
+def dump(obj) -> None:
+    OUT.parent.mkdir(parents=True, exist_ok=True)
+    tmp = OUT.with_suffix(".json.tmp")
+    tmp.write_text(json.dumps(plain(obj), indent=1, ensure_ascii=False), encoding="utf-8")
+    os.replace(tmp, OUT)
+
+
+def iou_of(tp, fp, fn):
+    return float(tp) / max(float(tp) + float(fp) + float(fn), 1.0)
+
+
+def pack(rows):
+    tp = int(sum(r[0] for r in rows))
+    fp = int(sum(r[1] for r in rows))
+    fn = int(sum(r[2] for r in rows))
+    pr = M.prf(tp, fp, fn)
+    return dict(
+        tp=tp, fp=fp, fn=fn, iou=float(pr["iou"]),
+        precision=float(pr["precision"]), recall=float(pr["recall"]),
+        n_seq=len(rows),
+    )
+
+
+def blend_of(name, s1, soup, s2, ws):
+    if name == "ens_gen2":
+        return (0.5 * (np.asarray(s1, np.float32) + ws)).astype(np.float32)
+    if name == "soup_blend":
+        return (0.5 * (np.asarray(soup, np.float32) + ws)).astype(np.float32)
+    if name == "seed2_blend":
+        return (0.5 * (np.asarray(s2, np.float32) + ws)).astype(np.float32)
+    return np.asarray(ws, np.float32)
+
+
+def bootstrap(rows_a, rows_b, n=BOOT_N, seed=BOOT_SEED):
+    a = np.asarray(rows_a, np.float64)
+    b = np.asarray(rows_b, np.float64)
+    rng = np.random.default_rng(seed)
+    idx = rng.integers(0, len(a), size=(n, len(a)))
+    sa = a[idx].sum(axis=1)
+    sb = b[idx].sum(axis=1)
+    da = sa[:, 0] / np.maximum(sa.sum(axis=1), 1.0)
+    db = sb[:, 0] / np.maximum(sb.sum(axis=1), 1.0)
+    delta = da - db
+    lo, mid, hi = np.percentile(delta, [2.5, 50, 97.5])
+    point = pack(rows_a)["iou"] - pack(rows_b)["iou"]
+    return dict(
+        n=int(n), seed=int(seed), unit="sequence",
+        point=float(point), mean=float(delta.mean()),
+        p2_5=float(lo), p50=float(mid), p97_5=float(hi),
+        frac_positive=float(np.mean(delta > 0)),
+        covers_zero=bool(lo <= 0.0 <= hi),
+    )
+
+
+def load_net(path):
+    model = models.build("unet", 16)
+    state = torch.load(path, map_location="cpu", weights_only=True)
+    model.load_state_dict(state)
+    model.eval()
+    return model
+
+
+def make_soup():
+    a = torch.load(SEED1, map_location="cpu", weights_only=True)
+    b = torch.load(SEED2, map_location="cpu", weights_only=True)
+    if set(a) != set(b):
+        raise SystemExit("seed state keys differ")
+    out = {k: (a[k].float() + b[k].float()) * 0.5 for k in a}
+    SOUP_OUT.parent.mkdir(parents=True, exist_ok=True)
+    torch.save(out, SOUP_OUT)
+    log(f"soup weights -> {SOUP_OUT}")
+    return out
+
+
+def predict_split(m1, m_soup, m2, ver, split, tmp: Path):
+    files = data.list_cache(f"artifacts/cache/{ver}", split)
+    ens = Path("artifacts/pred") / ver / WINNER / split
+    t0 = time.time()
+    for i, p in enumerate(files, 1):
+        with np.load(p) as z:
+            X = np.asarray(z["X"], np.float32)
+            shape = z["ev"].shape
+        s1 = (1.0 - predict_batched(m1, X)[0]).astype(np.float32)
+        soup = (1.0 - predict_batched(m_soup, X)[0]).astype(np.float32)
+        s2 = (1.0 - predict_batched(m2, X)[0]).astype(np.float32)
+        del X
+        with np.load(ens / p.name) as pred:
+            if pred["s"].shape != shape:
+                raise SystemExit(f"winner {ver} {split} {p.stem} shape")
+        np.save(tmp / f"{ver}_{split}_{p.stem}_s1.npy", s1)
+        np.save(tmp / f"{ver}_{split}_{p.stem}_soup.npy", soup)
+        np.save(tmp / f"{ver}_{split}_{p.stem}_s2.npy", s2)
+        del s1, soup, s2
+        if i == 1 or i % 15 == 0 or i == len(files):
+            log(f"pred {ver} {split} {i}/{len(files)} {time.time() - t0:.0f}s")
+    return files
+
+
+def load_quad(tmp, ver, split, path):
+    s1 = np.load(tmp / f"{ver}_{split}_{path.stem}_s1.npy")
+    soup = np.load(tmp / f"{ver}_{split}_{path.stem}_soup.npy")
+    s2 = np.load(tmp / f"{ver}_{split}_{path.stem}_s2.npy")
+    with np.load(path) as z:
+        ev = np.asarray(z["ev"])
+        valid = np.asarray(z["valid"], bool)
+        nu = np.asarray(z["nu"])
+    with np.load(Path("artifacts/pred") / ver / WINNER / split / path.name) as pred:
+        ws = np.asarray(pred["s"], np.float32)
+    return s1, soup, s2, ws, ev, valid, nu
+
+
+def clear_split(tmp, ver, split, files):
+    for p in files:
+        for tag in ("s1", "soup", "s2"):
+            f = tmp / f"{ver}_{split}_{p.stem}_{tag}.npy"
+            if f.exists():
+                f.unlink()
+    gc.collect()
+
+
+def fit_thr(files, tmp, ver, split):
+    thr = {}
+    for name in NAMES:
+        parts = []
+        for p in files:
+            s1, soup, s2, ws, ev, valid, nu = load_quad(tmp, ver, split, p)
+            score = blend_of(name, s1, soup, s2, ws)
+            bg = valid & (ev == 0) & (nu == 0)
+            parts.append(np.asarray(score[bg], np.float32))
+            del s1, soup, s2, ws, score
+        bg = np.concatenate(parts)
+        thr[name] = float(M.far_threshold(bg, 1e-3))
+        log(f"thr {name} {thr[name]:.6f} n_bg {bg.size}")
+        del parts, bg
+    return thr
+
+
+def score_files(files, tmp, ver, split, thr):
+    rows = {n: [] for n in NAMES}
+    for p in files:
+        s1, soup, s2, ws, ev, valid, _nu = load_quad(tmp, ver, split, p)
+        truth = ev > 0
+        for name in NAMES:
+            score = blend_of(name, s1, soup, s2, ws)
+            rows[name].append(M.confusion((score >= thr[name]) & valid, truth, valid))
+            del score
+        del s1, soup, s2, ws
+    summary = {n: pack(rows[n]) for n in NAMES}
+    for n in NAMES:
+        summary[n]["threshold"] = float(thr[n])
+    return summary, rows
+
+
+def nested_files(files, tmp, ver, split):
+    import s3_sel2_cv as sel2
+    import s3_sel_core as sel
+    import s3_sel_eval as ev
+    import pandas as pd
+
+    labels = pd.read_csv(f"data/synth_meta/{ver}/labels.csv")
+    seqs = pd.read_csv(f"data/synth_meta/{ver}/sequences.csv").set_index("seq_id")
+    want = ("ens_gen2", "soup_blend", WINNER)
+    buckets = {n: [] for n in want}
+    for p in files:
+        s1, soup, s2, ws, ev_map, valid, nu = load_quad(tmp, ver, split, p)
+        with np.load(p) as z:
+            x = np.asarray(z["x"], np.float64)
+            t = np.asarray(z["t"], np.float64)
+        ev_idx, nu_idx, bg_idx, n_bg = ev._indices(ev_map, valid, nu, p.stem)
+        cooling, _rows = ev._events_for(p.stem, ev_map, x, t, labels, seqs, ev_idx)
+
+        def frame(arr, stem=p.stem, cooling=cooling, n_bg=n_bg, ev_idx=ev_idx, nu_idx=nu_idx, bg_idx=bg_idx):
+            e, n, b = sel2._cols(arr, ev_idx, nu_idx, bg_idx)
+            return dict(ev_m=e[None], nu_m=n[None], bg_m=b[None], n_bg=n_bg, cooling=cooling, stem=stem)
+
+        buckets["ens_gen2"].append(frame(blend_of("ens_gen2", s1, soup, s2, ws)))
+        buckets["soup_blend"].append(frame(blend_of("soup_blend", s1, soup, s2, ws)))
+        buckets[WINNER].append(frame(ws))
+        del s1, soup, s2, ws
+    order = np.argsort([fr["stem"] for fr in buckets[WINNER]])
+    frames = {n: [buckets[n][i] for i in order] for n in buckets}
+    winner = frames[WINNER]
+    out = {
+        "stems": [fr["stem"] for fr in winner],
+        "procedure": "s3_sel2_cv sequence_folds i%k, holdout FAR 1e-3, micro, bg cap 200k",
+    }
+    for name in ("ens_gen2", "soup_blend"):
+        out[name] = {}
+        for k in (2, 5):
+            folds = sel.sequence_folds(len(winner), k)
+            parts_w, parts_b, fold_rows = [], [], []
+            for r, idx in enumerate(folds):
+                hw = sel2.eval_one(sel2.take(winner, idx))
+                hb = sel2.eval_one(sel2.take(frames[name], idx))
+                parts_w.append(hw)
+                parts_b.append(hb)
+                fold_rows.append(dict(
+                    fold=r, n_seq=len(idx),
+                    winner=float(hw["iou"]), selected=float(hb["iou"]),
+                    delta=float(hb["iou"] - hw["iou"]),
+                ))
+            iw = float(sel.micro_iou(parts_w))
+            ib = float(sel.micro_iou(parts_b))
+            out[name][str(k)] = dict(
+                winner_iou=iw, selected_iou=ib, delta=float(ib - iw), folds=fold_rows,
+            )
+            log(f"nested {ver} {split} {name} k={k} {ib:.4f} winner {iw:.4f} delta {ib - iw:+.4f}")
+    return out
+
+
+def eval_split(m1, m_soup, m2, ver, split, thr, tmp):
+    files = predict_split(m1, m_soup, m2, ver, split, tmp)
+    summary, rows = score_files(files, tmp, ver, split, thr)
+    nest = nested_files(files, tmp, ver, split)
+    boot = {
+        "soup_vs_gen2": bootstrap(rows["soup_blend"], rows["ens_gen2"]),
+        "soup_vs_winner": bootstrap(rows["soup_blend"], rows[WINNER]),
+        "gen2_vs_winner": bootstrap(rows["ens_gen2"], rows[WINNER]),
+    }
+    for key, b in boot.items():
+        log(
+            f"{ver} {split} {key} delta {b['point']:+.4f} "
+            f"CI [{b['p2_5']:+.4f}, {b['p97_5']:+.4f}] covers0 {b['covers_zero']}"
+        )
+    clear_split(tmp, ver, split, files)
+    return summary, boot, nest
+
+
+def main():
+    torch.set_num_threads(2)
+    try:
+        torch.set_num_interop_threads(1)
+    except RuntimeError:
+        pass
+    for p in (SEED1, SEED2):
+        if not p.is_file():
+            raise SystemExit(f"missing {p}")
+    t0 = time.time()
+    make_soup()
+    val_files = data.list_cache("artifacts/cache/v8", "val")
+    if len(val_files) != 45:
+        raise SystemExit(f"v8 val {len(val_files)}")
+    dropped = tuple(p.stem for p in val_files[:4])
+    if dropped != HOLD_DROP:
+        raise SystemExit(f"first4 {dropped}")
+    hold = val_files[4:]
+    tmp = Path(f"/tmp/s3_gen2_soup_eval_{os.getpid()}")
+    if tmp.exists():
+        shutil.rmtree(tmp)
+    tmp.mkdir(parents=True)
+    try:
+        m1 = load_net(SEED1)
+        m_soup = load_net(SOUP_OUT)
+        m2 = load_net(SEED2)
+        log("nets loaded")
+        predict_split(m1, m_soup, m2, "v8", "val", tmp)
+        thr = fit_thr(hold, tmp, "v8", "val")
+        hold_sum, hold_rows = score_files(hold, tmp, "v8", "val", thr)
+        nest41 = nested_files(hold, tmp, "v8", "val")
+        boot = {
+            "val41": {
+                "soup_vs_gen2": bootstrap(hold_rows["soup_blend"], hold_rows["ens_gen2"]),
+                "soup_vs_winner": bootstrap(hold_rows["soup_blend"], hold_rows[WINNER]),
+                "gen2_vs_winner": bootstrap(hold_rows["ens_gen2"], hold_rows[WINNER]),
+            }
+        }
+        for name in NAMES:
+            log(f"val41 {name} iou={hold_sum[name]['iou']:.6f} thr={hold_sum[name]['threshold']:.6f}")
+        b = boot["val41"]["soup_vs_gen2"]
+        log(
+            f"val41 soup_vs_gen2 delta {b['point']:+.6f} "
+            f"CI [{b['p2_5']:+.4f},{b['p97_5']:+.4f}] covers0={b['covers_zero']}"
+        )
+        clear_split(tmp, "v8", "val", val_files)
+        splits, nested = {}, {"val41": nest41}
+        for ver, split, key in (("v8", "test", "test"), ("v10", "test", "v10"), ("v11", "test", "v11")):
+            summary, bb, nest = eval_split(m1, m_soup, m2, ver, split, thr, tmp)
+            splits[key] = summary
+            boot[key] = bb
+            nested[key] = nest
+
+        soup_beats = (
+            boot["val41"]["soup_vs_gen2"]["point"] >= 0.003
+            and not boot["val41"]["soup_vs_gen2"]["covers_zero"]
+            and nest41["soup_blend"]["5"]["delta"] - nest41["ens_gen2"]["5"]["delta"] >= 0.003
+        )
+        # softer gate for logging only — release requires stronger evidence
+        report = dict(
+            name="GEN2_SOUP",
+            definition="soup=0.5*(seed1+seed2) state_dict; soup_blend=0.5*(soup+winner); ens_gen2=0.5*(seed1+winner)",
+            holdout_dropped=list(HOLD_DROP),
+            holdout_n=41,
+            thresholds=thr,
+            val41=hold_sum,
+            splits=splits,
+            bootstrap=boot,
+            nested=nested,
+            soup_beats_gen2_strict=bool(soup_beats),
+            real_used=False,
+            seconds=round(time.time() - t0, 1),
+        )
+        dump(report)
+        line = (
+            f"{time.strftime('%H:%M', time.gmtime())} GEN2_SOUP_DONE "
+            f"val41_soup={hold_sum['soup_blend']['iou']:.6f} "
+            f"val41_gen2={hold_sum['ens_gen2']['iou']:.6f} "
+            f"d_soup_gen2={boot['val41']['soup_vs_gen2']['point']:+.6f} "
+            f"CI=[{boot['val41']['soup_vs_gen2']['p2_5']:+.4f},{boot['val41']['soup_vs_gen2']['p97_5']:+.4f}] "
+            f"covers0={str(boot['val41']['soup_vs_gen2']['covers_zero']).lower()} "
+            f"nested5_soup={nest41['soup_blend']['5']['delta']:+.4f} "
+            f"nested5_gen2={nest41['ens_gen2']['5']['delta']:+.4f} "
+            f"test_soup={splits['test']['soup_blend']['iou']:.4f} "
+            f"test_gen2={splits['test']['ens_gen2']['iou']:.4f} "
+            f"beats={int(soup_beats)} real_train=0"
+        )
+        with EVENTS.open("a", encoding="utf-8") as f:
+            f.write(line + "\n")
+        log(line)
+        log(f"wrote {OUT}")
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+if __name__ == "__main__":
+    main()

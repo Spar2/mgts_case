@@ -1,0 +1,10 @@
+---
+tailscale_auth_key: ""
+tailscale_hostname: "{{ inventory_hostname }}"
+# Для Debian-хостов поменяй на debian (репозиторий pkgs.tailscale.com).
+tailscale_apt_distro: ubuntu
+tailscale_apt_release: "{{ ansible_facts.distribution_release }}"
+# Костыль против падающих сессий на этом аплинке: гнать noise поверх TCP 443.
+# Эквивалент ручного S97tailscale-force443 (тот патчил init-скрипты sed'ом
+# и слетал при переустановке) — drop-in переживает обновления пакета.
+tailscale_force_noise_443: true

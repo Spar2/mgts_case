@@ -1,0 +1,105 @@
+name: Lint data
+
+# Гейт ветки data на github-hosted раннере. Рабочая станция без Docker и WSL,
+# дев-ВМ по SSH отсюда недоступна. ansible-lint.yml (self-hosted, ветка devops)
+# не трогаем. Пуш только как promotion на staging; этот workflow едет в том же пуше.
+
+permissions:
+  contents: read
+
+on:
+  push:
+    branches: [data]
+  workflow_dispatch:
+
+concurrency:
+  group: lint-data-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    runs-on: [self-hosted, team-devops]
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+
+      - name: Guard branch ref
+        uses: ./.github/actions/guard-ref
+        with:
+          ref_name: ${{ github.ref_name }}
+          event_name: ${{ github.event_name }}
+          fork: ${{ github.event.pull_request.head.repo.fork }}
+
+      - name: Setup Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7
+        with:
+          python-version: "3.12"
+
+      - name: Install Python linters
+        run: pip install ansible-lint yamllint pyyaml
+
+      - name: Install collections
+        working-directory: ansible
+        run: ansible-galaxy collection install -r requirements.yml
+
+      - name: ansible-lint
+        working-directory: ansible
+        run: ansible-lint playbooks/site.yml playbooks/deploy.yml playbooks/runners.yml playbooks/kvm.yml playbooks/data-stand.yml
+
+      - name: syntax-check
+        working-directory: ansible
+        run: |
+          set -euo pipefail
+          for play in playbooks/site.yml playbooks/deploy.yml playbooks/runners.yml playbooks/kvm.yml playbooks/data-stand.yml; do
+            ansible-playbook --syntax-check "$play"
+          done
+
+      - name: yamllint
+        run: |
+          yamllint -c stack/.yamllint \
+            ansible/roles/app/tasks/main.yml \
+            ansible/roles/app/tasks/data.yml \
+            ansible/roles/app/defaults/main.yml \
+            ansible/playbooks/data-stand.yml \
+            .github/workflows/deploy-data.yml \
+            .github/workflows/lint-data.yml \
+            stack/compose.yaml
+
+      - name: shellcheck
+        run: |
+          set -euo pipefail
+          sudo apt-get install -y shellcheck
+          shellcheck -S warning ansible/*.sh
+          python - <<'PY'
+          import pathlib, subprocess, sys
+          import yaml
+          doc = yaml.safe_load(pathlib.Path("stack/compose.yaml").read_text(encoding="utf-8"))
+          script = doc["services"]["migrate"]["command"][0].replace("$$", "$")
+          path = pathlib.Path("/tmp/migrate-inline.sh")
+          path.write_text(script, encoding="utf-8")
+          raise SystemExit(subprocess.call(["shellcheck", "-s", "sh", "-S", "warning", str(path)]))
+          PY
+
+      - name: docker compose config
+        run: docker compose -f stack/compose.yaml config -q
+
+      - name: actionlint
+        run: |
+          set -euo pipefail
+          VER=1.7.7
+          curl -sSL -o /tmp/actionlint.tar.gz "https://github.com/rhysd/actionlint/releases/download/v${VER}/actionlint_${VER}_linux_amd64.tar.gz"
+          # SHA256 from actionlint_1.7.7_checksums.txt upstream release
+          SHA256=023070a287cd8cccd71515fedc843f1985bf96c436b7effaecce67290e7e0757
+          echo "${SHA256}  /tmp/actionlint.tar.gz" | sha256sum -c -
+          tar -xzf /tmp/actionlint.tar.gz -C /tmp actionlint
+          /tmp/actionlint -color
+
+      - name: markdownlint
+        run: |
+          sudo npm install -g markdownlint-cli@0.44.0
+          markdownlint \
+            stack/DATA_GUIDE.md \
+            stack/clickhouse/migrations/README.md \
+            ansible/KEYS.md \
+            ansible/README.md

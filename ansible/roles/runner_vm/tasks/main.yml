@@ -1,0 +1,7 @@
+---
+- name: ВМ раннеров созданы
+  ansible.builtin.include_tasks: create-one.yml
+  loop: "{{ libvirt_runner_vms }}"
+  loop_control:
+    loop_var: runner
+    label: "{{ runner.name }}"

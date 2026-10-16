@@ -1,0 +1,38 @@
+[
+  {
+    "record": "6",
+    "points": 64,
+    "source_sha256": "23e79988fcfb8a186dec06faffa60e6ed7c93ca7cd9969ac4989fd12b9f358c8",
+    "native_axes_values_masks": true
+  },
+  {
+    "record": "4",
+    "points": 64,
+    "source_sha256": "d2f5b3d90078420aea45bac86df3656987a2ca9c548d478d134d3ee6349fde17",
+    "native_axes_values_masks": true
+  },
+  {
+    "record": "5",
+    "points": 64,
+    "source_sha256": "98c1d629ed59478c81fa58b60e891f5587ef9d64ad435655e717a27f64767e46",
+    "native_axes_values_masks": true
+  },
+  {
+    "record": "2",
+    "points": 64,
+    "source_sha256": "f115579accd114e0c5a0d968aea3d2710da8ead421fc8c35c17472047cefdec4",
+    "native_axes_values_masks": true
+  },
+  {
+    "record": "1",
+    "points": 64,
+    "source_sha256": "3101c6b2716d2a9e14cd32e2e5d758cb8628741cff6f265cc45db2d7e9e8257f",
+    "native_axes_values_masks": true
+  },
+  {
+    "record": "3",
+    "points": 64,
+    "source_sha256": "0acc4e41dc16dd829110881641cb17f94bffd0c2d5255d539d8f3589cd8cdde3",
+    "native_axes_values_masks": true
+  }
+]

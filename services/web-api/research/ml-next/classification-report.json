@@ -1,0 +1,18 @@
+{
+  "schema_version": "dts-classification-study-v1",
+  "status": "awaiting_verified_expert_labels",
+  "models_trained": 0,
+  "precision": null,
+  "macro_f1": null,
+  "operational_approved": false,
+  "prepared_heads": [
+    "episode_presence",
+    "expert_phenomenon"
+  ],
+  "prepared_models": [
+    "logistic_regression",
+    "hist_gradient_boosting"
+  ],
+  "geometry_descriptors": "context and local structure are separate hypotheses; no cause labels",
+  "requirements": ">=10 examples/class from >=2 sources/class; grouped validation; ambiguous/unknown excluded"
+}

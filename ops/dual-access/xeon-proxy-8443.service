@@ -1,0 +1,12 @@
+[Unit]
+Description=Xeon socat proxy tailnet:8443 -> 127.0.0.1:8443 (dual-access Ф4)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+ExecStart=/usr/bin/socat TCP-LISTEN:8443,bind=<XEON-TAILNET-IP>,reuseaddr,fork TCP:127.0.0.1:8443
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,153 @@
+{
+  "platform": "Windows, local FastAPI/PostgreSQL, loopback, venv scipy 1.18.1/numpy 2.4.3",
+  "method_version": "237168f4d4a3e11260c9f692880cc477cd7af779",
+  "memory_caveat": "Sampled Windows peak working set of supervised child; excludes parent worker/API and can miss a short-lived child. Each PowerShell sample adds observer overhead. Not a concurrency benchmark.",
+  "rows": [
+    {
+      "record_id": "1",
+      "source_sha256": "3101c6b2716d2a9e14cd32e2e5d758cb8628741cff6f265cc45db2d7e9e8257f",
+      "region": {
+        "record_id": "1",
+        "row_start": 0,
+        "row_end": 64,
+        "column_start": 5597,
+        "column_end": 6109
+      },
+      "cells": 32768,
+      "elapsed_s": 3.422,
+      "sampled_child_peak_working_set_bytes": 72765440,
+      "stages_observed": [
+        "queued",
+        "computing",
+        "complete"
+      ],
+      "numeric_arrays_equal_to_original_ml": true,
+      "zones": 0
+    },
+    {
+      "record_id": "2",
+      "source_sha256": "f115579accd114e0c5a0d968aea3d2710da8ead421fc8c35c17472047cefdec4",
+      "region": {
+        "record_id": "2",
+        "row_start": 0,
+        "row_end": 64,
+        "column_start": 901,
+        "column_end": 1413
+      },
+      "cells": 32768,
+      "elapsed_s": 3.328,
+      "sampled_child_peak_working_set_bytes": 73375744,
+      "stages_observed": [
+        "queued",
+        "computing",
+        "complete"
+      ],
+      "numeric_arrays_equal_to_original_ml": true,
+      "zones": 1
+    },
+    {
+      "record_id": "3",
+      "source_sha256": "0acc4e41dc16dd829110881641cb17f94bffd0c2d5255d539d8f3589cd8cdde3",
+      "region": {
+        "record_id": "3",
+        "row_start": 0,
+        "row_end": 64,
+        "column_start": 588,
+        "column_end": 1100
+      },
+      "cells": 32768,
+      "elapsed_s": 3.297,
+      "sampled_child_peak_working_set_bytes": 74100736,
+      "stages_observed": [
+        "queued",
+        "computing",
+        "complete"
+      ],
+      "numeric_arrays_equal_to_original_ml": true,
+      "zones": 0
+    },
+    {
+      "record_id": "4",
+      "source_sha256": "d2f5b3d90078420aea45bac86df3656987a2ca9c548d478d134d3ee6349fde17",
+      "region": {
+        "record_id": "4",
+        "row_start": 0,
+        "row_end": 64,
+        "column_start": 589,
+        "column_end": 1101
+      },
+      "cells": 32768,
+      "elapsed_s": 3.188,
+      "sampled_child_peak_working_set_bytes": 74682368,
+      "stages_observed": [
+        "queued",
+        "computing",
+        "complete"
+      ],
+      "numeric_arrays_equal_to_original_ml": true,
+      "zones": 0
+    },
+    {
+      "record_id": "5",
+      "source_sha256": "98c1d629ed59478c81fa58b60e891f5587ef9d64ad435655e717a27f64767e46",
+      "region": {
+        "record_id": "5",
+        "row_start": 0,
+        "row_end": 64,
+        "column_start": 926,
+        "column_end": 1438
+      },
+      "cells": 32768,
+      "elapsed_s": 3.187,
+      "sampled_child_peak_working_set_bytes": 75403264,
+      "stages_observed": [
+        "queued",
+        "computing",
+        "complete"
+      ],
+      "numeric_arrays_equal_to_original_ml": true,
+      "zones": 4
+    },
+    {
+      "record_id": "6",
+      "source_sha256": "23e79988fcfb8a186dec06faffa60e6ed7c93ca7cd9969ac4989fd12b9f358c8",
+      "region": {
+        "record_id": "6",
+        "row_start": 0,
+        "row_end": 64,
+        "column_start": 2011,
+        "column_end": 2523
+      },
+      "cells": 32768,
+      "elapsed_s": 3.25,
+      "sampled_child_peak_working_set_bytes": 76165120,
+      "stages_observed": [
+        "computing",
+        "complete"
+      ],
+      "numeric_arrays_equal_to_original_ml": true,
+      "zones": 1
+    },
+    {
+      "record_id": "1",
+      "source_sha256": "3101c6b2716d2a9e14cd32e2e5d758cb8628741cff6f265cc45db2d7e9e8257f",
+      "region": {
+        "record_id": "1",
+        "row_start": 0,
+        "row_end": 615,
+        "column_start": 4432,
+        "column_end": 5911
+      },
+      "cells": 909585,
+      "elapsed_s": 3.469,
+      "sampled_child_peak_working_set_bytes": 114823168,
+      "stages_observed": [
+        "queued",
+        "computing",
+        "complete"
+      ],
+      "numeric_arrays_equal_to_original_ml": true,
+      "zones": 8
+    }
+  ]
+}

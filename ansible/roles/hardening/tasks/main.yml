@@ -1,0 +1,21 @@
+---
+- name: Hardening | SSH
+  ansible.builtin.include_tasks:
+    file: sshd.yml
+    apply:
+      tags: [hardening, sshd]
+  tags: [hardening, sshd, always]
+
+- name: Hardening | фаервол
+  ansible.builtin.include_tasks:
+    file: firewall.yml
+    apply:
+      tags: [hardening, firewall]
+  tags: [hardening, firewall, always]
+
+- name: Hardening | обновления и fail2ban
+  ansible.builtin.include_tasks:
+    file: updates.yml
+    apply:
+      tags: [hardening, updates]
+  tags: [hardening, updates, always]

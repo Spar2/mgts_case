@@ -1,0 +1,504 @@
+{
+  "version": "2.20",
+  "children": [
+    {
+      "type": "frame",
+      "id": "TN9uj",
+      "x": 0,
+      "y": 0,
+      "name": "Carbon R3 · Вход в рабочую область",
+      "metadata": {
+        "type": "dts-product-r3",
+        "slug": "login",
+        "role": "Исследователь",
+        "prototype": true
+      },
+      "clip": true,
+      "width": 1440,
+      "height": 1000,
+      "fill": "$dts.background",
+      "layout": "none",
+      "children": [
+        {
+          "type": "frame",
+          "id": "RYSkO",
+          "x": 0,
+          "y": 0,
+          "name": "Оболочка",
+          "width": 1440,
+          "height": 48,
+          "fill": "$dts.shell",
+          "layout": "none"
+        },
+        {
+          "type": "text",
+          "id": "TgWDK",
+          "x": 32,
+          "y": 14,
+          "name": "МГТС / DTS Workbench",
+          "fill": "#ffffff",
+          "textGrowth": "fixed-width",
+          "width": 400,
+          "content": "МГТС / DTS Workbench",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "600"
+        },
+        {
+          "type": "text",
+          "id": "T99G2m",
+          "x": 96,
+          "y": 136,
+          "name": "Доступ к рабочей области",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 520,
+          "content": "Доступ к рабочей области",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 12,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "GpV71",
+          "x": 96,
+          "y": 180,
+          "name": "Вход в рабочую область",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 520,
+          "content": "Вход в рабочую область",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 36,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "RIKAk",
+          "x": 96,
+          "y": 248,
+          "name": "Доступ по приглашению вашей команды.",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 520,
+          "content": "Доступ по приглашению вашей команды.",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 16,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "O6ZdZC",
+          "x": 96,
+          "y": 328,
+          "name": "Рабочая почта",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 520,
+          "content": "Рабочая почта",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 12,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "BBWMz",
+          "x": 96,
+          "y": 350,
+          "name": "Поле / Рабочая почта",
+          "width": 520,
+          "height": 40,
+          "fill": "$dts.layer",
+          "layout": "none"
+        },
+        {
+          "type": "rectangle",
+          "id": "I678en",
+          "x": 96,
+          "y": 389,
+          "name": "Нижняя граница поля Рабочая почта",
+          "fill": "#8d8d8d",
+          "width": 520,
+          "height": 1
+        },
+        {
+          "type": "text",
+          "id": "IVI3q",
+          "x": 112,
+          "y": 360,
+          "name": "name@company.ru",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 488,
+          "content": "name@company.ru",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "KVp3L",
+          "x": 96,
+          "y": 416,
+          "name": "Пароль",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 520,
+          "content": "Пароль",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 12,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "ZRlOx",
+          "x": 96,
+          "y": 438,
+          "name": "Поле / Пароль",
+          "width": 520,
+          "height": 40,
+          "fill": "$dts.layer",
+          "layout": "none"
+        },
+        {
+          "type": "rectangle",
+          "id": "VA8U2",
+          "x": 96,
+          "y": 477,
+          "name": "Нижняя граница поля Пароль",
+          "fill": "#8d8d8d",
+          "width": 520,
+          "height": 1
+        },
+        {
+          "type": "text",
+          "id": "Qrk98",
+          "x": 112,
+          "y": 448,
+          "name": "Введите пароль",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 488,
+          "content": "Введите пароль",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "n4MYHw",
+          "x": 96,
+          "y": 520,
+          "name": "Действие / Войти",
+          "width": 520,
+          "height": 48,
+          "fill": "$dts.interactive",
+          "layout": "none",
+          "children": [
+            {
+              "type": "text",
+              "id": "DKtFX",
+              "x": 16,
+              "y": 14,
+              "name": "Войти",
+              "fill": "#ffffff",
+              "textGrowth": "fixed-width",
+              "width": 488,
+              "content": "Войти",
+              "lineHeight": 1.3,
+              "fontFamily": "$dts.font",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "rectangle",
+          "id": "T7S4VF",
+          "x": 96,
+          "y": 600,
+          "name": "Разделитель",
+          "fill": "$dts.border-subtle",
+          "width": 520,
+          "height": 1
+        },
+        {
+          "type": "text",
+          "id": "odzcZ",
+          "x": 112,
+          "y": 616,
+          "name": "Корпоративный вход — если подключён администратором",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 488,
+          "content": "Корпоративный вход — если подключён администратором",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "rectangle",
+          "id": "NHqWS",
+          "x": 96,
+          "y": 664,
+          "name": "Разделитель",
+          "fill": "$dts.border-subtle",
+          "width": 520,
+          "height": 1
+        },
+        {
+          "type": "text",
+          "id": "q8SKhI",
+          "x": 112,
+          "y": 680,
+          "name": "Восстановить доступ",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 488,
+          "content": "Восстановить доступ",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "rectangle",
+          "id": "zta7h",
+          "x": 96,
+          "y": 728,
+          "name": "Разделитель",
+          "fill": "$dts.border-subtle",
+          "width": 520,
+          "height": 1
+        },
+        {
+          "type": "text",
+          "id": "XMxBe",
+          "x": 112,
+          "y": 744,
+          "name": "Пароль можно вставить или заполнить менеджером паролей",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 488,
+          "content": "Пароль можно вставить или заполнить менеджером паролей",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "l09ou",
+          "x": 760,
+          "y": 48,
+          "name": "Контекст сервиса",
+          "width": 680,
+          "height": 928,
+          "fill": "$dts.layer",
+          "layout": "none"
+        },
+        {
+          "type": "text",
+          "id": "kcpEX",
+          "x": 824,
+          "y": 176,
+          "name": "Наблюдения.\nПроверка.\nПрослеживаемость.",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 520,
+          "content": "Наблюдения.\nПроверка.\nПрослеживаемость.",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 40,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "n45XnV",
+          "x": 824,
+          "y": 400,
+          "name": "Ваша работа продолжается с того же места: проект, участок и несохранённое обоснование. Доступ к данным проверяется после входа.",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 480,
+          "content": "Ваша работа продолжается с того же места: проект, участок и несохранённое обоснование. Доступ к данным проверяется после входа.",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 20,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "ZYRjj",
+          "x": 824,
+          "y": 624,
+          "name": "После входа",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 480,
+          "content": "После входа",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 16,
+          "fontWeight": "600"
+        },
+        {
+          "type": "rectangle",
+          "id": "RSvH0",
+          "x": 824,
+          "y": 656,
+          "name": "Разделитель / После входа",
+          "fill": "$dts.border-subtle",
+          "width": 480,
+          "height": 1
+        },
+        {
+          "type": "rectangle",
+          "id": "JBpk4",
+          "x": 824,
+          "y": 680,
+          "name": "Разделитель",
+          "fill": "$dts.border-subtle",
+          "width": 480,
+          "height": 1
+        },
+        {
+          "type": "text",
+          "id": "eMEEG",
+          "x": 840,
+          "y": 696,
+          "name": "Выберите доступный проект",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 448,
+          "content": "Выберите доступный проект",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "rectangle",
+          "id": "LRKpJ",
+          "x": 824,
+          "y": 744,
+          "name": "Разделитель",
+          "fill": "$dts.border-subtle",
+          "width": 480,
+          "height": 1
+        },
+        {
+          "type": "text",
+          "id": "A8kHD",
+          "x": 840,
+          "y": 760,
+          "name": "Продолжите назначенную работу",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 448,
+          "content": "Продолжите назначенную работу",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "rectangle",
+          "id": "C2bGx",
+          "x": 824,
+          "y": 808,
+          "name": "Разделитель",
+          "fill": "$dts.border-subtle",
+          "width": 480,
+          "height": 1
+        },
+        {
+          "type": "text",
+          "id": "Fennd",
+          "x": 840,
+          "y": 824,
+          "name": "Ответы сохраняются с автором и ревизией",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 448,
+          "content": "Ответы сохраняются с автором и ревизией",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "Yq8sv",
+          "x": 96,
+          "y": 936,
+          "name": "Проектируемый вход · конфигурация зависит от команды",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 600,
+          "content": "Проектируемый вход · конфигурация зависит от команды",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 12,
+          "fontWeight": "normal"
+        }
+      ]
+    }
+  ],
+  "variables": {
+    "dts.background": {
+      "type": "color",
+      "value": "#ffffff"
+    },
+    "dts.layer": {
+      "type": "color",
+      "value": "#f4f4f4"
+    },
+    "dts.text-primary": {
+      "type": "color",
+      "value": "#161616"
+    },
+    "dts.text-secondary": {
+      "type": "color",
+      "value": "#525252"
+    },
+    "dts.border-subtle": {
+      "type": "color",
+      "value": "#e0e0e0"
+    },
+    "dts.interactive": {
+      "type": "color",
+      "value": "#0f62fe"
+    },
+    "dts.selection": {
+      "type": "color",
+      "value": "#edf5ff"
+    },
+    "dts.shell": {
+      "type": "color",
+      "value": "#161616"
+    },
+    "dts.font": {
+      "type": "string",
+      "value": "IBM Plex Sans"
+    },
+    "dts.font-mono": {
+      "type": "string",
+      "value": "IBM Plex Mono"
+    },
+    "dts.spacing": {
+      "type": "number",
+      "value": 8
+    }
+  },
+  "fileToken": "0a9ba33a-6ce8-4113-ad2f-1f37bedbf467"
+}

@@ -1,0 +1,250 @@
+{
+  "dataset_key": "9c66ef8c486211354b2776dad8c1bae7ed9fb5516277dd122911f1b4e4dffe5d",
+  "training_config": {
+    "seed": 611,
+    "cpu_threads": 2,
+    "extra_trees": {
+      "n_estimators": 200,
+      "min_samples_leaf": 3
+    },
+    "cnn": {
+      "hidden": [
+        16,
+        24,
+        16
+      ],
+      "dilations": [
+        1,
+        2,
+        4
+      ],
+      "epochs": 12,
+      "batch_size": 32,
+      "learning_rate": 0.001,
+      "weight_decay": 0.0001
+    },
+    "probability_thresholds": [
+      0.1,
+      0.15,
+      0.2,
+      0.25,
+      0.3,
+      0.35,
+      0.4,
+      0.45,
+      0.5,
+      0.55,
+      0.6,
+      0.65,
+      0.7,
+      0.75,
+      0.8,
+      0.85,
+      0.9
+    ],
+    "dsp_thresholds_c": [
+      0.5,
+      0.75,
+      1.0,
+      1.25,
+      1.5,
+      1.75,
+      2.0,
+      2.25,
+      2.5,
+      2.75,
+      3.0,
+      3.25,
+      3.5,
+      3.75,
+      4.0,
+      4.25,
+      4.5,
+      4.75,
+      5.0,
+      5.25,
+      5.5,
+      5.75,
+      6.0
+    ],
+    "threshold_selection": "validation F1; larger threshold on ties; test never selects parameters"
+  },
+  "validation_only": true,
+  "code_sha256": {
+    "dts/models.py": "c703969fdf900b7a9ca12cde2f900d51acbdaeb4e40be761a7e15ea50f48ad66",
+    "scripts/train_models.py": "aa741a6a36074bc5404d86aac52a257f18dd43c84165c8c0feeae3ff717fbd96"
+  },
+  "model_key": "909185eb2e7e847779a74ba3bb91f4013c6c9dc05596983efc74928b07e656bc",
+  "classical_files": {
+    "extra_trees_full": "extra_trees_full.joblib",
+    "extra_trees_spatial_only": "extra_trees_spatial_only.joblib",
+    "extra_trees_history_only": "extra_trees_history_only.joblib",
+    "extra_trees_weak_source": "extra_trees_weak_source.joblib"
+  },
+  "scaling": {
+    "center": [
+      23.029991149902344,
+      23.029991149902344,
+      -0.0003618069749791175,
+      -0.011503370478749275,
+      0.22549906373023987,
+      -9.540840983390808e-05,
+      -0.10627555847167969,
+      0.33086585998535156,
+      1.0
+    ],
+    "scale": [
+      3.729770254898071,
+      3.729770254898071,
+      0.6290884109616279,
+      0.8132406547307968,
+      1.557484961271286,
+      0.5105392016530037,
+      1.5788552644729614,
+      0.25,
+      0.25
+    ],
+    "clip": 10.0,
+    "fit_scope": "training known-label scenes only"
+  },
+  "thresholds": {
+    "spatial_dsp": 3.0,
+    "lag_challenger": 3.0,
+    "extra_trees_full": 0.8,
+    "extra_trees_spatial_only": 0.8,
+    "extra_trees_history_only": 0.65,
+    "extra_trees_weak_source": 0.8,
+    "cnn": 0.9
+  },
+  "artifacts_sha256": {
+    "extra_trees_full.joblib": "fb60dbcab51e8a5ea0ee0922bf89efa8b46492f58fd96ac26a7f7171c705c2cb",
+    "extra_trees_spatial_only.joblib": "1dc75df29ef199514d8478d50f6f677ae904406bbdee49b71195c71786825922",
+    "extra_trees_history_only.joblib": "e83d1095a83624adcce5bd406342664e0fc0d2245f452fefa537b618918b5281",
+    "extra_trees_weak_source.joblib": "c8360f5fe3c9984ee68c0923b5ec151ece01b4ecb9c8848fba1b30272b2e3842",
+    "cnn.pt": "cb6cde4894577cdd60758b47103d8bc29b23509fc90d6be4299d8ace3ccee0e4"
+  },
+  "best_epoch": 4,
+  "cnn_parameters": 9577,
+  "training_history": [
+    {
+      "epoch": 1,
+      "train_bce": 0.24592670777929015,
+      "validation_bce": 0.11088816821575165
+    },
+    {
+      "epoch": 2,
+      "train_bce": 0.072891682611953,
+      "validation_bce": 0.09511908888816833
+    },
+    {
+      "epoch": 3,
+      "train_bce": 0.05498589940179954,
+      "validation_bce": 0.0625932589173317
+    },
+    {
+      "epoch": 4,
+      "train_bce": 0.043887404832275934,
+      "validation_bce": 0.061444710940122604
+    },
+    {
+      "epoch": 5,
+      "train_bce": 0.032849790751242836,
+      "validation_bce": 0.07911793887615204
+    },
+    {
+      "epoch": 6,
+      "train_bce": 0.03211929821372905,
+      "validation_bce": 0.09359195083379745
+    },
+    {
+      "epoch": 7,
+      "train_bce": 0.025975925248076237,
+      "validation_bce": 0.0945030003786087
+    },
+    {
+      "epoch": 8,
+      "train_bce": 0.024919304260947683,
+      "validation_bce": 0.08385299146175385
+    },
+    {
+      "epoch": 9,
+      "train_bce": 0.022502515327687433,
+      "validation_bce": 0.06953509896993637
+    },
+    {
+      "epoch": 10,
+      "train_bce": 0.019179202301984333,
+      "validation_bce": 0.08025314658880234
+    },
+    {
+      "epoch": 11,
+      "train_bce": 0.016761146526050652,
+      "validation_bce": 0.07812294363975525
+    },
+    {
+      "epoch": 12,
+      "train_bce": 0.013852351936066043,
+      "validation_bce": 0.08727392554283142
+    }
+  ],
+  "versions": {
+    "numpy": "2.3.5",
+    "sklearn": "1.9.1",
+    "torch": "2.14.1+cpu"
+  },
+  "purpose": "synthetic local thermal support research; not calibrated emergency probability",
+  "weak_source_policy": "only weak_source tree fits threshold-3C pseudo-labels on train/validation; test evaluates geometric synthetic truth",
+  "preprocessing": "same causal evidence and review patch contract; masks mandatory; scale fit on train only",
+  "receptive_field": "CNN 15 grid times and 7m plus causal evidence dependencies; no future temporal padding",
+  "selection": "frozen full-field validation event policy; confirmation not opened; no real-world calibration",
+  "base_model_key": "93e83e1b9452b9bbd78580acad5f7e10a3ff21479bf8c295cd296231a4a3eea4",
+  "decision_policies": {
+    "spatial_dsp": "confirmed_60s_2profiles",
+    "lag_challenger": "confirmed_60s_2profiles",
+    "extra_trees_full": "confirmed_60s_2profiles",
+    "extra_trees_spatial_only": "confirmed_60s_2profiles",
+    "extra_trees_history_only": "raw",
+    "extra_trees_weak_source": "raw",
+    "cnn": "confirmed_60s_2profiles"
+  },
+  "policy_validation_dataset_key": "9c66ef8c486211354b2776dad8c1bae7ed9fb5516277dd122911f1b4e4dffe5d",
+  "policy_selection_identity": {
+    "base_model_key": "93e83e1b9452b9bbd78580acad5f7e10a3ff21479bf8c295cd296231a4a3eea4",
+    "validation_dense_key": "dbd82e2e1c304e828c679e6c97f3c9f44d1340b55b595f6dfcaf897b6d814582",
+    "config": {
+      "probability_thresholds": [
+        0.35,
+        0.5,
+        0.65,
+        0.8,
+        0.9
+      ],
+      "dsp_thresholds_c": [
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0
+      ],
+      "policies": [
+        "raw",
+        "confirmed_60s_2profiles"
+      ],
+      "confirmation_minimum_span_s": 60.0,
+      "confirmation_minimum_profiles": 2,
+      "selection": "pooled validation event F1, then support IoU, then higher threshold, then raw on exact ties",
+      "metric": "existing frozen IoU .2, truth/prediction coverage .3; no point adjustment",
+      "interior_columns": [
+        16,
+        111
+      ],
+      "fit_or_selection_on_confirmation": false
+    },
+    "code_sha256": {
+      "scripts/freeze_dense_policy_v2.py": "0c37d7226d733a3c97d4f3686d596b44e2332cc34a048c6f6d91970477b6533c",
+      "dts/benchmark.py": "b3ef0702e63ebf23d5a5fa0ead4ac7e6c4b963a97393bf86799625a81e13be6d",
+      "dts/persistence.py": "ccf72744cd35d530c6ec9641b3228ba0fc8ef3d4c3916955f468f18e7e9b80fd",
+      "dts/metrics.py": "6b8629f74d0c46521206f97fa41021c474aa1f5db3bc2bddbcc040b35fcbb932"
+    }
+  }
+}

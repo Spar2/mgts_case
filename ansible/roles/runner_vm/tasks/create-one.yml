@@ -1,0 +1,50 @@
+---
+- name: Домен уже существует?
+  ansible.builtin.command: virsh dominfo {{ runner.name }}
+  register: runner_vm_dominfo
+  changed_when: false
+  failed_when: false
+
+- name: Создание ВМ {{ runner.name }}
+  when: runner_vm_dominfo.rc != 0
+  block:
+    - name: Каталог seed
+      ansible.builtin.file:
+        path: "{{ libvirt_data_dir }}/seeds/{{ runner.name }}"
+        state: directory
+        mode: "0711"
+
+    - name: Seed-файлы
+      ansible.builtin.template:
+        src: "{{ item.src }}"
+        dest: "{{ libvirt_data_dir }}/seeds/{{ runner.name }}/{{ item.dst }}"
+        mode: "0644"
+      vars:
+        vm: "{{ runner }}"
+      loop:
+        - {src: runner-user-data.j2, dst: user-data}
+        - {src: runner-network-config.j2, dst: network-config}
+      loop_control:
+        label: "{{ item.dst }}"
+
+    - name: Virt-install ВМ раннера
+      vars:
+        runner_seed: "{{ libvirt_data_dir }}/seeds/{{ runner.name }}"
+        runner_disk: "{{ libvirt_data_dir }}/images/{{ runner.name }}.qcow2"
+      ansible.builtin.command: >
+        virt-install --name {{ runner.name }} --memory {{ runner.memory_mb }} --vcpus {{ runner.vcpus }}
+        --osinfo {{ libvirt_osinfo }}
+        --disk path={{ runner_disk }},size={{ runner.disk_gb }},backing_store={{ libvirt_cloud_base_image }},backing_format=qcow2
+        --import --network bridge={{ libvirt_bridge }},model=virtio,mac={{ runner.mac }}
+        --cloud-init user-data={{ runner_seed }}/user-data,network-config={{ runner_seed }}/network-config
+        --serial file,path={{ runner_seed }}/console.log
+        --noautoconsole --autostart
+      changed_when: true
+
+    - name: SSH ВМ доступен
+      ansible.builtin.wait_for:
+        host: "{{ runner.ip }}"
+        port: 22
+        timeout: "{{ runner_vm_ssh_wait_timeout }}"
+      delegate_to: localhost
+      become: false

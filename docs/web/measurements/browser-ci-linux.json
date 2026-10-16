@@ -1,0 +1,87 @@
+{
+  "date": "2026-10-09",
+  "environment": "Linux Debian bookworm Docker on Windows; Python 3.12; Node 24.21.0; Playwright CLI 0.1.22 / Chromium 155.0.8059.12",
+  "data": "isolated small contract fixtures only; never ML training or real expert material",
+  "exit_code": 0,
+  "scenarios": {
+    "browser": {
+      "records": [
+        "1.csv",
+        "6.csv",
+        "3.csv",
+        "5.csv",
+        "2.csv",
+        "4.csv"
+      ],
+      "exactSlice": {
+        "row": 100,
+        "column": 0,
+        "temperature": 20.1
+      },
+      "widths": [
+        {
+          "viewport": 320,
+          "document": 320
+        },
+        {
+          "viewport": 390,
+          "document": 390
+        },
+        {
+          "viewport": 430,
+          "document": 430
+        },
+        {
+          "viewport": 1024,
+          "document": 1024
+        },
+        {
+          "viewport": 1440,
+          "document": 1440
+        }
+      ],
+      "blindGate": 403,
+      "runtimeErrors": []
+    },
+    "review-save": {
+      "networkDraftPreserved": true,
+      "conflictDraftPreserved": true,
+      "revision": 3,
+      "reloadPersisted": true,
+      "methodCount": 0,
+      "exportVersion": "general-review-packet-v1"
+    },
+    "replay-controls": {
+      "pause": true,
+      "speed": 60,
+      "seek": 100,
+      "lostSessionRecovery": true,
+      "recordSwitchReleased": true
+    },
+    "graphics": {
+      "contextLossFallback": true,
+      "unavailableWebglFallback": true,
+      "keyboardRadio": true,
+      "runtimeErrors": []
+    },
+    "request-races": {
+      "scenarios": [
+        {
+          "held": "slices",
+          "currentRecord": "3",
+          "provenanceAndScalePreserved": true
+        },
+        {
+          "held": "tiles",
+          "currentRecord": "3",
+          "provenanceAndScalePreserved": true
+        }
+      ],
+      "cancelledRequests": [
+        "net::ERR_ABORTED",
+        "net::ERR_ABORTED"
+      ],
+      "runtimeErrors": []
+    }
+  }
+}

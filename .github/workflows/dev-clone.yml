@@ -1,0 +1,410 @@
+name: Dev-clone (per-dev full-stack clone)
+
+# Per-dev full-stack clones for branches `dev-<dev>-<topic>` on Xeon (tailnet, tag:ci).
+# Push -> up + gates + receipt; branch delete -> down + rm -rf + note.
+# Mirrors preview.yml structure (triggers/concurrency/tailscale tag:ci/probe-wake/
+# SSH deploy block/Discord notes/cleanup job). preview.yml itself is UNTOUCHED,
+# and PR-preview cleanup must NEVER touch /opt/haklolarp-dev/* (this file only
+# ever rm -rf's paths under /opt/haklolarp-dev/, asserted before every removal).
+#
+# Branch naming: `dev-<dev>-<topic>`, lowercase alnum + dash only, fail closed
+# otherwise. One active clone per dev: a push to a SECOND branch of the same dev
+# FAILS with a clear message (picked over slot-reuse: fail-closed, never silently
+# reuse or kill). Owner deletes the stale branch (auto-cleanup) or dispatches
+# with reclone=true from that dev branch ref
+# (`gh workflow run dev-clone.yml --ref dev-<dev>-<topic> -f reclone=true`;
+# explicit wipe + recreate; never silent auto-follow; dispatch from main is
+# refused by branch sanitize — always use the dev branch ref).
+# Concurrent same-dev pushes serialize via an atomic per-dev lock on Xeon
+# (`mkdir $HOME/.sandbox-locks/dev-<dev>.lock` covering check→up; second contender
+# gets an explicit refusal, never corruption).
+#
+# Clone identity: project `haklolarp-<dev>-<branch-sanitized>`,
+# dir `/opt/haklolarp-dev/<dev>-<branch>`. Compose = the SHARED cells file
+# ops/sandboxes/cells/docker-compose.cells.yml via `-f` + `-p $PROJECT`
+# (DECISION (b), justification below); no forks, no per-dev compose files.
+# Ports come from the inline per-dev block 91xx ONLY (single source of truth, no external table):
+#   SUM = sum of dev-name bytes; APP_PORT = 9101 + (SUM % 98)  -> 9101..9198.
+# Deterministic per dev, implemented identically in `vars` (runner) and on Xeon.
+# Cross-dev hash collision does NOT brick the second dev: Xeon bumps
+# deterministically (+1, wrap in 9101..9198, inside the per-dev lock) to the
+# first free slot and persists the final port in CLONE.lock; the receipt prefers
+# CLONE.lock over `vars` output. Re-push of the same branch keeps its port when
+# free (own DIR excluded from the scan; existing CLONE.lock port reused).
+# Ports 8080 (main/staging) / 8081 (web) / 8082 (ml) stay untouched by
+# construction (91xx block) and by denylist below.
+#
+# Lifecycle: push -> cells up --build + migrate one-shot receipt + per-service
+# health gates + smoke (curl / on web, /health on ml, /healthz on data backend)
+# + CLONE.lock manifest + Discord to DEVOPS channel + CLONE.lock on host (base
+# SHA of origin/main + dates + image list + cell ports + reseed provenance).
+# Delete event -> down --volumes --rmi local + label-sweep
+# + rm -rf + Discord note.
+#
+# Data: default = fresh empty named volumes + migrate one-shot schema receipt
+# (cell-data-migrate, profiles:[migrate], exit-0 asserted; backend /healthz is
+# 200 even on empty volumes, so health-only is NOT proof). NO live-queue
+# sharing, NO live-volume mounts (rendered-config guard refuses live paths).
+# Full-reseed (Gap 2): explicit manual flag ONLY — `full_reseed` boolean
+# workflow_dispatch input (default false) via vars.reseed (push flows stay
+# empty-volumes unless re-run via dispatch from the dev branch ref with
+# `-f full_reseed=true`; NEVER automatic, no env passthrough). When true: the clone's redis/clickhouse services are stopped
+# (clone ONLY, live is NEVER stopped/restarted/removed), live volumes are
+# copied read-only (`docker run --rm --volumes-from <live>:ro`, tar pipe per
+# docs; live containers are only ever inspected, never operated on), then the
+# clone services restart, migrate re-runs, gates run. Fail closed: a missing
+# live source (project `haklolarp-stack`, services redis/clickhouse,
+# overridable via LIVE_STACK_PROJECT) aborts with NO green. Provenance (live
+# image SHAs, timestamp) lands in CLONE.lock (RESEED=true). Crash-consistency
+# caveat: live CH/redis files are copied hot — verify row counts on Xeon.
+#
+# Full-stack DECISION (Gap 3): (b) clone target = cells file. WHY: it is
+# already loopback-pinned on every published port, already the FULL program
+# set (web+api+ml+redis+clickhouse+backend+ingester+migrate) with per-service
+# CELL_*_PORT overrides, :ro where upstream says so, healthchecks + a migrate
+# receipt gate, project-safe (no container_name) and fresh prefixed named
+# volumes per `-p` (no live mounts by construction). REJECTED (a): reusing
+# stack/compose.yaml would need overriding its hardcoded live ports
+# (6379/8123/8000) plus assembling web/ml services whose compose files live on
+# OTHER branches (origin/web, origin/ml) — fragile cross-branch assembly vs one
+# in-tree file present on main. Per-dev ports: CELL_WEB_PORT=APP_PORT
+# (headline, smoke curl, receipt) + ML/REDIS/CH/API at +1..+4 wrapped in
+# 9101..9198; the whole 5-port block is collision-checked against other devs'
+# CLONE.lock files and persisted in CLONE.lock.
+#
+# Fairness: max 3 concurrent clones (other /opt/haklolarp-dev/* slots with
+# running containers; unknown slots count as occupied, fail-closed). If full:
+# check-then-wait with timeout (15 x 60s), NEVER kill others' clones; refuse
+# with a clear message on timeout. mem_limit: the cells file pins its own
+# tuned per-service limits (redis needs 4gb per the stack notes), so the old
+# flat `docker update --memory 2g` loop is dropped — no compose fork either way.
+#
+# Observability: $GITHUB_STEP_SUMMARY receipt (clone/port/base-age/smoke/images,
+# 5 lines for PR paste), artifacts (compose config + ps + logs, 14d), Discord
+# per event in the existing devops channel.
+#
+# Secrets (exact set, NO new secrets v1): TS_OAUTH_CLIENT_ID, TS_OAUTH_SECRET,
+# STAGING_HOST, STAGING_USER, STAGING_SSH_KEY, KVM_HOST, KVM_WAKE_KEY,
+# DISCORD_WEBHOOK_DEVOPS.
+#
+# SSH (receipt): stock ssh/scp with BatchMode + TOFU accept-new
+# (`StrictHostKeyChecking=accept-new` over tailnet; TOFU acceptance is
+# intentional here — first-connect key is accepted and cached, later mismatches
+# still fail. Prefer known_hosts pinning when a stable host key is available;
+# NOT adding new secrets for that in v1).
+#
+# Concurrency: `dev-clone-<dev>` is approximated as `dev-clone-<ref>` because
+# GitHub expression language cannot split `dev-<dev>-<topic>` to extract <dev>;
+# per-dev serialization is enforced in-script by the one-clone-per-dev guard
+# plus the atomic per-dev mkdir lock (check→up).
+# Never shares staging-deploy* groups. Own pushes supersede (cancel-true).
+#
+# Guardrails (fail-closed, mirroring ops/sandboxes/runner/run-sandbox.sh):
+# branch sanitize, DIR-prefix assert, port denylist
+# (8080/8081/8082/5434/6379/8123/8000 exact + 9000-9100 preview range + 18081+ sandbox
+# range), loopback-only assert on every published port of the rendered compose
+# config (explicit non-127.0.0.1 bind refused; unbound short-syntax mapping
+# allowed ONLY for the assigned APP_PORT, the shared-compose pattern;
+# syntax-agnostic: unquoted short-syntax + long-syntax `published:`/`host_ip:`
+# covered, any long-syntax publish missing host_ip refused),
+# `network_mode: host` refused (quoted/unquoted) in rendered config,
+# main/preview/devops refusal, `rm -rf --` with guards, timeouts per job.
+#
+# Open items for checker (need Xeon): dash/sh dialect of embedded scripts,
+# cells compose render + build times on Xeon (up --build inside the 25m ssh
+# timeout?), live-port behavior (real /health + /healthz endpoints), reseed
+# timings + row-count verification after hot copy, scp bundle retrieval.
+
+permissions:
+  contents: read
+
+on:
+  push:
+    branches: ['dev-*']
+  workflow_dispatch:
+    inputs:
+      reclone:
+        description: 'Wipe + recreate own dev slot explicitly (never silent auto-follow)'
+        required: false
+        default: false
+        type: boolean
+      full_reseed:
+        description: 'Snapshot live data volumes read-only into the clone (explicit manual flag, never automatic)'
+        required: false
+        default: false
+        type: boolean
+
+concurrency:
+  group: dev-clone-${{ github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  vars:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      branchsan: ${{ steps.v.outputs.branchsan }}
+      dev: ${{ steps.v.outputs.dev }}
+      project: ${{ steps.v.outputs.project }}
+      dir: ${{ steps.v.outputs.dir }}
+      port: ${{ steps.v.outputs.port }}
+      reseed: ${{ steps.v.outputs.reseed }}
+    steps:
+      - name: Derive + sanitize clone identity
+        id: v
+        run: |
+          set -e
+          BRANCH="${GITHUB_REF_NAME}"
+          case "$BRANCH" in
+            main|master|preview*|devops|web|ml|data|staging*) echo "::error::refusing branch '$BRANCH' (main/preview/devops/live stands are not clone targets)"; exit 1;;
+          esac
+          case "$BRANCH" in ''|*[!a-z0-9-]*) echo "::error::refusing: branch must be lowercase alnum+dash, got '$BRANCH'"; exit 1;; esac
+          case "$BRANCH" in dev-*-*) ;; *) echo "::error::refusing: want dev-<dev>-<topic>, got '$BRANCH'"; exit 1;; esac
+          if [ "$(printf '%s' "$BRANCH" | wc -c)" -gt 64 ]; then echo "::error::refusing: branch name too long (>64)"; exit 1; fi
+          REST="${BRANCH#dev-}"; DEV="${REST%%-*}"; TOPIC="${REST#*-}"
+          case "$DEV" in ''|*[!a-z0-9]*) echo "::error::refusing: bad dev segment in '$BRANCH'"; exit 1;; esac
+          case "$TOPIC" in ''|*-|-*|*[!a-z0-9-]*) echo "::error::refusing: bad topic segment in '$BRANCH'"; exit 1;; esac
+          SUM=$(printf '%s' "$DEV" | od -An -tu1 | awk '{for(i=1;i<=NF;i++) s+=$i} END{print s+0}')
+          case "$SUM" in ''|*[!0-9]*) echo "::error::refusing: SUM computation failed for dev '$DEV'"; exit 1;; esac
+          PORT=$((9101 + SUM % 98))
+          case "${{ inputs.full_reseed }}" in true) RESEED=true;; *) RESEED=false;; esac
+          {
+            echo "branchsan=$BRANCH"
+            echo "dev=$DEV"
+            echo "project=haklolarp-$DEV-$TOPIC"
+            echo "dir=/opt/haklolarp-dev/$DEV-$TOPIC"
+            echo "port=$PORT"
+            echo "reseed=$RESEED"
+          } >> "$GITHUB_OUTPUT"
+          echo "dev-clone identity: dev=$DEV port=$PORT project=haklolarp-$DEV-$TOPIC reseed=$RESEED"
+
+  upsert:
+    if: github.event.deleted != true
+    needs: [vars]
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Join Tailscale
+        uses: tailscale/github-action@d1b6cd204f8dceda5b3eaad7f1f767be390056cd # v4
+        with:
+          oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
+          oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
+          tags: tag:ci
+          hostname: dev-${{ needs.vars.outputs.dev }}-r${{ github.run_id }}
+
+      - name: Probe Xeon (skip wake if up)
+        id: probe
+        continue-on-error: true
+        uses: appleboy/ssh-action@0ff4204d59e8e51228ff73bce53f80d53301dee2 # v1
+        with:
+          host: ${{ secrets.STAGING_HOST }}
+          username: ${{ secrets.STAGING_USER }}
+          key: ${{ secrets.STAGING_SSH_KEY }}
+          port: 22
+          script: echo xeon-up
+
+      - name: Wake via KVM (forced command waits for boot)
+        if: steps.probe.outcome == 'failure'
+        uses: appleboy/ssh-action@0ff4204d59e8e51228ff73bce53f80d53301dee2 # v1
+        with:
+          host: ${{ secrets.KVM_HOST }}
+          username: root
+          key: ${{ secrets.KVM_WAKE_KEY }}
+          port: 22
+          command_timeout: 12m
+          script: echo wake-triggered
+
+      - name: Checkout runner scripts (script_path source)
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          sparse-checkout: .github/scripts
+          fetch-depth: 1
+
+      - name: Deploy clone over SSH
+        uses: appleboy/ssh-action@0ff4204d59e8e51228ff73bce53f80d53301dee2 # v1
+        env:
+          DC_BRANCH: ${{ needs.vars.outputs.branchsan }}
+          DC_DEV: ${{ needs.vars.outputs.dev }}
+          DC_PROJECT: ${{ needs.vars.outputs.project }}
+          DC_DIR: ${{ needs.vars.outputs.dir }}
+          DC_APP_PORT: ${{ needs.vars.outputs.port }}
+          DC_RECLONE: ${{ inputs.reclone }}
+          DC_RESEED_REQ: ${{ needs.vars.outputs.reseed }}
+          DC_REPOSITORY: ${{ github.repository }}
+        with:
+          host: ${{ secrets.STAGING_HOST }}
+          username: ${{ secrets.STAGING_USER }}
+          key: ${{ secrets.STAGING_SSH_KEY }}
+          port: 22
+          command_timeout: 25m
+          envs: DC_BRANCH,DC_DEV,DC_PROJECT,DC_DIR,DC_APP_PORT,DC_RECLONE,DC_RESEED_REQ,DC_REPOSITORY
+          script_path: .github/scripts/dev-clone-deploy.sh
+
+      - name: Fetch receipt + bundle (stock ssh/scp, stdout capture)
+        id: receipt
+        env:
+          DEV_DIR: ${{ needs.vars.outputs.dir }}
+          DEV_PROJECT: ${{ needs.vars.outputs.project }}
+          DEV_PORT: ${{ needs.vars.outputs.port }}
+          DEV_BRANCH: ${{ needs.vars.outputs.branchsan }}
+          STAGING_USER: ${{ secrets.STAGING_USER }}
+          STAGING_HOST: ${{ secrets.STAGING_HOST }}
+          DEVCLONE_SSH_KEY: ${{ secrets.STAGING_SSH_KEY }}
+        run: |
+          set -e
+          D="$DEV_DIR"
+          P="$DEV_PROJECT"
+          PORT="$DEV_PORT"
+          KEY="$RUNNER_TEMP/devclone_key"
+          trap 'rm -f "$KEY"' EXIT INT TERM
+          printf '%s' "$DEVCLONE_SSH_KEY" > "$KEY"
+          chmod 600 "$KEY"
+          SSH="ssh -i $KEY -o BatchMode=yes -o StrictHostKeyChecking=accept-new -o ConnectTimeout=20 -p 22"
+          SCP="scp -i $KEY -o BatchMode=yes -o StrictHostKeyChecking=accept-new -o ConnectTimeout=20 -P 22"
+          H="$STAGING_USER@$STAGING_HOST"
+          mkdir -p dev-clone-bundle
+          $SCP "$H:$D/clone-bundle/*" dev-clone-bundle/ 2>/dev/null || echo "WARN: bundle scp failed, host copy retained at $D/clone-bundle"
+          LOCKPORT=$(grep '^APP_PORT=' dev-clone-bundle/CLONE.lock 2>/dev/null | cut -d= -f2 || true)
+          case "$LOCKPORT" in ''|*[!0-9]*) ;; *) PORT="$LOCKPORT";; esac
+          PSSTATE=$($SSH "$H" "docker ps --filter label=com.docker.compose.project=$P --format '{{.Names}} {{.Status}}'" 2>/dev/null || true)
+          if [ -z "$PSSTATE" ]; then SMOKE="ps=none"; else SMOKE="ps=Up"; fi
+          if $SSH "$H" "curl -fsS http://127.0.0.1:$PORT/ >/dev/null" 2>/dev/null; then SMOKE="$SMOKE curl=200"; else SMOKE="$SMOKE curl=FAIL"; fi
+          if [ -f dev-clone-bundle/CLONE.lock ]; then SMOKE="$SMOKE manifest=ok"; else SMOKE="$SMOKE manifest=MISSING"; fi
+          BASE_SHA=$(grep '^BASE_SHA=' dev-clone-bundle/CLONE.lock 2>/dev/null | cut -d= -f2 || true)
+          BASE_DATE=$(grep '^BASE_DATE=' dev-clone-bundle/CLONE.lock 2>/dev/null | cut -d= -f2- || true)
+          BR_DATE=$(grep '^BR_DATE=' dev-clone-bundle/CLONE.lock 2>/dev/null | cut -d= -f2- || true)
+          SHA=$(grep '^SHA=' dev-clone-bundle/CLONE.lock 2>/dev/null | grep -v BASE | cut -d= -f2 || true)
+          IMGS=$(grep -E 'alpine|nginx|postgres|redis|python|node' dev-clone-bundle/CLONE.lock 2>/dev/null | head -n 3 | tr '\n' ';' || true)
+          {
+            echo "- clone: \`$P\` @ \`$D\` (branch \`$DEV_BRANCH\`, sha \`${SHA:-unknown}\`)"
+            echo "- port: \`$PORT\` (loopback asserted, no 0.0.0.0)"
+            echo "- base-age: base \`${BASE_SHA:-unknown}\` ($BASE_DATE) / branch ($BR_DATE)"
+            echo "- smoke: \`$SMOKE\`"
+            echo "- images: \`${IMGS:-see bundle}\`"
+          } >> "$GITHUB_STEP_SUMMARY"
+          echo "smoke=$SMOKE" >> "$GITHUB_OUTPUT"
+          echo "base_age=${BASE_SHA:-unknown} ($BASE_DATE)" >> "$GITHUB_OUTPUT"
+          rm -f "$KEY"
+
+      - name: Upload clone bundle
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: dev-clone-${{ needs.vars.outputs.branchsan }}-${{ github.run_id }}
+          path: dev-clone-bundle/
+          retention-days: 14
+          if-no-files-found: warn
+
+      - name: Discord notify (clone ready/updated)
+        if: always()
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_DEVOPS }}
+          DISCORD_TITLE: "Dev-clone `${{ needs.vars.outputs.branchsan }}` готов/обновлён"
+          DISCORD_DESC: |
+            **Ветка:** `${{ needs.vars.outputs.branchsan }}`
+            **Проект:** `${{ needs.vars.outputs.project }}`
+            **Каталог:** `${{ needs.vars.outputs.dir }}`
+            **Порт:** `${{ needs.vars.outputs.port }}`
+            **Smoke:** `${{ steps.receipt.outputs.smoke }}`
+            **Base:** `${{ steps.receipt.outputs.base_age }}`
+            [Смотреть run](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
+          DISCORD_USERNAME: "GitHub • dev-clone"
+        run: |
+          [ -n "$DISCORD_WEBHOOK" ] || exit 0
+          jq -n --arg title "$DISCORD_TITLE" --arg desc "$DISCORD_DESC" --arg username "$DISCORD_USERNAME" --argjson color 65280 '{embeds: [{title: $title, description: $desc, color: $color}], username: $username}' > /tmp/discord-clone-ready.json
+          curl -fsS -H "Content-Type: application/json" -d @/tmp/discord-clone-ready.json "$DISCORD_WEBHOOK"
+
+  cleanup:
+    if: github.event.deleted == true
+    needs: [vars]
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Join Tailscale
+        uses: tailscale/github-action@d1b6cd204f8dceda5b3eaad7f1f767be390056cd # v4
+        with:
+          oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
+          oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
+          tags: tag:ci
+          hostname: dev-${{ needs.vars.outputs.dev }}-cleanup-r${{ github.run_id }}
+
+      - name: Probe Xeon (skip wake if up)
+        id: probe
+        continue-on-error: true
+        uses: appleboy/ssh-action@0ff4204d59e8e51228ff73bce53f80d53301dee2 # v1
+        with:
+          host: ${{ secrets.STAGING_HOST }}
+          username: ${{ secrets.STAGING_USER }}
+          key: ${{ secrets.STAGING_SSH_KEY }}
+          port: 22
+          script: echo xeon-up
+
+      - name: Wake via KVM (forced command waits for boot)
+        if: steps.probe.outcome == 'failure'
+        uses: appleboy/ssh-action@0ff4204d59e8e51228ff73bce53f80d53301dee2 # v1
+        with:
+          host: ${{ secrets.KVM_HOST }}
+          username: root
+          key: ${{ secrets.KVM_WAKE_KEY }}
+          port: 22
+          command_timeout: 12m
+          script: echo wake-triggered
+
+      - name: Remove clone over SSH
+        uses: appleboy/ssh-action@0ff4204d59e8e51228ff73bce53f80d53301dee2 # v1
+        with:
+          host: ${{ secrets.STAGING_HOST }}
+          username: ${{ secrets.STAGING_USER }}
+          key: ${{ secrets.STAGING_SSH_KEY }}
+          port: 22
+          command_timeout: 10m
+          script: |
+            set -e
+            BRANCH="${{ needs.vars.outputs.branchsan }}"
+            DEV="${{ needs.vars.outputs.dev }}"
+            PROJECT="${{ needs.vars.outputs.project }}"
+            DIR="${{ needs.vars.outputs.dir }}"
+            case "$BRANCH" in dev-*-*) ;; *) echo "refusing: bad branch: $BRANCH" >&2; exit 1;; esac
+            case "$DIR" in /opt/haklolarp-dev/?*) ;; *) echo "refusing: bad DIR: $DIR" >&2; exit 1;; esac
+            case "$DIR" in /opt/haklolarp-previews/*) echo "refusing: never touch preview dirs" >&2; exit 1;; esac
+            [ "$DIR" != "/" ] || { echo "refusing: DIR is /" >&2; exit 1; }
+            [ "$DIR" != "/opt/haklolarp-dev" ] || { echo "refusing: DIR is parent" >&2; exit 1; }
+            [ "$DIR" != "/opt/haklolarp-dev/" ] || { echo "refusing: DIR is parent" >&2; exit 1; }
+            if [ -f "$DIR/CLONE.lock" ]; then
+              OP=$(awk -F= '$1=="PROJECT" {print $2}' "$DIR/CLONE.lock" 2>/dev/null || true)
+              case "$OP" in "haklolarp-$DEV-"*) ;; *) OP="";; esac
+              case "$OP" in ''|*[!a-z0-9-]*) OP="";; esac
+              if [ -n "$OP" ]; then PROJECT="$OP"; fi
+            fi
+            case "$PROJECT" in "haklolarp-$DEV-"*) ;; *) echo "refusing: bad PROJECT: $PROJECT" >&2; exit 1;; esac
+            case "$PROJECT" in ''|*[!a-z0-9-]*) echo "refusing: bad PROJECT: $PROJECT" >&2; exit 1;; esac
+            if [ -d "$DIR" ]; then
+              if [ -f "$DIR/ops/sandboxes/cells/docker-compose.cells.yml" ]; then
+                cd "$DIR"
+                docker compose -f ops/sandboxes/cells/docker-compose.cells.yml -p "$PROJECT" down --rmi local --volumes --remove-orphans || true
+                cd /
+              elif [ -f "$DIR/compose.yaml" ]; then
+                cd "$DIR"
+                docker compose -p "$PROJECT" down --rmi local --volumes --remove-orphans || true
+                cd /
+              fi
+              docker ps -aq --filter "label=com.docker.compose.project=$PROJECT" 2>/dev/null | xargs -r docker rm -f 2>/dev/null || true
+              docker volume ls -q --filter "label=com.docker.compose.project=$PROJECT" 2>/dev/null | xargs -r docker volume rm 2>/dev/null || true
+              rm -rf -- "$DIR"
+            fi
+            echo "clone $PROJECT removed"
+
+      - name: Discord notify (clone removed)
+        if: always()
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_DEVOPS }}
+          DISCORD_TITLE: "Dev-clone `${{ needs.vars.outputs.branchsan }}` снесён"
+          DISCORD_DESC: |
+            **Проект:** `${{ needs.vars.outputs.project }}`
+            **Каталог:** `${{ needs.vars.outputs.dir }}`
+            [Смотреть run](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
+          DISCORD_USERNAME: "GitHub • dev-clone"
+        run: |
+          [ -n "$DISCORD_WEBHOOK" ] || exit 0
+          jq -n --arg title "$DISCORD_TITLE" --arg desc "$DISCORD_DESC" --arg username "$DISCORD_USERNAME" --argjson color 8421504 '{embeds: [{title: $title, description: $desc, color: $color}], username: $username}' > /tmp/discord-clone-removed.json
+          curl -fsS -H "Content-Type: application/json" -d @/tmp/discord-clone-removed.json "$DISCORD_WEBHOOK"

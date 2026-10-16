@@ -1,0 +1,70 @@
+# Self-hosted GitHub Actions runner — sibling-контейнеры (НЕ dind).
+# База ubuntu:24.04. Версия раннера забинена с ролью gh_runner (v2.337.0).
+FROM ubuntu:24.04
+
+ARG RUNNER_VERSION=2.337.0
+# TODO(pin): пришпилить базу по digest после резолва, напр.
+#   FROM ubuntu:24.04@sha256:<digest>
+# Digest НЕ выдуман — получить: docker buildx imagetools inspect ubuntu:24.04
+# Тарболл раннера:
+#   https://github.com/actions/runner/releases/download/v2.337.0/actions-runner-linux-x64-2.337.0.tar.gz
+# TODO(checksum): добавить сверку sha256 тарболла после резолва (digest НЕ выдумывать).
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Системные зависимости + python3.12 (lint/test-wave) + docker CLI.
+# Только КЛИЕНТ (sibling через /var/run/docker.sock) — dockerd/containerd/dind НЕТ.
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends \
+      ca-certificates curl git tar sudo procps \
+      python3 python3-pip python3-venv \
+ && curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc \
+ && chmod a+r /etc/apt/keyrings/docker.asc \
+ && echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu $(. /etc/os-release && echo "$VERSION_CODENAME") stable" > /etc/apt/sources.list.d/docker.list \
+ && apt-get update \
+ && apt-get install -y --no-install-recommends docker-ce-cli docker-buildx-plugin docker-compose-plugin \
+ # Node.js 20 (нужен части lint/test-wave шагов CI)
+ && curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
+ && apt-get install -y --no-install-recommends nodejs \
+ && node --version \
+ && rm -rf /var/lib/apt/lists/*
+
+# Раннер (тот же пин, что gh_runner_version=v2.337.0).
+RUN useradd -m -s /bin/bash runner \
+ && mkdir -p /home/runner/actions-runner \
+ && curl -fsSL -o /tmp/actions-runner.tgz \
+      "https://github.com/actions/runner/releases/download/v${RUNNER_VERSION}/actions-runner-linux-x64-${RUNNER_VERSION}.tar.gz" \
+ && tar -xzf /tmp/actions-runner.tgz -C /home/runner/actions-runner \
+ && rm /tmp/actions-runner.tgz \
+ && /home/runner/actions-runner/bin/installdependencies.sh \
+ && chown -R runner:runner /home/runner/actions-runner
+
+# Entrypoint инлайн (отдельного файла нет по скоупу): проброс сокета группе
+# раннера, конфигурация по env GH_URL/GH_TOKEN/RUNNER_NAME/RUNNER_LABELS, run.sh.
+# Контейнер работает от root, сам раннер — от пользователя runner.
+RUN printf '%s\n' \
+  '#!/bin/bash' \
+  'set -euo pipefail' \
+  'GID="$(stat -c %g /var/run/docker.sock 2>/dev/null || true)"' \
+  'if [ -n "${GID}" ]; then' \
+  '  if ! getent group "${GID}" >/dev/null; then groupadd -g "${GID}" hostdocker; fi' \
+  '  usermod -aG "${GID}" runner' \
+  'fi' \
+  'cd /home/runner/actions-runner' \
+  'if [ ! -f .runner ]; then' \
+  '  : "${GH_URL:?GH_URL is required}"' \
+  '  : "${GH_TOKEN:?GH_TOKEN (hourly registration token) is required}"' \
+  '  : "${RUNNER_LABELS:?RUNNER_LABELS is required}"' \
+  '  runuser -u runner -- ./config.sh --unattended --replace --url "${GH_URL}" --token "${GH_TOKEN}" --name "${RUNNER_NAME:-$(hostname)}" --labels "${RUNNER_LABELS}" --work _work' \
+  'fi' \
+  'exec runuser -u runner -- ./run.sh' \
+  > /usr/local/bin/runner-entrypoint.sh \
+ && chmod +x /usr/local/bin/runner-entrypoint.sh \
+ && bash -n /usr/local/bin/runner-entrypoint.sh
+
+WORKDIR /home/runner/actions-runner
+
+HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
+  CMD pgrep -f Runner.Listener > /dev/null || exit 1
+
+ENTRYPOINT ["/usr/local/bin/runner-entrypoint.sh"]

@@ -1,0 +1,291 @@
+{
+  "base": "http://127.0.0.1:8893",
+  "results": [
+    {
+      "path": "/",
+      "status": 200,
+      "bytes": 713,
+      "content_type": "text/html",
+      "cache": "no-store",
+      "location": null
+    },
+    {
+      "path": "/login",
+      "status": 200,
+      "bytes": 713,
+      "content_type": "text/html",
+      "cache": "no-store",
+      "location": null
+    },
+    {
+      "path": "/activate",
+      "status": 200,
+      "bytes": 713,
+      "content_type": "text/html",
+      "cache": "no-store",
+      "location": null
+    },
+    {
+      "path": "/recover",
+      "status": 200,
+      "bytes": 713,
+      "content_type": "text/html",
+      "cache": "no-store",
+      "location": null
+    },
+    {
+      "path": "/research?record=5&row=2",
+      "status": 303,
+      "bytes": 153,
+      "content_type": "text/html",
+      "cache": null,
+      "location": "/login?next=%2Fresearch%3Frecord%3D5%26row%3D2"
+    },
+    {
+      "path": "/works",
+      "status": 303,
+      "bytes": 153,
+      "content_type": "text/html",
+      "cache": null,
+      "location": "/login?next=%2Fworks"
+    },
+    {
+      "path": "/monitoring",
+      "status": 303,
+      "bytes": 153,
+      "content_type": "text/html",
+      "cache": null,
+      "location": "/login?next=%2Fmonitoring"
+    },
+    {
+      "path": "/laboratory",
+      "status": 303,
+      "bytes": 153,
+      "content_type": "text/html",
+      "cache": null,
+      "location": "/login?next=%2Flaboratory"
+    },
+    {
+      "path": "/cases",
+      "status": 303,
+      "bytes": 153,
+      "content_type": "text/html",
+      "cache": null,
+      "location": "/login?next=%2Fcases"
+    },
+    {
+      "path": "/review",
+      "status": 303,
+      "bytes": 153,
+      "content_type": "text/html",
+      "cache": null,
+      "location": "/login?next=%2Freview"
+    },
+    {
+      "path": "/account",
+      "status": 303,
+      "bytes": 153,
+      "content_type": "text/html",
+      "cache": null,
+      "location": "/login?next=%2Faccount"
+    },
+    {
+      "path": "/system",
+      "status": 303,
+      "bytes": 153,
+      "content_type": "text/html",
+      "cache": null,
+      "location": "/login?next=%2Fsystem"
+    },
+    {
+      "path": "/demo",
+      "status": 303,
+      "bytes": 153,
+      "content_type": "text/html",
+      "cache": null,
+      "location": "/login?next=%2Fdemo"
+    },
+    {
+      "path": "/try",
+      "status": 303,
+      "bytes": 153,
+      "content_type": "text/html",
+      "cache": null,
+      "location": "/login?next=%2Ftry"
+    },
+    {
+      "path": "/runs",
+      "status": 303,
+      "bytes": 153,
+      "content_type": "text/html",
+      "cache": null,
+      "location": "/login?next=%2Fruns"
+    },
+    {
+      "path": "/analysis",
+      "status": 303,
+      "bytes": 153,
+      "content_type": "text/html",
+      "cache": null,
+      "location": "/login?next=%2Fanalysis"
+    },
+    {
+      "path": "/candidates",
+      "status": 303,
+      "bytes": 153,
+      "content_type": "text/html",
+      "cache": null,
+      "location": "/login?next=%2Fcandidates"
+    },
+    {
+      "path": "/api/v1/health",
+      "status": 200,
+      "bytes": 118,
+      "content_type": "application/json",
+      "cache": "no-store",
+      "location": null,
+      "health": {
+        "auth_enabled": true,
+        "access_mode": "closed-team",
+        "build_sha": "unknown",
+        "qa_mode": true
+      }
+    },
+    {
+      "path": "/api/v2/health/ready",
+      "status": 401,
+      "bytes": 26,
+      "content_type": "application/json",
+      "cache": "no-store",
+      "location": null
+    },
+    {
+      "path": "/api/v1/records",
+      "status": 401,
+      "bytes": 26,
+      "content_type": "application/json",
+      "cache": "no-store",
+      "location": null
+    },
+    {
+      "path": "/api/v1/queue",
+      "status": 401,
+      "bytes": 26,
+      "content_type": "application/json",
+      "cache": "no-store",
+      "location": null
+    },
+    {
+      "path": "/api/v1/session",
+      "status": 401,
+      "bytes": 26,
+      "content_type": "application/json",
+      "cache": "no-store",
+      "location": null
+    },
+    {
+      "path": "/api/v2/investigations",
+      "status": 401,
+      "bytes": 26,
+      "content_type": "application/json",
+      "cache": "no-store",
+      "location": null
+    },
+    {
+      "path": "/api/v2/cases",
+      "status": 401,
+      "bytes": 26,
+      "content_type": "application/json",
+      "cache": "no-store",
+      "location": null
+    },
+    {
+      "path": "/api/v2/accounts",
+      "status": 401,
+      "bytes": 26,
+      "content_type": "application/json",
+      "cache": "no-store",
+      "location": null
+    },
+    {
+      "path": "/api/v2/jobs",
+      "status": 401,
+      "bytes": 26,
+      "content_type": "application/json",
+      "cache": "no-store",
+      "location": null
+    },
+    {
+      "path": "/api/public/v1/package",
+      "status": 401,
+      "bytes": 26,
+      "content_type": "application/json",
+      "cache": "no-store",
+      "location": null
+    },
+    {
+      "path": "/api/v2/cases/missing/bundle",
+      "status": 401,
+      "bytes": 26,
+      "content_type": "application/json",
+      "cache": "no-store",
+      "location": null
+    },
+    {
+      "path": "/openapi.json",
+      "status": 303,
+      "bytes": 153,
+      "content_type": "text/html",
+      "cache": null,
+      "location": "/login?next=%2Fopenapi.json"
+    },
+    {
+      "path": "/.env",
+      "status": 303,
+      "bytes": 153,
+      "content_type": "text/html",
+      "cache": null,
+      "location": "/login?next=%2F.env"
+    },
+    {
+      "path": "/assets/config.json",
+      "status": 404,
+      "bytes": 153,
+      "content_type": "text/html",
+      "cache": null,
+      "location": null
+    },
+    {
+      "path": "/landing/private.json",
+      "status": 303,
+      "bytes": 153,
+      "content_type": "text/html",
+      "cache": null,
+      "location": "/login?next=%2Flanding%2Fprivate.json"
+    },
+    {
+      "path": "/landing/mgts-original.jpg",
+      "status": 200,
+      "bytes": 23393,
+      "content_type": "image/jpeg",
+      "cache": "no-cache",
+      "location": null
+    },
+    {
+      "path": "/landing/larp-corp-original.jpg",
+      "status": 200,
+      "bytes": 35102,
+      "content_type": "image/jpeg",
+      "cache": "no-cache",
+      "location": null
+    },
+    {
+      "path": "/landing/visual-data.json",
+      "status": 200,
+      "bytes": 318313,
+      "content_type": "application/json",
+      "cache": "no-cache",
+      "location": null
+    }
+  ]
+}

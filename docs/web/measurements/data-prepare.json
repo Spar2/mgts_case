@@ -1,0 +1,61 @@
+{
+  "records": [
+    {
+      "source": "6.csv",
+      "shape": [
+        1231,
+        4534
+      ],
+      "exactly_equal": true,
+      "source_sha256": "23e79988fcfb8a186dec06faffa60e6ed7c93ca7cd9969ac4989fd12b9f358c8"
+    },
+    {
+      "source": "4.csv",
+      "shape": [
+        708,
+        1691
+      ],
+      "exactly_equal": true,
+      "source_sha256": "d2f5b3d90078420aea45bac86df3656987a2ca9c548d478d134d3ee6349fde17"
+    },
+    {
+      "source": "5.csv",
+      "shape": [
+        2711,
+        2364
+      ],
+      "exactly_equal": true,
+      "source_sha256": "98c1d629ed59478c81fa58b60e891f5587ef9d64ad435655e717a27f64767e46"
+    },
+    {
+      "source": "2.csv",
+      "shape": [
+        696,
+        2315
+      ],
+      "exactly_equal": true,
+      "source_sha256": "f115579accd114e0c5a0d968aea3d2710da8ead421fc8c35c17472047cefdec4"
+    },
+    {
+      "source": "1.csv",
+      "shape": [
+        615,
+        11707
+      ],
+      "exactly_equal": true,
+      "source_sha256": "3101c6b2716d2a9e14cd32e2e5d758cb8628741cff6f265cc45db2d7e9e8257f"
+    },
+    {
+      "source": "3.csv",
+      "shape": [
+        788,
+        1689
+      ],
+      "exactly_equal": true,
+      "source_sha256": "0acc4e41dc16dd829110881641cb17f94bffd0c2d5255d539d8f3589cd8cdde3"
+    }
+  ],
+  "native_unlabelled_windows": 54,
+  "methods": [],
+  "automatic_training_targets": false
+}

@@ -1,0 +1,39 @@
+name: guard-ref
+description: Fail unless github.ref_name is an allowed long-lived branch
+inputs:
+  ref_name:
+    description: Branch name (pass github.ref_name)
+    required: true
+  event_name:
+    description: Event name (pass github.event_name)
+    required: true
+  fork:
+    description: Whether PR head repo is a fork (pass github.event.pull_request.head.repo.fork)
+    default: 'false'
+runs:
+  using: composite
+  steps:
+    - name: Guard branch ref
+      shell: bash
+      env:
+        REF_NAME: ${{ inputs.ref_name }}
+        EVENT_NAME: ${{ inputs.event_name }}
+        FORK: ${{ inputs.fork }}
+      run: |
+        if [ "$FORK" = "true" ]; then
+          echo "guard-ref: forbidden: fork PRs never run on self-hosted" >&2
+          exit 1
+        fi
+        case "$REF_NAME" in
+          main|data|web|ml|devops)
+            echo "guard-ref: ok ($REF_NAME)"
+            ;;
+          *)
+            if [ "$EVENT_NAME" = "pull_request" ]; then
+              echo "guard-ref: ok (internal PR, ref $REF_NAME)"
+            else
+              echo "guard-ref: forbidden ref '$REF_NAME' (allowed: main,data,web,ml,devops)" >&2
+              exit 1
+            fi
+            ;;
+        esac

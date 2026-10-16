@@ -1,0 +1,359 @@
+[
+  {
+    "meters": [
+      522.1657,
+      534.5303
+    ],
+    "duration_min": 142.0833,
+    "amplitude": 19.6976,
+    "local_amplitude": 18.3134,
+    "confidence": 0.8549,
+    "type_hypothesis": "local_heating (power cable / equipment)",
+    "periodic": false,
+    "source": "detector",
+    "t_range": [
+      340,
+      614
+    ],
+    "s_range": [
+      1098,
+      1124
+    ]
+  },
+  {
+    "meters": [
+      93.6855,
+      96.5388
+    ],
+    "duration_min": 3.6167,
+    "amplitude": 8.4791,
+    "local_amplitude": 8.6125,
+    "confidence": 0.8316,
+    "type_hypothesis": "transient",
+    "periodic": false,
+    "source": "detector",
+    "t_range": [
+      464,
+      470
+    ],
+    "s_range": [
+      197,
+      203
+    ]
+  },
+  {
+    "meters": [
+      425.6269,
+      427.5291
+    ],
+    "duration_min": 7.75,
+    "amplitude": 13.5639,
+    "local_amplitude": 13.8751,
+    "confidence": 0.8296,
+    "type_hypothesis": "transient",
+    "periodic": false,
+    "source": "detector",
+    "t_range": [
+      134,
+      148
+    ],
+    "s_range": [
+      895,
+      899
+    ]
+  },
+  {
+    "meters": [
+      112.7079,
+      131.2548
+    ],
+    "duration_min": 13.95,
+    "amplitude": 8.976,
+    "local_amplitude": 10.178,
+    "confidence": 0.8246,
+    "type_hypothesis": "transient",
+    "periodic": false,
+    "source": "detector",
+    "t_range": [
+      285,
+      311
+    ],
+    "s_range": [
+      237,
+      276
+    ]
+  },
+  {
+    "meters": [
+      418.4935,
+      420.3957
+    ],
+    "duration_min": 11.3667,
+    "amplitude": 17.546,
+    "local_amplitude": 16.539,
+    "confidence": 0.8196,
+    "type_hypothesis": "transient",
+    "periodic": false,
+    "source": "detector",
+    "t_range": [
+      53,
+      74
+    ],
+    "s_range": [
+      880,
+      884
+    ]
+  },
+  {
+    "meters": [
+      415.1646,
+      457.4895
+    ],
+    "duration_min": 25.8333,
+    "amplitude": 8.1184,
+    "local_amplitude": 8.3474,
+    "confidence": 0.8191,
+    "type_hypothesis": "other",
+    "periodic": false,
+    "source": "detector",
+    "t_range": [
+      191,
+      240
+    ],
+    "s_range": [
+      873,
+      962
+    ]
+  },
+  {
+    "meters": [
+      425.6269,
+      428.4803
+    ],
+    "duration_min": 12.4,
+    "amplitude": 18.0299,
+    "local_amplitude": 18.1957,
+    "confidence": 0.8187,
+    "type_hypothesis": "transient",
+    "periodic": false,
+    "source": "detector",
+    "t_range": [
+      21,
+      44
+    ],
+    "s_range": [
+      895,
+      901
+    ]
+  },
+  {
+    "meters": [
+      114.6101,
+      130.3037
+    ],
+    "duration_min": 6.2,
+    "amplitude": 9.3981,
+    "local_amplitude": 8.426,
+    "confidence": 0.7899,
+    "type_hypothesis": "transient",
+    "periodic": false,
+    "source": "detector",
+    "t_range": [
+      415,
+      426
+    ],
+    "s_range": [
+      241,
+      274
+    ]
+  },
+  {
+    "meters": [
+      110.3301,
+      130.3037
+    ],
+    "duration_min": 16.0167,
+    "amplitude": 6.548,
+    "local_amplitude": 7.4477,
+    "confidence": 0.7892,
+    "type_hypothesis": "other",
+    "periodic": false,
+    "source": "detector",
+    "t_range": [
+      333,
+      363
+    ],
+    "s_range": [
+      232,
+      274
+    ]
+  },
+  {
+    "meters": [
+      115.0857,
+      131.2548
+    ],
+    "duration_min": 27.9,
+    "amplitude": 6.1345,
+    "local_amplitude": 5.6062,
+    "confidence": 0.7858,
+    "type_hypothesis": "other",
+    "periodic": false,
+    "source": "detector",
+    "t_range": [
+      460,
+      513
+    ],
+    "s_range": [
+      242,
+      276
+    ]
+  },
+  {
+    "meters": [
+      426.1025,
+      428.9558
+    ],
+    "duration_min": 22.2167,
+    "amplitude": 18.4592,
+    "local_amplitude": 18.8129,
+    "confidence": 0.7765,
+    "type_hypothesis": "local_heating (power cable / equipment)",
+    "periodic": false,
+    "source": "detector",
+    "t_range": [
+      66,
+      108
+    ],
+    "s_range": [
+      896,
+      902
+    ]
+  },
+  {
+    "meters": [
+      428.9558,
+      436.5648
+    ],
+    "duration_min": 6.7167,
+    "amplitude": 4.2501,
+    "local_amplitude": 3.6855,
+    "confidence": 0.7305,
+    "type_hypothesis": "transient",
+    "periodic": false,
+    "source": "detector",
+    "t_range": [
+      457,
+      469
+    ],
+    "s_range": [
+      902,
+      918
+    ]
+  },
+  {
+    "meters": [
+      448.9294,
+      450.8316
+    ],
+    "duration_min": 4.1333,
+    "amplitude": 7.3673,
+    "local_amplitude": 2.0192,
+    "confidence": 0.6933,
+    "type_hypothesis": "transient",
+    "periodic": false,
+    "source": "detector",
+    "t_range": [
+      476,
+      483
+    ],
+    "s_range": [
+      944,
+      948
+    ]
+  },
+  {
+    "meters": [
+      418.969,
+      422.298
+    ],
+    "duration_min": 7.2333,
+    "amplitude": 2.1799,
+    "local_amplitude": 2.6651,
+    "confidence": 0.6826,
+    "type_hypothesis": "transient",
+    "periodic": false,
+    "source": "detector",
+    "t_range": [
+      447,
+      460
+    ],
+    "s_range": [
+      881,
+      888
+    ]
+  },
+  {
+    "meters": [
+      860.765,
+      863.6184
+    ],
+    "duration_min": 3.6167,
+    "amplitude": -5.111,
+    "local_amplitude": -1.9004,
+    "confidence": 0.6428,
+    "type_hypothesis": "transient",
+    "periodic": false,
+    "source": "detector",
+    "t_range": [
+      7,
+      13
+    ],
+    "s_range": [
+      1810,
+      1816
+    ]
+  },
+  {
+    "meters": [
+      869.8007,
+      872.1785
+    ],
+    "duration_min": 4.1333,
+    "amplitude": -4.8546,
+    "local_amplitude": -1.6408,
+    "confidence": 0.6197,
+    "type_hypothesis": "transient",
+    "periodic": false,
+    "source": "detector",
+    "t_range": [
+      6,
+      13
+    ],
+    "s_range": [
+      1829,
+      1834
+    ]
+  },
+  {
+    "meters": [
+      427.0536,
+      428.9558
+    ],
+    "duration_min": 8.2667,
+    "amplitude": -1.6802,
+    "local_amplitude": 0.5198,
+    "confidence": 0.5841,
+    "type_hypothesis": "transient",
+    "periodic": false,
+    "source": "detector",
+    "t_range": [
+      341,
+      356
+    ],
+    "s_range": [
+      898,
+      902
+    ]
+  }
+]

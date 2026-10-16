@@ -1,0 +1,456 @@
+{
+  "schema": "real_data_summary_v1",
+  "manifest": {
+    "schema": "real_data_pack_v1",
+    "synthetic_training_used": false,
+    "models_trained": 0,
+    "expert_labels_created": 0,
+    "n_crops": 340,
+    "n_shortlist": 24,
+    "sources": {
+      "1": {
+        "csv_sha256": "3101c6b2716d2a9e14cd32e2e5d758cb8628741cff6f265cc45db2d7e9e8257f",
+        "raw_sha256": "7a47e562ea356cf5681fa212b048fc2c3f189616637e2cc1dc03868f5793444f",
+        "clean_sha256": "0fbf55e64f92ba44a9d44d4772642dc3539f3d58840786ceb67da7d33232ffb2",
+        "quality_sha256": "e90d2b3160509c4a3e7a5e0a68ce1cf5dab9187ae29b7a6236f7b911dd9d58b5"
+      },
+      "2": {
+        "csv_sha256": "f115579accd114e0c5a0d968aea3d2710da8ead421fc8c35c17472047cefdec4",
+        "raw_sha256": "45d3f785c3cfb05a1ba9cc13833544c7bb7e383e2908e6e9a9d0d2d13c9b33f9",
+        "clean_sha256": "a68aa5546017c3f52dbc4486e2a8ffd871d4b63daa6edc647b8702dfa5d26547",
+        "quality_sha256": "2fe527df71af4669f1110ff6276a9b2fd1391b107fff5da39ad6752cd6af5c7c"
+      },
+      "3": {
+        "csv_sha256": "0acc4e41dc16dd829110881641cb17f94bffd0c2d5255d539d8f3589cd8cdde3",
+        "raw_sha256": "061dc0f39dc81a5193b1810ef5caf986126af327f978675b0747bf43b6977592",
+        "clean_sha256": "f95a64cb1aa5de745796b2508a3bb53cbc17f2bb47dbaeb63e0a62d0d97fbddc",
+        "quality_sha256": "7a1513635ddd47ca73eecd2940c45d76e97e6a976d47061ee088c33b379c25b7"
+      },
+      "4": {
+        "csv_sha256": "d2f5b3d90078420aea45bac86df3656987a2ca9c548d478d134d3ee6349fde17",
+        "raw_sha256": "3809e0b9bfb0a86b5489a9533d565071f34827b77f4384f4bd50aeeed9bcfe5b",
+        "clean_sha256": "be371b13293fe9a05db70318b149550b5950d8b76e4720cbf567bcfc987036b6",
+        "quality_sha256": "73b8f44cfc0f3b3e1681ae31e6793e3233a934eab8e0eafc7cc8c70b35c8afc6"
+      },
+      "5": {
+        "csv_sha256": "98c1d629ed59478c81fa58b60e891f5587ef9d64ad435655e717a27f64767e46",
+        "raw_sha256": "b0426d519c4368cca20d8e111d8e1568c69749314787c5786f3dca73f3486f21",
+        "clean_sha256": "2557b6748898aedea918b8b1542aa593bf6c8244ee218ce65698c458f8befb33",
+        "quality_sha256": "e9e27088fc183d28df09ace8c9a73d768227e02c8f323ee6297ea6c6211d09ee"
+      },
+      "6": {
+        "csv_sha256": "23e79988fcfb8a186dec06faffa60e6ed7c93ca7cd9969ac4989fd12b9f358c8",
+        "raw_sha256": "9f0008ad6c053d6ce09016d8d84d5455595279cbb07fe2f92a4785cbc4857090",
+        "clean_sha256": "3fcd776f9a15d5b596ac79de32a2a68bc19520a1c1d51991083bb0343ead7389",
+        "quality_sha256": "cae22c028ed3301eb1c6f54a609214e2f3635ab10991301b00535ccdc624d1c6"
+      }
+    },
+    "rule_config": {
+      "contrast_c": 1.0,
+      "min_coverage": 0.8,
+      "min_reference_columns": 3,
+      "reference_inner_m": 8.0,
+      "reference_outer_m": 40.0,
+      "min_episode_rows": 3,
+      "min_episode_s": 180.0,
+      "max_gap_s": 300.0,
+      "period_cv_max": 0.3,
+      "min_repeats": 3,
+      "split_train_fraction": 0.6,
+      "split_dev_fraction": 0.8,
+      "split_guard_s": 1800.0
+    },
+    "origin_counts": {
+      "detector_proposal": 232,
+      "random_review": 36,
+      "stratified_review": 72
+    },
+    "weak_presence_counts": {
+      "1": 211,
+      "None": 70,
+      "0": 59
+    },
+    "split_counts": {
+      "-1": 71,
+      "0": 202,
+      "2": 25,
+      "1": 42
+    },
+    "n_diversity_groups": 87,
+    "patch_bytes": 82275220,
+    "expert_labels_are_not_weak_labels": true,
+    "independent_unseen_test": false,
+    "plots_rendered": true,
+    "proposal_queue_sha256": "af5f8e703ae97780de53c2bd5270f3274a69156704646fb9570256c6a252c50c",
+    "code_sha256": {
+      "fiber/real_data.py": "393d4c4cd84d8613a3d982b66531105cbf8f274a86735ed3300c6e0f93f2bc8a",
+      "scripts/prepare_real_data.py": "e1ee24a5f70383529f97981b37777bc706cc50dcb9de7e0676d454c15a2a989e"
+    }
+  },
+  "review_reason_counts": {
+    "all_rules_abstain": 70,
+    "raw_vs_filtered_rule_presence_changes": 7
+  },
+  "n_positive_independent_windows_without_proposal_overlap": 31,
+  "coverage_questions": [
+    {
+      "id": "review-00096",
+      "record": "1",
+      "split_code": -1,
+      "question": "Raw local-contrast rule positive, no proposal bounding-box overlap; persistent spatial structure is one possible explanation.",
+      "confirmed_detector_miss": false
+    },
+    {
+      "id": "review-00117",
+      "record": "1",
+      "split_code": -1,
+      "question": "Raw local-contrast rule positive, no proposal bounding-box overlap; persistent spatial structure is one possible explanation.",
+      "confirmed_detector_miss": false
+    },
+    {
+      "id": "review-00128",
+      "record": "1",
+      "split_code": 2,
+      "question": "Raw local-contrast rule positive, no proposal bounding-box overlap; persistent spatial structure is one possible explanation.",
+      "confirmed_detector_miss": false
+    },
+    {
+      "id": "review-00187",
+      "record": "1",
+      "split_code": 0,
+      "question": "Raw local-contrast rule positive, no proposal bounding-box overlap; persistent spatial structure is one possible explanation.",
+      "confirmed_detector_miss": false
+    },
+    {
+      "id": "review-00237",
+      "record": "1",
+      "split_code": 2,
+      "question": "Raw local-contrast rule positive, no proposal bounding-box overlap; persistent spatial structure is one possible explanation.",
+      "confirmed_detector_miss": false
+    },
+    {
+      "id": "stratum-1-0-2",
+      "record": "1",
+      "split_code": 0,
+      "question": "Raw local-contrast rule positive, no proposal bounding-box overlap; persistent spatial structure is one possible explanation.",
+      "confirmed_detector_miss": false
+    },
+    {
+      "id": "stratum-1-0-4",
+      "record": "1",
+      "split_code": 0,
+      "question": "Raw local-contrast rule positive, no proposal bounding-box overlap; persistent spatial structure is one possible explanation.",
+      "confirmed_detector_miss": false
+    },
+    {
+      "id": "stratum-1-0-5",
+      "record": "1",
+      "split_code": 0,
+      "question": "Raw local-contrast rule positive, no proposal bounding-box overlap; persistent spatial structure is one possible explanation.",
+      "confirmed_detector_miss": false
+    },
+    {
+      "id": "stratum-1-1-1",
+      "record": "1",
+      "split_code": -1,
+      "question": "Raw local-contrast rule positive, no proposal bounding-box overlap; persistent spatial structure is one possible explanation.",
+      "confirmed_detector_miss": false
+    },
+    {
+      "id": "stratum-1-1-4",
+      "record": "1",
+      "split_code": -1,
+      "question": "Raw local-contrast rule positive, no proposal bounding-box overlap; persistent spatial structure is one possible explanation.",
+      "confirmed_detector_miss": false
+    },
+    {
+      "id": "stratum-1-1-5",
+      "record": "1",
+      "split_code": -1,
+      "question": "Raw local-contrast rule positive, no proposal bounding-box overlap; persistent spatial structure is one possible explanation.",
+      "confirmed_detector_miss": false
+    },
+    {
+      "id": "review-00091",
+      "record": "2",
+      "split_code": 0,
+      "question": "Raw local-contrast rule positive, no proposal bounding-box overlap; persistent spatial structure is one possible explanation.",
+      "confirmed_detector_miss": false
+    },
+    {
+      "id": "stratum-2-0-0",
+      "record": "2",
+      "split_code": 0,
+      "question": "Raw local-contrast rule positive, no proposal bounding-box overlap; persistent spatial structure is one possible explanation.",
+      "confirmed_detector_miss": false
+    },
+    {
+      "id": "review-00010",
+      "record": "3",
+      "split_code": 0,
+      "question": "Raw local-contrast rule positive, no proposal bounding-box overlap; persistent spatial structure is one possible explanation.",
+      "confirmed_detector_miss": false
+    },
+    {
+      "id": "review-00069",
+      "record": "3",
+      "split_code": 0,
+      "question": "Raw local-contrast rule positive, no proposal bounding-box overlap; persistent spatial structure is one possible explanation.",
+      "confirmed_detector_miss": false
+    },
+    {
+      "id": "review-00135",
+      "record": "3",
+      "split_code": -1,
+      "question": "Raw local-contrast rule positive, no proposal bounding-box overlap; persistent spatial structure is one possible explanation.",
+      "confirmed_detector_miss": false
+    },
+    {
+      "id": "review-00198",
+      "record": "3",
+      "split_code": 0,
+      "question": "Raw local-contrast rule positive, no proposal bounding-box overlap; persistent spatial structure is one possible explanation.",
+      "confirmed_detector_miss": false
+    },
+    {
+      "id": "stratum-3-0-0",
+      "record": "3",
+      "split_code": 0,
+      "question": "Raw local-contrast rule positive, no proposal bounding-box overlap; persistent spatial structure is one possible explanation.",
+      "confirmed_detector_miss": false
+    },
+    {
+      "id": "stratum-3-0-4",
+      "record": "3",
+      "split_code": 0,
+      "question": "Raw local-contrast rule positive, no proposal bounding-box overlap; persistent spatial structure is one possible explanation.",
+      "confirmed_detector_miss": false
+    },
+    {
+      "id": "stratum-3-1-0",
+      "record": "3",
+      "split_code": 1,
+      "question": "Raw local-contrast rule positive, no proposal bounding-box overlap; persistent spatial structure is one possible explanation.",
+      "confirmed_detector_miss": false
+    },
+    {
+      "id": "stratum-3-1-4",
+      "record": "3",
+      "split_code": 1,
+      "question": "Raw local-contrast rule positive, no proposal bounding-box overlap; persistent spatial structure is one possible explanation.",
+      "confirmed_detector_miss": false
+    },
+    {
+      "id": "stratum-3-1-5",
+      "record": "3",
+      "split_code": 1,
+      "question": "Raw local-contrast rule positive, no proposal bounding-box overlap; persistent spatial structure is one possible explanation.",
+      "confirmed_detector_miss": false
+    },
+    {
+      "id": "stratum-4-0-4",
+      "record": "4",
+      "split_code": 0,
+      "question": "Raw local-contrast rule positive, no proposal bounding-box overlap; persistent spatial structure is one possible explanation.",
+      "confirmed_detector_miss": false
+    },
+    {
+      "id": "review-00060",
+      "record": "5",
+      "split_code": 1,
+      "question": "Raw local-contrast rule positive, no proposal bounding-box overlap; persistent spatial structure is one possible explanation.",
+      "confirmed_detector_miss": false
+    },
+    {
+      "id": "stratum-5-0-5",
+      "record": "5",
+      "split_code": 0,
+      "question": "Raw local-contrast rule positive, no proposal bounding-box overlap; persistent spatial structure is one possible explanation.",
+      "confirmed_detector_miss": false
+    },
+    {
+      "id": "stratum-5-1-0",
+      "record": "5",
+      "split_code": 1,
+      "question": "Raw local-contrast rule positive, no proposal bounding-box overlap; persistent spatial structure is one possible explanation.",
+      "confirmed_detector_miss": false
+    },
+    {
+      "id": "stratum-5-1-5",
+      "record": "5",
+      "split_code": 1,
+      "question": "Raw local-contrast rule positive, no proposal bounding-box overlap; persistent spatial structure is one possible explanation.",
+      "confirmed_detector_miss": false
+    },
+    {
+      "id": "stratum-6-0-1",
+      "record": "6",
+      "split_code": 0,
+      "question": "Raw local-contrast rule positive, no proposal bounding-box overlap; persistent spatial structure is one possible explanation.",
+      "confirmed_detector_miss": false
+    },
+    {
+      "id": "stratum-6-0-4",
+      "record": "6",
+      "split_code": 0,
+      "question": "Raw local-contrast rule positive, no proposal bounding-box overlap; persistent spatial structure is one possible explanation.",
+      "confirmed_detector_miss": false
+    },
+    {
+      "id": "stratum-6-1-2",
+      "record": "6",
+      "split_code": 1,
+      "question": "Raw local-contrast rule positive, no proposal bounding-box overlap; persistent spatial structure is one possible explanation.",
+      "confirmed_detector_miss": false
+    },
+    {
+      "id": "stratum-6-1-4",
+      "record": "6",
+      "split_code": 1,
+      "question": "Raw local-contrast rule positive, no proposal bounding-box overlap; persistent spatial structure is one possible explanation.",
+      "confirmed_detector_miss": false
+    }
+  ],
+  "by_origin": {
+    "detector_proposal": {
+      "1": 162,
+      "None": 70
+    },
+    "random_review": {
+      "1": 17,
+      "0": 19
+    },
+    "stratified_review": {
+      "1": 32,
+      "0": 40
+    }
+  },
+  "noise": [
+    {
+      "record": "1",
+      "increment_variability_proxy_c": 0.4821237832318101,
+      "residual_adjacent_space": {
+        "pearson": -0.4875647587786062,
+        "eligible_pairs": 7199190,
+        "sampled_pairs": 199978
+      },
+      "residual_adjacent_time": {
+        "pearson": 0.010441739244874468,
+        "eligible_pairs": 7188098,
+        "sampled_pairs": 199670
+      }
+    },
+    {
+      "record": "2",
+      "increment_variability_proxy_c": 0.28100558871036174,
+      "residual_adjacent_space": {
+        "pearson": -0.45170120795123747,
+        "eligible_pairs": 1609692,
+        "sampled_pairs": 178855
+      },
+      "residual_adjacent_time": {
+        "pearson": 0.24041222841309137,
+        "eligible_pairs": 1602599,
+        "sampled_pairs": 178067
+      }
+    },
+    {
+      "record": "3",
+      "increment_variability_proxy_c": 0.3032449659172373,
+      "residual_adjacent_space": {
+        "pearson": -0.4371354547356103,
+        "eligible_pairs": 1330144,
+        "sampled_pairs": 190021
+      },
+      "residual_adjacent_time": {
+        "pearson": 0.04600461623503259,
+        "eligible_pairs": 1324176,
+        "sampled_pairs": 189168
+      }
+    },
+    {
+      "record": "4",
+      "increment_variability_proxy_c": 0.25689959950720687,
+      "residual_adjacent_space": {
+        "pearson": -0.4214567986208803,
+        "eligible_pairs": 1195875,
+        "sampled_pairs": 199313
+      },
+      "residual_adjacent_time": {
+        "pearson": 0.08330364036185234,
+        "eligible_pairs": 1194346,
+        "sampled_pairs": 199058
+      }
+    },
+    {
+      "record": "5",
+      "increment_variability_proxy_c": 0.8811458404225173,
+      "residual_adjacent_space": {
+        "pearson": -0.5302427487792744,
+        "eligible_pairs": 4576168,
+        "sampled_pairs": 198964
+      },
+      "residual_adjacent_time": {
+        "pearson": 0.008687293039812187,
+        "eligible_pairs": 4577190,
+        "sampled_pairs": 199009
+      }
+    },
+    {
+      "record": "6",
+      "increment_variability_proxy_c": 0.556314361590622,
+      "residual_adjacent_space": {
+        "pearson": -0.5016841430564088,
+        "eligible_pairs": 5580015,
+        "sampled_pairs": 199287
+      },
+      "residual_adjacent_time": {
+        "pearson": 0.016210321888065666,
+        "eligible_pairs": 5567644,
+        "sampled_pairs": 198845
+      }
+    }
+  ],
+  "reconstruction": {
+    "n_train": 52180,
+    "n_development": 13106,
+    "selected_alpha": 100.0,
+    "baselines": {
+      "neighbour_mean": {
+        "n": 13106,
+        "mse_noisy_target_c2": 1.4367515258693122,
+        "mae_noisy_target_c": 0.8265354907296185,
+        "abs_error_q95_c": 2.1773412227630624,
+        "bias_c": 0.0798543865000694
+      },
+      "neighbour_median": {
+        "n": 13106,
+        "mse_noisy_target_c2": 1.3429406873894587,
+        "mae_noisy_target_c": 0.8021843569816823,
+        "abs_error_q95_c": 2.0931413173675537,
+        "bias_c": 0.04208605929438292
+      },
+      "nearest_symmetric_pair": {
+        "n": 13106,
+        "mse_noisy_target_c2": 1.614133280317407,
+        "mae_noisy_target_c": 0.9145637525232188,
+        "abs_error_q95_c": 2.4555506706237793,
+        "bias_c": 0.061026136911171876
+      }
+    },
+    "ridge": {
+      "n": 13106,
+      "mse_noisy_target_c2": 1.3918567387552174,
+      "mae_noisy_target_c": 0.8287380291004744,
+      "abs_error_q95_c": 2.2362334885022452,
+      "bias_c": 0.0005701235225315216
+    },
+    "macro_record_mse": {
+      "ridge": 1.8719315721609553,
+      "neighbour_median": 1.833787708581368
+    },
+    "operational_approved": false
+  },
+  "expert_labels_created": 0,
+  "unseen_test_accuracy_estimated": false
+}

@@ -1,0 +1,9 @@
+{
+  "archive": "zakhar-real-data-v2.zip",
+  "bytes": 160501416,
+  "sha256": "eb47df46623c33da18149deace26e78f48b847c6058efc413f5a3bb3c3cbd16c",
+  "verified_crops": 340,
+  "includes_real_only_reconstruction_weights": true,
+  "expert_labels_created": 0,
+  "synthetic_training_used": false
+}

@@ -1,0 +1,9 @@
+# Gate stack/*.sql: sqlfluff lint -c stack/.sqlfluff stack/clickhouse/init.sql
+# Exclusions are deliberate, against official ClickHouse conventions:
+#   CP03/CP05: CH writes now(), String, DateTime64, Array(...) exactly so;
+#     upper case (NOW(), STRING) is not used in CH docs.
+#   RF04: method/name columns are legal in CH (tables created and running
+#     on 24.10 - runtime beats linter); quoting would only add noise.
+[sqlfluff]
+dialect = clickhouse
+exclude_rules = CP03,CP05,RF04

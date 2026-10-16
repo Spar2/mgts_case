@@ -1,0 +1,10 @@
+{
+  "archive": "zakhar-ml-test-audit.zip",
+  "bytes": 1134272,
+  "sha256": "a4909f449ad7844fb1633be73ad6e7c7f5a123cc424119e9bad815242dbe6ea1",
+  "verified_files": 59,
+  "native_records": 6,
+  "original_author_weights": false,
+  "retrained_cnn_weights_verified": 6,
+  "expert_truth_available": false
+}

@@ -1,0 +1,19 @@
+{
+ "method": "ens_dom",
+ "definition": "score = 0.5 * (ens_u2ft_tcn_lgbm from models_release + unet_dom)",
+ "unet_file": "unet_dom.pt",
+ "width": 16,
+ "arch": "unet",
+ "winner_release": "models_release",
+ "winner_method": "ens_u2ft_tcn_lgbm",
+ "winner_threshold_far_1e-3": 0.8608087301264272,
+ "thresholds": {
+  "cnn_unet": {
+   "far_1e-3": 0.8960151672373281
+  }
+ },
+ "threshold_source": "v8 val background valid & ev==0 & nu==0; test and real files do not move it",
+ "init": "artifacts/stage1/unet_v810ft.pt",
+ "train": "artifacts/eval/s3_dom_train.json",
+ "real_policy": "MGTS csv evaluation only; no fit and no card calibration"
+}

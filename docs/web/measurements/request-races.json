@@ -1,0 +1,21 @@
+{
+  "scenarios": [
+    {
+      "held": "slices",
+      "currentRecord": "3",
+      "provenanceAndScalePreserved": true
+    },
+    {
+      "held": "tiles",
+      "currentRecord": "3",
+      "provenanceAndScalePreserved": true
+    }
+  ],
+  "cancelledRequests": [
+    "net::ERR_ABORTED",
+    "net::ERR_ABORTED"
+  ],
+  "runtimeErrors": [],
+  "date": "2026-10-09",
+  "conditions": "Real 5.csv -> 3.csv; Playwright mobile context DPR3 on Windows desktop; delayed GET only; no expert answers"
+}

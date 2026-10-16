@@ -1,0 +1,158 @@
+name: Web checks
+on:
+  workflow_call:
+  pull_request:
+    paths: ["apps/web/**", "services/web-api/**", "scripts/**", "AGENTS.md", "design/AGENTS.md", "docs/web/UI-FREEZE.md", "docs/web/GROK-WEB-GUARDRAILS.md", "docs/web/STYLE-AND-IDENTITY.md", "docs/web/design-system/**", "compose.web.yaml", "compose.platform.yaml", "compose.production.yaml", "compose.team.yaml", "ops/deploy-web.sh", "ops/web/**", "stack/**", ".github/workflows/web-checks.yml", ".github/workflows/deploy-web.yml"]
+  workflow_dispatch:
+permissions:
+  contents: read
+
+concurrency:
+  group: web-checks-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  contracts-and-build:
+    runs-on: [self-hosted, team-web]
+    services:
+      redis:
+        image: redis@sha256:858f009f9709ce576febc734aa78b8f6d624b82571f9ddb6bda4377c833b3499
+        ports: [6379:6379]
+        options: --health-cmd "redis-cli ping" --health-interval 5s --health-timeout 3s --health-retries 10
+      postgres:
+        image: postgres@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826
+        env:
+          POSTGRES_DB: workbench
+          POSTGRES_USER: workbench
+          POSTGRES_PASSWORD: ci-test-only-password
+        ports: [5432:5432]
+        options: >-
+          --health-cmd "pg_isready -U workbench -d workbench"
+          --health-interval 5s --health-timeout 3s --health-retries 20
+    env:
+      DTS_REDIS_URL: redis://127.0.0.1:6379/0
+      DTS_TEST_PG_URL: postgresql://workbench:ci-test-only-password@127.0.0.1:5432/workbench
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - name: Guard branch ref
+        uses: ./.github/actions/guard-ref
+        with:
+          ref_name: ${{ github.ref_name }}
+          event_name: ${{ github.event_name }}
+          fork: ${{ github.event.pull_request.head.repo.fork }}
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7
+        with:
+          python-version: "3.12"
+      - name: Frozen web UI baseline
+        run: |
+          python scripts/test_web_ui_freeze.py
+          python scripts/check-web-ui-freeze.py
+      - name: Node 24 and client checks
+        working-directory: apps/web
+        run: |
+          docker run --rm --user $(id -u):$(id -g) -e HOME=/tmp -v "$PWD:/app" -w /app node:24-bookworm-slim sh -c 'npm ci --no-audit --no-fund && npm run lint && npm test && npm run build'
+      - name: Server contracts and OpenAPI drift
+        run: |
+          pip install -r services/web-api/requirements.worker.txt
+          mkdir -p .runtime
+          python scripts/agents/test_runner.py
+          pytest services/web-api/tests -q
+          PYTHONPATH=services/web-api python scripts/export-openapi.py --check
+      - name: Compose validation
+        run: |
+          docker compose -p haklolarp-web -f compose.web.yaml config -q
+          DTS_POSTGRES_PASSWORD=ci-test-only-password docker compose -p haklolarp-web -f compose.web.yaml -f compose.platform.yaml --profile stream config -q
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: "24"
+      - name: Browser journey on isolated contract fixtures (no ML training)
+        run: |
+          python scripts/prepare-ci-fixtures.py
+          export DTS_RECORDS="$PWD/.runtime/ci-smoke/records"
+          export DTS_QUEUE="$PWD/.runtime/ci-smoke/queue"
+          export DTS_RUNTIME="$PWD/.runtime/ci-smoke/runtime"
+          export DTS_WEB_DIST="$PWD/apps/web/dist"
+          export DTS_ENV=test
+          export DTS_TEST_ALLOW_ANONYMOUS=true
+          PYTHONPATH=services/web-api python -m uvicorn workbench.api:app --host 127.0.0.1 --port 8091 --no-access-log > .runtime/browser-api.log 2>&1 &
+          api_pid=$!
+          trap 'kill "$api_pid" || true' EXIT
+          for _ in $(seq 1 60); do
+            if curl -fsS http://127.0.0.1:8091/api/v1/health; then break; fi
+            sleep 1
+          done
+          curl -fsS http://127.0.0.1:8091/api/v1/health
+          npx --yes --package @playwright/cli@0.1.22 playwright-cli install-browser chromium --with-deps
+          npx --yes --package @playwright/cli@0.1.22 playwright-cli --session ci open http://127.0.0.1:8091/research --config=scripts/playwright-ci.json
+          npx --yes --package @playwright/cli@0.1.22 playwright-cli --session ci run-code --filename=scripts/qa-browser.js
+          npx --yes --package @playwright/cli@0.1.22 playwright-cli --session ci run-code --filename=scripts/qa-review-save.js
+          npx --yes --package @playwright/cli@0.1.22 playwright-cli --session ci run-code --filename=scripts/qa-replay-controls.js
+          npx --yes --package @playwright/cli@0.1.22 playwright-cli --session ci run-code --filename=scripts/qa-graphics.js
+          npx --yes --package @playwright/cli@0.1.22 playwright-cli --session ci run-code --filename=scripts/qa-request-races.js
+          npx --yes --package @playwright/cli@0.1.22 playwright-cli --session ci close
+      - name: Authenticated PostgreSQL browser journey
+        run: |
+          python scripts/platform-qa.py serve --records .runtime/ci-smoke/records --queue .runtime/ci-smoke/queue > .runtime/auth-qa-bootstrap.log 2>&1 &
+          qa_pid=$!
+          analysis_pid=""
+          cleanup() {
+            npx --yes --package @playwright/cli@0.1.22 playwright-cli --session auth-ci close || true
+            if [ -n "$analysis_pid" ]; then kill "$analysis_pid" || true; wait "$analysis_pid" || true; fi
+            kill "$qa_pid" || true
+            wait "$qa_pid" || true
+            python scripts/platform-qa.py drop || true
+          }
+          trap cleanup EXIT
+          for _ in $(seq 1 120); do
+            if test -f .runtime/auth-qa/browser-auth.json; then break; fi
+            if ! kill -0 "$qa_pid" 2>/dev/null; then echo 'QA bootstrap failed; inspect private log'; exit 1; fi
+            sleep 1
+          done
+          test -f .runtime/auth-qa/browser-auth.json
+          npx --yes --package @playwright/cli@0.1.22 playwright-cli --session auth-ci open http://127.0.0.1:8091/system --config=scripts/playwright-ci.json
+          npx --yes --package @playwright/cli@0.1.22 playwright-cli --session auth-ci state-load .runtime/auth-qa/browser-auth.json
+          npx --yes --package @playwright/cli@0.1.22 playwright-cli --session auth-ci goto http://127.0.0.1:8091/system
+          npx --yes --package @playwright/cli@0.1.22 playwright-cli --session auth-ci run-code --filename=scripts/qa-closed-team.js | tee .runtime/qa-closed-team-cli.log
+          python scripts/check-browser-result.py .runtime/qa-closed-team-cli.log --require public_landing landing_keyboard landing_mobile closed_pages anonymous_api_denied mobile_login invitation_login_return viewer_readonly logout_denied cross_tab_logout
+          set -o pipefail
+          npx --yes --package @playwright/cli@0.1.22 playwright-cli --session auth-ci run-code --filename=scripts/qa-platform.js | tee .runtime/qa-platform-cli.log
+          npx --yes --package @playwright/cli@0.1.22 playwright-cli --session auth-ci run-code --filename=scripts/qa-account-journey.js
+          npx --yes --package @playwright/cli@0.1.22 playwright-cli --session auth-ci run-code --filename=scripts/qa-selected-processing.js
+          npx --yes --package @playwright/cli@0.1.22 playwright-cli --session auth-ci run-code --filename=scripts/qa-cases.js | tee .runtime/qa-cases-cli.log
+          python scripts/check-browser-result.py .runtime/qa-cases-cli.log --require immutable_zip import_preview save_retry cached_snapshot_survives_outage presentation_snapshot presentation_no_mutations presentation_raw_backup idempotent_commit_retry descriptive_changes
+          python scripts/analysis-qa-worker.py --state .runtime/auth-qa/state.json --records .runtime/ci-smoke/records > .runtime/auth-qa/worker-private.log 2>&1 &
+          analysis_pid=$!
+          for _ in $(seq 1 60); do
+            if test -f .runtime/auth-qa/runtime/analysis-worker.json; then break; fi
+            if ! kill -0 "$analysis_pid" 2>/dev/null; then echo 'Analysis worker exited'; exit 1; fi
+            sleep 1
+          done
+          test -f .runtime/auth-qa/runtime/analysis-worker.json
+          npx --yes --package @playwright/cli@0.1.22 playwright-cli --session auth-ci run-code --filename=scripts/qa-analysis-job.js | tee .runtime/qa-analysis-job-cli.log
+          python scripts/check-browser-result.py .runtime/qa-analysis-job-cli.log --require native_calculation calculation_retry calculation_reload calculation_mobile calculation_case
+          npx --yes --package @playwright/cli@0.1.22 playwright-cli --session auth-ci run-code --filename=scripts/qa-analysis-submit-race.js | tee .runtime/qa-analysis-submit-race-cli.log
+          python scripts/check-browser-result.py .runtime/qa-analysis-submit-race-cli.log --require calculation_source_race
+          python scripts/seed-analysis-qa.py --state .runtime/auth-qa/state.json --records .runtime/ci-smoke/records
+          npx --yes --package @playwright/cli@0.1.22 playwright-cli --session auth-ci run-code --filename=scripts/qa-analysis.js | tee .runtime/qa-analysis-cli.log
+          python scripts/check-browser-result.py .runtime/qa-analysis-cli.log --require analysis_layers analysis_mobile analysis_case analysis_custom_window analysis_permalink analysis_late_response
+          npx --yes --package @playwright/cli@0.1.22 playwright-cli --session auth-ci run-code --filename=scripts/qa-experiments.js | tee .runtime/qa-experiments-cli.log
+          python scripts/check-browser-result.py .runtime/qa-experiments-cli.log --require research_readonly research_source_values research_keyboard research_mobile research_download
+          npx --yes --package @playwright/cli@0.1.22 playwright-cli --session auth-ci run-code --filename=scripts/qa-workspace.js | tee .runtime/qa-workspace-cli.log
+          python scripts/check-browser-result.py .runtime/qa-workspace-cli.log --require workspace_saved_context workspace_direct_links workspace_mobile workspace_no_result_substitution
+          mkdir -p .runtime/demo-goal-20261010
+          npx --yes --package @playwright/cli@0.1.22 playwright-cli --session auth-ci run-code --filename=scripts/qa-presentation.js
+      - name: Extract safe platform diagnostics
+        if: failure()
+        run: |
+          mkdir -p .runtime/qa-safe
+          if test -f .runtime/qa-platform-cli.log; then
+            grep '^Error: QA_PLATFORM_DIAGNOSTIC ' .runtime/qa-platform-cli.log > .runtime/qa-safe/platform-diagnostic.log || true
+          fi
+      - name: Upload safe platform diagnostics
+        if: failure()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: platform-diagnostic
+          path: .runtime/qa-safe/platform-diagnostic.log
+          if-no-files-found: ignore
+          retention-days: 7

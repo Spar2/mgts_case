@@ -1,0 +1,11 @@
+---
+# Роль runner_vm: persistent-ВМ self-hosted раннеров из libvirt_runner_vms.
+# Паттерн проверен фазой 0: cloud-init seed + virt-install --import + br0.
+# Отличия от тестовой ВМ: фиксированные MAC/IP, admin-пользователь с ключом,
+# пользователь gha-runner + linger (сервис раннера — systemd --user, без root).
+# Пересоздание ВМ: удалить домен вручную, роль создаст заново.
+# Публичный ключ админа читается на управляющей машине (дев-ВМ), приватный
+# никогда не покидает её: ~/.ssh/runner_admin.
+runner_vm_admin_pubkey_file: "{{ lookup('env', 'HOME') }}/.ssh/runner_admin.pub"
+runner_vm_admin_pubkey: "{{ lookup('file', runner_vm_admin_pubkey_file) }}"
+runner_vm_ssh_wait_timeout: 300

@@ -1,0 +1,586 @@
+{
+  "date": "2026-10-10",
+  "scope": "Goal demonstration acceptance; isolated QA accounts, never human expert labels",
+  "server_tests": {
+    "passed": 32,
+    "real_records": 6,
+    "postgresql_isolated": true,
+    "command": "pytest services/web-api/tests --tb=short -q; DTS_TEST_PG_URL, DTS_REAL_RECORDS and DTS_REAL_QUEUE set"
+  },
+  "client_tests": {
+    "passed": 6,
+    "eslint": true,
+    "typescript_production_build": true,
+    "openapi_drift": false,
+    "ruff": true
+  },
+  "browser": {
+    "chromium": {
+      "record": "5",
+      "candidate": "review-00018",
+      "source_sha256": "98c1d629ed59478c81fa58b60e891f5587ef9d64ad435655e717a27f64767e46",
+      "steps": 5,
+      "actual_ml": true,
+      "working_journal_unchanged": true,
+      "working_mutation_blocked": true,
+      "regular_runs_unchanged": true,
+      "direct_link": true,
+      "reload": true,
+      "keyboard": true,
+      "reduced_motion": true,
+      "network_recovery": true,
+      "widths": [
+        320,
+        390,
+        430,
+        1024,
+        1440
+      ],
+      "errors": []
+    },
+    "firefox": {
+      "record": "5",
+      "candidate": "review-00018",
+      "source_sha256": "98c1d629ed59478c81fa58b60e891f5587ef9d64ad435655e717a27f64767e46",
+      "steps": 5,
+      "actual_ml": true,
+      "working_journal_unchanged": true,
+      "working_mutation_blocked": true,
+      "regular_runs_unchanged": true,
+      "direct_link": true,
+      "reload": true,
+      "keyboard": true,
+      "reduced_motion": true,
+      "network_recovery": true,
+      "widths": [
+        320,
+        390,
+        430,
+        1024,
+        1440
+      ],
+      "errors": []
+    },
+    "webkit": {
+      "record": "5",
+      "candidate": "review-00018",
+      "source_sha256": "98c1d629ed59478c81fa58b60e891f5587ef9d64ad435655e717a27f64767e46",
+      "steps": 5,
+      "actual_ml": true,
+      "working_journal_unchanged": true,
+      "working_mutation_blocked": true,
+      "regular_runs_unchanged": true,
+      "direct_link": true,
+      "reload": true,
+      "keyboard": true,
+      "reduced_motion": true,
+      "network_recovery": true,
+      "widths": [
+        320,
+        390,
+        430,
+        1024,
+        1440
+      ],
+      "errors": []
+    }
+  },
+  "prepared_result": {
+    "actual_existing_ml_result": true,
+    "import_bytes": 60443,
+    "source_sha_verified": true,
+    "native_profile_length": 2364,
+    "exact_values": true,
+    "native_invalid_mask": true,
+    "missing_result_preserves_raw": true
+  },
+  "report": {
+    "json_provenance": true,
+    "html_offline_rendered": true,
+    "inline_figures": true,
+    "no_external_requests": true,
+    "rehearsal_explicit": true
+  },
+  "stream": {
+    "measurement_date": "2026-10-10",
+    "source": "4.csv",
+    "source_sha256": "d2f5b3d90078420aea45bac86df3656987a2ca9c548d478d134d3ee6349fde17",
+    "accepted_at_cancel": 11,
+    "same_job_resumed": true,
+    "rehearsal_endpoints": true,
+    "accepted": 708,
+    "persisted": 708,
+    "analyzed": 708,
+    "verified_persisted": 708,
+    "verified_cells": 1197228,
+    "total_profiles": 708,
+    "dsp_profiles": 708
+  },
+  "performance": {
+    "date": "2026-10-10",
+    "browser": "153.0.8010.12",
+    "network": "loopback, no throttling, prepared server data; HTTP cache cleared and disabled for first field, enabled for repeated transitions; fresh page application context",
+    "device": "Windows desktop; 390px is viewport emulation, not a physical phone",
+    "cycles": 10,
+    "steps_per_cycle": 5,
+    "heap": "Chromium CDP after explicit GC; excludes GPU, native and process RSS",
+    "runs": [
+      {
+        "width": 1440,
+        "first_field_ms": 918,
+        "transition_two_frame_p50_ms": 11.5,
+        "transition_two_frame_max_ms": 12.700000047683716,
+        "snapshots": [
+          {
+            "heap": {
+              "usedSize": 5861860,
+              "totalSize": 6430720,
+              "embedderHeapUsedSize": 2357112,
+              "backingStorageSize": 725632
+            },
+            "cache": {
+              "bytes": 46478,
+              "budget": 67108864
+            },
+            "graphics": {
+              "webglContexts": 1,
+              "bufferBytes": 105296,
+              "textureBytes": 1024,
+              "canvasSurfaceBytes": 2344760,
+              "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+            }
+          },
+          {
+            "heap": {
+              "usedSize": 6071728,
+              "totalSize": 6430720,
+              "embedderHeapUsedSize": 2214984,
+              "backingStorageSize": 726411
+            },
+            "cache": {
+              "bytes": 46478,
+              "budget": 67108864
+            },
+            "graphics": {
+              "webglContexts": 1,
+              "bufferBytes": 105296,
+              "textureBytes": 1024,
+              "canvasSurfaceBytes": 2344760,
+              "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+            }
+          },
+          {
+            "heap": {
+              "usedSize": 6141260,
+              "totalSize": 6955008,
+              "embedderHeapUsedSize": 2196400,
+              "backingStorageSize": 726411
+            },
+            "cache": {
+              "bytes": 46478,
+              "budget": 67108864
+            },
+            "graphics": {
+              "webglContexts": 1,
+              "bufferBytes": 105296,
+              "textureBytes": 1024,
+              "canvasSurfaceBytes": 2344760,
+              "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+            }
+          },
+          {
+            "heap": {
+              "usedSize": 6156872,
+              "totalSize": 6955008,
+              "embedderHeapUsedSize": 2142496,
+              "backingStorageSize": 726411
+            },
+            "cache": {
+              "bytes": 46478,
+              "budget": 67108864
+            },
+            "graphics": {
+              "webglContexts": 1,
+              "bufferBytes": 105296,
+              "textureBytes": 1024,
+              "canvasSurfaceBytes": 2344760,
+              "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+            }
+          },
+          {
+            "heap": {
+              "usedSize": 6197344,
+              "totalSize": 7217152,
+              "embedderHeapUsedSize": 2182088,
+              "backingStorageSize": 726411
+            },
+            "cache": {
+              "bytes": 46478,
+              "budget": 67108864
+            },
+            "graphics": {
+              "webglContexts": 1,
+              "bufferBytes": 105296,
+              "textureBytes": 1024,
+              "canvasSurfaceBytes": 2344760,
+              "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+            }
+          },
+          {
+            "heap": {
+              "usedSize": 6213732,
+              "totalSize": 7217152,
+              "embedderHeapUsedSize": 1950104,
+              "backingStorageSize": 726411
+            },
+            "cache": {
+              "bytes": 46478,
+              "budget": 67108864
+            },
+            "graphics": {
+              "webglContexts": 1,
+              "bufferBytes": 105296,
+              "textureBytes": 1024,
+              "canvasSurfaceBytes": 2344760,
+              "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+            }
+          },
+          {
+            "heap": {
+              "usedSize": 6236648,
+              "totalSize": 7217152,
+              "embedderHeapUsedSize": 2147296,
+              "backingStorageSize": 726411
+            },
+            "cache": {
+              "bytes": 46478,
+              "budget": 67108864
+            },
+            "graphics": {
+              "webglContexts": 1,
+              "bufferBytes": 105296,
+              "textureBytes": 1024,
+              "canvasSurfaceBytes": 2344760,
+              "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+            }
+          },
+          {
+            "heap": {
+              "usedSize": 6255812,
+              "totalSize": 7217152,
+              "embedderHeapUsedSize": 2293992,
+              "backingStorageSize": 726411
+            },
+            "cache": {
+              "bytes": 46478,
+              "budget": 67108864
+            },
+            "graphics": {
+              "webglContexts": 1,
+              "bufferBytes": 105296,
+              "textureBytes": 1024,
+              "canvasSurfaceBytes": 2344760,
+              "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+            }
+          },
+          {
+            "heap": {
+              "usedSize": 6339472,
+              "totalSize": 7217152,
+              "embedderHeapUsedSize": 2208424,
+              "backingStorageSize": 726411
+            },
+            "cache": {
+              "bytes": 46478,
+              "budget": 67108864
+            },
+            "graphics": {
+              "webglContexts": 1,
+              "bufferBytes": 105296,
+              "textureBytes": 1024,
+              "canvasSurfaceBytes": 2344760,
+              "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+            }
+          },
+          {
+            "heap": {
+              "usedSize": 6353444,
+              "totalSize": 7217152,
+              "embedderHeapUsedSize": 2254136,
+              "backingStorageSize": 726411
+            },
+            "cache": {
+              "bytes": 46478,
+              "budget": 67108864
+            },
+            "graphics": {
+              "webglContexts": 1,
+              "bufferBytes": 105296,
+              "textureBytes": 1024,
+              "canvasSurfaceBytes": 2344760,
+              "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+            }
+          }
+        ],
+        "released": {
+          "webglContexts": 0,
+          "bufferBytes": 0,
+          "textureBytes": 0,
+          "canvasSurfaceBytes": 0,
+          "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+        }
+      },
+      {
+        "width": 390,
+        "first_field_ms": 940,
+        "transition_two_frame_p50_ms": 11.5,
+        "transition_two_frame_max_ms": 12.100000023841858,
+        "snapshots": [
+          {
+            "heap": {
+              "usedSize": 5847308,
+              "totalSize": 6692864,
+              "embedderHeapUsedSize": 2387216,
+              "backingStorageSize": 725628
+            },
+            "cache": {
+              "bytes": 46478,
+              "budget": 33554432
+            },
+            "graphics": {
+              "webglContexts": 1,
+              "bufferBytes": 105296,
+              "textureBytes": 1024,
+              "canvasSurfaceBytes": 756480,
+              "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+            }
+          },
+          {
+            "heap": {
+              "usedSize": 6077160,
+              "totalSize": 6955008,
+              "embedderHeapUsedSize": 2270512,
+              "backingStorageSize": 726396
+            },
+            "cache": {
+              "bytes": 46478,
+              "budget": 33554432
+            },
+            "graphics": {
+              "webglContexts": 1,
+              "bufferBytes": 105296,
+              "textureBytes": 1024,
+              "canvasSurfaceBytes": 756480,
+              "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+            }
+          },
+          {
+            "heap": {
+              "usedSize": 6138140,
+              "totalSize": 6955008,
+              "embedderHeapUsedSize": 2224464,
+              "backingStorageSize": 726396
+            },
+            "cache": {
+              "bytes": 46478,
+              "budget": 33554432
+            },
+            "graphics": {
+              "webglContexts": 1,
+              "bufferBytes": 105296,
+              "textureBytes": 1024,
+              "canvasSurfaceBytes": 756480,
+              "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+            }
+          },
+          {
+            "heap": {
+              "usedSize": 6159812,
+              "totalSize": 7217152,
+              "embedderHeapUsedSize": 2186736,
+              "backingStorageSize": 726395
+            },
+            "cache": {
+              "bytes": 46478,
+              "budget": 33554432
+            },
+            "graphics": {
+              "webglContexts": 1,
+              "bufferBytes": 105296,
+              "textureBytes": 1024,
+              "canvasSurfaceBytes": 756480,
+              "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+            }
+          },
+          {
+            "heap": {
+              "usedSize": 6189220,
+              "totalSize": 7217152,
+              "embedderHeapUsedSize": 2186272,
+              "backingStorageSize": 726396
+            },
+            "cache": {
+              "bytes": 46478,
+              "budget": 33554432
+            },
+            "graphics": {
+              "webglContexts": 1,
+              "bufferBytes": 105296,
+              "textureBytes": 1024,
+              "canvasSurfaceBytes": 756480,
+              "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+            }
+          },
+          {
+            "heap": {
+              "usedSize": 6204816,
+              "totalSize": 7217152,
+              "embedderHeapUsedSize": 2000696,
+              "backingStorageSize": 726396
+            },
+            "cache": {
+              "bytes": 46478,
+              "budget": 33554432
+            },
+            "graphics": {
+              "webglContexts": 1,
+              "bufferBytes": 105296,
+              "textureBytes": 1024,
+              "canvasSurfaceBytes": 756480,
+              "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+            }
+          },
+          {
+            "heap": {
+              "usedSize": 6211108,
+              "totalSize": 7217152,
+              "embedderHeapUsedSize": 2307736,
+              "backingStorageSize": 726396
+            },
+            "cache": {
+              "bytes": 46478,
+              "budget": 33554432
+            },
+            "graphics": {
+              "webglContexts": 1,
+              "bufferBytes": 105296,
+              "textureBytes": 1024,
+              "canvasSurfaceBytes": 756480,
+              "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+            }
+          },
+          {
+            "heap": {
+              "usedSize": 6237492,
+              "totalSize": 7217152,
+              "embedderHeapUsedSize": 2007320,
+              "backingStorageSize": 726396
+            },
+            "cache": {
+              "bytes": 46478,
+              "budget": 33554432
+            },
+            "graphics": {
+              "webglContexts": 1,
+              "bufferBytes": 105296,
+              "textureBytes": 1024,
+              "canvasSurfaceBytes": 756480,
+              "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+            }
+          },
+          {
+            "heap": {
+              "usedSize": 6319116,
+              "totalSize": 7217152,
+              "embedderHeapUsedSize": 2247680,
+              "backingStorageSize": 726396
+            },
+            "cache": {
+              "bytes": 46478,
+              "budget": 33554432
+            },
+            "graphics": {
+              "webglContexts": 1,
+              "bufferBytes": 105296,
+              "textureBytes": 1024,
+              "canvasSurfaceBytes": 756480,
+              "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+            }
+          },
+          {
+            "heap": {
+              "usedSize": 6365628,
+              "totalSize": 7217152,
+              "embedderHeapUsedSize": 2219264,
+              "backingStorageSize": 726396
+            },
+            "cache": {
+              "bytes": 46478,
+              "budget": 33554432
+            },
+            "graphics": {
+              "webglContexts": 1,
+              "bufferBytes": 105296,
+              "textureBytes": 1024,
+              "canvasSurfaceBytes": 756480,
+              "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+            }
+          }
+        ],
+        "released": {
+          "webglContexts": 0,
+          "bufferBytes": 0,
+          "textureBytes": 0,
+          "canvasSurfaceBytes": 0,
+          "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+        }
+      }
+    ],
+    "cpu_reported": "Genuine Intel(R) 0000 (Windows CIM; exact commercial CPU model unavailable)",
+    "host_ram_bytes": 68002148352
+  },
+  "prepared_pack": {
+    "cards": 340,
+    "shortlist": [
+      "review-00223",
+      "review-00034",
+      "review-00098",
+      "review-00187",
+      "review-00036",
+      "review-00017",
+      "review-00024",
+      "review-00033",
+      "review-00010",
+      "stratum-3-0-2",
+      "review-00025",
+      "review-00069",
+      "review-00008",
+      "review-00148",
+      "review-00194",
+      "review-00225",
+      "review-00009",
+      "review-00000",
+      "review-00018",
+      "review-00023",
+      "review-00118",
+      "review-00027",
+      "review-00046",
+      "review-00051"
+    ],
+    "source_manifest_sha256": "83bb16fc4ad6e8277bb965eb9e6db040a91308c3e0903b7ee29e41c5e8d383e7",
+    "verified_native_cells": 13956989
+  },
+  "code_commit": "3c96bf1",
+  "local_delivery": {
+    "auth_enabled": true,
+    "demo_html": 200,
+    "database": true,
+    "compose_wait_passed": true,
+    "qa_mode": false,
+    "external_deploy": false,
+    "worker_heartbeat_fresh": true,
+    "records": 6,
+    "health": 200,
+    "port": 8081
+  }
+}

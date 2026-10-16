@@ -1,0 +1,15 @@
+---
+- name: Staging — базовый стенд (tailscale, cloudflared, docker, app)
+  hosts: staging
+  become: true
+  roles:
+    - role: base
+    - role: tailscale
+    - role: libvirt
+    - role: runner_vm
+    - role: cloudflared
+    - role: docker
+    - role: runner_container
+    - role: teams
+    - role: app
+    - role: hardening

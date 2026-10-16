@@ -1,0 +1,28 @@
+# notify-relay runtime. No secrets here or in the image: RELAY_TOKEN and
+# DISCORD_WEBHOOK_URL come from /etc/notify-relay/relay.env on the host
+# (mode 0600, wired via env_file in compose.notify.yml).
+FROM python:3.12-slim
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1
+
+WORKDIR /app
+COPY relay.py /app/relay.py
+
+# Drop root: python:3.12-slim has no `app` user, create one.
+RUN useradd --system --no-create-home --shell /usr/sbin/nologin app \
+    && chown -R app:root /app \
+    && chmod 0555 /app/relay.py
+
+USER app
+
+ENV RELAY_HOST=0.0.0.0 \
+    RELAY_PORT=8080
+
+EXPOSE 8080
+
+# stdlib-only healthcheck (no curl/wget in slim): GET /healthz.
+HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
+    CMD python -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:' + __import__('os').environ.get('RELAY_PORT','8080') + '/healthz', timeout=4)"
+
+CMD ["python", "/app/relay.py"]

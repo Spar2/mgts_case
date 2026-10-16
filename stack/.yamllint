@@ -1,0 +1,5 @@
+# Гейт stack/compose.yaml: yamllint -c stack/.yamllint stack/compose.yaml
+# line-length 150: SHA256-digest образов (~120 символов) рвать нельзя.
+rules:
+  line-length:
+    max: 150

@@ -1,0 +1,6 @@
+---
+- name: Раннеры — регистрация в GitHub
+  hosts: runners
+  become: true
+  roles:
+    - role: gh_runner

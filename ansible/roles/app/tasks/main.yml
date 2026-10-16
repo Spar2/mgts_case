@@ -1,0 +1,70 @@
+---
+- name: App | каталог staging
+  ansible.builtin.file:
+    path: "{{ app_dir }}"
+    state: directory
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: "0755"
+
+- name: App | корень preview-окружений (подкаталоги pr-N создаёт сам CI-ран)
+  ansible.builtin.file:
+    path: "{{ app_preview_root }}"
+    state: directory
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: "0755"
+
+- name: App | deploy-ключ для GitHub (read-only, только на стенде)
+  ansible.builtin.copy:
+    src: "{{ app_deploy_key_src }}"
+    dest: "{{ app_deploy_key_dest }}"
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: "0600"
+  no_log: true
+
+- name: App | клонировать/обновить репо (изолированный стенд, НЕ прод)
+  ansible.builtin.git:
+    repo: "{{ app_repo_url }}"
+    dest: "{{ app_dir }}"
+    version: "{{ app_version }}"
+    key_file: "{{ app_deploy_key_dest }}"
+    accept_hostkey: true
+    update: true
+  become: false
+
+- name: App | ssh-команда для будущих git pull (CI-автодеплой)
+  ansible.builtin.command:
+    argv:
+      - git
+      - config
+      - core.sshCommand
+      - ssh -i {{ app_deploy_key_dest }} -o StrictHostKeyChecking=yes -o UserKnownHostsFile=/home/{{ ansible_user }}/.ssh/known_hosts
+    chdir: "{{ app_dir }}"
+  become: false
+  changed_when: false
+
+- name: App | поднять compose (staging)
+  community.docker.docker_compose_v2:
+    project_src: "{{ app_dir }}"
+    files: "{{ app_compose_files }}"
+    project_name: "{{ app_compose_project_name }}"
+    state: present
+    pull: always
+  register: app_compose_up
+
+# Клон и stack/.env. Стек data поднимает plain-деплой, не эта роль.
+- name: App | data-стенд
+  ansible.builtin.include_tasks:
+    file: data.yml
+  when: app_data_enabled | bool
+
+- name: App | статус контейнеров
+  ansible.builtin.command: docker ps
+  register: app_docker_ps
+  changed_when: false
+
+- name: App | показать статус
+  ansible.builtin.debug:
+    var: app_docker_ps.stdout_lines

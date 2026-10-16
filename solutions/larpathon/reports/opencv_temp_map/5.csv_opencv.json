@@ -1,0 +1,40 @@
+[
+  {
+    "meters": [
+      235.449,
+      271.381
+    ],
+    "duration_min": 451.8333,
+    "area": 76092,
+    "t_range": [
+      0,
+      2710
+    ],
+    "s_range": [
+      249,
+      287
+    ],
+    "source": "opencv",
+    "type_hypothesis": "cooling",
+    "overlaps_detector": true
+  },
+  {
+    "meters": [
+      294.0748,
+      311.0952
+    ],
+    "duration_min": 451.8333,
+    "area": 36947,
+    "t_range": [
+      0,
+      2710
+    ],
+    "s_range": [
+      311,
+      329
+    ],
+    "source": "opencv",
+    "type_hypothesis": "heating",
+    "overlaps_detector": true
+  }
+]

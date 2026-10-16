@@ -1,0 +1,15 @@
+[Unit]
+Description=haklolarp CI poller (oneshot, via timer)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+# Runs as hakloboss (already in docker group, owns deploy key); no new user.
+User=hakloboss
+Group=hakloboss
+WorkingDirectory=/opt/ci
+ExecStart=/opt/ci/run/poll-and-run.sh
+
+[Install]
+WantedBy=multi-user.target

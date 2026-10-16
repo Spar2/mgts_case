@@ -1,0 +1,25 @@
+{
+ "method": "ens_blend",
+ "definition": "score = 0.5 * (ens_u2ft_tcn_lgbm + unet_gen2); hotness = 0.5 * (winner_hot + unet_gen2_hot)",
+ "ckpt": "s3_gen2_unet.pt",
+ "ckpt_sha256": "d0e60b4c5277effb92ab14c742514f8830d948b0a0ea0f9b7cad004ca419c90e",
+ "arch": "unet",
+ "width": 16,
+ "winner_release_read_only": "models_release",
+ "winner_method": "ens_u2ft_tcn_lgbm",
+ "winner_threshold_far_1e-3": 0.8608087301264272,
+ "thresholds": {
+  "cnn_unet": {
+   "far_1e-3": 0.8579896092424856
+  }
+ },
+ "threshold_source": "full v8 val background of ens_blend, artifacts/eval/s3_gen2_v8.json val.ens_blend.threshold. The four proxy files used to pick the checkpoint stay inside that background. Test, v10, v11 and real files do not move the threshold.",
+ "source_eval": "artifacts/eval/s3_gen2_v8.json",
+ "source_train": "artifacts/eval/s3_gen2_train.json",
+ "source_check": "artifacts/eval/s3_gen2_check.json",
+ "best_step": 3651,
+ "proxy_files": ["seq0006", "seq0021", "seq0047", "seq0048"],
+ "default": "off",
+ "real_policy": "MGTS csv evaluation only; no fit and no card calibration",
+ "note": "Checkpoint selected by proxy IoU on the first four v8 val files. Holdout IoU, nested folds and bootstrap live in artifacts/eval/s3_gen2_check.json. gen2=off leaves the winner score and threshold unchanged."
+}

@@ -1,0 +1,336 @@
+{
+  "version": "2.20",
+  "children": [
+    {
+      "type": "frame",
+      "id": "jFw0b",
+      "x": 0,
+      "y": 0,
+      "name": "Carbon R3 · Обоснование и сохранение",
+      "metadata": {
+        "type": "dts-product-r3",
+        "slug": "m-reason",
+        "role": "Эксперт",
+        "prototype": true
+      },
+      "clip": true,
+      "width": 390,
+      "height": 844,
+      "fill": "$dts.background",
+      "layout": "none",
+      "children": [
+        {
+          "type": "frame",
+          "id": "xnVup",
+          "x": 0,
+          "y": 0,
+          "name": "Мобильная оболочка",
+          "width": 390,
+          "height": 56,
+          "fill": "$dts.shell",
+          "layout": "none"
+        },
+        {
+          "type": "icon",
+          "id": "MTzzR",
+          "x": 16,
+          "y": 16,
+          "name": "menu",
+          "width": 24,
+          "height": 24,
+          "icon": "menu",
+          "library": "lucide",
+          "fill": "#ffffff"
+        },
+        {
+          "type": "text",
+          "id": "S8mcfS",
+          "x": 56,
+          "y": 18,
+          "name": "DTS Workbench",
+          "fill": "#ffffff",
+          "textGrowth": "fixed-width",
+          "width": 270,
+          "content": "DTS Workbench",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "600"
+        },
+        {
+          "type": "icon",
+          "id": "J5DPb",
+          "x": 350,
+          "y": 16,
+          "name": "circle-user-round",
+          "width": 24,
+          "height": 24,
+          "icon": "circle-user-round",
+          "library": "lucide",
+          "fill": "#ffffff"
+        },
+        {
+          "type": "text",
+          "id": "VvDzt",
+          "x": 16,
+          "y": 80,
+          "name": "Обоснование и сохранение",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 358,
+          "content": "Обоснование и сохранение",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 24,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "l0ADpm",
+          "x": 16,
+          "y": 144,
+          "name": "Шаг 3 / 3 · пример заполнения",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 358,
+          "content": "Шаг 3 / 3 · пример заполнения",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 12,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "hMb2H",
+          "x": 16,
+          "y": 200,
+          "name": "Уведомление",
+          "width": 358,
+          "height": 56,
+          "fill": "$dts.selection",
+          "layout": "none"
+        },
+        {
+          "type": "rectangle",
+          "id": "VMqrN",
+          "x": 16,
+          "y": 200,
+          "name": "Акцент уведомления",
+          "fill": "$dts.interactive",
+          "width": 3,
+          "height": 56
+        },
+        {
+          "type": "text",
+          "id": "S4Qpa",
+          "x": 32,
+          "y": 212,
+          "name": "Ответ: неоднозначно · пример",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 326,
+          "content": "Ответ: неоднозначно · пример",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "Dh5CQ",
+          "x": 16,
+          "y": 280,
+          "name": "Обоснование *",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 358,
+          "content": "Обоснование *",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "T0wr4y",
+          "x": 16,
+          "y": 312,
+          "name": "Многострочное обоснование",
+          "width": 358,
+          "height": 192,
+          "fill": "$dts.layer",
+          "layout": "none"
+        },
+        {
+          "type": "text",
+          "id": "gUS15",
+          "x": 32,
+          "y": 328,
+          "name": "Вижу локальное повышение температуры.\nДля определения причины данных\nнедостаточно.\n\nПример текста, не экспертная метка.",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 326,
+          "content": "Вижу локальное повышение температуры.\nДля определения причины данных\nнедостаточно.\n\nПример текста, не экспертная метка.",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 16,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "KocV2",
+          "x": 16,
+          "y": 536,
+          "name": "Проверяющий: ваша учётная запись\nПеред отправкой проверяются права\nи текущая ревизия окна.",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 358,
+          "content": "Проверяющий: ваша учётная запись\nПеред отправкой проверяются права\nи текущая ревизия окна.",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "Pzb4o",
+          "x": 16,
+          "y": 640,
+          "name": "Действие / Изменить ответ",
+          "width": 358,
+          "height": 48,
+          "fill": "$dts.layer",
+          "layout": "none",
+          "children": [
+            {
+              "type": "text",
+              "id": "s9GK7",
+              "x": 16,
+              "y": 14,
+              "name": "Изменить ответ",
+              "fill": "$dts.text-primary",
+              "textGrowth": "fixed-width",
+              "width": 326,
+              "content": "Изменить ответ",
+              "lineHeight": 1.3,
+              "fontFamily": "$dts.font",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "lNPkN",
+          "x": 16,
+          "y": 704,
+          "name": "При экранной клавиатуре форма\nпрокручивается, кнопка не закрывает поле.",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 358,
+          "content": "При экранной клавиатуре форма\nпрокручивается, кнопка не закрывает поле.",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 12,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "un3aw",
+          "x": 0,
+          "y": 768,
+          "name": "Панель основного действия",
+          "width": 390,
+          "height": 76,
+          "fill": "$dts.background",
+          "layout": "none"
+        },
+        {
+          "type": "rectangle",
+          "id": "w4grfk",
+          "x": 0,
+          "y": 768,
+          "name": "Разделитель панели",
+          "fill": "$dts.border-subtle",
+          "width": 390,
+          "height": 1
+        },
+        {
+          "type": "frame",
+          "id": "F54hEP",
+          "x": 16,
+          "y": 780,
+          "name": "Действие / Сохранить ответ",
+          "width": 358,
+          "height": 48,
+          "fill": "$dts.interactive",
+          "layout": "none",
+          "children": [
+            {
+              "type": "text",
+              "id": "nbtT2",
+              "x": 16,
+              "y": 14,
+              "name": "Сохранить ответ",
+              "fill": "#ffffff",
+              "textGrowth": "fixed-width",
+              "width": 326,
+              "content": "Сохранить ответ",
+              "lineHeight": 1.3,
+              "fontFamily": "$dts.font",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variables": {
+    "dts.background": {
+      "type": "color",
+      "value": "#ffffff"
+    },
+    "dts.layer": {
+      "type": "color",
+      "value": "#f4f4f4"
+    },
+    "dts.text-primary": {
+      "type": "color",
+      "value": "#161616"
+    },
+    "dts.text-secondary": {
+      "type": "color",
+      "value": "#525252"
+    },
+    "dts.border-subtle": {
+      "type": "color",
+      "value": "#e0e0e0"
+    },
+    "dts.interactive": {
+      "type": "color",
+      "value": "#0f62fe"
+    },
+    "dts.selection": {
+      "type": "color",
+      "value": "#edf5ff"
+    },
+    "dts.shell": {
+      "type": "color",
+      "value": "#161616"
+    },
+    "dts.font": {
+      "type": "string",
+      "value": "IBM Plex Sans"
+    },
+    "dts.font-mono": {
+      "type": "string",
+      "value": "IBM Plex Mono"
+    },
+    "dts.spacing": {
+      "type": "number",
+      "value": 8
+    }
+  },
+  "fileToken": "0a9ba33a-6ce8-4113-ad2f-1f37bedbf467"
+}

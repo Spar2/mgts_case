@@ -1,0 +1,62 @@
+---
+- name: Base | Ubuntu — поставить git, python, openssh, ethtool
+  ansible.builtin.apt:
+    name: "{{ base_packages_ubuntu }}"
+    state: present
+    update_cache: true
+    cache_valid_time: 3600
+  when: ansible_facts.os_family == "Debian"
+
+# FROZEN: KVM/WoL — не трогать (always-on)
+- name: Base | WoL persistent (udev, по MAC)
+  ansible.builtin.copy:
+    dest: /etc/udev/rules.d/99-wol.rules
+    mode: "0644"
+    content: |
+      {% for mac in base_wol_macs %}
+      ACTION=="add", SUBSYSTEM=="net", ATTR{address}=="{{ mac | lower }}", RUN+="/usr/sbin/ethtool -s $name wol g"
+      {% endfor %}
+  when:
+    - ansible_facts.os_family == "Debian"
+    - base_wol_macs | length > 0
+
+- name: Base | WoL прямо сейчас
+  ansible.builtin.command:
+    argv:
+      - ethtool
+      - -s
+      - "{{ item }}"
+      - wol
+      - g
+  loop: "{{ ansible_facts.interfaces | default([]) }}"
+  when:
+    - ansible_facts.os_family == "Debian"
+    - base_wol_macs | length > 0
+    - hostvars[inventory_hostname]['ansible_' + item]['macaddress'] | default('') | lower in base_wol_macs | map('lower') | list
+  changed_when: false
+  failed_when: false
+
+- name: Base | Разрешить GitHub Actions ходить по SSH (authorized_keys)
+  ansible.posix.authorized_key:
+    user: "{{ ansible_user }}"
+    key: "{{ lookup('file', playbook_dir + '/../' + staging_autodeploy_pubkey_src) }}"
+    state: present
+    comment: github-actions-haklolarp-staging
+
+- name: Base | каталог .ssh
+  ansible.builtin.file:
+    path: "/home/{{ ansible_user }}/.ssh"
+    state: directory
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: "0700"
+
+- name: Base | pinned known_hosts (github + xeon, вместо TOFU)
+  ansible.builtin.blockinfile:
+    path: "/home/{{ ansible_user }}/.ssh/known_hosts"
+    create: true
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: "0600"
+    marker: "# {mark} haklolarp-managed"
+    block: "{{ lookup('file', playbook_dir + '/../files/ssh_known_hosts') }}"

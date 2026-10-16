@@ -1,0 +1,81 @@
+# Always-on self-hosted раннеры (sibling docker через /var/run/docker.sock, dind НЕТ).
+# Образ собирается из Dockerfile.runner в этом каталоге.
+# Имя образа/версия дублируют defaults роли runner_container (haklolarp-runner:v2.337.0).
+# GH_TOKEN часовой — только через env, в репо его нет.
+services:
+  runner-devops:
+    build:
+      context: .
+      dockerfile: Dockerfile.runner
+      args:
+        RUNNER_VERSION: ${RUNNER_VERSION:-2.337.0}
+    image: haklolarp-runner:v2.337.0
+    restart: unless-stopped
+    hostname: run-devops
+    environment:
+      GH_URL: ${GH_URL:-https://github.com/werd0y45/haklolarp}
+      GH_TOKEN: ${GH_TOKEN:?GH_TOKEN (hourly registration token) is required}
+      RUNNER_NAME: run-devops
+      RUNNER_LABELS: team-devops
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - runner-devops-work:/home/runner/actions-runner/_work
+    healthcheck:
+      test: ["CMD-SHELL", "pgrep -f Runner.Listener > /dev/null || exit 1"]
+      interval: 30s
+      timeout: 10s
+      start_period: 60s
+      retries: 3
+
+  runner-web:
+    build:
+      context: .
+      dockerfile: Dockerfile.runner
+      args:
+        RUNNER_VERSION: ${RUNNER_VERSION:-2.337.0}
+    image: haklolarp-runner:v2.337.0
+    restart: unless-stopped
+    hostname: run-web
+    environment:
+      GH_URL: ${GH_URL:-https://github.com/werd0y45/haklolarp}
+      GH_TOKEN: ${GH_TOKEN:?GH_TOKEN (hourly registration token) is required}
+      RUNNER_NAME: run-web
+      RUNNER_LABELS: team-web
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - runner-web-work:/home/runner/actions-runner/_work
+    healthcheck:
+      test: ["CMD-SHELL", "pgrep -f Runner.Listener > /dev/null || exit 1"]
+      interval: 30s
+      timeout: 10s
+      start_period: 60s
+      retries: 3
+
+  runner-ml:
+    build:
+      context: .
+      dockerfile: Dockerfile.runner
+      args:
+        RUNNER_VERSION: ${RUNNER_VERSION:-2.337.0}
+    image: haklolarp-runner:v2.337.0
+    restart: unless-stopped
+    hostname: run-ml
+    environment:
+      GH_URL: ${GH_URL:-https://github.com/werd0y45/haklolarp}
+      GH_TOKEN: ${GH_TOKEN:?GH_TOKEN (hourly registration token) is required}
+      RUNNER_NAME: run-ml
+      RUNNER_LABELS: team-ml
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - runner-ml-work:/home/runner/actions-runner/_work
+    healthcheck:
+      test: ["CMD-SHELL", "pgrep -f Runner.Listener > /dev/null || exit 1"]
+      interval: 30s
+      timeout: 10s
+      start_period: 60s
+      retries: 3
+
+volumes:
+  runner-devops-work:
+  runner-web-work:
+  runner-ml-work:

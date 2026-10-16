@@ -1,0 +1,13 @@
+[Unit]
+Description=Dual-access health+parity monitor (Ф13)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+EnvironmentFile=/etc/dual-access/monitor.env
+ExecStart=/opt/dual-access/monitor-dual-access.sh
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target

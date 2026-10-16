@@ -1,0 +1,22 @@
+{
+  "viewport": [
+    360,
+    732
+  ],
+  "dpr": 3,
+  "cache": {
+    "bytes": 114056,
+    "budget": 33554432
+  },
+  "graphics": {
+    "webglContexts": 1,
+    "bufferBytes": 294944,
+    "textureBytes": 1024,
+    "canvasSurfaceBytes": 4608000,
+    "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+  },
+  "canvases": 3,
+  "overflow": false,
+  "conditions": "Playwright Pixel/Android emulation on Windows desktop; real 5.csv; Docker loopback. Not phone hardware.",
+  "date": "2026-10-09"
+}

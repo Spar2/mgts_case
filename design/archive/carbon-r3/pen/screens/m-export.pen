@@ -1,0 +1,404 @@
+{
+  "version": "2.20",
+  "children": [
+    {
+      "type": "frame",
+      "id": "YFqrW",
+      "x": 0,
+      "y": 0,
+      "name": "Carbon R3 · Экспорт с телефона",
+      "metadata": {
+        "type": "dts-product-r3",
+        "slug": "m-export",
+        "role": "Эксперт",
+        "prototype": true
+      },
+      "clip": true,
+      "width": 390,
+      "height": 844,
+      "fill": "$dts.background",
+      "layout": "none",
+      "children": [
+        {
+          "type": "frame",
+          "id": "lt4MZ",
+          "x": 0,
+          "y": 0,
+          "name": "Мобильная оболочка",
+          "width": 390,
+          "height": 56,
+          "fill": "$dts.shell",
+          "layout": "none"
+        },
+        {
+          "type": "icon",
+          "id": "cDZ8P",
+          "x": 16,
+          "y": 16,
+          "name": "menu",
+          "width": 24,
+          "height": 24,
+          "icon": "menu",
+          "library": "lucide",
+          "fill": "#ffffff"
+        },
+        {
+          "type": "text",
+          "id": "EjJZ1",
+          "x": 56,
+          "y": 18,
+          "name": "DTS Workbench",
+          "fill": "#ffffff",
+          "textGrowth": "fixed-width",
+          "width": 270,
+          "content": "DTS Workbench",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "600"
+        },
+        {
+          "type": "icon",
+          "id": "n0GiOX",
+          "x": 350,
+          "y": 16,
+          "name": "circle-user-round",
+          "width": 24,
+          "height": 24,
+          "icon": "circle-user-round",
+          "library": "lucide",
+          "fill": "#ffffff"
+        },
+        {
+          "type": "text",
+          "id": "aoQrq",
+          "x": 16,
+          "y": 80,
+          "name": "Экспорт с телефона",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 358,
+          "content": "Экспорт с телефона",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 24,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "lUJ7E",
+          "x": 16,
+          "y": 144,
+          "name": "Экспорт зависит от прав проекта",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 358,
+          "content": "Экспорт зависит от прав проекта",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 12,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "C3Dwm",
+          "x": 16,
+          "y": 200,
+          "name": "Состав",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 358,
+          "content": "Состав",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 12,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "i6Jev5",
+          "x": 16,
+          "y": 222,
+          "name": "Поле / Состав",
+          "width": 358,
+          "height": 40,
+          "fill": "$dts.layer",
+          "layout": "none"
+        },
+        {
+          "type": "rectangle",
+          "id": "TmND2",
+          "x": 16,
+          "y": 261,
+          "name": "Нижняя граница поля Состав",
+          "fill": "#8d8d8d",
+          "width": 358,
+          "height": 1
+        },
+        {
+          "type": "text",
+          "id": "E6srTr",
+          "x": 32,
+          "y": 232,
+          "name": "Мои ответы / разрешённый отчёт",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 326,
+          "content": "Мои ответы / разрешённый отчёт",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "Rgu3r",
+          "x": 16,
+          "y": 288,
+          "name": "Формат",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 358,
+          "content": "Формат",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 12,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "GQZrD",
+          "x": 16,
+          "y": 310,
+          "name": "Поле / Формат",
+          "width": 358,
+          "height": 40,
+          "fill": "$dts.layer",
+          "layout": "none"
+        },
+        {
+          "type": "rectangle",
+          "id": "A4fyzq",
+          "x": 16,
+          "y": 349,
+          "name": "Нижняя граница поля Формат",
+          "fill": "#8d8d8d",
+          "width": 358,
+          "height": 1
+        },
+        {
+          "type": "text",
+          "id": "n3dLl",
+          "x": 32,
+          "y": 320,
+          "name": "JSON / CSV",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 326,
+          "content": "JSON / CSV",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "hNvjQ",
+          "x": 16,
+          "y": 376,
+          "name": "Фильтр",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 358,
+          "content": "Фильтр",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 12,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "lryLG",
+          "x": 16,
+          "y": 398,
+          "name": "Поле / Фильтр",
+          "width": 358,
+          "height": 40,
+          "fill": "$dts.layer",
+          "layout": "none"
+        },
+        {
+          "type": "rectangle",
+          "id": "mgxNL",
+          "x": 16,
+          "y": 437,
+          "name": "Нижняя граница поля Фильтр",
+          "fill": "#8d8d8d",
+          "width": 358,
+          "height": 1
+        },
+        {
+          "type": "text",
+          "id": "eHKy1",
+          "x": 32,
+          "y": 408,
+          "name": "Текущий пакет и источник SHA",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 326,
+          "content": "Текущий пакет и источник SHA",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "rectangle",
+          "id": "Jsncn",
+          "x": 16,
+          "y": 488,
+          "name": "Разделитель",
+          "fill": "$dts.border-subtle",
+          "width": 358,
+          "height": 1
+        },
+        {
+          "type": "text",
+          "id": "nZLV1",
+          "x": 32,
+          "y": 504,
+          "name": "Файл появится после серверного подтверждения",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 326,
+          "content": "Файл появится после серверного подтверждения",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "rectangle",
+          "id": "ZRDzL",
+          "x": 16,
+          "y": 552,
+          "name": "Разделитель",
+          "fill": "$dts.border-subtle",
+          "width": 358,
+          "height": 1
+        },
+        {
+          "type": "text",
+          "id": "Jt7zs",
+          "x": 32,
+          "y": 568,
+          "name": "Пустой набор: объяснить отсутствие ответов",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 326,
+          "content": "Пустой набор: объяснить отсутствие ответов",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "QrIjV",
+          "x": 0,
+          "y": 768,
+          "name": "Панель основного действия",
+          "width": 390,
+          "height": 76,
+          "fill": "$dts.background",
+          "layout": "none"
+        },
+        {
+          "type": "rectangle",
+          "id": "zl8S7",
+          "x": 0,
+          "y": 768,
+          "name": "Разделитель панели",
+          "fill": "$dts.border-subtle",
+          "width": 390,
+          "height": 1
+        },
+        {
+          "type": "frame",
+          "id": "ttWN6",
+          "x": 16,
+          "y": 780,
+          "name": "Действие / Предпросмотр состава",
+          "width": 358,
+          "height": 48,
+          "fill": "$dts.interactive",
+          "layout": "none",
+          "children": [
+            {
+              "type": "text",
+              "id": "fUwCI",
+              "x": 16,
+              "y": 14,
+              "name": "Предпросмотр состава",
+              "fill": "#ffffff",
+              "textGrowth": "fixed-width",
+              "width": 326,
+              "content": "Предпросмотр состава",
+              "lineHeight": 1.3,
+              "fontFamily": "$dts.font",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variables": {
+    "dts.background": {
+      "type": "color",
+      "value": "#ffffff"
+    },
+    "dts.layer": {
+      "type": "color",
+      "value": "#f4f4f4"
+    },
+    "dts.text-primary": {
+      "type": "color",
+      "value": "#161616"
+    },
+    "dts.text-secondary": {
+      "type": "color",
+      "value": "#525252"
+    },
+    "dts.border-subtle": {
+      "type": "color",
+      "value": "#e0e0e0"
+    },
+    "dts.interactive": {
+      "type": "color",
+      "value": "#0f62fe"
+    },
+    "dts.selection": {
+      "type": "color",
+      "value": "#edf5ff"
+    },
+    "dts.shell": {
+      "type": "color",
+      "value": "#161616"
+    },
+    "dts.font": {
+      "type": "string",
+      "value": "IBM Plex Sans"
+    },
+    "dts.font-mono": {
+      "type": "string",
+      "value": "IBM Plex Mono"
+    },
+    "dts.spacing": {
+      "type": "number",
+      "value": 8
+    }
+  },
+  "fileToken": "0a9ba33a-6ce8-4113-ad2f-1f37bedbf467"
+}

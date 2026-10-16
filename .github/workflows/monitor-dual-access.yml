@@ -1,0 +1,64 @@
+name: Monitor dual-access (public vs tailnet)
+
+# VPS-таймер/Discord с VPS невозможен (провайдер режет TG/DS наружу) —
+# только fail job -> notify-runs -> Discord (имя этого workflow уже добавлено
+# в notify-runs.yml workflows; workflow_run срабатывает когда оба в main).
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: monitor-dual-access
+  cancel-in-progress: true
+
+jobs:
+  parity:
+    runs-on: [self-hosted, team-devops]
+    timeout-minutes: 10
+    steps:
+      - name: Public health
+        id: public
+        run: |
+          EXPECTED="${{ vars.EXPECTED_PUBLIC_CODE }}"; EXPECTED=${EXPECTED:-200}
+          CODE=$(curl -s -o /dev/null -w "%{http_code}" --max-time 20 "https://xn--80aubodcdd.xn--p1ai/api/v1/health" || echo 000)
+          echo "public=$CODE (expected=$EXPECTED)"
+          echo "code=$CODE" >> "$GITHUB_OUTPUT"
+
+      - name: Public health 2
+        id: public2
+        run: |
+          EXPECTED="${{ vars.EXPECTED_PUBLIC_CODE }}"; EXPECTED=${EXPECTED:-200}
+          CODE=$(curl -s -o /dev/null -w "%{http_code}" --max-time 20 "https://larpcorp.ru/api/v1/health" || echo 000)
+          echo "public2=$CODE (expected=$EXPECTED)"
+          echo "code=$CODE" >> "$GITHUB_OUTPUT"
+
+      - name: Join Tailscale
+        uses: tailscale/github-action@d1b6cd204f8dceda5b3eaad7f1f767be390056cd # v4
+        with:
+          oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
+          oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
+          tags: tag:ci
+          hostname: monitor-${{ github.run_id }}
+
+      - name: Tailnet stub liveness
+        id: tailnet
+        run: |
+          CODE=$(curl -s -o /dev/null -w "%{http_code}" --max-time 20 http://${{ secrets.STAGING_HOST }}:8080/ || echo 000)
+          echo "tailnet-stub=$CODE (expected=200)"
+          echo "code=$CODE" >> "$GITHUB_OUTPUT"
+
+      - name: Verdict
+        run: |
+          EXPECTED="${{ vars.EXPECTED_PUBLIC_CODE }}"; EXPECTED=${EXPECTED:-200}
+          PUB="${{ steps.public.outputs.code }}"; PUB2="${{ steps.public2.outputs.code }}"; TAIL="${{ steps.tailnet.outputs.code }}"
+          echo "public=$PUB public2=$PUB2 tailnet-stub=$TAIL expected-public=$EXPECTED"
+          if [ "$PUB" != "$EXPECTED" ] || [ "$PUB2" != "$EXPECTED" ] || [ "$TAIL" != "200" ]; then
+            echo "::error::dual-access fail: public=$PUB public2=$PUB2 (exp $EXPECTED) tailnet-stub=$TAIL (exp 200)"
+            exit 1
+          fi
+          echo "dual-access OK"

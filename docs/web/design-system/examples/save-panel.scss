@@ -1,0 +1,33 @@
+// Documentation recipe; not imported by the application.
+.guide-save-panel {
+  min-width: 0;
+  padding: 24px 16px;
+  background: var(--dts-panel-background);
+  color: var(--cds-text-primary, #161616);
+  border-top: 1px solid var(--cds-border-subtle-01, #e0e0e0);
+}
+.guide-save-panel > p { margin-block: 12px 24px; }
+.guide-save-panel form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 24px;
+  max-width: 520px;
+}
+.guide-save-panel form > * { min-width: 0; }
+.guide-save-panel__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+}
+.guide-save-panel__actions .cds--btn {
+  max-width: 100%;
+  min-width: 0;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.guide-save-panel__actions a { overflow-wrap: anywhere; }
+@media (max-width: 600px) {
+  .guide-save-panel { padding: 16px 12px; }
+  .guide-save-panel__actions .cds--btn { width: 100%; min-height: 48px; }
+}

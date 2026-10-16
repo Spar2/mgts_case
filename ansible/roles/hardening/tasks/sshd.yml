@@ -1,0 +1,11 @@
+---
+- name: SSH | drop-in харденинга
+  ansible.builtin.template:
+    src: 60-hardening.conf.j2
+    dest: /etc/ssh/sshd_config.d/60-hardening.conf
+    mode: "0600"
+  notify: Reload ssh
+
+- name: SSH | эффективный конфиг валиден
+  ansible.builtin.command: sshd -T
+  changed_when: false

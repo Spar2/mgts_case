@@ -1,0 +1,19 @@
+---
+- name: ФС на LV (ext4, только если пустой)
+  community.general.filesystem:
+    fstype: ext4
+    dev: "/dev/ubuntu-vg/{{ libvirt_lv_name }}"
+
+- name: Точка монтирования
+  ansible.builtin.file:
+    path: "{{ libvirt_data_dir }}"
+    state: directory
+    mode: "0711"
+
+- name: Монтирование в fstab
+  ansible.posix.mount:
+    path: "{{ libvirt_data_dir }}"
+    src: "/dev/ubuntu-vg/{{ libvirt_lv_name }}"
+    fstype: ext4
+    opts: defaults
+    state: mounted

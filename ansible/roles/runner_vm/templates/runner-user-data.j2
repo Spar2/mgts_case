@@ -1,0 +1,20 @@
+#cloud-config
+hostname: {{ vm.name }}
+manage_etc_hosts: true
+users:
+  - name: ansible
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    shell: /bin/bash
+    lock_passwd: true
+    ssh_authorized_keys:
+      - {{ runner_vm_admin_pubkey }}
+  - name: gha-runner
+    shell: /bin/bash
+    lock_passwd: true
+package_update: false
+packages:
+  - curl
+  - tar
+  - git
+runcmd:
+  - loginctl enable-linger gha-runner

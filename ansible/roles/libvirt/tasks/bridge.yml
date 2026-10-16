@@ -1,0 +1,31 @@
+---
+# Мост поверх uplink. ID устройств в netplan уникальны across всех файлов,
+# поэтому 50-cloud-init.yaml убран в /root (бэкап), а всё описание сети —
+# в одном файле 60-br0.yaml. Cloud-init сеть больше не трогает
+# (99-disable-network-config.cfg).
+- name: Бэкап существующего netplan-файла моста
+  ansible.builtin.copy:
+    src: /etc/netplan/60-br0.yaml
+    dest: /root/60-br0.yaml.bak
+    remote_src: true
+    mode: "0600"
+  register: libvirt_br_backup
+  failed_when: false
+
+- name: Запрет cloud-init переписывать сеть
+  ansible.builtin.copy:
+    dest: /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg
+    content: "network: {config: disabled}\n"
+    mode: "0644"
+  register: libvirt_cloudinit_lock
+
+- name: Netplan-файл моста
+  ansible.builtin.template:
+    src: 60-br0.yaml.j2
+    dest: /etc/netplan/60-br0.yaml
+    mode: "0600"
+  notify: Apply br0 bridge
+
+- name: Проверка конфигурации без применения
+  ansible.builtin.command: netplan generate
+  changed_when: false

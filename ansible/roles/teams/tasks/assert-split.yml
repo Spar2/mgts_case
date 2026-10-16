@@ -1,0 +1,57 @@
+---
+# Teams | split-preview (WARN-ONLY, never fail, preview-only).
+# Additive preview of future strip-phase enforcement (refs P2).
+# This file MUST NOT fail the play: every task is debug-only with
+# changed_when: false / failed_when: false. Strip phase will convert
+# these previews into real asserts (0750, least-privilege docker, shim removal).
+# N3: all expectations below are preview-only and superset-tolerant, never exact.
+- name: Teams | split-preview — shim ещё на месте (strip позже уберёт CI-задачу)
+  ansible.builtin.debug:
+    msg: >-
+      [split-preview] CI-shim task (ansible_user in team groups) still present
+      (preview-only, superset-tolerant: ansible_user groups superset of team users,
+      exact count NOT asserted - currently 4 after N2 data drop).
+      Strip phase removes it once per-team CI keys land (teams_ci_pubkeys).
+  changed_when: false
+  failed_when: false
+
+- name: Teams | split-preview — режимы каталогов ещё legacy 0770 (strip позже 0750)
+  ansible.builtin.debug:
+    msg: >-
+      [split-preview] team {{ team.name }} ({{ team.user }}): mode flag
+      "{{ team.mode | default('0770') }}" - preview-only flag, NOT enforced
+      (dir task still hardcoded 0770); strip phase wires team.mode + enforces 0750.
+  loop: "{{ teams_list }}"
+  loop_control:
+    loop_var: team
+    label: "{{ team.name }}"
+  changed_when: false
+  failed_when: false
+
+- name: Teams | split-preview — docker ещё legacy (strip позже least-privilege)
+  ansible.builtin.debug:
+    msg: >-
+      [split-preview] team {{ team.name }} ({{ team.user }}): allow_docker flag
+      "{{ team.allow_docker | default(true) }}" - preview-only default(true) kept
+      for parity but never triggers (all 4 entries pin flag); web/ml:true keep docker,
+      preview/main:false withheld WITHOUT docker (B1+M1 wired); strip flips default
+      to false + keeps docker only where allow_docker is true.
+  loop: "{{ teams_list }}"
+  loop_control:
+    loop_var: team
+    label: "{{ team.name }}"
+  changed_when: false
+  failed_when: false
+
+- name: Teams | split-preview — паблики ещё не отданы (strip ждёт ключи команд)
+  ansible.builtin.debug:
+    msg: >-
+      [split-preview] team {{ team.user }} has
+      {{ 'a pubkey staged' if (teams_ci_pubkeys[team.user] | default('') | length > 0) else 'no pubkey yet (stub)' }}.
+      Existing authorized_key loop already tolerates empty via default('').
+  loop: "{{ teams_list }}"
+  loop_control:
+    loop_var: team
+    label: "{{ team.name }}"
+  changed_when: false
+  failed_when: false

@@ -1,0 +1,15 @@
+---
+# Имя ASCII и совпадает с notify один в один (без listen): хендлеры
+# со сложной структурой здесь не резолвились, только простые.
+# Тег always: хендлер обязан срабатывать и в стейдж-прогонах (--tags ...).
+- name: Reload ssh
+  ansible.builtin.systemd:
+    name: ssh
+    state: reloaded
+  tags: [hardening, sshd, always]
+
+- name: Restart fail2ban
+  ansible.builtin.systemd:
+    name: fail2ban
+    state: restarted
+  tags: [hardening, updates, always]

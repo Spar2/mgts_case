@@ -1,0 +1,610 @@
+{
+  "version": "2.20",
+  "children": [
+    {
+      "type": "frame",
+      "id": "UkyTz",
+      "x": 0,
+      "y": 0,
+      "name": "Carbon R3 · Система: восстановление и ограничения",
+      "metadata": {
+        "type": "dts-product-r3",
+        "slug": "system-states",
+        "role": "Все роли",
+        "prototype": true
+      },
+      "clip": true,
+      "width": 1440,
+      "height": 1000,
+      "fill": "$dts.background",
+      "layout": "none",
+      "children": [
+        {
+          "type": "frame",
+          "id": "bDHcx",
+          "x": 0,
+          "y": 0,
+          "name": "Оболочка",
+          "width": 1440,
+          "height": 48,
+          "fill": "$dts.shell",
+          "layout": "none"
+        },
+        {
+          "type": "text",
+          "id": "h16J2",
+          "x": 24,
+          "y": 14,
+          "name": "МГТС / DTS Workbench",
+          "fill": "#ffffff",
+          "textGrowth": "fixed-width",
+          "width": 320,
+          "content": "МГТС / DTS Workbench",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "600"
+        },
+        {
+          "type": "text",
+          "id": "AdBvu",
+          "x": 560,
+          "y": 14,
+          "name": "Исследование DTS  /  сменить проект",
+          "fill": "#ffffff",
+          "textGrowth": "fixed-width",
+          "width": 470,
+          "content": "Исследование DTS  /  сменить проект",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "Z0N15S",
+          "x": 1184,
+          "y": 14,
+          "name": "Все роли",
+          "fill": "#ffffff",
+          "textGrowth": "fixed-width",
+          "width": 230,
+          "content": "Все роли",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "rEm5S",
+          "x": 0,
+          "y": 48,
+          "name": "Навигация проекта",
+          "width": 208,
+          "height": 928,
+          "fill": "$dts.layer",
+          "layout": "none"
+        },
+        {
+          "type": "text",
+          "id": "gecph",
+          "x": 24,
+          "y": 600,
+          "name": "Контекст проекта\nРоль: Все роли\n\nПрава проверяются сервером.\nМеню — по доступу.",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 160,
+          "content": "Контекст проекта\nРоль: Все роли\n\nПрава проверяются сервером.\nМеню — по доступу.",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 12,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "U9idf",
+          "x": 24,
+          "y": 872,
+          "name": "Аккаунт и сеансы",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 160,
+          "content": "Аккаунт и сеансы",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "xsNL5",
+          "x": 240,
+          "y": 72,
+          "name": "Проект / Проект",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 1000,
+          "content": "Проект / Проект",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 12,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "Cvz6r",
+          "x": 240,
+          "y": 104,
+          "name": "Система: восстановление и ограничения",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 1168,
+          "content": "Система: восстановление и ограничения",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 28,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "jmzZ3",
+          "x": 240,
+          "y": 152,
+          "name": "Проектируемый командный сценарий · пример данных интерфейса",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 1168,
+          "content": "Проектируемый командный сценарий · пример данных интерфейса",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "TTpBP",
+          "x": 0,
+          "y": 976,
+          "name": "Статус макета",
+          "width": 1440,
+          "height": 24,
+          "fill": "$dts.layer",
+          "layout": "none"
+        },
+        {
+          "type": "text",
+          "id": "Q49jj5",
+          "x": 240,
+          "y": 982,
+          "name": "МАКЕТ R3 · новые сервисные функции требуют реализации · примеры ответов не являются разметкой",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 1168,
+          "content": "МАКЕТ R3 · новые сервисные функции требуют реализации · примеры ответов не являются разметкой",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 12,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "xM0t9",
+          "x": 240,
+          "y": 216,
+          "name": "Нет доступа / 403",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 568,
+          "content": "Нет доступа / 403",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 16,
+          "fontWeight": "600"
+        },
+        {
+          "type": "rectangle",
+          "id": "Xfghi",
+          "x": 240,
+          "y": 248,
+          "name": "Разделитель / Нет доступа / 403",
+          "fill": "$dts.border-subtle",
+          "width": 568,
+          "height": 1
+        },
+        {
+          "type": "text",
+          "id": "LZ3xF",
+          "x": 240,
+          "y": 280,
+          "name": "Показать доступное название контекста; не раскрывать закрытые измерения.",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 536,
+          "content": "Показать доступное название контекста; не раскрывать закрытые измерения.",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 20,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "A1Bag",
+          "x": 240,
+          "y": 432,
+          "name": "Действие / Выбрать другой проект",
+          "width": 536,
+          "height": 48,
+          "fill": "$dts.interactive",
+          "layout": "none",
+          "children": [
+            {
+              "type": "text",
+              "id": "TvpNp",
+              "x": 16,
+              "y": 14,
+              "name": "Выбрать другой проект",
+              "fill": "#ffffff",
+              "textGrowth": "fixed-width",
+              "width": 504,
+              "content": "Выбрать другой проект",
+              "lineHeight": 1.3,
+              "fontFamily": "$dts.font",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "b6nvs",
+          "x": 840,
+          "y": 216,
+          "name": "Объект не найден / 404",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 568,
+          "content": "Объект не найден / 404",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 16,
+          "fontWeight": "600"
+        },
+        {
+          "type": "rectangle",
+          "id": "QivPP",
+          "x": 840,
+          "y": 248,
+          "name": "Разделитель / Объект не найден / 404",
+          "fill": "$dts.border-subtle",
+          "width": 568,
+          "height": 1
+        },
+        {
+          "type": "text",
+          "id": "Tlzup",
+          "x": 840,
+          "y": 280,
+          "name": "Проверить ссылку. Если объект удалён — вернуться к списку.",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 536,
+          "content": "Проверить ссылку. Если объект удалён — вернуться к списку.",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 20,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "EUtD6",
+          "x": 840,
+          "y": 432,
+          "name": "Действие / Открыть проекты",
+          "width": 536,
+          "height": 48,
+          "fill": "$dts.layer",
+          "layout": "none",
+          "children": [
+            {
+              "type": "text",
+              "id": "oXor5",
+              "x": 16,
+              "y": 14,
+              "name": "Открыть проекты",
+              "fill": "$dts.text-primary",
+              "textGrowth": "fixed-width",
+              "width": 504,
+              "content": "Открыть проекты",
+              "lineHeight": 1.3,
+              "fontFamily": "$dts.font",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "mArMt",
+          "x": 240,
+          "y": 560,
+          "name": "Прерванная загрузка",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 568,
+          "content": "Прерванная загрузка",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 16,
+          "fontWeight": "600"
+        },
+        {
+          "type": "rectangle",
+          "id": "TekWt",
+          "x": 240,
+          "y": 592,
+          "name": "Разделитель / Прерванная загрузка",
+          "fill": "$dts.border-subtle",
+          "width": 568,
+          "height": 1
+        },
+        {
+          "type": "text",
+          "id": "y9No35",
+          "x": 240,
+          "y": 624,
+          "name": "Сохранить выбранный файл и проверенный прогресс. Повтор без дубликата.",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 536,
+          "content": "Сохранить выбранный файл и проверенный прогресс. Повтор без дубликата.",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 20,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "f0yS5",
+          "x": 240,
+          "y": 776,
+          "name": "Действие / Повторить загрузку",
+          "width": 536,
+          "height": 48,
+          "fill": "$dts.layer",
+          "layout": "none",
+          "children": [
+            {
+              "type": "text",
+              "id": "xDTha",
+              "x": 16,
+              "y": 14,
+              "name": "Повторить загрузку",
+              "fill": "$dts.text-primary",
+              "textGrowth": "fixed-width",
+              "width": 504,
+              "content": "Повторить загрузку",
+              "lineHeight": 1.3,
+              "fontFamily": "$dts.font",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "MbP2G",
+          "x": 840,
+          "y": 560,
+          "name": "Сервис недоступен",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 568,
+          "content": "Сервис недоступен",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 16,
+          "fontWeight": "600"
+        },
+        {
+          "type": "rectangle",
+          "id": "vjRjT",
+          "x": 840,
+          "y": 592,
+          "name": "Разделитель / Сервис недоступен",
+          "fill": "$dts.border-subtle",
+          "width": 568,
+          "height": 1
+        },
+        {
+          "type": "text",
+          "id": "Kkmhz",
+          "x": 840,
+          "y": 624,
+          "name": "Черновик не опубликован. Чтение кэша только по политике проекта.",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 536,
+          "content": "Черновик не опубликован. Чтение кэша только по политике проекта.",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 20,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "N2o2c",
+          "x": 840,
+          "y": 776,
+          "name": "Действие / Проверить соединение",
+          "width": 536,
+          "height": 48,
+          "fill": "$dts.layer",
+          "layout": "none",
+          "children": [
+            {
+              "type": "text",
+              "id": "PTHxG",
+              "x": 16,
+              "y": 14,
+              "name": "Проверить соединение",
+              "fill": "$dts.text-primary",
+              "textGrowth": "fixed-width",
+              "width": 504,
+              "content": "Проверить соединение",
+              "lineHeight": 1.3,
+              "fontFamily": "$dts.font",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "wnjwL",
+          "x": 24,
+          "y": 104,
+          "name": "Обзор",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 160,
+          "content": "Обзор",
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "P7UDgs",
+          "x": 24,
+          "y": 152,
+          "name": "Данные",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 160,
+          "content": "Данные",
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "StCLH",
+          "x": 24,
+          "y": 200,
+          "name": "Исследование",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 160,
+          "content": "Исследование",
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "D8eFnK",
+          "x": 24,
+          "y": 248,
+          "name": "Проверка",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 160,
+          "content": "Проверка",
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "eS3LS",
+          "x": 24,
+          "y": 296,
+          "name": "Запуски",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 160,
+          "content": "Запуски",
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "L1ezVG",
+          "x": 24,
+          "y": 344,
+          "name": "Экспорт",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 160,
+          "content": "Экспорт",
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "JGh3l",
+          "x": 24,
+          "y": 392,
+          "name": "Справка",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 160,
+          "content": "Справка",
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        }
+      ]
+    }
+  ],
+  "variables": {
+    "dts.background": {
+      "type": "color",
+      "value": "#ffffff"
+    },
+    "dts.layer": {
+      "type": "color",
+      "value": "#f4f4f4"
+    },
+    "dts.text-primary": {
+      "type": "color",
+      "value": "#161616"
+    },
+    "dts.text-secondary": {
+      "type": "color",
+      "value": "#525252"
+    },
+    "dts.border-subtle": {
+      "type": "color",
+      "value": "#e0e0e0"
+    },
+    "dts.interactive": {
+      "type": "color",
+      "value": "#0f62fe"
+    },
+    "dts.selection": {
+      "type": "color",
+      "value": "#edf5ff"
+    },
+    "dts.shell": {
+      "type": "color",
+      "value": "#161616"
+    },
+    "dts.font": {
+      "type": "string",
+      "value": "IBM Plex Sans"
+    },
+    "dts.font-mono": {
+      "type": "string",
+      "value": "IBM Plex Mono"
+    },
+    "dts.spacing": {
+      "type": "number",
+      "value": 8
+    }
+  },
+  "fileToken": "0a9ba33a-6ce8-4113-ad2f-1f37bedbf467"
+}

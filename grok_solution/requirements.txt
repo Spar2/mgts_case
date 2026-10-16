@@ -1,0 +1,10 @@
+numpy
+scipy
+pandas
+matplotlib
+scikit-learn
+lightgbm
+joblib
+h5py
+torch  # CPU-сборка: pip install torch --index-url https://download.pytorch.org/whl/cpu
+# опциональный CV extra: requirements-cv.txt (opencv-python-headless, ленивый import cv2)

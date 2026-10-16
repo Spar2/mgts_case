@@ -1,0 +1,869 @@
+{
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+  "devicePixelRatio": 1,
+  "conditions": "Headless Chromium on desktop Windows; isolated Python API/loopback with real six records; mobile viewport is not a physical phone. First source-overview requests are cold for this QA runtime; rounds 1 and 2 reuse versioned buffers. Useful field waits for matching source SHA, decode, canvas and two animation frames. Timings include Playwright overhead. Heap approximate, no forced GC; other local workloads not controlled.",
+  "samples": [
+    {
+      "width": 1440,
+      "firstUsefulMs": 1043,
+      "expandMs": 38,
+      "changes": [
+        {
+          "record": "6",
+          "round": 0,
+          "ms": 602,
+          "cache": {
+            "bytes": 502424,
+            "budget": 67108864
+          },
+          "graphics": {
+            "webglContexts": 1,
+            "bufferBytes": 589856,
+            "textureBytes": 1024,
+            "canvasSurfaceBytes": 2038880,
+            "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+          },
+          "workers": {
+            "active": 3,
+            "created": 6
+          },
+          "heap": 10341290
+        },
+        {
+          "record": "4",
+          "round": 0,
+          "ms": 685,
+          "cache": {
+            "bytes": 753924,
+            "budget": 67108864
+          },
+          "graphics": {
+            "webglContexts": 1,
+            "bufferBytes": 589856,
+            "textureBytes": 1024,
+            "canvasSurfaceBytes": 2038880,
+            "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+          },
+          "workers": {
+            "active": 3,
+            "created": 9
+          },
+          "heap": 12755384
+        },
+        {
+          "record": "5",
+          "round": 0,
+          "ms": 45,
+          "cache": {
+            "bytes": 753924,
+            "budget": 67108864
+          },
+          "graphics": {
+            "webglContexts": 1,
+            "bufferBytes": 589856,
+            "textureBytes": 1024,
+            "canvasSurfaceBytes": 2038880,
+            "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+          },
+          "workers": {
+            "active": 3,
+            "created": 12
+          },
+          "heap": 12755384
+        },
+        {
+          "record": "2",
+          "round": 0,
+          "ms": 633,
+          "cache": {
+            "bytes": 1005280,
+            "budget": 67108864
+          },
+          "graphics": {
+            "webglContexts": 1,
+            "bufferBytes": 589856,
+            "textureBytes": 1024,
+            "canvasSurfaceBytes": 2038880,
+            "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+          },
+          "workers": {
+            "active": 3,
+            "created": 15
+          },
+          "heap": 15482313
+        },
+        {
+          "record": "1",
+          "round": 0,
+          "ms": 98,
+          "cache": {
+            "bytes": 1256844,
+            "budget": 67108864
+          },
+          "graphics": {
+            "webglContexts": 1,
+            "bufferBytes": 589856,
+            "textureBytes": 1024,
+            "canvasSurfaceBytes": 1316000,
+            "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+          },
+          "workers": {
+            "active": 1,
+            "created": 16
+          },
+          "heap": 17568047
+        },
+        {
+          "record": "3",
+          "round": 0,
+          "ms": 460,
+          "cache": {
+            "bytes": 1508528,
+            "budget": 67108864
+          },
+          "graphics": {
+            "webglContexts": 1,
+            "bufferBytes": 589856,
+            "textureBytes": 1024,
+            "canvasSurfaceBytes": 2038880,
+            "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+          },
+          "workers": {
+            "active": 3,
+            "created": 19
+          },
+          "heap": 20428215
+        },
+        {
+          "record": "6",
+          "round": 1,
+          "ms": 46,
+          "cache": {
+            "bytes": 1508528,
+            "budget": 67108864
+          },
+          "graphics": {
+            "webglContexts": 1,
+            "bufferBytes": 589856,
+            "textureBytes": 1024,
+            "canvasSurfaceBytes": 2038880,
+            "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+          },
+          "workers": {
+            "active": 3,
+            "created": 22
+          },
+          "heap": 20428215
+        },
+        {
+          "record": "4",
+          "round": 1,
+          "ms": 46,
+          "cache": {
+            "bytes": 1508528,
+            "budget": 67108864
+          },
+          "graphics": {
+            "webglContexts": 1,
+            "bufferBytes": 589856,
+            "textureBytes": 1024,
+            "canvasSurfaceBytes": 2038880,
+            "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+          },
+          "workers": {
+            "active": 3,
+            "created": 25
+          },
+          "heap": 20935625
+        },
+        {
+          "record": "5",
+          "round": 1,
+          "ms": 45,
+          "cache": {
+            "bytes": 1508528,
+            "budget": 67108864
+          },
+          "graphics": {
+            "webglContexts": 1,
+            "bufferBytes": 589856,
+            "textureBytes": 1024,
+            "canvasSurfaceBytes": 2038880,
+            "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+          },
+          "workers": {
+            "active": 3,
+            "created": 28
+          },
+          "heap": 20935625
+        },
+        {
+          "record": "2",
+          "round": 1,
+          "ms": 50,
+          "cache": {
+            "bytes": 1508528,
+            "budget": 67108864
+          },
+          "graphics": {
+            "webglContexts": 1,
+            "bufferBytes": 589856,
+            "textureBytes": 1024,
+            "canvasSurfaceBytes": 2038880,
+            "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+          },
+          "workers": {
+            "active": 3,
+            "created": 31
+          },
+          "heap": 11617673
+        },
+        {
+          "record": "1",
+          "round": 1,
+          "ms": 44,
+          "cache": {
+            "bytes": 1508528,
+            "budget": 67108864
+          },
+          "graphics": {
+            "webglContexts": 1,
+            "bufferBytes": 589856,
+            "textureBytes": 1024,
+            "canvasSurfaceBytes": 1316000,
+            "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+          },
+          "workers": {
+            "active": 1,
+            "created": 32
+          },
+          "heap": 11617673
+        },
+        {
+          "record": "3",
+          "round": 1,
+          "ms": 45,
+          "cache": {
+            "bytes": 1508528,
+            "budget": 67108864
+          },
+          "graphics": {
+            "webglContexts": 1,
+            "bufferBytes": 589856,
+            "textureBytes": 1024,
+            "canvasSurfaceBytes": 2038880,
+            "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+          },
+          "workers": {
+            "active": 3,
+            "created": 35
+          },
+          "heap": 14259664
+        },
+        {
+          "record": "6",
+          "round": 2,
+          "ms": 46,
+          "cache": {
+            "bytes": 1508528,
+            "budget": 67108864
+          },
+          "graphics": {
+            "webglContexts": 1,
+            "bufferBytes": 589856,
+            "textureBytes": 1024,
+            "canvasSurfaceBytes": 2038880,
+            "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+          },
+          "workers": {
+            "active": 3,
+            "created": 38
+          },
+          "heap": 14259664
+        },
+        {
+          "record": "4",
+          "round": 2,
+          "ms": 46,
+          "cache": {
+            "bytes": 1508528,
+            "budget": 67108864
+          },
+          "graphics": {
+            "webglContexts": 1,
+            "bufferBytes": 589856,
+            "textureBytes": 1024,
+            "canvasSurfaceBytes": 2038880,
+            "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+          },
+          "workers": {
+            "active": 3,
+            "created": 41
+          },
+          "heap": 11626204
+        },
+        {
+          "record": "5",
+          "round": 2,
+          "ms": 46,
+          "cache": {
+            "bytes": 1508528,
+            "budget": 67108864
+          },
+          "graphics": {
+            "webglContexts": 1,
+            "bufferBytes": 589856,
+            "textureBytes": 1024,
+            "canvasSurfaceBytes": 2038880,
+            "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+          },
+          "workers": {
+            "active": 3,
+            "created": 44
+          },
+          "heap": 11626204
+        },
+        {
+          "record": "2",
+          "round": 2,
+          "ms": 44,
+          "cache": {
+            "bytes": 1508528,
+            "budget": 67108864
+          },
+          "graphics": {
+            "webglContexts": 1,
+            "bufferBytes": 589856,
+            "textureBytes": 1024,
+            "canvasSurfaceBytes": 2038880,
+            "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+          },
+          "workers": {
+            "active": 3,
+            "created": 47
+          },
+          "heap": 12940874
+        },
+        {
+          "record": "1",
+          "round": 2,
+          "ms": 44,
+          "cache": {
+            "bytes": 1508528,
+            "budget": 67108864
+          },
+          "graphics": {
+            "webglContexts": 1,
+            "bufferBytes": 589856,
+            "textureBytes": 1024,
+            "canvasSurfaceBytes": 1316000,
+            "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+          },
+          "workers": {
+            "active": 1,
+            "created": 48
+          },
+          "heap": 12940874
+        },
+        {
+          "record": "3",
+          "round": 2,
+          "ms": 45,
+          "cache": {
+            "bytes": 1508528,
+            "budget": 67108864
+          },
+          "graphics": {
+            "webglContexts": 1,
+            "bufferBytes": 589856,
+            "textureBytes": 1024,
+            "canvasSurfaceBytes": 2038880,
+            "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+          },
+          "workers": {
+            "active": 3,
+            "created": 51
+          },
+          "heap": 13648523
+        }
+      ],
+      "loaded": {
+        "cache": {
+          "bytes": 1508528,
+          "budget": 67108864
+        },
+        "graphics": {
+          "webglContexts": 1,
+          "bufferBytes": 589856,
+          "textureBytes": 1024,
+          "canvasSurfaceBytes": 3847680,
+          "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+        },
+        "workers": {
+          "active": 3,
+          "created": 51
+        },
+        "heap": 14254120
+      },
+      "released": {
+        "cache": {
+          "bytes": 1508528,
+          "budget": 67108864
+        },
+        "graphics": {
+          "webglContexts": 0,
+          "bufferBytes": 0,
+          "textureBytes": 0,
+          "canvasSurfaceBytes": 0,
+          "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+        },
+        "workers": {
+          "active": 0,
+          "created": 51
+        },
+        "heap": 13176354
+      },
+      "longTasks": [],
+      "warm_switch_p95_ms": 50
+    },
+    {
+      "width": 390,
+      "firstUsefulMs": 816,
+      "expandMs": 35,
+      "changes": [
+        {
+          "record": "6",
+          "round": 0,
+          "ms": 404,
+          "cache": {
+            "bytes": 253156,
+            "budget": 33554432
+          },
+          "graphics": {
+            "webglContexts": 1,
+            "bufferBytes": 294944,
+            "textureBytes": 1024,
+            "canvasSurfaceBytes": 776960,
+            "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+          },
+          "workers": {
+            "active": 3,
+            "created": 6
+          },
+          "heap": 11240384
+        },
+        {
+          "record": "4",
+          "round": 0,
+          "ms": 355,
+          "cache": {
+            "bytes": 379908,
+            "budget": 33554432
+          },
+          "graphics": {
+            "webglContexts": 1,
+            "bufferBytes": 294944,
+            "textureBytes": 1024,
+            "canvasSurfaceBytes": 776960,
+            "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+          },
+          "workers": {
+            "active": 3,
+            "created": 9
+          },
+          "heap": 12839055
+        },
+        {
+          "record": "5",
+          "round": 0,
+          "ms": 45,
+          "cache": {
+            "bytes": 379908,
+            "budget": 33554432
+          },
+          "graphics": {
+            "webglContexts": 1,
+            "bufferBytes": 294944,
+            "textureBytes": 1024,
+            "canvasSurfaceBytes": 776960,
+            "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+          },
+          "workers": {
+            "active": 3,
+            "created": 12
+          },
+          "heap": 12839055
+        },
+        {
+          "record": "2",
+          "round": 0,
+          "ms": 364,
+          "cache": {
+            "bytes": 506520,
+            "budget": 33554432
+          },
+          "graphics": {
+            "webglContexts": 1,
+            "bufferBytes": 294944,
+            "textureBytes": 1024,
+            "canvasSurfaceBytes": 776960,
+            "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+          },
+          "workers": {
+            "active": 3,
+            "created": 15
+          },
+          "heap": 10077903
+        },
+        {
+          "record": "1",
+          "round": 0,
+          "ms": 451,
+          "cache": {
+            "bytes": 633356,
+            "budget": 33554432
+          },
+          "graphics": {
+            "webglContexts": 1,
+            "bufferBytes": 294944,
+            "textureBytes": 1024,
+            "canvasSurfaceBytes": 776960,
+            "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+          },
+          "workers": {
+            "active": 3,
+            "created": 18
+          },
+          "heap": 12549072
+        },
+        {
+          "record": "3",
+          "round": 0,
+          "ms": 253,
+          "cache": {
+            "bytes": 760288,
+            "budget": 33554432
+          },
+          "graphics": {
+            "webglContexts": 1,
+            "bufferBytes": 294944,
+            "textureBytes": 1024,
+            "canvasSurfaceBytes": 776960,
+            "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+          },
+          "workers": {
+            "active": 3,
+            "created": 21
+          },
+          "heap": 14132425
+        },
+        {
+          "record": "6",
+          "round": 1,
+          "ms": 44,
+          "cache": {
+            "bytes": 760288,
+            "budget": 33554432
+          },
+          "graphics": {
+            "webglContexts": 1,
+            "bufferBytes": 294944,
+            "textureBytes": 1024,
+            "canvasSurfaceBytes": 776960,
+            "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+          },
+          "workers": {
+            "active": 3,
+            "created": 24
+          },
+          "heap": 14132425
+        },
+        {
+          "record": "4",
+          "round": 1,
+          "ms": 44,
+          "cache": {
+            "bytes": 760288,
+            "budget": 33554432
+          },
+          "graphics": {
+            "webglContexts": 1,
+            "bufferBytes": 294944,
+            "textureBytes": 1024,
+            "canvasSurfaceBytes": 776960,
+            "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+          },
+          "workers": {
+            "active": 3,
+            "created": 27
+          },
+          "heap": 11657874
+        },
+        {
+          "record": "5",
+          "round": 1,
+          "ms": 44,
+          "cache": {
+            "bytes": 760288,
+            "budget": 33554432
+          },
+          "graphics": {
+            "webglContexts": 1,
+            "bufferBytes": 294944,
+            "textureBytes": 1024,
+            "canvasSurfaceBytes": 776960,
+            "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+          },
+          "workers": {
+            "active": 3,
+            "created": 30
+          },
+          "heap": 11657874
+        },
+        {
+          "record": "2",
+          "round": 1,
+          "ms": 45,
+          "cache": {
+            "bytes": 760288,
+            "budget": 33554432
+          },
+          "graphics": {
+            "webglContexts": 1,
+            "bufferBytes": 294944,
+            "textureBytes": 1024,
+            "canvasSurfaceBytes": 776960,
+            "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+          },
+          "workers": {
+            "active": 3,
+            "created": 33
+          },
+          "heap": 13291705
+        },
+        {
+          "record": "1",
+          "round": 1,
+          "ms": 45,
+          "cache": {
+            "bytes": 760288,
+            "budget": 33554432
+          },
+          "graphics": {
+            "webglContexts": 1,
+            "bufferBytes": 294944,
+            "textureBytes": 1024,
+            "canvasSurfaceBytes": 776960,
+            "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+          },
+          "workers": {
+            "active": 3,
+            "created": 36
+          },
+          "heap": 13291705
+        },
+        {
+          "record": "3",
+          "round": 1,
+          "ms": 45,
+          "cache": {
+            "bytes": 760288,
+            "budget": 33554432
+          },
+          "graphics": {
+            "webglContexts": 1,
+            "bufferBytes": 294944,
+            "textureBytes": 1024,
+            "canvasSurfaceBytes": 776960,
+            "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+          },
+          "workers": {
+            "active": 3,
+            "created": 39
+          },
+          "heap": 14861545
+        },
+        {
+          "record": "6",
+          "round": 2,
+          "ms": 45,
+          "cache": {
+            "bytes": 760288,
+            "budget": 33554432
+          },
+          "graphics": {
+            "webglContexts": 1,
+            "bufferBytes": 294944,
+            "textureBytes": 1024,
+            "canvasSurfaceBytes": 776960,
+            "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+          },
+          "workers": {
+            "active": 3,
+            "created": 42
+          },
+          "heap": 14861545
+        },
+        {
+          "record": "4",
+          "round": 2,
+          "ms": 45,
+          "cache": {
+            "bytes": 760288,
+            "budget": 33554432
+          },
+          "graphics": {
+            "webglContexts": 1,
+            "bufferBytes": 294944,
+            "textureBytes": 1024,
+            "canvasSurfaceBytes": 776960,
+            "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+          },
+          "workers": {
+            "active": 3,
+            "created": 45
+          },
+          "heap": 11708371
+        },
+        {
+          "record": "5",
+          "round": 2,
+          "ms": 47,
+          "cache": {
+            "bytes": 760288,
+            "budget": 33554432
+          },
+          "graphics": {
+            "webglContexts": 1,
+            "bufferBytes": 294944,
+            "textureBytes": 1024,
+            "canvasSurfaceBytes": 776960,
+            "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+          },
+          "workers": {
+            "active": 3,
+            "created": 48
+          },
+          "heap": 11708371
+        },
+        {
+          "record": "2",
+          "round": 2,
+          "ms": 46,
+          "cache": {
+            "bytes": 760288,
+            "budget": 33554432
+          },
+          "graphics": {
+            "webglContexts": 1,
+            "bufferBytes": 294944,
+            "textureBytes": 1024,
+            "canvasSurfaceBytes": 776960,
+            "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+          },
+          "workers": {
+            "active": 3,
+            "created": 51
+          },
+          "heap": 13288508
+        },
+        {
+          "record": "1",
+          "round": 2,
+          "ms": 41,
+          "cache": {
+            "bytes": 760288,
+            "budget": 33554432
+          },
+          "graphics": {
+            "webglContexts": 1,
+            "bufferBytes": 294944,
+            "textureBytes": 1024,
+            "canvasSurfaceBytes": 776960,
+            "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+          },
+          "workers": {
+            "active": 3,
+            "created": 54
+          },
+          "heap": 13288508
+        },
+        {
+          "record": "3",
+          "round": 2,
+          "ms": 46,
+          "cache": {
+            "bytes": 760288,
+            "budget": 33554432
+          },
+          "graphics": {
+            "webglContexts": 1,
+            "bufferBytes": 294944,
+            "textureBytes": 1024,
+            "canvasSurfaceBytes": 776960,
+            "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+          },
+          "workers": {
+            "active": 3,
+            "created": 57
+          },
+          "heap": 14856420
+        }
+      ],
+      "loaded": {
+        "cache": {
+          "bytes": 760288,
+          "budget": 33554432
+        },
+        "graphics": {
+          "webglContexts": 1,
+          "bufferBytes": 294944,
+          "textureBytes": 1024,
+          "canvasSurfaceBytes": 1127520,
+          "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+        },
+        "workers": {
+          "active": 3,
+          "created": 57
+        },
+        "heap": 15426385
+      },
+      "released": {
+        "cache": {
+          "bytes": 760288,
+          "budget": 33554432
+        },
+        "graphics": {
+          "webglContexts": 0,
+          "bufferBytes": 0,
+          "textureBytes": 0,
+          "canvasSurfaceBytes": 0,
+          "caveat": "Requested buffers/textures and one RGBA surface per canvas; excludes driver, compositor and double buffering."
+        },
+        "workers": {
+          "active": 0,
+          "created": 57
+        },
+        "heap": 13166350
+      },
+      "longTasks": [],
+      "warm_switch_p95_ms": 47
+    }
+  ],
+  "errors": [],
+  "measurement_date": "2026-10-10",
+  "base_commit": "6aadcb3",
+  "host_hardware": {
+    "cpu_reported_by_os": "Genuine Intel(R) 0000",
+    "visible_ram_gib": 63.33,
+    "gpu_reported_by_os": "NVIDIA GeForce RTX 5060 Ti",
+    "caveat": "OS-reported hardware; browser GPU renderer not inferred from this GPU name."
+  },
+  "measured_source_sha256": {
+    "apps/web/src/charts.tsx": "1ea3e0ca7ffaea87915e5bc31bf359c2ec9b93561c2f94db35c54296f3c566d1",
+    "apps/web/src/cache.ts": "a5fe5523dd48e65d1c74ff17b7754da85acffc946f64b3e7cb9b44299a6df2f2",
+    "apps/web/src/explorer.tsx": "78e61b48c4a9e54d14ae50c4a0ee40f143055cddc91f4a1bd52fab15dc374479",
+    "services/web-api/workbench/api.py": "91c5f6bf1a7d94bd684545efc926e7a243c73f3d631e7a028f2a3f9264302922"
+  },
+  "revision_note": "Final acceptance: source/queue-version HTTP guards, versioned slices/query caches, packet source SHA checks, user recovery UI."
+}

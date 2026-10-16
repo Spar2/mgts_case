@@ -1,0 +1,92 @@
+---
+- name: Раннер уже сконфигурирован?
+  ansible.builtin.stat:
+    path: "{{ gh_runner_dir }}/.runner"
+  register: gh_runner_configured
+
+- name: Токен регистрации задан
+  ansible.builtin.fail:
+    msg: "Задай часовой токен: -e gh_runner_token=$(gh api -X POST repos/werd0y45/haklolarp/actions/runners/registration-token --jq .token)"
+  when:
+    - gh_runner_token | length == 0
+    - not gh_runner_configured.stat.exists
+
+- name: Каталог раннера
+  ansible.builtin.file:
+    path: "{{ gh_runner_dir }}"
+    state: directory
+    owner: "{{ gh_runner_user }}"
+    mode: "0755"
+
+- name: Тарболл раннера
+  ansible.builtin.unarchive:
+    src: "https://github.com/actions/runner/releases/download/{{ gh_runner_version }}/actions-runner-linux-x64-{{ gh_runner_version[1:] }}.tar.gz"
+    dest: "{{ gh_runner_dir }}"
+    remote_src: true
+    owner: "{{ gh_runner_user }}"
+    creates: "{{ gh_runner_dir }}/config.sh"
+
+- name: Маркер зависимостей
+  ansible.builtin.stat:
+    path: /etc/gh-runner-deps-installed
+  register: gh_runner_deps_marker
+
+- name: Зависимости раннера
+  ansible.builtin.command: "{{ gh_runner_dir }}/bin/installdependencies.sh"
+  changed_when: true
+  when: not gh_runner_deps_marker.stat.exists
+
+- name: Маркер зависимостей создан
+  ansible.builtin.file:
+    path: /etc/gh-runner-deps-installed
+    state: touch
+    mode: "0644"
+  when: not gh_runner_deps_marker.stat.exists
+
+- name: LAN-имена в hosts
+  ansible.builtin.lineinfile:
+    path: /etc/hosts
+    regexp: "{{ item.name }}$"
+    line: "{{ item.ip }} {{ item.name }}"
+  loop: "{{ gh_runner_lan_hosts }}"
+  loop_control:
+    label: "{{ item.name }}"
+
+- name: Пакет acl для become
+  ansible.builtin.apt:
+    name: acl
+    state: present
+    update_cache: true
+
+- name: Раннер сконфигурирован
+  ansible.builtin.command: >
+    ./config.sh --unattended --replace
+    --url {{ gh_runner_url }} --token {{ gh_runner_token }}
+    --name {{ inventory_hostname }} --labels {{ (gh_runner_labels + [gh_runner_team_label]) | join(',') }} --work _work
+  args:
+    chdir: "{{ gh_runner_dir }}"
+    creates: "{{ gh_runner_dir }}/.runner"
+  become: true
+  become_user: "{{ gh_runner_user }}"
+  no_log: true
+  register: gh_runner_config
+
+- name: Сервис раннера установлен
+  ansible.builtin.command: ./svc.sh install {{ gh_runner_user }}
+  args:
+    chdir: "{{ gh_runner_dir }}"
+    creates: /etc/systemd/system/actions.runner.{{ gh_runner_svc_slug }}.{{ inventory_hostname }}.service
+  changed_when: true
+
+- name: Файл сервиса найден
+  ansible.builtin.find:
+    paths: /etc/systemd/system
+    patterns: actions.runner.*
+  register: gh_runner_svc_files
+
+- name: Сервис раннера запущен
+  ansible.builtin.systemd:
+    name: "{{ (gh_runner_svc_files.files | map(attribute='path') | list | first) | regex_replace('.*/', '') }}"
+    state: started
+    enabled: true
+    daemon_reload: true

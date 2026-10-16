@@ -1,0 +1,7 @@
+---
+# Общие переменные для всех групп.
+app_name: haklolarp
+# Репо приватное — везде только SSH + deploy-key.
+repo_url: git@github.com:werd0y45/haklolarp.git
+app_version: main
+timezone: Europe/Moscow

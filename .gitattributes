@@ -1,0 +1,27 @@
+# SSH-материалы и скрипты для Linux — хранить побайтово, без конверсии.
+ansible/files/** -text
+# Весь остальной ansible-контент, workflows и скрипты — всегда LF,
+# иначе ломаются netplan/cloud-init/bash при прямом копировании (scp).
+ansible/**/*.yml text eol=lf
+ansible/**/*.j2 text eol=lf
+ansible/**/*.cfg text eol=lf
+ansible/**/*.sh text eol=lf
+.github/**/*.yml text eol=lf
+*.sh text eol=lf
+# Research manifests hash these source files; preserve their LF bytes.
+fiber/classify/physical.py text eol=lf
+scripts/benchmark_physical.py text eol=lf
+scripts/verify_hardening.py text eol=lf
+docs/evidence/*.json text eol=lf
+fiber/real_data.py text eol=lf
+scripts/prepare_real_data.py text eol=lf
+scripts/benchmark_real_reconstruction.py text eol=lf
+scripts/verify_real_data.py text eol=lf
+scripts/summarize_real_data.py text eol=lf
+# Independent ml-test audit scripts should retain stable LF bytes.
+scripts/*ml_test*.py text eol=lf
+
+# Pinned ML source hashes must survive Windows/Linux checkouts.
+services/web-api/workbench/vendor_ml/** -text
+# Immutable research receipts include byte hashes, also on Windows.
+services/web-api/research/ml-next/** -text

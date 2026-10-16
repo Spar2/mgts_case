@@ -1,0 +1,213 @@
+# =============================================================================
+# AGENT EXEC SANDBOX — docker-compose.agent.yml
+# -----------------------------------------------------------------------------
+# Purpose : Per-branch NON-ROOT exec cells for subagents. Each service mounts
+#           ONLY its own branch checkout and runs with zero ingress AND zero
+#           egress by default.
+# Services (EXACTLY these three — allowlist):
+#   - sandbox-web-exec  : /opt/haklolarp-web  -> /workspace:Z (RW)
+#   - sandbox-ml-exec   : /opt/haklolarp-ml   -> /workspace:Z (RW)
+#   - sandbox-data-exec : /opt/haklolarp-data -> /workspace:Z (RW)
+# Explicitly ABSENT (by design, asserted by validator greps):
+#   - NO sandbox-main-exec    (main = REAL project deploy target,
+#     staging-web-1 on :8080 — NEVER an exec sandbox, never touched).
+#   - NO sandbox-preview-exec (preview EXCLUDED entirely).
+#   - NO devops service       (devops = control plane, not an exec target).
+# Volumes — why RW, why single-mount, why :Z:
+#   - RW (not :ro) because the agent must edit code + git state in place in
+#     its own checkout. A read-only mount would force copy-out/copy-in
+#     round-trips and break `git status/diff/commit` traceability.
+#   - Exactly ONE host path per service so a web-cell process can NEVER see
+#     ml/data checkouts (and vice versa). Cross-branch peeking = owner-rule
+#     violation. run-subagent.sh resolves branch -> service 1:1.
+#   - `:Z` = PRIVATE SELinux relabel (each host path is consumed by exactly
+#     one service). `:z` (shared) was the prior value and is FORBIDDEN now:
+#     shared labels widen the relabel scope on a single-host bind mount for
+#     no benefit. Verifier asserts `:Z` present, `:z` absent (case-sensitive).
+#   - NO static container names anywhere (deleted by design): static names block
+#     `docker compose up --scale`, collide across checkouts, and pin identity
+#     outside the compose project. Service + hostname are sufficient.
+# Hardening (every service, no exceptions):
+#   - `user: "10000:10000"` — must match Dockerfile agentuser UID:GID (or a
+#     coordinated --build-arg rebuild; keep both files in sync; run-subagent.sh
+#     enforces the sync as a pre-exec gate).
+#   - `cap_drop: [ALL]` with NO `cap_add` — exec needs no NET_ADMIN,
+#     SYS_PTRACE, or DAC overrides; packet capture / strace happen on the
+#     host, not inside the cell. `cap_add:`, `devices:`, `sysctls:` are
+#     FORBIDDEN (asserted absent by run-subagent.sh + validator greps).
+#   - `security_opt: [no-new-privileges:true]` — blocks setuid escalation.
+#   - `mem_limit: 4g`, `cpus: 2`, `pids_limit: 256` — noisy/malicious agent
+#     loops cannot starve the Xeon host or fork-bomb it.
+#   - NO `ports:` anywhere in this file (asserted). Zero ingress: the ONLY
+#     way in is `docker compose exec` from the host (see run-subagent.sh).
+#   - FORBIDDEN strings asserted absent: /var/run/docker.sock, `/:`,
+#     /etc, /root mounts, `privileged:` (any truthy value incl. True/1/yes/on
+#     quoted or not — only an explicit false is tolerated, and this file
+#     ships with NO privileged: line at all), `network_mode:` anything except
+#     `none`, long-syntax `source:`, `extends:`, `include:`, `env_file:`,
+#     `volumes_from:`, any `$` env interpolation (blocks ${X:-/etc} tricks).
+# read_only + tmpfs + HOME (decided):
+#   - `read_only: true` hardens the image rootfs — but CPython writes
+#     __pycache__/*.pyc NEXT TO SOURCES (inside /workspace, which stays
+#     writable because it is a RW bind mount, so bytecode still works) and
+#     git/tmux/pip need scratch space OUTSIDE /workspace.
+#   - Therefore each service sets HOME=/tmp + TMPDIR=/tmp +
+#     PIP_CACHE_DIR=/tmp/pip-cache (see environment:) and mounts
+#     `tmpfs: [/tmp]`. /tmp is the ONLY writable scratch area; HOME MUST be
+#     inside it because the rootfs (including /home/agentuser) is read-only.
+#     Prior value `/home/agentuser/.cache` tmpfs is REMOVED: with read_only
+#     the parent /home/agentuser is not writable and the cache path disagreed
+#     with Dockerfile PIP_CACHE_DIR=/tmp/pip-cache. Do NOT re-add a home-dir
+#     tmpfs without also moving HOME back (and documenting why).
+#   - Do NOT remove the tmpfs line without also removing `read_only: true`
+#     (else git, tmux sockets, and pip break). Do NOT remove `read_only: true`
+#     lightly (it is the cheapest rootfs-tamper guard we have).
+# Network (egress CLOSED by default):
+#   - Shipped default: `network_mode: "none"` on EVERY exec service. Cells are
+#     fully offline: no ingress (no ports:) AND no egress (no github, no lan
+#     git, no pip index). Agent works on the checkout snapshot only.
+#   - The top-level `networks: agent-exec` block is KEPT ONLY as the opt-in
+#     target for the guarded relax recipe below (no service uses it at rest).
+#   - GUARDED RELAX RECIPE (git-fetch use, bounded task only): comment out
+#     `network_mode: "none"` in the service AND uncomment its `networks:`
+#     entry (they are mutually exclusive). Allowlist for the window:
+#     github:443 + pypi:443 ONLY (lan git only if the task explicitly names
+#     the host). PROOF REQUIREMENT: record task ID + fetched refs + pip
+#     package list in the exec log, then re-enable `none` immediately after.
+#     run-subagent.sh REFUSES any network_mode != none, so the relax window
+#     requires a conscious file edit — it cannot be smuggled via env.
+#   - Prior default (isolated bridge with egress ON) is RETIRED: it favored
+#     usability over no-exfiltration and is kept here only as history.
+# Up helpers: `docker compose -f docker-compose.agent.yml up -d --build`
+# Exec path : via run-subagent.sh ONLY (it re-checks this file for socket /
+#             host-root mounts before every exec). Raw `docker exec` as the
+#             wrong uid or into the wrong service bypasses the allowlist.
+#             COMPOSE_FILE is pinned to the run-subagent.sh sibling — env
+#             overrides are IGNORED (see script header).
+# UID/GID sync (chown burden, decided):
+#   - Container runs as 10000:10000; the host checkout MUST be owned by the
+#     same ids or the RW mount is not writable. Xeon operator picks ONE:
+#       (a) chown -R 10000:10000 /opt/haklolarp-<branch>   (stock image), OR
+#       (b) rebuild with --build-arg UID=$(id -u) --build-arg GID=$(id -g)
+#           AND sync compose `user:` to the same value.
+#   - run-subagent.sh enforces (b)-style sync as a pre-exec gate (compose
+#     user: must equal Dockerfile ARG UID/GID) and refuses on host-dir
+#     ownership mismatch when the path exists. See Dockerfile header.
+# Validation (local, no docker): `python -c "yaml.safe_load(...)"` + grep
+#   asserts (see commit message / verifier notes). `docker compose config`
+#   and runtime escape tests are DEFERRED to the Xeon verifier (no docker on
+#   the authoring host).
+# =============================================================================
+name: agent-exec
+
+networks:
+  agent-exec:
+    driver: bridge
+    # KEPT ONLY for the guarded relax recipe (no service uses it at rest).
+    # Default is network_mode: "none" per service (fully offline).
+
+services:
+  sandbox-web-exec:
+    build:
+      context: .
+      dockerfile: Dockerfile.agent-sandbox
+    image: haklolarp/agent-sandbox:local
+    user: "10000:10000"
+    hostname: sandbox-web-exec
+    network_mode: "none"
+    command: ["sleep", "infinity"]
+    stdin_open: true
+    tty: true
+    # No ports. EVER. (validator asserts absence of `ports:` in this file.)
+    volumes:
+      # RW: agent edits its OWN branch checkout in place. :Z private label.
+      - /opt/haklolarp-web:/workspace:Z
+    cap_drop:
+      - ALL
+    # No cap_add. No devices. No sysctls. No newcomers.
+    security_opt:
+      - no-new-privileges:true
+    mem_limit: 4g
+    cpus: 2
+    pids_limit: 256
+    read_only: true
+    tmpfs:
+      - /tmp
+    environment:
+      HOME: /tmp
+      TMPDIR: /tmp
+      PIP_CACHE_DIR: /tmp/pip-cache
+    # GUARDED EGRESS RECIPE (default OFF): for a bounded git-fetch/pip task,
+    # comment out `network_mode: "none"` above AND uncomment below:
+    # networks:
+    #   - agent-exec
+    # Allowlist: github:443, pypi:443 only. Proof: task ID + refs in exec log.
+    # Re-enable `none` immediately after. run-subagent.sh refuses non-none.
+
+  sandbox-ml-exec:
+    build:
+      context: .
+      dockerfile: Dockerfile.agent-sandbox
+    image: haklolarp/agent-sandbox:local
+    user: "10000:10000"
+    hostname: sandbox-ml-exec
+    network_mode: "none"
+    command: ["sleep", "infinity"]
+    stdin_open: true
+    tty: true
+    volumes:
+      - /opt/haklolarp-ml:/workspace:Z
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    mem_limit: 4g
+    cpus: 2
+    pids_limit: 256
+    read_only: true
+    tmpfs:
+      - /tmp
+    environment:
+      HOME: /tmp
+      TMPDIR: /tmp
+      PIP_CACHE_DIR: /tmp/pip-cache
+    # GUARDED EGRESS RECIPE (default OFF): for a bounded git-fetch/pip task,
+    # comment out `network_mode: "none"` above AND uncomment below:
+    # networks:
+    #   - agent-exec
+    # Allowlist: github:443, pypi:443 only. Proof: task ID + refs in exec log.
+    # Re-enable `none` immediately after. run-subagent.sh refuses non-none.
+
+  sandbox-data-exec:
+    build:
+      context: .
+      dockerfile: Dockerfile.agent-sandbox
+    image: haklolarp/agent-sandbox:local
+    user: "10000:10000"
+    hostname: sandbox-data-exec
+    network_mode: "none"
+    command: ["sleep", "infinity"]
+    stdin_open: true
+    tty: true
+    volumes:
+      - /opt/haklolarp-data:/workspace:Z
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    mem_limit: 4g
+    cpus: 2
+    pids_limit: 256
+    read_only: true
+    tmpfs:
+      - /tmp
+    environment:
+      HOME: /tmp
+      TMPDIR: /tmp
+      PIP_CACHE_DIR: /tmp/pip-cache
+    # GUARDED EGRESS RECIPE (default OFF): for a bounded git-fetch/pip task,
+    # comment out `network_mode: "none"` above AND uncomment below:
+    # networks:
+    #   - agent-exec
+    # Allowlist: github:443, pypi:443 only. Proof: task ID + refs in exec log.
+    # Re-enable `none` immediately after. run-subagent.sh refuses non-none.

@@ -1,0 +1,241 @@
+{
+  "cards": [
+    {
+      "anomaly_status": "Anomaly",
+      "expert_class": "Local_Heating",
+      "expert_confirmed": false,
+      "far_cable_median_c": 26.372060775756836,
+      "far_gap_c": 5.687837600708008,
+      "far_left": {
+        "median_c": 23.78624153137207,
+        "n_columns": 282,
+        "present": true
+      },
+      "far_right": {
+        "median_c": 26.917603492736816,
+        "n_columns": 832,
+        "present": true
+      },
+      "halo_columns": 252,
+      "halo_columns_inside": 198,
+      "halo_inside_fraction": 0.7857142857142857,
+      "id": "next-0003",
+      "n_zones": 5,
+      "presence": "yes",
+      "record": "3",
+      "rectangle_median_c": 32.059898376464844,
+      "rows_half_open": [
+        618,
+        788
+      ],
+      "source": "expert_seed",
+      "wide_channel": true,
+      "wide_channel_candidate": "Broad_Shift",
+      "width_m": 65.981,
+      "x_m": [
+        111.405,
+        177.386
+      ]
+    },
+    {
+      "anomaly_status": "Anomaly",
+      "expert_class": "Local_Cooling",
+      "expert_confirmed": false,
+      "far_cable_median_c": 22.29627227783203,
+      "far_gap_c": -3.4873762130737305,
+      "far_left": {
+        "median_c": 21.426313400268555,
+        "n_columns": 2519,
+        "present": true
+      },
+      "far_right": {
+        "median_c": 22.610541343688965,
+        "n_columns": 7784,
+        "present": true
+      },
+      "halo_columns": 630,
+      "halo_columns_inside": 458,
+      "halo_inside_fraction": 0.726984126984127,
+      "id": "gap-r1-x295.736-x358.173-t0-344",
+      "n_zones": 23,
+      "presence": "yes",
+      "record": "1",
+      "rectangle_median_c": 18.8088960647583,
+      "rows_half_open": [
+        0,
+        344
+      ],
+      "source": "gap_shortlist",
+      "wide_channel": true,
+      "wide_channel_candidate": "Broad_Shift",
+      "width_m": 62.43700000000001,
+      "x_m": [
+        295.736,
+        358.173
+      ]
+    },
+    {
+      "anomaly_status": "Anomaly",
+      "expert_class": "Background",
+      "expert_confirmed": false,
+      "far_cable_median_c": 19.227487564086914,
+      "far_gap_c": -2.7116518020629883,
+      "far_left": {
+        "median_c": 20.574312210083008,
+        "n_columns": 640,
+        "present": true
+      },
+      "far_right": {
+        "median_c": 18.636649131774902,
+        "n_columns": 1105,
+        "present": true
+      },
+      "halo_columns": 252,
+      "halo_columns_inside": 192,
+      "halo_inside_fraction": 0.7619047619047619,
+      "id": "gap-r2-x202.258-x266.971-t0-410",
+      "n_zones": 19,
+      "presence": "no",
+      "record": "2",
+      "rectangle_median_c": 16.515835762023926,
+      "rows_half_open": [
+        0,
+        410
+      ],
+      "source": "gap_shortlist",
+      "wide_channel": true,
+      "wide_channel_candidate": "Broad_Shift",
+      "width_m": 64.713,
+      "x_m": [
+        202.258,
+        266.971
+      ]
+    },
+    {
+      "anomaly_status": "Anomaly",
+      "expert_class": "Local_Cooling",
+      "expert_confirmed": false,
+      "far_cable_median_c": 28.86944007873535,
+      "far_gap_c": -6.478565216064453,
+      "far_left": {
+        "median_c": null,
+        "n_columns": 0,
+        "present": false
+      },
+      "far_right": {
+        "median_c": 28.86944007873535,
+        "n_columns": 1246,
+        "present": true
+      },
+      "halo_columns": 237,
+      "halo_columns_inside": 222,
+      "halo_inside_fraction": 0.9367088607594937,
+      "id": "gap-r3-x0.000-x72.325-t0-465",
+      "n_zones": 5,
+      "presence": "yes",
+      "record": "3",
+      "rectangle_median_c": 22.3908748626709,
+      "rows_half_open": [
+        0,
+        465
+      ],
+      "source": "gap_shortlist",
+      "wide_channel": true,
+      "wide_channel_candidate": "Broad_Shift",
+      "width_m": 72.325,
+      "x_m": [
+        0.0,
+        72.325
+      ]
+    },
+    {
+      "anomaly_status": "Anomaly",
+      "expert_class": null,
+      "expert_confirmed": false,
+      "far_cable_median_c": 20.506799697875977,
+      "far_gap_c": 3.235200881958008,
+      "far_left": {
+        "median_c": null,
+        "n_columns": 0,
+        "present": false
+      },
+      "far_right": {
+        "median_c": 20.506799697875977,
+        "n_columns": 2196,
+        "present": true
+      },
+      "halo_columns": 64,
+      "halo_columns_inside": 64,
+      "halo_inside_fraction": 1.0,
+      "id": "gap-r5-x0.000-x127.000-t0-1537",
+      "n_zones": 134,
+      "presence": "unclear",
+      "record": "5",
+      "rectangle_median_c": 23.742000579833984,
+      "rows_half_open": [
+        0,
+        1537
+      ],
+      "source": "gap_shortlist",
+      "wide_channel": true,
+      "wide_channel_candidate": "Broad_Shift",
+      "width_m": 127.0,
+      "x_m": [
+        0.0,
+        127.0
+      ]
+    },
+    {
+      "anomaly_status": "Anomaly",
+      "expert_class": null,
+      "expert_confirmed": false,
+      "far_cable_median_c": 20.57670021057129,
+      "far_gap_c": 1.7143001556396484,
+      "far_left": {
+        "median_c": 23.765100479125977,
+        "n_columns": 115,
+        "present": true
+      },
+      "far_right": {
+        "median_c": 20.48259925842285,
+        "n_columns": 2110,
+        "present": true
+      },
+      "halo_columns": 66,
+      "halo_columns_inside": 44,
+      "halo_inside_fraction": 0.6666666666666666,
+      "id": "gap-r5-x155.000-x213.000-t0-1537",
+      "n_zones": 134,
+      "presence": "yes",
+      "record": "5",
+      "rectangle_median_c": 22.291000366210938,
+      "rows_half_open": [
+        0,
+        1537
+      ],
+      "source": "gap_shortlist",
+      "wide_channel": false,
+      "wide_channel_candidate": null,
+      "width_m": 58.0,
+      "x_m": [
+        155.0,
+        213.0
+      ]
+    }
+  ],
+  "clean": "median_x3",
+  "detector": "spatial_z_halo",
+  "inner_m": 8.0,
+  "min_width_m": 40.0,
+  "note": "Research soft flag for a wide channel on next-0003 and every gap-shortlist answer whose meter span is wider than 40 m. The flag is true only when the share of the 8–40 m ring inside the rectangle is at least wide_channel_halo_inside_min and the absolute gap between the rectangle median and the cable farther than 40 m is at least wide_channel_far_gap_min_c. A missing far side is not filled from the rectangle. The candidate does not replace expert_class and does not set anomaly_status or expert_confirmed. The operational pair remains median_x3 and spatial_z_halo at |Z| >= 3.5.",
+  "operational": false,
+  "outer_m": 40.0,
+  "schema": "wide_channel_v1",
+  "serve": "research",
+  "sets_anomaly_status": false,
+  "threshold_z": 3.5,
+  "trained_classifier_operational": false,
+  "wide_channel_candidate": "Broad_Shift",
+  "wide_channel_far_gap_min_c": 2.0,
+  "wide_channel_halo_inside_min": 0.7
+}

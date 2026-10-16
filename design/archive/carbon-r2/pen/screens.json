@@ -1,0 +1,135 @@
+[
+  {
+    "index": 1,
+    "id": "L7iPfs",
+    "title": "Язык дизайна",
+    "file": "pen/screens/01-design-language.pen",
+    "bytes": 18440
+  },
+  {
+    "index": 2,
+    "id": "NV1A7",
+    "title": "Чтение данных",
+    "file": "pen/screens/02-reading-data.pen",
+    "bytes": 142047
+  },
+  {
+    "index": 3,
+    "id": "A4X5E4",
+    "title": "Рабочие режимы",
+    "file": "pen/screens/03-working-modes.pen",
+    "bytes": 15212
+  },
+  {
+    "index": 4,
+    "id": "Vs6C7",
+    "title": "Библиотека",
+    "file": "pen/screens/04-records.pen",
+    "bytes": 100010
+  },
+  {
+    "index": 5,
+    "id": "qUCbQ",
+    "title": "Исследование",
+    "file": "pen/screens/05-research.pen",
+    "bytes": 109661
+  },
+  {
+    "index": 6,
+    "id": "yRv8z",
+    "title": "Разбор события",
+    "file": "pen/screens/06-event-review.pen",
+    "bytes": 115423
+  },
+  {
+    "index": 7,
+    "id": "b4QoJ",
+    "title": "Слепая проверка",
+    "file": "pen/screens/07-blind-review.pen",
+    "bytes": 114960
+  },
+  {
+    "index": 8,
+    "id": "hzIX5",
+    "title": "Сравнение",
+    "file": "pen/screens/08-comparison.pen",
+    "bytes": 159697
+  },
+  {
+    "index": 9,
+    "id": "bvyQ9",
+    "title": "История",
+    "file": "pen/screens/09-history.pen",
+    "bytes": 95359
+  },
+  {
+    "index": 10,
+    "id": "yx95J",
+    "title": "Импорт",
+    "file": "pen/screens/10-csv-import.pen",
+    "bytes": 28908
+  },
+  {
+    "index": 11,
+    "id": "uapPA",
+    "title": "Запуски",
+    "file": "pen/screens/11-analysis-runs.pen",
+    "bytes": 29714
+  },
+  {
+    "index": 12,
+    "id": "Kw23R",
+    "title": "Методы",
+    "file": "pen/screens/12-methods.pen",
+    "bytes": 26520
+  },
+  {
+    "index": 13,
+    "id": "oBzVg",
+    "title": "Маршрут",
+    "file": "pen/screens/13-fiber-route.pen",
+    "bytes": 29302
+  },
+  {
+    "index": 14,
+    "id": "qjxSd",
+    "title": "Экспорт",
+    "file": "pen/screens/14-export.pen",
+    "bytes": 91593
+  },
+  {
+    "index": 15,
+    "id": "DvC1f",
+    "title": "Зоны",
+    "file": "pen/screens/15-zones.pen",
+    "bytes": 85587
+  },
+  {
+    "index": 16,
+    "id": "w7Fsl1",
+    "title": "Состояния восстановления",
+    "file": "pen/screens/16-recovery-states.pen",
+    "bytes": 22252
+  },
+  {
+    "index": 17,
+    "id": "k5Z6v2",
+    "title": "Фокусированный вид",
+    "file": "pen/screens/17-focused-research.pen",
+    "bytes": 93161
+  },
+  {
+    "index": 18,
+    "id": "TKN90",
+    "title": "1024 px",
+    "file": "pen/screens/18-tablet-1024.pen",
+    "bytes": 77868
+  },
+  {
+    "index": 19,
+    "id": "kN7CU",
+    "title": "390 px",
+    "file": "pen/screens/19-mobile-390.pen",
+    "bytes": 78967
+  }
+]

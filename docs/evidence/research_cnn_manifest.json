@@ -1,0 +1,116 @@
+{
+  "schema": "research_cnn_v1",
+  "serve": "research",
+  "operational": false,
+  "trained_classifier_operational": false,
+  "architecture": "residual2d",
+  "weights": "models/weights/research_residual_cnn.pt",
+  "weights_sha256": "601a2b5633a986738f9df4d60a33b08a1424286571a0e558a88aa68346ae59b5",
+  "weights_bytes": 119569,
+  "steps": 390,
+  "epochs": 6,
+  "development_loss": 1.2622790808022157,
+  "n_fit_rows": 72647,
+  "n_checkpoint_rows": 15385,
+  "n_expert_seeds": 15,
+  "holdout_rows_excluded": 0,
+  "guard_rows_excluded": 0,
+  "holdout_used_for_fit": false,
+  "guard_used_for_fit": false,
+  "automatic_holdout_used_for_fit": false,
+  "automatic_guard_used_for_fit": false,
+  "fit_split_codes": [
+    0
+  ],
+  "checkpoint_split_codes": [
+    1
+  ],
+  "expert_ids": [
+    "review-00034",
+    "review-00098",
+    "review-00187",
+    "review-00223",
+    "next-0001",
+    "next-0002",
+    "next-0003",
+    "next-0004",
+    "next-0005",
+    "next-0006",
+    "next-0007",
+    "next-0008",
+    "next-0009",
+    "next-0010",
+    "next-0011"
+  ],
+  "expert_seeds_still_fit_on_split_2_or_minus_1": [
+    {
+      "id": "next-0001",
+      "record": "3",
+      "split_code": 2,
+      "class_name": "Local_Heating",
+      "presence": "yes"
+    },
+    {
+      "id": "next-0002",
+      "record": "5",
+      "split_code": -1,
+      "class_name": "Local_Cooling",
+      "presence": "yes"
+    },
+    {
+      "id": "next-0003",
+      "record": "3",
+      "split_code": -1,
+      "class_name": "Local_Heating",
+      "presence": "yes"
+    },
+    {
+      "id": "next-0006",
+      "record": "1",
+      "split_code": -1,
+      "class_name": "Background",
+      "presence": "no"
+    },
+    {
+      "id": "next-0008",
+      "record": "6",
+      "split_code": -1,
+      "class_name": "Local_Heating",
+      "presence": "yes"
+    },
+    {
+      "id": "next-0009",
+      "record": "4",
+      "split_code": -1,
+      "class_name": "Local_Heating",
+      "presence": "yes"
+    },
+    {
+      "id": "next-0011",
+      "record": "1",
+      "split_code": -1,
+      "class_name": "Local_Heating",
+      "presence": "yes"
+    }
+  ],
+  "expert_cards_are_not_an_untouched_holdout": true,
+  "hard_negative_ids": [
+    "next-0005",
+    "next-0006",
+    "next-0007",
+    "next-0010"
+  ],
+  "hard_negative_class": "Background",
+  "cooling_ids": [
+    "review-00223",
+    "next-0002"
+  ],
+  "cooling_class": "Local_Cooling",
+  "continued_from_checkpoint": true,
+  "expert_loss_weight": 10.0,
+  "focus_expert_weight": 40.0,
+  "polarity_loss_scale": 2.0,
+  "polarity_is_a_class": false,
+  "automatic_loss_weight": 1.0,
+  "note": "Research weights only. Automatic holdout and guard rows were not used. Expert cards on split 2 or -1 were still fit as seeds and are not an untouched holdout. Cooling experts and presence=no experts use a heavier loss weight than an ordinary expert Local_Heating card, plus a stronger hot/cold polarity term. Polarity is not a class. Not an operational detector and not expert accuracy."
+}

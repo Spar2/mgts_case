@@ -1,0 +1,491 @@
+# ops/sandboxes/cells/docker-compose.cells.yml
+# FIGHTER-B — branch workload cells (SANDBOX-ONLY, ADDITIVE).
+#
+# Purpose: run per-branch workloads (web / ml / data) as confined "cells" on the
+# Xeon WITHOUT touching the real main deploy (staging-web-1 on 0.0.0.0:8080).
+# This file changes NOTHING by itself: it is only instantiated when a verifier
+# explicitly runs `docker compose -f <this-file> -p <name> up`.
+#
+# Source fidelity (verified against branch tips 2026-10-13):
+#   cell-web{,-api}  <- origin/web  compose.web.yaml  (nginx :8081 + api :8091, api has NO published ports)
+#   cell-ml          <- origin/ml   compose.ml.yaml   (api :8082; upstream has NO 127.0.0.1 bind,
+#                       cells REBIND to 127.0.0.1 — DEVIATION, see §B1 below)
+#   cell-data-*      <- origin/data stack/compose.yaml (redis :6379, clickhouse :8123, backend :8000, ingester; loopback-only)
+#   cell-data-migrate <- cells ADDITION (no upstream counterpart in this checkout;
+#                        one-shot schema receipt, profiles:[migrate], see §MIGRATE below)
+# Image pins: copied where upstream pins (python web-api digest, redis digest,
+# clickhouse digest, data python digest); TODO-pin where upstream is unpinned
+# (nginx:1.28-alpine, python:3.12-slim for Dockerfile.ml).
+#
+# SOURCE-ROOT ALLOWLIST (env-mount smuggling guard, enforced by cell-proof.sh §C):
+# CELL_WEB_SRC / CELL_ML_SRC / CELL_DATA_SRC and CELL_WEB_*_SRC stay
+# env-overridable (${VAR:-default} shape kept) but may ONLY resolve to:
+#   (a) the file default (repo root ../../.. or a bare named volume), or
+#   (b) an absolute path under /opt/haklolarp-* /opt/cells-* /srv/haklolarp-*
+#       /srv/cells-* /home/* (per-branch checkouts/worktrees on Xeon), or
+#   (c) a bare named volume (no "/" in it: cell-web-records, ...).
+# Anything else (/, /etc, /root, docker.sock, *staging*, /proc, /sys, ...)
+# FAILs proof §C. Extend the allowlist by editing cell-proof.sh, never via env.
+# On Xeon point the vars at per-branch checkouts/worktrees, e.g.:
+#   CELL_WEB_SRC=/opt/haklolarp-web  CELL_ML_SRC=/opt/haklolarp-ml  CELL_DATA_SRC=/opt/haklolarp-stack
+# Port overrides: CELL_WEB_PORT / CELL_ML_PORT / CELL_REDIS_PORT / CELL_CH_HTTP_PORT / CELL_DATA_API_PORT.
+#
+# §B1 NETWORK DECISION (explicit): cells-front is non-internal (published-port
+# ingress only); cells-back is internal:true (east-west only: web->api,
+# backend/ingester->redis/clickhouse). cell-web-api reaches ML over compose DNS
+# (DTS_ML_URL default http://cell-ml:8082) on the SHARED cells-front net —
+# NO host-gateway, NO extra_hosts. WHY: host-gateway forces ML to be reachable
+# via the HOST port (circular dependency: api needs the host port; the host
+# port needs 0.0.0.0 or hairpin routing; a loopback rebind then breaks api->ML).
+# Compose-DNS breaks the circle, so ML binds 127.0.0.1 like every other cell.
+# WHAT BREAKS IF YOU RE-ADD IT: re-adding `extra_hosts: host-gateway` plus a
+# host.docker.internal ML URL reintroduces the host round-trip and forces ML
+# back onto 0.0.0.0 — cell-proof.sh §S FAILs on BOTH `host-gateway` and
+# `0.0.0.0`, and the api->ML path again depends on host firewall posture.
+# cell-ml sits on cells-front ONLY (nothing dials it over cells-back).
+#
+# INTERNAL-vs-PUBLISHED (explicit): cell-data-redis and cell-data-clickhouse are
+# DUAL-ATTACHED to cells-front AND cells-back. WHY: binds stay loopback-only
+# (no exposure change), but published-port ingress on some Docker/userland-proxy
+# versions is unreliable for internal:true networks; the front attachment
+# guarantees `ss 127.0.0.1:6379/8123` listeners while east-west keeps using the
+# cells-back aliases (redis / clickhouse) with zero image drift.
+#
+# §MIGRATE (explicit): backend /healthz returns 200 unconditionally (upstream
+# stack/backend/app.py do_GET), i.e. GREEN ON EMPTY VOLUMES. So health-only is
+# NOT proof for the data cell. cell-data-migrate (profiles:["migrate"],
+# restart:"no") applies stack/clickhouse/init.sql via clickhouse-client and
+# serves as the receipt gate: run it once WITHOUT --rm (keeps the exited-0
+# container as receipt), then cell-proof.sh §E requires either that receipt or
+# a live schema signal (>=3 tables in haklolarp DB) and FAILs otherwise.
+# NO hard depends_on from backend/ingester BY DESIGN: a completed_successfully
+# gate on a profile-gated service would break plain `up` (no profile) on older
+# compose (no `required:false` support); the proof gate enforces it instead.
+#
+# HOSTNAME COMPAT (explicit): upstream images bake upstream DNS names
+# (nginx.conf proxies to http://api:8091; backend uses REDIS_HOST=redis and
+# CH_URL=http://clickhouse:8123). Cells keep those values VERBATIM and provide
+# them via network aliases (api / redis / clickhouse) on cells-back — zero image drift.
+#
+# HARD GUARDRAILS (asserted by cell-proof.sh, must hold for EVERY service):
+#   - NO container_name (project-safe: run with any `-p <name>`).
+#   - NO mounts of / :/etc :/root :docker.sock anywhere (no volumes_from, no host paths outside branch data).
+#   - cap_drop ALL (+ NET_BIND_SERVICE ONLY for cell-web, needed for uid 101 to bind :80).
+#   - security_opt no-new-privileges:true; read_only:true (+tmpfs where the app needs scratch).
+#   - user non-root where the image supports it; EXCLUSIONS documented inline + in CELLS-README.md.
+#   - mem/cpu/pids limits, bounded json-file logging, restart unless-stopped
+#     (cell-data-migrate: restart "no" one-shot).
+#   - web+data+ml published ports bind STRICTLY 127.0.0.1 (no 0.0.0.0, no [::]).
+# Deliberately NO yaml anchors: every service spells out confinement fields so
+# grep-audits stay honest (anchors would hide fields from `grep`).
+
+services:
+  # ---------------------------------------------------------------- web cell
+  cell-web:
+    # Upstream origin/web compose.web.yaml `web`: apps/web/Dockerfile
+    # (node:24-bookworm-slim build -> nginx:1.28-alpine runtime).
+    # TODO-pin: nginx:1.28-alpine is UNPINNED upstream (no digest).
+    build:
+      context: ${CELL_WEB_SRC:-../../..}
+      dockerfile: apps/web/Dockerfile
+    image: cells/cell-web:local
+    user: "101" # nginx uid in nginx:alpine
+    cap_drop:
+      - ALL
+    cap_add:
+      - NET_BIND_SERVICE # MINIMAL ADD, web ONLY: uid 101 must bind port 80
+    security_opt:
+      - no-new-privileges:true
+    read_only: true
+    tmpfs:
+      - /var/cache/nginx
+      - /var/run
+      - /tmp
+      - /var/log/nginx # nginx.conf access_log lives here; read-only rootfs needs scratch
+    ports:
+      # ONLY published port of the web cell, loopback-bound like upstream
+      # ("127.0.0.1:${APP_PORT:-8081}:80").
+      - "127.0.0.1:${CELL_WEB_PORT:-8081}:80"
+    networks:
+      cells-front: {}
+      cells-back: {}
+    depends_on:
+      cell-web-api:
+        condition: service_healthy
+    # Mirrors the image HEALTHCHECK (apps/web/Dockerfile): wget http://127.0.0.1/api/v1/health.
+    healthcheck:
+      test: ["CMD", "wget", "-T", "3", "-q", "-O", "/dev/null", "http://127.0.0.1/api/v1/health"]
+      interval: 30s
+      timeout: 5s
+      start_period: 60s
+      retries: 3
+    mem_limit: 128m
+    cpus: 0.5
+    pids_limit: 64
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    restart: unless-stopped
+
+  cell-web-api:
+    # Upstream origin/web compose.web.yaml `api`: services/web-api/Dockerfile
+    # (FROM python@sha256:78387bc3881b8273120a12ebe6c1ab22b018ccc2c9adf565ae1ac9b536e184ea — PINNED, copied).
+    # Upstream publishes NO ports for api — kept: no `ports:` here.
+    build:
+      context: ${CELL_WEB_SRC:-../../..}
+      dockerfile: services/web-api/Dockerfile
+    image: cells/cell-web-api:local
+    user: "10001" # matches image USER workbench (uid 10001)
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    read_only: true
+    tmpfs:
+      - /tmp
+    environment:
+      PYTHONDONTWRITEBYTECODE: "1" # read-only /app: forbid __pycache__ writes
+      DTS_RECORDS: /data/records
+      DTS_QUEUE: /data/queue
+      DTS_RUNTIME: /runtime
+      DTS_ML_URL: ${CELL_ML_URL:-http://cell-ml:8082}
+      DTS_RESEARCH_PACK: ${DTS_RESEARCH_PACK:+/data/research} # upstream parity (conditional)
+    # §B1: NO extra_hosts here BY DESIGN. api->ML goes over compose DNS
+    # (cell-ml on the shared cells-front net). Re-adding
+    # `host.docker.internal:host-gateway` recreates the circular host-gateway
+    # dependency and forces ML back onto 0.0.0.0 — proof §S FAILs it.
+    volumes:
+      # Upstream parity (:ro data mounts). Named-volume defaults so a bare checkout
+      # never auto-creates root-owned dirs in the repo; override with binds to seed:
+      #   CELL_WEB_RECORDS_SRC=/opt/haklolarp-web/.runtime/records (etc.)
+      - ${CELL_WEB_RECORDS_SRC:-cell-web-records}:/data/records:ro
+      - ${CELL_WEB_QUEUE_SRC:-cell-web-queue}:/data/queue:ro
+      - ${CELL_WEB_RESEARCH_SRC:-cell-web-research}:/data/research:ro
+      - cell-web-runtime:/runtime
+    networks:
+      cells-front: {}
+      cells-back:
+        aliases:
+          - api # serves baked nginx.conf `http://api:8091` with zero image drift
+    # Upstream healthcheck, verbatim.
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8091/api/v1/health',timeout=3)"]
+      interval: 30s
+      timeout: 5s
+      start_period: 60s
+      retries: 3
+    mem_limit: 512m
+    cpus: 1.0
+    pids_limit: 128
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    restart: unless-stopped
+
+  # ----------------------------------------------------------------- ml cell
+  cell-ml:
+    # Upstream origin/ml compose.ml.yaml `api`: Dockerfile.ml
+    # (FROM python:3.12-slim — UNPINNED upstream).
+    # TODO-pin: pin python:3.12-slim to a digest once the ml branch does.
+    build:
+      context: ${CELL_ML_SRC:-../../..}
+      dockerfile: Dockerfile.ml
+    image: cells/cell-ml:local
+    # DEVIATION (hardening beyond upstream): upstream runs as ROOT (Dockerfile.ml
+    # has no USER). Cells run as nobody (65532); fiber is read-only inference.
+    # Verifier must confirm on Xeon; fallback: delete `user:` (documented in README).
+    user: "65532"
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    read_only: true
+    tmpfs:
+      - /tmp
+    environment:
+      PYTHONDONTWRITEBYTECODE: "1"
+      APP_PORT: "8082" # upstream parity: container port fixed, host port via CELL_ML_PORT
+    ports:
+      # §B1: rebound to loopback (DEVIATION from upstream "${APP_PORT:-8082}:8082").
+      # Safe ONLY because cell-web-api now dials ML over compose DNS
+      # (http://cell-ml:8082 on shared cells-front), not via the host port.
+      - "127.0.0.1:${CELL_ML_PORT:-8082}:8082"
+    networks:
+      # Shared front net with cell-web-api: this attachment is what makes
+      # compose-DNS resolution of `cell-ml` work. Do NOT move ML to cells-back
+      # only (api is not required to sit there) and do NOT re-add host-gateway.
+      cells-front: {}
+    # ADDITION: upstream compose.ml.yaml has NO healthcheck; app exposes GET /health (fiber/api.py).
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8082/health',timeout=3)"]
+      interval: 30s
+      timeout: 5s
+      start_period: 30s
+      retries: 3
+    mem_limit: 1g
+    cpus: 2.0
+    pids_limit: 128
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    restart: unless-stopped
+
+  # --------------------------------------------------------------- data cell
+  cell-data-redis:
+    # Upstream origin/data stack/compose.yaml `redis`.
+    # PINNED upstream (redis:7-alpine 2026-10-05) — digest copied verbatim.
+    image: redis@sha256:858f009f9709ce576febc734aa78b8f6d624b82571f9ddb6bda4377c833b3499
+    # user: EXCLUSION (documented, README §users): upstream runs root; the image
+    # entrypoint/volume init expects root. Mitigated by cap_drop + no-new-privs + read_only.
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    read_only: true
+    tmpfs:
+      - /tmp
+    # Upstream command, verbatim (4gb noeviction documented in stack/compose.yaml).
+    command: ["redis-server", "--appendonly", "yes", "--maxmemory", "4gb", "--maxmemory-policy", "noeviction"]
+    ports:
+      - "127.0.0.1:${CELL_REDIS_PORT:-6379}:6379"
+    volumes:
+      - cell-data-redis:/data
+    networks:
+      # DUAL-ATTACHED (front+back) BY DESIGN, see INTERNAL-vs-PUBLISHED at top:
+      # front guarantees loopback ingress, back keeps the `redis` alias.
+      cells-front: {}
+      cells-back:
+        aliases:
+          - redis # serves upstream REDIS_HOST=redis with zero drift
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    mem_limit: 4500m
+    cpus: 1.0
+    pids_limit: 64
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    restart: unless-stopped
+
+  cell-data-clickhouse:
+    # Upstream origin/data stack/compose.yaml `clickhouse`.
+    # PINNED upstream (clickhouse:24-alpine 2026-10-05) — digest copied verbatim.
+    image: clickhouse/clickhouse-server@sha256:82499fdb60e5bfaefb1e8f06f00a8857d61643fd6081c3f476ab6c7ff6d78766
+    # user: EXCLUSION (documented, README §users): entrypoint init expects root.
+    # Mitigated by cap_drop + no-new-privs + read_only.
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    read_only: true
+    tmpfs:
+      - /tmp
+      - /var/log/clickhouse # server logs must not hit the read-only rootfs
+    ports:
+      - "127.0.0.1:${CELL_CH_HTTP_PORT:-8123}:8123"
+    volumes:
+      - cell-data-ch:/var/lib/clickhouse
+      - ${CELL_DATA_SRC:-../../..}/stack/clickhouse/init.sql:/docker-entrypoint-initdb.d/01-init.sql:ro
+    networks:
+      # DUAL-ATTACHED (front+back) BY DESIGN, see INTERNAL-vs-PUBLISHED at top:
+      # front guarantees loopback ingress, back keeps the `clickhouse` alias.
+      cells-front: {}
+      cells-back:
+        aliases:
+          - clickhouse # serves upstream CH_URL=http://clickhouse:8123 with zero drift
+    healthcheck:
+      test: ["CMD", "clickhouse-client", "--query", "SELECT 1"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    mem_limit: 3g
+    cpus: 2.0
+    pids_limit: 256
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    restart: unless-stopped
+
+  cell-data-backend:
+    # Upstream origin/data stack/compose.yaml `backend`: build ./backend
+    # (FROM python@sha256:02108f5d322dd89f1c9e552442c25acb0543dfdbc455693a5599624f20d9155d — PINNED).
+    build:
+      context: ${CELL_DATA_SRC:-../../..}/stack/backend
+    image: cells/cell-data-backend:local
+    # DEVIATION (hardening beyond upstream): upstream runs as ROOT (no USER in
+    # stack/backend/Dockerfile). /app is world-readable and the app only reads
+    # the FS (writes go to sockets), so nobody (65532) + PYTHONDONTWRITEBYTECODE
+    # is viable. Verifier must confirm; fallback: delete `user:` (README).
+    user: "65532"
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    read_only: true
+    tmpfs:
+      - /tmp
+    init: true # upstream parity
+    pull_policy: build # upstream parity: rebuild on every up, never a stale local image
+    environment:
+      PYTHONDONTWRITEBYTECODE: "1" # CONTRACTS: read_only off upstream ONLY for __pycache__; env fixes it
+      REGISTRY_DIR: /registry
+      REDIS_HOST: redis # resolved via cells-back alias, upstream value verbatim
+      REDIS_PORT: 6379
+      STREAM_PROFILES: dts:profiles
+      STREAM_MAXLEN: 20000
+    volumes:
+      - ${CELL_DATA_SRC:-../../..}/stack/registry:/registry:ro
+      - ${CELL_DATA_SRC:-../../..}/stack/lib:/opt/minilib:ro
+    ports:
+      - "127.0.0.1:${CELL_DATA_API_PORT:-8000}:8000"
+    networks:
+      cells-front: {}
+      cells-back: {}
+    depends_on:
+      cell-data-redis:
+        condition: service_healthy
+      cell-data-clickhouse:
+        condition: service_healthy
+      # NOTE (§MIGRATE): NO hard depends_on on cell-data-migrate BY DESIGN —
+      # it is profile-gated (profiles:["migrate"]) and a completed_successfully
+      # gate would break plain `up` on older compose. The gate is enforced by
+      # cell-proof.sh §E instead (receipt container or live schema signal).
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import urllib.request;urllib.request.urlopen('http://127.0.0.1:8000/healthz')"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    mem_limit: 512m
+    cpus: 0.5
+    pids_limit: 128
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    restart: unless-stopped
+
+  cell-data-ingester:
+    # Upstream origin/data stack/compose.yaml `ingester`: build ./ingester
+    # (same PINNED python base as backend). No published ports upstream — kept.
+    build:
+      context: ${CELL_DATA_SRC:-../../..}/stack/ingester
+    image: cells/cell-data-ingester:local
+    # DEVIATION (hardening beyond upstream, same basis as backend): nobody.
+    # Heartbeat path /tmp/ingester.heartbeat stays writable via tmpfs.
+    user: "65532"
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    read_only: true
+    tmpfs:
+      - /tmp # heartbeat: /tmp/ingester.heartbeat
+    init: true # upstream parity
+    stop_grace_period: 30s # upstream parity
+    pull_policy: build # upstream parity
+    environment:
+      PYTHONDONTWRITEBYTECODE: "1"
+      REDIS_HOST: redis # via cells-back alias, upstream value verbatim
+      REDIS_PORT: 6379
+      STREAM_PROFILES: dts:profiles
+      GROUP: ingesters
+      CH_URL: http://clickhouse:8123 # via cells-back alias, upstream value verbatim
+      BATCH: 50
+      BLOCK_MS: 5000
+      CLAIM_IDLE_MS: 120000
+      CLAIM_INTERVAL_S: 60
+    volumes:
+      - ${CELL_DATA_SRC:-../../..}/stack/lib:/opt/minilib:ro
+    networks:
+      cells-back: {}
+    depends_on:
+      cell-data-redis:
+        condition: service_healthy
+      cell-data-clickhouse:
+        condition: service_healthy
+      # NOTE (§MIGRATE): same migrate-receipt gate as backend (proof §E), no hard gate here.
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import os,time,sys; sys.exit(0 if time.time()-os.path.getmtime('/tmp/ingester.heartbeat') < 90 else 1)"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+    mem_limit: 512m
+    cpus: 0.5
+    pids_limit: 128
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    restart: unless-stopped
+
+  # NOTE: upstream `streamer` (profiles:[manual] batch loader, not a
+  # long-running workload) is deliberately EXCLUDED (documented, README).
+  # cell-data-migrate IS included (profiles:["migrate"]) as the schema receipt
+  # gate — see §MIGRATE at top. Run once WITHOUT --rm (receipt must persist):
+  #   docker compose -f ops/sandboxes/cells/docker-compose.cells.yml \
+  #     --profile migrate up cell-data-migrate
+  cell-data-migrate:
+    # Same PINNED clickhouse image as cell-data-clickhouse; only the client
+    # binary is used (server never starts here).
+    image: clickhouse/clickhouse-server@sha256:82499fdb60e5bfaefb1e8f06f00a8857d61643fd6081c3f476ab6c7ff6d78766
+    profiles: ["migrate"]
+    # user: EXCLUSION (documented, README §users): same image/entrypoint basis
+    # as cell-data-clickhouse. Mitigated by cap_drop + no-new-privs + read_only.
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    read_only: true
+    tmpfs:
+      - /tmp
+    # Applies the schema idempotently (init.sql is CREATE IF NOT EXISTS) and
+    # doubles as first-boot seeding when volumes are fresh. NO ports.
+    command: ["clickhouse-client", "--host", "clickhouse", "--queries-file", "/migrate/01-init.sql"]
+    volumes:
+      - ${CELL_DATA_SRC:-../../..}/stack/clickhouse/init.sql:/migrate/01-init.sql:ro
+    networks:
+      cells-back: {}
+    depends_on:
+      cell-data-clickhouse:
+        condition: service_healthy
+    mem_limit: 128m
+    cpus: 0.5
+    pids_limit: 64
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    restart: "no"
+
+networks:
+  # Non-internal: published-port ingress. No host-gateway egress needed anymore
+  # (§B1: api->ML is compose-DNS on this same net).
+  cells-front: {}
+  # East-west only. redis/clickhouse are ALSO on cells-front (dual-attached)
+  # because published-port ingress on internal nets is proxy-version dependent.
+  cells-back:
+    internal: true
+
+volumes:
+  cell-web-records:
+  cell-web-queue:
+  cell-web-research:
+  cell-web-runtime:
+  cell-data-redis:
+  cell-data-ch:

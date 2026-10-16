@@ -1,0 +1,1124 @@
+{
+  "startedAt": "2026-10-09T10:29:08.369Z",
+  "started": 13705.600000023842,
+  "durationMs": 1800000,
+  "done": true,
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+  "viewport": [
+    1440,
+    900
+  ],
+  "devicePixelRatio": 1,
+  "buildAssets": [
+    "/assets/index-TkXqfQAx.js"
+  ],
+  "origin": "http://127.0.0.1:8081",
+  "frameCount": 276026,
+  "longTasks": 0,
+  "longTaskMaxMs": 0,
+  "samples": [
+    {
+      "elapsedS": 0,
+      "heapMiB": 11.528934478759766,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "0"
+    },
+    {
+      "elapsedS": 15,
+      "heapMiB": 14.256336212158203,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "86"
+    },
+    {
+      "elapsedS": 30,
+      "heapMiB": 16.8456449508667,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "176"
+    },
+    {
+      "elapsedS": 45,
+      "heapMiB": 14.843941688537598,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "266"
+    },
+    {
+      "elapsedS": 60,
+      "heapMiB": 15.557111740112305,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "356"
+    },
+    {
+      "elapsedS": 75,
+      "heapMiB": 14.074100494384766,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "446"
+    },
+    {
+      "elapsedS": 90,
+      "heapMiB": 15.156723976135254,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "536"
+    },
+    {
+      "elapsedS": 105,
+      "heapMiB": 16.409438133239746,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "626"
+    },
+    {
+      "elapsedS": 120,
+      "heapMiB": 14.740594863891602,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "692"
+    },
+    {
+      "elapsedS": 135,
+      "heapMiB": 16.187753677368164,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "736"
+    },
+    {
+      "elapsedS": 150,
+      "heapMiB": 13.61829662322998,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "781"
+    },
+    {
+      "elapsedS": 165,
+      "heapMiB": 15.160934448242188,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "824"
+    },
+    {
+      "elapsedS": 180,
+      "heapMiB": 16.288158416748047,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "868"
+    },
+    {
+      "elapsedS": 195,
+      "heapMiB": 13.50464916229248,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "913"
+    },
+    {
+      "elapsedS": 210,
+      "heapMiB": 15.307909965515137,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "957"
+    },
+    {
+      "elapsedS": 225,
+      "heapMiB": 16.536218643188477,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "1002"
+    },
+    {
+      "elapsedS": 240,
+      "heapMiB": 14.893949508666992,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "1046"
+    },
+    {
+      "elapsedS": 255,
+      "heapMiB": 16.024020195007324,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "1091"
+    },
+    {
+      "elapsedS": 270,
+      "heapMiB": 13.468976020812988,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "1135"
+    },
+    {
+      "elapsedS": 285,
+      "heapMiB": 15.419198036193848,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "1180"
+    },
+    {
+      "elapsedS": 300,
+      "heapMiB": 16.628159523010254,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "1232"
+    },
+    {
+      "elapsedS": 315,
+      "heapMiB": 13.556729316711426,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "1322"
+    },
+    {
+      "elapsedS": 330,
+      "heapMiB": 15.436002731323242,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "1412"
+    },
+    {
+      "elapsedS": 345,
+      "heapMiB": 17.047425270080566,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 179,
+      "visibility": "visible",
+      "row": "1502"
+    },
+    {
+      "elapsedS": 360,
+      "heapMiB": 14.155379295349121,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "1589"
+    },
+    {
+      "elapsedS": 375,
+      "heapMiB": 15.470648765563965,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "1679"
+    },
+    {
+      "elapsedS": 390,
+      "heapMiB": 16.69472885131836,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "1769"
+    },
+    {
+      "elapsedS": 405,
+      "heapMiB": 13.99203872680664,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "1859"
+    },
+    {
+      "elapsedS": 420,
+      "heapMiB": 15.75024127960205,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "1949"
+    },
+    {
+      "elapsedS": 435,
+      "heapMiB": 16.868322372436523,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "2039"
+    },
+    {
+      "elapsedS": 450,
+      "heapMiB": 15.206916809082031,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "2129"
+    },
+    {
+      "elapsedS": 465,
+      "heapMiB": 16.106918334960938,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "2219"
+    },
+    {
+      "elapsedS": 480,
+      "heapMiB": 16.75988483428955,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "2308"
+    },
+    {
+      "elapsedS": 495,
+      "heapMiB": 14.572057723999023,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "2398"
+    },
+    {
+      "elapsedS": 510,
+      "heapMiB": 15.868124961853027,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "2488"
+    },
+    {
+      "elapsedS": 525,
+      "heapMiB": 16.83466148376465,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "2578"
+    },
+    {
+      "elapsedS": 540,
+      "heapMiB": 14.098764419555664,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 179,
+      "visibility": "visible",
+      "row": "2668"
+    },
+    {
+      "elapsedS": 555,
+      "heapMiB": 15.489189147949219,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "33"
+    },
+    {
+      "elapsedS": 570,
+      "heapMiB": 16.904629707336426,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "122"
+    },
+    {
+      "elapsedS": 585,
+      "heapMiB": 14.338533401489258,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "212"
+    },
+    {
+      "elapsedS": 600,
+      "heapMiB": 15.352903366088867,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "302"
+    },
+    {
+      "elapsedS": 615,
+      "heapMiB": 16.384254455566406,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "392"
+    },
+    {
+      "elapsedS": 630,
+      "heapMiB": 17.41092586517334,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "482"
+    },
+    {
+      "elapsedS": 645,
+      "heapMiB": 14.6450777053833,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "572"
+    },
+    {
+      "elapsedS": 660,
+      "heapMiB": 16.29710865020752,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "662"
+    },
+    {
+      "elapsedS": 675,
+      "heapMiB": 16.95758628845215,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "709"
+    },
+    {
+      "elapsedS": 690,
+      "heapMiB": 14.36545467376709,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "754"
+    },
+    {
+      "elapsedS": 705,
+      "heapMiB": 15.49638557434082,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "798"
+    },
+    {
+      "elapsedS": 720,
+      "heapMiB": 16.409276962280273,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 179,
+      "visibility": "visible",
+      "row": "843"
+    },
+    {
+      "elapsedS": 735,
+      "heapMiB": 13.805776596069336,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "886"
+    },
+    {
+      "elapsedS": 750,
+      "heapMiB": 14.788202285766602,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "931"
+    },
+    {
+      "elapsedS": 765,
+      "heapMiB": 16.31387996673584,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "975"
+    },
+    {
+      "elapsedS": 780,
+      "heapMiB": 18.23655128479004,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "1020"
+    },
+    {
+      "elapsedS": 795,
+      "heapMiB": 15.024894714355469,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "1064"
+    },
+    {
+      "elapsedS": 810,
+      "heapMiB": 16.110671997070312,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "1109"
+    },
+    {
+      "elapsedS": 825,
+      "heapMiB": 13.966197967529297,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "1153"
+    },
+    {
+      "elapsedS": 840,
+      "heapMiB": 15.528812408447266,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "1198"
+    },
+    {
+      "elapsedS": 855,
+      "heapMiB": 16.60995101928711,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "1268"
+    },
+    {
+      "elapsedS": 870,
+      "heapMiB": 14.46002197265625,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "1358"
+    },
+    {
+      "elapsedS": 885,
+      "heapMiB": 15.614524841308594,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "1448"
+    },
+    {
+      "elapsedS": 900,
+      "heapMiB": 17.637457847595215,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 179,
+      "visibility": "visible",
+      "row": "1538"
+    },
+    {
+      "elapsedS": 915,
+      "heapMiB": 15.204520225524902,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "1625"
+    },
+    {
+      "elapsedS": 930,
+      "heapMiB": 16.319360733032227,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "1715"
+    },
+    {
+      "elapsedS": 945,
+      "heapMiB": 17.44246482849121,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "1805"
+    },
+    {
+      "elapsedS": 960,
+      "heapMiB": 15.071491241455078,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "1895"
+    },
+    {
+      "elapsedS": 975,
+      "heapMiB": 16.642993927001953,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "1985"
+    },
+    {
+      "elapsedS": 990,
+      "heapMiB": 13.93276309967041,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "2075"
+    },
+    {
+      "elapsedS": 1005,
+      "heapMiB": 16.52840232849121,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "2165"
+    },
+    {
+      "elapsedS": 1020,
+      "heapMiB": 16.41405487060547,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "2255"
+    },
+    {
+      "elapsedS": 1035,
+      "heapMiB": 17.028922080993652,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "2345"
+    },
+    {
+      "elapsedS": 1050,
+      "heapMiB": 14.628412246704102,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "2435"
+    },
+    {
+      "elapsedS": 1065,
+      "heapMiB": 16.433700561523438,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "2525"
+    },
+    {
+      "elapsedS": 1080,
+      "heapMiB": 17.087718963623047,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "2612"
+    },
+    {
+      "elapsedS": 1095,
+      "heapMiB": 15.544270515441895,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "2701"
+    },
+    {
+      "elapsedS": 1110,
+      "heapMiB": 16.24500560760498,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "69"
+    },
+    {
+      "elapsedS": 1125,
+      "heapMiB": 17.938715934753418,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "159"
+    },
+    {
+      "elapsedS": 1140,
+      "heapMiB": 14.201298713684082,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "248"
+    },
+    {
+      "elapsedS": 1155,
+      "heapMiB": 15.621414184570312,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "338"
+    },
+    {
+      "elapsedS": 1170,
+      "heapMiB": 17.04192066192627,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "428"
+    },
+    {
+      "elapsedS": 1185,
+      "heapMiB": 15.28637981414795,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "518"
+    },
+    {
+      "elapsedS": 1200,
+      "heapMiB": 16.034687042236328,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "608"
+    },
+    {
+      "elapsedS": 1215,
+      "heapMiB": 17.084732055664062,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "683"
+    },
+    {
+      "elapsedS": 1230,
+      "heapMiB": 15.287059783935547,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "727"
+    },
+    {
+      "elapsedS": 1245,
+      "heapMiB": 16.141462326049805,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "772"
+    },
+    {
+      "elapsedS": 1260,
+      "heapMiB": 17.313178062438965,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "816"
+    },
+    {
+      "elapsedS": 1275,
+      "heapMiB": 14.077495574951172,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "859"
+    },
+    {
+      "elapsedS": 1290,
+      "heapMiB": 15.413832664489746,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "904"
+    },
+    {
+      "elapsedS": 1305,
+      "heapMiB": 16.596060752868652,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "948"
+    },
+    {
+      "elapsedS": 1320,
+      "heapMiB": 14.080423355102539,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "993"
+    },
+    {
+      "elapsedS": 1335,
+      "heapMiB": 15.492650985717773,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "1037"
+    },
+    {
+      "elapsedS": 1350,
+      "heapMiB": 17.35777473449707,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "1082"
+    },
+    {
+      "elapsedS": 1365,
+      "heapMiB": 14.079790115356445,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "1127"
+    },
+    {
+      "elapsedS": 1380,
+      "heapMiB": 15.808667182922363,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "1171"
+    },
+    {
+      "elapsedS": 1395,
+      "heapMiB": 16.271503448486328,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "1216"
+    },
+    {
+      "elapsedS": 1410,
+      "heapMiB": 13.688587188720703,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "1304"
+    },
+    {
+      "elapsedS": 1425,
+      "heapMiB": 15.249373435974121,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "1394"
+    },
+    {
+      "elapsedS": 1440,
+      "heapMiB": 16.50809955596924,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "1484"
+    },
+    {
+      "elapsedS": 1455,
+      "heapMiB": 13.816793441772461,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 179,
+      "visibility": "visible",
+      "row": "1574"
+    },
+    {
+      "elapsedS": 1470,
+      "heapMiB": 15.337271690368652,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "1661"
+    },
+    {
+      "elapsedS": 1485,
+      "heapMiB": 16.227214813232422,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "1751"
+    },
+    {
+      "elapsedS": 1500,
+      "heapMiB": 13.602531433105469,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "1841"
+    },
+    {
+      "elapsedS": 1515,
+      "heapMiB": 15.096473693847656,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "1931"
+    },
+    {
+      "elapsedS": 1530,
+      "heapMiB": 17.030755043029785,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "2021"
+    },
+    {
+      "elapsedS": 1545,
+      "heapMiB": 14.300881385803223,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "2111"
+    },
+    {
+      "elapsedS": 1560,
+      "heapMiB": 15.23022747039795,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "2201"
+    },
+    {
+      "elapsedS": 1575,
+      "heapMiB": 16.498666763305664,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "2291"
+    },
+    {
+      "elapsedS": 1590,
+      "heapMiB": 14.296211242675781,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "2381"
+    },
+    {
+      "elapsedS": 1605,
+      "heapMiB": 15.602362632751465,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "2470"
+    },
+    {
+      "elapsedS": 1620,
+      "heapMiB": 16.939050674438477,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "2560"
+    },
+    {
+      "elapsedS": 1635,
+      "heapMiB": 14.398846626281738,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 179,
+      "visibility": "visible",
+      "row": "2650"
+    },
+    {
+      "elapsedS": 1650,
+      "heapMiB": 15.233542442321777,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "14"
+    },
+    {
+      "elapsedS": 1665,
+      "heapMiB": 16.341259956359863,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "104"
+    },
+    {
+      "elapsedS": 1680,
+      "heapMiB": 13.630126953125,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "194"
+    },
+    {
+      "elapsedS": 1695,
+      "heapMiB": 15.510873794555664,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "284"
+    },
+    {
+      "elapsedS": 1710,
+      "heapMiB": 16.54789924621582,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "374"
+    },
+    {
+      "elapsedS": 1725,
+      "heapMiB": 13.824740409851074,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "464"
+    },
+    {
+      "elapsedS": 1740,
+      "heapMiB": 15.470595359802246,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "554"
+    },
+    {
+      "elapsedS": 1755,
+      "heapMiB": 16.183223724365234,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "644"
+    },
+    {
+      "elapsedS": 1770,
+      "heapMiB": 13.660853385925293,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "700"
+    },
+    {
+      "elapsedS": 1785,
+      "heapMiB": 15.470170974731445,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "745"
+    },
+    {
+      "elapsedS": 1800,
+      "heapMiB": 16.973812103271484,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "789"
+    },
+    {
+      "elapsedS": 1800,
+      "heapMiB": 16.973812103271484,
+      "cacheMiB": 0.21582412719726562,
+      "canvases": 3,
+      "domNodes": 178,
+      "visibility": "visible",
+      "row": "789"
+    }
+  ],
+  "replayErrors": 0,
+  "endedAt": "2026-10-09T10:59:08.371Z",
+  "frameP95Ms": 12.300000000046566,
+  "measurement_note": "The first helper scheduled one final rAF after deleting its ring buffer, causing a diagnostic-only error after 1800 seconds; corrected helper used for final run.",
+  "build_note": "Container baseline before native zoom and compact inspector refinements; final version measured separately."
+}

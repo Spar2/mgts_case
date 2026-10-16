@@ -1,0 +1,4 @@
+# KEEP (Ф11, www остаётся; влит в Caddyfile)
+www.xn--80aubodcdd.xn--p1ai {
+	redir https://xn--80aubodcdd.xn--p1ai{uri} permanent
+}

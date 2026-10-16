@@ -1,0 +1,610 @@
+{
+  "version": "2.20",
+  "children": [
+    {
+      "type": "frame",
+      "id": "x8Gq2w",
+      "x": 0,
+      "y": 0,
+      "name": "Carbon R3 · Авторизация: исключения",
+      "metadata": {
+        "type": "dts-product-r3",
+        "slug": "auth-states",
+        "role": "Все роли",
+        "prototype": true
+      },
+      "clip": true,
+      "width": 1440,
+      "height": 1000,
+      "fill": "$dts.background",
+      "layout": "none",
+      "children": [
+        {
+          "type": "frame",
+          "id": "wF3nh",
+          "x": 0,
+          "y": 0,
+          "name": "Оболочка",
+          "width": 1440,
+          "height": 48,
+          "fill": "$dts.shell",
+          "layout": "none"
+        },
+        {
+          "type": "text",
+          "id": "zkzHy",
+          "x": 24,
+          "y": 14,
+          "name": "МГТС / DTS Workbench",
+          "fill": "#ffffff",
+          "textGrowth": "fixed-width",
+          "width": 320,
+          "content": "МГТС / DTS Workbench",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "600"
+        },
+        {
+          "type": "text",
+          "id": "uB52F",
+          "x": 560,
+          "y": 14,
+          "name": "Исследование DTS  /  сменить проект",
+          "fill": "#ffffff",
+          "textGrowth": "fixed-width",
+          "width": 470,
+          "content": "Исследование DTS  /  сменить проект",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "rHewe",
+          "x": 1184,
+          "y": 14,
+          "name": "Все роли",
+          "fill": "#ffffff",
+          "textGrowth": "fixed-width",
+          "width": 230,
+          "content": "Все роли",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "jKNfz",
+          "x": 0,
+          "y": 48,
+          "name": "Навигация проекта",
+          "width": 208,
+          "height": 928,
+          "fill": "$dts.layer",
+          "layout": "none"
+        },
+        {
+          "type": "text",
+          "id": "WiSUI",
+          "x": 24,
+          "y": 600,
+          "name": "Контекст проекта\nРоль: Все роли\n\nПрава проверяются сервером.\nМеню — по доступу.",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 160,
+          "content": "Контекст проекта\nРоль: Все роли\n\nПрава проверяются сервером.\nМеню — по доступу.",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 12,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "SlhRa",
+          "x": 24,
+          "y": 872,
+          "name": "Аккаунт и сеансы",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 160,
+          "content": "Аккаунт и сеансы",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "H5aayA",
+          "x": 240,
+          "y": 72,
+          "name": "Проект / Проект",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 1000,
+          "content": "Проект / Проект",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 12,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "G6pc9",
+          "x": 240,
+          "y": 104,
+          "name": "Авторизация: исключения",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 1168,
+          "content": "Авторизация: исключения",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 28,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "Tnyla",
+          "x": 240,
+          "y": 152,
+          "name": "Проектируемый командный сценарий · пример данных интерфейса",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 1168,
+          "content": "Проектируемый командный сценарий · пример данных интерфейса",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "kQ6P5",
+          "x": 0,
+          "y": 976,
+          "name": "Статус макета",
+          "width": 1440,
+          "height": 24,
+          "fill": "$dts.layer",
+          "layout": "none"
+        },
+        {
+          "type": "text",
+          "id": "mCKPi",
+          "x": 240,
+          "y": 982,
+          "name": "МАКЕТ R3 · новые сервисные функции требуют реализации · примеры ответов не являются разметкой",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 1168,
+          "content": "МАКЕТ R3 · новые сервисные функции требуют реализации · примеры ответов не являются разметкой",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 12,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "RkFEw",
+          "x": 240,
+          "y": 216,
+          "name": "Приглашение истекло",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 568,
+          "content": "Приглашение истекло",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 16,
+          "fontWeight": "600"
+        },
+        {
+          "type": "rectangle",
+          "id": "ridco",
+          "x": 240,
+          "y": 248,
+          "name": "Разделитель / Приглашение истекло",
+          "fill": "$dts.border-subtle",
+          "width": 568,
+          "height": 1
+        },
+        {
+          "type": "text",
+          "id": "c7mfQu",
+          "x": 240,
+          "y": 280,
+          "name": "Данные не открыты. Запросите новое приглашение.",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 536,
+          "content": "Данные не открыты. Запросите новое приглашение.",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 20,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "zNRHT",
+          "x": 240,
+          "y": 432,
+          "name": "Действие / Запросить приглашение",
+          "width": 536,
+          "height": 48,
+          "fill": "$dts.interactive",
+          "layout": "none",
+          "children": [
+            {
+              "type": "text",
+              "id": "A2qax",
+              "x": 16,
+              "y": 14,
+              "name": "Запросить приглашение",
+              "fill": "#ffffff",
+              "textGrowth": "fixed-width",
+              "width": 504,
+              "content": "Запросить приглашение",
+              "lineHeight": 1.3,
+              "fontFamily": "$dts.font",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "eUJxy",
+          "x": 840,
+          "y": 216,
+          "name": "Вход временно ограничен",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 568,
+          "content": "Вход временно ограничен",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 16,
+          "fontWeight": "600"
+        },
+        {
+          "type": "rectangle",
+          "id": "C4QaUA",
+          "x": 840,
+          "y": 248,
+          "name": "Разделитель / Вход временно ограничен",
+          "fill": "$dts.border-subtle",
+          "width": 568,
+          "height": 1
+        },
+        {
+          "type": "text",
+          "id": "v88GEt",
+          "x": 840,
+          "y": 280,
+          "name": "Сохраните адрес проекта. Повторите после указанного времени.",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 536,
+          "content": "Сохраните адрес проекта. Повторите после указанного времени.",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 20,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "KUBPS",
+          "x": 840,
+          "y": 432,
+          "name": "Действие / Вернуться ко входу",
+          "width": 536,
+          "height": 48,
+          "fill": "$dts.layer",
+          "layout": "none",
+          "children": [
+            {
+              "type": "text",
+              "id": "ekrxw",
+              "x": 16,
+              "y": 14,
+              "name": "Вернуться ко входу",
+              "fill": "$dts.text-primary",
+              "textGrowth": "fixed-width",
+              "width": 504,
+              "content": "Вернуться ко входу",
+              "lineHeight": 1.3,
+              "fontFamily": "$dts.font",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "H8LjSC",
+          "x": 240,
+          "y": 560,
+          "name": "Нужен второй фактор",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 568,
+          "content": "Нужен второй фактор",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 16,
+          "fontWeight": "600"
+        },
+        {
+          "type": "rectangle",
+          "id": "IxJXO",
+          "x": 240,
+          "y": 592,
+          "name": "Разделитель / Нужен второй фактор",
+          "fill": "$dts.border-subtle",
+          "width": 568,
+          "height": 1
+        },
+        {
+          "type": "text",
+          "id": "X4Mv6a",
+          "x": 240,
+          "y": 624,
+          "name": "Вставьте код целиком или используйте настроенный ключ доступа.",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 536,
+          "content": "Вставьте код целиком или используйте настроенный ключ доступа.",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 20,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "o3Rmd7",
+          "x": 240,
+          "y": 776,
+          "name": "Действие / Другой способ входа",
+          "width": 536,
+          "height": 48,
+          "fill": "$dts.layer",
+          "layout": "none",
+          "children": [
+            {
+              "type": "text",
+              "id": "STjjT",
+              "x": 16,
+              "y": 14,
+              "name": "Другой способ входа",
+              "fill": "$dts.text-primary",
+              "textGrowth": "fixed-width",
+              "width": 504,
+              "content": "Другой способ входа",
+              "lineHeight": 1.3,
+              "fontFamily": "$dts.font",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "Ul7uC",
+          "x": 840,
+          "y": 560,
+          "name": "Сеанс завершён",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 568,
+          "content": "Сеанс завершён",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 16,
+          "fontWeight": "600"
+        },
+        {
+          "type": "rectangle",
+          "id": "XCpTc",
+          "x": 840,
+          "y": 592,
+          "name": "Разделитель / Сеанс завершён",
+          "fill": "$dts.border-subtle",
+          "width": 568,
+          "height": 1
+        },
+        {
+          "type": "text",
+          "id": "YPSjM",
+          "x": 840,
+          "y": 624,
+          "name": "Черновик сохранён по политике проекта. После входа проверим доступ заново.",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 536,
+          "content": "Черновик сохранён по политике проекта. После входа проверим доступ заново.",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 20,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "P2jaK",
+          "x": 840,
+          "y": 776,
+          "name": "Действие / Войти и продолжить",
+          "width": 536,
+          "height": 48,
+          "fill": "$dts.layer",
+          "layout": "none",
+          "children": [
+            {
+              "type": "text",
+              "id": "TTMaN",
+              "x": 16,
+              "y": 14,
+              "name": "Войти и продолжить",
+              "fill": "$dts.text-primary",
+              "textGrowth": "fixed-width",
+              "width": 504,
+              "content": "Войти и продолжить",
+              "lineHeight": 1.3,
+              "fontFamily": "$dts.font",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "aL9DM",
+          "x": 24,
+          "y": 104,
+          "name": "Обзор",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 160,
+          "content": "Обзор",
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "Nxshw",
+          "x": 24,
+          "y": 152,
+          "name": "Данные",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 160,
+          "content": "Данные",
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "R73VN",
+          "x": 24,
+          "y": 200,
+          "name": "Исследование",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 160,
+          "content": "Исследование",
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "TtCNR",
+          "x": 24,
+          "y": 248,
+          "name": "Проверка",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 160,
+          "content": "Проверка",
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "VFdnF",
+          "x": 24,
+          "y": 296,
+          "name": "Запуски",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 160,
+          "content": "Запуски",
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "hS7K4",
+          "x": 24,
+          "y": 344,
+          "name": "Экспорт",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 160,
+          "content": "Экспорт",
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "U8zSV",
+          "x": 24,
+          "y": 392,
+          "name": "Справка",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 160,
+          "content": "Справка",
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        }
+      ]
+    }
+  ],
+  "variables": {
+    "dts.background": {
+      "type": "color",
+      "value": "#ffffff"
+    },
+    "dts.layer": {
+      "type": "color",
+      "value": "#f4f4f4"
+    },
+    "dts.text-primary": {
+      "type": "color",
+      "value": "#161616"
+    },
+    "dts.text-secondary": {
+      "type": "color",
+      "value": "#525252"
+    },
+    "dts.border-subtle": {
+      "type": "color",
+      "value": "#e0e0e0"
+    },
+    "dts.interactive": {
+      "type": "color",
+      "value": "#0f62fe"
+    },
+    "dts.selection": {
+      "type": "color",
+      "value": "#edf5ff"
+    },
+    "dts.shell": {
+      "type": "color",
+      "value": "#161616"
+    },
+    "dts.font": {
+      "type": "string",
+      "value": "IBM Plex Sans"
+    },
+    "dts.font-mono": {
+      "type": "string",
+      "value": "IBM Plex Mono"
+    },
+    "dts.spacing": {
+      "type": "number",
+      "value": 8
+    }
+  },
+  "fileToken": "0a9ba33a-6ce8-4113-ad2f-1f37bedbf467"
+}

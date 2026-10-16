@@ -1,0 +1,82 @@
+# ops/sandboxes/runner/docker-compose.sandboxes.yml
+# FLEET canonical multi-branch runner (SANDBOX-ONLY, ADDITIVE).
+# Purpose: short-lived pilot probes per branch (web|ml|data) on Xeon WITHOUT
+#   touching running stands (staging-web-1 :8080, ml-api :8082, stack-*).
+#   Each service is a python http.server placeholder for containment proof
+#   (loopback-only, non-root-mapped user, single RW workspace mount).
+# Profiles (context7, current): `profiles: [web]` selects the service ONLY
+#   when invoked with `--profile web` (or COMPOSE_PROFILES=web). Bare `up`
+#   starts NOTHING (all services are profile-gated by design).
+# Interpolation (context7, current): `${VAR:-default}` — shell env (exported
+#   by run-sandbox.sh) overrides the file default. run-sandbox.sh resolves
+#   SANDBOX_UID_GID/SANDBOX_SRC/SANDBOX_HOST_PORT per branch via `stat` on
+#   Xeon; the defaults below are fallback only (authoring host has no /opt).
+# Ports (context7, current): short syntax MUST be quoted; omitted host IP =
+#   0.0.0.0, so EVERY mapping pins 127.0.0.1 explicitly (never 0.0.0.0).
+# Host-port guardrails (ABSOLUTE): pilot ports are 18081/18082/18000 (+ data
+#   extras 16379/18123). NEVER bind 8080/8081/8082/5434/6379/8123/8000 on the host —
+#   those are live stands. run-sandbox.sh refuses them fail-closed.
+# Mount guardrails: exactly ONE host path per service (branch checkout -> 
+#   /workspace:rw). :rw is mandated for the single write+delete check
+#   (.sandbox-check-<branch>); :ro would block that mandated test.
+#   NO other mounts (no /:/etc:/root/docker.sock, no volumes_from).
+# Image: python:3.12-slim pinned @sha256:a6e34c59...c11b1 (tag_last_pushed 2026-10-09, list-digest portable; piloted live sandbox-web 127.0.0.1:18081).
+services:
+  sandbox-web:
+    profiles: [web]
+    image: python:3.12-slim@sha256:a6e34c598f2467ed0e9a8d349809fcd8b5c603269512df273a0bb1784edc11b1 # pinned 2026-10-09 (was TODO digest)
+    command: ["python3", "-m", "http.server", "8081", "--directory", "/workspace"]
+    user: "${SANDBOX_UID_GID:-1001:1001}"
+    ports:
+      - "127.0.0.1:${SANDBOX_HOST_PORT:-18081}:8081"
+    volumes:
+      - "${SANDBOX_SRC:-/opt/haklolarp-web}:/workspace:rw"
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    mem_limit: 4g
+    cpus: 2
+    pids_limit: 256
+    restart: "no"
+    container_name: sandbox-web-pilot
+
+  sandbox-ml:
+    profiles: [ml]
+    image: python:3.12-slim@sha256:a6e34c598f2467ed0e9a8d349809fcd8b5c603269512df273a0bb1784edc11b1 # pinned 2026-10-09 (was TODO digest)
+    command: ["python3", "-m", "http.server", "8082", "--directory", "/workspace"]
+    user: "${SANDBOX_UID_GID:-1002:1002}"
+    ports:
+      - "127.0.0.1:${SANDBOX_HOST_PORT:-18082}:8082"
+    volumes:
+      - "${SANDBOX_SRC:-/opt/haklolarp-ml}:/workspace:rw"
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    mem_limit: 8g
+    cpus: 4
+    pids_limit: 256
+    restart: "no"
+    container_name: sandbox-ml-pilot
+
+  sandbox-data:
+    profiles: [data]
+    image: python:3.12-slim@sha256:a6e34c598f2467ed0e9a8d349809fcd8b5c603269512df273a0bb1784edc11b1 # pinned 2026-10-09 (was TODO digest)
+    command: ["python3", "-m", "http.server", "8000", "--directory", "/workspace"]
+    user: "${SANDBOX_UID_GID:-1003:1003}"
+    ports:
+      - "127.0.0.1:${SANDBOX_DATA_REDIS_PORT:-16379}:6379"
+      - "127.0.0.1:${SANDBOX_DATA_CH_PORT:-18123}:8123"
+      - "127.0.0.1:${SANDBOX_HOST_PORT:-18000}:8000"
+    volumes:
+      - "${SANDBOX_SRC:-/opt/haklolarp-stack}:/workspace:rw"
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    mem_limit: 6g
+    cpus: 2
+    pids_limit: 256
+    restart: "no"
+    container_name: sandbox-data-pilot

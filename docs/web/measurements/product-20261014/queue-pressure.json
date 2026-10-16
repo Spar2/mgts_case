@@ -1,0 +1,9 @@
+{
+  "concurrent_submissions": 12,
+  "accepted": 10,
+  "queue_429": 2,
+  "active_user_429": true,
+  "retry_after": true,
+  "all_accepted_jobs_explicitly_cancelled": true,
+  "during_ten_account_soak": true
+}

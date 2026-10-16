@@ -1,0 +1,10 @@
+{
+  "phase": "verified-after-restart",
+  "persisted": true,
+  "tokenRefreshed": true,
+  "oldTokenRejectedOnce": true,
+  "revision": 8,
+  "exportVersion": "general-review-packet-v1",
+  "date": "2026-10-09",
+  "conditions": "Actual uvicorn process stopped and restarted on 8091 with same isolated QA SQLite journal; browser page not reloaded; working Docker journal on 8081 untouched"
+}

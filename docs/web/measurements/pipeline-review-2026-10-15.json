@@ -1,0 +1,163 @@
+{
+  "scope": "local-only; no remote CI or deployment",
+  "browser": "in-app Chromium",
+  "otherEngines": "Firefox and WebKit not exercised",
+  "geometry": [
+    {
+      "block": "Исходник",
+      "documentHeight": 2971,
+      "overflow": 0,
+      "panelHeight": 660,
+      "width": 320
+    },
+    {
+      "block": "Очистка",
+      "documentHeight": 2971,
+      "overflow": 0,
+      "panelHeight": 660,
+      "width": 320
+    },
+    {
+      "block": "Фон и score",
+      "documentHeight": 2971,
+      "overflow": 0,
+      "panelHeight": 660,
+      "width": 320
+    },
+    {
+      "block": "Зоны",
+      "documentHeight": 2971,
+      "overflow": 0,
+      "panelHeight": 660,
+      "width": 320
+    },
+    {
+      "block": "Исходник",
+      "documentHeight": 2744,
+      "overflow": 0,
+      "panelHeight": 660,
+      "width": 390
+    },
+    {
+      "block": "Очистка",
+      "documentHeight": 2744,
+      "overflow": 0,
+      "panelHeight": 660,
+      "width": 390
+    },
+    {
+      "block": "Фон и score",
+      "documentHeight": 2744,
+      "overflow": 0,
+      "panelHeight": 660,
+      "width": 390
+    },
+    {
+      "block": "Зоны",
+      "documentHeight": 2744,
+      "overflow": 0,
+      "panelHeight": 660,
+      "width": 390
+    },
+    {
+      "block": "Исходник",
+      "documentHeight": 2702,
+      "overflow": 0,
+      "panelHeight": 660,
+      "width": 430
+    },
+    {
+      "block": "Очистка",
+      "documentHeight": 2702,
+      "overflow": 0,
+      "panelHeight": 660,
+      "width": 430
+    },
+    {
+      "block": "Фон и score",
+      "documentHeight": 2702,
+      "overflow": 0,
+      "panelHeight": 660,
+      "width": 430
+    },
+    {
+      "block": "Зоны",
+      "documentHeight": 2702,
+      "overflow": 0,
+      "panelHeight": 660,
+      "width": 430
+    },
+    {
+      "block": "Исходник",
+      "documentHeight": 1748,
+      "overflow": 0,
+      "panelHeight": 660,
+      "width": 1440
+    },
+    {
+      "block": "Очистка",
+      "documentHeight": 1748,
+      "overflow": 0,
+      "panelHeight": 660,
+      "width": 1440
+    },
+    {
+      "block": "Фон и score",
+      "documentHeight": 1748,
+      "overflow": 0,
+      "panelHeight": 660,
+      "width": 1440
+    },
+    {
+      "block": "Зоны",
+      "documentHeight": 1748,
+      "overflow": 0,
+      "panelHeight": 660,
+      "width": 1440
+    }
+  ],
+  "numericalProof": {
+    "run_id": "6859de0c41493d582c34dc60a73798ad9f55fce2c6da42715725fe3c01d0f542",
+    "row": 775,
+    "column": 2031,
+    "pairs": 473,
+    "maxDeltaError": 0,
+    "meanAbsoluteChange": 0.35151786481603253,
+    "maskedPairsPreserved": true
+  },
+  "realJobIds": [
+    {
+      "record": "6",
+      "job": "b9e61589e41d41fc8b09d489d4508fc6"
+    },
+    {
+      "record": "5",
+      "job": "384864b8724f42fdbd99b8174f74a57d"
+    },
+    {
+      "record": "4",
+      "job": "7bc26ef51478436eac064affd0f45d3b"
+    },
+    {
+      "record": "2",
+      "job": "6d47a7650eac42c3a791d757eaff1d57"
+    },
+    {
+      "record": "1",
+      "job": "e5238d91e6a14650829ed21b95fc65d6"
+    },
+    {
+      "record": "3",
+      "job": "a1532fc782c3428888f116aa769126ab"
+    }
+  ],
+  "networkChecks": {
+    "lateSubmitPreservesSelectedSource": true,
+    "committedResponseLossRetrySameJob": true,
+    "committedResponseLossRetrySameBody": true,
+    "committedResponseLossRetrySameKey": true,
+    "previousSliceRetainedDuringLoadAndFailure": true,
+    "manualSliceRetry": true
+  },
+  "keyboardAndReducedMotion": true
+}

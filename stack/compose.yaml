@@ -1,0 +1,175 @@
+---
+# LAN-стенд haklolarp (НЕ staging, НЕ прод). Порты только на 127.0.0.1.
+# Данные: ./data/*.csv (на дев-ВМ: ~/haklolarp-stack/data, см. stack/README.md).
+services:
+  redis:
+    # redis:7-alpine на 2026-10-05
+    image: redis@sha256:858f009f9709ce576febc734aa78b8f6d624b82571f9ddb6bda4377c833b3499
+    restart: unless-stopped
+    # Стрим держит весь невычитанный бэклог в RAM: профили жирные
+    # (~1ГБ на полный датасет). 2gb хватало впритык и только со сбросом
+    # стрима перед каноном; 4gb — запас под живой рост до MAXLEN-трима.
+    command: ["redis-server", "--appendonly", "yes", "--maxmemory", "4gb", "--maxmemory-policy", "noeviction"]
+    ports:
+      - "127.0.0.1:6379:6379"
+    volumes:
+      - redis-data:/data
+    mem_limit: 4500m
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  clickhouse:
+    # clickhouse:24-alpine на 2026-10-05
+    image: clickhouse/clickhouse-server@sha256:82499fdb60e5bfaefb1e8f06f00a8857d61643fd6081c3f476ab6c7ff6d78766
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8123:8123"
+    volumes:
+      - ch-data:/var/lib/clickhouse
+      - ./clickhouse/init.sql:/docker-entrypoint-initdb.d/01-init.sql:ro
+    mem_limit: 3g
+    healthcheck:
+      test: ["CMD", "clickhouse-client", "--query", "SELECT 1"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  migrate:
+    # Одноразовый раннер миграций: применяет ./clickhouse/migrations/*.sql
+    # по одному разу (учёт в haklolarp.schema_migrations). backend/ingester
+    # зависят от него через service_completed_successfully — иначе канонный
+    # `up -d --wait` не завершится на одноразовом контейнере. Скрипт инлайн:
+    # на дев-ВМ стек собирается scp-ом, и отсутствующий файл-скрипт заблокировал
+    # бы backend/ingester через depends_on.
+    image: clickhouse/clickhouse-server@sha256:82499fdb60e5bfaefb1e8f06f00a8857d61643fd6081c3f476ab6c7ff6d78766
+    restart: "no"
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    depends_on:
+      clickhouse:
+        condition: service_healthy
+    volumes:
+      - ./clickhouse/migrations:/migrations:ro
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        set -eu
+        run() { clickhouse-client --host clickhouse "$$@"; }
+        run --query "CREATE DATABASE IF NOT EXISTS haklolarp"
+        run --query "CREATE TABLE IF NOT EXISTS haklolarp.schema_migrations \
+        (name String, applied_at DateTime DEFAULT now()) ENGINE = MergeTree ORDER BY name"
+        for f in /migrations/*.sql; do
+          [ -e "$$f" ] || continue
+          name=$$(basename "$$f")
+          esc_name=$$(printf '%s' "$$name" | sed "s/'/''/g")
+          count=$$(run --query "SELECT count() FROM haklolarp.schema_migrations WHERE name = '$$esc_name'")
+          if [ "$$count" = "0" ]; then
+            echo "migrate: applying $$name"
+            run --multiquery < "$$f"
+            run --query "INSERT INTO haklolarp.schema_migrations (name) VALUES ('$$esc_name')"
+          else
+            echo "migrate: skip $$name (already applied)"
+          fi
+        done
+        echo "migrate: done"
+    mem_limit: 256m
+
+  backend:
+    build: ./backend
+    # pull_policy: build — сервис только собирается и пересобирается на каждом
+    # `up` (иначе CI в plain-режиме тихо крутил бы старый локальный образ).
+    pull_policy: build
+    restart: unless-stopped
+    init: true
+    # read_only осознанно НЕ включаем: python пишет __pycache__ в /app.
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      REGISTRY_DIR: /registry
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      STREAM_PROFILES: dts:profiles
+      STREAM_MAXLEN: 20000
+    volumes:
+      - ./registry:/registry:ro
+      - ./lib:/opt/minilib:ro
+    depends_on:
+      redis:
+        condition: service_healthy
+      clickhouse:
+        condition: service_healthy
+      migrate:
+        condition: service_completed_successfully
+    mem_limit: 512m
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import urllib.request;urllib.request.urlopen('http://127.0.0.1:8000/healthz')"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  ingester:
+    build: ./ingester
+    pull_policy: build
+    restart: unless-stopped
+    init: true
+    stop_grace_period: 30s
+    # read_only осознанно НЕ включаем: heartbeat пишет в /tmp.
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    environment:
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      STREAM_PROFILES: dts:profiles
+      GROUP: ingesters
+      CH_URL: http://clickhouse:8123
+      BATCH: 50
+      BLOCK_MS: 5000
+      CLAIM_IDLE_MS: 120000
+      CLAIM_INTERVAL_S: 60
+    volumes:
+      - ./lib:/opt/minilib:ro
+    depends_on:
+      redis:
+        condition: service_healthy
+      clickhouse:
+        condition: service_healthy
+      migrate:
+        condition: service_completed_successfully
+    mem_limit: 512m
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import os,time,sys; sys.exit(0 if time.time()-os.path.getmtime('/tmp/ingester.heartbeat') < 90 else 1)"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+
+  streamer:
+    build: ./streamer
+    pull_policy: build
+    profiles: ["manual"]
+    init: true
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    environment:
+      BACKEND_URL: http://backend:8000
+    volumes:
+      - ${DATA_DIR:-./data}:/data:ro
+    depends_on:
+      backend:
+        condition: service_healthy
+
+volumes:
+  redis-data:
+  ch-data:

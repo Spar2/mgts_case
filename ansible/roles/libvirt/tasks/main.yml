@@ -1,0 +1,88 @@
+---
+- name: LV уже существует?
+  ansible.builtin.command: lvs --noheadings -o lv_name ubuntu-vg
+  register: libvirt_lvs
+  changed_when: false
+
+- name: Свободное место в VG
+  ansible.builtin.command: vgs --noheadings --units g -o vg_free ubuntu-vg
+  register: libvirt_vg_free
+  changed_when: false
+  when: libvirt_lv_name not in libvirt_lvs.stdout
+
+- name: Места под LV хватает
+  ansible.builtin.assert:
+    that: (libvirt_vg_free.stdout | regex_replace('[^0-9.]', '') | float) >= libvirt_vg_free_min_gb
+    fail_msg: "В VG мало места под {{ libvirt_lv_size }} (свободно: {{ libvirt_vg_free.stdout | trim }})"
+  when: libvirt_lv_name not in libvirt_lvs.stdout
+
+- name: LV под данные libvirt
+  community.general.lvol:
+    vg: ubuntu-vg
+    lv: "{{ libvirt_lv_name }}"
+    size: "{{ libvirt_lv_size }}"
+    state: present
+
+- name: ФС и монтирование
+  ansible.builtin.include_tasks: storage.yml
+
+- name: Пакеты виртуализации
+  ansible.builtin.apt:
+    name:
+      - qemu-kvm
+      - libvirt-daemon-system
+      - libvirt-clients
+      - bridge-utils
+      - virtinst
+      - cloud-image-utils
+      - genisoimage
+      - cpu-checker
+      - iputils-ping
+      - qemu-utils
+    state: present
+    update_cache: true
+
+- name: Libvirtd включён и запущен
+  ansible.builtin.systemd:
+    name: libvirtd
+    enabled: true
+    state: started
+
+- name: KVM доступен в ядре
+  ansible.builtin.command: kvm-ok
+  register: libvirt_kvm_ok
+  changed_when: false
+  failed_when: "'KVM acceleration can be used' not in libvirt_kvm_ok.stdout"
+
+- name: Пользователь в группах libvirt/kvm
+  ansible.builtin.user:
+    name: "{{ ansible_user }}"
+    groups: [libvirt, kvm]
+    append: true
+
+- name: NAT-сеть libvirt default остановлена (ВМ идут через br0)
+  ansible.builtin.command: virsh net-destroy default
+  register: libvirt_net_destroy
+  changed_when: libvirt_net_destroy.rc == 0
+  failed_when: false
+
+- name: NAT-сеть libvirt default удалена (лишних iptables не надо)
+  ansible.builtin.command: virsh net-undefine default
+  register: libvirt_net_undefine
+  changed_when: libvirt_net_undefine.rc == 0
+  failed_when: >
+    libvirt_net_undefine.rc != 0
+    and 'not found' not in libvirt_net_undefine.stderr | lower
+    and 'не найдена' not in libvirt_net_undefine.stderr | lower
+
+- name: Форвард для гостей моста (docker ставит FORWARD DROP)
+  ansible.builtin.include_tasks: firewall.yml
+
+- name: Мост br0 через netplan (с откатом)
+  ansible.builtin.include_tasks: bridge.yml
+
+- name: Базовый cloud-образ
+  ansible.builtin.include_tasks: image.yml
+
+- name: Тестовая ВМ — проверка моста
+  ansible.builtin.include_tasks: test-vm.yml

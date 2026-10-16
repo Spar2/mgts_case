@@ -1,0 +1,208 @@
+name: Preview env (PR)
+
+# Эфемерное окружение на каждый PR в main: checkout PR-ветки в
+# /opt/haklolarp-previews/pr-<N> (корень создаёт Ansible, подкаталоги — CI),
+# compose-проект haklolarp-pr-<N>, порт 9000+N
+# (compose-файлы должны публиковать порт через ${APP_PORT:-<дефолт>}).
+# Закрытие/мерж PR сносит окружение автоматически.
+# Едет на github-hosted раннере через tailnet (tag:ci), wake инлайном
+# будит Xeon через KVM если он спит — зависимости от self-hosted нет.
+# FROZEN: KVM/WoL — не трогать (always-on)
+# Секреты: TS_OAUTH_CLIENT_ID/TS_OAUTH_SECRET (tag:ci), STAGING_HOST,
+# KVM_HOST, STAGING_USER, STAGING_SSH_KEY, KVM_WAKE_KEY, DISCORD_WEBHOOK_DEVOPS.
+
+permissions:
+  contents: read
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened, closed]
+
+concurrency:
+  group: preview-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  gate:
+    runs-on: [self-hosted, team-devops]
+    timeout-minutes: 5
+    outputs:
+      ok: ${{ steps.check.outputs.ok }}
+    steps:
+      - id: check
+        env:
+          ASSOC: ${{ github.event.pull_request.author_association }}
+          HAS_LABEL: ${{ contains(github.event.pull_request.labels.*.name, 'preview:ok') }}
+        run: |
+          set -euo pipefail
+          ok=false
+          case "$ASSOC" in OWNER|MEMBER|COLLABORATOR) ok=true;; esac
+          if [ "$HAS_LABEL" = "true" ]; then ok=true; fi
+          echo "ok=$ok" >> "$GITHUB_OUTPUT"
+          echo "association=$ASSOC label=$HAS_LABEL => ok=$ok"
+
+  preview:
+    needs: [gate]
+    if: github.event.action != 'closed' && needs.gate.outputs.ok == 'true'
+    runs-on: [self-hosted, team-devops]
+    environment: preview
+    timeout-minutes: 15
+    steps:
+      - name: Set preview vars
+        id: vars
+        run: echo "port=$((9000 + ${{ github.event.pull_request.number }}))" >> "$GITHUB_OUTPUT"
+
+      - name: Join Tailscale
+        uses: tailscale/github-action@d1b6cd204f8dceda5b3eaad7f1f767be390056cd # v4
+        with:
+          oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
+          oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
+          tags: tag:ci
+          hostname: pr-${{ github.event.pull_request.number }}-r${{ github.run_id }}
+
+      - name: Probe Xeon (skip wake if up)
+        id: probe
+        continue-on-error: true
+        uses: appleboy/ssh-action@0ff4204d59e8e51228ff73bce53f80d53301dee2 # v1
+        with:
+          host: ${{ secrets.STAGING_HOST }}
+          username: ${{ secrets.STAGING_USER }}
+          key: ${{ secrets.STAGING_SSH_KEY }}
+          port: 22
+          script: echo xeon-up
+
+      - name: Wake via KVM (forced command waits for boot)
+        if: steps.probe.outcome == 'failure'
+        uses: appleboy/ssh-action@0ff4204d59e8e51228ff73bce53f80d53301dee2 # v1
+        with:
+          host: ${{ secrets.KVM_HOST }}
+          username: root
+          key: ${{ secrets.KVM_WAKE_KEY }}
+          port: 22
+          command_timeout: 12m
+          script: echo wake-triggered
+
+      - name: Deploy preview over SSH
+        uses: appleboy/ssh-action@0ff4204d59e8e51228ff73bce53f80d53301dee2 # v1
+        with:
+          host: ${{ secrets.STAGING_HOST }}
+          username: ${{ secrets.STAGING_USER }}
+          key: ${{ secrets.STAGING_SSH_KEY }}
+          port: 22
+          script: |
+            set -e
+            export GIT_SSH_COMMAND="ssh -i ~/.ssh/haklolarp_deploy -o StrictHostKeyChecking=yes -o UserKnownHostsFile=~/.ssh/known_hosts"
+            N="${{ github.event.pull_request.number }}"
+            case "$N" in ''|*[!0-9]*) echo "refusing: bad PR number: $N" >&2; exit 1;; esac
+            DIR="/opt/haklolarp-previews/pr-$N"
+            case "$DIR" in /opt/haklolarp-previews/pr-*) ;; *) echo "refusing: bad DIR: $DIR" >&2; exit 1;; esac
+            [ "$DIR" != "/" ] || { echo "refusing: DIR is /" >&2; exit 1; }
+            export APP_PORT=$((9000 + N))
+            case "$APP_PORT" in 900[1-9]|90[1-9][0-9]|9[1-9][0-9][0-9]) ;; *) echo "refusing: APP_PORT out of range: $APP_PORT" >&2; exit 1;; esac
+            case "$APP_PORT" in ''|*[!0-9]*) echo "refusing: bad APP_PORT: $APP_PORT" >&2; exit 1;; esac
+            if [ ! -d "$DIR/.git" ]; then
+              git clone git@github.com:${{ github.repository }}.git "$DIR"
+            fi
+            cd "$DIR"
+            git fetch origin "pull/$N/head"
+            git checkout -f FETCH_HEAD
+            if [ -f compose.yaml ]; then
+              grep -q -F -- '${APP_PORT' compose.yaml || { echo "refusing: compose.yaml does not reference APP_PORT" >&2; exit 1; }
+              docker compose -p "haklolarp-pr-$N" config | grep -E -q -- "(^|[^0-9A-Za-z_])$APP_PORT([^0-9A-Za-z_]|$)" || { echo "refusing: compose config missing port $APP_PORT" >&2; exit 1; }
+              docker compose -p "haklolarp-pr-$N" pull
+              docker compose -p "haklolarp-pr-$N" up -d --remove-orphans
+            else
+              echo "no compose.yaml in PR head, checkout only"
+            fi
+            docker ps
+
+      - name: Discord notify (preview ready)
+        if: always()
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_DEVOPS }}
+          NOTIFY_TITLE: "Preview PR #${{ github.event.pull_request.number }} готов"
+          NOTIFY_DESCRIPTION: |
+            **PR:** ${{ github.event.pull_request.title }}
+            **Ветка:** `${{ github.event.pull_request.head.ref }}`
+            **Каталог:** `/opt/haklolarp-previews/pr-${{ github.event.pull_request.number }}`
+            **Порт:** `${{ steps.vars.outputs.port }}`
+            [Смотреть run](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
+        run: |
+          set -euo pipefail
+          if [ -z "${DISCORD_WEBHOOK:-}" ]; then echo "no webhook configured, skipping"; exit 0; fi
+          payload=$(jq -n --arg username "GitHub • preview" --arg title "$NOTIFY_TITLE" --arg description "$NOTIFY_DESCRIPTION" '{username: $username, embeds: [{title: $title, description: $description, color: 65280}]}') # 0x00ff00
+          curl -fsSL -X POST -H 'Content-Type: application/json' -d "$payload" "$DISCORD_WEBHOOK"
+
+  cleanup:
+    # cleanup ungated intentionally: must remove foreign previews on close
+    if: github.event.action == 'closed'
+    runs-on: [self-hosted, team-devops]
+    timeout-minutes: 15
+    steps:
+      - name: Join Tailscale
+        uses: tailscale/github-action@d1b6cd204f8dceda5b3eaad7f1f767be390056cd # v4
+        with:
+          oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
+          oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
+          tags: tag:ci
+          hostname: pr-${{ github.event.pull_request.number }}-cleanup-r${{ github.run_id }}
+
+      - name: Probe Xeon (skip wake if up)
+        id: probe
+        continue-on-error: true
+        uses: appleboy/ssh-action@0ff4204d59e8e51228ff73bce53f80d53301dee2 # v1
+        with:
+          host: ${{ secrets.STAGING_HOST }}
+          username: ${{ secrets.STAGING_USER }}
+          key: ${{ secrets.STAGING_SSH_KEY }}
+          port: 22
+          script: echo xeon-up
+
+      - name: Wake via KVM (forced command waits for boot)
+        if: steps.probe.outcome == 'failure'
+        uses: appleboy/ssh-action@0ff4204d59e8e51228ff73bce53f80d53301dee2 # v1
+        with:
+          host: ${{ secrets.KVM_HOST }}
+          username: root
+          key: ${{ secrets.KVM_WAKE_KEY }}
+          port: 22
+          command_timeout: 12m
+          script: echo wake-triggered
+
+      - name: Remove preview over SSH
+        uses: appleboy/ssh-action@0ff4204d59e8e51228ff73bce53f80d53301dee2 # v1
+        with:
+          host: ${{ secrets.STAGING_HOST }}
+          username: ${{ secrets.STAGING_USER }}
+          key: ${{ secrets.STAGING_SSH_KEY }}
+          port: 22
+          script: |
+            set -e
+            N="${{ github.event.pull_request.number }}"
+            case "$N" in ''|*[!0-9]*) echo "refusing: bad PR number: $N" >&2; exit 1;; esac
+            DIR="/opt/haklolarp-previews/pr-$N"
+            case "$DIR" in /opt/haklolarp-previews/pr-*) ;; *) echo "refusing: bad DIR: $DIR" >&2; exit 1;; esac
+            [ "$DIR" != "/" ] || { echo "refusing: DIR is /" >&2; exit 1; }
+            if [ -d "$DIR" ]; then
+              cd "$DIR"
+              if [ -f compose.yaml ]; then
+                docker compose -p "haklolarp-pr-$N" down --rmi local --volumes --remove-orphans || true
+              fi
+              cd /
+              rm -rf -- "$DIR"
+            fi
+            echo "preview $N removed"
+
+      - name: Discord notify (preview removed)
+        if: always()
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_DEVOPS }}
+          NOTIFY_TITLE: "Preview PR #${{ github.event.pull_request.number }} снесён"
+          NOTIFY_DESCRIPTION: |
+            [Смотреть run](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
+        run: |
+          set -euo pipefail
+          if [ -z "${DISCORD_WEBHOOK:-}" ]; then echo "no webhook configured, skipping"; exit 0; fi
+          payload=$(jq -n --arg username "GitHub • preview" --arg title "$NOTIFY_TITLE" --arg description "$NOTIFY_DESCRIPTION" '{username: $username, embeds: [{title: $title, description: $description, color: 8421504}]}') # 0x808080
+          curl -fsSL -X POST -H 'Content-Type: application/json' -d "$payload" "$DISCORD_WEBHOOK"

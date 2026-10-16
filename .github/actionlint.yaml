@@ -1,0 +1,8 @@
+# actionlint configuration: known self-hosted runner labels.
+# Format per https://github.com/rhysd/actionlint/blob/main/docs/config.md
+# (`self-hosted-runner` mapping with a `labels` list; glob syntax allowed).
+self-hosted-runner:
+  labels:
+    - team-devops
+    - team-web
+    - team-ml

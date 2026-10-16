@@ -1,0 +1,298 @@
+{
+  "files": [
+    {
+      "file": "1.csv",
+      "detector_events": 17,
+      "opencv_components": 40,
+      "roughly_matched": 9,
+      "only_opencv": 31,
+      "only_opencv_largest": [
+        {
+          "meters": [
+            513.1301,
+            517.8857
+          ],
+          "duration_min": 45.9833,
+          "area": 357
+        },
+        {
+          "meters": [
+            715.719,
+            726.1813
+          ],
+          "duration_min": 7.2333,
+          "area": 154
+        },
+        {
+          "meters": [
+            836.0359,
+            851.2538
+          ],
+          "duration_min": 6.7167,
+          "area": 127
+        },
+        {
+          "meters": [
+            661.0295,
+            669.114
+          ],
+          "duration_min": 6.2,
+          "area": 78
+        },
+        {
+          "meters": [
+            421.8224,
+            423.7247
+          ],
+          "duration_min": 19.1167,
+          "area": 76
+        }
+      ]
+    },
+    {
+      "file": "2.csv",
+      "detector_events": 21,
+      "opencv_components": 69,
+      "roughly_matched": 25,
+      "only_opencv": 44,
+      "only_opencv_largest": [
+        {
+          "meters": [
+            77.0307,
+            80.0319
+          ],
+          "duration_min": 268.0,
+          "area": 714
+        },
+        {
+          "meters": [
+            92.787,
+            95.288
+          ],
+          "duration_min": 146.0,
+          "area": 312
+        },
+        {
+          "meters": [
+            301.3702,
+            304.8716
+          ],
+          "duration_min": 40.0,
+          "area": 226
+        },
+        {
+          "meters": [
+            40.5162,
+            42.0168
+          ],
+          "duration_min": 172.0,
+          "area": 167
+        },
+        {
+          "meters": [
+            184.3235,
+            188.5752
+          ],
+          "duration_min": 26.0,
+          "area": 120
+        }
+      ]
+    },
+    {
+      "file": "3.csv",
+      "detector_events": 13,
+      "opencv_components": 66,
+      "roughly_matched": 14,
+      "only_opencv": 52,
+      "only_opencv_largest": [
+        {
+          "meters": [
+            370.85,
+            383.3534
+          ],
+          "duration_min": 402.0,
+          "area": 3300
+        },
+        {
+          "meters": [
+            158.7928,
+            161.5436
+          ],
+          "duration_min": 456.0,
+          "area": 843
+        },
+        {
+          "meters": [
+            74.5201,
+            77.771
+          ],
+          "duration_min": 46.0,
+          "area": 146
+        },
+        {
+          "meters": [
+            75.2703,
+            77.2708
+          ],
+          "duration_min": 72.0,
+          "area": 145
+        },
+        {
+          "meters": [
+            161.0434,
+            167.2951
+          ],
+          "duration_min": 18.0,
+          "area": 145
+        }
+      ]
+    },
+    {
+      "file": "4.csv",
+      "detector_events": 9,
+      "opencv_components": 16,
+      "roughly_matched": 7,
+      "only_opencv": 9,
+      "only_opencv_largest": [
+        {
+          "meters": [
+            98.7783,
+            100.5288
+          ],
+          "duration_min": 288.0,
+          "area": 430
+        },
+        {
+          "meters": [
+            77.2722,
+            77.7723
+          ],
+          "duration_min": 260.0,
+          "area": 312
+        },
+        {
+          "meters": [
+            74.2713,
+            76.2719
+          ],
+          "duration_min": 94.0,
+          "area": 206
+        },
+        {
+          "meters": [
+            74.2713,
+            76.2719
+          ],
+          "duration_min": 82.0,
+          "area": 111
+        },
+        {
+          "meters": [
+            117.5337,
+            118.7841
+          ],
+          "duration_min": 60.0,
+          "area": 56
+        }
+      ]
+    },
+    {
+      "file": "5.csv",
+      "detector_events": 69,
+      "opencv_components": 690,
+      "roughly_matched": 72,
+      "only_opencv": 618,
+      "only_opencv_largest": [
+        {
+          "meters": [
+            295.0204,
+            309.2041
+          ],
+          "duration_min": 5.5,
+          "area": 172
+        },
+        {
+          "meters": [
+            330.9524,
+            346.0816
+          ],
+          "duration_min": 2.1667,
+          "area": 100
+        },
+        {
+          "meters": [
+            268.5442,
+            278.0
+          ],
+          "duration_min": 3.3333,
+          "area": 98
+        },
+        {
+          "meters": [
+            1510.0884,
+            1518.5986
+          ],
+          "duration_min": 3.0,
+          "area": 89
+        },
+        {
+          "meters": [
+            1508.1973,
+            1519.5442
+          ],
+          "duration_min": 3.0,
+          "area": 84
+        }
+      ]
+    },
+    {
+      "file": "6.csv",
+      "detector_events": 27,
+      "opencv_components": 139,
+      "roughly_matched": 26,
+      "only_opencv": 113,
+      "only_opencv_largest": [
+        {
+          "meters": [
+            295.9909,
+            305.1975
+          ],
+          "duration_min": 128.0,
+          "area": 2441
+        },
+        {
+          "meters": [
+            606.252,
+            639.3956
+          ],
+          "duration_min": 62.0,
+          "area": 2250
+        },
+        {
+          "meters": [
+            274.3555,
+            283.1017
+          ],
+          "duration_min": 127.0,
+          "area": 2051
+        },
+        {
+          "meters": [
+            293.2289,
+            310.2611
+          ],
+          "duration_min": 107.0,
+          "area": 1214
+        },
+        {
+          "meters": [
+            601.1884,
+            640.7766
+          ],
+          "duration_min": 23.0,
+          "area": 963
+        }
+      ]
+    }
+  ]
+}

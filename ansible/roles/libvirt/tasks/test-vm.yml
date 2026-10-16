@@ -1,0 +1,178 @@
+---
+# Проверка L2-моста: ВМ со статикой в LAN должна отвечать на пинг с хоста.
+# После проверки ВМ полностью удаляется (фаза 1 создаст настоящие раннеры).
+- name: Каталог seed тестовой ВМ
+  ansible.builtin.file:
+    path: "{{ libvirt_data_dir }}/seeds/{{ libvirt_test_vm_name }}"
+    state: directory
+    mode: "0711"
+
+- name: Seed-файлы тестовой ВМ
+  ansible.builtin.template:
+    src: "{{ item.src }}"
+    dest: "{{ libvirt_data_dir }}/seeds/{{ libvirt_test_vm_name }}/{{ item.dst }}"
+    mode: "0644"
+  loop:
+    - {src: test-user-data.j2, dst: user-data}
+    - {src: test-network-config.j2, dst: network-config}
+  loop_control:
+    label: "{{ item.dst }}"
+
+- name: Seed ISO тестовой ВМ
+  ansible.builtin.command: >
+    cloud-localds --network-config={{ libvirt_data_dir }}/seeds/{{ libvirt_test_vm_name }}/network-config
+    {{ libvirt_data_dir }}/seeds/{{ libvirt_test_vm_name }}/seed.iso
+    {{ libvirt_data_dir }}/seeds/{{ libvirt_test_vm_name }}/user-data
+  args:
+    creates: "{{ libvirt_data_dir }}/seeds/{{ libvirt_test_vm_name }}/seed.iso"
+  changed_when: true
+
+- name: Остатки прошлой проверки зачищены
+  ansible.builtin.command: virsh destroy {{ libvirt_test_vm_name }}
+  register: libvirt_test_predestroy
+  changed_when: libvirt_test_predestroy.rc == 0
+  failed_when: false
+
+- name: Старое определение зачищено
+  ansible.builtin.command: virsh undefine {{ libvirt_test_vm_name }} --nvram
+  register: libvirt_test_preundefine
+  changed_when: libvirt_test_preundefine.rc == 0
+  failed_when: false
+
+- name: Старый диск зачищен
+  ansible.builtin.file:
+    path: "{{ libvirt_data_dir }}/images/{{ libvirt_test_vm_name }}.qcow2"
+    state: absent
+
+- name: Тестовая ВМ создана и запущена
+  block:
+    - name: Virt-install тестовой ВМ
+      vars:
+        libvirt_test_seed: "{{ libvirt_data_dir }}/seeds/{{ libvirt_test_vm_name }}"
+      ansible.builtin.command: >
+        virt-install --name {{ libvirt_test_vm_name }} --memory 1024 --vcpus 1
+        --osinfo {{ libvirt_osinfo }}
+        --disk path={{ libvirt_data_dir }}/images/{{ libvirt_test_vm_name }}.qcow2,size=8,backing_store={{ libvirt_cloud_base_image }},backing_format=qcow2
+        --import --network bridge={{ libvirt_bridge }},model=virtio,mac={{ libvirt_test_vm_mac }}
+        --cloud-init user-data={{ libvirt_test_seed }}/user-data,network-config={{ libvirt_test_seed }}/network-config
+        --serial file,path={{ libvirt_test_seed }}/console.log
+        --noautoconsole --autostart
+      changed_when: true
+
+    - name: ВМ отвечает в LAN
+      ansible.builtin.command: ping -c1 -W1 {{ libvirt_test_vm_ip }}
+      register: libvirt_test_ping
+      until: libvirt_test_ping.rc == 0
+      retries: 36
+      delay: 5
+      changed_when: false
+  rescue:
+    - name: Форензика — остановить гостя
+      ansible.builtin.command: virsh destroy {{ libvirt_test_vm_name }}
+      changed_when: true
+      failed_when: false
+
+    - name: Форензика — точка монтирования
+      ansible.builtin.file:
+        path: /mnt/{{ libvirt_test_vm_name }}
+        state: directory
+        mode: "0755"
+
+    - name: Форензика — подключить диск гостя
+      ansible.builtin.command: qemu-nbd --fork --connect=/dev/nbd0 {{ libvirt_data_dir }}/images/{{ libvirt_test_vm_name }}.qcow2
+      changed_when: true
+
+    - name: Форензика — смонтировать корень гостя
+      ansible.posix.mount:
+        src: /dev/nbd0p1
+        path: /mnt/{{ libvirt_test_vm_name }}
+        fstype: ext4
+        opts: ro
+        state: mounted
+
+    - name: Форензика — ошибки cloud-init
+      ansible.builtin.command: grep -B3 -A12 Traceback /mnt/{{ libvirt_test_vm_name }}/var/log/cloud-init.log
+      register: libvirt_dbg_traceback
+      changed_when: false
+      failed_when: false
+
+    - name: Форензика — итог cloud-init
+      ansible.builtin.command: tail -30 /mnt/{{ libvirt_test_vm_name }}/var/log/cloud-init-output.log
+      register: libvirt_dbg_output
+      changed_when: false
+      failed_when: false
+
+    - name: Показать форензику
+      ansible.builtin.debug:
+        msg:
+          - "traceback: {{ libvirt_dbg_traceback.stdout_lines | default([]) }}"
+          - "output: {{ libvirt_dbg_output.stdout_lines | default([]) }}"
+
+    - name: Форензика — отмонтировать
+      ansible.posix.mount:
+        path: /mnt/{{ libvirt_test_vm_name }}
+        state: absent
+
+    - name: Форензика — отключить диск
+      ansible.builtin.command: qemu-nbd --disconnect /dev/nbd0
+      changed_when: true
+      failed_when: false
+
+    - name: Пинг не прошёл
+      ansible.builtin.fail:
+        msg: "Гость {{ libvirt_test_vm_ip }} молчит. Форензика выше."
+  always:
+    - name: Диагностика гостя
+      ansible.builtin.command: virsh domifaddr {{ libvirt_test_vm_name }} --source arp
+      register: libvirt_dbg_addr
+      changed_when: false
+      failed_when: false
+
+    - name: Диагностика моста
+      ansible.builtin.command: bridge link show
+      register: libvirt_dbg_bridge
+      changed_when: false
+      failed_when: false
+
+    - name: Диагностика ARP хоста
+      ansible.builtin.command: ip neigh show
+      register: libvirt_dbg_neigh
+      changed_when: false
+      failed_when: false
+
+    - name: Диагностика консоли гостя
+      ansible.builtin.command: tail -40 {{ libvirt_data_dir }}/seeds/{{ libvirt_test_vm_name }}/console.log
+      register: libvirt_dbg_console
+      changed_when: false
+      failed_when: false
+
+    - name: Показать диагностику
+      ansible.builtin.debug:
+        msg:
+          - "domifaddr: {{ libvirt_dbg_addr.stdout_lines | default([]) }}"
+          - "bridge: {{ libvirt_dbg_bridge.stdout_lines | default([]) }}"
+          - "neigh: {{ libvirt_dbg_neigh.stdout_lines | default([]) }}"
+          - "console: {{ libvirt_dbg_console.stdout_lines | default([]) }}"
+
+    - name: Тестовая ВМ остановлена
+      ansible.builtin.command: virsh destroy {{ libvirt_test_vm_name }}
+      register: libvirt_test_destroy
+      changed_when: libvirt_test_destroy.rc == 0
+      failed_when: false
+      when: not libvirt_test_keep
+
+    - name: Тестовая ВМ удалена вместе с диском
+      ansible.builtin.command: virsh undefine {{ libvirt_test_vm_name }} --remove-all-storage --nvram
+      register: libvirt_test_undefine
+      changed_when: libvirt_test_undefine.rc == 0
+      when: not libvirt_test_keep
+      failed_when: >
+        libvirt_test_undefine.rc != 0
+        and 'failed to get domain' not in libvirt_test_undefine.stderr | lower
+        and 'not found' not in libvirt_test_undefine.stderr | lower
+
+    - name: Seed тестовой ВМ удалён
+      ansible.builtin.file:
+        path: "{{ libvirt_data_dir }}/seeds/{{ libvirt_test_vm_name }}"
+        state: absent
+      when: not libvirt_test_keep

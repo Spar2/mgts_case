@@ -1,0 +1,56 @@
+---
+- name: Cloudflared | скачать бинарь (amd64)
+  ansible.builtin.get_url:
+    url: https://github.com/cloudflare/cloudflared/releases/download/{{ cloudflared_version }}/cloudflared-linux-amd64
+    dest: "{{ cloudflared_bin }}"
+    mode: "0755"
+    checksum: "{{ cloudflared_checksums.x86_64 }}"
+  when: ansible_facts.architecture == "x86_64"
+
+- name: Cloudflared | скачать бинарь (arm64)
+  ansible.builtin.get_url:
+    url: https://github.com/cloudflare/cloudflared/releases/download/{{ cloudflared_version }}/cloudflared-linux-arm64
+    dest: "{{ cloudflared_bin }}"
+    mode: "0755"
+    checksum: "{{ cloudflared_checksums.aarch64 }}"
+  when: ansible_facts.architecture == "aarch64"
+
+- name: Cloudflared | версия
+  ansible.builtin.command: "{{ cloudflared_bin }} --version"
+  register: cloudflared_ver
+  changed_when: false
+
+- name: Cloudflared | показать версию
+  ansible.builtin.debug:
+    var: cloudflared_ver.stdout
+
+- name: Cloudflared | systemd-юнит туннеля
+  ansible.builtin.copy:
+    dest: /etc/systemd/system/{{ cloudflared_service }}.service
+    mode: "0644"
+    content: |
+      [Unit]
+      Description=Cloudflared Tunnel (staging)
+      After=network-online.target
+      Wants=network-online.target
+      [Service]
+      ExecStart={{ cloudflared_bin }} tunnel --no-autoupdate run --token {{ cloudflared_tunnel_token }}
+      Restart=on-failure
+      RestartSec=5
+      [Install]
+      WantedBy=multi-user.target
+  no_log: true
+  when: cloudflared_tunnel_token | length > 0
+
+- name: Cloudflared | включить и запустить туннель
+  ansible.builtin.systemd:
+    name: "{{ cloudflared_service }}"
+    enabled: true
+    state: started
+    daemon_reload: true
+  when: cloudflared_tunnel_token | length > 0
+
+- name: Cloudflared | нет токена — пропуск с предупреждением
+  ansible.builtin.debug:
+    msg: "CLOUDFLARED_TUNNEL_TOKEN пуст — туннель не запущен. Задай секрет и перезапусти."
+  when: cloudflared_tunnel_token | length == 0

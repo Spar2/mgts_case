@@ -1,0 +1,59 @@
+---
+- name: Runner-container | каталог
+  ansible.builtin.file:
+    path: "{{ runner_container_dir }}"
+    state: directory
+    owner: root
+    group: root
+    mode: "0755"
+
+- name: Runner-container | compose и Dockerfile на хост
+  ansible.builtin.copy:
+    src: "{{ item.src }}"
+    dest: "{{ runner_container_dir }}/{{ item.dest }}"
+    owner: root
+    group: root
+    mode: "0644"
+  loop:
+    - src: "{{ runner_container_compose_src }}"
+      dest: compose.runners.yml
+    - src: "{{ runner_container_dockerfile_src }}"
+      dest: Dockerfile.runner
+  loop_control:
+    label: "{{ item.dest }}"
+
+- name: Runner-container | собрать и поднять (up -d, always-on)
+  community.docker.docker_compose_v2:
+    project_src: "{{ runner_container_dir }}"
+    files:
+      - compose.runners.yml
+    build: always
+    pull: missing
+    state: present
+    wait: true
+    wait_timeout: 300
+  register: runner_container_compose_up
+
+- name: Runner-container | ждать running (3 сервиса)
+  ansible.builtin.command:
+    argv:
+      - docker
+      - compose
+      - -f
+      - compose.runners.yml
+      - ps
+      - --status
+      - running
+      - --format
+      - "{% raw %}{{.Name}}{% endraw %}"
+  args:
+    chdir: "{{ runner_container_dir }}"
+  register: runner_container_ps
+  until: runner_container_ps.stdout_lines | length >= runner_container_expected_running
+  retries: 18
+  delay: 10
+  changed_when: false
+
+- name: Runner-container | показать статус
+  ansible.builtin.debug:
+    var: runner_container_ps.stdout_lines

@@ -1,0 +1,164 @@
+#!/usr/bin/env python3
+# FROZEN: KVM/WoL — не трогать (always-on)
+"""xeon-wake-only: единственное действие CI-ключа на KVM (forced command).
+
+Логика: host up? -> WoL -> долгое ожидание -> тройная перепроверка + LED ->
+ATX SHORT press power -> долгое ожидание.
+НИКОГДА не трогает: reset (gpio505), long-press, ISO, консоль, веб-API.
+Короткое нажатие делается ТОЛЬКО при доказанном down: пинг/tcp по ВСЕМ
+известным адресам молчат И тройная перепроверка перед самым нажатием тоже.
+(Урок 2026-10-04: WoL разбудил хост, но 90с ожидания не хватило до SSH —
+нажатие прилетело в середину загрузки и погасило её.)
+Только stdlib. Exit 0 = хост встал/был up, 1 = не встал.
+"""
+
+import fcntl
+import socket
+import subprocess
+import sys
+import time
+
+XEON_MAC = "00:e0:26:5c:23:20"
+# Все известные адреса хоста: br0 на статике .123, tailnet стабилен.
+# Хост считается up, если отвечает ЛЮБОЙ.
+XEON_CANDIDATES = [
+    ("192.168.1.123", 22),
+    ("100.66.240.22", 22),
+]
+BROADCAST = "192.168.1.255"
+WOL_PORT = 9
+GPIO_POWER = "/sys/class/gpio/gpio503/value"
+GPIO_LED = "/sys/class/gpio/gpio504/value"
+LOCK_PATH = "/tmp/xeon-wake.lock"
+WAIT_AFTER_WOL_SEC = 240
+WAIT_AFTER_PRESS_SEC = 420
+POLL_STEP_SEC = 10
+PRESS_SEC = 1.0
+PRE_PRESS_CHECKS = 3
+PRE_PRESS_GAP_SEC = 5
+
+
+def log(msg):
+    print("wake: %s" % msg, flush=True)
+
+
+def addr_up(ip, port):
+    try:
+        r = subprocess.run(
+            ["ping", "-c", "2", "-W", "2", ip],
+            capture_output=True, timeout=15)
+        if r.returncode == 0:
+            return True
+    except Exception:
+        pass
+    try:
+        s = socket.create_connection((ip, port), timeout=5)
+        s.close()
+        return True
+    except Exception:
+        return False
+
+
+def host_up():
+    """Хост up, если отвечает хотя бы один известный адрес."""
+    for ip, port in XEON_CANDIDATES:
+        if addr_up(ip, port):
+            log("host answers at %s" % ip)
+            return True
+    return False
+
+
+def read_led():
+    """Power LED: 0 на gpio504 = хост запитан (см. NanoKVM gpio.go)."""
+    try:
+        with open(GPIO_LED) as f:
+            return f.read().strip()
+    except Exception as e:
+        return "ERR:%s" % e
+
+
+def send_wol():
+    mac = XEON_MAC.replace(":", "")
+    pkt = bytes.fromhex("ff" * 6 + mac * 16)
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    try:
+        s.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
+        for _ in range(3):
+            s.sendto(pkt, (BROADCAST, WOL_PORT))
+            time.sleep(1)
+    finally:
+        s.close()
+    log("WoL magic packet sent to %s via %s" % (XEON_MAC, BROADCAST))
+
+
+def press_power():
+    """Короткое нажатие Power (зеркалит writeGpio сервера: 1, сон, 0)."""
+    with open(GPIO_POWER, "w") as f:
+        f.write("1")
+    time.sleep(PRESS_SEC)
+    with open(GPIO_POWER, "w") as f:
+        f.write("0")
+    log("ATX short power press done")
+
+
+def wait_up(deadline_sec, label):
+    waited = 0
+    while waited < deadline_sec:
+        if host_up():
+            log("%s: host is UP after ~%ss" % (label, waited))
+            return True
+        time.sleep(POLL_STEP_SEC)
+        waited += POLL_STEP_SEC
+    return False
+
+
+def proven_down():
+    """Тройная перепроверка с паузами: все кандидаты молчат несколько раз."""
+    for i in range(PRE_PRESS_CHECKS):
+        if host_up():
+            return False
+        if i < PRE_PRESS_CHECKS - 1:
+            time.sleep(PRE_PRESS_GAP_SEC)
+    return True
+
+
+def main():
+    fd = open(LOCK_PATH, "w")
+    try:
+        fcntl.flock(fd, fcntl.LOCK_EX | fcntl.LOCK_NB)
+    except (BlockingIOError, OSError):
+        log("another wake in progress, refusing (cooldown)")
+        return 3
+    fd.write(str(time.time()))
+    fd.flush()
+
+    log("power LED gpio504=%s (0 means powered)" % read_led())
+    if host_up():
+        log("host already UP, nothing to do")
+        return 0
+
+    log("host DOWN on all candidates, trying WoL first")
+    send_wol()
+    if wait_up(WAIT_AFTER_WOL_SEC, "wol"):
+        return 0
+
+    log("WoL wait over, re-checking LED and all addresses before press")
+    log("power LED gpio504=%s (0 means powered)" % read_led())
+    if not proven_down():
+        log("host appeared during re-check, waiting more instead of press")
+        if wait_up(WAIT_AFTER_PRESS_SEC, "late"):
+            return 0
+        log("FAILED: host vanished again, needs human")
+        return 1
+
+    log("DOWN proven twice, ATX short power press (power only, never reset)")
+    press_power()
+    if wait_up(WAIT_AFTER_PRESS_SEC, "atx"):
+        return 0
+
+    log("FAILED: host still down, needs human")
+    return 1
+
+
+if __name__ == "__main__":
+    sys.exit(main())

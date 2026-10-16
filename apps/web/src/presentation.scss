@@ -1,0 +1,532 @@
+.presentation {
+  max-width: 1680px;
+  margin: auto;
+  overflow-anchor: none;
+  --demo-border: var(--dts-subtle-border);
+  .demo-lead {
+    font-size: 18px;
+    max-width: 760px;
+    margin: 16px 0 32px;
+  }
+  .demo-start {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 40px;
+    margin: 32px 0;
+    align-items: start;
+  }
+  .demo-panel {
+    background: var(--dts-surface-background);
+    border: 1px solid var(--demo-border);
+    padding: 24px;
+    min-width: 0;
+  }
+  .demo-panel h2 {
+    font-size: 22px;
+    line-height: 1.3;
+    margin: 0 0 16px;
+  }
+  .demo-panel h3 {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+  .demo-panel > p {
+    margin: 12px 0 20px;
+  }
+  .demo-panel .cds--form-item {
+    min-width: 0;
+  }
+  .demo-start .cds--btn {
+    margin: 20px 0;
+  }
+  .demo-itinerary {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .demo-itinerary li {
+    display: flex;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--demo-border);
+  }
+  .demo-itinerary li:first-child {
+    padding-top: 0;
+  }
+  .demo-itinerary li > span {
+    font-family: "IBM Plex Mono", monospace;
+    color: var(--cds-link-primary);
+    padding-top: 4px;
+  }
+  .demo-itinerary h2 {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+  .demo-itinerary p {
+    color: var(--cds-text-secondary);
+  }
+  .presentation-steps {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    border: 1px solid var(--demo-border);
+    margin-top: 24px;
+  }
+  .presentation-steps button {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 8px 12px;
+    text-align: left;
+    font: inherit;
+    border: 0;
+    border-right: 1px solid var(--demo-border);
+    border-bottom: 3px solid transparent;
+    background: var(--dts-surface-background);
+    color: var(--cds-text-secondary);
+    padding: 16px;
+    cursor: pointer;
+    min-width: 0;
+    grid-template-rows: 24px 34px;
+  }
+  .presentation-steps button:last-child {
+    border-right: 0;
+  }
+  .presentation-steps button > span {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12px;
+    align-self: center;
+  }
+  .presentation-steps button strong {
+    font-weight: 600;
+    color: var(--cds-text-primary);
+    overflow-wrap: anywhere;
+  }
+  .presentation-steps button small {
+    grid-column: 1 / -1;
+    font-size: 12px;
+    line-height: 1.35;
+  }
+  .presentation-steps button[aria-current] {
+    border-bottom-color: var(--cds-link-primary);
+    background: var(--dts-info-background);
+  }
+  .presentation-steps button[aria-current] > span {
+    color: var(--cds-link-primary);
+  }
+  .presentation-steps button:hover {
+    background: var(--dts-panel-background);
+  }
+  .presentation-steps button:focus-visible {
+    outline: 2px solid var(--cds-focus);
+    outline-offset: -3px;
+  }
+  .presentation-caption {
+    padding: 24px 0 0;
+    max-width: 1000px;
+  }
+  .presentation-caption h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin: 8px 0 12px;
+  }
+  .presentation-caption h2:focus {
+    outline: none;
+  }
+  .presentation-description {
+    display: grid;
+  }
+  .presentation-description > p {
+    grid-area: 1/1;
+    line-height: 1.6;
+    margin: 0;
+  }
+  .demo-selection-status {
+    height: 56px;
+    padding: 8px 0;
+    color: var(--cds-text-secondary);
+    font-size: 13px;
+    line-height: 20px;
+  }
+  .presentation-workspace {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(300px, 1fr);
+    gap: 24px;
+    align-items: start;
+    background: transparent;
+    // Each step is a slide with the same outer geometry. Long material scrolls
+    // here rather than changing the document height and clamping window.scrollY.
+    height: clamp(560px, calc(100dvh - 240px), 900px);
+    overflow: auto;
+    scrollbar-gutter: stable;
+    overscroll-behavior: contain;
+    align-content: start;
+  }
+  .presentation-workspace:focus-visible {
+    outline: 2px solid var(--cds-focus);
+    outline-offset: 3px;
+  }
+  .demo-section-heading {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+  .demo-section-heading h2 {
+    margin: 0;
+  }
+  .demo-reading {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    padding: 20px 0;
+    margin: 12px 0;
+    border-top: 1px solid var(--demo-border);
+    border-bottom: 1px solid var(--demo-border);
+  }
+  .demo-reading span,
+  .demo-metrics span {
+    display: block;
+    color: var(--cds-text-secondary);
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  .demo-reading strong {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+    margin-top: 6px;
+    overflow-wrap: anywhere;
+    font-variant-numeric: tabular-nums;
+  }
+  .demo-coordinates {
+    margin: 20px 0 24px;
+  }
+  .demo-coordinates > * {
+    flex: 1 1 220px;
+  }
+  .demo-panel .line-figure {
+    margin: 24px 0 12px;
+    min-width: 0;
+  }
+  .demo-panel .line-figure > div[role="img"] {
+    height: 180px;
+    min-height: 180px;
+  }
+  .demo-overlay {
+    margin: 24px 0;
+    min-width: 0;
+  }
+  .demo-overlay > div[role="img"] {
+    min-height: 240px;
+    min-width: 0;
+    overflow: hidden;
+  }
+  .demo-overlay figcaption {
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--cds-text-secondary);
+    margin-top: 12px;
+  }
+  .demo-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin: 12px 0;
+  }
+  .demo-legend span:before {
+    content: "";
+    display: inline-block;
+    width: 22px;
+    height: 2px;
+    margin: 0 8px 4px 0;
+    background: var(--cds-text-secondary);
+  }
+  .demo-legend span:last-child:before {
+    height: 3px;
+    background: var(--cds-link-primary);
+  }
+  .demo-metrics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--demo-border);
+    border: 1px solid var(--demo-border);
+    margin: 24px 0 12px;
+  }
+  .demo-metrics > div {
+    background: var(--dts-panel-background);
+    padding: 16px;
+    min-width: 0;
+  }
+  .demo-metrics strong {
+    display: block;
+    font-size: 22px;
+    font-weight: 400;
+    margin-top: 8px;
+    font-variant-numeric: tabular-nums;
+  }
+  .demo-hint {
+    font-size: 13px;
+    color: var(--cds-text-secondary);
+    line-height: 1.6;
+    margin: 16px 0;
+  }
+  .demo-passport {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6px;
+    margin: 16px 0 24px;
+  }
+  .demo-passport dt {
+    font-size: 12px;
+    color: var(--cds-text-secondary);
+  }
+  .demo-passport dd {
+    margin: 0 0 12px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+  code {
+    overflow-wrap: anywhere;
+    font-size: 12px;
+  }
+  .demo-quality {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px;
+  }
+  .demo-quality li {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--demo-border);
+    line-height: 1.5;
+  }
+  .presentation-decision .cds--btn {
+    margin: 8px 0;
+    max-width: 100%;
+    white-space: normal;
+  }
+  .presentation-decision .text-link {
+    display: block;
+    white-space: normal;
+    margin: 20px 0 0;
+    line-height: 1.6;
+  }
+  .presentation-decision .cds--form-item {
+    margin: 20px 0 12px;
+  }
+  .demo-processing-passport {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--demo-border);
+  }
+  .demo-report-checks {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0;
+  }
+  .demo-report-checks li {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--demo-border);
+  }
+  .demo-report-checks li > span {
+    font-family: "IBM Plex Mono", monospace;
+    color: var(--cds-link-primary);
+  }
+  .demo-report-checks p {
+    margin: 8px 0 12px;
+    overflow-wrap: anywhere;
+  }
+  .demo-warning {
+    background: var(--dts-warning-background);
+    padding: 16px;
+    line-height: 1.5;
+    border-left: 3px solid var(--cds-support-warning);
+    margin: 16px 0;
+  }
+  .demo-saved {
+    color: var(--dts-success-text);
+    border-left: 3px solid var(--cds-support-success);
+    padding: 12px;
+    margin-top: 12px;
+    line-height: 1.5;
+  }
+  .demo-error {
+    margin: 24px 0;
+  }
+  .demo-empty {
+    padding: 24px 0;
+    border-top: 1px solid var(--demo-border);
+    margin-top: 24px;
+  }
+  .demo-empty p {
+    color: var(--cds-text-secondary);
+    line-height: 1.6;
+  }
+  .demo-chart-loading {
+    min-height: 220px;
+    display: grid;
+    place-items: center;
+    color: var(--cds-text-secondary);
+  }
+  .demo-inline-details {
+    border-top: 1px solid var(--demo-border);
+    margin-top: 24px;
+    padding-top: 12px;
+  }
+  .demo-inline-details summary {
+    padding: 12px 0;
+    cursor: pointer;
+    min-height: 44px;
+  }
+  .demo-inline-details p {
+    margin: 12px 0;
+    color: var(--cds-text-secondary);
+    line-height: 1.6;
+  }
+  .presentation-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 24px 0;
+  }
+  .presentation-navigation span {
+    font-size: 12px;
+    color: var(--cds-text-secondary);
+    text-align: center;
+  }
+  .presentation-details {
+    padding: 16px 24px;
+    background: var(--dts-surface-background);
+    border: 1px solid var(--demo-border);
+    margin: 0 0 16px;
+    overflow-wrap: anywhere;
+  }
+  .presentation-details summary {
+    cursor: pointer;
+    min-height: 44px;
+    padding: 12px 0;
+  }
+  .presentation-details p {
+    line-height: 1.6;
+    margin: 16px 0;
+  }
+  .presentation-details .numeric-scroll {
+    max-height: 480px;
+    overflow: auto;
+  }
+  .demo-text-button {
+    font: inherit;
+    color: var(--cds-link-primary);
+    border: 0;
+    background: transparent;
+    text-decoration: underline;
+    min-height: 44px;
+    cursor: pointer;
+    padding: 4px 0;
+  }
+  .numeric-scroll table {
+    width: 100%;
+    font-size: 13px;
+  }
+  .numeric-scroll caption {
+    text-align: left;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 16px 0;
+  }
+  .numeric-scroll td,
+  .numeric-scroll th {
+    padding: 10px;
+    text-align: left;
+    line-height: 1.5;
+  }
+  .numeric-scroll th {
+    background: var(--dts-panel-background);
+  }
+  .numeric-scroll td {
+    border-bottom: 1px solid var(--demo-border);
+  }
+  @media (max-width: 1000px) {
+    .presentation-workspace {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .demo-reading {
+      grid-template-columns: 1fr 1fr;
+    }
+    .demo-start {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    .presentation-steps button {
+      padding: 12px 8px;
+      gap: 8px 4px;
+    }
+    .presentation-steps button small {
+      grid-column: 1/-1;
+    }
+  }
+  @media (max-width: 600px) {
+    &.page {
+      padding: 20px 16px 32px;
+    }
+    h1 {
+      font-size: 26px;
+    }
+    .demo-panel {
+      padding: 16px;
+    }
+    .presentation-steps {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x proximity;
+    }
+    .presentation-steps button {
+      flex: 0 0 132px;
+      scroll-snap-align: start;
+      min-height: 88px;
+    }
+    .presentation-caption h2 {
+      font-size: 26px;
+    }
+    .demo-reading {
+      gap: 16px 12px;
+    }
+    .demo-metrics {
+      grid-template-columns: 1fr;
+    }
+    .presentation-navigation {
+      flex-wrap: wrap;
+    }
+    .presentation-navigation span {
+      order: 3;
+      width: 100%;
+    }
+    .presentation-navigation .cds--btn {
+      flex: 1;
+      min-width: 0;
+      padding-right: 16px;
+      max-width: none;
+    }
+    .presentation-details {
+      padding: 12px 16px;
+    }
+    .demo-section-heading .cds--btn {
+      width: 100%;
+      max-width: none;
+    }
+    .presentation-decision .cds--btn {
+      width: 100%;
+      max-width: none;
+    }
+  }
+}

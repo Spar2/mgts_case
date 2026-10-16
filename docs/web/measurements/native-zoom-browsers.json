@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-09",
+  "data": "real 5.csv, native row 1700, distance 300 m",
+  "scenarios": {
+    "firefox": {
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:156.0) Gecko/20100101 Firefox/156.0",
+      "nativeZoom": "Исходные ячейки · без интерполяции · серый: нет валидных данных · WebGL2 · валидных наблюдений в блоке: 3 599",
+      "runtimeErrors": []
+    },
+    "webkit": {
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.6 Safari/605.1.15",
+      "nativeZoom": "Исходные ячейки · без интерполяции · серый: нет валидных данных · WebGL2 · валидных наблюдений в блоке: 3 599",
+      "runtimeErrors": []
+    }
+  },
+  "caveat": "Playwright WebKit on Windows, not actual iPhone or macOS Safari"
+}

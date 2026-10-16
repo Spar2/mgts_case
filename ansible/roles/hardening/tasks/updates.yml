@@ -1,0 +1,36 @@
+---
+- name: Обновления | автообновления включены
+  ansible.builtin.copy:
+    dest: /etc/apt/apt.conf.d/20auto-upgrades-haklolarp
+    mode: "0644"
+    content: |
+      APT::Periodic::Update-Package-Lists "1";
+      APT::Periodic::Download-Upgradeable-Packages "1";
+      APT::Periodic::Unattended-Upgrade "1";
+      APT::Periodic::AutocleanInterval "7";
+      # Авторебут ВЫКЛЮЧЕН осознанно: перезагрузка убивает CI-джобы и ВМ.
+      Unattended-Upgrade::Automatic-Reboot "false";
+
+- name: Обновления | fail2ban
+  ansible.builtin.apt:
+    name: fail2ban
+    state: present
+    update_cache: true
+
+- name: Обновления | jail для sshd
+  ansible.builtin.copy:
+    dest: /etc/fail2ban/jail.d/sshd-haklolarp.conf
+    mode: "0644"
+    content: |
+      [sshd]
+      enabled = true
+      maxretry = 5
+      bantime = 1h
+      ignoreip = {{ hardening_fail2ban_ignoreip | join(' ') }}
+  notify: Restart fail2ban
+
+- name: Обновления | fail2ban запущен
+  ansible.builtin.systemd:
+    name: fail2ban
+    enabled: true
+    state: started

@@ -1,0 +1,96 @@
+{
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+  "origin": "http://127.0.0.1:8081",
+  "viewport": [
+    1438,
+    1168
+  ],
+  "devicePixelRatio": 1,
+  "action": "30 trusted clicks: next native profile on 5.csv",
+  "thresholdMs": 16,
+  "entries": [
+    {
+      "durationMs": 16,
+      "interactionId": 8947
+    },
+    {
+      "durationMs": 16,
+      "interactionId": 8954
+    },
+    {
+      "durationMs": 16,
+      "interactionId": 8961
+    },
+    {
+      "durationMs": 24,
+      "interactionId": 8968
+    },
+    {
+      "durationMs": 24,
+      "interactionId": 8975
+    },
+    {
+      "durationMs": 24,
+      "interactionId": 8982
+    },
+    {
+      "durationMs": 24,
+      "interactionId": 8989
+    },
+    {
+      "durationMs": 24,
+      "interactionId": 8996
+    },
+    {
+      "durationMs": 24,
+      "interactionId": 9003
+    },
+    {
+      "durationMs": 24,
+      "interactionId": 9010
+    },
+    {
+      "durationMs": 24,
+      "interactionId": 9017
+    },
+    {
+      "durationMs": 24,
+      "interactionId": 9024
+    },
+    {
+      "durationMs": 24,
+      "interactionId": 9031
+    },
+    {
+      "durationMs": 24,
+      "interactionId": 9038
+    },
+    {
+      "durationMs": 24,
+      "interactionId": 9045
+    },
+    {
+      "durationMs": 24,
+      "interactionId": 9052
+    },
+    {
+      "durationMs": 24,
+      "interactionId": 9059
+    },
+    {
+      "durationMs": 24,
+      "interactionId": 9066
+    },
+    {
+      "durationMs": 24,
+      "interactionId": 9073
+    },
+    {
+      "durationMs": 24,
+      "interactionId": 9080
+    }
+  ],
+  "caveat": "Event Timing reports only entries at or above threshold, rounded to 8 ms. These clicks do not constitute full-session INP or hardware phone measurements.",
+  "date": "2026-10-09",
+  "conditions": "Windows desktop, real 5.csv, Docker loopback on 8081; concurrent 30-minute replay and background CPU ML available; each selected timestamp confirmed"
+}

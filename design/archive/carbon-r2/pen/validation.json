@@ -1,0 +1,180 @@
+{
+  "cli_version": "0.3.10",
+  "master_root_count": 23,
+  "master_matches_source": true,
+  "position_normalized": true,
+  "algorithm": "JSON length + FNV-1a, structure check, not cryptographic assurance",
+  "individual_screens": [
+    {
+      "file": "pen/screens/01-design-language.pen",
+      "id": "L7iPfs",
+      "normalized_subtree_signature": [
+        9289,
+        2584892607
+      ],
+      "matches_source": true
+    },
+    {
+      "file": "pen/screens/02-reading-data.pen",
+      "id": "NV1A7",
+      "normalized_subtree_signature": [
+        113340,
+        3691056285
+      ],
+      "matches_source": true
+    },
+    {
+      "file": "pen/screens/03-working-modes.pen",
+      "id": "A4X5E4",
+      "normalized_subtree_signature": [
+        7447,
+        1306653267
+      ],
+      "matches_source": true
+    },
+    {
+      "file": "pen/screens/04-records.pen",
+      "id": "Vs6C7",
+      "normalized_subtree_signature": [
+        69900,
+        2898382962
+      ],
+      "matches_source": true
+    },
+    {
+      "file": "pen/screens/05-research.pen",
+      "id": "qUCbQ",
+      "normalized_subtree_signature": [
+        78797,
+        668964378
+      ],
+      "matches_source": true
+    },
+    {
+      "file": "pen/screens/06-event-review.pen",
+      "id": "yRv8z",
+      "normalized_subtree_signature": [
+        81608,
+        4097510736
+      ],
+      "matches_source": true
+    },
+    {
+      "file": "pen/screens/07-blind-review.pen",
+      "id": "b4QoJ",
+      "normalized_subtree_signature": [
+        81361,
+        866878090
+      ],
+      "matches_source": true
+    },
+    {
+      "file": "pen/screens/08-comparison.pen",
+      "id": "hzIX5",
+      "normalized_subtree_signature": [
+        126795,
+        3081334342
+      ],
+      "matches_source": true
+    },
+    {
+      "file": "pen/screens/09-history.pen",
+      "id": "bvyQ9",
+      "normalized_subtree_signature": [
+        71644,
+        223277037
+      ],
+      "matches_source": true
+    },
+    {
+      "file": "pen/screens/10-csv-import.pen",
+      "id": "yx95J",
+      "normalized_subtree_signature": [
+        14545,
+        777841331
+      ],
+      "matches_source": true
+    },
+    {
+      "file": "pen/screens/11-analysis-runs.pen",
+      "id": "uapPA",
+      "normalized_subtree_signature": [
+        15002,
+        1739026904
+      ],
+      "matches_source": true
+    },
+    {
+      "file": "pen/screens/12-methods.pen",
+      "id": "Kw23R",
+      "normalized_subtree_signature": [
+        13507,
+        152615818
+      ],
+      "matches_source": true
+    },
+    {
+      "file": "pen/screens/13-fiber-route.pen",
+      "id": "oBzVg",
+      "normalized_subtree_signature": [
+        14255,
+        3362911792
+      ],
+      "matches_source": true
+    },
+    {
+      "file": "pen/screens/14-export.pen",
+      "id": "qjxSd",
+      "normalized_subtree_signature": [
+        67703,
+        2156364112
+      ],
+      "matches_source": true
+    },
+    {
+      "file": "pen/screens/15-zones.pen",
+      "id": "DvC1f",
+      "normalized_subtree_signature": [
+        61819,
+        51222718
+      ],
+      "matches_source": true
+    },
+    {
+      "file": "pen/screens/16-recovery-states.pen",
+      "id": "w7Fsl1",
+      "normalized_subtree_signature": [
+        10816,
+        2298136217
+      ],
+      "matches_source": true
+    },
+    {
+      "file": "pen/screens/17-focused-research.pen",
+      "id": "k5Z6v2",
+      "normalized_subtree_signature": [
+        70354,
+        3797289532
+      ],
+      "matches_source": true
+    },
+    {
+      "file": "pen/screens/18-tablet-1024.pen",
+      "id": "TKN90",
+      "normalized_subtree_signature": [
+        62099,
+        2720551537
+      ],
+      "matches_source": true
+    },
+    {
+      "file": "pen/screens/19-mobile-390.pen",
+      "id": "kN7CU",
+      "normalized_subtree_signature": [
+        62766,
+        1824661651
+      ],
+      "matches_source": true
+    }
+  ]
+}

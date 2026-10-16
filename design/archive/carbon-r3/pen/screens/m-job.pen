@@ -1,0 +1,374 @@
+{
+  "version": "2.20",
+  "children": [
+    {
+      "type": "frame",
+      "id": "dexnD",
+      "x": 0,
+      "y": 0,
+      "name": "Carbon R3 · Запуск: наблюдение с телефона",
+      "metadata": {
+        "type": "dts-product-r3",
+        "slug": "m-job",
+        "role": "Эксперт",
+        "prototype": true
+      },
+      "clip": true,
+      "width": 390,
+      "height": 844,
+      "fill": "$dts.background",
+      "layout": "none",
+      "children": [
+        {
+          "type": "frame",
+          "id": "I9ooE",
+          "x": 0,
+          "y": 0,
+          "name": "Мобильная оболочка",
+          "width": 390,
+          "height": 56,
+          "fill": "$dts.shell",
+          "layout": "none"
+        },
+        {
+          "type": "icon",
+          "id": "wAZso",
+          "x": 16,
+          "y": 16,
+          "name": "menu",
+          "width": 24,
+          "height": 24,
+          "icon": "menu",
+          "library": "lucide",
+          "fill": "#ffffff"
+        },
+        {
+          "type": "text",
+          "id": "ihUGW",
+          "x": 56,
+          "y": 18,
+          "name": "DTS Workbench",
+          "fill": "#ffffff",
+          "textGrowth": "fixed-width",
+          "width": 270,
+          "content": "DTS Workbench",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "600"
+        },
+        {
+          "type": "icon",
+          "id": "WxbiZ",
+          "x": 350,
+          "y": 16,
+          "name": "circle-user-round",
+          "width": 24,
+          "height": 24,
+          "icon": "circle-user-round",
+          "library": "lucide",
+          "fill": "#ffffff"
+        },
+        {
+          "type": "text",
+          "id": "KyJWW",
+          "x": 16,
+          "y": 80,
+          "name": "Запуск: наблюдение с телефона",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 358,
+          "content": "Запуск: наблюдение с телефона",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 24,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "vH5bx",
+          "x": 16,
+          "y": 144,
+          "name": "Фоновая работа не требует держать страницу открытой",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 358,
+          "content": "Фоновая работа не требует держать страницу открытой",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 12,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "YSd9q",
+          "x": 16,
+          "y": 200,
+          "name": "Строка / Чтение и проверка",
+          "width": 358,
+          "height": 88,
+          "fill": "$dts.selection",
+          "layout": "none"
+        },
+        {
+          "type": "text",
+          "id": "cC5En",
+          "x": 32,
+          "y": 212,
+          "name": "Чтение и проверка",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 326,
+          "content": "Чтение и проверка",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 16,
+          "fontWeight": "600"
+        },
+        {
+          "type": "text",
+          "id": "OYOoe",
+          "x": 32,
+          "y": 242,
+          "name": "Завершено в сценарии",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 326,
+          "content": "Завершено в сценарии",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 12,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "qhqdv",
+          "x": 16,
+          "y": 296,
+          "name": "Строка / Поиск кандидатов",
+          "width": 358,
+          "height": 88,
+          "fill": "$dts.layer",
+          "layout": "none"
+        },
+        {
+          "type": "text",
+          "id": "eruda",
+          "x": 32,
+          "y": 308,
+          "name": "Поиск кандидатов",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 326,
+          "content": "Поиск кандидатов",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 16,
+          "fontWeight": "600"
+        },
+        {
+          "type": "text",
+          "id": "k5I63",
+          "x": 32,
+          "y": 338,
+          "name": "Выполняется в сценарии",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 326,
+          "content": "Выполняется в сценарии",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 12,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "fYPT9",
+          "x": 16,
+          "y": 392,
+          "name": "Строка / Сборка пакета",
+          "width": 358,
+          "height": 88,
+          "fill": "$dts.layer",
+          "layout": "none"
+        },
+        {
+          "type": "text",
+          "id": "s61t6C",
+          "x": 32,
+          "y": 404,
+          "name": "Сборка пакета",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 326,
+          "content": "Сборка пакета",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 16,
+          "fontWeight": "600"
+        },
+        {
+          "type": "text",
+          "id": "HqAFY",
+          "x": 32,
+          "y": 434,
+          "name": "После поиска кандидатов",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 326,
+          "content": "После поиска кандидатов",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 12,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "rectangle",
+          "id": "yUsgG",
+          "x": 16,
+          "y": 496,
+          "name": "Разделитель",
+          "fill": "$dts.border-subtle",
+          "width": 358,
+          "height": 1
+        },
+        {
+          "type": "text",
+          "id": "l1VK4Q",
+          "x": 32,
+          "y": 512,
+          "name": "Отменить запуск",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 326,
+          "content": "Отменить запуск",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "rectangle",
+          "id": "chmhn",
+          "x": 16,
+          "y": 560,
+          "name": "Разделитель",
+          "fill": "$dts.border-subtle",
+          "width": 358,
+          "height": 1
+        },
+        {
+          "type": "text",
+          "id": "CWpJ9",
+          "x": 32,
+          "y": 576,
+          "name": "Возможность уведомлений — по настройке",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 326,
+          "content": "Возможность уведомлений — по настройке",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "onfcM",
+          "x": 0,
+          "y": 768,
+          "name": "Панель основного действия",
+          "width": 390,
+          "height": 76,
+          "fill": "$dts.background",
+          "layout": "none"
+        },
+        {
+          "type": "rectangle",
+          "id": "ZZiag",
+          "x": 0,
+          "y": 768,
+          "name": "Разделитель панели",
+          "fill": "$dts.border-subtle",
+          "width": 390,
+          "height": 1
+        },
+        {
+          "type": "frame",
+          "id": "fRzFq",
+          "x": 16,
+          "y": 780,
+          "name": "Действие / Открыть журнал",
+          "width": 358,
+          "height": 48,
+          "fill": "$dts.interactive",
+          "layout": "none",
+          "children": [
+            {
+              "type": "text",
+              "id": "viomy",
+              "x": 16,
+              "y": 14,
+              "name": "Открыть журнал",
+              "fill": "#ffffff",
+              "textGrowth": "fixed-width",
+              "width": 326,
+              "content": "Открыть журнал",
+              "lineHeight": 1.3,
+              "fontFamily": "$dts.font",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variables": {
+    "dts.background": {
+      "type": "color",
+      "value": "#ffffff"
+    },
+    "dts.layer": {
+      "type": "color",
+      "value": "#f4f4f4"
+    },
+    "dts.text-primary": {
+      "type": "color",
+      "value": "#161616"
+    },
+    "dts.text-secondary": {
+      "type": "color",
+      "value": "#525252"
+    },
+    "dts.border-subtle": {
+      "type": "color",
+      "value": "#e0e0e0"
+    },
+    "dts.interactive": {
+      "type": "color",
+      "value": "#0f62fe"
+    },
+    "dts.selection": {
+      "type": "color",
+      "value": "#edf5ff"
+    },
+    "dts.shell": {
+      "type": "color",
+      "value": "#161616"
+    },
+    "dts.font": {
+      "type": "string",
+      "value": "IBM Plex Sans"
+    },
+    "dts.font-mono": {
+      "type": "string",
+      "value": "IBM Plex Mono"
+    },
+    "dts.spacing": {
+      "type": "number",
+      "value": 8
+    }
+  },
+  "fileToken": "0a9ba33a-6ce8-4113-ad2f-1f37bedbf467"
+}

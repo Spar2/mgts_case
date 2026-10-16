@@ -1,0 +1,19 @@
+---
+docker_users: []
+docker_apt_distro: "{{ ansible_facts.distribution | lower }}"
+docker_deb_arch: >-
+  {{
+    'amd64'
+    if ansible_facts.architecture == 'x86_64'
+    else (
+      'arm64'
+      if ansible_facts.architecture == 'aarch64'
+      else ansible_facts.architecture
+    )
+  }}
+docker_packages_ubuntu:
+  - docker-ce
+  - docker-ce-cli
+  - containerd.io
+  - docker-buildx-plugin
+  - docker-compose-plugin

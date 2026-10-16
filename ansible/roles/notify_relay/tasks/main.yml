@@ -1,0 +1,65 @@
+---
+# notify_relay — deploy relay + AmneziaWG sidecar via docker compose.
+# Secrets are created on the host, never committed: relay.env (0600) is only
+# created when missing; awg.conf must be laid manually (see compose header):
+#   sudo install -m 0600 /path/to/awg0.conf /etc/notify-relay/awg.conf
+
+- name: Notify relay | каталоги
+  ansible.builtin.file:
+    path: "{{ item.path }}"
+    state: directory
+    owner: root
+    group: root
+    mode: "{{ item.mode }}"
+  loop:
+    - {path: "/etc/notify-relay", mode: "0700"}
+    - {path: "{{ notify_deploy_dir }}", mode: "0755"}
+
+- name: Notify relay | env-file из host (создать-пустышку только если нет)
+  ansible.builtin.copy:
+    dest: "{{ notify_env_file }}"
+    owner: root
+    group: root
+    mode: "0600"
+    force: false
+    content: |
+      RELAY_TOKEN=change-me
+      DISCORD_WEBHOOK_URL=https://discord.com/api/webhooks/CHANGE/ME
+
+- name: Notify relay | awg.conf на месте
+  ansible.builtin.stat:
+    path: "{{ notify_awg_conf }}"
+  register: notify_awg_stat
+
+- name: Notify relay | нет awg.conf — стоп с подсказкой
+  ansible.builtin.fail:
+    msg: >-
+      {{ notify_awg_conf }} отсутствует. Проложи вручную:
+      sudo install -m 0600 /path/to/awg0.conf {{ notify_awg_conf }}
+      (relay-only: notify_awg_enable=false).
+  when: notify_awg_enable | bool and not notify_awg_stat.stat.exists
+
+- name: Notify relay | выложить compose + sources из чекаута
+  ansible.builtin.copy:
+    src: "{{ notify_src_dir }}/{{ notify_src_subdir }}/{{ item }}"
+    dest: "{{ notify_deploy_dir }}/{{ item }}"
+    owner: root
+    group: root
+    mode: "0644"
+    remote_src: true
+  loop:
+    - compose.notify.yml
+    - Dockerfile.relay
+    - relay.py
+
+- name: Notify relay | up -d (всегда включён)
+  community.docker.docker_compose_v2:
+    project_src: "{{ notify_deploy_dir }}"
+    files:
+      - compose.notify.yml
+    state: present
+    build: always
+    pull: missing
+  environment:
+    NOTIFY_RELAY_PORT: "{{ notify_relay_port }}"
+    NOTIFY_AWG_IMAGE: "{{ notify_awg_image }}"

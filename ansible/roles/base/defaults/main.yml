@@ -1,0 +1,9 @@
+---
+base_packages_ubuntu:
+  - git
+  - python3
+  - openssh-client
+  - ethtool
+# MAC-адреса NIC с включённым WoL (magic packet), чтобы KVM могла будить ноду.
+# FROZEN: KVM/WoL — не трогать (always-on)
+base_wol_macs: []

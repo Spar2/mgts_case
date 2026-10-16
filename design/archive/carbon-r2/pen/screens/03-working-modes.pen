@@ -1,0 +1,479 @@
+{
+  "version": "2.19",
+  "children": [
+    {
+      "type": "frame",
+      "id": "A4X5E4",
+      "x": 0,
+      "y": 0,
+      "name": "Carbon · Три рабочих режима одного продукта",
+      "metadata": {
+        "type": "dts-brainstorm",
+        "screen": 2,
+        "concept": true
+      },
+      "clip": true,
+      "width": 1440,
+      "height": 1000,
+      "fill": "$dts.background",
+      "layout": "none",
+      "children": [
+        {
+          "type": "frame",
+          "id": "X46e8l",
+          "x": 0,
+          "y": 0,
+          "name": "Carbon UI shell",
+          "width": 1440,
+          "height": 48,
+          "fill": "$dts.shell",
+          "layout": "none",
+          "children": [
+            {
+              "type": "text",
+              "id": "ws7Hk",
+              "x": 16,
+              "y": 11,
+              "name": "≡",
+              "fill": "#ffffff",
+              "textGrowth": "fixed-width",
+              "width": 28,
+              "content": "≡",
+              "lineHeight": 1.3,
+              "fontFamily": "$dts.font",
+              "fontSize": 20,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "F7AuAO",
+              "x": 64,
+              "y": 14,
+              "name": "МГТС / DTS Workbench",
+              "fill": "#ffffff",
+              "textGrowth": "fixed-width",
+              "width": 240,
+              "content": "МГТС / DTS Workbench",
+              "lineHeight": 1.3,
+              "fontFamily": "$dts.font",
+              "fontSize": 14,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "Y0jZ7",
+              "x": 352,
+              "y": 14,
+              "name": "Данные",
+              "fill": "#c6c6c6",
+              "textGrowth": "fixed-width",
+              "width": 124,
+              "content": "Данные",
+              "lineHeight": 1.3,
+              "fontFamily": "$dts.font",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "OxbzK",
+              "x": 496,
+              "y": 14,
+              "name": "Исследование",
+              "fill": "#ffffff",
+              "textGrowth": "fixed-width",
+              "width": 124,
+              "content": "Исследование",
+              "lineHeight": 1.3,
+              "fontFamily": "$dts.font",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "rectangle",
+              "id": "X9UxcG",
+              "x": 484,
+              "y": 45,
+              "name": "Выбранный раздел",
+              "fill": "$dts.interactive",
+              "width": 128,
+              "height": 3
+            },
+            {
+              "type": "text",
+              "id": "vRdCW",
+              "x": 640,
+              "y": 14,
+              "name": "Разметка",
+              "fill": "#c6c6c6",
+              "textGrowth": "fixed-width",
+              "width": 124,
+              "content": "Разметка",
+              "lineHeight": 1.3,
+              "fontFamily": "$dts.font",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "o4lut",
+              "x": 784,
+              "y": 14,
+              "name": "Модели",
+              "fill": "#c6c6c6",
+              "textGrowth": "fixed-width",
+              "width": 124,
+              "content": "Модели",
+              "lineHeight": 1.3,
+              "fontFamily": "$dts.font",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "Y2CWY5",
+              "x": 1160,
+              "y": 14,
+              "name": "Проект хакатона",
+              "fill": "#c6c6c6",
+              "textGrowth": "fixed-width",
+              "width": 190,
+              "content": "Проект хакатона",
+              "lineHeight": 1.3,
+              "fontFamily": "$dts.font",
+              "fontSize": 12,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "hZSWk",
+          "x": 32,
+          "y": 68,
+          "name": "Рабочая область / Исследование",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 800,
+          "content": "Рабочая область / Исследование",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 12,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "ZcKrv",
+          "x": 32,
+          "y": 96,
+          "name": "Три рабочих режима одного продукта",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 980,
+          "content": "Три рабочих режима одного продукта",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 28,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "rectangle",
+          "id": "tiG7N",
+          "x": 0,
+          "y": 976,
+          "name": "Строка состояния",
+          "fill": "$dts.layer",
+          "width": 1440,
+          "height": 24
+        },
+        {
+          "type": "text",
+          "id": "d4ZWs",
+          "x": 32,
+          "y": 981,
+          "name": "МАКЕТ  ·  Измерения: 5.csv  ·  Сценарии интерфейса не являются экспертной разметкой",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 1376,
+          "content": "МАКЕТ  ·  Измерения: 5.csv  ·  Сценарии интерфейса не являются экспертной разметкой",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 12,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "QOv3T",
+          "x": 32,
+          "y": 160,
+          "name": "Одна система компонентов, разные композиции под разные решения.",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 1280,
+          "content": "Одна система компонентов, разные композиции под разные решения.",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 20,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "RU34t",
+          "x": 32,
+          "y": 248,
+          "name": "01",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 104,
+          "content": "01",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font-mono",
+          "fontSize": 32,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "p6yJbF",
+          "x": 168,
+          "y": 248,
+          "name": "Исследование",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 440,
+          "content": "Исследование",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 28,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "G71A4",
+          "x": 168,
+          "y": 312,
+          "name": "Температурное поле → срезы → контекст",
+          "fill": "$dts.interactive",
+          "textGrowth": "fixed-width",
+          "width": 440,
+          "content": "Температурное поле → срезы → контекст",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "urRU6",
+          "x": 768,
+          "y": 256,
+          "name": "Основной режим для изучения записи.\nБольшая карта и связанные графики.\nНастройки не перекрывают измерения.",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 640,
+          "content": "Основной режим для изучения записи.\nБольшая карта и связанные графики.\nНастройки не перекрывают измерения.",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 16,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "rectangle",
+          "id": "D0GOp",
+          "x": 168,
+          "y": 424,
+          "name": "Разделитель режима 01",
+          "fill": "$dts.border-subtle",
+          "width": 1240,
+          "height": 1
+        },
+        {
+          "type": "text",
+          "id": "lCOU3",
+          "x": 32,
+          "y": 472,
+          "name": "02",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 104,
+          "content": "02",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font-mono",
+          "fontSize": 32,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "gykO8",
+          "x": 168,
+          "y": 472,
+          "name": "Экспертная проверка",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 440,
+          "content": "Экспертная проверка",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 28,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "lIx3Z",
+          "x": 168,
+          "y": 536,
+          "name": "Очередь → доказательства → решение",
+          "fill": "$dts.interactive",
+          "textGrowth": "fixed-width",
+          "width": 440,
+          "content": "Очередь → доказательства → решение",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "f95g3",
+          "x": 768,
+          "y": 480,
+          "name": "Для занятого специалиста: один ответ за раз.\nОтложить вместо угадывания.\nСлепая проверка скрывает оценку алгоритма.",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 640,
+          "content": "Для занятого специалиста: один ответ за раз.\nОтложить вместо угадывания.\nСлепая проверка скрывает оценку алгоритма.",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 16,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "rectangle",
+          "id": "vX27c",
+          "x": 168,
+          "y": 648,
+          "name": "Разделитель режима 02",
+          "fill": "$dts.border-subtle",
+          "width": 1240,
+          "height": 1
+        },
+        {
+          "type": "text",
+          "id": "RrB7X",
+          "x": 32,
+          "y": 696,
+          "name": "03",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 104,
+          "content": "03",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font-mono",
+          "fontSize": 32,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "YACyb",
+          "x": 168,
+          "y": 696,
+          "name": "Операционная история",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 440,
+          "content": "Операционная история",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 28,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "GQuBs",
+          "x": 168,
+          "y": 760,
+          "name": "Временная шкала → участок → разбор",
+          "fill": "$dts.interactive",
+          "textGrowth": "fixed-width",
+          "width": 440,
+          "content": "Временная шкала → участок → разбор",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "rKB7b",
+          "x": 768,
+          "y": 704,
+          "name": "Плотный тёмный просмотр исторической записи.\nПереход в исследование по выбранному моменту.\nОнлайн-режим требует отдельной валидации.",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 640,
+          "content": "Просмотр истории в общей светлой теме.\nПереход в исследование по выбранному моменту.\nОнлайн-режим требует отдельной валидации.",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 16,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "rectangle",
+          "id": "D5Db2m",
+          "x": 168,
+          "y": 872,
+          "name": "Разделитель режима 03",
+          "fill": "$dts.border-subtle",
+          "width": 1240,
+          "height": 1
+        }
+      ]
+    }
+  ],
+  "variables": {
+    "dts.background": {
+      "type": "color",
+      "value": "#ffffff"
+    },
+    "dts.layer": {
+      "type": "color",
+      "value": "#f4f4f4"
+    },
+    "dts.text-primary": {
+      "type": "color",
+      "value": "#161616"
+    },
+    "dts.text-secondary": {
+      "type": "color",
+      "value": "#525252"
+    },
+    "dts.border-subtle": {
+      "type": "color",
+      "value": "#e0e0e0"
+    },
+    "dts.interactive": {
+      "type": "color",
+      "value": "#0f62fe"
+    },
+    "dts.selection": {
+      "type": "color",
+      "value": "#edf5ff"
+    },
+    "dts.shell": {
+      "type": "color",
+      "value": "#161616"
+    },
+    "dts.font": {
+      "type": "string",
+      "value": "IBM Plex Sans"
+    },
+    "dts.font-mono": {
+      "type": "string",
+      "value": "IBM Plex Mono"
+    },
+    "dts.spacing": {
+      "type": "number",
+      "value": 8
+    }
+  },
+  "fileToken": "0a9ba33a-6ce8-4113-ad2f-1f37bedbf467"
+}

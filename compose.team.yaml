@@ -1,0 +1,91 @@
+# CLOSED team deployment behind the host's Tailscale HTTPS reverse proxy.
+# Use with compose.web.yaml and compose.platform.yaml. PostgreSQL is mandatory.
+x-team-logging: &team-logging
+  driver: json-file
+  options: {max-size: "10m", max-file: "3"}
+
+services:
+  web:
+    ports: !override ["127.0.0.1:8081:80"]
+    environment:
+      DTS_PUBLIC_HOST: ${DTS_PUBLIC_HOST:?Set the exact team HTTPS hostname}
+      DTS_PUBLIC_ORIGIN: ${DTS_PUBLIC_ORIGIN:?Set the exact HTTPS origin}
+    volumes:
+      - ./ops/web/nginx-team.conf.template:/etc/nginx/templates/default.conf.template:ro
+    networks:
+      default: {ipv4_address: 172.30.89.10}
+    logging: *team-logging
+
+  api:
+    environment:
+      DTS_ENV: production
+      DTS_SECURE_COOKIES: "true"
+      DTS_ALLOWED_HOSTS: ${DTS_PUBLIC_HOST:?Set the exact team HTTPS hostname},127.0.0.1,localhost
+      DTS_ALLOWED_ORIGINS: ${DTS_PUBLIC_ORIGIN:?Set the exact HTTPS origin}
+      DTS_BUILD_SHA: ${DTS_BUILD_SHA:-unknown}
+      DTS_RESEARCH_PACK: ${DTS_RESEARCH_PACK:+/data/research}
+      DTS_ML_URL: http://ml-compat:8082
+      FORWARDED_ALLOW_IPS: 172.30.89.10
+    command: [python, -m, uvicorn, workbench.api:app, --host, 0.0.0.0, --port, "8091", --proxy-headers, --no-access-log]
+    volumes:
+      - ${DTS_RECORDS:?Set the existing records directory}:/data/records:ro
+      - ${DTS_QUEUE:?Set the existing queue directory}:/data/queue:ro
+      - ${DTS_RESEARCH_PACK:-./.runtime/research-pack}:/data/research:ro
+      - ${DTS_IMPORT_ROOT:-./.runtime/imports}:/imports:ro
+    logging: *team-logging
+
+  worker:
+    environment:
+      DTS_ML_URL: http://ml-compat:8082
+      DTS_IMPORT_ROOT: /imports
+    volumes:
+      - ${DTS_RECORDS:?Set the existing records directory}:/data/records:ro
+      - workbench-runtime:/runtime
+      - ${DTS_IMPORT_ROOT:-./.runtime/imports}:/imports:ro
+    logging: *team-logging
+
+  ml-compat:
+    ports: !reset []
+    logging: *team-logging
+
+  postgres:
+    ports: !reset []
+    logging: *team-logging
+
+  redis:
+    ports: !reset []
+    logging: *team-logging
+
+  backup:
+    build: {context: ., dockerfile: services/web-api/Dockerfile}
+    command: [python, -m, workbench.backup_job, --daily]
+    environment:
+      DTS_DATABASE_URL: postgresql://workbench:${DTS_POSTGRES_PASSWORD:?Set a private PostgreSQL password}@postgres:5432/workbench
+      DTS_RUNTIME: /runtime
+      DTS_BACKUP_ROOT: /backups
+      DTS_BACKUP_RECIPIENT: ${DTS_BACKUP_RECIPIENT:?Set the public age recipient}
+    volumes:
+      - workbench-runtime:/runtime
+      - ${DTS_BACKUP_DIRECTORY:?Set a private persistent backup directory}:/backups
+    tmpfs: ["/tmp:size=256m,mode=1777"]
+    depends_on:
+      postgres: {condition: service_healthy}
+    restart: unless-stopped
+    mem_limit: 256m
+    logging: *team-logging
+
+  archive:
+    profiles: [maintenance]
+    build: {context: ., dockerfile: services/web-api/Dockerfile}
+    command: [python, -c, "raise SystemExit('one-shot archive helper')"]
+    environment:
+      DTS_BACKUP_RECIPIENT: ${DTS_BACKUP_RECIPIENT:?Set the public age recipient}
+    volumes:
+      - workbench-runtime:/runtime:ro
+      - ${DTS_BACKUP_DIRECTORY:?Set a private persistent backup directory}:/backups
+    logging: *team-logging
+
+networks:
+  default:
+    ipam:
+      config: [{subnet: 172.30.89.0/24}]

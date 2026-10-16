@@ -1,0 +1,374 @@
+{
+  "version": "2.20",
+  "children": [
+    {
+      "type": "frame",
+      "id": "yLGhb",
+      "x": 0,
+      "y": 0,
+      "name": "Carbon R3 · Изменение в другом сеансе",
+      "metadata": {
+        "type": "dts-product-r3",
+        "slug": "m-conflict",
+        "role": "Эксперт",
+        "prototype": true
+      },
+      "clip": true,
+      "width": 390,
+      "height": 844,
+      "fill": "$dts.background",
+      "layout": "none",
+      "children": [
+        {
+          "type": "frame",
+          "id": "C4Zswj",
+          "x": 0,
+          "y": 0,
+          "name": "Мобильная оболочка",
+          "width": 390,
+          "height": 56,
+          "fill": "$dts.shell",
+          "layout": "none"
+        },
+        {
+          "type": "icon",
+          "id": "GJOjQ",
+          "x": 16,
+          "y": 16,
+          "name": "menu",
+          "width": 24,
+          "height": 24,
+          "icon": "menu",
+          "library": "lucide",
+          "fill": "#ffffff"
+        },
+        {
+          "type": "text",
+          "id": "F5G5Gq",
+          "x": 56,
+          "y": 18,
+          "name": "DTS Workbench",
+          "fill": "#ffffff",
+          "textGrowth": "fixed-width",
+          "width": 270,
+          "content": "DTS Workbench",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "600"
+        },
+        {
+          "type": "icon",
+          "id": "TInwY",
+          "x": 350,
+          "y": 16,
+          "name": "circle-user-round",
+          "width": 24,
+          "height": 24,
+          "icon": "circle-user-round",
+          "library": "lucide",
+          "fill": "#ffffff"
+        },
+        {
+          "type": "text",
+          "id": "x7vB01",
+          "x": 16,
+          "y": 80,
+          "name": "Изменение в другом сеансе",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 358,
+          "content": "Изменение в другом сеансе",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 24,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "a1i8q",
+          "x": 16,
+          "y": 144,
+          "name": "Отправка остановлена из-за конфликта",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 358,
+          "content": "Отправка остановлена из-за конфликта",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 12,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "YkLVU",
+          "x": 16,
+          "y": 200,
+          "name": "Строка / Ваш черновик",
+          "width": 358,
+          "height": 88,
+          "fill": "$dts.selection",
+          "layout": "none"
+        },
+        {
+          "type": "text",
+          "id": "kDDbF",
+          "x": 32,
+          "y": 212,
+          "name": "Ваш черновик",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 326,
+          "content": "Ваш черновик",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 16,
+          "fontWeight": "600"
+        },
+        {
+          "type": "text",
+          "id": "y0KAOr",
+          "x": 32,
+          "y": 242,
+          "name": "Сохранён локально; не перезаписан",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 326,
+          "content": "Сохранён локально; не перезаписан",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 12,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "rdQak",
+          "x": 16,
+          "y": 296,
+          "name": "Строка / Текущая ревизия",
+          "width": 358,
+          "height": 88,
+          "fill": "$dts.layer",
+          "layout": "none"
+        },
+        {
+          "type": "text",
+          "id": "hoLhd",
+          "x": 32,
+          "y": 308,
+          "name": "Текущая ревизия",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 326,
+          "content": "Текущая ревизия",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 16,
+          "fontWeight": "600"
+        },
+        {
+          "type": "text",
+          "id": "kFj1t",
+          "x": 32,
+          "y": 338,
+          "name": "Открыть ответ сервера и его автора",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 326,
+          "content": "Открыть ответ сервера и его автора",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 12,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "EmNu1",
+          "x": 16,
+          "y": 392,
+          "name": "Строка / После сравнения",
+          "width": 358,
+          "height": 88,
+          "fill": "$dts.layer",
+          "layout": "none"
+        },
+        {
+          "type": "text",
+          "id": "zbAU4",
+          "x": 32,
+          "y": 404,
+          "name": "После сравнения",
+          "fill": "$dts.text-primary",
+          "textGrowth": "fixed-width",
+          "width": 326,
+          "content": "После сравнения",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 16,
+          "fontWeight": "600"
+        },
+        {
+          "type": "text",
+          "id": "iM3qj",
+          "x": 32,
+          "y": 434,
+          "name": "Выбрать ответ и подтвердить свежую ревизию",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 326,
+          "content": "Выбрать ответ и подтвердить свежую ревизию",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 12,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "rectangle",
+          "id": "i2PExK",
+          "x": 16,
+          "y": 496,
+          "name": "Разделитель",
+          "fill": "$dts.border-subtle",
+          "width": 358,
+          "height": 1
+        },
+        {
+          "type": "text",
+          "id": "Ze9ns",
+          "x": 32,
+          "y": 512,
+          "name": "Скопировать черновик",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 326,
+          "content": "Скопировать черновик",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "rectangle",
+          "id": "at0DO",
+          "x": 16,
+          "y": 560,
+          "name": "Разделитель",
+          "fill": "$dts.border-subtle",
+          "width": 358,
+          "height": 1
+        },
+        {
+          "type": "text",
+          "id": "Ej30N",
+          "x": 32,
+          "y": 576,
+          "name": "Вернуться в очередь",
+          "fill": "$dts.text-secondary",
+          "textGrowth": "fixed-width",
+          "width": 326,
+          "content": "Вернуться в очередь",
+          "lineHeight": 1.3,
+          "fontFamily": "$dts.font",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "BuSjB",
+          "x": 0,
+          "y": 768,
+          "name": "Панель основного действия",
+          "width": 390,
+          "height": 76,
+          "fill": "$dts.background",
+          "layout": "none"
+        },
+        {
+          "type": "rectangle",
+          "id": "I6geN",
+          "x": 0,
+          "y": 768,
+          "name": "Разделитель панели",
+          "fill": "$dts.border-subtle",
+          "width": 390,
+          "height": 1
+        },
+        {
+          "type": "frame",
+          "id": "uLlVS",
+          "x": 16,
+          "y": 780,
+          "name": "Действие / Сравнить версии",
+          "width": 358,
+          "height": 48,
+          "fill": "$dts.interactive",
+          "layout": "none",
+          "children": [
+            {
+              "type": "text",
+              "id": "oC2Mu",
+              "x": 16,
+              "y": 14,
+              "name": "Сравнить версии",
+              "fill": "#ffffff",
+              "textGrowth": "fixed-width",
+              "width": 326,
+              "content": "Сравнить версии",
+              "lineHeight": 1.3,
+              "fontFamily": "$dts.font",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variables": {
+    "dts.background": {
+      "type": "color",
+      "value": "#ffffff"
+    },
+    "dts.layer": {
+      "type": "color",
+      "value": "#f4f4f4"
+    },
+    "dts.text-primary": {
+      "type": "color",
+      "value": "#161616"
+    },
+    "dts.text-secondary": {
+      "type": "color",
+      "value": "#525252"
+    },
+    "dts.border-subtle": {
+      "type": "color",
+      "value": "#e0e0e0"
+    },
+    "dts.interactive": {
+      "type": "color",
+      "value": "#0f62fe"
+    },
+    "dts.selection": {
+      "type": "color",
+      "value": "#edf5ff"
+    },
+    "dts.shell": {
+      "type": "color",
+      "value": "#161616"
+    },
+    "dts.font": {
+      "type": "string",
+      "value": "IBM Plex Sans"
+    },
+    "dts.font-mono": {
+      "type": "string",
+      "value": "IBM Plex Mono"
+    },
+    "dts.spacing": {
+      "type": "number",
+      "value": 8
+    }
+  },
+  "fileToken": "0a9ba33a-6ce8-4113-ad2f-1f37bedbf467"
+}

@@ -1,0 +1,291 @@
+{
+  "base": "https://xeon-staging.tail5a7687.ts.net",
+  "results": [
+    {
+      "path": "/",
+      "status": 200,
+      "bytes": 635,
+      "content_type": "text/html",
+      "cache": null,
+      "location": null
+    },
+    {
+      "path": "/login",
+      "status": 200,
+      "bytes": 635,
+      "content_type": "text/html",
+      "cache": null,
+      "location": null
+    },
+    {
+      "path": "/activate",
+      "status": 200,
+      "bytes": 635,
+      "content_type": "text/html",
+      "cache": null,
+      "location": null
+    },
+    {
+      "path": "/recover",
+      "status": 200,
+      "bytes": 635,
+      "content_type": "text/html",
+      "cache": null,
+      "location": null
+    },
+    {
+      "path": "/research?record=5&row=2",
+      "status": 200,
+      "bytes": 635,
+      "content_type": "text/html",
+      "cache": null,
+      "location": null
+    },
+    {
+      "path": "/works",
+      "status": 200,
+      "bytes": 635,
+      "content_type": "text/html",
+      "cache": null,
+      "location": null
+    },
+    {
+      "path": "/monitoring",
+      "status": 200,
+      "bytes": 635,
+      "content_type": "text/html",
+      "cache": null,
+      "location": null
+    },
+    {
+      "path": "/laboratory",
+      "status": 200,
+      "bytes": 635,
+      "content_type": "text/html",
+      "cache": null,
+      "location": null
+    },
+    {
+      "path": "/cases",
+      "status": 200,
+      "bytes": 635,
+      "content_type": "text/html",
+      "cache": null,
+      "location": null
+    },
+    {
+      "path": "/review",
+      "status": 200,
+      "bytes": 635,
+      "content_type": "text/html",
+      "cache": null,
+      "location": null
+    },
+    {
+      "path": "/account",
+      "status": 200,
+      "bytes": 635,
+      "content_type": "text/html",
+      "cache": null,
+      "location": null
+    },
+    {
+      "path": "/system",
+      "status": 200,
+      "bytes": 635,
+      "content_type": "text/html",
+      "cache": null,
+      "location": null
+    },
+    {
+      "path": "/demo",
+      "status": 200,
+      "bytes": 635,
+      "content_type": "text/html",
+      "cache": null,
+      "location": null
+    },
+    {
+      "path": "/try",
+      "status": 200,
+      "bytes": 635,
+      "content_type": "text/html",
+      "cache": null,
+      "location": null
+    },
+    {
+      "path": "/runs",
+      "status": 200,
+      "bytes": 635,
+      "content_type": "text/html",
+      "cache": null,
+      "location": null
+    },
+    {
+      "path": "/analysis",
+      "status": 200,
+      "bytes": 635,
+      "content_type": "text/html",
+      "cache": null,
+      "location": null
+    },
+    {
+      "path": "/candidates",
+      "status": 200,
+      "bytes": 635,
+      "content_type": "text/html",
+      "cache": null,
+      "location": null
+    },
+    {
+      "path": "/api/v1/health",
+      "status": 200,
+      "bytes": 103,
+      "content_type": "application/json",
+      "cache": "no-store",
+      "location": null,
+      "health": {
+        "auth_enabled": true,
+        "access_mode": null,
+        "build_sha": null,
+        "qa_mode": false
+      }
+    },
+    {
+      "path": "/api/v2/health/ready",
+      "status": 200,
+      "bytes": 64,
+      "content_type": "application/json",
+      "cache": "no-store",
+      "location": null
+    },
+    {
+      "path": "/api/v1/records",
+      "status": 401,
+      "bytes": 26,
+      "content_type": "application/json",
+      "cache": null,
+      "location": null
+    },
+    {
+      "path": "/api/v1/queue",
+      "status": 401,
+      "bytes": 26,
+      "content_type": "application/json",
+      "cache": null,
+      "location": null
+    },
+    {
+      "path": "/api/v1/session",
+      "status": 401,
+      "bytes": 26,
+      "content_type": "application/json",
+      "cache": null,
+      "location": null
+    },
+    {
+      "path": "/api/v2/investigations",
+      "status": 401,
+      "bytes": 26,
+      "content_type": "application/json",
+      "cache": null,
+      "location": null
+    },
+    {
+      "path": "/api/v2/cases",
+      "status": 401,
+      "bytes": 26,
+      "content_type": "application/json",
+      "cache": null,
+      "location": null
+    },
+    {
+      "path": "/api/v2/accounts",
+      "status": 401,
+      "bytes": 26,
+      "content_type": "application/json",
+      "cache": null,
+      "location": null
+    },
+    {
+      "path": "/api/v2/jobs",
+      "status": 401,
+      "bytes": 26,
+      "content_type": "application/json",
+      "cache": null,
+      "location": null
+    },
+    {
+      "path": "/api/public/v1/package",
+      "status": 200,
+      "bytes": 128236,
+      "content_type": "application/json",
+      "cache": "no-store",
+      "location": null
+    },
+    {
+      "path": "/api/v2/cases/missing/bundle",
+      "status": 401,
+      "bytes": 26,
+      "content_type": "application/json",
+      "cache": null,
+      "location": null
+    },
+    {
+      "path": "/openapi.json",
+      "status": 200,
+      "bytes": 635,
+      "content_type": "text/html",
+      "cache": null,
+      "location": null
+    },
+    {
+      "path": "/.env",
+      "status": 200,
+      "bytes": 635,
+      "content_type": "text/html",
+      "cache": null,
+      "location": null
+    },
+    {
+      "path": "/assets/config.json",
+      "status": 404,
+      "bytes": 153,
+      "content_type": "text/html",
+      "cache": null,
+      "location": null
+    },
+    {
+      "path": "/landing/private.json",
+      "status": 200,
+      "bytes": 635,
+      "content_type": "text/html",
+      "cache": null,
+      "location": null
+    },
+    {
+      "path": "/landing/mgts-original.jpg",
+      "status": 200,
+      "bytes": 635,
+      "content_type": "text/html",
+      "cache": null,
+      "location": null
+    },
+    {
+      "path": "/landing/larp-corp-original.jpg",
+      "status": 200,
+      "bytes": 635,
+      "content_type": "text/html",
+      "cache": null,
+      "location": null
+    },
+    {
+      "path": "/landing/visual-data.json",
+      "status": 200,
+      "bytes": 635,
+      "content_type": "text/html",
+      "cache": null,
+      "location": null
+    }
+  ]
+}

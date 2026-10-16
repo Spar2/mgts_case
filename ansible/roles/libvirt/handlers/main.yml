@@ -1,0 +1,6 @@
+---
+- name: Apply br0 bridge
+  ansible.builtin.command: netplan apply
+  async: 120
+  poll: 0
+  changed_when: true

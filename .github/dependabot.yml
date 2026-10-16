@@ -1,0 +1,34 @@
+version: 2
+updates:
+  # Экшены запинены на SHA (см. `# vX` комменты в workflow) — Dependabot
+  # открывает PR на обновления, gate их проверяет, мёрж руками.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: "chore(ci)"
+  - package-ecosystem: docker
+    directory: /
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: "chore(docker)"
+  - package-ecosystem: pip
+    directory: /
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: "chore(pip)"
+  - package-ecosystem: pip
+    directory: /services/web-api
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: "chore(pip)"
+  - package-ecosystem: npm
+    directory: /apps/web
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: "chore(npm)"

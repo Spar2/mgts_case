@@ -1,0 +1,9 @@
+# STAGING-заглушка (изолированный стенд, НЕ прод).
+# Команды web/ml/devops заменят это своими сервисами позже.
+# Порт через APP_PORT, чтобы preview-окружения (9000+N, диапазон 9000-9100 staging/preview) не конфликтовали. ВНИМАНИЕ: без host_ip -> implicit 0.0.0.0 wildcard open-bind (слушает все интерфейсы, вкл. tailnet/LAN), в отличие от 127.0.0.1 loopback в compose.web/ml.yaml; только staging/main.
+services:
+  web:
+    image: nginx:1.28-alpine@sha256:a8b39bd9cf0f83869a2162827a0caf6137ddf759d50a171451b335cecc87d236 # pinned 2026-03-25 (was TODO digest)
+    restart: unless-stopped
+    ports:
+      - "${APP_PORT:-8080}:80"

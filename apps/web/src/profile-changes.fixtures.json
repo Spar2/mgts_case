@@ -1,0 +1,118 @@
+[
+  {
+    "name": "threshold ties and missing values",
+    "profile": {
+      "x_m": [0, 1, 2, 3, 4, 5, 6, 7],
+      "temperature_c": [0, 0, 2, 2, null, 5, 9, 9],
+      "processed_temperature_c": [0, 0.01, 3, 1, 99, null, 10, 8]
+    },
+    "expected": {
+      "schema_version": "dts-profile-changes-v1",
+      "threshold_c": 0.01,
+      "total_points": 8,
+      "paired_points": 6,
+      "missing_original": 1,
+      "missing_processed": 1,
+      "changed_points": 4,
+      "max_absolute_change_c": 1,
+      "mean_absolute_change_c": 0.6683333333333333,
+      "top_points": [
+        {
+          "index": 2,
+          "x_m": 2,
+          "original_c": 2,
+          "processed_c": 3,
+          "delta_c": 1
+        },
+        {
+          "index": 3,
+          "x_m": 3,
+          "original_c": 2,
+          "processed_c": 1,
+          "delta_c": -1
+        },
+        {
+          "index": 6,
+          "x_m": 6,
+          "original_c": 9,
+          "processed_c": 10,
+          "delta_c": 1
+        },
+        {
+          "index": 7,
+          "x_m": 7,
+          "original_c": 9,
+          "processed_c": 8,
+          "delta_c": -1
+        },
+        {
+          "index": 1,
+          "x_m": 1,
+          "original_c": 0,
+          "processed_c": 0.01,
+          "delta_c": 0.01
+        }
+      ]
+    }
+  },
+  {
+    "name": "unchanged profile",
+    "profile": {
+      "x_m": [10, 11],
+      "temperature_c": [20, 21],
+      "processed_temperature_c": [20, 21]
+    },
+    "expected": {
+      "schema_version": "dts-profile-changes-v1",
+      "threshold_c": 0.01,
+      "total_points": 2,
+      "paired_points": 2,
+      "missing_original": 0,
+      "missing_processed": 0,
+      "changed_points": 0,
+      "max_absolute_change_c": 0,
+      "mean_absolute_change_c": 0,
+      "top_points": [
+        {
+          "index": 0,
+          "x_m": 10,
+          "original_c": 20,
+          "processed_c": 20,
+          "delta_c": 0
+        },
+        {
+          "index": 1,
+          "x_m": 11,
+          "original_c": 21,
+          "processed_c": 21,
+          "delta_c": 0
+        }
+      ]
+    }
+  },
+  {
+    "name": "no comparable pairs",
+    "profile": {
+      "x_m": [10, 11],
+      "temperature_c": [null, 21],
+      "processed_temperature_c": [10, null]
+    },
+    "expected": {
+      "schema_version": "dts-profile-changes-v1",
+      "threshold_c": 0.01,
+      "total_points": 2,
+      "paired_points": 0,
+      "missing_original": 1,
+      "missing_processed": 1,
+      "changed_points": 0,
+      "max_absolute_change_c": null,
+      "mean_absolute_change_c": null,
+      "top_points": []
+    }
+  },
+  {
+    "name": "no processing",
+    "profile": { "x_m": [10], "temperature_c": [20] },
+    "expected": null
+  }
+]

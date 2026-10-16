@@ -1,0 +1,38 @@
+# Local-only pilot. No authenticated team deployment yet.
+services:
+  web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+    ports: ["127.0.0.1:${APP_PORT:-8081}:80"]
+    restart: unless-stopped
+    depends_on:
+      api:
+        condition: service_healthy
+  api:
+    build:
+      context: .
+      dockerfile: services/web-api/Dockerfile
+    environment:
+      DTS_RECORDS: /data/records
+      DTS_QUEUE: /data/queue
+      DTS_RUNTIME: /runtime
+      DTS_ML_URL: ${DTS_ML_URL:-http://host.docker.internal:8082}
+      DTS_RESEARCH_PACK: ${DTS_RESEARCH_PACK:+/data/research}
+      DTS_PUBLIC_PACKAGE: "${DTS_PUBLIC_PACKAGE:-/app/public/demo-v1}"
+      DTS_ALLOWED_HOSTS: ${DTS_ALLOWED_HOSTS:-localhost,127.0.0.1,::1,testserver}
+      DTS_ALLOWED_ORIGINS: ${DTS_ALLOWED_ORIGINS:-http://127.0.0.1:5173,http://localhost:5173,http://127.0.0.1:8081,http://localhost:8081,http://127.0.0.1:8091,http://localhost:8091}
+    extra_hosts: ["host.docker.internal:host-gateway"]
+    volumes:
+      - ${DTS_RECORDS:-./.runtime/records}:/data/records:ro
+      - ${DTS_QUEUE:-./.runtime/queue}:/data/queue:ro
+      - ${DTS_RESEARCH_PACK:-./.runtime/research-pack}:/data/research:ro
+      - workbench-runtime:/runtime
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8091/api/v1/health',timeout=3)"]
+      interval: 30s
+      timeout: 5s
+      start_period: 60s
+volumes:
+  workbench-runtime:

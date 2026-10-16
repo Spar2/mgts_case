@@ -1,0 +1,1152 @@
+{
+  "source_commit": "33e12ac19b7b6318dc48b5f3e8c1239aaaf9244e",
+  "completed_records": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6"
+  ],
+  "pending_records": [],
+  "records": [
+    {
+      "record": "1",
+      "source_sha256": "3101c6b2716d2a9e14cd32e2e5d758cb8628741cff6f265cc45db2d7e9e8257f",
+      "source_commit": "33e12ac19b7b6318dc48b5f3e8c1239aaaf9244e",
+      "device": "cpu",
+      "threads": 4,
+      "versions": {
+        "numpy": "2.5.3",
+        "scipy": "1.18.1",
+        "pandas": "3.0.6",
+        "torch": "2.14.1",
+        "scikit-learn": "1.9.1",
+        "catboost": "1.2.10",
+        "opencv-python-headless": "5.0.0.93"
+      },
+      "timings": {
+        "cv_s": 2.2749827000079677,
+        "cnn_s": 1316.8631266999873,
+        "ml_s": 213.01697050000075,
+        "ensemble_s": 1627.3724067999865
+      },
+      "mask_counts": {
+        "cv": 208607,
+        "cnn": 843697,
+        "ml": 438242,
+        "consensus": 383908
+      },
+      "invalid_cells_on": {
+        "cv": 0,
+        "cnn": 0,
+        "ml": 0,
+        "consensus": 0
+      },
+      "mask_sha256": "e95b4c148b0528050eb8580951852da2ad055867cfa18e3dd4b43b82afb1943f",
+      "matches_shipped_report_sha256": false,
+      "catalog_rows": 5526,
+      "classes": {
+        "Кратковременная/периодическая аномалия": 5526
+      },
+      "cnn_weights_sha256": "e9c441f38bdae0f4f6834b8db8e7433002d52f726f148b1ebba2b711ec301298",
+      "witnesses": [],
+      "synthetic_training_used": false,
+      "expert_truth_available": false,
+      "reported_counts": {
+        "consensus": 384521,
+        "catalog_rows": 5598
+      },
+      "cnn_weights_bytes": 24905,
+      "cnn_inference_contract": {
+        "input": "external CV residual, not raw temperature or spatial Z",
+        "residual_center_c": 0.0,
+        "residual_scale_c": 0.5935684273794293,
+        "patch_shape": [
+          32,
+          32
+        ],
+        "stride": [
+          16,
+          16
+        ],
+        "score_threshold_c": 1.0756145572854587,
+        "threshold_scope": "computed retrospectively on this file; not calibrated on independent truth",
+        "source_module_checkout_sha256": "acc8796bf50dfebe01c6f72b85c1eedb7e0c19642a581e8b5aba247739958d08",
+        "valid_mask_used_in_original_training": false,
+        "original_author_weights": false,
+        "saved_isolation_forest_weights": false
+      },
+      "saved_outputs_verified": true,
+      "pairwise_valid_mask_jaccard": {
+        "cv/cnn": 0.23476236517755728,
+        "cv/ml": 0.43994132038048256,
+        "cnn/ml": 0.4013126179885944
+      },
+      "patch_median_ablation": {
+        "record": "1",
+        "median_decoder_training_steps": 0,
+        "score_pearson": 0.9386653486737964,
+        "mean_abs_score_difference_c": 0.12661819004802982,
+        "mean_reconstruction_abs_error_c": {
+          "cnn": 0.5981968405634405,
+          "patch_median": 0.5597629300189187
+        },
+        "branch_mask_jaccard": 0.7424830451593776,
+        "consensus_mask_jaccard": 0.9205704980404069,
+        "consensus_cell_disagreement": 31900,
+        "baseline_cells_on": 848958,
+        "accuracy_improvement_established": false,
+        "expert_truth_available": false
+      },
+      "weights_verification": {
+        "record": "1",
+        "weights_only_load": true,
+        "finite_parameters": true,
+        "state_parameters": 4941,
+        "full_saved_cnn_score_reproduced_exactly": true,
+        "max_abs_score_difference_c": 0.0,
+        "no_training_performed": true,
+        "expert_accuracy_claim": false
+      }
+    },
+    {
+      "record": "2",
+      "source_sha256": "f115579accd114e0c5a0d968aea3d2710da8ead421fc8c35c17472047cefdec4",
+      "source_commit": "33e12ac19b7b6318dc48b5f3e8c1239aaaf9244e",
+      "device": "cpu",
+      "threads": 4,
+      "versions": {
+        "numpy": "2.5.3",
+        "scipy": "1.18.1",
+        "pandas": "3.0.6",
+        "torch": "2.14.1",
+        "scikit-learn": "1.9.1",
+        "catboost": "1.2.10",
+        "opencv-python-headless": "5.0.0.93"
+      },
+      "timings": {
+        "cv_s": 0.3203347999951802,
+        "cnn_s": 212.54368629999226,
+        "ml_s": 55.434645499975886,
+        "ensemble_s": 277.03042399999686
+      },
+      "mask_counts": {
+        "cv": 30765,
+        "cnn": 102561,
+        "ml": 115480,
+        "consensus": 64961
+      },
+      "invalid_cells_on": {
+        "cv": 19,
+        "cnn": 450,
+        "ml": 362,
+        "consensus": 353
+      },
+      "mask_sha256": "fc6d75eddcad5ad236ea77f846aec3d8f57f6fc7c684eb3873dd6e06de834fab",
+      "matches_shipped_report_sha256": false,
+      "catalog_rows": 2119,
+      "classes": {
+        "Кратковременная/периодическая аномалия": 2119
+      },
+      "cnn_weights_sha256": "6dad2000308b00d7b9133087f1d2c86fd1c8deb95cbc351a92249ba01c4fad19",
+      "witnesses": [],
+      "synthetic_training_used": false,
+      "expert_truth_available": false,
+      "reported_counts": {
+        "consensus": 64866,
+        "catalog_rows": 2139
+      },
+      "cnn_weights_bytes": 24905,
+      "cnn_inference_contract": {
+        "input": "external CV residual, not raw temperature or spatial Z",
+        "residual_center_c": 0.0,
+        "residual_scale_c": 0.2705808731504716,
+        "patch_shape": [
+          32,
+          32
+        ],
+        "stride": [
+          16,
+          16
+        ],
+        "score_threshold_c": 0.35957170642940955,
+        "threshold_scope": "computed retrospectively on this file; not calibrated on independent truth",
+        "source_module_checkout_sha256": "acc8796bf50dfebe01c6f72b85c1eedb7e0c19642a581e8b5aba247739958d08",
+        "valid_mask_used_in_original_training": false,
+        "original_author_weights": false,
+        "saved_isolation_forest_weights": false
+      },
+      "saved_outputs_verified": true,
+      "pairwise_valid_mask_jaccard": {
+        "cv/cnn": 0.18429872885133086,
+        "cv/ml": 0.2655763307448701,
+        "cnn/ml": 0.3361935868809704
+      },
+      "patch_median_ablation": {
+        "record": "2",
+        "median_decoder_training_steps": 0,
+        "score_pearson": 0.9875323595978692,
+        "mean_abs_score_difference_c": 0.013767131645178789,
+        "mean_reconstruction_abs_error_c": {
+          "cnn": 0.1479087573927349,
+          "patch_median": 0.1464558367383843
+        },
+        "branch_mask_jaccard": 0.8367421954997768,
+        "consensus_mask_jaccard": 0.9307254893361985,
+        "consensus_cell_disagreement": 4739,
+        "baseline_cells_on": 107307,
+        "accuracy_improvement_established": false,
+        "expert_truth_available": false
+      },
+      "weights_verification": {
+        "record": "2",
+        "weights_only_load": true,
+        "finite_parameters": true,
+        "state_parameters": 4941,
+        "full_saved_cnn_score_reproduced_exactly": true,
+        "max_abs_score_difference_c": 0.0,
+        "no_training_performed": true,
+        "expert_accuracy_claim": false
+      }
+    },
+    {
+      "record": "3",
+      "source_sha256": "0acc4e41dc16dd829110881641cb17f94bffd0c2d5255d539d8f3589cd8cdde3",
+      "source_commit": "33e12ac19b7b6318dc48b5f3e8c1239aaaf9244e",
+      "device": "cpu",
+      "threads": 4,
+      "versions": {
+        "numpy": "2.5.3",
+        "scipy": "1.18.1",
+        "pandas": "3.0.6",
+        "torch": "2.14.1",
+        "scikit-learn": "1.9.1",
+        "catboost": "1.2.10",
+        "opencv-python-headless": "5.0.0.93"
+      },
+      "timings": {
+        "cv_s": 0.42376590002095327,
+        "cnn_s": 156.83210800000234,
+        "ml_s": 37.22108380001737,
+        "ensemble_s": 202.17197160003707
+      },
+      "mask_counts": {
+        "cv": 169971,
+        "cnn": 124102,
+        "ml": 145054,
+        "consensus": 138411
+      },
+      "invalid_cells_on": {
+        "cv": 0,
+        "cnn": 0,
+        "ml": 0,
+        "consensus": 0
+      },
+      "mask_sha256": "7ad0733de2c17d7a454437b10f39def660bf0de972720a08e522ee1015b7d141",
+      "matches_shipped_report_sha256": false,
+      "catalog_rows": 2617,
+      "classes": {
+        "Кратковременная/периодическая аномалия": 2617
+      },
+      "cnn_weights_sha256": "d65535ed2d3ea40181861f9e2d1e225585c3af3a8ac2defc2d0b4fb367710269",
+      "witnesses": [],
+      "synthetic_training_used": false,
+      "expert_truth_available": false,
+      "reported_counts": {
+        "consensus": 139458,
+        "catalog_rows": 2617
+      },
+      "cnn_weights_bytes": 24905,
+      "cnn_inference_contract": {
+        "input": "external CV residual, not raw temperature or spatial Z",
+        "residual_center_c": 0.0,
+        "residual_scale_c": 0.4049745232047513,
+        "patch_shape": [
+          32,
+          32
+        ],
+        "stride": [
+          16,
+          16
+        ],
+        "score_threshold_c": 0.502856918188765,
+        "threshold_scope": "computed retrospectively on this file; not calibrated on independent truth",
+        "source_module_checkout_sha256": "acc8796bf50dfebe01c6f72b85c1eedb7e0c19642a581e8b5aba247739958d08",
+        "valid_mask_used_in_original_training": false,
+        "original_author_weights": false,
+        "saved_isolation_forest_weights": false
+      },
+      "saved_outputs_verified": true,
+      "pairwise_valid_mask_jaccard": {
+        "cv/cnn": 0.260071643428258,
+        "cv/ml": 0.4982498026271984,
+        "cnn/ml": 0.3434893506571296
+      },
+      "patch_median_ablation": {
+        "record": "3",
+        "median_decoder_training_steps": 0,
+        "score_pearson": 0.9572492915678386,
+        "mean_abs_score_difference_c": 0.04016253960040832,
+        "mean_reconstruction_abs_error_c": {
+          "cnn": 0.21784952778374148,
+          "patch_median": 0.21121530603544394
+        },
+        "branch_mask_jaccard": 0.6703191626825171,
+        "consensus_mask_jaccard": 0.9117868300319185,
+        "consensus_cell_disagreement": 13017,
+        "baseline_cells_on": 134430,
+        "accuracy_improvement_established": false,
+        "expert_truth_available": false
+      },
+      "weights_verification": {
+        "record": "3",
+        "weights_only_load": true,
+        "finite_parameters": true,
+        "state_parameters": 4941,
+        "full_saved_cnn_score_reproduced_exactly": true,
+        "max_abs_score_difference_c": 0.0,
+        "no_training_performed": true,
+        "expert_accuracy_claim": false
+      }
+    },
+    {
+      "record": "4",
+      "source_sha256": "d2f5b3d90078420aea45bac86df3656987a2ca9c548d478d134d3ee6349fde17",
+      "source_commit": "33e12ac19b7b6318dc48b5f3e8c1239aaaf9244e",
+      "device": "cpu",
+      "threads": 4,
+      "versions": {
+        "numpy": "2.5.3",
+        "scipy": "1.18.1",
+        "pandas": "3.0.6",
+        "torch": "2.14.1",
+        "scikit-learn": "1.9.1",
+        "catboost": "1.2.10",
+        "opencv-python-headless": "5.0.0.93"
+      },
+      "timings": {
+        "cv_s": 0.33025349996751174,
+        "cnn_s": 118.93634119996568,
+        "ml_s": 41.572414299997035,
+        "ensemble_s": 163.0352770999889
+      },
+      "mask_counts": {
+        "cv": 34658,
+        "cnn": 92587,
+        "ml": 62688,
+        "consensus": 57087
+      },
+      "invalid_cells_on": {
+        "cv": 4,
+        "cnn": 307,
+        "ml": 233,
+        "consensus": 233
+      },
+      "mask_sha256": "850f49c3cf70a409d86ce0e979293e67e1ec5d5c2f4ad1350ae33867b845b0f5",
+      "matches_shipped_report_sha256": false,
+      "catalog_rows": 669,
+      "classes": {
+        "Кратковременная/периодическая аномалия": 669
+      },
+      "cnn_weights_sha256": "dee82b428b9c453723980d255ba3c906abf5d39e5882de98bd452f5a4258569e",
+      "witnesses": [
+        {
+          "id": "4-first-heating-core",
+          "role": "positive_hot",
+          "branches": {
+            "cv": {
+              "all_cells_on": 0.7328296703296703,
+              "positive_fraction_valid": 0.7328296703296703,
+              "negative_fraction_valid": 0.0
+            },
+            "cnn": {
+              "all_cells_on": 1.0,
+              "positive_fraction_valid": 1.0,
+              "negative_fraction_valid": 0.0
+            },
+            "ml": {
+              "all_cells_on": 1.0,
+              "positive_fraction_valid": 1.0,
+              "negative_fraction_valid": 0.0
+            },
+            "consensus": {
+              "all_cells_on": 1.0,
+              "positive_fraction_valid": 1.0,
+              "negative_fraction_valid": 0.0
+            }
+          },
+          "expert_confirmed": false,
+          "scope": "development partial core; different residual semantics"
+        },
+        {
+          "id": "4-second-heating-core",
+          "role": "positive_hot",
+          "branches": {
+            "cv": {
+              "all_cells_on": 0.9570247933884297,
+              "positive_fraction_valid": 0.9570247933884297,
+              "negative_fraction_valid": 0.0
+            },
+            "cnn": {
+              "all_cells_on": 1.0,
+              "positive_fraction_valid": 1.0,
+              "negative_fraction_valid": 0.0
+            },
+            "ml": {
+              "all_cells_on": 1.0,
+              "positive_fraction_valid": 1.0,
+              "negative_fraction_valid": 0.0
+            },
+            "consensus": {
+              "all_cells_on": 1.0,
+              "positive_fraction_valid": 1.0,
+              "negative_fraction_valid": 0.0
+            }
+          },
+          "expert_confirmed": false,
+          "scope": "development partial core; different residual semantics"
+        },
+        {
+          "id": "4-early-quiet-control",
+          "role": "negative_quiet",
+          "branches": {
+            "cv": {
+              "all_cells_on": 0.0,
+              "positive_fraction_valid": 0.0,
+              "negative_fraction_valid": 0.0
+            },
+            "cnn": {
+              "all_cells_on": 0.019867549668874173,
+              "positive_fraction_valid": 0.0173841059602649,
+              "negative_fraction_valid": 0.0024834437086092716
+            },
+            "ml": {
+              "all_cells_on": 0.0,
+              "positive_fraction_valid": 0.0,
+              "negative_fraction_valid": 0.0
+            },
+            "consensus": {
+              "all_cells_on": 0.0,
+              "positive_fraction_valid": 0.0,
+              "negative_fraction_valid": 0.0
+            }
+          },
+          "expert_confirmed": false,
+          "scope": "development partial core; different residual semantics"
+        }
+      ],
+      "synthetic_training_used": false,
+      "expert_truth_available": false,
+      "reported_counts": {
+        "consensus": 57783,
+        "catalog_rows": 674
+      },
+      "cnn_weights_bytes": 24905,
+      "cnn_inference_contract": {
+        "input": "external CV residual, not raw temperature or spatial Z",
+        "residual_center_c": 0.0,
+        "residual_scale_c": 0.14727498927034902,
+        "patch_shape": [
+          32,
+          32
+        ],
+        "stride": [
+          16,
+          16
+        ],
+        "score_threshold_c": 0.28160024342010626,
+        "threshold_scope": "computed retrospectively on this file; not calibrated on independent truth",
+        "source_module_checkout_sha256": "acc8796bf50dfebe01c6f72b85c1eedb7e0c19642a581e8b5aba247739958d08",
+        "valid_mask_used_in_original_training": false,
+        "original_author_weights": false,
+        "saved_isolation_forest_weights": false
+      },
+      "saved_outputs_verified": true,
+      "pairwise_valid_mask_jaccard": {
+        "cv/cnn": 0.369993416295209,
+        "cv/ml": 0.4965171829249499,
+        "cnn/ml": 0.5430756803653879
+      },
+      "patch_median_ablation": {
+        "record": "4",
+        "median_decoder_training_steps": 0,
+        "score_pearson": 0.962030244164383,
+        "mean_abs_score_difference_c": 0.026296234088343615,
+        "mean_reconstruction_abs_error_c": {
+          "cnn": 0.1628623798743939,
+          "patch_median": 0.1591099591437496
+        },
+        "branch_mask_jaccard": 0.8674160934864508,
+        "consensus_mask_jaccard": 0.9444208234833926,
+        "consensus_cell_disagreement": 3268,
+        "baseline_cells_on": 92304,
+        "accuracy_improvement_established": false,
+        "expert_truth_available": false
+      },
+      "weights_verification": {
+        "record": "4",
+        "weights_only_load": true,
+        "finite_parameters": true,
+        "state_parameters": 4941,
+        "full_saved_cnn_score_reproduced_exactly": true,
+        "max_abs_score_difference_c": 0.0,
+        "no_training_performed": true,
+        "expert_accuracy_claim": false
+      }
+    },
+    {
+      "record": "5",
+      "source_sha256": "98c1d629ed59478c81fa58b60e891f5587ef9d64ad435655e717a27f64767e46",
+      "source_commit": "33e12ac19b7b6318dc48b5f3e8c1239aaaf9244e",
+      "device": "cpu",
+      "threads": 4,
+      "versions": {
+        "numpy": "2.5.3",
+        "scipy": "1.18.1",
+        "pandas": "3.0.6",
+        "torch": "2.14.1",
+        "scikit-learn": "1.9.1",
+        "catboost": "1.2.10",
+        "opencv-python-headless": "5.0.0.93"
+      },
+      "timings": {
+        "cv_s": 72.65583150001476,
+        "cnn_s": 1509.0389083999908,
+        "ml_s": 176.73268949997146,
+        "ensemble_s": 2655.4989996000077
+      },
+      "mask_counts": {
+        "cv": 182142,
+        "cnn": 247427,
+        "ml": 477599,
+        "consensus": 209488
+      },
+      "invalid_cells_on": {
+        "cv": 0,
+        "cnn": 0,
+        "ml": 18554,
+        "consensus": 0
+      },
+      "mask_sha256": "6f0b1915d2ff2d8b5898071b8052c1bfdef28571fcbfc1e4362518ea4bc81e45",
+      "matches_shipped_report_sha256": false,
+      "catalog_rows": 57256,
+      "classes": {
+        "Кратковременная/периодическая аномалия": 57256
+      },
+      "cnn_weights_sha256": "e40b1778cd036ad1a08fb18cbc3aa331dfa36c6b0b3bebc4419dbaf3eb6fbb77",
+      "witnesses": [
+        {
+          "id": "5-early-warm-core",
+          "role": "positive_hot",
+          "branches": {
+            "cv": {
+              "all_cells_on": 0.1005524861878453,
+              "positive_fraction_valid": 0.1005524861878453,
+              "negative_fraction_valid": 0.0
+            },
+            "cnn": {
+              "all_cells_on": 0.8243093922651934,
+              "positive_fraction_valid": 0.8243093922651934,
+              "negative_fraction_valid": 0.0
+            },
+            "ml": {
+              "all_cells_on": 1.0,
+              "positive_fraction_valid": 1.0,
+              "negative_fraction_valid": 0.0
+            },
+            "consensus": {
+              "all_cells_on": 0.8243093922651934,
+              "positive_fraction_valid": 0.8243093922651934,
+              "negative_fraction_valid": 0.0
+            }
+          },
+          "expert_confirmed": false,
+          "scope": "development partial core; different residual semantics"
+        },
+        {
+          "id": "5-late-warm-core",
+          "role": "positive_hot",
+          "branches": {
+            "cv": {
+              "all_cells_on": 0.0,
+              "positive_fraction_valid": 0.0,
+              "negative_fraction_valid": 0.0
+            },
+            "cnn": {
+              "all_cells_on": 0.7753086419753087,
+              "positive_fraction_valid": 0.7753086419753087,
+              "negative_fraction_valid": 0.0
+            },
+            "ml": {
+              "all_cells_on": 0.980246913580247,
+              "positive_fraction_valid": 0.9777777777777777,
+              "negative_fraction_valid": 0.0024691358024691358
+            },
+            "consensus": {
+              "all_cells_on": 0.7753086419753087,
+              "positive_fraction_valid": 0.7753086419753087,
+              "negative_fraction_valid": 0.0
+            }
+          },
+          "expert_confirmed": false,
+          "scope": "development partial core; different residual semantics"
+        },
+        {
+          "id": "5-dead-tail",
+          "role": "negative_invalid",
+          "branches": {
+            "cv": {
+              "all_cells_on": 0.0,
+              "positive_fraction_valid": null,
+              "negative_fraction_valid": null
+            },
+            "cnn": {
+              "all_cells_on": 0.0,
+              "positive_fraction_valid": null,
+              "negative_fraction_valid": null
+            },
+            "ml": {
+              "all_cells_on": 0.009221689413500553,
+              "positive_fraction_valid": null,
+              "negative_fraction_valid": null
+            },
+            "consensus": {
+              "all_cells_on": 0.0,
+              "positive_fraction_valid": null,
+              "negative_fraction_valid": null
+            }
+          },
+          "expert_confirmed": false,
+          "scope": "development partial core; different residual semantics"
+        }
+      ],
+      "synthetic_training_used": false,
+      "expert_truth_available": false,
+      "reported_counts": {
+        "consensus": 207229,
+        "catalog_rows": 56652
+      },
+      "cnn_weights_bytes": 24905,
+      "cnn_inference_contract": {
+        "input": "external CV residual, not raw temperature or spatial Z",
+        "residual_center_c": 0.0,
+        "residual_scale_c": 0.22431996912955654,
+        "patch_shape": [
+          32,
+          32
+        ],
+        "stride": [
+          16,
+          16
+        ],
+        "score_threshold_c": 0.740354847027003,
+        "threshold_scope": "computed retrospectively on this file; not calibrated on independent truth",
+        "source_module_checkout_sha256": "acc8796bf50dfebe01c6f72b85c1eedb7e0c19642a581e8b5aba247739958d08",
+        "valid_mask_used_in_original_training": false,
+        "original_author_weights": false,
+        "saved_isolation_forest_weights": false
+      },
+      "saved_outputs_verified": true,
+      "pairwise_valid_mask_jaccard": {
+        "cv/cnn": 0.18908542324087915,
+        "cv/ml": 0.135754861862697,
+        "cnn/ml": 0.28339082934131193
+      },
+      "patch_median_ablation": {
+        "record": "5",
+        "median_decoder_training_steps": 0,
+        "score_pearson": 0.9976388927125459,
+        "mean_abs_score_difference_c": 0.01295789672450496,
+        "mean_reconstruction_abs_error_c": {
+          "cnn": 0.21917881444600662,
+          "patch_median": 0.21736893232828064
+        },
+        "branch_mask_jaccard": 0.8969548246711219,
+        "consensus_mask_jaccard": 0.9492950581053008,
+        "consensus_cell_disagreement": 10764,
+        "baseline_cells_on": 230304,
+        "accuracy_improvement_established": false,
+        "expert_truth_available": false
+      },
+      "weights_verification": {
+        "record": "5",
+        "weights_only_load": true,
+        "finite_parameters": true,
+        "state_parameters": 4941,
+        "full_saved_cnn_score_reproduced_exactly": true,
+        "max_abs_score_difference_c": 0.0,
+        "no_training_performed": true,
+        "expert_accuracy_claim": false
+      }
+    },
+    {
+      "record": "6",
+      "source_sha256": "23e79988fcfb8a186dec06faffa60e6ed7c93ca7cd9969ac4989fd12b9f358c8",
+      "source_commit": "33e12ac19b7b6318dc48b5f3e8c1239aaaf9244e",
+      "device": "cpu",
+      "threads": 4,
+      "versions": {
+        "numpy": "2.5.3",
+        "scipy": "1.18.1",
+        "pandas": "3.0.6",
+        "torch": "2.14.1",
+        "scikit-learn": "1.9.1",
+        "catboost": "1.2.10",
+        "opencv-python-headless": "5.0.0.93"
+      },
+      "timings": {
+        "cv_s": 1.4141824999824166,
+        "cnn_s": 1159.504826099961,
+        "ml_s": 162.14270630001556,
+        "ensemble_s": 1498.5942881000228
+      },
+      "mask_counts": {
+        "cv": 46955,
+        "cnn": 227972,
+        "ml": 279161,
+        "consensus": 119642
+      },
+      "invalid_cells_on": {
+        "cv": 0,
+        "cnn": 33,
+        "ml": 23,
+        "consensus": 13
+      },
+      "mask_sha256": "4eb78de994a01f2b67de5fcc2951e47dbc8e175dd3a686765d77b0f560354170",
+      "matches_shipped_report_sha256": false,
+      "catalog_rows": 14119,
+      "classes": {
+        "Кратковременная/периодическая аномалия": 14119
+      },
+      "cnn_weights_sha256": "ab602bf47a2a43cccc7d2d1602bdc555b0646b0098f28458795ff446ee162931",
+      "witnesses": [
+        {
+          "id": "6-heating-core-1",
+          "role": "positive_hot",
+          "branches": {
+            "cv": {
+              "all_cells_on": 0.009956355701036552,
+              "positive_fraction_valid": 0.009956355701036552,
+              "negative_fraction_valid": 0.0
+            },
+            "cnn": {
+              "all_cells_on": 0.2317239498090562,
+              "positive_fraction_valid": 0.2123567921440262,
+              "negative_fraction_valid": 0.019367157665030006
+            },
+            "ml": {
+              "all_cells_on": 0.42744135297326785,
+              "positive_fraction_valid": 0.4159847244953628,
+              "negative_fraction_valid": 0.011456628477905073
+            },
+            "consensus": {
+              "all_cells_on": 0.17907801418439717,
+              "positive_fraction_valid": 0.17416803055100927,
+              "negative_fraction_valid": 0.004909983633387889
+            }
+          },
+          "expert_confirmed": false,
+          "scope": "development partial core; different residual semantics"
+        },
+        {
+          "id": "6-heating-core-2",
+          "role": "positive_hot",
+          "branches": {
+            "cv": {
+              "all_cells_on": 0.17866884888161483,
+              "positive_fraction_valid": 0.17866884888161483,
+              "negative_fraction_valid": 0.0
+            },
+            "cnn": {
+              "all_cells_on": 0.6427986906710311,
+              "positive_fraction_valid": 0.6427986906710311,
+              "negative_fraction_valid": 0.0
+            },
+            "ml": {
+              "all_cells_on": 0.8694762684124386,
+              "positive_fraction_valid": 0.8689307146753955,
+              "negative_fraction_valid": 0.0005455537370430987
+            },
+            "consensus": {
+              "all_cells_on": 0.6175668303327878,
+              "positive_fraction_valid": 0.6175668303327878,
+              "negative_fraction_valid": 0.0
+            }
+          },
+          "expert_confirmed": false,
+          "scope": "development partial core; different residual semantics"
+        }
+      ],
+      "synthetic_training_used": false,
+      "expert_truth_available": false,
+      "reported_counts": {
+        "consensus": 124980,
+        "catalog_rows": 14290
+      },
+      "cnn_weights_bytes": 24905,
+      "cnn_inference_contract": {
+        "input": "external CV residual, not raw temperature or spatial Z",
+        "residual_center_c": 0.0,
+        "residual_scale_c": 0.34203916590772565,
+        "patch_shape": [
+          32,
+          32
+        ],
+        "stride": [
+          16,
+          16
+        ],
+        "score_threshold_c": 0.5013678146295832,
+        "threshold_scope": "computed retrospectively on this file; not calibrated on independent truth",
+        "source_module_checkout_sha256": "acc8796bf50dfebe01c6f72b85c1eedb7e0c19642a581e8b5aba247739958d08",
+        "valid_mask_used_in_original_training": false,
+        "original_author_weights": false,
+        "saved_isolation_forest_weights": false
+      },
+      "saved_outputs_verified": true,
+      "pairwise_valid_mask_jaccard": {
+        "cv/cnn": 0.20588699771889804,
+        "cv/ml": 0.16821428827318388,
+        "cnn/ml": 0.3086905016917482
+      },
+      "patch_median_ablation": {
+        "record": "6",
+        "median_decoder_training_steps": 0,
+        "score_pearson": 0.9906276253991181,
+        "mean_abs_score_difference_c": 0.016606098761736077,
+        "mean_reconstruction_abs_error_c": {
+          "cnn": 0.21173309586454406,
+          "patch_median": 0.21045463190246955
+        },
+        "branch_mask_jaccard": 0.878300033151941,
+        "consensus_mask_jaccard": 0.9137670078641867,
+        "consensus_cell_disagreement": 11053,
+        "baseline_cells_on": 236618,
+        "accuracy_improvement_established": false,
+        "expert_truth_available": false
+      },
+      "weights_verification": {
+        "record": "6",
+        "weights_only_load": true,
+        "finite_parameters": true,
+        "state_parameters": 4941,
+        "full_saved_cnn_score_reproduced_exactly": true,
+        "max_abs_score_difference_c": 0.0,
+        "no_training_performed": true,
+        "expert_accuracy_claim": false
+      }
+    }
+  ],
+  "development_witnesses": [
+    {
+      "id": "4-first-heating-core",
+      "record": "4",
+      "role": "positive_hot",
+      "expert_confirmed": false,
+      "native_valid_cells": 1456,
+      "spatial_z_hot_fraction_valid": 1.0,
+      "spatial_z_cold_fraction_valid": 0.0,
+      "spatial_z_finite_fraction_all": 1.0,
+      "external": {
+        "cv": {
+          "all_cells_on": 0.7328296703296703,
+          "positive_fraction_valid": 0.7328296703296703,
+          "negative_fraction_valid": 0.0
+        },
+        "cnn": {
+          "all_cells_on": 1.0,
+          "positive_fraction_valid": 1.0,
+          "negative_fraction_valid": 0.0
+        },
+        "ml": {
+          "all_cells_on": 1.0,
+          "positive_fraction_valid": 1.0,
+          "negative_fraction_valid": 0.0
+        },
+        "consensus": {
+          "all_cells_on": 1.0,
+          "positive_fraction_valid": 1.0,
+          "negative_fraction_valid": 0.0
+        }
+      },
+      "scope": "Partial development core, different score semantics; not precision/recall."
+    },
+    {
+      "id": "4-second-heating-core",
+      "record": "4",
+      "role": "positive_hot",
+      "expert_confirmed": false,
+      "native_valid_cells": 2420,
+      "spatial_z_hot_fraction_valid": 1.0,
+      "spatial_z_cold_fraction_valid": 0.0,
+      "spatial_z_finite_fraction_all": 1.0,
+      "external": {
+        "cv": {
+          "all_cells_on": 0.9570247933884297,
+          "positive_fraction_valid": 0.9570247933884297,
+          "negative_fraction_valid": 0.0
+        },
+        "cnn": {
+          "all_cells_on": 1.0,
+          "positive_fraction_valid": 1.0,
+          "negative_fraction_valid": 0.0
+        },
+        "ml": {
+          "all_cells_on": 1.0,
+          "positive_fraction_valid": 1.0,
+          "negative_fraction_valid": 0.0
+        },
+        "consensus": {
+          "all_cells_on": 1.0,
+          "positive_fraction_valid": 1.0,
+          "negative_fraction_valid": 0.0
+        }
+      },
+      "scope": "Partial development core, different score semantics; not precision/recall."
+    },
+    {
+      "id": "4-early-quiet-control",
+      "record": "4",
+      "role": "negative_quiet",
+      "expert_confirmed": false,
+      "native_valid_cells": 2416,
+      "spatial_z_hot_fraction_valid": 0.0,
+      "spatial_z_cold_fraction_valid": 0.0,
+      "spatial_z_finite_fraction_all": 1.0,
+      "external": {
+        "cv": {
+          "all_cells_on": 0.0,
+          "positive_fraction_valid": 0.0,
+          "negative_fraction_valid": 0.0
+        },
+        "cnn": {
+          "all_cells_on": 0.019867549668874173,
+          "positive_fraction_valid": 0.0173841059602649,
+          "negative_fraction_valid": 0.0024834437086092716
+        },
+        "ml": {
+          "all_cells_on": 0.0,
+          "positive_fraction_valid": 0.0,
+          "negative_fraction_valid": 0.0
+        },
+        "consensus": {
+          "all_cells_on": 0.0,
+          "positive_fraction_valid": 0.0,
+          "negative_fraction_valid": 0.0
+        }
+      },
+      "scope": "Partial development core, different score semantics; not precision/recall."
+    },
+    {
+      "id": "5-early-warm-core",
+      "record": "5",
+      "role": "positive_hot",
+      "expert_confirmed": false,
+      "native_valid_cells": 905,
+      "spatial_z_hot_fraction_valid": 0.9988950276243094,
+      "spatial_z_cold_fraction_valid": 0.0,
+      "spatial_z_finite_fraction_all": 1.0,
+      "external": {
+        "cv": {
+          "all_cells_on": 0.1005524861878453,
+          "positive_fraction_valid": 0.1005524861878453,
+          "negative_fraction_valid": 0.0
+        },
+        "cnn": {
+          "all_cells_on": 0.8243093922651934,
+          "positive_fraction_valid": 0.8243093922651934,
+          "negative_fraction_valid": 0.0
+        },
+        "ml": {
+          "all_cells_on": 1.0,
+          "positive_fraction_valid": 1.0,
+          "negative_fraction_valid": 0.0
+        },
+        "consensus": {
+          "all_cells_on": 0.8243093922651934,
+          "positive_fraction_valid": 0.8243093922651934,
+          "negative_fraction_valid": 0.0
+        }
+      },
+      "scope": "Partial development core, different score semantics; not precision/recall."
+    },
+    {
+      "id": "5-late-warm-core",
+      "record": "5",
+      "role": "positive_hot",
+      "expert_confirmed": false,
+      "native_valid_cells": 405,
+      "spatial_z_hot_fraction_valid": 1.0,
+      "spatial_z_cold_fraction_valid": 0.0,
+      "spatial_z_finite_fraction_all": 1.0,
+      "external": {
+        "cv": {
+          "all_cells_on": 0.0,
+          "positive_fraction_valid": 0.0,
+          "negative_fraction_valid": 0.0
+        },
+        "cnn": {
+          "all_cells_on": 0.7753086419753087,
+          "positive_fraction_valid": 0.7753086419753087,
+          "negative_fraction_valid": 0.0
+        },
+        "ml": {
+          "all_cells_on": 0.980246913580247,
+          "positive_fraction_valid": 0.9777777777777777,
+          "negative_fraction_valid": 0.0024691358024691358
+        },
+        "consensus": {
+          "all_cells_on": 0.7753086419753087,
+          "positive_fraction_valid": 0.7753086419753087,
+          "negative_fraction_valid": 0.0
+        }
+      },
+      "scope": "Partial development core, different score semantics; not precision/recall."
+    },
+    {
+      "id": "5-dead-tail",
+      "record": "5",
+      "role": "negative_invalid",
+      "expert_confirmed": false,
+      "native_valid_cells": 0,
+      "spatial_z_hot_fraction_valid": null,
+      "spatial_z_cold_fraction_valid": null,
+      "spatial_z_finite_fraction_all": 1.0,
+      "external": {
+        "cv": {
+          "all_cells_on": 0.0,
+          "positive_fraction_valid": null,
+          "negative_fraction_valid": null
+        },
+        "cnn": {
+          "all_cells_on": 0.0,
+          "positive_fraction_valid": null,
+          "negative_fraction_valid": null
+        },
+        "ml": {
+          "all_cells_on": 0.009221689413500553,
+          "positive_fraction_valid": null,
+          "negative_fraction_valid": null
+        },
+        "consensus": {
+          "all_cells_on": 0.0,
+          "positive_fraction_valid": null,
+          "negative_fraction_valid": null
+        }
+      },
+      "scope": "Partial development core, different score semantics; not precision/recall."
+    },
+    {
+      "id": "6-heating-core-1",
+      "record": "6",
+      "role": "positive_hot",
+      "expert_confirmed": false,
+      "native_valid_cells": 7332,
+      "spatial_z_hot_fraction_valid": 0.5741953082378615,
+      "spatial_z_cold_fraction_valid": 0.0,
+      "spatial_z_finite_fraction_all": 1.0,
+      "external": {
+        "cv": {
+          "all_cells_on": 0.009956355701036552,
+          "positive_fraction_valid": 0.009956355701036552,
+          "negative_fraction_valid": 0.0
+        },
+        "cnn": {
+          "all_cells_on": 0.2317239498090562,
+          "positive_fraction_valid": 0.2123567921440262,
+          "negative_fraction_valid": 0.019367157665030006
+        },
+        "ml": {
+          "all_cells_on": 0.42744135297326785,
+          "positive_fraction_valid": 0.4159847244953628,
+          "negative_fraction_valid": 0.011456628477905073
+        },
+        "consensus": {
+          "all_cells_on": 0.17907801418439717,
+          "positive_fraction_valid": 0.17416803055100927,
+          "negative_fraction_valid": 0.004909983633387889
+        }
+      },
+      "scope": "Partial development core, different score semantics; not precision/recall."
+    },
+    {
+      "id": "6-heating-core-2",
+      "record": "6",
+      "role": "positive_hot",
+      "expert_confirmed": false,
+      "native_valid_cells": 7332,
+      "spatial_z_hot_fraction_valid": 1.0,
+      "spatial_z_cold_fraction_valid": 0.0,
+      "spatial_z_finite_fraction_all": 1.0,
+      "external": {
+        "cv": {
+          "all_cells_on": 0.17866884888161483,
+          "positive_fraction_valid": 0.17866884888161483,
+          "negative_fraction_valid": 0.0
+        },
+        "cnn": {
+          "all_cells_on": 0.6427986906710311,
+          "positive_fraction_valid": 0.6427986906710311,
+          "negative_fraction_valid": 0.0
+        },
+        "ml": {
+          "all_cells_on": 0.8694762684124386,
+          "positive_fraction_valid": 0.8689307146753955,
+          "negative_fraction_valid": 0.0005455537370430987
+        },
+        "consensus": {
+          "all_cells_on": 0.6175668303327878,
+          "positive_fraction_valid": 0.6175668303327878,
+          "negative_fraction_valid": 0.0
+        }
+      },
+      "scope": "Partial development core, different score semantics; not precision/recall."
+    }
+  ],
+  "expert_truth_available": false,
+  "synthetic_training_used": false,
+  "scope": "Retrospective real-data reproduction; agreement is not accuracy.",
+  "audit_runtime": {
+    "python": "3.12.14",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "additional_dependencies": {
+      "matplotlib": "3.11.2",
+      "streamlit": "1.65.0",
+      "pytest": "9.1.1"
+    }
+  },
+  "total_consensus_on_invalid_source": 599,
+  "total_reproduced_catalog_rows": 82306,
+  "all_six_complete": true,
+  "upstream_unit_tests": {
+    "tests": "21",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "time": "9.976",
+    "cases": [
+      "tests.test_detector_cnn.test_module_imports_are_isolated",
+      "tests.test_detector_cnn.test_run_cnn_detector_ranks_planted_anomalies",
+      "tests.test_detector_cv.test_module_does_not_import_haklolarp",
+      "tests.test_detector_cv.test_shapes_and_finite_values",
+      "tests.test_detector_cv.test_profile_cancels_and_anomaly_remains",
+      "tests.test_detector_cv.test_spikes_edges_and_regions",
+      "tests.test_detector_ml.DetectorMlTests.test_catboost_importances_follow_the_residual_block",
+      "tests.test_detector_ml.DetectorMlTests.test_compact_block_scores_lower_and_is_masked_more_often",
+      "tests.test_detector_ml.DetectorMlTests.test_forest_maps_are_deterministic_and_match_predict",
+      "tests.test_detector_ml.DetectorMlTests.test_interior_features_match_window_and_gradient_definitions",
+      "tests.test_detector_ml.DetectorMlTests.test_module_does_not_import_haklolarp_or_read_measurements",
+      "tests.test_pipeline.test_loader_accepts_csv_without_points_size",
+      "tests.test_pipeline.test_consensus_mask_matches_shipped_detectors_and_stage2",
+      "tests.test_stage2_clustering.test_module_does_not_import_siblings_or_haklolarp",
+      "tests.test_stage2_clustering.test_four_patterns_components_features_and_types",
+      "tests.test_stage2_clustering.test_touching_block_is_one_row_and_gap_splits",
+      "tests.test_stage2_clustering.test_near_duplicates_share_cluster_and_estimator_fit_runs",
+      "tests.test_stage2_clustering.test_empty_mask_is_empty_frame",
+      "tests.test_stage2_clustering.test_one_cell_has_zero_duration_and_width_and_a_known_type",
+      "tests.test_stage2_clustering.test_unix_seconds_duration_is_minutes",
+      "tests.test_stage2_clustering.test_numpy_datetime_axis_matches_string_duration"
+    ]
+  }
+}

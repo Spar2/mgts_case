@@ -1,0 +1,27 @@
+---
+app_dir: /opt/haklolarp-staging
+# Репо приватное — клон только по SSH через read-only deploy-key.
+app_repo_url: git@github.com:werd0y45/haklolarp.git
+app_version: main
+# Приватный deploy-key ЛЕЖИТ ТОЛЬКО на машине админа (в репо его нет).
+app_deploy_key_src: "{{ lookup('env', 'HOME') }}/.ssh/haklolarp_deploy"
+app_deploy_key_dest: /home/{{ ansible_user }}/.ssh/haklolarp_deploy
+app_compose_files:
+  - compose.yaml
+app_compose_project_name: haklolarp-staging
+# Каталоги команд принадлежат их пользователям (роль teams), app их не трогает.
+# Корень preview-окружений (подкаталоги pr-N создаёт сам CI-ран).
+app_preview_root: /opt/haklolarp-previews
+
+# Ветка data обновляет уже работающий проект haklolarp-stack.
+# Имя проекта в .env обязано совпасть со старыми томами, иначе compose
+# заведёт второй ClickHouse и снова упрётся в 8123/6379/8000.
+# По умолчанию выключен: site.yml не трогает data, пока не передан
+# -e app_data_enabled=true (плейбук data-stand.yml включает сам).
+app_data_enabled: false
+app_data_dir: /opt/haklolarp-stack
+app_data_version: data
+app_data_csv_dir: /opt/haklolarp-stack/data
+app_data_compose_files:
+  - stack/compose.yaml
+app_data_compose_project_name: haklolarp-stack

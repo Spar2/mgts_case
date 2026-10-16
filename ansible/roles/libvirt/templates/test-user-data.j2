@@ -1,0 +1,11 @@
+#cloud-config
+hostname: {{ libvirt_test_vm_name }}
+manage_etc_hosts: true
+users:
+  - name: nettest
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    shell: /bin/bash
+    lock_passwd: true
+package_update: false
+runcmd:
+  - echo NETTEST_OK > /nettest_boot_ok

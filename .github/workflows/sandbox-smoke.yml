@@ -1,0 +1,489 @@
+name: Sandbox smoke (advisory)
+
+# ADVISORY-ONLY pilot probe. Never gates deploys: no deploy workflow `needs`
+# this workflow, no branch protection requires it, and it is deliberately NOT
+# in notify-runs.yml. Red here = investigate, never blocks web/ml/data/main.
+#
+# What it does per push to web|ml|devops|data (+ manual dispatch):
+#   lint  — YAML parse (pr-gate mirror) + static asserts on THIS file.
+#   smoke — matrix [web, ml, devops, data] over SSH to Xeon via tailnet:
+#             web|ml   full live pilot (start/exec/stop, loopback curl).
+#             devops   negative test: runner MUST refuse (nothing started).
+#             data     RECEIPT-GATE ONLY: fetch + verify + static asserts.
+#                      NEVER start/exec/mount/stream (no live-mount).
+#   report — summary table + digest artifact + failure-only Discord.
+#
+# Vendor payload (NO floating devops tip at runtime): the smoke job fetches
+# exactly the two runner files at the pinned devops SHA below over HTTPS and
+# verifies them with `sha256sum -c` FAIL-CLOSED. Integrity is decided by the
+# remote exit code only — appleboy stdout is NEVER parsed for integrity.
+#
+# Ports: pilot ports are owned by run-sandbox.sh (18081/18082/18000 + data
+# extras); APP_PORT (preview.yml pattern) is NOT used here. Live stands
+# (8080/8081/8082/5434/6379/8123/8000) are deny-listed inside the runner (fail-closed).
+# UID:GID is resolved on Xeon via `stat` at runtime — never hardcoded here.
+#
+# Triple-lock against main (this workflow must NEVER touch the real stand):
+#   1) trigger absence: push branches list has no `main`;
+#   2) job-level `if: github.ref != 'refs/heads/main'`;
+#   3) remote `case "$BRANCH" in main) exit 78` (fail-closed).
+#   Live-lock note: $BRANCH derives from matrix.leg so it can never be main
+#   on its own (that case is dead code kept as backstop) — the REAL push ref
+#   (`github.ref_name` -> $REF_NAME) is ALSO injected and refused remotely,
+#   keeping the lock live. dispatch-on-main is a silent skip by design
+#   (job-level `if` skips without failure; no error emitted).
+#
+# Cancel semantics: concurrency cancel-in-progress=true cancels superseded
+# runs. Remote-command budgets nest inside the 20m job cap (probe 1m + wake
+# 4m + smoke 12m + reap 2m = 19m worst-case serial). The trailing reaper step
+# (always()-guarded) stops web|ml pilots and removes ALL FOUR legs' $WORK
+# dirs as best-effort; a hard cancel mid-step can still orphan
+# /tmp/sandbox-smoke-* on Xeon (sweep by hand).
+#
+# SSH notes: KVM wake assumes username root + a forced wake-command key
+# (KVM_WAKE_KEY); staging legs use STAGING_USER. MUST-VERIFY-ON-XEON before
+# merge (cannot be validated from the CI image): appleboy remote shell
+# dialect (function defs, pipefail, command_timeout) and `bash -n` on the
+# remote script bodies.
+
+permissions:
+  contents: read
+  # upload-artifact needs actions:write to publish receipts/digest;
+  # actions:read starves those uploads, so scope up minimally.
+  actions: write
+
+on:
+  push:
+    branches: [web, ml, devops, data]
+    paths-ignore:
+      - design/**
+      - '**/*.png'
+      - docs/**
+      - '**/*.md'
+  workflow_dispatch:
+
+concurrency:
+  group: sandbox-smoke-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  # Pinned vendor payload: exact devops commit the 2 runner files are
+  # fetched from + their byte-exact sha256 (Linux raw bytes, LF blob basis;
+  # LF note is documentary only — .gitattributes is out of scope here).
+  # Pin age (staleness visibility; no runtime tip fetch by design):
+  #   git show -s --format=%ci dc1a7a8422a632ebe0517867ffea7cf119a27a32
+  #   => 2026-10-13 21:31:15 +0300. A tip-vs-pin delta would need fetching
+  #   the floating tip at runtime and is intentionally NOT done here.
+  SANDBOX_RUNNER_SHA: dc1a7a8422a632ebe0517867ffea7cf119a27a32
+  SANDBOX_RUN_SHA256: cd81738a492739e4223a2e2ad9803c2269c423045c8ae5f99a7baf7ccdccc124
+  SANDBOX_COMPOSE_SHA256: 16b439c66b5daa09837242db44da48554fcc12359e6a7530bbaecbe54c433b7c
+
+jobs:
+  lint:
+    if: github.ref != 'refs/heads/main'
+    runs-on: [self-hosted, team-devops]
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+
+      - name: Guard branch ref
+        uses: ./.github/actions/guard-ref
+        with:
+          ref_name: ${{ github.ref_name }}
+          event_name: ${{ github.event_name }}
+          fork: ${{ github.event.pull_request.head.repo.fork }}
+
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7
+        with:
+          python-version: "3.12"
+
+      - name: Install deps
+        run: pip install pyyaml
+
+      - name: Validate YAML (workflows, pr-gate mirror)
+        run: |
+          python - <<'EOF'
+          import glob
+          import yaml
+          files = glob.glob('.github/workflows/*.yml')
+          assert files, 'no workflow files found'
+          for f in sorted(files):
+              yaml.safe_load(open(f))
+              print('OK', f)
+          EOF
+
+      - name: Assert sandbox-smoke guard contract (static)
+        run: |
+          python - <<'EOF'
+          import re
+          p = '.github/workflows/sandbox-smoke.yml'
+          src = open(p).read()
+
+          # 1) push trigger: web|ml|devops|data present, main absent as a branch.
+          m = re.search(r'push:\s*\n\s*branches:\s*\[([^\]]+)\]', src)
+          assert m, 'push branches block not found'
+          branches = [b.strip() for b in m.group(1).split(',')]
+          assert sorted(branches) == ['data', 'devops', 'ml', 'web'], branches
+          assert 'workflow_dispatch:' in src, 'workflow_dispatch trigger missing'
+
+          # 2) triple-lock: job-level ref guard + remote main-refusal exit 78.
+          assert "github.ref != 'refs/heads/main'" in src, 'ref guard missing'
+          assert 'in main) exit 78' in src, 'remote main-refusal missing'
+
+          # 2b) live lock: the REAL push ref (not just the matrix leg, which
+          # can never be main on its own) is injected and refused remotely.
+          assert 'REF_NAME' in src, 'live ref injection missing'
+
+          # 3) pinned vendor payload + fail-closed verify, no stdout parsing.
+          assert 'SANDBOX_RUNNER_SHA' in src, 'runner SHA pin missing'
+          assert 'sha256sum -c' in src, 'sha256sum -c missing'
+
+          # 4) UID never hardcoded (runner resolves via Xeon stat).
+          # NOTE: split literals — these tokens also occur inside THIS
+          # lint block, so the plain single-literal form would fail on
+          # itself. Concatenation keeps the file self-consistent.
+          assert ('1001' + ':1001') not in src \
+              and ('1002' + ':1002') not in src \
+              and ('1003' + ':1003') not in src, 'hardcoded UID:GID found'
+
+          # 5) loopback-only: no raw-socket or wildcard-bind references
+          # in this workflow (same split-literal note as above).
+          assert '127.0.0.1' in src, 'loopback check missing'
+          assert ('docker' + '.sock') not in src, 'raw-socket reference found'
+          assert ('0.0' + '.0.0') not in src, 'wildcard-bind found'
+
+          # 6) code-triggering paths-ignore (docs-only pushes skip).
+          for pat in ('design/**', "'**/*.png'", 'docs/**', "'**/*.md'"):
+              assert pat in src, f'paths-ignore {pat} missing'
+
+          # 7) concurrency group + per-job timeouts.
+          # NOTE: split literal — a plain '${{ github.ref }}' here would be
+          # interpolated by Actions before python runs (same self-reference
+          # class as §4/§5 above). Concatenation keeps the check live.
+          assert 'sandbox-smoke-$' '{{ github.ref }}' in src, 'concurrency group missing'
+          for t in ('timeout-minutes: 10', 'timeout-minutes: 20'):
+              assert t in src, f'{t} missing'
+
+          # 8) every action ref pinned to a full 40-hex SHA.
+          # NOTE: re.match anchors at line start, so only real YAML step
+          # lines (`- uses:` / `uses:`) qualify — this very check's code
+          # (`uses = ...`, `for u in uses:`) starts with other tokens
+          # and is never scanned as an action ref.
+          uses = [re.search(r'uses:\s*(\S+)', l).group(1)
+                  for l in src.splitlines()
+                  if re.match(r'\s*(- )?uses:\s*\S', l)]
+          assert uses, 'no uses: found'
+          for u in uses:
+              if u.startswith('./'):
+                  continue
+              assert re.search(r'@[0-9a-f]{40}', u), f'unpinned action: {u}'
+          print('uses pinned:', len(uses))
+
+          # 9) data leg must not start/exec (receipt-gate only, no live-mount).
+          # NOTE: rindex — both marker literals also occur inside THIS
+          # lint block; the real leg markers are the LAST occurrences
+          # (smoke job, below). index (first hit) would test this block
+          # itself and pass vacuously.
+          data_sect = src[src.rindex('# --- data leg'):]
+          data_sect = data_sect[:data_sect.index('# --- end legs')]
+          assert 'start "' not in data_sect and 'exec "' not in data_sect, \
+              'data leg must never start/exec'
+
+          # 9b) data-leg containment: no container-runtime invocation token
+          # between the data markers (fetch+sha+greps+receipt ONLY, enforced
+          # by construction). The leg addresses the compose file via
+          # $COMPOSE_FILE (defined pre-markers) so even the filename token
+          # never appears here; the runtime CLI is additionally shadowed by
+          # a refusing function on the data remote path (also pre-markers).
+          assert 'dock' + 'er' not in data_sect, \
+              'runtime token inside data leg (use $COMPOSE_FILE pre-markers)'
+
+          print('sandbox-smoke guard contract OK')
+          EOF
+
+  smoke:
+    if: github.ref != 'refs/heads/main'
+    needs: [lint]
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        leg: [web, ml, devops, data]
+    steps:
+      - name: Join Tailscale
+        uses: tailscale/github-action@d1b6cd204f8dceda5b3eaad7f1f767be390056cd # v4
+        with:
+          oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
+          oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
+          tags: tag:ci
+          hostname: sandbox-smoke-${{ matrix.leg }}-${{ github.run_id }}
+
+      - name: Probe Xeon (skip wake if up)
+        id: probe
+        continue-on-error: true
+        uses: appleboy/ssh-action@0ff4204d59e8e51228ff73bce53f80d53301dee2 # v1
+        with:
+          host: ${{ secrets.STAGING_HOST }}
+          username: ${{ secrets.STAGING_USER }}
+          key: ${{ secrets.STAGING_SSH_KEY }}
+          port: 22
+          command_timeout: 1m
+          script: echo xeon-up
+
+      # KVM wake assumes username root + a forced wake-command key
+      # (KVM_WAKE_KEY): the server side waits for boot, the client just
+      # needs a bounded command_timeout nested in the 20m job cap.
+      - name: Wake via KVM (forced command waits for boot)
+        if: steps.probe.outcome == 'failure'
+        uses: appleboy/ssh-action@0ff4204d59e8e51228ff73bce53f80d53301dee2 # v1
+        with:
+          host: ${{ secrets.KVM_HOST }}
+          username: root
+          key: ${{ secrets.KVM_WAKE_KEY }}
+          port: 22
+          command_timeout: 4m
+          script: echo wake-triggered
+
+      - name: Smoke leg ${{ matrix.leg }} (pinned payload, fail-closed)
+        uses: appleboy/ssh-action@0ff4204d59e8e51228ff73bce53f80d53301dee2 # v1
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          host: ${{ secrets.STAGING_HOST }}
+          username: ${{ secrets.STAGING_USER }}
+          key: ${{ secrets.STAGING_SSH_KEY }}
+          port: 22
+          command_timeout: 12m
+          envs: GH_TOKEN
+          script: |
+            set -euo pipefail
+            BRANCH="${{ matrix.leg }}"
+            # --- triple-lock (3/3): remote main-refusal, fail-closed ---
+            # Live lock: BRANCH derives from matrix.leg and can never be
+            # main on its own (that case is dead code kept as backstop),
+            # so the REAL push ref is injected too and refused here.
+            REF_NAME="${{ github.ref_name }}"
+            case "$REF_NAME" in
+              main) echo "sandbox-smoke: REFUSING real ref main (deploy target)" >&2; exit 78 ;;
+            esac
+            case "$BRANCH" in
+              main) echo "sandbox-smoke: REFUSING main (real deploy target)" >&2; exit 78 ;;
+              web|ml|devops|data) : ;;
+              *) echo "sandbox-smoke: unknown leg '$BRANCH'" >&2; exit 78 ;;
+            esac
+            SHA="${{ env.SANDBOX_RUNNER_SHA }}"
+            REPO="${{ github.repository }}"
+            WORK="/tmp/sandbox-smoke-${{ github.run_id }}-$BRANCH"
+            mkdir -p "$WORK"
+            cd "$WORK"
+            # Compose filename via variable so the data leg below can address
+            # it without spelling the runtime-vendor token between its markers.
+            COMPOSE_FILE="docker-compose.sandboxes.yml"
+            # --- pinned vendor payload: exact SHA, never floating tip ---
+            # Private repo: anonymous raw.githubusercontent answers 404, so
+            # authenticate with GITHUB_TOKEN (auto-masked in logs, contents:read).
+            curl -fsSL -H "Authorization: Bearer $GH_TOKEN" "https://raw.githubusercontent.com/$REPO/$SHA/ops/sandboxes/runner/run-sandbox.sh" -o run-sandbox.sh
+            curl -fsSL -H "Authorization: Bearer $GH_TOKEN" "https://raw.githubusercontent.com/$REPO/$SHA/ops/sandboxes/runner/docker-compose.sandboxes.yml" -o docker-compose.sandboxes.yml
+            printf '%s  %s\n' "${{ env.SANDBOX_RUN_SHA256 }}" run-sandbox.sh > MANIFEST
+            printf '%s  %s\n' "${{ env.SANDBOX_COMPOSE_SHA256 }}" docker-compose.sandboxes.yml >> MANIFEST
+            # FAIL-CLOSED: exit code decides, stdout is never parsed for integrity.
+            sha256sum -c MANIFEST
+            chmod +x run-sandbox.sh
+            echo "sandbox-smoke: payload $SHA verified (leg=$BRANCH)"
+            # Pin age is author-time only (no tip fetch at runtime by design).
+            echo "sandbox-smoke: pin date 2026-10-13 (author-time; tip-vs-pin delta needs tip fetch, skipped)"
+
+            # --- devops leg: negative test, runner MUST refuse, nothing starts ---
+            if [ "$BRANCH" = "devops" ]; then
+              if ./run-sandbox.sh start devops; then
+                echo "sandbox-smoke: GUARD FAILURE — devops was NOT refused" >&2
+                exit 1
+              fi
+              echo "sandbox-smoke: devops refused as designed"
+              if [ -n "$(docker ps -q --filter name=sandbox-devops 2>/dev/null)" ]; then
+                echo "sandbox-smoke: GUARD FAILURE — sandbox-devops container exists" >&2
+                exit 1
+              fi
+              echo "sandbox-smoke: no devops container present — OK"
+              exit 0
+            fi
+
+            # --- receipt-gate containment: refuse the container runtime CLI ---
+            # Defined BEFORE the data marker so the static shape assert (no
+            # invocation token between the data markers) holds by
+            # construction. Restored via `unset -f` for the live web|ml
+            # pilots after the end-legs marker.
+            # MUST-VERIFY-ON-XEON: function-dialect support in remote shell.
+            docker() { echo "sandbox-smoke: runtime CLI refused in receipt-gate path" >&2; return 78; }
+
+            # --- data leg: RECEIPT-GATE ONLY — never start/exec/mount/stream ---
+            if [ "$BRANCH" = "data" ]; then
+              # Fetch+sha already done above; here ONLY greps + receipt.
+              grep -qE '^[[:space:]]+sandbox-data:' "$COMPOSE_FILE"
+              grep -qE 'web|ml|data' run-sandbox.sh
+              grep -q '127.0.0.1' "$COMPOSE_FILE"
+              grep -q '8080 8081 8082 5434 6379 8123 8000' run-sandbox.sh
+              {
+                echo "receipt-data leg=receipt-gate-only live_mount=no stream=no"
+                echo "runner_sha=$SHA"
+                echo "actor=${{ github.actor }} run=${{ github.run_id }}"
+                date -u '+built=%Y-%m-%dT%H:%M:%SZ'
+              } > receipt-data.txt
+              cat receipt-data.txt
+              echo "sandbox-smoke: data receipt recorded, no container touched"
+              exit 0
+            fi
+            # --- end legs ---
+
+            # --- web|ml legs: full live pilot ---
+            # Restore the real runtime CLI shadowed for the receipt-gate path.
+            unset -f docker 2>/dev/null || true
+            ./run-sandbox.sh start "$BRANCH"
+            ./run-sandbox.sh status "$BRANCH"
+            # UID via Xeon stat on the live mount source (never hardcoded).
+            CNAME="sandbox-$BRANCH-pilot"
+            CID="$(docker ps -q --filter "name=$CNAME" | head -1)"
+            [ -n "$CID" ] || { echo "sandbox-smoke: container $CNAME not running" >&2; exit 1; }
+            SRC="$(docker inspect "$CID" --format '{{range .Mounts}}{{.Source}} {{end}}' | awk '{print $1}')"
+            OWNER="$(stat -c '%u:%g' "$SRC")"
+            echo "sandbox-smoke: leg=$BRANCH src=$SRC owner=$OWNER"
+            # Write+delete check inside the pilot (proves RW workspace, :ro would fail).
+            ./run-sandbox.sh exec "$BRANCH" -- sh -c "touch /workspace/.sandbox-check-$BRANCH && rm /workspace/.sandbox-check-$BRANCH"
+            # Loopback check on the pilot host port (discovered, never assumed).
+            HPORT="$(docker port "$CID" | head -1 | sed 's/.*://')"
+            curl -fsS "http://127.0.0.1:$HPORT/" -o /dev/null
+            echo "sandbox-smoke: leg=$BRANCH loopback 127.0.0.1:$HPORT OK owner=$OWNER"
+
+      - name: Stop pilot + reap all legs' work dirs (best-effort)
+        if: always()
+        uses: appleboy/ssh-action@0ff4204d59e8e51228ff73bce53f80d53301dee2 # v1
+        with:
+          host: ${{ secrets.STAGING_HOST }}
+          username: ${{ secrets.STAGING_USER }}
+          key: ${{ secrets.STAGING_SSH_KEY }}
+          port: 22
+          command_timeout: 2m
+          script: |
+            set -euo pipefail
+            # Reaper path: stop this leg's live pilot (web|ml only; devops
+            # and data never start anything) then remove ONLY this leg's
+            # $WORK dir. Sibling legs' dirs are NEVER touched here: matrix
+            # legs run concurrently, and wiping all four (as before) lets a
+            # fast leg (data/devops, seconds) delete a slow leg's (web|ml)
+            # runner files mid-flight ("No such file" race). Orphan sweep
+            # for hard-cancelled runs stays manual (see header).
+            D="/tmp/sandbox-smoke-${{ github.run_id }}-${{ matrix.leg }}"
+            if [ "${{ matrix.leg }}" = "web" ] || [ "${{ matrix.leg }}" = "ml" ]; then
+              if [ -x "$D/run-sandbox.sh" ]; then
+                (cd "$D" && ./run-sandbox.sh stop "${{ matrix.leg }}") || true
+              fi
+            fi
+            rm -rf "$D"
+            echo "sandbox-smoke: reaper done (leg=${{ matrix.leg }})"
+
+      - name: Write leg receipt
+        if: always()
+        run: |
+          mkdir -p receipts
+          cat > "receipts/smoke-${{ matrix.leg }}.txt" <<EOF
+          leg=${{ matrix.leg }}
+          run_id=${{ github.run_id }}
+          ref=${{ github.ref }}
+          sha=${{ github.sha }}
+          actor=${{ github.actor }}
+          runner_sha=${{ env.SANDBOX_RUNNER_SHA }}
+          EOF
+          cat "receipts/smoke-${{ matrix.leg }}.txt"
+
+      - name: Upload leg receipt (logs, 14d)
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: sandbox-smoke-${{ matrix.leg }}
+          path: receipts/smoke-${{ matrix.leg }}.txt
+          retention-days: 14
+          if-no-files-found: warn
+
+  report:
+    if: always() && github.ref != 'refs/heads/main'
+    needs: [lint, smoke]
+    runs-on: [self-hosted, team-devops]
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+
+      - name: Guard branch ref
+        uses: ./.github/actions/guard-ref
+        with:
+          ref_name: ${{ github.ref_name }}
+          event_name: ${{ github.event_name }}
+          fork: ${{ github.event.pull_request.head.repo.fork }}
+
+      - name: Summary table
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          {
+            echo "# Sandbox smoke (advisory)"
+            echo ""
+            echo "Advisory-only: red here never blocks deploys."
+            echo ""
+            echo "| leg | result |"
+            echo "| --- | ------ |"
+            echo "| lint | ${{ needs.lint.result }} |"
+            if JOBS_JSON=$(gh run view "${{ github.run_id }}" --json jobs -q '.jobs' 2>/dev/null); then
+              for LEG in web ml devops data; do
+                RES=$(echo "$JOBS_JSON" | jq -r --arg l "smoke ($LEG)" '.[] | select(.name == $l) | .conclusion' | head -1)
+                [ -n "$RES" ] && [ "$RES" != "null" ] || RES="${{ needs.smoke.result }}"
+                echo "| $LEG | $RES |"
+              done
+            else
+              echo "| web/ml/devops/data | ${{ needs.smoke.result }} |"
+            fi
+            echo ""
+            echo "**Runner SHA:** \`${{ env.SANDBOX_RUNNER_SHA }}\`"
+            echo "**Run:** ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          } >> "$GITHUB_STEP_SUMMARY"
+          cat "$GITHUB_STEP_SUMMARY"
+
+      - name: Write digest
+        if: always()
+        run: |
+          mkdir -p digest
+          cat > digest/sandbox-smoke-digest.md <<EOF
+          # Sandbox smoke digest (advisory)
+          run_id=${{ github.run_id }} ref=${{ github.ref }} sha=${{ github.sha }} actor=${{ github.actor }}
+          lint=${{ needs.lint.result }} smoke=${{ needs.smoke.result }}
+          runner_sha=${{ env.SANDBOX_RUNNER_SHA }}
+          run_sha256=${{ env.SANDBOX_RUN_SHA256 }}
+          compose_sha256=${{ env.SANDBOX_COMPOSE_SHA256 }}
+          EOF
+          cat digest/sandbox-smoke-digest.md
+
+      - name: Upload digest (30d)
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: sandbox-smoke-digest
+          path: digest/sandbox-smoke-digest.md
+          retention-days: 30
+          if-no-files-found: warn
+
+      - name: Discord notify (failure only)
+        if: always() && (needs.lint.result == 'failure' || needs.smoke.result == 'failure')
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_DEVOPS }}
+          DISCORD_TITLE: "Sandbox smoke FAILED (advisory, deploys not blocked)"
+          DISCORD_DESC: |
+            **Репозиторий:** ${{ github.repository }}
+            **Ветка:** `${{ github.ref_name }}`
+            **Автор пуша:** ${{ github.actor }}
+            **Коммит:** `${{ github.sha }}`
+            **lint:** `${{ needs.lint.result }}` **smoke:** `${{ needs.smoke.result }}`
+            [Смотреть run](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
+          DISCORD_USERNAME: "GitHub • sandbox-smoke"
+        run: |
+          [ -n "$DISCORD_WEBHOOK" ] || exit 0
+          jq -n --arg title "$DISCORD_TITLE" --arg desc "$DISCORD_DESC" --arg username "$DISCORD_USERNAME" --argjson color 16711680 '{embeds: [{title: $title, description: $desc, color: $color}], username: $username}' > /tmp/discord-smoke.json
+          curl -fsS -H "Content-Type: application/json" -d @/tmp/discord-smoke.json "$DISCORD_WEBHOOK"

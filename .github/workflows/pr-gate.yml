@@ -1,0 +1,157 @@
+name: PR gate
+
+# Гейт перед мёржем в main: branch protection требует зелёный job `validate`.
+
+permissions:
+  contents: read
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  validate:
+    # QUARANTINE: guard-ref required (see docs/QUARANTINE.md)
+    runs-on: [self-hosted, team-devops]
+    timeout-minutes: 10
+    concurrency:
+      group: pr-gate-validate-${{ github.event.pull_request.number || github.ref }}
+      cancel-in-progress: true
+    steps:
+      - uses: step-security/harden-runner@ccd8616d44fd3846e67624a50d5aad6d37bf2d25 # v2
+        with:
+          egress-policy: audit
+
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+
+      - name: Guard branch ref
+        uses: ./.github/actions/guard-ref
+        with:
+          ref_name: ${{ github.ref_name }}
+          event_name: ${{ github.event_name }}
+          fork: ${{ github.event.pull_request.head.repo.fork }}
+
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7
+        with:
+          python-version: "3.12"
+
+      - name: Install deps
+        run: pip install pyyaml ansible-lint
+
+      - name: Validate YAML (workflows + compose)
+        run: |
+          python - <<'EOF'
+          import glob
+          import yaml
+
+
+          def _unknown(loader, node):
+              if isinstance(node, yaml.MappingNode):
+                  return loader.construct_mapping(node, deep=True)
+              if isinstance(node, yaml.SequenceNode):
+                  return loader.construct_sequence(node, deep=True)
+              return loader.construct_scalar(node)
+
+
+          yaml.SafeLoader.add_constructor('!override', _unknown)
+          yaml.SafeLoader.add_constructor('!reset', _unknown)
+          files = glob.glob('.github/workflows/*.yml') + glob.glob('compose*.yaml')
+          assert files, 'no yaml files found'
+          for f in files:
+              yaml.safe_load(open(f))
+              print('OK', f)
+          EOF
+
+      - name: Validate compose files
+        run: |
+          for f in compose*.yaml; do
+            [ -f "$f" ] || continue
+            echo "--- $f"
+            docker compose -f "$f" config -q && echo OK
+          done
+          if [ -f compose.web.yaml ] && [ -f compose.platform.yaml ]; then
+            echo "--- compose.web.yaml+compose.platform.yaml --profile stream (dummy)"
+            DTS_POSTGRES_PASSWORD=dummy docker compose -f compose.web.yaml -f compose.platform.yaml --profile stream config -q || exit 1
+            echo OK
+          fi
+          if [ -f stack/compose.yaml ]; then
+            echo "--- stack/compose.yaml"
+            docker compose -f stack/compose.yaml config -q || exit 1
+            echo OK
+          fi
+
+      - name: Forbid Tailscale funnel/serve
+        run: |
+          set -euo pipefail
+          # P2-tailnet-acl: funnel/serve unmanaged — no tailnet-CLI serve/funnel wiring in code.
+          # docs/ documents the prohibition, so it is excluded from the scan.
+          if grep -rInE 'tailscale[[:space:]]+(funnel|serve)' --exclude-dir=.git --exclude-dir=docs .; then
+            echo "funnel/serve wiring found (see above)"; exit 1
+          fi
+          echo "funnel/serve absent (code)"
+
+      - name: "Loopback-only compose lint (allowlist: compose.yaml)"
+        run: |
+          set -euo pipefail
+          # compose.yaml (staging stub, unbound APP_PORT mapping) is the SOLE allowlist
+          # exception — its bind is NOT changed here. Every other root compose file must
+          # publish loopback-only (127.0.0.1). Container-internal --host 0.0.0.0 (uvicorn
+          # inside netns) is out of scope: only ports-mapping lines are checked.
+          fail=0
+          for f in compose*.yaml; do
+            [ -f "$f" ] || continue
+            case "$f" in compose.yaml) echo "allowlist-skip: $f"; continue;; esac
+            echo "--- $f"
+            if grep -E 'ports:.*\[.*:.*\]' "$f" | grep -v '127\.0\.0\.1' | grep -q .; then
+              echo "FAIL: non-loopback inline ports mapping in $f"; fail=1
+            fi
+            if grep -E '^[[:space:]]*-[[:space:]]*"[^"]*:[0-9]+[^"]*"' "$f" | grep -v '127\.0\.0\.1' | grep -q .; then
+              echo "FAIL: non-loopback list ports mapping in $f"; fail=1
+            fi
+            if { grep -E 'ports:.*\[.*:.*\]' "$f" || true; grep -E '^[[:space:]]*-[[:space:]]*"[^"]*:[0-9]+[^"]*"' "$f" || true; } | grep -q '0\.0\.0\.0'; then
+              echo "FAIL: wildcard 0.0.0.0 in ports mapping ($f)"; fail=1
+            fi
+            if grep -E 'host_ip:' "$f" | grep -v '127\.0\.0\.1' | grep -q .; then
+              echo "FAIL: non-loopback host_ip in $f"; fail=1
+            fi
+          done
+          [ "$fail" = "0" ] || exit 1
+          echo "loopback lint OK (compose.yaml excepted)"
+
+      - name: Install collections
+        working-directory: ansible
+        run: ansible-galaxy collection install -r requirements.yml
+
+      - name: Lint playbooks
+        working-directory: ansible
+        run: ansible-lint playbooks/site.yml playbooks/deploy.yml playbooks/runners.yml playbooks/kvm.yml playbooks/data-stand.yml
+
+  platform-env:
+    # QUARANTINE: guard-ref required (see docs/QUARANTINE.md)
+    runs-on: [self-hosted, team-devops]
+    timeout-minutes: 5
+    concurrency:
+      group: pr-gate-platform-env-${{ github.event.pull_request.number || github.ref }}
+      cancel-in-progress: true
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+
+      - name: Guard branch ref
+        uses: ./.github/actions/guard-ref
+        with:
+          ref_name: ${{ github.ref_name }}
+          event_name: ${{ github.event_name }}
+          fork: ${{ github.event.pull_request.head.repo.fork }}
+
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7
+        with:
+          python-version: "3.12"
+
+      - name: Install deps
+        run: pip install pyyaml
+
+      - name: Platform env consistency
+        run: python scripts/check_platform_env.py
+
+# Результат уходит в Discord через notify-runs.yml (workflow_run).

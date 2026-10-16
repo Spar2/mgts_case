@@ -1,0 +1,839 @@
+{
+  "cli": "0.3.10",
+  "master_roots": 76,
+  "new_screens": 53,
+  "master_structure_matches_canvas": true,
+  "comparison": "Normalize root x/y; sort object keys; normalize default fontWeight (omitted/normal/400). JSON length + FNV-1a over Get(depth=30, includePathGeometry=true). Non-cryptographic structural check, not pixel identity.",
+  "screens": [
+    {
+      "id": "TN9uj",
+      "slug": "login",
+      "roots": 1,
+      "layout_issues": 0,
+      "structure_matches_canvas": true
+    },
+    {
+      "id": "jZsf4",
+      "slug": "invite",
+      "roots": 1,
+      "layout_issues": 0,
+      "structure_matches_canvas": true
+    },
+    {
+      "id": "cAr0v",
+      "slug": "recover",
+      "roots": 1,
+      "layout_issues": 0,
+      "structure_matches_canvas": true
+    },
+    {
+      "id": "x8Gq2w",
+      "slug": "auth-states",
+      "roots": 1,
+      "layout_issues": 0,
+      "structure_matches_canvas": true
+    },
+    {
+      "id": "OLZS7",
+      "slug": "projects",
+      "roots": 1,
+      "layout_issues": 0,
+      "structure_matches_canvas": true
+    },
+    {
+      "id": "HvDzd",
+      "slug": "project-create",
+      "roots": 1,
+      "layout_issues": 0,
+      "structure_matches_canvas": true
+    },
+    {
+      "id": "QDufn",
+      "slug": "home-expert",
+      "roots": 1,
+      "layout_issues": 0,
+      "structure_matches_canvas": true
+    },
+    {
+      "id": "yXVD7",
+      "slug": "home-team",
+      "roots": 1,
+      "layout_issues": 0,
+      "structure_matches_canvas": true
+    },
+    {
+      "id": "xf1Ma",
+      "slug": "import-upload",
+      "roots": 1,
+      "layout_issues": 0,
+      "structure_matches_canvas": true
+    },
+    {
+      "id": "bjTPH",
+      "slug": "quality",
+      "roots": 1,
+      "layout_issues": 0,
+      "structure_matches_canvas": true
+    },
+    {
+      "id": "SEicC",
+      "slug": "job",
+      "roots": 1,
+      "layout_issues": 0,
+      "structure_matches_canvas": true
+    },
+    {
+      "id": "lac6j",
+      "slug": "queue-manage",
+      "roots": 1,
+      "layout_issues": 0,
+      "structure_matches_canvas": true
+    },
+    {
+      "id": "Cq429",
+      "slug": "annotation-contract",
+      "roots": 1,
+      "layout_issues": 0,
+      "structure_matches_canvas": true
+    },
+    {
+      "id": "cTV6b",
+      "slug": "adjudication",
+      "roots": 1,
+      "layout_issues": 0,
+      "structure_matches_canvas": true
+    },
+    {
+      "id": "k0sIBv",
+      "slug": "revision-conflict",
+      "roots": 1,
+      "layout_issues": 0,
+      "structure_matches_canvas": true
+    },
+    {
+      "id": "qYCSR",
+      "slug": "release",
+      "roots": 1,
+      "layout_issues": 0,
+      "structure_matches_canvas": true
+    },
+    {
+      "id": "VUxsS",
+      "slug": "members",
+      "roots": 1,
+      "layout_issues": 0,
+      "structure_matches_canvas": true
+    },
+    {
+      "id": "OC5H8",
+      "slug": "permissions",
+      "roots": 1,
+      "layout_issues": 0,
+      "structure_matches_canvas": true
+    },
+    {
+      "id": "X0LEv",
+      "slug": "audit",
+      "roots": 1,
+      "layout_issues": 0,
+      "structure_matches_canvas": true
+    },
+    {
+      "id": "yoTrV",
+      "slug": "project-settings",
+      "roots": 1,
+      "layout_issues": 0,
+      "structure_matches_canvas": true
+    },
+    {
+      "id": "H500V",
+      "slug": "integrations",
+      "roots": 1,
+      "layout_issues": 0,
+      "structure_matches_canvas": true
+    },
+    {
+      "id": "O26Ta",
+      "slug": "profile",
+      "roots": 1,
+      "layout_issues": 0,
+      "structure_matches_canvas": true
+    },
+    {
+      "id": "UkyTz",
+      "slug": "system-states",
+      "roots": 1,
+      "layout_issues": 0,
+      "structure_matches_canvas": true
+    },
+    {
+      "id": "K09jFP",
+      "slug": "danger-states",
+      "roots": 1,
+      "layout_issues": 0,
+      "structure_matches_canvas": true
+    },
+    {
+      "id": "o3xbc",
+      "slug": "help",
+      "roots": 1,
+      "layout_issues": 0,
+      "structure_matches_canvas": true
+    },
+    {
+      "id": "Z6wks",
+      "slug": "m-login",
+      "roots": 1,
+      "layout_issues": 0,
+      "structure_matches_canvas": true
+    },
+    {
+      "id": "J3HzOK",
+      "slug": "m-projects",
+      "roots": 1,
+      "layout_issues": 0,
+      "structure_matches_canvas": true
+    },
+    {
+      "id": "joCmS",
+      "slug": "m-tasks",
+      "roots": 1,
+      "layout_issues": 0,
+      "structure_matches_canvas": true
+    },
+    {
+      "id": "F0zRJA",
+      "slug": "m-filters",
+      "roots": 1,
+      "layout_issues": 0,
+      "structure_matches_canvas": true
+    },
+    {
+      "id": "q3pOto",
+      "slug": "m-signal",
+      "roots": 1,
+      "layout_issues": 0,
+      "structure_matches_canvas": true
+    },
+    {
+      "id": "PvNyb",
+      "slug": "m-slice",
+      "roots": 1,
+      "layout_issues": 0,
+      "structure_matches_canvas": true
+    },
+    {
+      "id": "ponQ4",
+      "slug": "m-decision",
+      "roots": 1,
+      "layout_issues": 0,
+      "structure_matches_canvas": true
+    },
+    {
+      "id": "jFw0b",
+      "slug": "m-reason",
+      "roots": 1,
+      "layout_issues": 0,
+      "structure_matches_canvas": true
+    },
+    {
+      "id": "eMvCx",
+      "slug": "m-saved",
+      "roots": 1,
+      "layout_issues": 0,
+      "structure_matches_canvas": true
+    },
+    {
+      "id": "H9dGx",
+      "slug": "m-offline",
+      "roots": 1,
+      "layout_issues": 0,
+      "structure_matches_canvas": true
+    },
+    {
+      "id": "yLGhb",
+      "slug": "m-conflict",
+      "roots": 1,
+      "layout_issues": 0,
+      "structure_matches_canvas": true
+    },
+    {
+      "id": "dn9rw",
+      "slug": "m-records",
+      "roots": 1,
+      "layout_issues": 0,
+      "structure_matches_canvas": true
+    },
+    {
+      "id": "dexnD",
+      "slug": "m-job",
+      "roots": 1,
+      "layout_issues": 0,
+      "structure_matches_canvas": true
+    },
+    {
+      "id": "z1UhCk",
+      "slug": "m-menu",
+      "roots": 1,
+      "layout_issues": 0,
+      "structure_matches_canvas": true
+    },
+    {
+      "id": "N1g0R",
+      "slug": "m-settings",
+      "roots": 1,
+      "layout_issues": 0,
+      "structure_matches_canvas": true
+    },
+    {
+      "id": "H4oR6j",
+      "slug": "m-small",
+      "roots": 1,
+      "layout_issues": 0,
+      "structure_matches_canvas": true
+    },
+    {
+      "id": "hoQ9U",
+      "slug": "m-landscape",
+      "roots": 1,
+      "layout_issues": 0,
+      "structure_matches_canvas": true
+    },
+    {
+      "id": "UJ4Fw",
+      "slug": "new-password",
+      "roots": 1,
+      "layout_issues": 0,
+      "structure_matches_canvas": true
+    },
+    {
+      "id": "I6OYsx",
+      "slug": "second-factor",
+      "roots": 1,
+      "layout_issues": 0,
+      "structure_matches_canvas": true
+    },
+    {
+      "id": "r4kwh",
+      "slug": "member-invite",
+      "roots": 1,
+      "layout_issues": 0,
+      "structure_matches_canvas": true
+    },
+    {
+      "id": "YdOwP",
+      "slug": "member-role",
+      "roots": 1,
+      "layout_issues": 0,
+      "structure_matches_canvas": true
+    },
+    {
+      "id": "uyRkr",
+      "slug": "research-r3",
+      "roots": 1,
+      "layout_issues": 0,
+      "structure_matches_canvas": true
+    },
+    {
+      "id": "JJVlW",
+      "slug": "expert-r3",
+      "roots": 1,
+      "layout_issues": 0,
+      "structure_matches_canvas": true
+    },
+    {
+      "id": "YFqrW",
+      "slug": "m-export",
+      "roots": 1,
+      "layout_issues": 0,
+      "structure_matches_canvas": true
+    },
+    {
+      "id": "cNYQ7",
+      "slug": "m-admin",
+      "roots": 1,
+      "layout_issues": 0,
+      "structure_matches_canvas": true
+    },
+    {
+      "id": "v3Mcc",
+      "slug": "m-keyboard",
+      "roots": 1,
+      "layout_issues": 0,
+      "structure_matches_canvas": true
+    },
+    {
+      "id": "EjO4Y",
+      "slug": "tablet-r3",
+      "roots": 1,
+      "layout_issues": 0,
+      "structure_matches_canvas": true
+    },
+    {
+      "id": "w7A0Sl",
+      "slug": "component-states",
+      "roots": 1,
+      "layout_issues": 0,
+      "structure_matches_canvas": true
+    }
+  ],
+  "original_and_r2_roots_unchanged": 23,
+  "canvas_signatures": [
+    {
+      "id": "wEubH",
+      "name": "Desktop - 1",
+      "length": 62481,
+      "hash": 845941771
+    },
+    {
+      "id": "EyEym",
+      "name": "Desktop - Live Demo",
+      "length": 55232,
+      "hash": 2526889860
+    },
+    {
+      "id": "p0SpzX",
+      "name": "Desktop - Анализ аномалий",
+      "length": 54869,
+      "hash": 3734646008
+    },
+    {
+      "id": "hw2nd",
+      "name": "Исходные кнопки — сохранены",
+      "length": 2339,
+      "hash": 72671574
+    },
+    {
+      "id": "L7iPfs",
+      "name": "Carbon · Carbon / язык научного рабочего места",
+      "length": 8805,
+      "hash": 159248413
+    },
+    {
+      "id": "NV1A7",
+      "name": "Carbon · Как читать измерения DTS",
+      "length": 112482,
+      "hash": 3643957351
+    },
+    {
+      "id": "A4X5E4",
+      "name": "Carbon · Три рабочих режима одного продукта",
+      "length": 6963,
+      "hash": 2201224433
+    },
+    {
+      "id": "Vs6C7",
+      "name": "Carbon · Записи волоконной температуры",
+      "length": 68316,
+      "hash": 4062594914
+    },
+    {
+      "id": "qUCbQ",
+      "name": "Carbon · Исследование температурного поля",
+      "length": 77389,
+      "hash": 1012359522
+    },
+    {
+      "id": "yRv8z",
+      "name": "Carbon · Разбор температурного события",
+      "length": 80178,
+      "hash": 2863749066
+    },
+    {
+      "id": "b4QoJ",
+      "name": "Carbon · Слепая экспертная проверка",
+      "length": 79953,
+      "hash": 2889026166
+    },
+    {
+      "id": "hzIX5",
+      "name": "Carbon · Сравнение подходов на одной записи",
+      "length": 125563,
+      "hash": 2404598764
+    },
+    {
+      "id": "bvyQ9",
+      "name": "Carbon · Воспроизведение исторической записи",
+      "length": 70676,
+      "hash": 3072520149
+    },
+    {
+      "id": "yx95J",
+      "name": "Carbon · Импорт и проверка CSV",
+      "length": 13797,
+      "hash": 840624585
+    },
+    {
+      "id": "uapPA",
+      "name": "Carbon · Настройки и история анализа",
+      "length": 14254,
+      "hash": 373616036
+    },
+    {
+      "id": "Kw23R",
+      "name": "Carbon · Методы и доказательства качества",
+      "length": 12781,
+      "hash": 4259513768
+    },
+    {
+      "id": "oBzVg",
+      "name": "Carbon · Объект и маршрут волокна",
+      "length": 13551,
+      "hash": 67854522
+    },
+    {
+      "id": "qjxSd",
+      "name": "Carbon · Доказательства и экспорт",
+      "length": 66889,
+      "hash": 1330774656
+    },
+    {
+      "id": "DvC1f",
+      "name": "Carbon · Зоны наблюдения и правила",
+      "length": 60873,
+      "hash": 1692407412
+    },
+    {
+      "id": "w7Fsl1",
+      "name": "Carbon · Состояния интерфейса и восстановление",
+      "length": 10244,
+      "hash": 3441731389
+    },
+    {
+      "id": "k5Z6v2",
+      "name": "Carbon · Фокусированный вид / один участок",
+      "length": 69452,
+      "hash": 2034234072
+    },
+    {
+      "id": "TKN90",
+      "name": "Carbon · Адаптивный вид 1024",
+      "length": 61615,
+      "hash": 925471313
+    },
+    {
+      "id": "kN7CU",
+      "name": "Carbon · Проверка на узком экране",
+      "length": 62238,
+      "hash": 1638616001
+    },
+    {
+      "id": "TN9uj",
+      "name": "Carbon R3 · Вход в рабочую область",
+      "length": 6913,
+      "hash": 1468053969
+    },
+    {
+      "id": "jZsf4",
+      "name": "Carbon R3 · Присоединиться к проекту",
+      "length": 7746,
+      "hash": 1831484313
+    },
+    {
+      "id": "cAr0v",
+      "name": "Carbon R3 · Восстановление доступа",
+      "length": 6315,
+      "hash": 2782579816
+    },
+    {
+      "id": "x8Gq2w",
+      "name": "Carbon R3 · Авторизация: исключения",
+      "length": 8720,
+      "hash": 3697400986
+    },
+    {
+      "id": "OLZS7",
+      "name": "Carbon R3 · Проекты и рабочие области",
+      "length": 11745,
+      "hash": 844947373
+    },
+    {
+      "id": "HvDzd",
+      "name": "Carbon R3 · Новый проект",
+      "length": 9050,
+      "hash": 3494607606
+    },
+    {
+      "id": "QDufn",
+      "name": "Carbon R3 · Моя работа: экспертная проверка",
+      "length": 11384,
+      "hash": 39044277
+    },
+    {
+      "id": "yXVD7",
+      "name": "Carbon R3 · Обзор проекта и следующие шаги",
+      "length": 12896,
+      "hash": 503970757
+    },
+    {
+      "id": "xf1Ma",
+      "name": "Carbon R3 · Загрузка CSV: выбор источника",
+      "length": 10218,
+      "hash": 2207980323
+    },
+    {
+      "id": "bjTPH",
+      "name": "Carbon R3 · Паспорт качества записи",
+      "length": 14302,
+      "hash": 4161025646
+    },
+    {
+      "id": "SEicC",
+      "name": "Carbon R3 · Запуск анализа: состояние и журнал",
+      "length": 13255,
+      "hash": 4062305553
+    },
+    {
+      "id": "lac6j",
+      "name": "Carbon R3 · Пакет проверки и назначения",
+      "length": 9707,
+      "hash": 2105784707
+    },
+    {
+      "id": "Cq429",
+      "name": "Carbon R3 · Контракт экспертной разметки",
+      "length": 9743,
+      "hash": 3256702567
+    },
+    {
+      "id": "cTV6b",
+      "name": "Carbon R3 · Повторная проверка расхождения",
+      "length": 67498,
+      "hash": 719759577
+    },
+    {
+      "id": "k0sIBv",
+      "name": "Carbon R3 · Конфликт сохранения: сравнение версий",
+      "length": 8354,
+      "hash": 3381557835
+    },
+    {
+      "id": "qYCSR",
+      "name": "Carbon R3 · Экспорт и выпуск набора ответов",
+      "length": 9838,
+      "hash": 1179159802
+    },
+    {
+      "id": "VUxsS",
+      "name": "Carbon R3 · Участники и приглашения",
+      "length": 11284,
+      "hash": 2413102685
+    },
+    {
+      "id": "OC5H8",
+      "name": "Carbon R3 · Права в проекте",
+      "length": 17155,
+      "hash": 2741396560
+    },
+    {
+      "id": "X0LEv",
+      "name": "Carbon R3 · Журнал действий и происхождения",
+      "length": 12358,
+      "hash": 736625849
+    },
+    {
+      "id": "yoTrV",
+      "name": "Carbon R3 · Настройки проекта и хранения",
+      "length": 9471,
+      "hash": 1750329095
+    },
+    {
+      "id": "H500V",
+      "name": "Carbon R3 · Подключения и ограничения",
+      "length": 9382,
+      "hash": 3687526394
+    },
+    {
+      "id": "O26Ta",
+      "name": "Carbon R3 · Профиль и безопасность",
+      "length": 9939,
+      "hash": 274103757
+    },
+    {
+      "id": "UkyTz",
+      "name": "Carbon R3 · Система: восстановление и ограничения",
+      "length": 8798,
+      "hash": 1545633218
+    },
+    {
+      "id": "K09jFP",
+      "name": "Carbon R3 · Подтверждения важных действий",
+      "length": 8131,
+      "hash": 2152370354
+    },
+    {
+      "id": "o3xbc",
+      "name": "Carbon R3 · Справка: измерения и рабочий процесс",
+      "length": 13278,
+      "hash": 418507256
+    },
+    {
+      "id": "Z6wks",
+      "name": "Carbon R3 · Вход с телефона",
+      "length": 4436,
+      "hash": 1972965592
+    },
+    {
+      "id": "J3HzOK",
+      "name": "Carbon R3 · Выбор проекта",
+      "length": 3853,
+      "hash": 3562539322
+    },
+    {
+      "id": "joCmS",
+      "name": "Carbon R3 · Моя очередь",
+      "length": 5264,
+      "hash": 2590947728
+    },
+    {
+      "id": "F0zRJA",
+      "name": "Carbon R3 · Фильтры очереди",
+      "length": 5491,
+      "hash": 2480909854
+    },
+    {
+      "id": "q3pOto",
+      "name": "Carbon R3 · Проверка: исходный сигнал",
+      "length": 61196,
+      "hash": 1500786673
+    },
+    {
+      "id": "PvNyb",
+      "name": "Carbon R3 · Точный пространственный срез",
+      "length": 7050,
+      "hash": 878029137
+    },
+    {
+      "id": "ponQ4",
+      "name": "Carbon R3 · Проверка: собственный ответ",
+      "length": 5514,
+      "hash": 393620128
+    },
+    {
+      "id": "jFw0b",
+      "name": "Carbon R3 · Обоснование и сохранение",
+      "length": 4406,
+      "hash": 11135227
+    },
+    {
+      "id": "eMvCx",
+      "name": "Carbon R3 · Ответ сохранён: следующий шаг",
+      "length": 4789,
+      "hash": 3558066235
+    },
+    {
+      "id": "H9dGx",
+      "name": "Carbon R3 · Нет связи: локальный черновик",
+      "length": 4747,
+      "hash": 2534341867
+    },
+    {
+      "id": "yLGhb",
+      "name": "Carbon R3 · Изменение в другом сеансе",
+      "length": 4674,
+      "hash": 2814331978
+    },
+    {
+      "id": "dn9rw",
+      "name": "Carbon R3 · Данные: компактный список",
+      "length": 4628,
+      "hash": 3942403557
+    },
+    {
+      "id": "dexnD",
+      "name": "Carbon R3 · Запуск: наблюдение с телефона",
+      "length": 4657,
+      "hash": 4042229379
+    },
+    {
+      "id": "z1UhCk",
+      "name": "Carbon R3 · Навигация и проект",
+      "length": 5449,
+      "hash": 278159525
+    },
+    {
+      "id": "N1g0R",
+      "name": "Carbon R3 · Настройка проверки с телефона",
+      "length": 5617,
+      "hash": 2773297359
+    },
+    {
+      "id": "H4oR6j",
+      "name": "Carbon R3 · Узкий экран: ответ и навигация",
+      "length": 5504,
+      "hash": 3248454717
+    },
+    {
+      "id": "hoQ9U",
+      "name": "Carbon R3 · Поле в альбомной ориентации",
+      "length": 60312,
+      "hash": 1699195761
+    },
+    {
+      "id": "UJ4Fw",
+      "name": "Carbon R3 · Установить новый пароль",
+      "length": 7029,
+      "hash": 3969718852
+    },
+    {
+      "id": "I6OYsx",
+      "name": "Carbon R3 · Подтверждение входа",
+      "length": 6296,
+      "hash": 3557307210
+    },
+    {
+      "id": "r4kwh",
+      "name": "Carbon R3 · Приглашение и область доступа",
+      "length": 9125,
+      "hash": 2742236015
+    },
+    {
+      "id": "YdOwP",
+      "name": "Carbon R3 · Изменение роли участника",
+      "length": 9188,
+      "hash": 1222923733
+    },
+    {
+      "id": "uyRkr",
+      "name": "Carbon R3 · Исследование: поле и связанные срезы",
+      "length": 74131,
+      "hash": 788735175
+    },
+    {
+      "id": "JJVlW",
+      "name": "Carbon R3 · Экспертная оценка окна",
+      "length": 72965,
+      "hash": 2071809584
+    },
+    {
+      "id": "YFqrW",
+      "name": "Carbon R3 · Экспорт с телефона",
+      "length": 4903,
+      "hash": 189173286
+    },
+    {
+      "id": "cNYQ7",
+      "name": "Carbon R3 · Участник: права на телефоне",
+      "length": 5662,
+      "hash": 3230852788
+    },
+    {
+      "id": "v3Mcc",
+      "name": "Carbon R3 · Обоснование: экранная клавиатура",
+      "length": 4482,
+      "hash": 516476597
+    },
+    {
+      "id": "EjO4Y",
+      "name": "Carbon R3 · Исследование: планшет 1024",
+      "length": 61281,
+      "hash": 3456469775
+    },
+    {
+      "id": "w7A0Sl",
+      "name": "Carbon R3 · Компоненты: состояния и доступность",
+      "length": 11571,
+      "hash": 2465807980
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+---
+# notify_relay — defaults: images / ports / paths.
+# Secrets are NOT stored here: token + webhook live in notify_env_file
+# on the target host (mode 0600), awg config in notify_awg_conf (mode 0600).
+
+# Relay image is built locally from ops/notify-relay/Dockerfile.relay.
+notify_relay_port: "8080"
+notify_deploy_dir: /opt/notify-relay
+# Repo checkout path ON THE TARGET host (sources are copied from there).
+notify_src_dir: /opt/selfhosted
+notify_src_subdir: ops/notify-relay
+
+# AmneziaWG sidecar image. MUST contain the amneziawg client (awg-quick).
+# Default is a placeholder — verify availability and pin a digest per host.
+notify_awg_image: "ghcr.io/amnezia-vpn/amnezia-wg:latest"
+
+notify_env_file: /etc/notify-relay/relay.env
+notify_awg_conf: /etc/notify-relay/awg.conf
+
+# Set false for a relay-only bring-up (no VPN sidecar check).
+notify_awg_enable: true

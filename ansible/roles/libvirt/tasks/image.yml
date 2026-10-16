@@ -1,0 +1,39 @@
+---
+- name: Каталог образов
+  ansible.builtin.file:
+    path: "{{ libvirt_data_dir }}/images"
+    state: directory
+    mode: "0711"
+
+- name: SHA256SUMS апстрима
+  ansible.builtin.get_url:
+    url: "{{ libvirt_cloud_image_sha_url }}"
+    dest: /tmp/noble-SHA256SUMS
+    mode: "0644"
+
+- name: Ожидаемый хеш образа
+  ansible.builtin.command: grep 'noble-server-cloudimg-amd64.img$' /tmp/noble-SHA256SUMS
+  register: libvirt_img_hash
+  changed_when: false
+
+- name: Скачивание cloud-образа
+  ansible.builtin.get_url:
+    url: "{{ libvirt_cloud_image_url }}"
+    dest: /tmp/noble-server-cloudimg-amd64.img
+    checksum: "sha256:{{ libvirt_img_hash.stdout.split()[0] }}"
+    mode: "0644"
+
+- name: Базовый образ уже есть?
+  ansible.builtin.stat:
+    path: "{{ libvirt_cloud_base_image }}"
+  register: libvirt_base_stat
+
+- name: Базовый образ (апстрим уже qcow2, convert фиксирует формат)
+  ansible.builtin.command: qemu-img convert -O qcow2 /tmp/noble-server-cloudimg-amd64.img {{ libvirt_cloud_base_image }}
+  when: not libvirt_base_stat.stat.exists
+  changed_when: true
+
+- name: Временный файл образа удалён
+  ansible.builtin.file:
+    path: /tmp/noble-server-cloudimg-amd64.img
+    state: absent

@@ -1,0 +1,107 @@
+{
+  "at": "2026-10-09T10:38:26.063442+00:00",
+  "url": "http://127.0.0.1:8091",
+  "conditions": "loopback, sequential GET, gzip accepted; first request may be cached; concurrent replay/browser QA possible",
+  "overview_shape": [
+    127,
+    190
+  ],
+  "records": [
+    {
+      "source": "6.csv",
+      "source_sha256": "23e79988fcfb8a186dec06faffa60e6ed7c93ca7cd9969ac4989fd12b9f358c8",
+      "native_shape": [
+        1231,
+        4534
+      ],
+      "aggregation": "median_valid_physical_bins_v1",
+      "first_overview_ms": 542.64,
+      "warm_median_ms": 6.99,
+      "warm_max_ms": 21.72,
+      "overview_decoded_bytes": 223548,
+      "overview_content_length": "71597",
+      "slice_ms": 16.21,
+      "slice_decoded_bytes": 199905
+    },
+    {
+      "source": "4.csv",
+      "source_sha256": "d2f5b3d90078420aea45bac86df3656987a2ca9c548d478d134d3ee6349fde17",
+      "native_shape": [
+        708,
+        1691
+      ],
+      "aggregation": "median_valid_physical_bins_v1",
+      "first_overview_ms": 537.66,
+      "warm_median_ms": 8.51,
+      "warm_max_ms": 16.25,
+      "overview_decoded_bytes": 223548,
+      "overview_content_length": "82617",
+      "slice_ms": 10.23,
+      "slice_decoded_bytes": 81649
+    },
+    {
+      "source": "5.csv",
+      "source_sha256": "98c1d629ed59478c81fa58b60e891f5587ef9d64ad435655e717a27f64767e46",
+      "native_shape": [
+        2711,
+        2364
+      ],
+      "aggregation": "median_valid_physical_bins_v1",
+      "first_overview_ms": 724.76,
+      "warm_median_ms": 6.74,
+      "warm_max_ms": 16.96,
+      "overview_decoded_bytes": 223520,
+      "overview_content_length": "58410",
+      "slice_ms": 12.16,
+      "slice_decoded_bytes": 74552
+    },
+    {
+      "source": "2.csv",
+      "source_sha256": "f115579accd114e0c5a0d968aea3d2710da8ead421fc8c35c17472047cefdec4",
+      "native_shape": [
+        696,
+        2315
+      ],
+      "aggregation": "median_valid_physical_bins_v1",
+      "first_overview_ms": 669.81,
+      "warm_median_ms": 8.32,
+      "warm_max_ms": 17.56,
+      "overview_decoded_bytes": 223544,
+      "overview_content_length": "83488",
+      "slice_ms": 10.09,
+      "slice_decoded_bytes": 104485
+    },
+    {
+      "source": "1.csv",
+      "source_sha256": "3101c6b2716d2a9e14cd32e2e5d758cb8628741cff6f265cc45db2d7e9e8257f",
+      "native_shape": [
+        615,
+        11707
+      ],
+      "aggregation": "median_valid_physical_bins_v1",
+      "first_overview_ms": 1079.46,
+      "warm_median_ms": 9.13,
+      "warm_max_ms": 16.23,
+      "overview_decoded_bytes": 223552,
+      "overview_content_length": "87371",
+      "slice_ms": 39.93,
+      "slice_decoded_bytes": 447937
+    },
+    {
+      "source": "3.csv",
+      "source_sha256": "0acc4e41dc16dd829110881641cb17f94bffd0c2d5255d539d8f3589cd8cdde3",
+      "native_shape": [
+        788,
+        1689
+      ],
+      "aggregation": "median_valid_physical_bins_v1",
+      "first_overview_ms": 735.88,
+      "warm_median_ms": 5.86,
+      "warm_max_ms": 14.53,
+      "overview_decoded_bytes": 223576,
+      "overview_content_length": "48089",
+      "slice_ms": 12.28,
+      "slice_decoded_bytes": 84082
+    }
+  ]
+}

@@ -1,0 +1,3776 @@
+{
+  "duration_s": 1800.7,
+  "sessions": 10,
+  "requests": 1480,
+  "p95_ms": 87.78800000436604,
+  "errors": [],
+  "conditions": "loopback Docker Desktop; ten independent authenticated clients; warm 128x128 version2 tiles; sample every 10s; replay jobs active when available; no hardware phone measurement",
+  "measurement_date": "2026-10-09",
+  "scope": "Server-side warm binary blocks and container memory; not browser heap, FPS, or a physical mobile device.",
+  "memory_samples": [
+    {
+      "elapsed_s": 2.2,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "95.68MiB / 768MiB",
+          "CPUPerc": "0.11%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "90.57MiB / 768MiB",
+          "CPUPerc": "44.01%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "15.82MiB / 640MiB",
+          "CPUPerc": "2.88%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "930.4MiB / 2GiB",
+          "CPUPerc": "31.36%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 14.6,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "95.44MiB / 768MiB",
+          "CPUPerc": "0.09%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "91.57MiB / 768MiB",
+          "CPUPerc": "30.97%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "15.86MiB / 640MiB",
+          "CPUPerc": "1.31%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.076GiB / 2GiB",
+          "CPUPerc": "38.98%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 26.9,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "96.56MiB / 768MiB",
+          "CPUPerc": "0.10%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "91.16MiB / 768MiB",
+          "CPUPerc": "30.12%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.35MiB / 640MiB",
+          "CPUPerc": "1.79%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.35GiB / 2GiB",
+          "CPUPerc": "48.33%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 39.3,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "96.43MiB / 768MiB",
+          "CPUPerc": "0.10%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "91.69MiB / 768MiB",
+          "CPUPerc": "29.70%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.16MiB / 640MiB",
+          "CPUPerc": "1.84%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.704GiB / 2GiB",
+          "CPUPerc": "59.74%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 51.3,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "97.14MiB / 768MiB",
+          "CPUPerc": "0.09%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "92.29MiB / 768MiB",
+          "CPUPerc": "28.64%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.56MiB / 640MiB",
+          "CPUPerc": "1.82%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.652GiB / 2GiB",
+          "CPUPerc": "52.93%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 63.3,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "94.92MiB / 768MiB",
+          "CPUPerc": "0.10%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "91.73MiB / 768MiB",
+          "CPUPerc": "28.38%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.84MiB / 640MiB",
+          "CPUPerc": "3.31%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.538GiB / 2GiB",
+          "CPUPerc": "57.03%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 75.6,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "94.84MiB / 768MiB",
+          "CPUPerc": "0.09%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "91.55MiB / 768MiB",
+          "CPUPerc": "29.24%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "11.17MiB / 640MiB",
+          "CPUPerc": "1.67%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.599GiB / 2GiB",
+          "CPUPerc": "95.11%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 88.0,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "94.95MiB / 768MiB",
+          "CPUPerc": "0.10%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.25MiB / 768MiB",
+          "CPUPerc": "34.69%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "10.35MiB / 640MiB",
+          "CPUPerc": "1.70%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.394GiB / 2GiB",
+          "CPUPerc": "63.96%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 100.3,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "97.57MiB / 768MiB",
+          "CPUPerc": "0.10%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.61MiB / 768MiB",
+          "CPUPerc": "35.39%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.49MiB / 640MiB",
+          "CPUPerc": "1.92%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.202GiB / 2GiB",
+          "CPUPerc": "47.34%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 112.3,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "96.94MiB / 768MiB",
+          "CPUPerc": "0.09%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.57MiB / 768MiB",
+          "CPUPerc": "33.10%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.66MiB / 640MiB",
+          "CPUPerc": "1.79%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.283GiB / 2GiB",
+          "CPUPerc": "38.85%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 124.7,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "98.08MiB / 768MiB",
+          "CPUPerc": "0.11%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "92.97MiB / 768MiB",
+          "CPUPerc": "33.42%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.3MiB / 640MiB",
+          "CPUPerc": "1.76%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.297GiB / 2GiB",
+          "CPUPerc": "59.96%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 137.0,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "97.95MiB / 768MiB",
+          "CPUPerc": "0.10%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "94.69MiB / 768MiB",
+          "CPUPerc": "37.41%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.3MiB / 640MiB",
+          "CPUPerc": "1.91%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.423GiB / 2GiB",
+          "CPUPerc": "41.59%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 149.4,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "98.06MiB / 768MiB",
+          "CPUPerc": "0.09%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.22MiB / 768MiB",
+          "CPUPerc": "35.61%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.85MiB / 640MiB",
+          "CPUPerc": "3.07%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.458GiB / 2GiB",
+          "CPUPerc": "49.70%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 161.4,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "98.21MiB / 768MiB",
+          "CPUPerc": "0.11%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "94.11MiB / 768MiB",
+          "CPUPerc": "37.69%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.62MiB / 640MiB",
+          "CPUPerc": "1.65%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.636GiB / 2GiB",
+          "CPUPerc": "58.02%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 173.4,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "97.43MiB / 768MiB",
+          "CPUPerc": "0.25%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.65MiB / 768MiB",
+          "CPUPerc": "32.92%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.29MiB / 640MiB",
+          "CPUPerc": "1.46%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.52GiB / 2GiB",
+          "CPUPerc": "47.85%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 185.7,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "97.41MiB / 768MiB",
+          "CPUPerc": "0.10%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.7MiB / 768MiB",
+          "CPUPerc": "34.48%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "14.91MiB / 640MiB",
+          "CPUPerc": "1.60%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.508GiB / 2GiB",
+          "CPUPerc": "53.71%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 198.1,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "97.58MiB / 768MiB",
+          "CPUPerc": "0.10%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "94.01MiB / 768MiB",
+          "CPUPerc": "34.05%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.55MiB / 640MiB",
+          "CPUPerc": "1.53%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.419GiB / 2GiB",
+          "CPUPerc": "44.61%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 210.4,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "99.15MiB / 768MiB",
+          "CPUPerc": "0.10%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "94.05MiB / 768MiB",
+          "CPUPerc": "36.77%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.27MiB / 640MiB",
+          "CPUPerc": "1.59%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.49GiB / 2GiB",
+          "CPUPerc": "59.98%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 222.5,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "99.66MiB / 768MiB",
+          "CPUPerc": "0.11%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.47MiB / 768MiB",
+          "CPUPerc": "0.72%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.24MiB / 640MiB",
+          "CPUPerc": "0.33%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.077GiB / 2GiB",
+          "CPUPerc": "3.41%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 234.8,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "99.81MiB / 768MiB",
+          "CPUPerc": "0.10%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "92.77MiB / 768MiB",
+          "CPUPerc": "0.62%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "11.83MiB / 640MiB",
+          "CPUPerc": "0.29%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.065GiB / 2GiB",
+          "CPUPerc": "6.64%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 247.1,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "99.71MiB / 768MiB",
+          "CPUPerc": "0.10%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.37MiB / 768MiB",
+          "CPUPerc": "0.58%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.03MiB / 640MiB",
+          "CPUPerc": "0.27%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.08GiB / 2GiB",
+          "CPUPerc": "4.53%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 259.4,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "99.21MiB / 768MiB",
+          "CPUPerc": "0.11%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.18MiB / 768MiB",
+          "CPUPerc": "0.61%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.38MiB / 640MiB",
+          "CPUPerc": "0.28%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.09GiB / 2GiB",
+          "CPUPerc": "2.96%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 271.5,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "98.95MiB / 768MiB",
+          "CPUPerc": "0.10%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.1MiB / 768MiB",
+          "CPUPerc": "0.58%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.43MiB / 640MiB",
+          "CPUPerc": "0.27%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.09GiB / 2GiB",
+          "CPUPerc": "2.67%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 283.5,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "98.54MiB / 768MiB",
+          "CPUPerc": "0.12%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.09MiB / 768MiB",
+          "CPUPerc": "1.26%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.66MiB / 640MiB",
+          "CPUPerc": "0.41%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.11GiB / 2GiB",
+          "CPUPerc": "11.95%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 295.8,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "99.02MiB / 768MiB",
+          "CPUPerc": "0.11%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "92.21MiB / 768MiB",
+          "CPUPerc": "1.53%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.13MiB / 640MiB",
+          "CPUPerc": "1.77%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.206GiB / 2GiB",
+          "CPUPerc": "20.85%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 308.1,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "98.79MiB / 768MiB",
+          "CPUPerc": "0.11%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "94.05MiB / 768MiB",
+          "CPUPerc": "1.40%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13MiB / 640MiB",
+          "CPUPerc": "0.43%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.141GiB / 2GiB",
+          "CPUPerc": "5.28%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 320.5,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "98.64MiB / 768MiB",
+          "CPUPerc": "15.65%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.53MiB / 768MiB",
+          "CPUPerc": "2.05%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.42MiB / 640MiB",
+          "CPUPerc": "2.18%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.178GiB / 2GiB",
+          "CPUPerc": "6.18%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 332.5,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.9MiB / 768MiB",
+          "CPUPerc": "4.90%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.43MiB / 768MiB",
+          "CPUPerc": "4.08%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.12MiB / 640MiB",
+          "CPUPerc": "0.38%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.247GiB / 2GiB",
+          "CPUPerc": "20.10%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 344.8,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.9MiB / 768MiB",
+          "CPUPerc": "4.76%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.86MiB / 768MiB",
+          "CPUPerc": "1.76%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.1MiB / 640MiB",
+          "CPUPerc": "0.36%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.238GiB / 2GiB",
+          "CPUPerc": "7.81%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 357.2,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101MiB / 768MiB",
+          "CPUPerc": "0.78%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.18MiB / 768MiB",
+          "CPUPerc": "1.15%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "11.97MiB / 640MiB",
+          "CPUPerc": "0.43%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.225GiB / 2GiB",
+          "CPUPerc": "10.78%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 369.5,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.5MiB / 768MiB",
+          "CPUPerc": "3.97%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "92.98MiB / 768MiB",
+          "CPUPerc": "1.30%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.22MiB / 640MiB",
+          "CPUPerc": "0.39%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.262GiB / 2GiB",
+          "CPUPerc": "17.62%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 381.5,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.7MiB / 768MiB",
+          "CPUPerc": "3.88%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "92.95MiB / 768MiB",
+          "CPUPerc": "1.30%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.88MiB / 640MiB",
+          "CPUPerc": "1.79%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.178GiB / 2GiB",
+          "CPUPerc": "13.67%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 393.6,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.6MiB / 768MiB",
+          "CPUPerc": "0.11%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "92.64MiB / 768MiB",
+          "CPUPerc": "1.32%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.24MiB / 640MiB",
+          "CPUPerc": "0.40%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.209GiB / 2GiB",
+          "CPUPerc": "10.31%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 405.9,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "100.8MiB / 768MiB",
+          "CPUPerc": "0.77%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "94.4MiB / 768MiB",
+          "CPUPerc": "1.27%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "11.82MiB / 640MiB",
+          "CPUPerc": "0.39%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.268GiB / 2GiB",
+          "CPUPerc": "5.40%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 418.2,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.7MiB / 768MiB",
+          "CPUPerc": "0.11%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "92.93MiB / 768MiB",
+          "CPUPerc": "1.34%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.51MiB / 640MiB",
+          "CPUPerc": "0.37%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.26GiB / 2GiB",
+          "CPUPerc": "10.68%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 430.5,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.3MiB / 768MiB",
+          "CPUPerc": "0.10%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.41MiB / 768MiB",
+          "CPUPerc": "1.43%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "11.86MiB / 640MiB",
+          "CPUPerc": "0.35%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.202GiB / 2GiB",
+          "CPUPerc": "11.97%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 442.6,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "100.9MiB / 768MiB",
+          "CPUPerc": "0.10%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.84MiB / 768MiB",
+          "CPUPerc": "1.36%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.34MiB / 640MiB",
+          "CPUPerc": "0.42%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.265GiB / 2GiB",
+          "CPUPerc": "7.01%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 454.9,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "100.9MiB / 768MiB",
+          "CPUPerc": "0.11%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.33MiB / 768MiB",
+          "CPUPerc": "1.57%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.14MiB / 640MiB",
+          "CPUPerc": "0.38%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.258GiB / 2GiB",
+          "CPUPerc": "6.10%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 467.2,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "100.7MiB / 768MiB",
+          "CPUPerc": "0.10%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.14MiB / 768MiB",
+          "CPUPerc": "5.10%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.63MiB / 640MiB",
+          "CPUPerc": "1.83%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.179GiB / 2GiB",
+          "CPUPerc": "6.14%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 479.6,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "100.7MiB / 768MiB",
+          "CPUPerc": "6.19%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.66MiB / 768MiB",
+          "CPUPerc": "0.64%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.38MiB / 640MiB",
+          "CPUPerc": "0.38%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.246GiB / 2GiB",
+          "CPUPerc": "5.31%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 491.6,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.2MiB / 768MiB",
+          "CPUPerc": "0.11%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "92.69MiB / 768MiB",
+          "CPUPerc": "1.34%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "11.39MiB / 640MiB",
+          "CPUPerc": "0.45%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.177GiB / 2GiB",
+          "CPUPerc": "6.61%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 503.6,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.2MiB / 768MiB",
+          "CPUPerc": "0.11%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "94.06MiB / 768MiB",
+          "CPUPerc": "4.05%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.35MiB / 640MiB",
+          "CPUPerc": "0.41%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.194GiB / 2GiB",
+          "CPUPerc": "11.89%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 516.0,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.6MiB / 768MiB",
+          "CPUPerc": "0.10%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "94.21MiB / 768MiB",
+          "CPUPerc": "1.25%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "11.91MiB / 640MiB",
+          "CPUPerc": "0.40%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.17GiB / 2GiB",
+          "CPUPerc": "4.70%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 528.3,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.6MiB / 768MiB",
+          "CPUPerc": "0.85%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.45MiB / 768MiB",
+          "CPUPerc": "1.31%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.96MiB / 640MiB",
+          "CPUPerc": "1.72%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.165GiB / 2GiB",
+          "CPUPerc": "6.95%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 540.6,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.5MiB / 768MiB",
+          "CPUPerc": "7.56%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.17MiB / 768MiB",
+          "CPUPerc": "4.38%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.29MiB / 640MiB",
+          "CPUPerc": "0.37%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.163GiB / 2GiB",
+          "CPUPerc": "9.88%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 552.7,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "102.5MiB / 768MiB",
+          "CPUPerc": "1.38%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "94.15MiB / 768MiB",
+          "CPUPerc": "1.34%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "14.93MiB / 640MiB",
+          "CPUPerc": "1.98%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.186GiB / 2GiB",
+          "CPUPerc": "8.18%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 565.0,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.4MiB / 768MiB",
+          "CPUPerc": "4.23%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "94.27MiB / 768MiB",
+          "CPUPerc": "1.45%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.99MiB / 640MiB",
+          "CPUPerc": "0.43%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.177GiB / 2GiB",
+          "CPUPerc": "7.52%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 577.3,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "102.8MiB / 768MiB",
+          "CPUPerc": "0.78%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "94.7MiB / 768MiB",
+          "CPUPerc": "3.24%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.01MiB / 640MiB",
+          "CPUPerc": "0.35%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.286GiB / 2GiB",
+          "CPUPerc": "15.50%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 589.7,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.4MiB / 768MiB",
+          "CPUPerc": "0.81%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.48MiB / 768MiB",
+          "CPUPerc": "1.34%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.58MiB / 640MiB",
+          "CPUPerc": "0.39%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.31GiB / 2GiB",
+          "CPUPerc": "17.12%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 601.7,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.6MiB / 768MiB",
+          "CPUPerc": "2.18%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "94.02MiB / 768MiB",
+          "CPUPerc": "1.38%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.4MiB / 640MiB",
+          "CPUPerc": "0.42%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.118GiB / 2GiB",
+          "CPUPerc": "4.91%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 613.7,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101MiB / 768MiB",
+          "CPUPerc": "4.67%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.82MiB / 768MiB",
+          "CPUPerc": "3.49%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.09MiB / 640MiB",
+          "CPUPerc": "1.77%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.136GiB / 2GiB",
+          "CPUPerc": "9.11%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 626.0,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.7MiB / 768MiB",
+          "CPUPerc": "4.59%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.65MiB / 768MiB",
+          "CPUPerc": "1.60%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.49MiB / 640MiB",
+          "CPUPerc": "0.38%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.09GiB / 2GiB",
+          "CPUPerc": "4.86%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 638.4,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.7MiB / 768MiB",
+          "CPUPerc": "4.16%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "94.25MiB / 768MiB",
+          "CPUPerc": "1.29%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.3MiB / 640MiB",
+          "CPUPerc": "0.45%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.12GiB / 2GiB",
+          "CPUPerc": "5.73%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 650.7,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "102.2MiB / 768MiB",
+          "CPUPerc": "0.75%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "94.16MiB / 768MiB",
+          "CPUPerc": "4.16%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.84MiB / 640MiB",
+          "CPUPerc": "0.41%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.071GiB / 2GiB",
+          "CPUPerc": "3.99%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 662.8,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "102.1MiB / 768MiB",
+          "CPUPerc": "3.96%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "94.26MiB / 768MiB",
+          "CPUPerc": "1.28%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.05MiB / 640MiB",
+          "CPUPerc": "0.45%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.055GiB / 2GiB",
+          "CPUPerc": "11.03%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 675.1,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101MiB / 768MiB",
+          "CPUPerc": "0.10%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.16MiB / 768MiB",
+          "CPUPerc": "1.41%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.58MiB / 640MiB",
+          "CPUPerc": "0.46%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "971MiB / 2GiB",
+          "CPUPerc": "7.64%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 687.4,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "102.2MiB / 768MiB",
+          "CPUPerc": "0.11%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.36MiB / 768MiB",
+          "CPUPerc": "1.33%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.98MiB / 640MiB",
+          "CPUPerc": "0.39%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "972MiB / 2GiB",
+          "CPUPerc": "4.32%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 699.8,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.6MiB / 768MiB",
+          "CPUPerc": "0.10%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "92.46MiB / 768MiB",
+          "CPUPerc": "1.28%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.07MiB / 640MiB",
+          "CPUPerc": "1.79%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "890MiB / 2GiB",
+          "CPUPerc": "7.22%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 711.8,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "100.6MiB / 768MiB",
+          "CPUPerc": "0.10%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "92.71MiB / 768MiB",
+          "CPUPerc": "4.07%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.18MiB / 640MiB",
+          "CPUPerc": "0.40%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "953.3MiB / 2GiB",
+          "CPUPerc": "10.27%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 723.8,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.1MiB / 768MiB",
+          "CPUPerc": "0.10%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.16MiB / 768MiB",
+          "CPUPerc": "1.30%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.58MiB / 640MiB",
+          "CPUPerc": "0.40%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "946.5MiB / 2GiB",
+          "CPUPerc": "4.57%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 736.2,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "100.1MiB / 768MiB",
+          "CPUPerc": "0.11%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.84MiB / 768MiB",
+          "CPUPerc": "1.37%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.27MiB / 640MiB",
+          "CPUPerc": "0.41%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "924.4MiB / 2GiB",
+          "CPUPerc": "11.58%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 748.5,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.1MiB / 768MiB",
+          "CPUPerc": "0.11%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "92.69MiB / 768MiB",
+          "CPUPerc": "4.12%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.14MiB / 640MiB",
+          "CPUPerc": "0.35%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "907MiB / 2GiB",
+          "CPUPerc": "3.78%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 760.8,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "100.5MiB / 768MiB",
+          "CPUPerc": "0.11%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "94.23MiB / 768MiB",
+          "CPUPerc": "1.32%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.02MiB / 640MiB",
+          "CPUPerc": "0.42%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "956.3MiB / 2GiB",
+          "CPUPerc": "12.63%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 772.9,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "100.6MiB / 768MiB",
+          "CPUPerc": "0.11%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "94MiB / 768MiB",
+          "CPUPerc": "1.46%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.54MiB / 640MiB",
+          "CPUPerc": "0.40%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "914.9MiB / 2GiB",
+          "CPUPerc": "12.77%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 785.2,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "100.9MiB / 768MiB",
+          "CPUPerc": "0.13%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "94.39MiB / 768MiB",
+          "CPUPerc": "4.53%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.36MiB / 640MiB",
+          "CPUPerc": "0.40%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "964.6MiB / 2GiB",
+          "CPUPerc": "10.01%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 797.5,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.8MiB / 768MiB",
+          "CPUPerc": "0.10%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.6MiB / 768MiB",
+          "CPUPerc": "1.34%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.39MiB / 640MiB",
+          "CPUPerc": "0.39%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.044GiB / 2GiB",
+          "CPUPerc": "11.37%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 809.9,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.3MiB / 768MiB",
+          "CPUPerc": "0.10%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "94.29MiB / 768MiB",
+          "CPUPerc": "1.24%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.36MiB / 640MiB",
+          "CPUPerc": "0.40%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1014MiB / 2GiB",
+          "CPUPerc": "8.41%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 821.9,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "100.3MiB / 768MiB",
+          "CPUPerc": "0.13%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.34MiB / 768MiB",
+          "CPUPerc": "1.46%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.6MiB / 640MiB",
+          "CPUPerc": "0.45%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "968MiB / 2GiB",
+          "CPUPerc": "7.86%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 833.9,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.3MiB / 768MiB",
+          "CPUPerc": "0.10%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.98MiB / 768MiB",
+          "CPUPerc": "1.28%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.11MiB / 640MiB",
+          "CPUPerc": "0.37%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "920.9MiB / 2GiB",
+          "CPUPerc": "3.55%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 846.3,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.7MiB / 768MiB",
+          "CPUPerc": "0.11%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.25MiB / 768MiB",
+          "CPUPerc": "1.61%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.21MiB / 640MiB",
+          "CPUPerc": "1.68%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "884.8MiB / 2GiB",
+          "CPUPerc": "7.93%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 858.6,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "100.8MiB / 768MiB",
+          "CPUPerc": "0.11%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.83MiB / 768MiB",
+          "CPUPerc": "1.27%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.46MiB / 640MiB",
+          "CPUPerc": "0.40%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "974.8MiB / 2GiB",
+          "CPUPerc": "10.75%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 870.9,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "100.6MiB / 768MiB",
+          "CPUPerc": "0.11%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "92.95MiB / 768MiB",
+          "CPUPerc": "1.66%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "14.54MiB / 640MiB",
+          "CPUPerc": "1.70%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "891.4MiB / 2GiB",
+          "CPUPerc": "7.58%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 883.0,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.1MiB / 768MiB",
+          "CPUPerc": "0.10%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.49MiB / 768MiB",
+          "CPUPerc": "1.31%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.67MiB / 640MiB",
+          "CPUPerc": "0.39%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "875.3MiB / 2GiB",
+          "CPUPerc": "3.75%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 895.3,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "100.9MiB / 768MiB",
+          "CPUPerc": "0.30%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "92.95MiB / 768MiB",
+          "CPUPerc": "4.36%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.6MiB / 640MiB",
+          "CPUPerc": "0.42%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "949.7MiB / 2GiB",
+          "CPUPerc": "7.74%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 907.6,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "100.8MiB / 768MiB",
+          "CPUPerc": "0.11%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "92.61MiB / 768MiB",
+          "CPUPerc": "1.52%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.78MiB / 640MiB",
+          "CPUPerc": "0.41%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "892.5MiB / 2GiB",
+          "CPUPerc": "7.21%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 920.0,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "100.5MiB / 768MiB",
+          "CPUPerc": "0.11%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.59MiB / 768MiB",
+          "CPUPerc": "1.31%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.74MiB / 640MiB",
+          "CPUPerc": "0.36%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "973.3MiB / 2GiB",
+          "CPUPerc": "9.82%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 932.0,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "100.2MiB / 768MiB",
+          "CPUPerc": "0.10%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "94.47MiB / 768MiB",
+          "CPUPerc": "1.24%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13MiB / 640MiB",
+          "CPUPerc": "1.67%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "927.1MiB / 2GiB",
+          "CPUPerc": "3.95%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 944.0,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "99.99MiB / 768MiB",
+          "CPUPerc": "0.12%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.54MiB / 768MiB",
+          "CPUPerc": "1.34%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.19MiB / 640MiB",
+          "CPUPerc": "0.42%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "899.7MiB / 2GiB",
+          "CPUPerc": "4.19%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 956.4,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "100.4MiB / 768MiB",
+          "CPUPerc": "0.11%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "94.2MiB / 768MiB",
+          "CPUPerc": "1.29%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.78MiB / 640MiB",
+          "CPUPerc": "0.36%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "945.3MiB / 2GiB",
+          "CPUPerc": "8.72%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 968.7,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.8MiB / 768MiB",
+          "CPUPerc": "0.10%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "92.93MiB / 768MiB",
+          "CPUPerc": "1.32%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.51MiB / 640MiB",
+          "CPUPerc": "0.40%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "831.1MiB / 2GiB",
+          "CPUPerc": "10.40%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 981.0,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.1MiB / 768MiB",
+          "CPUPerc": "0.10%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "92.93MiB / 768MiB",
+          "CPUPerc": "1.54%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.29MiB / 640MiB",
+          "CPUPerc": "0.37%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "858.3MiB / 2GiB",
+          "CPUPerc": "4.91%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 993.1,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "100.8MiB / 768MiB",
+          "CPUPerc": "0.11%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.51MiB / 768MiB",
+          "CPUPerc": "4.02%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.11MiB / 640MiB",
+          "CPUPerc": "0.38%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "915MiB / 2GiB",
+          "CPUPerc": "13.26%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1005.4,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.8MiB / 768MiB",
+          "CPUPerc": "0.10%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "94.67MiB / 768MiB",
+          "CPUPerc": "1.29%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.65MiB / 640MiB",
+          "CPUPerc": "0.37%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "849.9MiB / 2GiB",
+          "CPUPerc": "3.66%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1017.7,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "102MiB / 768MiB",
+          "CPUPerc": "0.11%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.03MiB / 768MiB",
+          "CPUPerc": "1.28%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.28MiB / 640MiB",
+          "CPUPerc": "0.40%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "826.1MiB / 2GiB",
+          "CPUPerc": "3.92%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1030.1,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "102MiB / 768MiB",
+          "CPUPerc": "0.11%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.65MiB / 768MiB",
+          "CPUPerc": "1.25%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.78MiB / 640MiB",
+          "CPUPerc": "0.38%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "876.8MiB / 2GiB",
+          "CPUPerc": "13.01%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1042.1,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.4MiB / 768MiB",
+          "CPUPerc": "0.11%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.53MiB / 768MiB",
+          "CPUPerc": "1.24%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.41MiB / 640MiB",
+          "CPUPerc": "0.38%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "835.9MiB / 2GiB",
+          "CPUPerc": "4.54%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1054.2,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.2MiB / 768MiB",
+          "CPUPerc": "0.09%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.05MiB / 768MiB",
+          "CPUPerc": "1.27%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.86MiB / 640MiB",
+          "CPUPerc": "0.38%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "889.6MiB / 2GiB",
+          "CPUPerc": "7.81%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1066.5,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "100.3MiB / 768MiB",
+          "CPUPerc": "0.10%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "94.49MiB / 768MiB",
+          "CPUPerc": "2.37%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.84MiB / 640MiB",
+          "CPUPerc": "0.40%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.001GiB / 2GiB",
+          "CPUPerc": "9.57%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1078.8,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101MiB / 768MiB",
+          "CPUPerc": "0.11%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93MiB / 768MiB",
+          "CPUPerc": "1.27%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.72MiB / 640MiB",
+          "CPUPerc": "0.39%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "922.6MiB / 2GiB",
+          "CPUPerc": "8.93%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1091.2,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "100.9MiB / 768MiB",
+          "CPUPerc": "0.10%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "94.09MiB / 768MiB",
+          "CPUPerc": "4.44%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "11.91MiB / 640MiB",
+          "CPUPerc": "0.41%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "893.4MiB / 2GiB",
+          "CPUPerc": "9.02%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1103.2,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "100.6MiB / 768MiB",
+          "CPUPerc": "0.11%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.62MiB / 768MiB",
+          "CPUPerc": "1.32%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.37MiB / 640MiB",
+          "CPUPerc": "1.78%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "878.7MiB / 2GiB",
+          "CPUPerc": "3.75%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1115.5,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "100.9MiB / 768MiB",
+          "CPUPerc": "0.10%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "94.47MiB / 768MiB",
+          "CPUPerc": "1.38%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.26MiB / 640MiB",
+          "CPUPerc": "0.37%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "820.5MiB / 2GiB",
+          "CPUPerc": "7.21%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1127.8,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "100.7MiB / 768MiB",
+          "CPUPerc": "0.10%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "94.63MiB / 768MiB",
+          "CPUPerc": "4.03%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.56MiB / 640MiB",
+          "CPUPerc": "0.39%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "890.5MiB / 2GiB",
+          "CPUPerc": "19.30%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1140.2,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "100.2MiB / 768MiB",
+          "CPUPerc": "0.10%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.56MiB / 768MiB",
+          "CPUPerc": "1.26%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.27MiB / 640MiB",
+          "CPUPerc": "0.41%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "849.9MiB / 2GiB",
+          "CPUPerc": "3.98%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1152.2,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.4MiB / 768MiB",
+          "CPUPerc": "0.10%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.43MiB / 768MiB",
+          "CPUPerc": "1.24%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.77MiB / 640MiB",
+          "CPUPerc": "0.40%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "854.2MiB / 2GiB",
+          "CPUPerc": "3.75%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1164.3,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "100.5MiB / 768MiB",
+          "CPUPerc": "0.12%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.58MiB / 768MiB",
+          "CPUPerc": "3.97%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.22MiB / 640MiB",
+          "CPUPerc": "1.67%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "930.2MiB / 2GiB",
+          "CPUPerc": "26.49%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1176.6,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "100.2MiB / 768MiB",
+          "CPUPerc": "0.11%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "94.1MiB / 768MiB",
+          "CPUPerc": "1.33%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.21MiB / 640MiB",
+          "CPUPerc": "0.35%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "946.2MiB / 2GiB",
+          "CPUPerc": "7.50%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1188.9,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "100.7MiB / 768MiB",
+          "CPUPerc": "0.11%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.44MiB / 768MiB",
+          "CPUPerc": "1.24%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.09MiB / 640MiB",
+          "CPUPerc": "1.76%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "867.3MiB / 2GiB",
+          "CPUPerc": "7.56%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1201.2,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.3MiB / 768MiB",
+          "CPUPerc": "0.09%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "94.13MiB / 768MiB",
+          "CPUPerc": "1.73%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "11.3MiB / 640MiB",
+          "CPUPerc": "0.42%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "875.2MiB / 2GiB",
+          "CPUPerc": "9.00%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1213.3,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.6MiB / 768MiB",
+          "CPUPerc": "0.11%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.28MiB / 768MiB",
+          "CPUPerc": "1.26%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.16MiB / 640MiB",
+          "CPUPerc": "0.39%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "836.1MiB / 2GiB",
+          "CPUPerc": "4.08%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1225.6,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.4MiB / 768MiB",
+          "CPUPerc": "0.12%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.41MiB / 768MiB",
+          "CPUPerc": "1.39%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "11.88MiB / 640MiB",
+          "CPUPerc": "0.41%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "846.1MiB / 2GiB",
+          "CPUPerc": "7.12%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1237.9,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101MiB / 768MiB",
+          "CPUPerc": "0.10%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "94.33MiB / 768MiB",
+          "CPUPerc": "4.44%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.03MiB / 640MiB",
+          "CPUPerc": "0.38%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "861.3MiB / 2GiB",
+          "CPUPerc": "3.55%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1250.3,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "100.9MiB / 768MiB",
+          "CPUPerc": "0.11%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "94.41MiB / 768MiB",
+          "CPUPerc": "1.35%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.26MiB / 640MiB",
+          "CPUPerc": "0.44%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "899.6MiB / 2GiB",
+          "CPUPerc": "7.15%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1262.3,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.3MiB / 768MiB",
+          "CPUPerc": "5.14%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.68MiB / 768MiB",
+          "CPUPerc": "4.08%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.48MiB / 640MiB",
+          "CPUPerc": "0.39%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "906.9MiB / 2GiB",
+          "CPUPerc": "15.65%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1274.4,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "100.7MiB / 768MiB",
+          "CPUPerc": "0.11%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "94.63MiB / 768MiB",
+          "CPUPerc": "1.34%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.87MiB / 640MiB",
+          "CPUPerc": "0.37%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "893.5MiB / 2GiB",
+          "CPUPerc": "4.06%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1286.7,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "100.8MiB / 768MiB",
+          "CPUPerc": "0.11%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93MiB / 768MiB",
+          "CPUPerc": "1.57%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.07MiB / 640MiB",
+          "CPUPerc": "0.40%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "991MiB / 2GiB",
+          "CPUPerc": "12.32%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1299.0,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.7MiB / 768MiB",
+          "CPUPerc": "0.11%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.39MiB / 768MiB",
+          "CPUPerc": "4.01%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.1MiB / 640MiB",
+          "CPUPerc": "0.38%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "988.1MiB / 2GiB",
+          "CPUPerc": "15.38%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1311.4,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.4MiB / 768MiB",
+          "CPUPerc": "0.11%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "94MiB / 768MiB",
+          "CPUPerc": "1.27%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.07MiB / 640MiB",
+          "CPUPerc": "0.40%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "863.1MiB / 2GiB",
+          "CPUPerc": "4.35%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1323.4,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "102.7MiB / 768MiB",
+          "CPUPerc": "0.11%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.8MiB / 768MiB",
+          "CPUPerc": "1.41%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.12MiB / 640MiB",
+          "CPUPerc": "0.38%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "866.7MiB / 2GiB",
+          "CPUPerc": "12.29%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1335.7,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "100.8MiB / 768MiB",
+          "CPUPerc": "0.10%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "92.95MiB / 768MiB",
+          "CPUPerc": "4.13%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "14MiB / 640MiB",
+          "CPUPerc": "0.38%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "849.8MiB / 2GiB",
+          "CPUPerc": "4.87%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1348.0,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.4MiB / 768MiB",
+          "CPUPerc": "0.11%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.24MiB / 768MiB",
+          "CPUPerc": "1.62%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.68MiB / 640MiB",
+          "CPUPerc": "0.39%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "876.1MiB / 2GiB",
+          "CPUPerc": "8.33%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1360.4,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "100.6MiB / 768MiB",
+          "CPUPerc": "0.11%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.67MiB / 768MiB",
+          "CPUPerc": "1.27%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.14MiB / 640MiB",
+          "CPUPerc": "1.72%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "828.1MiB / 2GiB",
+          "CPUPerc": "3.45%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1372.4,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "100.7MiB / 768MiB",
+          "CPUPerc": "0.10%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.2MiB / 768MiB",
+          "CPUPerc": "1.21%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.71MiB / 640MiB",
+          "CPUPerc": "0.34%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "845.8MiB / 2GiB",
+          "CPUPerc": "3.30%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1384.4,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "100.9MiB / 768MiB",
+          "CPUPerc": "0.10%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "92.86MiB / 768MiB",
+          "CPUPerc": "1.27%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.61MiB / 640MiB",
+          "CPUPerc": "0.36%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "911.9MiB / 2GiB",
+          "CPUPerc": "8.72%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1396.8,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "100.9MiB / 768MiB",
+          "CPUPerc": "0.11%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.17MiB / 768MiB",
+          "CPUPerc": "0.62%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.68MiB / 640MiB",
+          "CPUPerc": "0.36%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "872.1MiB / 2GiB",
+          "CPUPerc": "5.21%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1409.1,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.6MiB / 768MiB",
+          "CPUPerc": "0.10%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.97MiB / 768MiB",
+          "CPUPerc": "1.29%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.95MiB / 640MiB",
+          "CPUPerc": "0.39%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "979.1MiB / 2GiB",
+          "CPUPerc": "12.35%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1421.4,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.1MiB / 768MiB",
+          "CPUPerc": "0.11%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "94.09MiB / 768MiB",
+          "CPUPerc": "1.34%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.87MiB / 640MiB",
+          "CPUPerc": "1.74%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.019GiB / 2GiB",
+          "CPUPerc": "15.37%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1433.5,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.9MiB / 768MiB",
+          "CPUPerc": "0.10%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.73MiB / 768MiB",
+          "CPUPerc": "1.37%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.74MiB / 640MiB",
+          "CPUPerc": "0.40%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "894.9MiB / 2GiB",
+          "CPUPerc": "9.32%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1445.8,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.5MiB / 768MiB",
+          "CPUPerc": "0.12%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.42MiB / 768MiB",
+          "CPUPerc": "4.07%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.22MiB / 640MiB",
+          "CPUPerc": "0.39%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "928.3MiB / 2GiB",
+          "CPUPerc": "13.32%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1458.1,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.3MiB / 768MiB",
+          "CPUPerc": "0.11%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "94.27MiB / 768MiB",
+          "CPUPerc": "1.40%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.16MiB / 640MiB",
+          "CPUPerc": "0.35%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "872.8MiB / 2GiB",
+          "CPUPerc": "3.94%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1470.5,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "102MiB / 768MiB",
+          "CPUPerc": "0.11%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.38MiB / 768MiB",
+          "CPUPerc": "1.36%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.25MiB / 640MiB",
+          "CPUPerc": "0.36%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "889.8MiB / 2GiB",
+          "CPUPerc": "8.66%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1482.5,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.7MiB / 768MiB",
+          "CPUPerc": "0.10%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.48MiB / 768MiB",
+          "CPUPerc": "1.50%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.27MiB / 640MiB",
+          "CPUPerc": "0.39%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "980.1MiB / 2GiB",
+          "CPUPerc": "4.89%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1494.5,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.7MiB / 768MiB",
+          "CPUPerc": "0.11%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.99MiB / 768MiB",
+          "CPUPerc": "1.45%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "11.66MiB / 640MiB",
+          "CPUPerc": "0.41%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "889.4MiB / 2GiB",
+          "CPUPerc": "5.74%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1506.9,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.9MiB / 768MiB",
+          "CPUPerc": "0.11%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.48MiB / 768MiB",
+          "CPUPerc": "4.39%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.06MiB / 640MiB",
+          "CPUPerc": "1.81%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "936.9MiB / 2GiB",
+          "CPUPerc": "5.18%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1519.2,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "100.8MiB / 768MiB",
+          "CPUPerc": "0.12%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.49MiB / 768MiB",
+          "CPUPerc": "1.25%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "11.67MiB / 640MiB",
+          "CPUPerc": "0.38%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "970.4MiB / 2GiB",
+          "CPUPerc": "13.23%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1531.5,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.2MiB / 768MiB",
+          "CPUPerc": "0.12%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.56MiB / 768MiB",
+          "CPUPerc": "1.32%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.47MiB / 640MiB",
+          "CPUPerc": "0.41%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "854.9MiB / 2GiB",
+          "CPUPerc": "6.97%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1543.5,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "102MiB / 768MiB",
+          "CPUPerc": "0.12%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.71MiB / 768MiB",
+          "CPUPerc": "4.20%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.08MiB / 640MiB",
+          "CPUPerc": "0.45%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "956.7MiB / 2GiB",
+          "CPUPerc": "17.06%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1555.9,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "100.8MiB / 768MiB",
+          "CPUPerc": "0.28%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.24MiB / 768MiB",
+          "CPUPerc": "1.32%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.18MiB / 640MiB",
+          "CPUPerc": "0.39%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "897.6MiB / 2GiB",
+          "CPUPerc": "4.68%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1568.2,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.4MiB / 768MiB",
+          "CPUPerc": "0.10%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.2MiB / 768MiB",
+          "CPUPerc": "1.52%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.5MiB / 640MiB",
+          "CPUPerc": "1.74%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "880.3MiB / 2GiB",
+          "CPUPerc": "4.72%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1580.5,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.8MiB / 768MiB",
+          "CPUPerc": "0.12%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.84MiB / 768MiB",
+          "CPUPerc": "1.28%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.84MiB / 640MiB",
+          "CPUPerc": "0.40%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1.035GiB / 2GiB",
+          "CPUPerc": "14.74%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1592.6,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "100.8MiB / 768MiB",
+          "CPUPerc": "0.11%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.66MiB / 768MiB",
+          "CPUPerc": "1.47%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.68MiB / 640MiB",
+          "CPUPerc": "1.66%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "908.6MiB / 2GiB",
+          "CPUPerc": "3.94%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1604.6,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.6MiB / 768MiB",
+          "CPUPerc": "0.11%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.62MiB / 768MiB",
+          "CPUPerc": "1.32%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.48MiB / 640MiB",
+          "CPUPerc": "0.38%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "869.5MiB / 2GiB",
+          "CPUPerc": "4.52%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1616.9,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "100.3MiB / 768MiB",
+          "CPUPerc": "0.10%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.29MiB / 768MiB",
+          "CPUPerc": "3.57%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.41MiB / 640MiB",
+          "CPUPerc": "0.36%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "1023MiB / 2GiB",
+          "CPUPerc": "12.42%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1629.2,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101MiB / 768MiB",
+          "CPUPerc": "0.12%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "92.8MiB / 768MiB",
+          "CPUPerc": "1.36%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.97MiB / 640MiB",
+          "CPUPerc": "0.40%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "911.3MiB / 2GiB",
+          "CPUPerc": "5.25%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1641.6,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.4MiB / 768MiB",
+          "CPUPerc": "0.11%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.01MiB / 768MiB",
+          "CPUPerc": "4.65%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.87MiB / 640MiB",
+          "CPUPerc": "0.37%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "938.4MiB / 2GiB",
+          "CPUPerc": "9.43%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1653.6,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.9MiB / 768MiB",
+          "CPUPerc": "5.72%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.7MiB / 768MiB",
+          "CPUPerc": "1.30%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.71MiB / 640MiB",
+          "CPUPerc": "2.01%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "966.9MiB / 2GiB",
+          "CPUPerc": "26.20%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1666.0,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.7MiB / 768MiB",
+          "CPUPerc": "0.11%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.99MiB / 768MiB",
+          "CPUPerc": "1.27%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.36MiB / 640MiB",
+          "CPUPerc": "0.40%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "896MiB / 2GiB",
+          "CPUPerc": "5.32%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1678.3,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.9MiB / 768MiB",
+          "CPUPerc": "0.10%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.58MiB / 768MiB",
+          "CPUPerc": "3.50%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "14.86MiB / 640MiB",
+          "CPUPerc": "0.72%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "993.3MiB / 2GiB",
+          "CPUPerc": "9.86%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1690.6,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "100.9MiB / 768MiB",
+          "CPUPerc": "0.10%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.55MiB / 768MiB",
+          "CPUPerc": "0.58%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.15MiB / 640MiB",
+          "CPUPerc": "0.27%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "962.9MiB / 2GiB",
+          "CPUPerc": "7.46%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1702.7,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.1MiB / 768MiB",
+          "CPUPerc": "0.12%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.46MiB / 768MiB",
+          "CPUPerc": "0.57%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.25MiB / 640MiB",
+          "CPUPerc": "0.28%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "855MiB / 2GiB",
+          "CPUPerc": "6.31%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1714.7,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "102.3MiB / 768MiB",
+          "CPUPerc": "0.10%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.12MiB / 768MiB",
+          "CPUPerc": "0.58%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.15MiB / 640MiB",
+          "CPUPerc": "0.27%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "914.4MiB / 2GiB",
+          "CPUPerc": "7.16%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1727.0,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.4MiB / 768MiB",
+          "CPUPerc": "0.11%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.92MiB / 768MiB",
+          "CPUPerc": "0.58%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.7MiB / 640MiB",
+          "CPUPerc": "0.28%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "848.9MiB / 2GiB",
+          "CPUPerc": "2.84%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1739.4,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.4MiB / 768MiB",
+          "CPUPerc": "0.10%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.45MiB / 768MiB",
+          "CPUPerc": "0.57%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.9MiB / 640MiB",
+          "CPUPerc": "1.64%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "882.1MiB / 2GiB",
+          "CPUPerc": "3.01%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1751.7,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.4MiB / 768MiB",
+          "CPUPerc": "0.12%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.24MiB / 768MiB",
+          "CPUPerc": "0.58%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.23MiB / 640MiB",
+          "CPUPerc": "0.29%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "902MiB / 2GiB",
+          "CPUPerc": "8.36%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1763.7,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.7MiB / 768MiB",
+          "CPUPerc": "0.10%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "92.45MiB / 768MiB",
+          "CPUPerc": "0.58%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "12.12MiB / 640MiB",
+          "CPUPerc": "0.29%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "842.7MiB / 2GiB",
+          "CPUPerc": "6.48%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1776.0,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "102.6MiB / 768MiB",
+          "CPUPerc": "0.12%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "92.81MiB / 768MiB",
+          "CPUPerc": "0.59%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "11.96MiB / 640MiB",
+          "CPUPerc": "0.27%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "884MiB / 2GiB",
+          "CPUPerc": "2.78%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1788.3,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "102.4MiB / 768MiB",
+          "CPUPerc": "0.11%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.78MiB / 768MiB",
+          "CPUPerc": "0.56%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "11.6MiB / 640MiB",
+          "CPUPerc": "0.27%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "876.5MiB / 2GiB",
+          "CPUPerc": "16.74%"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 1800.7,
+      "containers": [
+        {
+          "Name": "haklolarp-web-api",
+          "MemUsage": "101.1MiB / 768MiB",
+          "CPUPerc": "0.11%"
+        },
+        {
+          "Name": "haklolarp-web-stream-worker-1",
+          "MemUsage": "93.31MiB / 768MiB",
+          "CPUPerc": "0.61%"
+        },
+        {
+          "Name": "haklolarp-web-redis-1",
+          "MemUsage": "13.05MiB / 640MiB",
+          "CPUPerc": "0.27%"
+        },
+        {
+          "Name": "haklolarp-web-clickhouse-1",
+          "MemUsage": "857MiB / 2GiB",
+          "CPUPerc": "6.28%"
+        }
+      ]
+    }
+  ],
+  "verified_stream_records": [
+    {
+      "record_id": "1",
+      "source_sha256": "3101c6b2716d2a9e14cd32e2e5d758cb8628741cff6f265cc45db2d7e9e8257f",
+      "accepted": 614,
+      "persisted": 614,
+      "analyzed": 614,
+      "verified_cells": 7199805,
+      "dsp_profiles": 615,
+      "status": "complete"
+    },
+    {
+      "record_id": "2",
+      "source_sha256": "f115579accd114e0c5a0d968aea3d2710da8ead421fc8c35c17472047cefdec4",
+      "accepted": 695,
+      "persisted": 695,
+      "analyzed": 695,
+      "verified_cells": 1611240,
+      "dsp_profiles": 696,
+      "status": "complete"
+    },
+    {
+      "record_id": "3",
+      "source_sha256": "0acc4e41dc16dd829110881641cb17f94bffd0c2d5255d539d8f3589cd8cdde3",
+      "accepted": 787,
+      "persisted": 787,
+      "analyzed": 787,
+      "verified_cells": 1330932,
+      "dsp_profiles": 788,
+      "status": "complete"
+    },
+    {
+      "record_id": "4",
+      "source_sha256": "d2f5b3d90078420aea45bac86df3656987a2ca9c548d478d134d3ee6349fde17",
+      "accepted": 707,
+      "persisted": 707,
+      "analyzed": 707,
+      "verified_cells": 1197228,
+      "dsp_profiles": 708,
+      "status": "complete"
+    },
+    {
+      "record_id": "5",
+      "source_sha256": "98c1d629ed59478c81fa58b60e891f5587ef9d64ad435655e717a27f64767e46",
+      "accepted": 2710,
+      "persisted": 2710,
+      "analyzed": 2710,
+      "verified_cells": 6408804,
+      "dsp_profiles": 2711,
+      "status": "complete"
+    },
+    {
+      "record_id": "6",
+      "source_sha256": "23e79988fcfb8a186dec06faffa60e6ed7c93ca7cd9969ac4989fd12b9f358c8",
+      "accepted": 1230,
+      "persisted": 1230,
+      "analyzed": 1230,
+      "verified_cells": 5581354,
+      "dsp_profiles": 1231,
+      "status": "complete"
+    }
+  ],
+  "verified_native_cells": 23329363,
+  "profiles": 6749
+}

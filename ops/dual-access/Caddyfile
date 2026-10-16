@@ -1,0 +1,25 @@
+xn--80aubodcdd.xn--p1ai {
+	reverse_proxy https://<XEON-TAILNET-IP>:8443 {
+		header_up Host {host}
+		transport http {
+			tls_insecure_skip_verify
+		}
+	}
+}
+
+www.xn--80aubodcdd.xn--p1ai {
+	redir https://xn--80aubodcdd.xn--p1ai{uri} permanent
+}
+
+larpcorp.ru {
+	reverse_proxy https://<XEON-TAILNET-IP>:8443 {
+		header_up Host {host}
+		transport http {
+			tls_insecure_skip_verify
+		}
+	}
+}
+
+www.larpcorp.ru {
+	redir https://larpcorp.ru{uri} permanent
+}

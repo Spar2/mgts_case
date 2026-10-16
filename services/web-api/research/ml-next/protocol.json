@@ -1,0 +1,631 @@
+{
+  "schema_version": "dts-research-protocol-v1",
+  "base_commit": "237168f4d4a3e11260c9f692880cc477cd7af779",
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "max_gap_s": 300,
+  "guard_s": 1800,
+  "previously_seen_recordings": true,
+  "unseen_test": false,
+  "synthetic_training": false,
+  "expert_labels_in_initial_selection": false,
+  "metric_objects": [
+    "threshold_support",
+    "accepted_component_support",
+    "bounding_box",
+    "event"
+  ],
+  "sources": {
+    "6": {
+      "source_sha256": "23e79988fcfb8a186dec06faffa60e6ed7c93ca7cd9969ac4989fd12b9f358c8",
+      "prepared_file_sha256": {
+        "raw_c.npy": "590463ee7a15476dd4ea104f15a26db60d170d93bbb479d197eb80b1704420b5",
+        "invalid_reason.npy": "cae22c028ed3301eb1c6f54a609214e2f3635ab10991301b00535ccdc624d1c6",
+        "x_m.npy": "a95eb639953355a36c3569ef21fa7ba94d37ea16e29a2ff347cebb138deb6478",
+        "elapsed_s.npy": "3d19211684f35131127eeeb8fa4a835f00a4cb6a973baa93889bfab8583366bd",
+        "profiles.json": "316f5b4630756267fddad882d23c8439ed9793e2e975e21c44567d9b4c61834e"
+      },
+      "shape": [
+        1231,
+        4534
+      ],
+      "time_kind": "offset_aware",
+      "split": {
+        "cut_time_s": [
+          56368.0,
+          71622.0
+        ],
+        "guard_s": 1800,
+        "counts": {
+          "-1": 59,
+          "0": 724,
+          "1": 216,
+          "2": 232
+        },
+        "codes": {
+          "-1": "excluded_guard",
+          "0": "train",
+          "1": "development",
+          "2": "internal_holdout"
+        },
+        "unseen_measurement_test": false
+      },
+      "dx_m": [
+        0.25377447231824135,
+        0.25377447231828043,
+        0.25377447231835504
+      ],
+      "dt_s": [
+        60.0,
+        60.0,
+        60.0
+      ],
+      "segments": [
+        [
+          0,
+          705
+        ],
+        [
+          705,
+          822
+        ],
+        [
+          822,
+          1231
+        ]
+      ]
+    },
+    "4": {
+      "source_sha256": "d2f5b3d90078420aea45bac86df3656987a2ca9c548d478d134d3ee6349fde17",
+      "prepared_file_sha256": {
+        "raw_c.npy": "ee8ade467bae118209146ef8325af9fc3be9983716716e0704143c99653eddb7",
+        "invalid_reason.npy": "73b8f44cfc0f3b3e1681ae31e6793e3233a934eab8e0eafc7cc8c70b35c8afc6",
+        "x_m.npy": "24d8e6e24dd71966cf41655949220f919a9b225f0c87d05918544cbb02027a2e",
+        "elapsed_s.npy": "a54f8ec79c35dde43ff4e3c4af6b0bff413b4dead6e7a669b810295d5dbfd7e6",
+        "profiles.json": "2cd2406a8884783962fa7455ae72a5d84f07cb404177b2717a11d1b0656ac45f"
+      },
+      "shape": [
+        708,
+        1691
+      ],
+      "time_kind": "offset_aware",
+      "split": {
+        "cut_time_s": [
+          51598.0,
+          68676.0
+        ],
+        "guard_s": 1800,
+        "counts": {
+          "-1": 30,
+          "0": 417,
+          "1": 127,
+          "2": 134
+        },
+        "codes": {
+          "-1": "excluded_guard",
+          "0": "train",
+          "1": "development",
+          "2": "internal_holdout"
+        },
+        "unseen_measurement_test": false
+      },
+      "dx_m": [
+        0.25377103761900344,
+        0.25377103761901765,
+        0.2537710376190603
+      ],
+      "dt_s": [
+        120.0,
+        120.0,
+        121.0
+      ],
+      "segments": [
+        [
+          0,
+          708
+        ]
+      ]
+    },
+    "5": {
+      "source_sha256": "98c1d629ed59478c81fa58b60e891f5587ef9d64ad435655e717a27f64767e46",
+      "prepared_file_sha256": {
+        "raw_c.npy": "01c9c32cfd869466fb3f5f6f56dcdda387066b06ddb82c7d90d0b8755993ea72",
+        "invalid_reason.npy": "4dda84893becdf7348199af5aa0ebf15720bc6cbf1c633762fe0972301d788fe",
+        "x_m.npy": "2ac7dea5f6b385154b0e22c31578e6cf2e20bf04197762acc1ada99f6d8dad07",
+        "elapsed_s.npy": "8d4167b555a3c7728fbd17f98e6df3bae686e315a67290d26f3d4b421203f6a4",
+        "profiles.json": "bbd2387de0758b7a059975ff9806bd8aa75d52e1f6f6c486323f5e3dc398c703"
+      },
+      "shape": [
+        2711,
+        2364
+      ],
+      "time_kind": "local_unzoned",
+      "split": {
+        "cut_time_s": [
+          21935.0,
+          27375.0
+        ],
+        "guard_s": 1800,
+        "counts": {
+          "-1": 358,
+          "0": 1537,
+          "1": 363,
+          "2": 453
+        },
+        "codes": {
+          "-1": "excluded_guard",
+          "0": "train",
+          "1": "development",
+          "2": "internal_holdout"
+        },
+        "unseen_measurement_test": false
+      },
+      "dx_m": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dt_s": [
+        10.0,
+        10.0,
+        20.0
+      ],
+      "segments": [
+        [
+          0,
+          2711
+        ]
+      ]
+    },
+    "2": {
+      "source_sha256": "f115579accd114e0c5a0d968aea3d2710da8ead421fc8c35c17472047cefdec4",
+      "prepared_file_sha256": {
+        "raw_c.npy": "8ec7f92989b42e9ff4ec2f7c1e1a6123e06701e67e7266658154cd7616c1aa69",
+        "invalid_reason.npy": "2fe527df71af4669f1110ff6276a9b2fd1391b107fff5da39ad6752cd6af5c7c",
+        "x_m.npy": "e64e5abcb84d93146300452c05309f7e4c0519bc510ba71a675913c8c8ca1009",
+        "elapsed_s.npy": "e561663c5353330e8177ec5bd1d54949de94a6af4fcb79ea62645c5885a32658",
+        "profiles.json": "cab1a69aeea0974b2eba9af59d2cccecf6937665c5fe018b5d0aba1c7153b341"
+      },
+      "shape": [
+        696,
+        2315
+      ],
+      "time_kind": "offset_aware",
+      "split": {
+        "cut_time_s": [
+          52187.0,
+          68903.0
+        ],
+        "guard_s": 1800,
+        "counts": {
+          "-1": 30,
+          "0": 410,
+          "1": 124,
+          "2": 132
+        },
+        "codes": {
+          "-1": "excluded_guard",
+          "0": "train",
+          "1": "development",
+          "2": "internal_holdout"
+        },
+        "unseen_measurement_test": false
+      },
+      "dx_m": [
+        0.25377447231824135,
+        0.253774472318284,
+        0.2537744723182982
+      ],
+      "dt_s": [
+        120.0,
+        120.0,
+        121.0
+      ],
+      "segments": [
+        [
+          0,
+          409
+        ],
+        [
+          409,
+          410
+        ],
+        [
+          410,
+          696
+        ]
+      ]
+    },
+    "1": {
+      "source_sha256": "3101c6b2716d2a9e14cd32e2e5d758cb8628741cff6f265cc45db2d7e9e8257f",
+      "prepared_file_sha256": {
+        "raw_c.npy": "4e641b6b8d9b2143234a378b364d24ed1ef921978885d1cff19d8c58bcb263dc",
+        "invalid_reason.npy": "e90d2b3160509c4a3e7a5e0a68ce1cf5dab9187ae29b7a6236f7b911dd9d58b5",
+        "x_m.npy": "c4af29e7d5429cb9dd4c150425a5f9958d2ef3df34057983c5df46bdb8d0f786",
+        "elapsed_s.npy": "8ebb444d5ca3a8fad2aaa8d2e0ee5f4ce06f6d84219ca1da8600440e46695774",
+        "profiles.json": "d8101a1eb180b0e11e189b4741a54b93db2b6aa7c47e65e5ce65fa932a61079c"
+      },
+      "shape": [
+        615,
+        11707
+      ],
+      "time_kind": "offset_aware",
+      "split": {
+        "cut_time_s": [
+          35732.0,
+          39543.0
+        ],
+        "guard_s": 1800,
+        "counts": {
+          "-1": 114,
+          "0": 344,
+          "1": 64,
+          "2": 93
+        },
+        "codes": {
+          "-1": "excluded_guard",
+          "0": "train",
+          "1": "development",
+          "2": "internal_holdout"
+        },
+        "unseen_measurement_test": false
+      },
+      "dx_m": [
+        0.10152284263949696,
+        0.10152284263961064,
+        0.10152284263961064
+      ],
+      "dt_s": [
+        30.0,
+        31.0,
+        241.0
+      ],
+      "segments": [
+        [
+          0,
+          615
+        ]
+      ]
+    },
+    "3": {
+      "source_sha256": "0acc4e41dc16dd829110881641cb17f94bffd0c2d5255d539d8f3589cd8cdde3",
+      "prepared_file_sha256": {
+        "raw_c.npy": "5c373aca806e67ca6ac6d3ea6b3895acf47597d302b796d0fed01e1b7b5e8200",
+        "invalid_reason.npy": "7a1513635ddd47ca73eecd2940c45d76e97e6a976d47061ee088c33b379c25b7",
+        "x_m.npy": "ddcec624f0781c9369e41c6cc357ea0cf318f491d4ca4c33a9070db17b45ef5b",
+        "elapsed_s.npy": "66617861dd106e33bf932e3429f4f296557b5349ccfe211d9a7eff550741bb52",
+        "profiles.json": "2abeeac0316bc95b75507b6bf9c3d5aa2c9b6009fbfcf7cdbe4a4b05a7660107"
+      },
+      "shape": [
+        788,
+        1689
+      ],
+      "time_kind": "offset_aware",
+      "split": {
+        "cut_time_s": [
+          134291.0,
+          153772.0
+        ],
+        "guard_s": 1800,
+        "counts": {
+          "-1": 30,
+          "0": 465,
+          "1": 143,
+          "2": 150
+        },
+        "codes": {
+          "-1": "excluded_guard",
+          "0": "train",
+          "1": "development",
+          "2": "internal_holdout"
+        },
+        "unseen_measurement_test": false
+      },
+      "dx_m": [
+        0.25377103761900344,
+        0.25377103761901765,
+        0.2537710376190603
+      ],
+      "dt_s": [
+        120.0,
+        120.0,
+        121.0
+      ],
+      "segments": [
+        [
+          0,
+          419
+        ],
+        [
+          419,
+          451
+        ],
+        [
+          451,
+          493
+        ],
+        [
+          493,
+          788
+        ]
+      ]
+    }
+  },
+  "windows": [
+    {
+      "id": "6-split-0",
+      "record_id": "6",
+      "source_sha256": "23e79988fcfb8a186dec06faffa60e6ed7c93ca7cd9969ac4989fd12b9f358c8",
+      "row_start": 352,
+      "row_end": 400,
+      "column_start": 2031,
+      "column_end": 2504,
+      "core_x_m": [
+        555.306728745543,
+        595.306728745543
+      ],
+      "context_m": 40,
+      "split": 0
+    },
+    {
+      "id": "6-split-1",
+      "record_id": "6",
+      "source_sha256": "23e79988fcfb8a186dec06faffa60e6ed7c93ca7cd9969ac4989fd12b9f358c8",
+      "row_start": 774,
+      "row_end": 822,
+      "column_start": 2031,
+      "column_end": 2504,
+      "core_x_m": [
+        555.306728745543,
+        595.306728745543
+      ],
+      "context_m": 40,
+      "split": 1
+    },
+    {
+      "id": "6-split-2",
+      "record_id": "6",
+      "source_sha256": "23e79988fcfb8a186dec06faffa60e6ed7c93ca7cd9969ac4989fd12b9f358c8",
+      "row_start": 1115,
+      "row_end": 1163,
+      "column_start": 2031,
+      "column_end": 2504,
+      "core_x_m": [
+        555.306728745543,
+        595.306728745543
+      ],
+      "context_m": 40,
+      "split": 2
+    },
+    {
+      "id": "4-split-0",
+      "record_id": "4",
+      "source_sha256": "d2f5b3d90078420aea45bac86df3656987a2ca9c548d478d134d3ee6349fde17",
+      "row_start": 208,
+      "row_end": 256,
+      "column_start": 609,
+      "column_end": 1082,
+      "core_x_m": [
+        194.43652678807103,
+        234.43652678807103
+      ],
+      "context_m": 40,
+      "split": 0
+    },
+    {
+      "id": "4-split-1",
+      "record_id": "4",
+      "source_sha256": "d2f5b3d90078420aea45bac86df3656987a2ca9c548d478d134d3ee6349fde17",
+      "row_start": 495,
+      "row_end": 543,
+      "column_start": 609,
+      "column_end": 1082,
+      "core_x_m": [
+        194.43652678807103,
+        234.43652678807103
+      ],
+      "context_m": 40,
+      "split": 1
+    },
+    {
+      "id": "4-split-2",
+      "record_id": "4",
+      "source_sha256": "d2f5b3d90078420aea45bac86df3656987a2ca9c548d478d134d3ee6349fde17",
+      "row_start": 641,
+      "row_end": 689,
+      "column_start": 609,
+      "column_end": 1082,
+      "core_x_m": [
+        194.43652678807103,
+        234.43652678807103
+      ],
+      "context_m": 40,
+      "split": 2
+    },
+    {
+      "id": "5-split-0",
+      "record_id": "5",
+      "source_sha256": "98c1d629ed59478c81fa58b60e891f5587ef9d64ad435655e717a27f64767e46",
+      "row_start": 768,
+      "row_end": 816,
+      "column_start": 784,
+      "column_end": 905,
+      "core_x_m": [
+        824.0,
+        864.0
+      ],
+      "context_m": 40,
+      "split": 0
+    },
+    {
+      "id": "5-split-1",
+      "record_id": "5",
+      "source_sha256": "98c1d629ed59478c81fa58b60e891f5587ef9d64ad435655e717a27f64767e46",
+      "row_start": 1897,
+      "row_end": 1945,
+      "column_start": 784,
+      "column_end": 905,
+      "core_x_m": [
+        824.0,
+        864.0
+      ],
+      "context_m": 40,
+      "split": 1
+    },
+    {
+      "id": "5-split-2",
+      "record_id": "5",
+      "source_sha256": "98c1d629ed59478c81fa58b60e891f5587ef9d64ad435655e717a27f64767e46",
+      "row_start": 2484,
+      "row_end": 2532,
+      "column_start": 784,
+      "column_end": 905,
+      "core_x_m": [
+        824.0,
+        864.0
+      ],
+      "context_m": 40,
+      "split": 2
+    },
+    {
+      "id": "2-split-0",
+      "record_id": "2",
+      "source_sha256": "f115579accd114e0c5a0d968aea3d2710da8ead421fc8c35c17472047cefdec4",
+      "row_start": 204,
+      "row_end": 252,
+      "column_start": 921,
+      "column_end": 1394,
+      "core_x_m": [
+        273.6170644722511,
+        313.6170644722511
+      ],
+      "context_m": 40,
+      "split": 0
+    },
+    {
+      "id": "2-split-1",
+      "record_id": "2",
+      "source_sha256": "f115579accd114e0c5a0d968aea3d2710da8ead421fc8c35c17472047cefdec4",
+      "row_start": 487,
+      "row_end": 535,
+      "column_start": 921,
+      "column_end": 1394,
+      "core_x_m": [
+        273.6170644722511,
+        313.6170644722511
+      ],
+      "context_m": 40,
+      "split": 1
+    },
+    {
+      "id": "2-split-2",
+      "record_id": "2",
+      "source_sha256": "f115579accd114e0c5a0d968aea3d2710da8ead421fc8c35c17472047cefdec4",
+      "row_start": 630,
+      "row_end": 678,
+      "column_start": 921,
+      "column_end": 1394,
+      "core_x_m": [
+        273.6170644722511,
+        313.6170644722511
+      ],
+      "context_m": 40,
+      "split": 2
+    },
+    {
+      "id": "1-split-0",
+      "record_id": "1",
+      "source_sha256": "3101c6b2716d2a9e14cd32e2e5d758cb8628741cff6f265cc45db2d7e9e8257f",
+      "row_start": 172,
+      "row_end": 220,
+      "column_start": 5262,
+      "column_end": 6444,
+      "core_x_m": [
+        574.2131979695437,
+        614.2131979695437
+      ],
+      "context_m": 40,
+      "split": 0
+    },
+    {
+      "id": "1-split-1",
+      "record_id": "1",
+      "source_sha256": "3101c6b2716d2a9e14cd32e2e5d758cb8628741cff6f265cc45db2d7e9e8257f",
+      "row_start": 415,
+      "row_end": 463,
+      "column_start": 5262,
+      "column_end": 6444,
+      "core_x_m": [
+        574.2131979695437,
+        614.2131979695437
+      ],
+      "context_m": 40,
+      "split": 1
+    },
+    {
+      "id": "1-split-2",
+      "record_id": "1",
+      "source_sha256": "3101c6b2716d2a9e14cd32e2e5d758cb8628741cff6f265cc45db2d7e9e8257f",
+      "row_start": 567,
+      "row_end": 615,
+      "column_start": 5262,
+      "column_end": 6444,
+      "core_x_m": [
+        574.2131979695437,
+        614.2131979695437
+      ],
+      "context_m": 40,
+      "split": 2
+    },
+    {
+      "id": "3-split-0",
+      "record_id": "3",
+      "source_sha256": "0acc4e41dc16dd829110881641cb17f94bffd0c2d5255d539d8f3589cd8cdde3",
+      "row_start": 209,
+      "row_end": 257,
+      "column_start": 608,
+      "column_end": 1081,
+      "core_x_m": [
+        194.18275575045203,
+        234.18275575045203
+      ],
+      "context_m": 40,
+      "split": 0
+    },
+    {
+      "id": "3-split-1",
+      "record_id": "3",
+      "source_sha256": "0acc4e41dc16dd829110881641cb17f94bffd0c2d5255d539d8f3589cd8cdde3",
+      "row_start": 480,
+      "row_end": 493,
+      "column_start": 608,
+      "column_end": 1081,
+      "core_x_m": [
+        194.18275575045203,
+        234.18275575045203
+      ],
+      "context_m": 40,
+      "split": 1
+    },
+    {
+      "id": "3-split-2",
+      "record_id": "3",
+      "source_sha256": "0acc4e41dc16dd829110881641cb17f94bffd0c2d5255d539d8f3589cd8cdde3",
+      "row_start": 713,
+      "row_end": 761,
+      "column_start": 608,
+      "column_end": 1081,
+      "core_x_m": [
+        194.18275575045203,
+        234.18275575045203
+      ],
+      "context_m": 40,
+      "split": 2
+    }
+  ],
+  "comparison_coverage": "one bounded chronological window per available split/source",
+  "noise_independence_verified": false
+}

@@ -1,0 +1,646 @@
+name: Deploy (reusable)
+
+# Канон деплоя всех веток: вызывается тонкими caller'ами
+# (deploy-staging.yml, deploy-web.yml, deploy-ml.yml, deploy-data.yml) через
+# uses: werd0y45/haklolarp/.github/workflows/deploy-reusable.yml@f2571f3 (pin: full SHA, bump вручную/dependabot)
+# Caller'ы держат только with/secrets/concurrency и свои имена workflows
+# (имена НЕ менять: их слушает notify-runs.yml).
+# Ветко-специфика — через inputs; различия tmux/plain и pytest — через if.
+# KVM-ключ — forced command (/usr/local/bin/xeon-wake-only): reset/ISO
+# недоступны даже при утечке. Power OFF/reset из CI нет и не будет.
+# Staged-цепочка (test/sync/launch/await/verify/report): скелет default-OFF
+# (inputs.enable_staged=false). Флаг off = старый одиночный job `deploy`.
+# Staged — только tmux; plain+staged явно падает в staged_guard.
+
+permissions:
+  contents: read
+
+on:
+  workflow_call:
+    inputs:
+      branch:
+        description: "Ветка и селектор: main | web | ml | data"
+        required: true
+        type: string
+      staging_dir:
+        description: "Каталог стенда: /opt/haklolarp-staging | /opt/haklolarp-web | /opt/haklolarp-ml | /opt/haklolarp-stack"
+        required: true
+        type: string
+      mode:
+        description: "tmux (fire/poll/collect через ops/deploy-<branch>.sh) или plain (compose pull/up)"
+        required: true
+        type: string
+      poll_rounds:
+        description: "Итераций ожидания tmux (шаг 15с): web 40, ml 80"
+        required: false
+        type: number
+        default: 40
+      run_tests:
+        description: "pytest перед деплоем (ml)"
+        required: false
+        type: boolean
+        default: false
+      compose_file:
+        description: "Compose-файл для plain-режима (main)"
+        required: false
+        type: string
+        default: compose.yaml
+      inline_notify:
+        description: "Discord-нотификация инлайн (staging шлёт через notify-runs, ему false)"
+        required: false
+        type: boolean
+        default: true
+      discord_color:
+        description: "Цвет Discord-embed"
+        required: false
+        type: string
+        default: "0x007bff"
+      enable_staged:
+        description: "Staged deploy chain (test/sync/launch/await/verify/report, tmux only); false = legacy single deploy job"
+        required: false
+        type: boolean
+        default: false
+      stage_notify:
+        description: "Per-stage Discord pings (reserved; report digest always sent per inline_notify)"
+        required: false
+        type: boolean
+        default: false
+      health_path:
+        description: "HTTP health path probed by staged verify"
+        required: false
+        type: string
+        default: /health
+      health_port:
+        description: "HTTP health port probed by staged verify"
+        required: false
+        type: number
+        default: 80
+      compose_project:
+        description: "Compose project override for staged chain (empty = derived from branch)"
+        required: false
+        type: string
+        default: ""
+    secrets:
+      ts_oauth_client_id:
+        required: true
+      ts_oauth_secret:
+        required: true
+      staging_host:
+        required: true
+      kvm_host:
+        required: true
+      staging_user:
+        required: true
+      staging_ssh_key:
+        required: true
+      kvm_wake_key:
+        required: true
+      discord_webhook:
+        required: false
+    outputs:
+      git_sha:
+        description: "Commit SHA synced on Xeon (staged chain only)"
+        value: ${{ jobs.staged_sync.outputs.git_sha }}
+      session:
+        description: "Staged deploy tmux session id (staged chain only)"
+        value: ${{ jobs.staged_launch.outputs.session }}
+      done_code:
+        description: "Final staged deploy exit code (staged chain only)"
+        value: ${{ jobs.staged_verify.outputs.done_code }}
+      last_stage:
+        description: "Last completed staged stage (staged chain only)"
+        value: ${{ jobs.staged_report.outputs.last_stage }}
+      health_json:
+        description: "Staged verify health record JSON (staged chain only)"
+        value: ${{ jobs.staged_verify.outputs.health_json }}
+
+jobs:
+  wake:
+    # FROZEN: KVM/WoL — не трогать (always-on)
+    # Будим Xeon через KVM, только если он лежит.
+    runs-on: [self-hosted, team-devops]
+    timeout-minutes: 15
+    steps:
+      - name: Join Tailscale
+        uses: tailscale/github-action@d1b6cd204f8dceda5b3eaad7f1f767be390056cd # v4
+        with:
+          oauth-client-id: ${{ secrets.ts_oauth_client_id }}
+          oauth-secret: ${{ secrets.ts_oauth_secret }}
+          tags: tag:ci
+          hostname: wake-${{ github.run_id }}
+
+      - name: Probe Xeon (skip wake if up)
+        id: probe
+        continue-on-error: true
+        uses: appleboy/ssh-action@0ff4204d59e8e51228ff73bce53f80d53301dee2 # v1
+        with:
+          host: ${{ secrets.staging_host }}
+          username: ${{ secrets.staging_user }}
+          key: ${{ secrets.staging_ssh_key }}
+          port: 22
+          script: echo xeon-up
+
+      - name: Wake via KVM (forced command waits for boot)
+        if: steps.probe.outcome == 'failure'
+        uses: appleboy/ssh-action@0ff4204d59e8e51228ff73bce53f80d53301dee2 # v1
+        with:
+          host: ${{ secrets.kvm_host }}
+          username: root
+          key: ${{ secrets.kvm_wake_key }}
+          port: 22
+          command_timeout: 12m
+          script: echo wake-triggered
+
+  deploy:
+    # Legacy single-job path: active only when the staged chain is off.
+    if: ${{ !inputs.enable_staged }}
+    needs: [wake]
+    runs-on: [self-hosted, team-devops]
+    timeout-minutes: 45
+    steps:
+      - name: Checkout
+        if: inputs.run_tests
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+
+      - name: Guard branch ref
+        if: inputs.run_tests
+        uses: ./.github/actions/guard-ref
+        with:
+          ref_name: ${{ github.ref_name }}
+          event_name: ${{ github.event_name }}
+          fork: ${{ github.event.pull_request.head.repo.fork }}
+
+      - name: Setup Python
+        if: inputs.run_tests
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-dev.txt # cache key: requirements-dev.txt (unpinned, hit-rate best-effort)
+
+      - name: Install (lint/test, no training)
+        if: inputs.run_tests
+        run: pip install -r requirements-dev.txt
+
+      - name: Test
+        if: inputs.run_tests
+        run: python -m pytest tests -q -p no:cacheprovider
+
+      - name: Join Tailscale
+        uses: tailscale/github-action@d1b6cd204f8dceda5b3eaad7f1f767be390056cd # v4
+        with:
+          oauth-client-id: ${{ secrets.ts_oauth_client_id }}
+          oauth-secret: ${{ secrets.ts_oauth_secret }}
+          tags: tag:ci
+          hostname: deploy-${{ inputs.branch }}-${{ github.run_id }}
+
+      - name: Deploy plain (compose pull/up)
+        if: inputs.mode == 'plain'
+        uses: appleboy/ssh-action@0ff4204d59e8e51228ff73bce53f80d53301dee2 # v1
+        with:
+          host: ${{ secrets.staging_host }}
+          username: ${{ secrets.staging_user }}
+          key: ${{ secrets.staging_ssh_key }}
+          port: 22
+          script: |
+            set -e
+            cd "${{ inputs.staging_dir }}"
+            git fetch origin
+            git checkout "${{ inputs.branch }}"
+            git pull --ff-only origin "${{ inputs.branch }}"
+            docker compose -f "${{ inputs.compose_file }}" pull
+            docker compose -f "${{ inputs.compose_file }}" up -d --remove-orphans --wait
+            docker ps
+
+      - name: Fire tmux deploy
+        if: inputs.mode == 'tmux'
+        uses: appleboy/ssh-action@0ff4204d59e8e51228ff73bce53f80d53301dee2 # v1
+        with:
+          host: ${{ secrets.staging_host }}
+          username: ${{ secrets.staging_user }}
+          key: ${{ secrets.staging_ssh_key }}
+          port: 22
+          command_timeout: 2m
+          script: |
+            SESS=deploy-${{ inputs.branch }}-${{ github.run_id }}-${{ github.run_attempt }}
+            DIR=${{ inputs.staging_dir }}
+            export GIT_SSH_COMMAND="ssh -i ~/.ssh/haklolarp_deploy -o StrictHostKeyChecking=yes -o UserKnownHostsFile=~/.ssh/known_hosts"
+            if [ ! -d "$DIR/.git" ]; then
+              git clone --branch "${{ inputs.branch }}" git@github.com:${{ github.repository }}.git "$DIR"
+            fi
+            cd "$DIR"
+            git fetch origin
+            git checkout "${{ inputs.branch }}"
+            git pull --ff-only origin "${{ inputs.branch }}"
+            if command -v tmux >/dev/null 2>&1; then
+              SESS_LIST=$(tmux list-sessions -F '#S' 2>/dev/null || true)
+              for s in $SESS_LIST; do
+                case "$s" in
+                  deploy-${{ inputs.branch }}-*) [ "$s" != "$SESS" ] && tmux kill-session -t "$s" ;;
+                esac
+              done
+              tmux kill-session -t "$SESS" 2>/dev/null || true
+              tmux new-session -d -s "$SESS" -x 200 -y 50 -c "$DIR" "bash ops/deploy-${{ inputs.branch }}.sh $SESS; echo \$? > $DIR/.deploy-$SESS.done"
+            else
+              bash "ops/deploy-${{ inputs.branch }}.sh" "$SESS"; echo $? > "$DIR/.deploy-$SESS.done"
+            fi
+
+      - name: Poll tmux deploy
+        if: inputs.mode == 'tmux'
+        uses: appleboy/ssh-action@0ff4204d59e8e51228ff73bce53f80d53301dee2 # v1
+        with:
+          host: ${{ secrets.staging_host }}
+          username: ${{ secrets.staging_user }}
+          key: ${{ secrets.staging_ssh_key }}
+          port: 22
+          command_timeout: 30m
+          script: |
+            SESS=deploy-${{ inputs.branch }}-${{ github.run_id }}-${{ github.run_attempt }}
+            DONE=${{ inputs.staging_dir }}/.deploy-$SESS.done
+            for _ in $(seq 1 ${{ inputs.poll_rounds }}); do
+              if [ -f "$DONE" ]; then break; fi
+              tmux capture-pane -p -t "$SESS" 2>/dev/null | tail -5 || true
+              sleep 15
+            done
+
+      - name: Collect tmux result
+        if: inputs.mode == 'tmux'
+        uses: appleboy/ssh-action@0ff4204d59e8e51228ff73bce53f80d53301dee2 # v1
+        with:
+          host: ${{ secrets.staging_host }}
+          username: ${{ secrets.staging_user }}
+          key: ${{ secrets.staging_ssh_key }}
+          port: 22
+          script: |
+            SESS=deploy-${{ inputs.branch }}-${{ github.run_id }}-${{ github.run_attempt }}
+            DONE=${{ inputs.staging_dir }}/.deploy-$SESS.done
+            tmux capture-pane -p -S -1000 -t "$SESS" 2>/dev/null || true
+            CODE=$(cat "$DONE" 2>/dev/null || echo 99)
+            tmux kill-session -t "$SESS" 2>/dev/null || true
+            rm -f "$DONE"
+            exit "$CODE"
+
+      - name: Discord notify
+        if: always() && inputs.inline_notify
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.discord_webhook }}
+          DISCORD_TITLE: "Deploy ${{ inputs.branch }} (staging)"
+          DISCORD_DESC: |
+            **Ветка:** `${{ inputs.branch }}`
+            **Коммит:** `${{ github.sha }}`
+            [Смотреть run](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
+          DISCORD_USERNAME: "GitHub • ${{ inputs.branch }}"
+          DISCORD_COLOR: "${{ inputs.discord_color }}"
+        run: |
+          [ -n "$DISCORD_WEBHOOK" ] || exit 0
+          COLOR_DEC=$((DISCORD_COLOR))
+          jq -n --arg title "$DISCORD_TITLE" --arg desc "$DISCORD_DESC" --arg username "$DISCORD_USERNAME" --argjson color "$COLOR_DEC" '{embeds: [{title: $title, description: $desc, color: $color}], username: $username}' > /tmp/discord-notify.json
+          curl -fsS -H "Content-Type: application/json" -d @/tmp/discord-notify.json "$DISCORD_WEBHOOK"
+
+  # --- Staged deploy skeleton (default OFF) ---
+  # Chain: wake -> staged_test -> staged_sync -> staged_launch ->
+  # staged_await -> staged_verify -> staged_report. Tmux-only: plain mode
+  # never enables these jobs. Each job is guarded by enable_staged; the
+  # legacy `deploy` job above runs instead when the flag is off.
+
+  staged_guard:
+    # Loud fail for the unsupported combination enable_staged=true +
+    # mode=plain (staged chain is tmux-only; without this guard the run
+    # would be a silent no-op: legacy deploy gated off, staged jobs skipped).
+    if: ${{ inputs.enable_staged && inputs.mode != 'tmux' }}
+    runs-on: [self-hosted, team-devops]
+    steps:
+      - name: Reject plain staged combination
+        run: |
+          echo "::error::enable_staged=true requires mode='tmux' (got mode='${{ inputs.mode }}'). Staged chain is tmux-only; use enable_staged=false for plain mode."
+          exit 1
+
+  staged_test:
+    if: ${{ inputs.enable_staged && inputs.mode == 'tmux' }}
+    needs: [wake]
+    runs-on: [self-hosted, team-devops]
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        if: inputs.run_tests
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+
+      - name: Guard branch ref
+        if: inputs.run_tests
+        uses: ./.github/actions/guard-ref
+        with:
+          ref_name: ${{ github.ref_name }}
+          event_name: ${{ github.event_name }}
+          fork: ${{ github.event.pull_request.head.repo.fork }}
+
+      - name: Setup Python
+        if: inputs.run_tests
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-dev.txt # cache key: requirements-dev.txt (unpinned, hit-rate best-effort)
+
+      - name: Install (lint/test, no training)
+        if: inputs.run_tests
+        run: pip install -r requirements-dev.txt
+
+      - name: Test
+        if: inputs.run_tests
+        run: python -m pytest tests -q -p no:cacheprovider
+
+      - name: Record test stage
+        if: always()
+        run: |
+          {
+            echo "## staged_test (${{ inputs.branch }})"
+            echo "- run_tests=${{ inputs.run_tests }} job_status=${{ job.status }}"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  staged_sync:
+    if: ${{ inputs.enable_staged && inputs.mode == 'tmux' }}
+    needs: [staged_test]
+    runs-on: [self-hosted, team-devops]
+    timeout-minutes: 15
+    outputs:
+      git_sha: ${{ steps.export.outputs.git_sha }}
+      session: ${{ steps.export.outputs.session }}
+    steps:
+      - name: Join Tailscale
+        uses: tailscale/github-action@d1b6cd204f8dceda5b3eaad7f1f767be390056cd # v4
+        with:
+          oauth-client-id: ${{ secrets.ts_oauth_client_id }}
+          oauth-secret: ${{ secrets.ts_oauth_secret }}
+          tags: tag:ci
+          hostname: sync-${{ inputs.branch }}-${{ github.run_id }}
+
+      - name: Sync repo on Xeon
+        uses: appleboy/ssh-action@0ff4204d59e8e51228ff73bce53f80d53301dee2 # v1
+        with:
+          host: ${{ secrets.staging_host }}
+          username: ${{ secrets.staging_user }}
+          key: ${{ secrets.staging_ssh_key }}
+          port: 22
+          script: |
+            set -e
+            DIR=${{ inputs.staging_dir }}
+            export GIT_SSH_COMMAND="ssh -i ~/.ssh/haklolarp_deploy -o StrictHostKeyChecking=yes -o UserKnownHostsFile=~/.ssh/known_hosts"
+            if [ ! -d "$DIR/.git" ]; then
+              git clone --branch "${{ inputs.branch }}" git@github.com:${{ github.repository }}.git "$DIR"
+            fi
+            cd "$DIR"
+            git fetch origin
+            git checkout "${{ inputs.branch }}"
+            git pull --ff-only origin "${{ inputs.branch }}"
+            git rev-parse HEAD
+
+      - name: Export sync outputs
+        id: export
+        run: |
+          echo "git_sha=${{ github.sha }}" >> "$GITHUB_OUTPUT"
+          echo "session=deploy-${{ inputs.branch }}-${{ github.run_id }}-${{ github.run_attempt }}" >> "$GITHUB_OUTPUT"
+
+  staged_launch:
+    if: ${{ inputs.enable_staged && inputs.mode == 'tmux' }}
+    needs: [staged_sync]
+    runs-on: [self-hosted, team-devops]
+    timeout-minutes: 10
+    outputs:
+      session: ${{ steps.export.outputs.session }}
+    steps:
+      - name: Join Tailscale
+        uses: tailscale/github-action@d1b6cd204f8dceda5b3eaad7f1f767be390056cd # v4
+        with:
+          oauth-client-id: ${{ secrets.ts_oauth_client_id }}
+          oauth-secret: ${{ secrets.ts_oauth_secret }}
+          tags: tag:ci
+          hostname: launch-${{ inputs.branch }}-${{ github.run_id }}
+
+      - name: Launch tmux deploy
+        uses: appleboy/ssh-action@0ff4204d59e8e51228ff73bce53f80d53301dee2 # v1
+        with:
+          host: ${{ secrets.staging_host }}
+          username: ${{ secrets.staging_user }}
+          key: ${{ secrets.staging_ssh_key }}
+          port: 22
+          command_timeout: 2m
+          script: |
+            SESS=deploy-${{ inputs.branch }}-${{ github.run_id }}-${{ github.run_attempt }}
+            DIR=${{ inputs.staging_dir }}
+            # Stale-marker wipe: a re-run (new run_attempt) must never read
+            # a previous attempt marker file.
+            rm -f "$DIR/.deploy-$SESS.done" "$DIR/.deploy-$SESS.await"
+            cd "$DIR"
+            if command -v tmux >/dev/null 2>&1; then
+              tmux kill-session -t "$SESS" 2>/dev/null || true
+              tmux new-session -d -s "$SESS" -x 200 -y 50 -c "$DIR" "bash ops/deploy-${{ inputs.branch }}.sh $SESS; echo \$? > $DIR/.deploy-$SESS.done"
+            else
+              bash "ops/deploy-${{ inputs.branch }}.sh" "$SESS"; echo $? > "$DIR/.deploy-$SESS.done"
+            fi
+
+      - name: Export launch outputs
+        id: export
+        run: |
+          echo "session=deploy-${{ inputs.branch }}-${{ github.run_id }}-${{ github.run_attempt }}" >> "$GITHUB_OUTPUT"
+          echo "## staged_launch (${{ inputs.branch }})" >> "$GITHUB_STEP_SUMMARY"
+          echo "- session=deploy-${{ inputs.branch }}-${{ github.run_id }}-${{ github.run_attempt }}" >> "$GITHUB_STEP_SUMMARY"
+
+  staged_await:
+    # Polls for the tmux .done marker. On timeout records TIMED_OUT and
+    # still exits 0: failure attribution happens in verify/report.
+    if: ${{ inputs.enable_staged && inputs.mode == 'tmux' }}
+    needs: [staged_launch]
+    runs-on: [self-hosted, team-devops]
+    timeout-minutes: 40
+    outputs:
+      done_code: ${{ steps.export.outputs.done_code }}
+      last_stage: ${{ steps.export.outputs.last_stage }}
+    steps:
+      - name: Join Tailscale
+        uses: tailscale/github-action@d1b6cd204f8dceda5b3eaad7f1f767be390056cd # v4
+        with:
+          oauth-client-id: ${{ secrets.ts_oauth_client_id }}
+          oauth-secret: ${{ secrets.ts_oauth_secret }}
+          tags: tag:ci
+          hostname: await-${{ inputs.branch }}-${{ github.run_id }}
+
+      - name: Await tmux deploy
+        id: await
+        uses: appleboy/ssh-action@0ff4204d59e8e51228ff73bce53f80d53301dee2 # v1
+        with:
+          host: ${{ secrets.staging_host }}
+          username: ${{ secrets.staging_user }}
+          key: ${{ secrets.staging_ssh_key }}
+          port: 22
+          command_timeout: 30m
+          script: |
+            SESS=deploy-${{ inputs.branch }}-${{ github.run_id }}-${{ github.run_attempt }}
+            DONE=${{ inputs.staging_dir }}/.deploy-$SESS.done
+            for _ in $(seq 1 ${{ inputs.poll_rounds }}); do
+              if [ -f "$DONE" ]; then break; fi
+              tmux capture-pane -p -t "$SESS" 2>/dev/null | tail -5 || true
+              sleep 15
+            done
+            if [ ! -f "$DONE" ]; then
+              echo TIMED_OUT > "${{ inputs.staging_dir }}/.deploy-$SESS.await"
+              tmux capture-pane -p -S -1000 -t "$SESS" 2>/dev/null || true
+            fi
+            exit 0
+
+      - name: Export await outputs
+        id: export
+        if: always()
+        run: |
+          if [ "${{ steps.await.outcome }}" = "success" ]; then CODE=0; else CODE=1; fi
+          echo "done_code=$CODE" >> "$GITHUB_OUTPUT"
+          echo "last_stage=await" >> "$GITHUB_OUTPUT"
+          {
+            echo "## staged_await (${{ inputs.branch }})"
+            echo "- done_code=$CODE (TIMED_OUT marker on timeout, ssh step exits 0)"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  staged_verify:
+    # always(): await-failure must still reach Collect below (tmux
+    # kill-session + marker rm); health/collect steps sort out attribution.
+    if: ${{ always() && inputs.enable_staged && inputs.mode == 'tmux' }}
+    needs: [staged_await]
+    runs-on: [self-hosted, team-devops]
+    timeout-minutes: 15
+    outputs:
+      done_code: ${{ steps.record.outputs.done_code }}
+      health_json: ${{ steps.record.outputs.health_json }}
+    steps:
+      - name: Join Tailscale
+        uses: tailscale/github-action@d1b6cd204f8dceda5b3eaad7f1f767be390056cd # v4
+        with:
+          oauth-client-id: ${{ secrets.ts_oauth_client_id }}
+          oauth-secret: ${{ secrets.ts_oauth_secret }}
+          tags: tag:ci
+          hostname: verify-${{ inputs.branch }}-${{ github.run_id }}
+
+      - name: Health gate
+        id: health
+        uses: appleboy/ssh-action@0ff4204d59e8e51228ff73bce53f80d53301dee2 # v1
+        with:
+          host: ${{ secrets.staging_host }}
+          username: ${{ secrets.staging_user }}
+          key: ${{ secrets.staging_ssh_key }}
+          port: 22
+          script: |
+            set -eo pipefail
+            SESS=deploy-${{ inputs.branch }}-${{ github.run_id }}-${{ github.run_attempt }}
+            DONE=${{ inputs.staging_dir }}/.deploy-$SESS.done
+            WAIT=${{ inputs.staging_dir }}/.deploy-$SESS.await
+            if [ -f "$WAIT" ]; then echo "await TIMED_OUT"; exit 1; fi
+            CODE=$(cat "$DONE" 2>/dev/null || echo MISSING)
+            if [ "$CODE" != "0" ]; then echo "deploy exit: $CODE"; exit 1; fi
+            curl -fsS "http://localhost:${{ inputs.health_port }}${{ inputs.health_path }}" | head -c 2000
+
+      - name: Collect tmux result
+        id: collect
+        if: always()
+        uses: appleboy/ssh-action@0ff4204d59e8e51228ff73bce53f80d53301dee2 # v1
+        with:
+          host: ${{ secrets.staging_host }}
+          username: ${{ secrets.staging_user }}
+          key: ${{ secrets.staging_ssh_key }}
+          port: 22
+          script: |
+            SESS=deploy-${{ inputs.branch }}-${{ github.run_id }}-${{ github.run_attempt }}
+            DONE=${{ inputs.staging_dir }}/.deploy-$SESS.done
+            WAIT=${{ inputs.staging_dir }}/.deploy-$SESS.await
+            tmux capture-pane -p -S -1000 -t "$SESS" 2>/dev/null || true
+            CODE=$(cat "$DONE" 2>/dev/null || echo TIMED_OUT)
+            echo "deploy exit: $CODE"
+            if [ -f "$WAIT" ]; then echo "await: $(cat "$WAIT")"; rm -f "$WAIT"; fi
+            tmux kill-session -t "$SESS" 2>/dev/null || true
+            rm -f "$DONE"
+            # Record-only: never fail here; the health gate above decides.
+            exit 0
+
+      - name: Record verify result
+        id: record
+        if: always()
+        run: |
+          if [ "${{ steps.health.outcome }}" = "success" ]; then CODE=0; else CODE=1; fi
+          if [ "$CODE" = "0" ]; then OK=true; else OK=false; fi
+          echo "done_code=$CODE" >> "$GITHUB_OUTPUT"
+          echo "health_json={\"branch\":\"${{ inputs.branch }}\",\"path\":\"${{ inputs.health_path }}\",\"port\":${{ inputs.health_port }},\"ok\":$OK}" >> "$GITHUB_OUTPUT"
+          {
+            echo "## staged_verify (${{ inputs.branch }})"
+            echo "- done_code=$CODE"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  staged_report:
+    if: ${{ always() && inputs.enable_staged && inputs.mode == 'tmux' }}
+    needs: [wake, staged_test, staged_sync, staged_launch, staged_await, staged_verify]
+    runs-on: [self-hosted, team-devops]
+    timeout-minutes: 10
+    outputs:
+      last_stage: ${{ steps.final.outputs.last_stage }}
+    steps:
+      - name: Resolve final stage
+        id: final
+        if: always()
+        run: |
+          if [ "${{ needs.wake.result }}" != "success" ]; then STAGE="wake"; CODE=1
+          elif [ "${{ needs.staged_verify.result }}" = "success" ]; then STAGE="verify"; CODE=0
+          elif [ "${{ needs.staged_verify.result }}" != "skipped" ] && [ "${{ needs.staged_await.result }}" = "success" ]; then STAGE="verify"; CODE=1
+          elif [ "${{ needs.staged_await.result }}" != "skipped" ]; then STAGE="await"; CODE=1
+          elif [ "${{ needs.staged_launch.result }}" != "skipped" ]; then STAGE="launch"; CODE=1
+          elif [ "${{ needs.staged_sync.result }}" != "skipped" ]; then STAGE="sync"; CODE=1
+          elif [ "${{ needs.staged_test.result }}" != "skipped" ]; then STAGE="test"; CODE=1
+          else STAGE="test"; CODE=1; fi
+          if [ "$CODE" = "0" ]; then STATUS="OK"; else STATUS="FAILED-at-$STAGE"; fi
+          {
+            echo "last_stage=$STAGE"
+            echo "done_code=$CODE"
+            echo "status_text=$STATUS"
+          } >> "$GITHUB_OUTPUT"
+          {
+            echo "## staged_report (${{ inputs.branch }})"
+            echo "- status=$STATUS last_stage=$STAGE done_code=$CODE"
+            echo "- wake=${{ needs.wake.result }} test=${{ needs.staged_test.result }} sync=${{ needs.staged_sync.result }} launch=${{ needs.staged_launch.result }} await=${{ needs.staged_await.result }} verify=${{ needs.staged_verify.result }}"
+            echo "- compose_project=${{ inputs.compose_project }} stage_notify=${{ inputs.stage_notify }}"
+          } >> "$GITHUB_STEP_SUMMARY"
+          mkdir -p staged-report
+          echo "# staged deploy ${{ inputs.branch }}: $STATUS" > staged-report/summary.md
+          echo "- last_stage=$STAGE done_code=$CODE" >> staged-report/summary.md
+          echo "- wake=${{ needs.wake.result }} test=${{ needs.staged_test.result }} sync=${{ needs.staged_sync.result }} launch=${{ needs.staged_launch.result }} await=${{ needs.staged_await.result }} verify=${{ needs.staged_verify.result }}" >> staged-report/summary.md
+          echo "{\"branch\":\"${{ inputs.branch }}\",\"status\":\"$STATUS\",\"last_stage\":\"$STAGE\",\"done_code\":$CODE}" > staged-report/health.json
+
+      - name: Discord digest
+        if: always() && (inputs.inline_notify || inputs.stage_notify)
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.discord_webhook }}
+          DISCORD_TITLE: "Staged deploy ${{ inputs.branch }}: ${{ steps.final.outputs.status_text }}"
+          DISCORD_DESC: |
+            **Ветка:** `${{ inputs.branch }}`
+            **Статус:** `${{ steps.final.outputs.status_text }}`
+            **Коммит:** `${{ github.sha }}`
+            [Смотреть run](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
+          DISCORD_USERNAME: "GitHub • ${{ inputs.branch }}"
+          DISCORD_COLOR: "${{ inputs.discord_color }}"
+        run: |
+          [ -n "$DISCORD_WEBHOOK" ] || exit 0
+          COLOR_DEC=$((DISCORD_COLOR))
+          jq -n --arg title "$DISCORD_TITLE" --arg desc "$DISCORD_DESC" --arg username "$DISCORD_USERNAME" --argjson color "$COLOR_DEC" '{embeds: [{title: $title, description: $desc, color: $color}], username: $username}' > /tmp/discord-digest.json
+          curl -fsS -H "Content-Type: application/json" -d @/tmp/discord-digest.json "$DISCORD_WEBHOOK"
+
+      - name: Upload staged deploy log
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: staged-deploy-${{ inputs.branch }}-${{ github.run_id }}
+          path: staged-report/summary.md
+          retention-days: 14
+          if-no-files-found: warn
+
+      - name: Upload staged health record
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: staged-health-${{ inputs.branch }}-${{ github.run_id }}
+          path: staged-report/health.json
+          retention-days: 30
+          if-no-files-found: warn

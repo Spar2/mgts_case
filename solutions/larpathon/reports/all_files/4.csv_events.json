@@ -1,0 +1,173 @@
+[
+  {
+    "meters": [
+      91.0261,
+      93.5268
+    ],
+    "duration_min": 28.0,
+    "amplitude": 2.7099,
+    "local_amplitude": 4.3403,
+    "confidence": 0.8089,
+    "type_hypothesis": "local_heating (power cable / equipment)",
+    "t_range": [
+      604,
+      617
+    ],
+    "s_range": [
+      364,
+      374
+    ]
+  },
+  {
+    "meters": [
+      94.027,
+      100.0287
+    ],
+    "duration_min": 352.0,
+    "amplitude": 4.207,
+    "local_amplitude": 5.1652,
+    "confidence": 0.8081,
+    "type_hypothesis": "local_heating (power cable / equipment)",
+    "t_range": [
+      316,
+      491
+    ],
+    "s_range": [
+      376,
+      400
+    ]
+  },
+  {
+    "meters": [
+      86.2748,
+      88.2753
+    ],
+    "duration_min": 22.0,
+    "amplitude": 4.3049,
+    "local_amplitude": 5.1896,
+    "confidence": 0.8019,
+    "type_hypothesis": "local_heating (power cable / equipment)",
+    "t_range": [
+      602,
+      612
+    ],
+    "s_range": [
+      345,
+      353
+    ]
+  },
+  {
+    "meters": [
+      105.7804,
+      114.0327
+    ],
+    "duration_min": 32.0,
+    "amplitude": 4.1459,
+    "local_amplitude": 4.1277,
+    "confidence": 0.7969,
+    "type_hypothesis": "local_heating (power cable / equipment)",
+    "t_range": [
+      440,
+      455
+    ],
+    "s_range": [
+      423,
+      456
+    ]
+  },
+  {
+    "meters": [
+      106.2805,
+      113.0324
+    ],
+    "duration_min": 212.0,
+    "amplitude": 7.5846,
+    "local_amplitude": 5.0992,
+    "confidence": 0.7899,
+    "type_hypothesis": "local_heating (power cable / equipment)",
+    "t_range": [
+      546,
+      651
+    ],
+    "s_range": [
+      425,
+      452
+    ]
+  },
+  {
+    "meters": [
+      86.2748,
+      88.0253
+    ],
+    "duration_min": 116.0,
+    "amplitude": 5.9713,
+    "local_amplitude": 7.0094,
+    "confidence": 0.7542,
+    "type_hypothesis": "local_heating (power cable / equipment)",
+    "t_range": [
+      632,
+      689
+    ],
+    "s_range": [
+      345,
+      352
+    ]
+  },
+  {
+    "meters": [
+      74.2713,
+      79.0227
+    ],
+    "duration_min": 480.0,
+    "amplitude": 2.2431,
+    "local_amplitude": 1.9569,
+    "confidence": 0.7389,
+    "type_hypothesis": "local_heating (power cable / equipment)",
+    "t_range": [
+      0,
+      239
+    ],
+    "s_range": [
+      297,
+      316
+    ]
+  },
+  {
+    "meters": [
+      86.5248,
+      93.5268
+    ],
+    "duration_min": 34.0,
+    "amplitude": -1.4887,
+    "local_amplitude": -1.6082,
+    "confidence": 0.6875,
+    "type_hypothesis": "other",
+    "t_range": [
+      331,
+      347
+    ],
+    "s_range": [
+      346,
+      374
+    ]
+  },
+  {
+    "meters": [
+      86.2748,
+      88.0253
+    ],
+    "duration_min": 42.0,
+    "amplitude": 2.3771,
+    "local_amplitude": 3.6257,
+    "confidence": 0.6285,
+    "type_hypothesis": "local_heating (power cable / equipment)",
+    "t_range": [
+      566,
+      586
+    ],
+    "s_range": [
+      345,
+      352
+    ]
+  }
+]
