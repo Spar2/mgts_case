@@ -1,4 +1,4 @@
 # Опциональный extra для dts/cv_ref.py и dts/cv_pipe.py.
 # Основной requirements.txt этот пакет не тянет: импорт cv2 в коде ленивый.
 #   /workspace/repo/run/.venv/bin/pip install -r requirements-cv.txt
-opencv-python-headless>=4.5
+opencv-python-headless>=5.0.0.93
