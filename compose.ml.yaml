@@ -1,0 +1,13 @@
+# Изолированный ML-стенд. Порт 8080 — main, 8081 — web.
+# Preview PR подставляет APP_PORT=9000+N.
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.ml
+    image: haklolarp-ml-api:local
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:${APP_PORT:-8082}:8082"
+    environment:
+      APP_PORT: "8082"

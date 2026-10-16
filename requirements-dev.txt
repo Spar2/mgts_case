@@ -1,0 +1,7 @@
+-r requirements-api.txt
+pandas
+matplotlib
+pytest
+pyyaml
+httpx
+jsonschema>=4.18

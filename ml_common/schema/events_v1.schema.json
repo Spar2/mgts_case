@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://haklolarp.local/schemas/dts-events/1",
+  "title": "dts-events/1",
+  "description": "Зоны аномалий DTS. Совместим с haklolarp.events и ответом POST /detect/field?model=ens_gen2|larpathon. Поле score — шкала самого метода (z у fiber, вероятность у ens_gen2, confidence у larpathon), не общая калибровка.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "model_key",
+    "method",
+    "dts_id",
+    "channel_id",
+    "grid",
+    "threshold",
+    "code_sha",
+    "zones",
+    "runtime"
+  ],
+  "properties": {
+    "schema": {"const": "dts-events/1"},
+    "model_key": {
+      "type": "string",
+      "minLength": 3,
+      "description": "method@идентификатор весов или кода, например ens_gen2@d0e60b4c5277"
+    },
+    "method": {"enum": ["fiber", "ens_gen2", "larpathon"]},
+    "dts_id": {"type": "string", "minLength": 1},
+    "channel_id": {"type": "string", "minLength": 1},
+    "grid": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["dx_m", "dt_s"],
+      "properties": {
+        "dx_m": {"type": "number", "exclusiveMinimum": 0},
+        "dt_s": {"type": "number", "exclusiveMinimum": 0}
+      }
+    },
+    "threshold": {
+      "type": "number",
+      "description": "Порог метода: z для fiber, вероятность ens_blend для ens_gen2, процентиль скора для larpathon."
+    },
+    "code_sha": {"type": "string", "minLength": 7},
+    "zones": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/zone"}
+    },
+    "runtime": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["cpus", "seconds"],
+      "properties": {
+        "cpus": {"type": "integer", "minimum": 1},
+        "seconds": {"type": "number", "minimum": 0},
+        "device": {"type": "string"},
+        "threads": {"type": "integer", "minimum": 1},
+        "score_kind": {"type": "string"},
+        "threshold_kind": {"type": "string"}
+      }
+    }
+  },
+  "$defs": {
+    "zone": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "t_first",
+        "t_last",
+        "x_from_m",
+        "x_to_m",
+        "score",
+        "stage2_type",
+        "type_proba",
+        "amplitude_c"
+      ],
+      "properties": {
+        "t_first": {"type": "string", "minLength": 1},
+        "t_last": {"type": "string", "minLength": 1},
+        "x_from_m": {"type": "number"},
+        "x_to_m": {"type": "number"},
+        "score": {"type": "number"},
+        "stage2_type": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Гипотеза типа. Примеры: Local_Heating, local_heating, Local_Cooling, zone_cooling."
+        },
+        "type_proba": {
+          "type": "object",
+          "additionalProperties": {"type": "number"}
+        },
+        "amplitude_c": {"type": "number"},
+        "polarity": {"type": "string"},
+        "alarm": {"type": "boolean"}
+      }
+    }
+  }
+}

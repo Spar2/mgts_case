@@ -1,0 +1,27 @@
+[project]
+name = "haklolarp-ml"
+version = "0.1.0"
+description = "ML pipeline for indoor DTS fibre temperature (MGTS hackathon)"
+requires-python = ">=3.11"
+dependencies = [
+  "numpy",
+  "scipy",
+  "pandas",
+  "PyWavelets",
+  "orjson",
+  "matplotlib",
+]
+
+[project.optional-dependencies]
+api = ["fastapi", "uvicorn"]
+train = ["torch", "lightgbm"]
+dev = ["pytest", "httpx"]
+ssl = ["torch"]
+anomaly = ["stumpy", "anomalib", "chronos-forecasting", "ads-evt"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q -p no:cacheprovider"
+
+[tool.setuptools.packages.find]
+include = ["fiber*", "ml_common*"]

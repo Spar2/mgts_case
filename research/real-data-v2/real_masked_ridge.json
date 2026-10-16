@@ -1,0 +1,55 @@
+{
+  "schema": "real_masked_ridge_v1",
+  "serve": "research_offline",
+  "synthetic_training_used": false,
+  "expert_confirmed": false,
+  "noise_independence_verified": false,
+  "operational_approved": false,
+  "offsets_m": [
+    -8.0,
+    -4.0,
+    -2.0,
+    2.0,
+    4.0,
+    8.0
+  ],
+  "rounding": "away_from_target",
+  "blind_radius_m": 2.0,
+  "alpha": 100.0,
+  "mu": [
+    0.04532863327076084,
+    -0.05704245825022171,
+    -0.045769798129671066,
+    0.031881115563576326,
+    0.02282032535285415,
+    0.0027821821927020225
+  ],
+  "sigma": [
+    1.5730784657762893,
+    1.3940112823607116,
+    1.3678282599596938,
+    1.293807456901226,
+    1.4254173960426195,
+    1.7180446916169607
+  ],
+  "weight": [
+    -0.0753603280390206,
+    0.05407291597871227,
+    -0.13739016503656598,
+    0.28528659018019503,
+    0.12268175453417249,
+    -0.22591595279687152,
+    -0.07011610353631674
+  ],
+  "prediction_formula": "mean(neighbours)+weight[0]+dot((neighbours-mean(neighbours)-mu)/sigma, weight[1:])",
+  "sources": {
+    "1": "3101c6b2716d2a9e14cd32e2e5d758cb8628741cff6f265cc45db2d7e9e8257f",
+    "2": "f115579accd114e0c5a0d968aea3d2710da8ead421fc8c35c17472047cefdec4",
+    "3": "0acc4e41dc16dd829110881641cb17f94bffd0c2d5255d539d8f3589cd8cdde3",
+    "4": "d2f5b3d90078420aea45bac86df3656987a2ca9c548d478d134d3ee6349fde17",
+    "5": "98c1d629ed59478c81fa58b60e891f5587ef9d64ad435655e717a27f64767e46",
+    "6": "23e79988fcfb8a186dec06faffa60e6ed7c93ca7cd9969ac4989fd12b9f358c8"
+  },
+  "train_samples": 52180,
+  "selection_samples": 13106
+}

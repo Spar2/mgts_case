@@ -1,0 +1,78 @@
+{
+  "origin": "Partial cores copied from general-ml-analyze review evidence. Agent observations, not expert labels. A hit localises the window. It is not event precision.",
+  "sources": [
+    "review/evidence/agent_curated_annotations-v2.json",
+    "review/evidence/agent_core_annotations-v1.json",
+    "review/evidence/draft_agent_observations-v1.json"
+  ],
+  "expert_confirmed": false,
+  "role": "development_regression",
+  "row_interval": "half_open",
+  "distance_interval": "inclusive",
+  "witnesses": [
+    {
+      "id": "4-first-heating-core",
+      "record": "4",
+      "role": "positive_hot",
+      "x_m": [94.0, 98.0],
+      "rows": [350, 441],
+      "source_sha256": "d2f5b3d90078420aea45bac86df3656987a2ca9c548d478d134d3ee6349fde17"
+    },
+    {
+      "id": "4-second-heating-core",
+      "record": "4",
+      "role": "positive_hot",
+      "x_m": [106.0, 111.0],
+      "rows": [560, 681],
+      "source_sha256": "d2f5b3d90078420aea45bac86df3656987a2ca9c548d478d134d3ee6349fde17"
+    },
+    {
+      "id": "4-early-quiet-control",
+      "record": "4",
+      "role": "negative_quiet",
+      "x_m": [80.0, 84.0],
+      "rows": [50, 201],
+      "source_sha256": "d2f5b3d90078420aea45bac86df3656987a2ca9c548d478d134d3ee6349fde17"
+    },
+    {
+      "id": "5-early-warm-core",
+      "record": "5",
+      "role": "positive_hot",
+      "x_m": [299.0, 303.0],
+      "rows": [20, 201],
+      "source_sha256": "98c1d629ed59478c81fa58b60e891f5587ef9d64ad435655e717a27f64767e46"
+    },
+    {
+      "id": "5-late-warm-core",
+      "record": "5",
+      "role": "positive_hot",
+      "x_m": [299.0, 303.0],
+      "rows": [2420, 2501],
+      "source_sha256": "98c1d629ed59478c81fa58b60e891f5587ef9d64ad435655e717a27f64767e46"
+    },
+    {
+      "id": "5-dead-tail",
+      "record": "5",
+      "role": "negative_invalid",
+      "x_m": [1700.0, 1730.0],
+      "rows": [0, 2711],
+      "source_sha256": "98c1d629ed59478c81fa58b60e891f5587ef9d64ad435655e717a27f64767e46"
+    },
+    {
+      "id": "6-heating-core-1",
+      "record": "6",
+      "role": "positive_hot",
+      "x_m": [409.0, 412.0],
+      "rows": [480, 1091],
+      "source_sha256": "23e79988fcfb8a186dec06faffa60e6ed7c93ca7cd9969ac4989fd12b9f358c8"
+    },
+    {
+      "id": "6-heating-core-2",
+      "record": "6",
+      "role": "positive_hot",
+      "x_m": [595.0, 598.0],
+      "rows": [480, 1091],
+      "source_sha256": "23e79988fcfb8a186dec06faffa60e6ed7c93ca7cd9969ac4989fd12b9f358c8"
+    }
+  ]
+}

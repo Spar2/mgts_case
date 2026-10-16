@@ -1,0 +1,1 @@
+Read docs/web/RESULT-HANDOFF.md. Return only a JSON object with schema_version, allowed_rows_for_denoised, and the relative path read. Use the actual document, not guesses. Do not make changes.

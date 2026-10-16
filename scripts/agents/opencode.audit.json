@@ -1,0 +1,22 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "share": "disabled",
+  "mcp": {"pencil": {"enabled": false}},
+  "permission": {"*": "deny"},
+  "agent": {
+    "dts-auditor": {
+      "description": "Read-only audit of published DTS Workbench source",
+      "mode": "primary",
+      "model": "opencode-go/muse-spark-1.3-contributor",
+      "steps": 20,
+      "prompt": "Read-only worker reporting to Sol. Inspect only published source in this checkout. Never read .git, .env, credentials, home folders, private runtime or external paths. No edits, shell, networking or subagents. Cite exact paths and one-based lines. Separate confirmed defects from missing evidence. Do not claim tests were run. Output concise factual findings and reproduction steps; do not invent defects.",
+      "permission": {
+        "*": "deny",
+        "read": {"*": "allow", "**/.git*": "deny", "**/.env*": "deny", "**/.runtime/*": "deny"},
+        "glob": "allow",
+        "grep": "allow",
+        "external_directory": "deny"
+      }
+    }
+  }
+}
