@@ -1,0 +1,281 @@
+{
+  "schema": "ml_test_real_reproduction_v1",
+  "source_repo": "https://github.com/PiorlZ/ml-test",
+  "source_commit": "33e12ac19b7b6318dc48b5f3e8c1239aaaf9244e",
+  "serve": "research_offline",
+  "operational_approved": false,
+  "expert_confirmed": false,
+  "synthetic_event_training_used": false,
+  "records": [
+    {
+      "record": "1",
+      "weights_file": "weights/1.pt",
+      "weights_sha256": "e9c441f38bdae0f4f6834b8db8e7433002d52f726f148b1ebba2b711ec301298",
+      "weights_bytes": 24905,
+      "source_csv_sha256": "3101c6b2716d2a9e14cd32e2e5d758cb8628741cff6f265cc45db2d7e9e8257f",
+      "versions": {
+        "numpy": "2.5.3",
+        "scipy": "1.18.1",
+        "pandas": "3.0.6",
+        "torch": "2.14.1",
+        "scikit-learn": "1.9.1",
+        "catboost": "1.2.10",
+        "opencv-python-headless": "5.0.0.93"
+      },
+      "inference_contract": {
+        "input": "external CV residual, not raw temperature or spatial Z",
+        "residual_center_c": 0.0,
+        "residual_scale_c": 0.5935684273794293,
+        "patch_shape": [
+          32,
+          32
+        ],
+        "stride": [
+          16,
+          16
+        ],
+        "score_threshold_c": 1.0756145572854587,
+        "threshold_scope": "computed retrospectively on this file; not calibrated on independent truth",
+        "source_module_checkout_sha256": "acc8796bf50dfebe01c6f72b85c1eedb7e0c19642a581e8b5aba247739958d08",
+        "valid_mask_used_in_original_training": false,
+        "original_author_weights": false,
+        "saved_isolation_forest_weights": false
+      },
+      "verification": {
+        "record": "1",
+        "weights_only_load": true,
+        "finite_parameters": true,
+        "state_parameters": 4941,
+        "full_saved_cnn_score_reproduced_exactly": true,
+        "max_abs_score_difference_c": 0.0,
+        "no_training_performed": true,
+        "expert_accuracy_claim": false
+      }
+    },
+    {
+      "record": "2",
+      "weights_file": "weights/2.pt",
+      "weights_sha256": "6dad2000308b00d7b9133087f1d2c86fd1c8deb95cbc351a92249ba01c4fad19",
+      "weights_bytes": 24905,
+      "source_csv_sha256": "f115579accd114e0c5a0d968aea3d2710da8ead421fc8c35c17472047cefdec4",
+      "versions": {
+        "numpy": "2.5.3",
+        "scipy": "1.18.1",
+        "pandas": "3.0.6",
+        "torch": "2.14.1",
+        "scikit-learn": "1.9.1",
+        "catboost": "1.2.10",
+        "opencv-python-headless": "5.0.0.93"
+      },
+      "inference_contract": {
+        "input": "external CV residual, not raw temperature or spatial Z",
+        "residual_center_c": 0.0,
+        "residual_scale_c": 0.2705808731504716,
+        "patch_shape": [
+          32,
+          32
+        ],
+        "stride": [
+          16,
+          16
+        ],
+        "score_threshold_c": 0.35957170642940955,
+        "threshold_scope": "computed retrospectively on this file; not calibrated on independent truth",
+        "source_module_checkout_sha256": "acc8796bf50dfebe01c6f72b85c1eedb7e0c19642a581e8b5aba247739958d08",
+        "valid_mask_used_in_original_training": false,
+        "original_author_weights": false,
+        "saved_isolation_forest_weights": false
+      },
+      "verification": {
+        "record": "2",
+        "weights_only_load": true,
+        "finite_parameters": true,
+        "state_parameters": 4941,
+        "full_saved_cnn_score_reproduced_exactly": true,
+        "max_abs_score_difference_c": 0.0,
+        "no_training_performed": true,
+        "expert_accuracy_claim": false
+      }
+    },
+    {
+      "record": "3",
+      "weights_file": "weights/3.pt",
+      "weights_sha256": "d65535ed2d3ea40181861f9e2d1e225585c3af3a8ac2defc2d0b4fb367710269",
+      "weights_bytes": 24905,
+      "source_csv_sha256": "0acc4e41dc16dd829110881641cb17f94bffd0c2d5255d539d8f3589cd8cdde3",
+      "versions": {
+        "numpy": "2.5.3",
+        "scipy": "1.18.1",
+        "pandas": "3.0.6",
+        "torch": "2.14.1",
+        "scikit-learn": "1.9.1",
+        "catboost": "1.2.10",
+        "opencv-python-headless": "5.0.0.93"
+      },
+      "inference_contract": {
+        "input": "external CV residual, not raw temperature or spatial Z",
+        "residual_center_c": 0.0,
+        "residual_scale_c": 0.4049745232047513,
+        "patch_shape": [
+          32,
+          32
+        ],
+        "stride": [
+          16,
+          16
+        ],
+        "score_threshold_c": 0.502856918188765,
+        "threshold_scope": "computed retrospectively on this file; not calibrated on independent truth",
+        "source_module_checkout_sha256": "acc8796bf50dfebe01c6f72b85c1eedb7e0c19642a581e8b5aba247739958d08",
+        "valid_mask_used_in_original_training": false,
+        "original_author_weights": false,
+        "saved_isolation_forest_weights": false
+      },
+      "verification": {
+        "record": "3",
+        "weights_only_load": true,
+        "finite_parameters": true,
+        "state_parameters": 4941,
+        "full_saved_cnn_score_reproduced_exactly": true,
+        "max_abs_score_difference_c": 0.0,
+        "no_training_performed": true,
+        "expert_accuracy_claim": false
+      }
+    },
+    {
+      "record": "4",
+      "weights_file": "weights/4.pt",
+      "weights_sha256": "dee82b428b9c453723980d255ba3c906abf5d39e5882de98bd452f5a4258569e",
+      "weights_bytes": 24905,
+      "source_csv_sha256": "d2f5b3d90078420aea45bac86df3656987a2ca9c548d478d134d3ee6349fde17",
+      "versions": {
+        "numpy": "2.5.3",
+        "scipy": "1.18.1",
+        "pandas": "3.0.6",
+        "torch": "2.14.1",
+        "scikit-learn": "1.9.1",
+        "catboost": "1.2.10",
+        "opencv-python-headless": "5.0.0.93"
+      },
+      "inference_contract": {
+        "input": "external CV residual, not raw temperature or spatial Z",
+        "residual_center_c": 0.0,
+        "residual_scale_c": 0.14727498927034902,
+        "patch_shape": [
+          32,
+          32
+        ],
+        "stride": [
+          16,
+          16
+        ],
+        "score_threshold_c": 0.28160024342010626,
+        "threshold_scope": "computed retrospectively on this file; not calibrated on independent truth",
+        "source_module_checkout_sha256": "acc8796bf50dfebe01c6f72b85c1eedb7e0c19642a581e8b5aba247739958d08",
+        "valid_mask_used_in_original_training": false,
+        "original_author_weights": false,
+        "saved_isolation_forest_weights": false
+      },
+      "verification": {
+        "record": "4",
+        "weights_only_load": true,
+        "finite_parameters": true,
+        "state_parameters": 4941,
+        "full_saved_cnn_score_reproduced_exactly": true,
+        "max_abs_score_difference_c": 0.0,
+        "no_training_performed": true,
+        "expert_accuracy_claim": false
+      }
+    },
+    {
+      "record": "5",
+      "weights_file": "weights/5.pt",
+      "weights_sha256": "e40b1778cd036ad1a08fb18cbc3aa331dfa36c6b0b3bebc4419dbaf3eb6fbb77",
+      "weights_bytes": 24905,
+      "source_csv_sha256": "98c1d629ed59478c81fa58b60e891f5587ef9d64ad435655e717a27f64767e46",
+      "versions": {
+        "numpy": "2.5.3",
+        "scipy": "1.18.1",
+        "pandas": "3.0.6",
+        "torch": "2.14.1",
+        "scikit-learn": "1.9.1",
+        "catboost": "1.2.10",
+        "opencv-python-headless": "5.0.0.93"
+      },
+      "inference_contract": {
+        "input": "external CV residual, not raw temperature or spatial Z",
+        "residual_center_c": 0.0,
+        "residual_scale_c": 0.22431996912955654,
+        "patch_shape": [
+          32,
+          32
+        ],
+        "stride": [
+          16,
+          16
+        ],
+        "score_threshold_c": 0.740354847027003,
+        "threshold_scope": "computed retrospectively on this file; not calibrated on independent truth",
+        "source_module_checkout_sha256": "acc8796bf50dfebe01c6f72b85c1eedb7e0c19642a581e8b5aba247739958d08",
+        "valid_mask_used_in_original_training": false,
+        "original_author_weights": false,
+        "saved_isolation_forest_weights": false
+      },
+      "verification": {
+        "record": "5",
+        "weights_only_load": true,
+        "finite_parameters": true,
+        "state_parameters": 4941,
+        "full_saved_cnn_score_reproduced_exactly": true,
+        "max_abs_score_difference_c": 0.0,
+        "no_training_performed": true,
+        "expert_accuracy_claim": false
+      }
+    },
+    {
+      "record": "6",
+      "weights_file": "weights/6.pt",
+      "weights_sha256": "ab602bf47a2a43cccc7d2d1602bdc555b0646b0098f28458795ff446ee162931",
+      "weights_bytes": 24905,
+      "source_csv_sha256": "23e79988fcfb8a186dec06faffa60e6ed7c93ca7cd9969ac4989fd12b9f358c8",
+      "versions": {
+        "numpy": "2.5.3",
+        "scipy": "1.18.1",
+        "pandas": "3.0.6",
+        "torch": "2.14.1",
+        "scikit-learn": "1.9.1",
+        "catboost": "1.2.10",
+        "opencv-python-headless": "5.0.0.93"
+      },
+      "inference_contract": {
+        "input": "external CV residual, not raw temperature or spatial Z",
+        "residual_center_c": 0.0,
+        "residual_scale_c": 0.34203916590772565,
+        "patch_shape": [
+          32,
+          32
+        ],
+        "stride": [
+          16,
+          16
+        ],
+        "score_threshold_c": 0.5013678146295832,
+        "threshold_scope": "computed retrospectively on this file; not calibrated on independent truth",
+        "source_module_checkout_sha256": "acc8796bf50dfebe01c6f72b85c1eedb7e0c19642a581e8b5aba247739958d08",
+        "valid_mask_used_in_original_training": false,
+        "original_author_weights": false,
+        "saved_isolation_forest_weights": false
+      },
+      "verification": {
+        "record": "6",
+        "weights_only_load": true,
+        "finite_parameters": true,
+        "state_parameters": 4941,
+        "full_saved_cnn_score_reproduced_exactly": true,
+        "max_abs_score_difference_c": 0.0,
+        "no_training_performed": true,
+        "expert_accuracy_claim": false
+      }
+    }
+  ]
+}

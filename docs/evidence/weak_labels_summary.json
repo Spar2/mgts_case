@@ -1,0 +1,191 @@
+{
+  "schema": "weak_labels_v1",
+  "jsonl": "docs/evidence/weak_labels.jsonl",
+  "n_rows": 88021,
+  "counts_by_file": {
+    "1": 27164,
+    "2": 6554,
+    "3": 6424,
+    "4": 5205,
+    "5": 19662,
+    "6": 23012
+  },
+  "counts_by_class": {
+    "Background": 87770,
+    "Local_Heating": 192,
+    "Local_Cooling": 59,
+    "Periodic_Thermal": 0,
+    "Broad_Shift": 0,
+    "Sensor_Fault": 0
+  },
+  "counts_by_origin": {
+    "spatial_z": 156,
+    "rule": 91,
+    "quiet": 87770,
+    "expert_seed": 4
+  },
+  "split_codes": [
+    0,
+    1
+  ],
+  "holdout_used_for_generation": false,
+  "guard_used_for_generation": false,
+  "holdout_and_guard_were_not_used_for_generation": true,
+  "mixed_splits_dropped": true,
+  "splits_used": [
+    {
+      "split_code": 0,
+      "name": "train"
+    },
+    {
+      "split_code": 1,
+      "name": "development"
+    }
+  ],
+  "splits_not_used": [
+    {
+      "split_code": 2,
+      "name": "internal_holdout"
+    },
+    {
+      "split_code": -1,
+      "name": "excluded_guard_or_mixed"
+    }
+  ],
+  "split_definition": {
+    "function": "fiber.real_data.temporal_partition",
+    "crop_function": "fiber.real_data.crop_partition",
+    "guard_s": 1800.0,
+    "train_index_fraction": 0.6,
+    "development_index_fraction": 0.8
+  },
+  "record_splits": {
+    "1": {
+      "cut_time_s": [
+        1789369131.0,
+        1789372942.0
+      ],
+      "guard_s": 1800.0,
+      "counts": {
+        "-1": 114,
+        "0": 344,
+        "1": 64,
+        "2": 93
+      },
+      "codes": {
+        "-1": "excluded_guard",
+        "0": "train",
+        "1": "development",
+        "2": "internal_holdout"
+      }
+    },
+    "2": {
+      "cut_time_s": [
+        1775831488.0,
+        1775848204.0
+      ],
+      "guard_s": 1800.0,
+      "counts": {
+        "-1": 30,
+        "0": 410,
+        "1": 124,
+        "2": 132
+      },
+      "codes": {
+        "-1": "excluded_guard",
+        "0": "train",
+        "1": "development",
+        "2": "internal_holdout"
+      }
+    },
+    "3": {
+      "cut_time_s": [
+        1770988805.0,
+        1771008286.0
+      ],
+      "guard_s": 1800.0,
+      "counts": {
+        "-1": 30,
+        "0": 465,
+        "1": 143,
+        "2": 150
+      },
+      "codes": {
+        "-1": "excluded_guard",
+        "0": "train",
+        "1": "development",
+        "2": "internal_holdout"
+      }
+    },
+    "4": {
+      "cut_time_s": [
+        1779805311.0,
+        1779822389.0
+      ],
+      "guard_s": 1800.0,
+      "counts": {
+        "-1": 30,
+        "0": 417,
+        "1": 127,
+        "2": 134
+      },
+      "codes": {
+        "-1": "excluded_guard",
+        "0": "train",
+        "1": "development",
+        "2": "internal_holdout"
+      }
+    },
+    "5": {
+      "cut_time_s": [
+        1760637941.0,
+        1760643381.0
+      ],
+      "guard_s": 1800.0,
+      "counts": {
+        "-1": 358,
+        "0": 1537,
+        "1": 363,
+        "2": 453
+      },
+      "codes": {
+        "-1": "excluded_guard",
+        "0": "train",
+        "1": "development",
+        "2": "internal_holdout"
+      }
+    },
+    "6": {
+      "cut_time_s": [
+        1770899969.0,
+        1770915223.0
+      ],
+      "guard_s": 1800.0,
+      "counts": {
+        "-1": 59,
+        "0": 724,
+        "1": 216,
+        "2": 232
+      },
+      "codes": {
+        "-1": "excluded_guard",
+        "0": "train",
+        "1": "development",
+        "2": "internal_holdout"
+      }
+    }
+  },
+  "automatic_weight": 1.0,
+  "expert_weight": 10.0,
+  "expert_seed_ids": [
+    "review-00034",
+    "review-00098",
+    "review-00187",
+    "review-00223"
+  ],
+  "expert_seeds_excluded": [],
+  "expert_confirmed_only_on_seeds": true,
+  "temporal_innovation_used_as_source": false,
+  "operational_status_unchanged": true,
+  "note": "Weak labels are training seeds, not expert truth and not a reason to adopt a new detector. analyze_field stays median_x3 + spatial_z_halo at |Z| >= 3.5."
+}

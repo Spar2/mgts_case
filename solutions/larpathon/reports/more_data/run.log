@@ -1,0 +1,493 @@
+NVIDIA GeForce RTX 4080 SUPER
+loading C:\Users\bobr\haklolarp\artifacts\dts_synth_v1\csv\test\seq0073.csv
+matrix=346x1720 device=cuda seed=0 epochs=6
+scoring ensemble
+training autoencoder patches=1113
+autoencoder epoch 1/6 loss=0.827041
+autoencoder epoch 2/6 loss=0.106682
+autoencoder epoch 3/6 loss=0.010600
+autoencoder epoch 4/6 loss=0.005459
+autoencoder epoch 5/6 loss=0.003942
+autoencoder epoch 6/6 loss=0.003195
+building autoencoder error map
+Detected 23 events.
+  1: duration=170 steps (340.00 min), spatial extent=3.50 m, amplitude=-0.67 C, type=other
+  2: duration=346 steps (692.00 min), spatial extent=1.00 m, amplitude=-2.21 C, type=other
+  3: duration=128 steps (256.00 min), spatial extent=1.75 m, amplitude=5.51 C, type=local_heating (power cable / equipment)
+  4: duration=18 steps (36.00 min), spatial extent=5.75 m, amplitude=-8.60 C, type=other
+  5: duration=4 steps (8.00 min), spatial extent=3.50 m, amplitude=-7.90 C, type=transient
+  6: duration=10 steps (20.00 min), spatial extent=1.75 m, amplitude=5.52 C, type=other
+  7: duration=11 steps (22.00 min), spatial extent=1.00 m, amplitude=-0.86 C, type=other
+  8: duration=10 steps (20.00 min), spatial extent=1.00 m, amplitude=-0.61 C, type=other
+  9: duration=9 steps (18.00 min), spatial extent=1.00 m, amplitude=-0.63 C, type=other
+  10: duration=6 steps (12.00 min), spatial extent=1.75 m, amplitude=5.09 C, type=transient
+  11: duration=8 steps (16.00 min), spatial extent=1.00 m, amplitude=-1.43 C, type=other
+  12: duration=7 steps (14.00 min), spatial extent=1.00 m, amplitude=-0.74 C, type=other
+  13: duration=6 steps (12.00 min), spatial extent=1.00 m, amplitude=-0.15 C, type=other
+  14: duration=5 steps (10.00 min), spatial extent=1.00 m, amplitude=3.78 C, type=transient
+  15: duration=5 steps (10.00 min), spatial extent=1.00 m, amplitude=-0.97 C, type=transient
+  16: duration=5 steps (10.00 min), spatial extent=1.00 m, amplitude=-0.96 C, type=transient
+  17: duration=5 steps (10.00 min), spatial extent=1.00 m, amplitude=-0.95 C, type=transient
+  18: duration=5 steps (10.00 min), spatial extent=1.00 m, amplitude=-0.93 C, type=transient
+  19: duration=4 steps (8.00 min), spatial extent=1.00 m, amplitude=-1.25 C, type=transient
+  20: duration=4 steps (8.00 min), spatial extent=1.00 m, amplitude=-0.66 C, type=other
+  21: duration=4 steps (8.00 min), spatial extent=1.00 m, amplitude=-0.42 C, type=other
+  22: duration=3 steps (6.00 min), spatial extent=1.00 m, amplitude=3.61 C, type=transient
+  23: duration=3 steps (6.00 min), spatial extent=1.00 m, amplitude=-0.60 C, type=other
+wrote C:\Users\bobr\test2_larpathon\reports\more_data\seq0073.png
+seq0073 hit 1/18 detections=23 false=22 4.0s
+loading C:\Users\bobr\haklolarp\artifacts\dts_synth_v1\csv\test\seq0111.csv
+matrix=300x1720 device=cuda seed=0 epochs=6
+scoring ensemble
+training autoencoder patches=954
+autoencoder epoch 1/6 loss=1.070606
+autoencoder epoch 2/6 loss=0.294580
+autoencoder epoch 3/6 loss=0.053488
+autoencoder epoch 4/6 loss=0.012869
+autoencoder epoch 5/6 loss=0.008808
+autoencoder epoch 6/6 loss=0.007412
+building autoencoder error map
+Detected 18 events.
+  1: duration=92 steps (184.00 min), spatial extent=34.51 m, amplitude=5.35 C, type=other
+  2: duration=40 steps (80.00 min), spatial extent=21.76 m, amplitude=5.17 C, type=other
+  3: duration=11 steps (22.00 min), spatial extent=25.26 m, amplitude=1.93 C, type=other
+  4: duration=10 steps (20.00 min), spatial extent=23.51 m, amplitude=1.19 C, type=other
+  5: duration=7 steps (14.00 min), spatial extent=9.75 m, amplitude=1.24 C, type=transient
+  6: duration=6 steps (12.00 min), spatial extent=9.00 m, amplitude=-0.36 C, type=other
+  7: duration=5 steps (10.00 min), spatial extent=8.75 m, amplitude=0.98 C, type=transient
+  8: duration=10 steps (20.00 min), spatial extent=5.75 m, amplitude=1.92 C, type=other
+  9: duration=4 steps (8.00 min), spatial extent=7.50 m, amplitude=-8.10 C, type=transient
+  10: duration=7 steps (14.00 min), spatial extent=5.50 m, amplitude=-7.53 C, type=transient
+  11: duration=4 steps (8.00 min), spatial extent=1.75 m, amplitude=-1.23 C, type=transient
+  12: duration=5 steps (10.00 min), spatial extent=1.25 m, amplitude=2.89 C, type=transient
+  13: duration=4 steps (8.00 min), spatial extent=1.00 m, amplitude=-7.96 C, type=transient
+  14: duration=4 steps (8.00 min), spatial extent=1.00 m, amplitude=-2.93 C, type=transient
+  15: duration=4 steps (8.00 min), spatial extent=1.00 m, amplitude=-0.97 C, type=transient
+  16: duration=3 steps (6.00 min), spatial extent=1.00 m, amplitude=-6.77 C, type=transient
+  17: duration=3 steps (6.00 min), spatial extent=1.00 m, amplitude=-5.87 C, type=transient
+  18: duration=3 steps (6.00 min), spatial extent=1.00 m, amplitude=-4.98 C, type=transient
+wrote C:\Users\bobr\test2_larpathon\reports\more_data\seq0111.png
+seq0111 hit 6/22 detections=18 false=4 2.2s
+loading C:\Users\bobr\haklolarp\artifacts\dts_synth_v1\csv\test\seq0169.csv
+matrix=201x1720 device=cuda seed=0 epochs=6
+scoring ensemble
+training autoencoder patches=636
+autoencoder epoch 1/6 loss=2.476584
+autoencoder epoch 2/6 loss=1.466066
+autoencoder epoch 3/6 loss=0.508888
+autoencoder epoch 4/6 loss=0.120856
+autoencoder epoch 5/6 loss=0.030947
+autoencoder epoch 6/6 loss=0.019022
+building autoencoder error map
+Detected 16 events.
+  1: duration=8 steps (16.00 min), spatial extent=48.77 m, amplitude=4.20 C, type=other
+  2: duration=48 steps (96.00 min), spatial extent=4.75 m, amplitude=6.21 C, type=local_heating (power cable / equipment)
+  3: duration=7 steps (14.00 min), spatial extent=12.50 m, amplitude=3.84 C, type=transient
+  4: duration=4 steps (8.00 min), spatial extent=11.50 m, amplitude=2.81 C, type=transient
+  5: duration=4 steps (8.00 min), spatial extent=9.50 m, amplitude=3.50 C, type=transient
+  6: duration=8 steps (16.00 min), spatial extent=5.00 m, amplitude=3.78 C, type=other
+  7: duration=4 steps (8.00 min), spatial extent=7.50 m, amplitude=2.54 C, type=transient
+  8: duration=14 steps (28.00 min), spatial extent=1.00 m, amplitude=-8.35 C, type=other
+  9: duration=9 steps (18.00 min), spatial extent=2.00 m, amplitude=1.03 C, type=other
+  10: duration=4 steps (8.00 min), spatial extent=3.00 m, amplitude=3.55 C, type=transient
+  11: duration=4 steps (8.00 min), spatial extent=2.50 m, amplitude=-8.88 C, type=transient
+  12: duration=4 steps (8.00 min), spatial extent=2.50 m, amplitude=2.78 C, type=transient
+  13: duration=5 steps (10.00 min), spatial extent=1.00 m, amplitude=1.83 C, type=transient
+  14: duration=5 steps (10.00 min), spatial extent=1.00 m, amplitude=1.30 C, type=transient
+  15: duration=4 steps (8.00 min), spatial extent=1.00 m, amplitude=3.42 C, type=transient
+  16: duration=4 steps (8.00 min), spatial extent=1.00 m, amplitude=2.12 C, type=transient
+wrote C:\Users\bobr\test2_larpathon\reports\more_data\seq0169.png
+seq0169 hit 5/19 detections=16 false=2 1.7s
+loading C:\Users\bobr\haklolarp\artifacts\dts_synth_v1\csv\test\seq0179.csv
+matrix=355x1952 device=cuda seed=0 epochs=6
+scoring ensemble
+training autoencoder patches=1320
+autoencoder epoch 1/6 loss=1.384573
+autoencoder epoch 2/6 loss=0.099303
+autoencoder epoch 3/6 loss=0.020747
+autoencoder epoch 4/6 loss=0.014159
+autoencoder epoch 5/6 loss=0.009632
+autoencoder epoch 6/6 loss=0.006862
+building autoencoder error map
+Detected 14 events.
+  1: duration=355 steps (710.00 min), spatial extent=3.25 m, amplitude=-4.02 C, type=other
+  2: duration=355 steps (710.00 min), spatial extent=2.00 m, amplitude=6.91 C, type=local_heating (power cable / equipment)
+  3: duration=13 steps (26.00 min), spatial extent=2.25 m, amplitude=-6.76 C, type=other
+  4: duration=5 steps (10.00 min), spatial extent=2.25 m, amplitude=-6.84 C, type=transient
+  5: duration=5 steps (10.00 min), spatial extent=2.25 m, amplitude=-7.48 C, type=transient
+  6: duration=5 steps (10.00 min), spatial extent=2.25 m, amplitude=-7.47 C, type=transient
+  7: duration=5 steps (10.00 min), spatial extent=2.25 m, amplitude=-7.43 C, type=transient
+  8: duration=5 steps (10.00 min), spatial extent=2.25 m, amplitude=-7.02 C, type=transient
+  9: duration=5 steps (10.00 min), spatial extent=2.25 m, amplitude=-6.97 C, type=transient
+  10: duration=5 steps (10.00 min), spatial extent=2.25 m, amplitude=-6.96 C, type=transient
+  11: duration=5 steps (10.00 min), spatial extent=2.25 m, amplitude=-6.69 C, type=transient
+  12: duration=3 steps (6.00 min), spatial extent=2.25 m, amplitude=-6.80 C, type=transient
+  13: duration=5 steps (10.00 min), spatial extent=1.00 m, amplitude=-7.78 C, type=transient
+  14: duration=4 steps (8.00 min), spatial extent=1.25 m, amplitude=-1.65 C, type=transient
+wrote C:\Users\bobr\test2_larpathon\reports\more_data\seq0179.png
+seq0179 hit 0/8 detections=14 false=11 2.7s
+loading C:\Users\bobr\haklolarp\artifacts\dts_synth_v1\csv\test\seq0192.csv
+matrix=197x1720 device=cuda seed=0 epochs=6
+scoring ensemble
+training autoencoder patches=636
+autoencoder epoch 1/6 loss=1.592711
+autoencoder epoch 2/6 loss=0.910001
+autoencoder epoch 3/6 loss=0.256383
+autoencoder epoch 4/6 loss=0.076086
+autoencoder epoch 5/6 loss=0.036248
+autoencoder epoch 6/6 loss=0.025076
+building autoencoder error map
+Detected 2 events.
+  1: duration=197 steps (394.00 min), spatial extent=2.00 m, amplitude=11.78 C, type=local_heating (power cable / equipment)
+  2: duration=197 steps (394.00 min), spatial extent=2.00 m, amplitude=10.70 C, type=local_heating (power cable / equipment)
+wrote C:\Users\bobr\test2_larpathon\reports\more_data\seq0192.png
+seq0192 hit 1/14 detections=2 false=1 1.5s
+loading C:\Users\bobr\haklolarp\artifacts\dts_synth_v1\csv\test\seq0194.csv
+matrix=288x2346 device=cuda seed=0 epochs=6
+scoring ensemble
+training autoencoder patches=1241
+autoencoder epoch 1/6 loss=2.505287
+autoencoder epoch 2/6 loss=0.463558
+autoencoder epoch 3/6 loss=0.073486
+autoencoder epoch 4/6 loss=0.028398
+autoencoder epoch 5/6 loss=0.025596
+autoencoder epoch 6/6 loss=0.023457
+building autoencoder error map
+Detected 18 events.
+  1: duration=8 steps (16.00 min), spatial extent=51.52 m, amplitude=1.79 C, type=other
+  2: duration=92 steps (184.00 min), spatial extent=32.76 m, amplitude=1.67 C, type=other
+  3: duration=19 steps (38.00 min), spatial extent=31.76 m, amplitude=2.43 C, type=other
+  4: duration=11 steps (22.00 min), spatial extent=24.51 m, amplitude=4.90 C, type=other
+  5: duration=108 steps (216.00 min), spatial extent=2.00 m, amplitude=0.55 C, type=other
+  6: duration=5 steps (10.00 min), spatial extent=2.75 m, amplitude=-5.36 C, type=transient
+  7: duration=5 steps (10.00 min), spatial extent=2.00 m, amplitude=-1.74 C, type=transient
+  8: duration=5 steps (10.00 min), spatial extent=1.00 m, amplitude=-4.45 C, type=transient
+  9: duration=5 steps (10.00 min), spatial extent=1.00 m, amplitude=-4.10 C, type=transient
+  10: duration=5 steps (10.00 min), spatial extent=1.00 m, amplitude=-3.29 C, type=transient
+  11: duration=5 steps (10.00 min), spatial extent=1.00 m, amplitude=-0.56 C, type=other
+  12: duration=5 steps (10.00 min), spatial extent=1.25 m, amplitude=-4.17 C, type=transient
+  13: duration=5 steps (10.00 min), spatial extent=1.00 m, amplitude=6.89 C, type=transient
+  14: duration=3 steps (6.00 min), spatial extent=1.25 m, amplitude=6.86 C, type=transient
+  15: duration=3 steps (6.00 min), spatial extent=1.00 m, amplitude=10.96 C, type=transient
+  16: duration=3 steps (6.00 min), spatial extent=1.00 m, amplitude=-4.42 C, type=transient
+  17: duration=3 steps (6.00 min), spatial extent=1.00 m, amplitude=1.46 C, type=transient
+  18: duration=3 steps (6.00 min), spatial extent=1.00 m, amplitude=-0.03 C, type=other
+wrote C:\Users\bobr\test2_larpathon\reports\more_data\seq0194.png
+seq0194 hit 4/6 detections=18 false=1 2.7s
+loading C:\Users\bobr\haklolarp\artifacts\dts_synth_v1\csv\test\seq0225.csv
+matrix=266x1720 device=cuda seed=0 epochs=6
+scoring ensemble
+training autoencoder patches=848
+autoencoder epoch 1/6 loss=0.978402
+autoencoder epoch 2/6 loss=0.229815
+autoencoder epoch 3/6 loss=0.026884
+autoencoder epoch 4/6 loss=0.008020
+autoencoder epoch 5/6 loss=0.005082
+autoencoder epoch 6/6 loss=0.003897
+building autoencoder error map
+Detected 25 events.
+  1: duration=266 steps (532.00 min), spatial extent=3.25 m, amplitude=-0.61 C, type=other
+  2: duration=266 steps (532.00 min), spatial extent=1.25 m, amplitude=-3.60 C, type=other
+  3: duration=134 steps (268.00 min), spatial extent=2.75 m, amplitude=-1.52 C, type=other
+  4: duration=125 steps (250.00 min), spatial extent=5.00 m, amplitude=0.31 C, type=other
+  5: duration=46 steps (92.00 min), spatial extent=7.75 m, amplitude=-8.88 C, type=other
+  6: duration=49 steps (98.00 min), spatial extent=2.00 m, amplitude=-0.53 C, type=other
+  7: duration=11 steps (22.00 min), spatial extent=1.00 m, amplitude=-8.50 C, type=other
+  8: duration=6 steps (12.00 min), spatial extent=3.00 m, amplitude=-2.72 C, type=transient
+  9: duration=12 steps (24.00 min), spatial extent=1.75 m, amplitude=-1.66 C, type=other
+  10: duration=9 steps (18.00 min), spatial extent=1.00 m, amplitude=-0.53 C, type=other
+  11: duration=7 steps (14.00 min), spatial extent=1.00 m, amplitude=-1.28 C, type=transient
+  12: duration=7 steps (14.00 min), spatial extent=1.00 m, amplitude=-1.19 C, type=transient
+  13: duration=5 steps (10.00 min), spatial extent=1.75 m, amplitude=-8.95 C, type=transient
+  14: duration=5 steps (10.00 min), spatial extent=1.00 m, amplitude=-9.04 C, type=transient
+  15: duration=5 steps (10.00 min), spatial extent=1.00 m, amplitude=-1.81 C, type=transient
+  16: duration=5 steps (10.00 min), spatial extent=1.00 m, amplitude=-0.63 C, type=other
+  17: duration=4 steps (8.00 min), spatial extent=1.00 m, amplitude=-1.93 C, type=transient
+  18: duration=3 steps (6.00 min), spatial extent=1.00 m, amplitude=-8.44 C, type=transient
+  19: duration=3 steps (6.00 min), spatial extent=1.00 m, amplitude=-6.22 C, type=transient
+  20: duration=3 steps (6.00 min), spatial extent=1.00 m, amplitude=-2.56 C, type=transient
+  21: duration=3 steps (6.00 min), spatial extent=1.00 m, amplitude=-2.11 C, type=transient
+  22: duration=3 steps (6.00 min), spatial extent=1.00 m, amplitude=-1.62 C, type=transient
+  23: duration=3 steps (6.00 min), spatial extent=1.00 m, amplitude=-1.44 C, type=transient
+  24: duration=3 steps (6.00 min), spatial extent=1.00 m, amplitude=-0.50 C, type=other
+  25: duration=3 steps (6.00 min), spatial extent=1.00 m, amplitude=-0.39 C, type=other
+wrote C:\Users\bobr\test2_larpathon\reports\more_data\seq0225.png
+seq0225 hit 3/5 detections=25 false=6 2.1s
+loading C:\Users\bobr\haklolarp\artifacts\dts_synth_v1\csv\test\seq0267.csv
+matrix=385x1720 device=cuda seed=0 epochs=6
+scoring ensemble
+training autoencoder patches=1272
+autoencoder epoch 1/6 loss=6.637046
+autoencoder epoch 2/6 loss=0.609601
+autoencoder epoch 3/6 loss=0.062881
+autoencoder epoch 4/6 loss=0.034273
+autoencoder epoch 5/6 loss=0.026704
+autoencoder epoch 6/6 loss=0.023291
+building autoencoder error map
+Detected 70 events.
+  1: duration=385 steps (770.00 min), spatial extent=8.00 m, amplitude=-4.30 C, type=other
+  2: duration=383 steps (766.00 min), spatial extent=1.00 m, amplitude=0.52 C, type=other
+  3: duration=61 steps (122.00 min), spatial extent=3.50 m, amplitude=-4.71 C, type=other
+  4: duration=41 steps (82.00 min), spatial extent=2.00 m, amplitude=-5.45 C, type=other
+  5: duration=16 steps (32.00 min), spatial extent=6.00 m, amplitude=-4.65 C, type=other
+  6: duration=21 steps (42.00 min), spatial extent=6.00 m, amplitude=-5.02 C, type=other
+  7: duration=18 steps (36.00 min), spatial extent=3.50 m, amplitude=-4.93 C, type=other
+  8: duration=21 steps (42.00 min), spatial extent=2.75 m, amplitude=-4.35 C, type=other
+  9: duration=18 steps (36.00 min), spatial extent=2.75 m, amplitude=-4.75 C, type=other
+  10: duration=21 steps (42.00 min), spatial extent=2.25 m, amplitude=-5.34 C, type=other
+  11: duration=16 steps (32.00 min), spatial extent=3.00 m, amplitude=-5.32 C, type=other
+  12: duration=20 steps (40.00 min), spatial extent=3.50 m, amplitude=-4.73 C, type=other
+  13: duration=10 steps (20.00 min), spatial extent=4.00 m, amplitude=-4.64 C, type=other
+  14: duration=20 steps (40.00 min), spatial extent=1.75 m, amplitude=-5.37 C, type=other
+  15: duration=18 steps (36.00 min), spatial extent=2.00 m, amplitude=4.98 C, type=local_heating (power cable / equipment)
+  16: duration=20 steps (40.00 min), spatial extent=2.00 m, amplitude=-5.04 C, type=other
+  17: duration=17 steps (34.00 min), spatial extent=3.00 m, amplitude=-5.26 C, type=other
+  18: duration=18 steps (36.00 min), spatial extent=2.25 m, amplitude=-5.03 C, type=other
+  19: duration=12 steps (24.00 min), spatial extent=3.75 m, amplitude=-5.31 C, type=other
+  20: duration=14 steps (28.00 min), spatial extent=3.00 m, amplitude=-5.22 C, type=other
+  21: duration=12 steps (24.00 min), spatial extent=3.00 m, amplitude=-5.42 C, type=other
+  22: duration=8 steps (16.00 min), spatial extent=2.25 m, amplitude=-4.98 C, type=other
+  23: duration=13 steps (26.00 min), spatial extent=1.75 m, amplitude=-5.25 C, type=other
+  24: duration=6 steps (12.00 min), spatial extent=3.00 m, amplitude=-5.29 C, type=transient
+  25: duration=10 steps (20.00 min), spatial extent=2.50 m, amplitude=-4.73 C, type=other
+  26: duration=8 steps (16.00 min), spatial extent=2.00 m, amplitude=-5.41 C, type=other
+  27: duration=10 steps (20.00 min), spatial extent=1.25 m, amplitude=-5.10 C, type=other
+  28: duration=6 steps (12.00 min), spatial extent=3.50 m, amplitude=-4.62 C, type=transient
+  29: duration=10 steps (20.00 min), spatial extent=1.75 m, amplitude=-5.36 C, type=other
+  30: duration=10 steps (20.00 min), spatial extent=1.75 m, amplitude=-5.43 C, type=other
+  31: duration=9 steps (18.00 min), spatial extent=2.50 m, amplitude=-5.04 C, type=other
+  32: duration=12 steps (24.00 min), spatial extent=2.00 m, amplitude=-5.19 C, type=other
+  33: duration=10 steps (20.00 min), spatial extent=1.75 m, amplitude=-4.81 C, type=other
+  34: duration=8 steps (16.00 min), spatial extent=1.75 m, amplitude=-4.76 C, type=other
+  35: duration=12 steps (24.00 min), spatial extent=1.75 m, amplitude=-5.33 C, type=other
+  36: duration=9 steps (18.00 min), spatial extent=1.00 m, amplitude=5.78 C, type=other
+  37: duration=5 steps (10.00 min), spatial extent=2.00 m, amplitude=-5.04 C, type=transient
+  38: duration=7 steps (14.00 min), spatial extent=1.75 m, amplitude=-5.31 C, type=transient
+  39: duration=6 steps (12.00 min), spatial extent=1.75 m, amplitude=-4.69 C, type=transient
+  40: duration=5 steps (10.00 min), spatial extent=1.75 m, amplitude=-5.32 C, type=transient
+  41: duration=9 steps (18.00 min), spatial extent=1.75 m, amplitude=-5.13 C, type=other
+  42: duration=5 steps (10.00 min), spatial extent=1.75 m, amplitude=-4.63 C, type=transient
+  43: duration=6 steps (12.00 min), spatial extent=1.75 m, amplitude=-4.21 C, type=transient
+  44: duration=6 steps (12.00 min), spatial extent=1.25 m, amplitude=-5.12 C, type=transient
+  45: duration=9 steps (18.00 min), spatial extent=1.50 m, amplitude=-3.77 C, type=other
+  46: duration=8 steps (16.00 min), spatial extent=1.25 m, amplitude=-4.48 C, type=other
+  47: duration=5 steps (10.00 min), spatial extent=1.25 m, amplitude=-5.02 C, type=transient
+  48: duration=5 steps (10.00 min), spatial extent=1.25 m, amplitude=-4.60 C, type=transient
+  49: duration=6 steps (12.00 min), spatial extent=1.00 m, amplitude=-4.60 C, type=transient
+  50: duration=5 steps (10.00 min), spatial extent=1.75 m, amplitude=-4.92 C, type=transient
+  51: duration=6 steps (12.00 min), spatial extent=1.00 m, amplitude=-5.32 C, type=transient
+  52: duration=4 steps (8.00 min), spatial extent=1.75 m, amplitude=-4.38 C, type=transient
+  53: duration=5 steps (10.00 min), spatial extent=1.00 m, amplitude=5.89 C, type=transient
+  54: duration=5 steps (10.00 min), spatial extent=1.00 m, amplitude=5.84 C, type=transient
+  55: duration=5 steps (10.00 min), spatial extent=1.00 m, amplitude=-5.25 C, type=transient
+  56: duration=5 steps (10.00 min), spatial extent=1.00 m, amplitude=-5.14 C, type=transient
+  57: duration=5 steps (10.00 min), spatial extent=1.00 m, amplitude=-5.14 C, type=transient
+  58: duration=8 steps (16.00 min), spatial extent=1.00 m, amplitude=-5.11 C, type=other
+  59: duration=5 steps (10.00 min), spatial extent=1.00 m, amplitude=-4.84 C, type=transient
+  60: duration=5 steps (10.00 min), spatial extent=1.00 m, amplitude=4.22 C, type=transient
+  61: duration=5 steps (10.00 min), spatial extent=1.00 m, amplitude=0.27 C, type=other
+  62: duration=5 steps (10.00 min), spatial extent=1.00 m, amplitude=-5.03 C, type=transient
+  63: duration=4 steps (8.00 min), spatial extent=1.25 m, amplitude=-3.02 C, type=transient
+  64: duration=5 steps (10.00 min), spatial extent=1.00 m, amplitude=-4.70 C, type=transient
+  65: duration=5 steps (10.00 min), spatial extent=1.00 m, amplitude=-4.55 C, type=transient
+  66: duration=4 steps (8.00 min), spatial extent=1.00 m, amplitude=-4.92 C, type=transient
+  67: duration=4 steps (8.00 min), spatial extent=1.00 m, amplitude=-4.90 C, type=transient
+  68: duration=4 steps (8.00 min), spatial extent=1.00 m, amplitude=-4.50 C, type=transient
+  69: duration=4 steps (8.00 min), spatial extent=1.00 m, amplitude=-4.48 C, type=transient
+  70: duration=3 steps (6.00 min), spatial extent=1.00 m, amplitude=-4.54 C, type=transient
+wrote C:\Users\bobr\test2_larpathon\reports\more_data\seq0267.png
+seq0267 hit 2/2 detections=70 false=64 3.2s
+loading C:\Users\bobr\haklolarp\artifacts\dts_synth_v1\csv\test\seq0275.csv
+matrix=190x2030 device=cuda seed=0 epochs=6
+scoring ensemble
+training autoencoder patches=693
+autoencoder epoch 1/6 loss=3.251452
+autoencoder epoch 2/6 loss=1.241090
+autoencoder epoch 3/6 loss=0.168590
+autoencoder epoch 4/6 loss=0.058764
+autoencoder epoch 5/6 loss=0.025223
+autoencoder epoch 6/6 loss=0.016900
+building autoencoder error map
+Detected 9 events.
+  1: duration=70 steps (140.00 min), spatial extent=38.75 m, amplitude=6.65 C, type=other
+  2: duration=160 steps (320.00 min), spatial extent=3.75 m, amplitude=1.05 C, type=other
+  3: duration=78 steps (156.00 min), spatial extent=1.25 m, amplitude=1.01 C, type=other
+  4: duration=4 steps (8.00 min), spatial extent=9.75 m, amplitude=-10.70 C, type=transient
+  5: duration=31 steps (62.00 min), spatial extent=1.00 m, amplitude=0.85 C, type=other
+  6: duration=4 steps (8.00 min), spatial extent=1.25 m, amplitude=-10.58 C, type=transient
+  7: duration=4 steps (8.00 min), spatial extent=1.00 m, amplitude=-9.14 C, type=transient
+  8: duration=4 steps (8.00 min), spatial extent=1.00 m, amplitude=-11.21 C, type=transient
+  9: duration=4 steps (8.00 min), spatial extent=1.00 m, amplitude=-9.74 C, type=transient
+wrote C:\Users\bobr\test2_larpathon\reports\more_data\seq0275.png
+seq0275 hit 1/4 detections=9 false=8 2.0s
+loading C:\Users\bobr\haklolarp\artifacts\dts_synth_v1\csv\test\seq0278.csv
+matrix=325x1720 device=cuda seed=0 epochs=6
+scoring ensemble
+training autoencoder patches=1060
+autoencoder epoch 1/6 loss=0.791948
+autoencoder epoch 2/6 loss=0.115239
+autoencoder epoch 3/6 loss=0.026527
+autoencoder epoch 4/6 loss=0.016965
+autoencoder epoch 5/6 loss=0.013477
+autoencoder epoch 6/6 loss=0.010674
+building autoencoder error map
+Detected 16 events.
+  1: duration=325 steps (650.00 min), spatial extent=4.00 m, amplitude=2.61 C, type=local_heating (power cable / equipment)
+  2: duration=8 steps (16.00 min), spatial extent=7.75 m, amplitude=-1.54 C, type=other
+  3: duration=28 steps (56.00 min), spatial extent=2.75 m, amplitude=2.84 C, type=local_heating (power cable / equipment)
+  4: duration=20 steps (40.00 min), spatial extent=2.25 m, amplitude=1.87 C, type=local_heating (power cable / equipment)
+  5: duration=17 steps (34.00 min), spatial extent=3.75 m, amplitude=2.09 C, type=local_heating (power cable / equipment)
+  6: duration=15 steps (30.00 min), spatial extent=2.25 m, amplitude=2.97 C, type=local_heating (power cable / equipment)
+  7: duration=9 steps (18.00 min), spatial extent=1.00 m, amplitude=2.50 C, type=other
+  8: duration=10 steps (20.00 min), spatial extent=1.00 m, amplitude=2.49 C, type=other
+  9: duration=7 steps (14.00 min), spatial extent=1.75 m, amplitude=-2.09 C, type=transient
+  10: duration=4 steps (8.00 min), spatial extent=2.00 m, amplitude=-1.68 C, type=transient
+  11: duration=5 steps (10.00 min), spatial extent=1.25 m, amplitude=-1.44 C, type=transient
+  12: duration=5 steps (10.00 min), spatial extent=1.00 m, amplitude=0.39 C, type=other
+  13: duration=5 steps (10.00 min), spatial extent=1.00 m, amplitude=3.36 C, type=transient
+  14: duration=3 steps (6.00 min), spatial extent=1.25 m, amplitude=0.01 C, type=other
+  15: duration=3 steps (6.00 min), spatial extent=1.00 m, amplitude=1.60 C, type=transient
+  16: duration=3 steps (6.00 min), spatial extent=1.00 m, amplitude=-1.23 C, type=transient
+wrote C:\Users\bobr\test2_larpathon\reports\more_data\seq0278.png
+seq0278 hit 0/0 detections=16 false=3 2.2s
+loading C:\Users\bobr\haklolarp\MGTS_data\2.csv
+matrix=696x2349 device=cuda seed=0 epochs=6
+scoring ensemble
+training autoencoder patches=3139
+autoencoder epoch 1/6 loss=0.742571
+autoencoder epoch 2/6 loss=0.020881
+autoencoder epoch 3/6 loss=0.013416
+autoencoder epoch 4/6 loss=0.008697
+autoencoder epoch 5/6 loss=0.006336
+autoencoder epoch 6/6 loss=0.005045
+building autoencoder error map
+Detected 42 events.
+  1: duration=635 steps (1270.00 min), spatial extent=3.50 m, amplitude=-5.87 C, type=other
+  2: duration=487 steps (974.00 min), spatial extent=1.50 m, amplitude=1.01 C, type=other
+  3: duration=173 steps (346.00 min), spatial extent=1.75 m, amplitude=1.99 C, type=local_heating (power cable / equipment)
+  4: duration=72 steps (144.00 min), spatial extent=3.75 m, amplitude=-3.27 C, type=other
+  5: duration=62 steps (124.00 min), spatial extent=3.00 m, amplitude=-3.87 C, type=other
+  6: duration=93 steps (186.00 min), spatial extent=1.50 m, amplitude=-3.82 C, type=other
+  7: duration=81 steps (162.00 min), spatial extent=3.75 m, amplitude=4.06 C, type=local_heating (power cable / equipment)
+  8: duration=121 steps (242.00 min), spatial extent=4.75 m, amplitude=3.39 C, type=local_heating (power cable / equipment)
+  9: duration=93 steps (186.00 min), spatial extent=1.00 m, amplitude=1.43 C, type=local_heating (power cable / equipment)
+  10: duration=84 steps (168.00 min), spatial extent=1.75 m, amplitude=1.96 C, type=local_heating (power cable / equipment)
+  11: duration=69 steps (138.00 min), spatial extent=2.00 m, amplitude=-3.88 C, type=other
+  12: duration=74 steps (148.00 min), spatial extent=1.00 m, amplitude=1.27 C, type=local_heating (power cable / equipment)
+  13: duration=48 steps (96.00 min), spatial extent=3.25 m, amplitude=4.37 C, type=local_heating (power cable / equipment)
+  14: duration=38 steps (76.00 min), spatial extent=3.50 m, amplitude=-2.62 C, type=other
+  15: duration=21 steps (42.00 min), spatial extent=2.75 m, amplitude=-2.13 C, type=other
+  16: duration=16 steps (32.00 min), spatial extent=3.25 m, amplitude=-3.61 C, type=other
+  17: duration=32 steps (64.00 min), spatial extent=1.00 m, amplitude=1.78 C, type=local_heating (power cable / equipment)
+  18: duration=27 steps (54.00 min), spatial extent=1.25 m, amplitude=-4.12 C, type=other
+  19: duration=16 steps (32.00 min), spatial extent=2.75 m, amplitude=-3.63 C, type=other
+  20: duration=22 steps (44.00 min), spatial extent=2.00 m, amplitude=-3.19 C, type=other
+  21: duration=12 steps (24.00 min), spatial extent=2.25 m, amplitude=-3.63 C, type=other
+  22: duration=22 steps (44.00 min), spatial extent=1.00 m, amplitude=1.76 C, type=local_heating (power cable / equipment)
+  23: duration=23 steps (46.00 min), spatial extent=2.00 m, amplitude=-4.28 C, type=other
+  24: duration=20 steps (40.00 min), spatial extent=1.25 m, amplitude=-4.18 C, type=other
+  25: duration=15 steps (30.00 min), spatial extent=1.25 m, amplitude=-4.47 C, type=other
+  26: duration=16 steps (32.00 min), spatial extent=1.00 m, amplitude=3.19 C, type=local_heating (power cable / equipment)
+  27: duration=11 steps (22.00 min), spatial extent=1.25 m, amplitude=-3.38 C, type=other
+  28: duration=10 steps (20.00 min), spatial extent=1.25 m, amplitude=-3.59 C, type=other
+  29: duration=14 steps (28.00 min), spatial extent=1.00 m, amplitude=-4.83 C, type=other
+  30: duration=9 steps (18.00 min), spatial extent=1.25 m, amplitude=-3.38 C, type=other
+  31: duration=11 steps (22.00 min), spatial extent=1.00 m, amplitude=-4.55 C, type=other
+  32: duration=10 steps (20.00 min), spatial extent=1.25 m, amplitude=-3.76 C, type=other
+  33: duration=9 steps (18.00 min), spatial extent=1.25 m, amplitude=-4.06 C, type=other
+  34: duration=6 steps (12.00 min), spatial extent=1.50 m, amplitude=1.80 C, type=transient
+  35: duration=8 steps (16.00 min), spatial extent=1.00 m, amplitude=-4.52 C, type=other
+  36: duration=7 steps (14.00 min), spatial extent=1.00 m, amplitude=-3.77 C, type=transient
+  37: duration=6 steps (12.00 min), spatial extent=1.25 m, amplitude=-3.13 C, type=transient
+  38: duration=4 steps (8.00 min), spatial extent=1.25 m, amplitude=-3.54 C, type=transient
+  39: duration=7 steps (14.00 min), spatial extent=1.00 m, amplitude=-4.34 C, type=transient
+  40: duration=5 steps (10.00 min), spatial extent=1.00 m, amplitude=3.79 C, type=transient
+  41: duration=4 steps (8.00 min), spatial extent=1.25 m, amplitude=-1.63 C, type=transient
+  42: duration=4 steps (8.00 min), spatial extent=1.00 m, amplitude=-1.09 C, type=transient
+wrote C:\Users\bobr\test2_larpathon\reports\more_data\real_2.csv.png
+2.csv events=42 7.0s
+loading C:\Users\bobr\haklolarp\MGTS_data\3.csv
+matrix=788x1714 device=cuda seed=0 epochs=6
+scoring ensemble
+training autoencoder patches=2597
+autoencoder epoch 1/6 loss=0.531771
+autoencoder epoch 2/6 loss=0.009058
+autoencoder epoch 3/6 loss=0.004735
+autoencoder epoch 4/6 loss=0.003387
+autoencoder epoch 5/6 loss=0.002735
+autoencoder epoch 6/6 loss=0.002159
+building autoencoder error map
+Detected 38 events.
+  1: duration=242 steps (484.00 min), spatial extent=4.00 m, amplitude=1.81 C, type=local_heating (power cable / equipment)
+  2: duration=106 steps (212.00 min), spatial extent=8.75 m, amplitude=6.45 C, type=local_heating (power cable / equipment)
+  3: duration=29 steps (58.00 min), spatial extent=9.50 m, amplitude=-1.41 C, type=other
+  4: duration=204 steps (408.00 min), spatial extent=2.25 m, amplitude=-9.35 C, type=other
+  5: duration=190 steps (380.00 min), spatial extent=3.50 m, amplitude=-1.69 C, type=other
+  6: duration=97 steps (194.00 min), spatial extent=2.75 m, amplitude=-7.50 C, type=other
+  7: duration=191 steps (382.00 min), spatial extent=1.00 m, amplitude=-1.37 C, type=other
+  8: duration=140 steps (280.00 min), spatial extent=1.75 m, amplitude=0.63 C, type=other
+  9: duration=73 steps (146.00 min), spatial extent=2.75 m, amplitude=-7.57 C, type=other
+  10: duration=23 steps (46.00 min), spatial extent=8.50 m, amplitude=-1.34 C, type=other
+  11: duration=91 steps (182.00 min), spatial extent=2.75 m, amplitude=-9.17 C, type=other
+  12: duration=38 steps (76.00 min), spatial extent=1.25 m, amplitude=0.76 C, type=other
+  13: duration=9 steps (18.00 min), spatial extent=6.25 m, amplitude=0.52 C, type=other
+  14: duration=25 steps (50.00 min), spatial extent=2.00 m, amplitude=-7.82 C, type=other
+  15: duration=8 steps (16.00 min), spatial extent=3.50 m, amplitude=0.07 C, type=other
+  16: duration=27 steps (54.00 min), spatial extent=1.00 m, amplitude=-0.38 C, type=other
+  17: duration=22 steps (44.00 min), spatial extent=1.25 m, amplitude=0.67 C, type=other
+  18: duration=8 steps (16.00 min), spatial extent=2.75 m, amplitude=0.15 C, type=other
+  19: duration=29 steps (58.00 min), spatial extent=1.25 m, amplitude=0.65 C, type=other
+  20: duration=21 steps (42.00 min), spatial extent=1.25 m, amplitude=0.68 C, type=other
+  21: duration=18 steps (36.00 min), spatial extent=1.00 m, amplitude=-0.52 C, type=other
+  22: duration=17 steps (34.00 min), spatial extent=1.75 m, amplitude=0.46 C, type=other
+  23: duration=12 steps (24.00 min), spatial extent=2.00 m, amplitude=1.72 C, type=local_heating (power cable / equipment)
+  24: duration=12 steps (24.00 min), spatial extent=2.00 m, amplitude=-0.32 C, type=other
+  25: duration=8 steps (16.00 min), spatial extent=1.50 m, amplitude=-1.29 C, type=other
+  26: duration=8 steps (16.00 min), spatial extent=1.50 m, amplitude=0.12 C, type=other
+  27: duration=9 steps (18.00 min), spatial extent=1.50 m, amplitude=0.79 C, type=other
+  28: duration=7 steps (14.00 min), spatial extent=1.50 m, amplitude=0.54 C, type=other
+  29: duration=6 steps (12.00 min), spatial extent=1.50 m, amplitude=0.53 C, type=other
+  30: duration=5 steps (10.00 min), spatial extent=1.50 m, amplitude=0.35 C, type=other
+  31: duration=4 steps (8.00 min), spatial extent=2.00 m, amplitude=-8.28 C, type=transient
+  32: duration=7 steps (14.00 min), spatial extent=1.00 m, amplitude=1.14 C, type=transient
+  33: duration=5 steps (10.00 min), spatial extent=1.00 m, amplitude=5.87 C, type=transient
+  34: duration=6 steps (12.00 min), spatial extent=1.00 m, amplitude=1.01 C, type=transient
+  35: duration=5 steps (10.00 min), spatial extent=1.00 m, amplitude=6.12 C, type=transient
+  36: duration=4 steps (8.00 min), spatial extent=1.00 m, amplitude=6.23 C, type=transient
+  37: duration=3 steps (6.00 min), spatial extent=1.25 m, amplitude=0.92 C, type=transient
+  38: duration=3 steps (6.00 min), spatial extent=1.25 m, amplitude=0.81 C, type=transient
+wrote C:\Users\bobr\test2_larpathon\reports\more_data\real_3.csv.png
+3.csv events=38 5.9s
+loading C:\Users\bobr\haklolarp\MGTS_data\4.csv
+matrix=708x1716 device=cuda seed=0 epochs=6
+scoring ensemble
+training autoencoder patches=2332
+autoencoder epoch 1/6 loss=0.816364
+autoencoder epoch 2/6 loss=0.034269
+autoencoder epoch 3/6 loss=0.023120
+autoencoder epoch 4/6 loss=0.026964
+autoencoder epoch 5/6 loss=0.013213
+autoencoder epoch 6/6 loss=0.011126
+building autoencoder error map
+Detected 18 events.
+  1: duration=268 steps (536.00 min), spatial extent=9.25 m, amplitude=6.85 C, type=local_heating (power cable / equipment)
+  2: duration=143 steps (286.00 min), spatial extent=8.00 m, amplitude=4.76 C, type=local_heating (power cable / equipment)
+  3: duration=57 steps (114.00 min), spatial extent=5.50 m, amplitude=4.75 C, type=local_heating (power cable / equipment)
+  4: duration=27 steps (54.00 min), spatial extent=3.25 m, amplitude=3.95 C, type=local_heating (power cable / equipment)
+  5: duration=21 steps (42.00 min), spatial extent=3.50 m, amplitude=4.91 C, type=local_heating (power cable / equipment)
+  6: duration=21 steps (42.00 min), spatial extent=3.25 m, amplitude=5.17 C, type=local_heating (power cable / equipment)
+  7: duration=25 steps (50.00 min), spatial extent=2.75 m, amplitude=4.53 C, type=local_heating (power cable / equipment)
+  8: duration=7 steps (14.00 min), spatial extent=5.00 m, amplitude=0.53 C, type=other
+  9: duration=7 steps (14.00 min), spatial extent=3.25 m, amplitude=3.89 C, type=transient
+  10: duration=12 steps (24.00 min), spatial extent=1.50 m, amplitude=5.79 C, type=local_heating (power cable / equipment)
+  11: duration=9 steps (18.00 min), spatial extent=1.75 m, amplitude=5.42 C, type=other
+  12: duration=5 steps (10.00 min), spatial extent=2.50 m, amplitude=4.94 C, type=transient
+  13: duration=6 steps (12.00 min), spatial extent=2.25 m, amplitude=1.78 C, type=transient
+  14: duration=6 steps (12.00 min), spatial extent=1.25 m, amplitude=2.42 C, type=transient
+  15: duration=4 steps (8.00 min), spatial extent=1.75 m, amplitude=-0.60 C, type=other
+  16: duration=5 steps (10.00 min), spatial extent=1.50 m, amplitude=1.87 C, type=transient
+  17: duration=4 steps (8.00 min), spatial extent=1.25 m, amplitude=6.76 C, type=transient
+  18: duration=4 steps (8.00 min), spatial extent=1.00 m, amplitude=3.48 C, type=transient
+wrote C:\Users\bobr\test2_larpathon\reports\more_data\real_4.csv.png
+4.csv events=18 4.9s
+wrote C:\Users\bobr\test2_larpathon\reports\more_data\eval.json

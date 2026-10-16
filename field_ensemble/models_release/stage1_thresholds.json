@@ -1,0 +1,41 @@
+{
+ "arch": "unet",
+ "members": [
+  {
+   "kind": "unet",
+   "file": "det0_unet.pt",
+   "width": 24
+  },
+  {
+   "kind": "unet",
+   "file": "det1_unet.pt",
+   "width": 16
+  },
+  {
+   "kind": "tcn",
+   "file": "det2_tcn.pt",
+   "width": null
+  },
+  {
+   "kind": "pixel_lgbm",
+   "file": "det3_pixel_lgbm.joblib",
+   "width": null
+  }
+ ],
+ "far_ref": 0.058081720180086865,
+ "thresholds": {
+  "cnn_unet": {
+   "far_ref": 0.12341396510701044,
+   "far_1e-3": 0.8608087301264272,
+   "far_1e-4": 0.9799094796190725,
+   "far_1e-2": 0.39513802528481345,
+   "hyst_1e-3_1e-2": [
+    0.8608087301264272,
+    0.39513802528481345
+   ]
+  }
+ },
+ "method": "ens_u2ft_tcn_lgbm",
+ "source_eval": "artifacts/eval/r7_ens_u2ft_tcn_lgbm.json",
+ "synth_version": "v8"
+}

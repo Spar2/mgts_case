@@ -1,0 +1,938 @@
+{
+  "cards": [
+    {
+      "anomaly_status": "Anomaly",
+      "expert_class": "Local_Heating",
+      "expert_confirmed": false,
+      "far_cable_median_c": 22.20220947265625,
+      "far_left": {
+        "median_c": 21.108957290649414,
+        "n_columns": 4707,
+        "present": true
+      },
+      "far_right": {
+        "median_c": 23.321136474609375,
+        "n_columns": 6158,
+        "present": true
+      },
+      "flank_zones": [],
+      "halo_columns": 631,
+      "halo_columns_inside": 0,
+      "halo_inside_fraction": 0.0,
+      "id": "review-00034",
+      "in_box_zones": [
+        {
+          "contrast": 13.077,
+          "end_m": 523.249,
+          "expert_confirmed": false,
+          "polarity": "hot",
+          "shape_hypothesis": "Local_Heating",
+          "start_m": 517.766,
+          "t_end_s": 1789367942.0,
+          "t_start_s": 1789367210.0
+        }
+      ],
+      "inner_m": 8.0,
+      "n_zones": 23,
+      "notes": "Весь участок — одно нагревание. Середина около 520 м чуть менее тёплая и относится к тому же участку, не отдельное остывание. По медиане за окно: теплее 28 °C с 515.2 до 524.2 м; промежуток 519.1–521.6 м около 24.7 °C при кабеле около 20 °C и боках 31–33 °C. За строки ядра температура стоит на месте. Голубой прямоугольник 517.77–523.25 м обрезает левый край.",
+      "outer_m": 40.0,
+      "presence": "yes",
+      "record": "1",
+      "rectangle_median_c": 29.34171962738037,
+      "rows_half_open": [
+        310,
+        335
+      ],
+      "x_m": [
+        517.77,
+        523.25
+      ]
+    },
+    {
+      "anomaly_status": "Anomaly",
+      "expert_class": "Local_Heating",
+      "expert_confirmed": false,
+      "far_cable_median_c": 21.52544116973877,
+      "far_left": {
+        "median_c": 20.90900993347168,
+        "n_columns": 7854,
+        "present": true
+      },
+      "far_right": {
+        "median_c": 23.129234313964844,
+        "n_columns": 2920,
+        "present": true
+      },
+      "flank_zones": [],
+      "halo_columns": 631,
+      "halo_columns_inside": 0,
+      "halo_inside_fraction": 0.0,
+      "id": "review-00098",
+      "in_box_zones": [
+        {
+          "contrast": 17.016,
+          "end_m": 851.98,
+          "expert_confirmed": false,
+          "polarity": "hot",
+          "shape_hypothesis": "Local_Heating",
+          "start_m": 837.36,
+          "t_end_s": 1789366814.0,
+          "t_start_s": 1789333399.0
+        }
+      ],
+      "inner_m": 8.0,
+      "n_zones": 23,
+      "notes": "Один горячий участок на всё окно, небольшие затухания внутри относятся к нему. По медиане: теплее 28 °C с 835.4 до 854.7 м, с провалами около 841 м (~27.6 °C) и 850 м (~26.7 °C); пики около 42–44 °C, кабель сбоку около 23 °C. За ~9 часов середина прямоугольника держится около 36 °C; падение до 29.8 °C только в последние ~7 минут. Другие жёлтые полосы левее 830 м к этому участку не относятся. Причина провалов по графику не видна.",
+      "outer_m": 40.0,
+      "presence": "yes",
+      "record": "1",
+      "rectangle_median_c": 36.20372009277344,
+      "rows_half_open": [
+        0,
+        298
+      ],
+      "x_m": [
+        837.36,
+        851.98
+      ]
+    },
+    {
+      "anomaly_status": "Anomaly",
+      "expert_class": "Local_Heating",
+      "expert_confirmed": false,
+      "far_cable_median_c": 22.10533332824707,
+      "far_left": {
+        "median_c": 21.742566108703613,
+        "n_columns": 1876,
+        "present": true
+      },
+      "far_right": {
+        "median_c": 22.200203895568848,
+        "n_columns": 8649,
+        "present": true
+      },
+      "flank_zones": [],
+      "halo_columns": 631,
+      "halo_columns_inside": 237,
+      "halo_inside_fraction": 0.375594294770206,
+      "id": "review-00187",
+      "in_box_zones": [],
+      "inner_m": 8.0,
+      "n_zones": 23,
+      "notes": "Не один участок, а отдельные короткие нагревы. Пики медианы: 237.1 м (24.7 °C, выше 22 °C на 236.0–238.1), 244.9 м (25.2 °C, 243.4–246.7), 257.6 м (26.3 °C, 256.1–258.8), широкий 264.6–266.6 м (26.3 °C, выше 22 °C на 262.7–268.1). Ещё один пик 274.1 м (26.2 °C, 272.4–275.5) уже за правым краем голубого прямоугольника 230.4–270.4 м. Между ними провалы около 18–19 °C. Слабее остальных полоса около 254.4 м (23.2 °C). За ~28 минут полосы стоят на месте. Нижний график усредняет весь прямоугольник, поэтому контраст там только 1.6 °C.",
+      "outer_m": 40.0,
+      "presence": "yes",
+      "record": "1",
+      "rectangle_median_c": 21.3823184967041,
+      "rows_half_open": [
+        35,
+        43
+      ],
+      "x_m": [
+        230.36,
+        270.36
+      ]
+    },
+    {
+      "anomaly_status": "Anomaly",
+      "expert_class": "Local_Cooling",
+      "expert_confirmed": false,
+      "far_cable_median_c": 22.058903694152832,
+      "far_left": {
+        "median_c": 21.16333770751953,
+        "n_columns": 3184,
+        "present": true
+      },
+      "far_right": {
+        "median_c": 22.531864166259766,
+        "n_columns": 7341,
+        "present": true
+      },
+      "flank_zones": [
+        {
+          "contrast": 23.329,
+          "end_m": 455.33,
+          "expert_confirmed": false,
+          "polarity": "hot",
+          "shape_hypothesis": "Local_Heating",
+          "start_m": 434.619,
+          "t_end_s": 1789365167.0,
+          "t_start_s": 1789333399.0
+        }
+      ],
+      "halo_columns": 631,
+      "halo_columns_inside": 237,
+      "halo_inside_fraction": 0.375594294770206,
+      "id": "review-00223",
+      "in_box_zones": [],
+      "inner_m": 8.0,
+      "n_zones": 23,
+      "notes": "Один холодный участок, без отдельных событий. Холоднее 19 °C: 338.3–357.2 м (медиана 17.4 °C, левее прямоугольника) и 378.2–397.2 м (18.2 °C). Между ними 363.6–375.8 м держится около 21 °C. Прямоугольник 363.1–403.1 м в целом только на 0.7 °C холоднее флангов. Жёлтые полосы около 418 м и дальше правее прямоугольника. За 30 минут холодный кусок 378–397 м стоит около 18 °C.",
+      "outer_m": 40.0,
+      "presence": "yes",
+      "record": "1",
+      "rectangle_median_c": 19.076688766479492,
+      "rows_half_open": [
+        234,
+        294
+      ],
+      "x_m": [
+        363.15,
+        403.15
+      ]
+    },
+    {
+      "anomaly_status": "Anomaly",
+      "expert_class": "Local_Heating",
+      "expert_confirmed": false,
+      "far_cable_median_c": 27.074697494506836,
+      "far_left": {
+        "median_c": 27.139352798461914,
+        "n_columns": 1309,
+        "present": true
+      },
+      "far_right": {
+        "median_c": 24.742225646972656,
+        "n_columns": 28,
+        "present": true
+      },
+      "flank_zones": [],
+      "halo_columns": 252,
+      "halo_columns_inside": 0,
+      "halo_inside_fraction": 0.0,
+      "id": "next-0001",
+      "in_box_zones": [
+        {
+          "contrast": 7.148,
+          "end_m": 381.164,
+          "expert_confirmed": false,
+          "polarity": "hot",
+          "shape_hypothesis": "Periodic_Thermal",
+          "start_m": 372.028,
+          "t_end_s": 1771027165.0,
+          "t_start_s": 1771022716.0
+        },
+        {
+          "contrast": 7.108,
+          "end_m": 381.418,
+          "expert_confirmed": false,
+          "polarity": "hot",
+          "shape_hypothesis": "Periodic_Thermal",
+          "start_m": 373.297,
+          "t_end_s": 1771022235.0,
+          "t_start_s": 1771019950.0
+        },
+        {
+          "contrast": 6.916,
+          "end_m": 381.164,
+          "expert_confirmed": false,
+          "polarity": "hot",
+          "shape_hypothesis": "Periodic_Thermal",
+          "start_m": 374.059,
+          "t_end_s": 1771018387.0,
+          "t_start_s": 1771017305.0
+        }
+      ],
+      "inner_m": 8.0,
+      "n_zones": 5,
+      "notes": "",
+      "outer_m": 40.0,
+      "presence": "yes",
+      "record": "3",
+      "rectangle_median_c": 33.90562057495117,
+      "rows_half_open": [
+        705,
+        788
+      ],
+      "x_m": [
+        372.028,
+        381.418
+      ]
+    },
+    {
+      "anomaly_status": "Anomaly",
+      "expert_class": "Local_Cooling",
+      "expert_confirmed": false,
+      "far_cable_median_c": 20.53179931640625,
+      "far_left": {
+        "median_c": 23.22949981689453,
+        "n_columns": 194,
+        "present": true
+      },
+      "far_right": {
+        "median_c": 20.384599685668945,
+        "n_columns": 2050,
+        "present": true
+      },
+      "flank_zones": [
+        {
+          "contrast": 3.809,
+          "end_m": 312.0,
+          "expert_confirmed": false,
+          "polarity": "hot",
+          "shape_hypothesis": "Local_Heating",
+          "start_m": 290.0,
+          "t_end_s": 1760648820.0,
+          "t_start_s": 1760616006.0
+        }
+      ],
+      "halo_columns": 64,
+      "halo_columns_inside": 24,
+      "halo_inside_fraction": 0.375,
+      "id": "next-0002",
+      "in_box_zones": [
+        {
+          "contrast": -3.33,
+          "end_m": 273.0,
+          "expert_confirmed": false,
+          "polarity": "cold",
+          "shape_hypothesis": "Local_Cooling",
+          "start_m": 234.0,
+          "t_end_s": 1760648820.0,
+          "t_start_s": 1760616006.0
+        }
+      ],
+      "inner_m": 8.0,
+      "n_zones": 134,
+      "notes": "",
+      "outer_m": 40.0,
+      "presence": "yes",
+      "record": "5",
+      "rectangle_median_c": 18.078899383544922,
+      "rows_half_open": [
+        0,
+        2711
+      ],
+      "x_m": [
+        234.0,
+        273.0
+      ]
+    },
+    {
+      "anomaly_status": "Anomaly",
+      "expert_class": "Local_Heating",
+      "expert_confirmed": false,
+      "far_cable_median_c": 26.372060775756836,
+      "far_left": {
+        "median_c": 23.78624153137207,
+        "n_columns": 282,
+        "present": true
+      },
+      "far_right": {
+        "median_c": 26.917603492736816,
+        "n_columns": 832,
+        "present": true
+      },
+      "flank_zones": [],
+      "halo_columns": 252,
+      "halo_columns_inside": 198,
+      "halo_inside_fraction": 0.7857142857142857,
+      "id": "next-0003",
+      "in_box_zones": [],
+      "inner_m": 8.0,
+      "n_zones": 5,
+      "notes": "на самом деле широкий канал heating с кучей local heating, но как будто надо считать это все одним широким heating. не знаю. можно пометить как много local heating и по какому-то правилу объединить. надо думать",
+      "outer_m": 40.0,
+      "presence": "yes",
+      "record": "3",
+      "rectangle_median_c": 32.059898376464844,
+      "rows_half_open": [
+        618,
+        788
+      ],
+      "x_m": [
+        111.405,
+        177.386
+      ]
+    },
+    {
+      "anomaly_status": "Anomaly",
+      "expert_class": "Local_Heating",
+      "expert_confirmed": false,
+      "far_cable_median_c": 18.407241821289062,
+      "far_left": {
+        "median_c": 25.21978759765625,
+        "n_columns": 28,
+        "present": true
+      },
+      "far_right": {
+        "median_c": 18.37843894958496,
+        "n_columns": 1787,
+        "present": true
+      },
+      "flank_zones": [
+        {
+          "contrast": 4.022,
+          "end_m": 15.226,
+          "expert_confirmed": false,
+          "polarity": "hot",
+          "shape_hypothesis": "Local_Heating",
+          "start_m": 0.0,
+          "t_end_s": 1775829083.0,
+          "t_start_s": 1775824394.0
+        },
+        {
+          "contrast": -4.627,
+          "end_m": 24.87,
+          "expert_confirmed": false,
+          "polarity": "cold",
+          "shape_hypothesis": "Local_Cooling",
+          "start_m": 16.749,
+          "t_end_s": 1775827520.0,
+          "t_start_s": 1775802028.0
+        }
+      ],
+      "halo_columns": 252,
+      "halo_columns_inside": 122,
+      "halo_inside_fraction": 0.48412698412698413,
+      "id": "next-0004",
+      "in_box_zones": [],
+      "inner_m": 8.0,
+      "n_zones": 19,
+      "notes": "небольшое поднятие температуры после охлаждения.",
+      "outer_m": 40.0,
+      "presence": "yes",
+      "record": "2",
+      "rectangle_median_c": 23.191919326782227,
+      "rows_half_open": [
+        225,
+        409
+      ],
+      "x_m": [
+        46.948,
+        93.897
+      ]
+    },
+    {
+      "anomaly_status": "Anomaly",
+      "expert_class": "Background",
+      "expert_confirmed": false,
+      "far_cable_median_c": 24.678218841552734,
+      "far_left": {
+        "median_c": 24.965937614440918,
+        "n_columns": 158,
+        "present": true
+      },
+      "far_right": {
+        "median_c": 24.626840591430664,
+        "n_columns": 1202,
+        "present": true
+      },
+      "flank_zones": [
+        {
+          "contrast": -2.726,
+          "end_m": 41.365,
+          "expert_confirmed": false,
+          "polarity": "cold",
+          "shape_hypothesis": "Local_Cooling",
+          "start_m": 31.468,
+          "t_end_s": 1779812287.0,
+          "t_start_s": 1779753713.0
+        },
+        {
+          "contrast": 3.008,
+          "end_m": 78.669,
+          "expert_confirmed": false,
+          "polarity": "hot",
+          "shape_hypothesis": "Local_Heating",
+          "start_m": 75.116,
+          "t_end_s": 1779794126.0,
+          "t_start_s": 1779764898.0
+        }
+      ],
+      "halo_columns": 252,
+      "halo_columns_inside": 0,
+      "halo_inside_fraction": 0.0,
+      "id": "next-0005",
+      "in_box_zones": [],
+      "inner_m": 8.0,
+      "n_zones": 8,
+      "notes": "здесь типо кулинг относительно левого участка, но на общем фоне то что показано, скорее слева local_heating а тут просто кабель упал в свой обычный рабочий темп",
+      "outer_m": 40.0,
+      "presence": "no",
+      "record": "4",
+      "rectangle_median_c": 25.537460327148438,
+      "rows_half_open": [
+        50,
+        201
+      ],
+      "x_m": [
+        80.0,
+        84.0
+      ]
+    },
+    {
+      "anomaly_status": "Anomaly",
+      "expert_class": "Background",
+      "expert_confirmed": false,
+      "far_cable_median_c": 21.06795883178711,
+      "far_left": {
+        "median_c": 20.523239135742188,
+        "n_columns": 8906,
+        "present": true
+      },
+      "far_right": {
+        "median_c": 22.991191864013672,
+        "n_columns": 1619,
+        "present": true
+      },
+      "flank_zones": [
+        {
+          "contrast": 17.414,
+          "end_m": 931.269,
+          "expert_confirmed": false,
+          "polarity": "hot",
+          "shape_hypothesis": "Local_Heating",
+          "start_m": 914.01,
+          "t_end_s": 1789376662.0,
+          "t_start_s": 1789333399.0
+        },
+        {
+          "contrast": 16.077,
+          "end_m": 1002.538,
+          "expert_confirmed": false,
+          "polarity": "hot",
+          "shape_hypothesis": "Local_Heating",
+          "start_m": 997.563,
+          "t_end_s": 1789376662.0,
+          "t_start_s": 1789333399.0
+        }
+      ],
+      "halo_columns": 630,
+      "halo_columns_inside": 236,
+      "halo_inside_fraction": 0.3746031746031746,
+      "id": "next-0006",
+      "in_box_zones": [],
+      "inner_m": 8.0,
+      "n_zones": 23,
+      "notes": "тут либо относительно левого и правого участка широкий cooling либо слева и справа был local_heating а между ними кабель был в норме или типо того. я не знаю нормы температур для кабеля к сожалению",
+      "outer_m": 40.0,
+      "presence": "no",
+      "record": "1",
+      "rectangle_median_c": 19.432153701782227,
+      "rows_half_open": [
+        449,
+        508
+      ],
+      "x_m": [
+        944.162,
+        984.061
+      ]
+    },
+    {
+      "anomaly_status": "Anomaly",
+      "expert_class": "Background",
+      "expert_confirmed": false,
+      "far_cable_median_c": 18.865772247314453,
+      "far_left": {
+        "median_c": 18.89266586303711,
+        "n_columns": 1821,
+        "present": true
+      },
+      "far_right": {
+        "median_c": 17.5463924407959,
+        "n_columns": 23,
+        "present": true
+      },
+      "flank_zones": [
+        {
+          "contrast": 4.783,
+          "end_m": 472.274,
+          "expert_confirmed": false,
+          "polarity": "hot",
+          "shape_hypothesis": "Local_Heating",
+          "start_m": 468.214,
+          "t_end_s": 1775829083.0,
+          "t_start_s": 1775779301.0
+        },
+        {
+          "contrast": -5.93,
+          "end_m": 500.443,
+          "expert_confirmed": false,
+          "polarity": "cold",
+          "shape_hypothesis": "Local_Cooling",
+          "start_m": 495.875,
+          "t_end_s": 1775829083.0,
+          "t_start_s": 1775779301.0
+        }
+      ],
+      "halo_columns": 252,
+      "halo_columns_inside": 93,
+      "halo_inside_fraction": 0.36904761904761907,
+      "id": "next-0007",
+      "in_box_zones": [],
+      "inner_m": 8.0,
+      "n_zones": 19,
+      "notes": "тоже ниче непонятно. справа в упоре был local cooling как будто",
+      "outer_m": 40.0,
+      "presence": "no",
+      "record": "2",
+      "rectangle_median_c": 18.803129196166992,
+      "rows_half_open": [
+        65,
+        80
+      ],
+      "x_m": [
+        501.966,
+        541.555
+      ]
+    },
+    {
+      "anomaly_status": "Anomaly",
+      "expert_class": "Local_Heating",
+      "expert_confirmed": false,
+      "far_cable_median_c": 23.381444931030273,
+      "far_left": {
+        "median_c": 23.374061584472656,
+        "n_columns": 2155,
+        "present": true
+      },
+      "far_right": {
+        "median_c": 23.39039421081543,
+        "n_columns": 2018,
+        "present": true
+      },
+      "flank_zones": [
+        {
+          "contrast": -3.63,
+          "end_m": 554.497,
+          "expert_confirmed": false,
+          "polarity": "cold",
+          "shape_hypothesis": "Local_Cooling",
+          "start_m": 515.924,
+          "t_end_s": 1770929991.0,
+          "t_start_s": 1770905494.0
+        }
+      ],
+      "halo_columns": 252,
+      "halo_columns_inside": 0,
+      "halo_inside_fraction": 0.0,
+      "id": "next-0008",
+      "in_box_zones": [
+        {
+          "contrast": 8.347,
+          "end_m": 598.4,
+          "expert_confirmed": false,
+          "polarity": "hot",
+          "shape_hypothesis": "Local_Heating",
+          "start_m": 586.727,
+          "t_end_s": 1770923267.0,
+          "t_start_s": 1770905494.0
+        }
+      ],
+      "inner_m": 8.0,
+      "n_zones": 43,
+      "notes": "началось правее, чуть урезать бы этот участок и тогда будет явный local_heating",
+      "outer_m": 40.0,
+      "presence": "yes",
+      "record": "6",
+      "rectangle_median_c": 25.00725746154785,
+      "rows_half_open": [
+        822,
+        1119
+      ],
+      "x_m": [
+        586.727,
+        598.4
+      ]
+    },
+    {
+      "anomaly_status": "Anomaly",
+      "expert_class": "Local_Heating",
+      "expert_confirmed": false,
+      "far_cable_median_c": 24.48562240600586,
+      "far_left": {
+        "median_c": 24.960698127746582,
+        "n_columns": 213,
+        "present": true
+      },
+      "far_right": {
+        "median_c": 24.386892318725586,
+        "n_columns": 1058,
+        "present": true
+      },
+      "flank_zones": [
+        {
+          "contrast": 4.036,
+          "end_m": 77.908,
+          "expert_confirmed": false,
+          "polarity": "hot",
+          "shape_hypothesis": "Local_Heating",
+          "start_m": 75.116,
+          "t_end_s": 1779825156.0,
+          "t_start_s": 1779818541.0
+        },
+        {
+          "contrast": 3.008,
+          "end_m": 78.669,
+          "expert_confirmed": false,
+          "polarity": "hot",
+          "shape_hypothesis": "Local_Heating",
+          "start_m": 75.116,
+          "t_end_s": 1779794126.0,
+          "t_start_s": 1779764898.0
+        },
+        {
+          "contrast": 4.481,
+          "end_m": 93.642,
+          "expert_confirmed": false,
+          "polarity": "hot",
+          "shape_hypothesis": "Local_Heating",
+          "start_m": 85.775,
+          "t_end_s": 1779839947.0,
+          "t_start_s": 1779824193.0
+        },
+        {
+          "contrast": -3.098,
+          "end_m": 93.388,
+          "expert_confirmed": false,
+          "polarity": "cold",
+          "shape_hypothesis": "Local_Cooling",
+          "start_m": 86.028,
+          "t_end_s": 1779812287.0,
+          "t_start_s": 1779809881.0
+        },
+        {
+          "contrast": -2.684,
+          "end_m": 93.388,
+          "expert_confirmed": false,
+          "polarity": "cold",
+          "shape_hypothesis": "Local_Cooling",
+          "start_m": 86.282,
+          "t_end_s": 1779795449.0,
+          "t_start_s": 1779794607.0
+        }
+      ],
+      "halo_columns": 252,
+      "halo_columns_inside": 41,
+      "halo_inside_fraction": 0.1626984126984127,
+      "id": "next-0009",
+      "in_box_zones": [
+        {
+          "contrast": 5.465,
+          "end_m": 120.541,
+          "expert_confirmed": false,
+          "polarity": "hot",
+          "shape_hypothesis": "Local_Heating",
+          "start_m": 93.895,
+          "t_end_s": 1779839947.0,
+          "t_start_s": 1779793524.0
+        }
+      ],
+      "inner_m": 8.0,
+      "n_zones": 8,
+      "notes": "heating с понижениями температур либо не на всю длину(время) кабеля",
+      "outer_m": 40.0,
+      "presence": "yes",
+      "record": "4",
+      "rectangle_median_c": 27.87100601196289,
+      "rows_half_open": [
+        326,
+        708
+      ],
+      "x_m": [
+        93.895,
+        120.541
+      ]
+    },
+    {
+      "anomaly_status": "Anomaly",
+      "expert_class": "Background",
+      "expert_confirmed": false,
+      "far_cable_median_c": 19.03489112854004,
+      "far_left": {
+        "median_c": 19.704784393310547,
+        "n_columns": 992,
+        "present": true
+      },
+      "far_right": {
+        "median_c": 18.6119441986084,
+        "n_columns": 904,
+        "present": true
+      },
+      "flank_zones": [
+        {
+          "contrast": 3.5,
+          "end_m": 276.107,
+          "expert_confirmed": false,
+          "polarity": "hot",
+          "shape_hypothesis": "Local_Heating",
+          "start_m": 271.285,
+          "t_end_s": 1775809122.0,
+          "t_start_s": 1775779301.0
+        },
+        {
+          "contrast": 4.231,
+          "end_m": 329.907,
+          "expert_confirmed": false,
+          "polarity": "hot",
+          "shape_hypothesis": "Local_Heating",
+          "start_m": 320.517,
+          "t_end_s": 1775829083.0,
+          "t_start_s": 1775779301.0
+        }
+      ],
+      "halo_columns": 252,
+      "halo_columns_inside": 40,
+      "halo_inside_fraction": 0.15873015873015872,
+      "id": "next-0010",
+      "in_box_zones": [
+        {
+          "contrast": -3.905,
+          "end_m": 317.979,
+          "expert_confirmed": false,
+          "polarity": "cold",
+          "shape_hypothesis": "Local_Cooling",
+          "start_m": 291.587,
+          "t_end_s": 1775829083.0,
+          "t_start_s": 1775779301.0
+        },
+        {
+          "contrast": -3.96,
+          "end_m": 317.472,
+          "expert_confirmed": false,
+          "polarity": "cold",
+          "shape_hypothesis": "Local_Cooling",
+          "start_m": 306.052,
+          "t_end_s": 1775829083.0,
+          "t_start_s": 1775824875.0
+        },
+        {
+          "contrast": -4.295,
+          "end_m": 313.919,
+          "expert_confirmed": false,
+          "polarity": "cold",
+          "shape_hypothesis": "Local_Cooling",
+          "start_m": 309.097,
+          "t_end_s": 1775814894.0,
+          "t_start_s": 1775812369.0
+        },
+        {
+          "contrast": -4.254,
+          "end_m": 313.919,
+          "expert_confirmed": false,
+          "polarity": "cold",
+          "shape_hypothesis": "Local_Cooling",
+          "start_m": 310.112,
+          "t_end_s": 1775817780.0,
+          "t_start_s": 1775816337.0
+        },
+        {
+          "contrast": -4.267,
+          "end_m": 314.173,
+          "expert_confirmed": false,
+          "polarity": "cold",
+          "shape_hypothesis": "Local_Cooling",
+          "start_m": 310.112,
+          "t_end_s": 1775810325.0,
+          "t_start_s": 1775809243.0
+        },
+        {
+          "contrast": -4.274,
+          "end_m": 314.427,
+          "expert_confirmed": false,
+          "polarity": "cold",
+          "shape_hypothesis": "Local_Cooling",
+          "start_m": 310.112,
+          "t_end_s": 1775822710.0,
+          "t_start_s": 1775821027.0
+        }
+      ],
+      "inner_m": 8.0,
+      "n_zones": 19,
+      "notes": "непонятно просадки какие-то типо а потом справа кстати подъем. но относительно левой и правой части как будто тут просто cooling был хз",
+      "outer_m": 40.0,
+      "presence": "no",
+      "record": "2",
+      "rectangle_median_c": 14.315984725952148,
+      "rows_half_open": [
+        0,
+        409
+      ],
+      "x_m": [
+        291.587,
+        317.979
+      ]
+    },
+    {
+      "anomaly_status": "Anomaly",
+      "expert_class": "Local_Heating",
+      "expert_confirmed": false,
+      "far_cable_median_c": 21.50638771057129,
+      "far_left": {
+        "median_c": 19.961139678955078,
+        "n_columns": 3889,
+        "present": true
+      },
+      "far_right": {
+        "median_c": 22.71725082397461,
+        "n_columns": 6829,
+        "present": true
+      },
+      "flank_zones": [
+        {
+          "contrast": 16.539,
+          "end_m": 429.036,
+          "expert_confirmed": false,
+          "polarity": "hot",
+          "shape_hypothesis": "Local_Heating",
+          "start_m": 425.787,
+          "t_end_s": 1789376662.0,
+          "t_start_s": 1789373582.0
+        },
+        {
+          "contrast": 12.414,
+          "end_m": 497.462,
+          "expert_confirmed": false,
+          "polarity": "hot",
+          "shape_hypothesis": "Local_Heating",
+          "start_m": 486.091,
+          "t_end_s": 1789372790.0,
+          "t_start_s": 1789371906.0
+        }
+      ],
+      "halo_columns": 631,
+      "halo_columns_inside": 44,
+      "halo_inside_fraction": 0.06973058637083994,
+      "id": "next-0011",
+      "in_box_zones": [
+        {
+          "contrast": 19.482,
+          "end_m": 455.228,
+          "expert_confirmed": false,
+          "polarity": "hot",
+          "shape_hypothesis": "Local_Heating",
+          "start_m": 434.721,
+          "t_end_s": 1789376662.0,
+          "t_start_s": 1789372546.0
+        }
+      ],
+      "inner_m": 8.0,
+      "n_zones": 23,
+      "notes": "несколько участков local heating с просадками . в целом тут по графику даже левее видно два столба с подъемами температуры так же",
+      "outer_m": 40.0,
+      "presence": "yes",
+      "record": "1",
+      "rectangle_median_c": 39.57529067993164,
+      "rows_half_open": [
+        479,
+        615
+      ],
+      "x_m": [
+        434.721,
+        455.228
+      ]
+    }
+  ],
+  "clean": "median_x3",
+  "detector": "spatial_z_halo",
+  "inner_m": 8.0,
+  "note": "Research context on the 15 expert cards. The channel does not add or remove zones and does not set anomaly_status. The operational pair remains median_x3 and spatial_z_halo at |Z| >= 3.5. presence=no stays Background. This file is not operational accuracy.",
+  "operational": false,
+  "outer_m": 40.0,
+  "schema": "context_evidence_v1",
+  "serve": "research",
+  "sets_anomaly_status": false,
+  "threshold_z": 3.5,
+  "trained_classifier_operational": false
+}

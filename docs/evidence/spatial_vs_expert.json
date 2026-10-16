@@ -1,0 +1,680 @@
+{
+  "schema": "spatial_vs_expert_v1",
+  "measured_on": "2026-10-14",
+  "entry": "fiber.pipeline.analyze_field",
+  "detector": "spatial_z_halo",
+  "clean": "median_x3",
+  "threshold_z": 3.5,
+  "inner_m": 8.0,
+  "outer_m": 40.0,
+  "trained_classifier_operational": false,
+  "operational_pair_unchanged": true,
+  "note": "Measurement of the shipped analyze_field on five expert spans. presence=no stays Background. next-0003 stays Local_Heating. The threshold and the zone gates are unchanged. This file is not an operational detector and not expert accuracy.",
+  "cards": [
+    {
+      "id": "next-0003",
+      "record": "3",
+      "presence": "yes",
+      "expert_class": "Local_Heating",
+      "notes": "на самом деле широкий канал heating с кучей local heating, но как будто надо считать это все одним широким heating. не знаю. можно пометить как много local heating и по какому-то правилу объединить. надо думать",
+      "rows_half_open": [
+        618,
+        788
+      ],
+      "x_m": [
+        111.405,
+        177.386
+      ],
+      "width_m": 65.981,
+      "threshold_z": 3.5,
+      "inner_m": 8.0,
+      "outer_m": 40.0,
+      "detector": "spatial_z_halo",
+      "clean": "median_x3",
+      "trained_classifier_operational": false,
+      "n_in_box": 0,
+      "in_box": [],
+      "n_left_flank_only": 0,
+      "left_flank_only": [],
+      "n_right_flank_only": 0,
+      "right_flank_only": [],
+      "left_flank_m": [
+        71.56343260856335,
+        111.15171447713031
+      ],
+      "right_flank_m": [
+        177.6397263333133,
+        217.22800820188024
+      ],
+      "rectangle": {
+        "n_cells": 44370,
+        "n_columns": 261,
+        "median_clean_c": 32.059898376464844,
+        "median_background_c": 31.258167266845703,
+        "median_residual_c": 0.8782978057861328,
+        "alarm_fraction": 0.0
+      },
+      "edge_inner": {
+        "n_cells": 10880,
+        "n_columns": 64,
+        "median_clean_c": 32.240989685058594,
+        "median_background_c": 30.319730758666992,
+        "median_residual_c": 2.4917383193969727,
+        "alarm_fraction": 0.0
+      },
+      "middle_beyond_inner": {
+        "n_cells": 33490,
+        "n_columns": 197,
+        "median_clean_c": 32.030147552490234,
+        "median_background_c": 31.496444702148438,
+        "median_residual_c": 0.5521688461303711,
+        "alarm_fraction": 0.0
+      },
+      "core_beyond_outer": {
+        "n_cells": 0
+      },
+      "left_flank_band": {
+        "n_cells": 26690,
+        "n_columns": 157,
+        "median_clean_c": 29.356060028076172,
+        "median_background_c": 29.29645538330078,
+        "median_residual_c": -0.36626434326171875,
+        "alarm_fraction": 0.0
+      },
+      "right_flank_band": {
+        "n_cells": 26690,
+        "n_columns": 157,
+        "median_clean_c": 26.779523849487305,
+        "median_background_c": 26.962617874145508,
+        "median_residual_c": -0.4602508544921875,
+        "alarm_fraction": 0.0
+      },
+      "far_left": {
+        "n_cells": 47940,
+        "n_columns": 282,
+        "median_clean_c": 23.78624153137207,
+        "median_background_c": 24.207260131835938,
+        "median_residual_c": -0.4524869918823242,
+        "alarm_fraction": 0.0
+      },
+      "far_right": {
+        "n_cells": 141440,
+        "n_columns": 832,
+        "median_clean_c": 26.917603492736816,
+        "median_background_c": 27.292301177978516,
+        "median_residual_c": -0.37703514099121094,
+        "alarm_fraction": 0.002849264705882353
+      },
+      "center_m": 144.3955,
+      "halo_columns": 252,
+      "halo_columns_inside_span": 198,
+      "halo_inside_fraction": 0.7857142857142857
+    },
+    {
+      "id": "next-0005",
+      "record": "4",
+      "presence": "no",
+      "expert_class": "Background",
+      "notes": "здесь типо кулинг относительно левого участка, но на общем фоне то что показано, скорее слева local_heating а тут просто кабель упал в свой обычный рабочий темп",
+      "rows_half_open": [
+        50,
+        201
+      ],
+      "x_m": [
+        80.0,
+        84.0
+      ],
+      "width_m": 4.0,
+      "threshold_z": 3.5,
+      "inner_m": 8.0,
+      "outer_m": 40.0,
+      "detector": "spatial_z_halo",
+      "clean": "median_x3",
+      "trained_classifier_operational": false,
+      "n_in_box": 0,
+      "in_box": [],
+      "n_left_flank_only": 2,
+      "left_flank_only": [
+        {
+          "shape_hypothesis": "Local_Heating",
+          "contrast": 3.008,
+          "median_contrast_c": 3.008,
+          "peak_contrast_c": 7.254,
+          "start_m": 75.116,
+          "end_m": 78.669,
+          "width_m": 3.807,
+          "polarity": "hot",
+          "support": 1722,
+          "expert_confirmed": false
+        },
+        {
+          "shape_hypothesis": "Local_Cooling",
+          "contrast": -2.726,
+          "median_contrast_c": -2.726,
+          "peak_contrast_c": -3.608,
+          "start_m": 31.468,
+          "end_m": 41.365,
+          "width_m": 10.151,
+          "polarity": "cold",
+          "support": 5192,
+          "expert_confirmed": false
+        }
+      ],
+      "n_right_flank_only": 0,
+      "right_flank_only": [],
+      "left_flank_m": [
+        40.095823943805,
+        79.93787684999099
+      ],
+      "right_flank_m": [
+        84.2519844895143,
+        123.84026635808127
+      ],
+      "rectangle": {
+        "n_cells": 2416,
+        "n_columns": 16,
+        "median_clean_c": 25.537460327148438,
+        "median_background_c": 25.141508102416992,
+        "median_residual_c": 0.38628387451171875,
+        "alarm_fraction": 0.0
+      },
+      "edge_inner": {
+        "n_cells": 2416,
+        "n_columns": 16,
+        "median_clean_c": 25.537460327148438,
+        "median_background_c": 25.141508102416992,
+        "median_residual_c": 0.38628387451171875,
+        "alarm_fraction": 0.0
+      },
+      "middle_beyond_inner": {
+        "n_cells": 0
+      },
+      "core_beyond_outer": {
+        "n_cells": 0
+      },
+      "left_flank_band": {
+        "n_cells": 23858,
+        "n_columns": 158,
+        "median_clean_c": 25.494735717773438,
+        "median_background_c": 25.068891525268555,
+        "median_residual_c": 0.39250755310058594,
+        "alarm_fraction": 0.056291390728476824
+      },
+      "right_flank_band": {
+        "n_cells": 23707,
+        "n_columns": 157,
+        "median_clean_c": 24.90325355529785,
+        "median_background_c": 25.153017044067383,
+        "median_residual_c": -0.25679779052734375,
+        "alarm_fraction": 0.0
+      },
+      "far_left": {
+        "n_cells": 23858,
+        "n_columns": 158,
+        "median_clean_c": 24.965937614440918,
+        "median_background_c": 25.151185989379883,
+        "median_residual_c": -0.18916702270507812,
+        "alarm_fraction": 0.12440271607008131
+      },
+      "far_right": {
+        "n_cells": 181450,
+        "n_columns": 1202,
+        "median_clean_c": 24.626840591430664,
+        "median_background_c": 24.698348999023438,
+        "median_residual_c": -0.026636123657226562,
+        "alarm_fraction": 0.0
+      },
+      "center_m": 82.0,
+      "halo_columns": 252,
+      "halo_columns_inside_span": 0,
+      "halo_inside_fraction": 0.0
+    },
+    {
+      "id": "next-0006",
+      "record": "1",
+      "presence": "no",
+      "expert_class": "Background",
+      "notes": "тут либо относительно левого и правого участка широкий cooling либо слева и справа был local_heating а между ними кабель был в норме или типо того. я не знаю нормы температур для кабеля к сожалению",
+      "rows_half_open": [
+        449,
+        508
+      ],
+      "x_m": [
+        944.162,
+        984.061
+      ],
+      "width_m": 39.899,
+      "threshold_z": 3.5,
+      "inner_m": 8.0,
+      "outer_m": 40.0,
+      "detector": "spatial_z_halo",
+      "clean": "median_x3",
+      "trained_classifier_operational": false,
+      "n_in_box": 0,
+      "in_box": [],
+      "n_left_flank_only": 1,
+      "left_flank_only": [
+        {
+          "shape_hypothesis": "Local_Heating",
+          "contrast": 17.414,
+          "median_contrast_c": 17.414,
+          "peak_contrast_c": 28.638,
+          "start_m": 914.01,
+          "end_m": 931.269,
+          "width_m": 17.36,
+          "polarity": "hot",
+          "support": 36352,
+          "expert_confirmed": false
+        }
+      ],
+      "n_right_flank_only": 1,
+      "right_flank_only": [
+        {
+          "shape_hypothesis": "Local_Heating",
+          "contrast": 16.077,
+          "median_contrast_c": 16.077,
+          "peak_contrast_c": 20.728,
+          "start_m": 997.563,
+          "end_m": 1002.538,
+          "width_m": 5.076,
+          "polarity": "hot",
+          "support": 15711,
+          "expert_confirmed": false
+        }
+      ],
+      "left_flank_m": [
+        904.1624365482242,
+        944.0609137055847
+      ],
+      "right_flank_m": [
+        984.1624365482243,
+        1024.0609137055847
+      ],
+      "rectangle": {
+        "n_cells": 23246,
+        "n_columns": 394,
+        "median_clean_c": 19.432153701782227,
+        "median_background_c": 19.988811492919922,
+        "median_residual_c": -0.7144441604614258,
+        "alarm_fraction": 0.0
+      },
+      "edge_inner": {
+        "n_cells": 9322,
+        "n_columns": 158,
+        "median_clean_c": 18.194786071777344,
+        "median_background_c": 21.224210739135742,
+        "median_residual_c": -3.1311187744140625,
+        "alarm_fraction": 0.0
+      },
+      "middle_beyond_inner": {
+        "n_cells": 13924,
+        "n_columns": 236,
+        "median_clean_c": 21.60809326171875,
+        "median_background_c": 19.60546112060547,
+        "median_residual_c": 2.0909786224365234,
+        "alarm_fraction": 0.0
+      },
+      "core_beyond_outer": {
+        "n_cells": 0
+      },
+      "left_flank_band": {
+        "n_cells": 23246,
+        "n_columns": 394,
+        "median_clean_c": 22.175801277160645,
+        "median_background_c": 20.972272872924805,
+        "median_residual_c": -0.6085290908813477,
+        "alarm_fraction": 0.2125096790845737
+      },
+      "right_flank_band": {
+        "n_cells": 23246,
+        "n_columns": 394,
+        "median_clean_c": 21.774717330932617,
+        "median_background_c": 20.71061134338379,
+        "median_residual_c": 0.8148422241210938,
+        "alarm_fraction": 0.11855803148928848
+      },
+      "far_left": {
+        "n_cells": 525454,
+        "n_columns": 8906,
+        "median_clean_c": 20.523239135742188,
+        "median_background_c": 20.475893020629883,
+        "median_residual_c": 0.100799560546875,
+        "alarm_fraction": 0.041916133476955164
+      },
+      "far_right": {
+        "n_cells": 95521,
+        "n_columns": 1619,
+        "median_clean_c": 22.991191864013672,
+        "median_background_c": 23.008575439453125,
+        "median_residual_c": -0.039836883544921875,
+        "alarm_fraction": 0.0
+      },
+      "center_m": 964.1115,
+      "halo_columns": 630,
+      "halo_columns_inside_span": 236,
+      "halo_inside_fraction": 0.3746031746031746
+    },
+    {
+      "id": "next-0007",
+      "record": "2",
+      "presence": "no",
+      "expert_class": "Background",
+      "notes": "тоже ниче непонятно. справа в упоре был local cooling как будто",
+      "rows_half_open": [
+        65,
+        80
+      ],
+      "x_m": [
+        501.966,
+        541.555
+      ],
+      "width_m": 39.58899999999994,
+      "threshold_z": 3.5,
+      "inner_m": 8.0,
+      "outer_m": 40.0,
+      "detector": "spatial_z_halo",
+      "clean": "median_x3",
+      "trained_classifier_operational": false,
+      "n_in_box": 0,
+      "in_box": [],
+      "n_left_flank_only": 2,
+      "left_flank_only": [
+        {
+          "shape_hypothesis": "Local_Cooling",
+          "contrast": -5.93,
+          "median_contrast_c": -5.93,
+          "peak_contrast_c": -9.413,
+          "start_m": 495.875,
+          "end_m": 500.443,
+          "width_m": 4.822,
+          "polarity": "cold",
+          "support": 5288,
+          "expert_confirmed": false
+        },
+        {
+          "shape_hypothesis": "Local_Heating",
+          "contrast": 4.783,
+          "median_contrast_c": 4.783,
+          "peak_contrast_c": 6.19,
+          "start_m": 468.214,
+          "end_m": 472.274,
+          "width_m": 4.314,
+          "polarity": "hot",
+          "support": 5536,
+          "expert_confirmed": false
+        }
+      ],
+      "n_right_flank_only": 0,
+      "right_flank_only": [],
+      "left_flank_m": [
+        462.1233140915897,
+        501.7121317732415
+      ],
+      "right_flank_m": [
+        541.8084983995299,
+        581.3973160811818
+      ],
+      "rectangle": {
+        "n_cells": 2355,
+        "n_columns": 157,
+        "median_clean_c": 18.803129196166992,
+        "median_background_c": 18.743555068969727,
+        "median_residual_c": 0.11858367919921875,
+        "alarm_fraction": 0.0
+      },
+      "edge_inner": {
+        "n_cells": 945,
+        "n_columns": 63,
+        "median_clean_c": 18.8143253326416,
+        "median_background_c": 18.77980613708496,
+        "median_residual_c": 0.12137413024902344,
+        "alarm_fraction": 0.0
+      },
+      "middle_beyond_inner": {
+        "n_cells": 1395,
+        "n_columns": 93,
+        "median_clean_c": 18.809900283813477,
+        "median_background_c": 18.73589324951172,
+        "median_residual_c": 0.11959266662597656,
+        "alarm_fraction": 0.0
+      },
+      "core_beyond_outer": {
+        "n_cells": 0
+      },
+      "left_flank_band": {
+        "n_cells": 2355,
+        "n_columns": 157,
+        "median_clean_c": 18.969951629638672,
+        "median_background_c": 18.970279693603516,
+        "median_residual_c": -0.0050411224365234375,
+        "alarm_fraction": 0.20254777070063695
+      },
+      "right_flank_band": {
+        "n_cells": 2355,
+        "n_columns": 157,
+        "median_clean_c": 18.464855194091797,
+        "median_background_c": 18.436927795410156,
+        "median_residual_c": -0.001789093017578125,
+        "alarm_fraction": 0.003821656050955414
+      },
+      "far_left": {
+        "n_cells": 27315,
+        "n_columns": 1821,
+        "median_clean_c": 18.89266586303711,
+        "median_background_c": 18.697330474853516,
+        "median_residual_c": 0.0065135955810546875,
+        "alarm_fraction": 0.08713161266703276
+      },
+      "far_right": {
+        "n_cells": 345,
+        "n_columns": 23,
+        "median_clean_c": 17.5463924407959,
+        "median_background_c": 18.617767333984375,
+        "median_residual_c": -1.0008201599121094,
+        "alarm_fraction": 0.0
+      },
+      "center_m": 521.7605,
+      "halo_columns": 252,
+      "halo_columns_inside_span": 93,
+      "halo_inside_fraction": 0.36904761904761907
+    },
+    {
+      "id": "next-0010",
+      "record": "2",
+      "presence": "no",
+      "expert_class": "Background",
+      "notes": "непонятно просадки какие-то типо а потом справа кстати подъем. но относительно левой и правой части как будто тут просто cooling был хз",
+      "rows_half_open": [
+        0,
+        409
+      ],
+      "x_m": [
+        291.587,
+        317.979
+      ],
+      "width_m": 26.391999999999996,
+      "threshold_z": 3.5,
+      "inner_m": 8.0,
+      "outer_m": 40.0,
+      "detector": "spatial_z_halo",
+      "clean": "median_x3",
+      "trained_classifier_operational": false,
+      "n_in_box": 6,
+      "in_box": [
+        {
+          "shape_hypothesis": "Local_Cooling",
+          "contrast": -3.905,
+          "median_contrast_c": -3.905,
+          "peak_contrast_c": -6.234,
+          "start_m": 291.587,
+          "end_m": 317.979,
+          "width_m": 26.646,
+          "polarity": "cold",
+          "support": 11525,
+          "expert_confirmed": false
+        },
+        {
+          "shape_hypothesis": "Local_Cooling",
+          "contrast": -3.96,
+          "median_contrast_c": -3.96,
+          "peak_contrast_c": -4.576,
+          "start_m": 306.052,
+          "end_m": 317.472,
+          "width_m": 11.674,
+          "polarity": "cold",
+          "support": 376,
+          "expert_confirmed": false
+        },
+        {
+          "shape_hypothesis": "Local_Cooling",
+          "contrast": -4.295,
+          "median_contrast_c": -4.295,
+          "peak_contrast_c": -4.811,
+          "start_m": 309.097,
+          "end_m": 313.919,
+          "width_m": 5.075,
+          "polarity": "cold",
+          "support": 57,
+          "expert_confirmed": false
+        },
+        {
+          "shape_hypothesis": "Local_Cooling",
+          "contrast": -4.274,
+          "median_contrast_c": -4.274,
+          "peak_contrast_c": -4.574,
+          "start_m": 310.112,
+          "end_m": 314.427,
+          "width_m": 4.568,
+          "polarity": "cold",
+          "support": 64,
+          "expert_confirmed": false
+        },
+        {
+          "shape_hypothesis": "Local_Cooling",
+          "contrast": -4.254,
+          "median_contrast_c": -4.254,
+          "peak_contrast_c": -4.625,
+          "start_m": 310.112,
+          "end_m": 313.919,
+          "width_m": 4.06,
+          "polarity": "cold",
+          "support": 45,
+          "expert_confirmed": false
+        },
+        {
+          "shape_hypothesis": "Local_Cooling",
+          "contrast": -4.267,
+          "median_contrast_c": -4.267,
+          "peak_contrast_c": -4.404,
+          "start_m": 310.112,
+          "end_m": 314.173,
+          "width_m": 4.314,
+          "polarity": "cold",
+          "support": 26,
+          "expert_confirmed": false
+        }
+      ],
+      "n_left_flank_only": 1,
+      "left_flank_only": [
+        {
+          "shape_hypothesis": "Local_Heating",
+          "contrast": 3.5,
+          "median_contrast_c": 3.5,
+          "peak_contrast_c": 4.608,
+          "start_m": 271.285,
+          "end_m": 276.107,
+          "width_m": 5.075,
+          "polarity": "hot",
+          "support": 2112,
+          "expert_confirmed": false
+        }
+      ],
+      "n_right_flank_only": 1,
+      "right_flank_only": [
+        {
+          "shape_hypothesis": "Local_Heating",
+          "contrast": 4.231,
+          "median_contrast_c": 4.231,
+          "peak_contrast_c": 6.885,
+          "start_m": 320.517,
+          "end_m": 329.907,
+          "width_m": 9.643,
+          "polarity": "hot",
+          "support": 6551,
+          "expert_confirmed": false
+        }
+      ],
+      "left_flank_m": [
+        251.74427653973473,
+        291.33309422138655
+      ],
+      "right_flank_m": [
+        318.23318828712434,
+        357.8220059687762
+      ],
+      "rectangle": {
+        "n_cells": 42945,
+        "n_columns": 105,
+        "median_clean_c": 14.315984725952148,
+        "median_background_c": 17.396413803100586,
+        "median_residual_c": -3.111233711242676,
+        "alarm_fraction": 0.2827104435906392
+      },
+      "edge_inner": {
+        "n_cells": 25358,
+        "n_columns": 62,
+        "median_clean_c": 14.000066757202148,
+        "median_background_c": 17.008249282836914,
+        "median_residual_c": -3.216876983642578,
+        "alarm_fraction": 0.3157583405631359
+      },
+      "middle_beyond_inner": {
+        "n_cells": 16769,
+        "n_columns": 41,
+        "median_clean_c": 14.681964874267578,
+        "median_background_c": 17.568153381347656,
+        "median_residual_c": -2.974903106689453,
+        "alarm_fraction": 0.24545291907686803
+      },
+      "core_beyond_outer": {
+        "n_cells": 0
+      },
+      "left_flank_band": {
+        "n_cells": 64213,
+        "n_columns": 157,
+        "median_clean_c": 15.922465324401855,
+        "median_background_c": 15.814557075500488,
+        "median_residual_c": -0.2523689270019531,
+        "alarm_fraction": 0.034821609331443786
+      },
+      "right_flank_band": {
+        "n_cells": 64213,
+        "n_columns": 157,
+        "median_clean_c": 19.098283767700195,
+        "median_background_c": 18.478864669799805,
+        "median_residual_c": 0.46779632568359375,
+        "alarm_fraction": 0.10201984021927024
+      },
+      "far_left": {
+        "n_cells": 405728,
+        "n_columns": 992,
+        "median_clean_c": 19.704784393310547,
+        "median_background_c": 19.64402961730957,
+        "median_residual_c": 0.01612091064453125,
+        "alarm_fraction": 0.04331473302310908
+      },
+      "far_right": {
+        "n_cells": 369204,
+        "n_columns": 904,
+        "median_clean_c": 18.6119441986084,
+        "median_background_c": 18.74289894104004,
+        "median_residual_c": -0.04038810729980469,
+        "alarm_fraction": 0.04327417904464741
+      },
+      "center_m": 304.783,
+      "halo_columns": 252,
+      "halo_columns_inside_span": 40,
+      "halo_inside_fraction": 0.15873015873015872
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "files": {
+    "1.csv": {
+      "detector_total": 17,
+      "opencv_total": 19,
+      "opencv_by_type": {
+        "heating": 18,
+        "unknown": 1
+      }
+    },
+    "2.csv": {
+      "detector_total": 21,
+      "opencv_total": 32,
+      "opencv_by_type": {
+        "heating": 6,
+        "cooling": 16,
+        "unknown": 10
+      }
+    },
+    "3.csv": {
+      "detector_total": 13,
+      "opencv_total": 35,
+      "opencv_by_type": {
+        "heating": 16,
+        "cooling": 11,
+        "unknown": 8
+      }
+    },
+    "4.csv": {
+      "detector_total": 9,
+      "opencv_total": 13,
+      "opencv_by_type": {
+        "heating": 10,
+        "unknown": 3
+      }
+    },
+    "5.csv": {
+      "detector_total": 69,
+      "opencv_total": 52,
+      "opencv_by_type": {
+        "heating": 32,
+        "unknown": 20
+      }
+    },
+    "6.csv": {
+      "detector_total": 27,
+      "opencv_total": 73,
+      "opencv_by_type": {
+        "unknown": 43,
+        "heating": 16,
+        "cooling": 14
+      }
+    }
+  },
+  "opencv_at_least_3x": [],
+  "opencv_at_least_3x_rule": "filtered OpenCV components >= 3 times the detector event count; a file with both counts at zero is omitted",
+  "file4_long_heats_90_115m": [
+    "91.0-93.5 m / 28 min",
+    "94.0-100.0 m / 352 min",
+    "105.8-114.0 m / 32 min",
+    "106.3-113.0 m / 212 min"
+  ]
+}

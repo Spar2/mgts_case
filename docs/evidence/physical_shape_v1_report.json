@@ -1,0 +1,4325 @@
+{
+  "protocol": "synthetic_offline_scene_classification_v1",
+  "not_event_detection": true,
+  "expert_confirmed": false,
+  "schema": "physical_shape_v1",
+  "features": [
+    "positive_peak_c",
+    "negative_peak_c",
+    "rms_c",
+    "spatial_width_m",
+    "positive_duty",
+    "negative_duty",
+    "positive_episodes",
+    "negative_episodes",
+    "longest_episode_s",
+    "period_s",
+    "period_cv",
+    "step_c",
+    "coverage"
+  ],
+  "labels": [
+    "Background",
+    "Local_Heating",
+    "Local_Cooling",
+    "Periodic_Thermal",
+    "Broad_Shift",
+    "Sensor_Fault"
+  ],
+  "train_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63
+  ],
+  "validation_seeds": [
+    10000,
+    10001,
+    10002,
+    10003,
+    10004,
+    10005,
+    10006,
+    10007,
+    10008,
+    10009,
+    10010,
+    10011,
+    10012,
+    10013,
+    10014,
+    10015,
+    10016,
+    10017,
+    10018,
+    10019,
+    10020,
+    10021,
+    10022,
+    10023,
+    10024,
+    10025,
+    10026,
+    10027,
+    10028,
+    10029,
+    10030,
+    10031
+  ],
+  "test_seeds": [
+    20000,
+    20001,
+    20002,
+    20003,
+    20004,
+    20005,
+    20006,
+    20007,
+    20008,
+    20009,
+    20010,
+    20011,
+    20012,
+    20013,
+    20014,
+    20015,
+    20016,
+    20017,
+    20018,
+    20019,
+    20020,
+    20021,
+    20022,
+    20023,
+    20024,
+    20025,
+    20026,
+    20027,
+    20028,
+    20029,
+    20030,
+    20031,
+    20032,
+    20033,
+    20034,
+    20035,
+    20036,
+    20037,
+    20038,
+    20039,
+    20040,
+    20041,
+    20042,
+    20043,
+    20044,
+    20045,
+    20046,
+    20047,
+    20048,
+    20049,
+    20050,
+    20051,
+    20052,
+    20053,
+    20054,
+    20055,
+    20056,
+    20057,
+    20058,
+    20059,
+    20060,
+    20061,
+    20062,
+    20063
+  ],
+  "max_false_alarm_rate": 0.05,
+  "validation_candidates": [
+    {
+      "threshold": 0.0,
+      "scene_accuracy": 0.8958333333333334,
+      "foreground_class_recall": 0.875,
+      "background_false_positive_fraction": 0.0,
+      "n_background": 32,
+      "n_false_background": 0,
+      "per_class_recall": {
+        "Background": 1.0,
+        "Local_Heating": 1.0,
+        "Local_Cooling": 1.0,
+        "Periodic_Thermal": 1.0,
+        "Broad_Shift": 1.0,
+        "Sensor_Fault": 0.375
+      },
+      "confusion_matrix": [
+        [
+          32,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          32,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          32,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          32,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          32,
+          0
+        ],
+        [
+          20,
+          0,
+          0,
+          0,
+          0,
+          12
+        ]
+      ]
+    },
+    {
+      "threshold": 0.5,
+      "scene_accuracy": 0.8958333333333334,
+      "foreground_class_recall": 0.875,
+      "background_false_positive_fraction": 0.0,
+      "n_background": 32,
+      "n_false_background": 0,
+      "per_class_recall": {
+        "Background": 1.0,
+        "Local_Heating": 1.0,
+        "Local_Cooling": 1.0,
+        "Periodic_Thermal": 1.0,
+        "Broad_Shift": 1.0,
+        "Sensor_Fault": 0.375
+      },
+      "confusion_matrix": [
+        [
+          32,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          32,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          32,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          32,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          32,
+          0
+        ],
+        [
+          20,
+          0,
+          0,
+          0,
+          0,
+          12
+        ]
+      ]
+    },
+    {
+      "threshold": 0.6,
+      "scene_accuracy": 0.8958333333333334,
+      "foreground_class_recall": 0.875,
+      "background_false_positive_fraction": 0.0,
+      "n_background": 32,
+      "n_false_background": 0,
+      "per_class_recall": {
+        "Background": 1.0,
+        "Local_Heating": 1.0,
+        "Local_Cooling": 1.0,
+        "Periodic_Thermal": 1.0,
+        "Broad_Shift": 1.0,
+        "Sensor_Fault": 0.375
+      },
+      "confusion_matrix": [
+        [
+          32,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          32,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          32,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          32,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          32,
+          0
+        ],
+        [
+          20,
+          0,
+          0,
+          0,
+          0,
+          12
+        ]
+      ]
+    },
+    {
+      "threshold": 0.7,
+      "scene_accuracy": 0.8854166666666666,
+      "foreground_class_recall": 0.8625,
+      "background_false_positive_fraction": 0.0,
+      "n_background": 32,
+      "n_false_background": 0,
+      "per_class_recall": {
+        "Background": 1.0,
+        "Local_Heating": 0.96875,
+        "Local_Cooling": 1.0,
+        "Periodic_Thermal": 1.0,
+        "Broad_Shift": 0.96875,
+        "Sensor_Fault": 0.375
+      },
+      "confusion_matrix": [
+        [
+          32,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          31,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          32,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          32,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          31,
+          0
+        ],
+        [
+          20,
+          0,
+          0,
+          0,
+          0,
+          12
+        ]
+      ]
+    },
+    {
+      "threshold": 0.8,
+      "scene_accuracy": 0.859375,
+      "foreground_class_recall": 0.83125,
+      "background_false_positive_fraction": 0.0,
+      "n_background": 32,
+      "n_false_background": 0,
+      "per_class_recall": {
+        "Background": 1.0,
+        "Local_Heating": 0.9375,
+        "Local_Cooling": 0.96875,
+        "Periodic_Thermal": 1.0,
+        "Broad_Shift": 0.875,
+        "Sensor_Fault": 0.375
+      },
+      "confusion_matrix": [
+        [
+          32,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          30,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          31,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          32,
+          0,
+          0
+        ],
+        [
+          4,
+          0,
+          0,
+          0,
+          28,
+          0
+        ],
+        [
+          20,
+          0,
+          0,
+          0,
+          0,
+          12
+        ]
+      ]
+    },
+    {
+      "threshold": 0.9,
+      "scene_accuracy": 0.7604166666666666,
+      "foreground_class_recall": 0.7125,
+      "background_false_positive_fraction": 0.0,
+      "n_background": 32,
+      "n_false_background": 0,
+      "per_class_recall": {
+        "Background": 1.0,
+        "Local_Heating": 0.71875,
+        "Local_Cooling": 0.75,
+        "Periodic_Thermal": 1.0,
+        "Broad_Shift": 0.71875,
+        "Sensor_Fault": 0.375
+      },
+      "confusion_matrix": [
+        [
+          32,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          9,
+          23,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          8,
+          0,
+          24,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          32,
+          0,
+          0
+        ],
+        [
+          9,
+          0,
+          0,
+          0,
+          23,
+          0
+        ],
+        [
+          20,
+          0,
+          0,
+          0,
+          0,
+          12
+        ]
+      ]
+    },
+    {
+      "threshold": 0.95,
+      "scene_accuracy": 0.640625,
+      "foreground_class_recall": 0.56875,
+      "background_false_positive_fraction": 0.0,
+      "n_background": 32,
+      "n_false_background": 0,
+      "per_class_recall": {
+        "Background": 1.0,
+        "Local_Heating": 0.4375,
+        "Local_Cooling": 0.46875,
+        "Periodic_Thermal": 1.0,
+        "Broad_Shift": 0.625,
+        "Sensor_Fault": 0.3125
+      },
+      "confusion_matrix": [
+        [
+          32,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          18,
+          14,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          17,
+          0,
+          15,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          32,
+          0,
+          0
+        ],
+        [
+          12,
+          0,
+          0,
+          0,
+          20,
+          0
+        ],
+        [
+          22,
+          0,
+          0,
+          0,
+          0,
+          10
+        ]
+      ]
+    },
+    {
+      "threshold": 0.99,
+      "scene_accuracy": 0.22395833333333334,
+      "foreground_class_recall": 0.06875,
+      "background_false_positive_fraction": 0.0,
+      "n_background": 32,
+      "n_false_background": 0,
+      "per_class_recall": {
+        "Background": 1.0,
+        "Local_Heating": 0.03125,
+        "Local_Cooling": 0.0,
+        "Periodic_Thermal": 0.0,
+        "Broad_Shift": 0.3125,
+        "Sensor_Fault": 0.0
+      },
+      "confusion_matrix": [
+        [
+          32,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          31,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          22,
+          0,
+          0,
+          0,
+          10,
+          0
+        ],
+        [
+          32,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    }
+  ],
+  "chosen_validation": {
+    "threshold": 0.0,
+    "scene_accuracy": 0.8958333333333334,
+    "foreground_class_recall": 0.875,
+    "background_false_positive_fraction": 0.0,
+    "n_background": 32,
+    "n_false_background": 0,
+    "per_class_recall": {
+      "Background": 1.0,
+      "Local_Heating": 1.0,
+      "Local_Cooling": 1.0,
+      "Periodic_Thermal": 1.0,
+      "Broad_Shift": 1.0,
+      "Sensor_Fault": 0.375
+    },
+    "confusion_matrix": [
+      [
+        32,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        32,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        32,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        32,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        32,
+        0
+      ],
+      [
+        20,
+        0,
+        0,
+        0,
+        0,
+        12
+      ]
+    ]
+  },
+  "test": {
+    "scene_accuracy": 0.8984375,
+    "foreground_class_recall": 0.878125,
+    "background_false_positive_fraction": 0.0,
+    "n_background": 64,
+    "n_false_background": 0,
+    "per_class_recall": {
+      "Background": 1.0,
+      "Local_Heating": 1.0,
+      "Local_Cooling": 1.0,
+      "Periodic_Thermal": 1.0,
+      "Broad_Shift": 0.984375,
+      "Sensor_Fault": 0.40625
+    },
+    "confusion_matrix": [
+      [
+        64,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        64,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        64,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        64,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        63,
+        0
+      ],
+      [
+        38,
+        0,
+        0,
+        0,
+        0,
+        26
+      ]
+    ]
+  },
+  "test_budget_pass": true,
+  "model_sha256": "39d4a614802e24ba3fd2bb613bc4158f514ae1dbae71a5a82494f72df0c3d151",
+  "script_sha256": "16dc5875ce8e4c73428e2d27f46646d7a7d504ad3bd277d72fd16aaba0d8e1bb",
+  "feature_code_sha256": "5149cc81dda627e4fc095095f2ff62dfdebc57ec95fc813ebf0b3b318e5beab2",
+  "runtime": {
+    "python": "3.12.14",
+    "numpy": "2.5.3"
+  },
+  "validation_geometry": [
+    {
+      "seed": 10000,
+      "label": "Background",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10000,
+      "label": "Local_Heating",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10000,
+      "label": "Local_Cooling",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10000,
+      "label": "Periodic_Thermal",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10000,
+      "label": "Broad_Shift",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10000,
+      "label": "Sensor_Fault",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10001,
+      "label": "Background",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10001,
+      "label": "Local_Heating",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10001,
+      "label": "Local_Cooling",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10001,
+      "label": "Periodic_Thermal",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10001,
+      "label": "Broad_Shift",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10001,
+      "label": "Sensor_Fault",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10002,
+      "label": "Background",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10002,
+      "label": "Local_Heating",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10002,
+      "label": "Local_Cooling",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10002,
+      "label": "Periodic_Thermal",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10002,
+      "label": "Broad_Shift",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10002,
+      "label": "Sensor_Fault",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10003,
+      "label": "Background",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10003,
+      "label": "Local_Heating",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10003,
+      "label": "Local_Cooling",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10003,
+      "label": "Periodic_Thermal",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10003,
+      "label": "Broad_Shift",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10003,
+      "label": "Sensor_Fault",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10004,
+      "label": "Background",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10004,
+      "label": "Local_Heating",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10004,
+      "label": "Local_Cooling",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10004,
+      "label": "Periodic_Thermal",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10004,
+      "label": "Broad_Shift",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10004,
+      "label": "Sensor_Fault",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10005,
+      "label": "Background",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10005,
+      "label": "Local_Heating",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10005,
+      "label": "Local_Cooling",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10005,
+      "label": "Periodic_Thermal",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10005,
+      "label": "Broad_Shift",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10005,
+      "label": "Sensor_Fault",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10006,
+      "label": "Background",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10006,
+      "label": "Local_Heating",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10006,
+      "label": "Local_Cooling",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10006,
+      "label": "Periodic_Thermal",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10006,
+      "label": "Broad_Shift",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10006,
+      "label": "Sensor_Fault",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10007,
+      "label": "Background",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10007,
+      "label": "Local_Heating",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10007,
+      "label": "Local_Cooling",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10007,
+      "label": "Periodic_Thermal",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10007,
+      "label": "Broad_Shift",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10007,
+      "label": "Sensor_Fault",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10008,
+      "label": "Background",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10008,
+      "label": "Local_Heating",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10008,
+      "label": "Local_Cooling",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10008,
+      "label": "Periodic_Thermal",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10008,
+      "label": "Broad_Shift",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10008,
+      "label": "Sensor_Fault",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10009,
+      "label": "Background",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10009,
+      "label": "Local_Heating",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10009,
+      "label": "Local_Cooling",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10009,
+      "label": "Periodic_Thermal",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10009,
+      "label": "Broad_Shift",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10009,
+      "label": "Sensor_Fault",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10010,
+      "label": "Background",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10010,
+      "label": "Local_Heating",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10010,
+      "label": "Local_Cooling",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10010,
+      "label": "Periodic_Thermal",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10010,
+      "label": "Broad_Shift",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10010,
+      "label": "Sensor_Fault",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10011,
+      "label": "Background",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10011,
+      "label": "Local_Heating",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10011,
+      "label": "Local_Cooling",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10011,
+      "label": "Periodic_Thermal",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10011,
+      "label": "Broad_Shift",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10011,
+      "label": "Sensor_Fault",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10012,
+      "label": "Background",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10012,
+      "label": "Local_Heating",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10012,
+      "label": "Local_Cooling",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10012,
+      "label": "Periodic_Thermal",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10012,
+      "label": "Broad_Shift",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10012,
+      "label": "Sensor_Fault",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10013,
+      "label": "Background",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10013,
+      "label": "Local_Heating",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10013,
+      "label": "Local_Cooling",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10013,
+      "label": "Periodic_Thermal",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10013,
+      "label": "Broad_Shift",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10013,
+      "label": "Sensor_Fault",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10014,
+      "label": "Background",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10014,
+      "label": "Local_Heating",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10014,
+      "label": "Local_Cooling",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10014,
+      "label": "Periodic_Thermal",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10014,
+      "label": "Broad_Shift",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10014,
+      "label": "Sensor_Fault",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10015,
+      "label": "Background",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10015,
+      "label": "Local_Heating",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10015,
+      "label": "Local_Cooling",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10015,
+      "label": "Periodic_Thermal",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10015,
+      "label": "Broad_Shift",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10015,
+      "label": "Sensor_Fault",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10016,
+      "label": "Background",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10016,
+      "label": "Local_Heating",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10016,
+      "label": "Local_Cooling",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10016,
+      "label": "Periodic_Thermal",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10016,
+      "label": "Broad_Shift",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10016,
+      "label": "Sensor_Fault",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10017,
+      "label": "Background",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10017,
+      "label": "Local_Heating",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10017,
+      "label": "Local_Cooling",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10017,
+      "label": "Periodic_Thermal",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10017,
+      "label": "Broad_Shift",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10017,
+      "label": "Sensor_Fault",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10018,
+      "label": "Background",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10018,
+      "label": "Local_Heating",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10018,
+      "label": "Local_Cooling",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10018,
+      "label": "Periodic_Thermal",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10018,
+      "label": "Broad_Shift",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10018,
+      "label": "Sensor_Fault",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10019,
+      "label": "Background",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10019,
+      "label": "Local_Heating",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10019,
+      "label": "Local_Cooling",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10019,
+      "label": "Periodic_Thermal",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10019,
+      "label": "Broad_Shift",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10019,
+      "label": "Sensor_Fault",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10020,
+      "label": "Background",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10020,
+      "label": "Local_Heating",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10020,
+      "label": "Local_Cooling",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10020,
+      "label": "Periodic_Thermal",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10020,
+      "label": "Broad_Shift",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10020,
+      "label": "Sensor_Fault",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10021,
+      "label": "Background",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10021,
+      "label": "Local_Heating",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10021,
+      "label": "Local_Cooling",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10021,
+      "label": "Periodic_Thermal",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10021,
+      "label": "Broad_Shift",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10021,
+      "label": "Sensor_Fault",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10022,
+      "label": "Background",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10022,
+      "label": "Local_Heating",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10022,
+      "label": "Local_Cooling",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10022,
+      "label": "Periodic_Thermal",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10022,
+      "label": "Broad_Shift",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10022,
+      "label": "Sensor_Fault",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10023,
+      "label": "Background",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10023,
+      "label": "Local_Heating",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10023,
+      "label": "Local_Cooling",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10023,
+      "label": "Periodic_Thermal",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10023,
+      "label": "Broad_Shift",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10023,
+      "label": "Sensor_Fault",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10024,
+      "label": "Background",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10024,
+      "label": "Local_Heating",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10024,
+      "label": "Local_Cooling",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10024,
+      "label": "Periodic_Thermal",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10024,
+      "label": "Broad_Shift",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10024,
+      "label": "Sensor_Fault",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10025,
+      "label": "Background",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10025,
+      "label": "Local_Heating",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10025,
+      "label": "Local_Cooling",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10025,
+      "label": "Periodic_Thermal",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10025,
+      "label": "Broad_Shift",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10025,
+      "label": "Sensor_Fault",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10026,
+      "label": "Background",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10026,
+      "label": "Local_Heating",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10026,
+      "label": "Local_Cooling",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10026,
+      "label": "Periodic_Thermal",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10026,
+      "label": "Broad_Shift",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10026,
+      "label": "Sensor_Fault",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10027,
+      "label": "Background",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10027,
+      "label": "Local_Heating",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10027,
+      "label": "Local_Cooling",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10027,
+      "label": "Periodic_Thermal",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10027,
+      "label": "Broad_Shift",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10027,
+      "label": "Sensor_Fault",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10028,
+      "label": "Background",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10028,
+      "label": "Local_Heating",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10028,
+      "label": "Local_Cooling",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10028,
+      "label": "Periodic_Thermal",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10028,
+      "label": "Broad_Shift",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10028,
+      "label": "Sensor_Fault",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10029,
+      "label": "Background",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10029,
+      "label": "Local_Heating",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10029,
+      "label": "Local_Cooling",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10029,
+      "label": "Periodic_Thermal",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10029,
+      "label": "Broad_Shift",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10029,
+      "label": "Sensor_Fault",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10030,
+      "label": "Background",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10030,
+      "label": "Local_Heating",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10030,
+      "label": "Local_Cooling",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10030,
+      "label": "Periodic_Thermal",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10030,
+      "label": "Broad_Shift",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10030,
+      "label": "Sensor_Fault",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 10031,
+      "label": "Background",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10031,
+      "label": "Local_Heating",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10031,
+      "label": "Local_Cooling",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10031,
+      "label": "Periodic_Thermal",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10031,
+      "label": "Broad_Shift",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 10031,
+      "label": "Sensor_Fault",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    }
+  ],
+  "test_geometry": [
+    {
+      "seed": 20000,
+      "label": "Background",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20000,
+      "label": "Local_Heating",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20000,
+      "label": "Local_Cooling",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20000,
+      "label": "Periodic_Thermal",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20000,
+      "label": "Broad_Shift",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20000,
+      "label": "Sensor_Fault",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20001,
+      "label": "Background",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20001,
+      "label": "Local_Heating",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20001,
+      "label": "Local_Cooling",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20001,
+      "label": "Periodic_Thermal",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20001,
+      "label": "Broad_Shift",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20001,
+      "label": "Sensor_Fault",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20002,
+      "label": "Background",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20002,
+      "label": "Local_Heating",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20002,
+      "label": "Local_Cooling",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20002,
+      "label": "Periodic_Thermal",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20002,
+      "label": "Broad_Shift",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20002,
+      "label": "Sensor_Fault",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20003,
+      "label": "Background",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20003,
+      "label": "Local_Heating",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20003,
+      "label": "Local_Cooling",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20003,
+      "label": "Periodic_Thermal",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20003,
+      "label": "Broad_Shift",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20003,
+      "label": "Sensor_Fault",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20004,
+      "label": "Background",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20004,
+      "label": "Local_Heating",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20004,
+      "label": "Local_Cooling",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20004,
+      "label": "Periodic_Thermal",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20004,
+      "label": "Broad_Shift",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20004,
+      "label": "Sensor_Fault",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20005,
+      "label": "Background",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20005,
+      "label": "Local_Heating",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20005,
+      "label": "Local_Cooling",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20005,
+      "label": "Periodic_Thermal",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20005,
+      "label": "Broad_Shift",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20005,
+      "label": "Sensor_Fault",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20006,
+      "label": "Background",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20006,
+      "label": "Local_Heating",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20006,
+      "label": "Local_Cooling",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20006,
+      "label": "Periodic_Thermal",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20006,
+      "label": "Broad_Shift",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20006,
+      "label": "Sensor_Fault",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20007,
+      "label": "Background",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20007,
+      "label": "Local_Heating",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20007,
+      "label": "Local_Cooling",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20007,
+      "label": "Periodic_Thermal",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20007,
+      "label": "Broad_Shift",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20007,
+      "label": "Sensor_Fault",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20008,
+      "label": "Background",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20008,
+      "label": "Local_Heating",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20008,
+      "label": "Local_Cooling",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20008,
+      "label": "Periodic_Thermal",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20008,
+      "label": "Broad_Shift",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20008,
+      "label": "Sensor_Fault",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20009,
+      "label": "Background",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20009,
+      "label": "Local_Heating",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20009,
+      "label": "Local_Cooling",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20009,
+      "label": "Periodic_Thermal",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20009,
+      "label": "Broad_Shift",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20009,
+      "label": "Sensor_Fault",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20010,
+      "label": "Background",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20010,
+      "label": "Local_Heating",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20010,
+      "label": "Local_Cooling",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20010,
+      "label": "Periodic_Thermal",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20010,
+      "label": "Broad_Shift",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20010,
+      "label": "Sensor_Fault",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20011,
+      "label": "Background",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20011,
+      "label": "Local_Heating",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20011,
+      "label": "Local_Cooling",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20011,
+      "label": "Periodic_Thermal",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20011,
+      "label": "Broad_Shift",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20011,
+      "label": "Sensor_Fault",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20012,
+      "label": "Background",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20012,
+      "label": "Local_Heating",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20012,
+      "label": "Local_Cooling",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20012,
+      "label": "Periodic_Thermal",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20012,
+      "label": "Broad_Shift",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20012,
+      "label": "Sensor_Fault",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20013,
+      "label": "Background",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20013,
+      "label": "Local_Heating",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20013,
+      "label": "Local_Cooling",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20013,
+      "label": "Periodic_Thermal",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20013,
+      "label": "Broad_Shift",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20013,
+      "label": "Sensor_Fault",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20014,
+      "label": "Background",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20014,
+      "label": "Local_Heating",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20014,
+      "label": "Local_Cooling",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20014,
+      "label": "Periodic_Thermal",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20014,
+      "label": "Broad_Shift",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20014,
+      "label": "Sensor_Fault",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20015,
+      "label": "Background",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20015,
+      "label": "Local_Heating",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20015,
+      "label": "Local_Cooling",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20015,
+      "label": "Periodic_Thermal",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20015,
+      "label": "Broad_Shift",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20015,
+      "label": "Sensor_Fault",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20016,
+      "label": "Background",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20016,
+      "label": "Local_Heating",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20016,
+      "label": "Local_Cooling",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20016,
+      "label": "Periodic_Thermal",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20016,
+      "label": "Broad_Shift",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20016,
+      "label": "Sensor_Fault",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20017,
+      "label": "Background",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20017,
+      "label": "Local_Heating",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20017,
+      "label": "Local_Cooling",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20017,
+      "label": "Periodic_Thermal",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20017,
+      "label": "Broad_Shift",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20017,
+      "label": "Sensor_Fault",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20018,
+      "label": "Background",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20018,
+      "label": "Local_Heating",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20018,
+      "label": "Local_Cooling",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20018,
+      "label": "Periodic_Thermal",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20018,
+      "label": "Broad_Shift",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20018,
+      "label": "Sensor_Fault",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20019,
+      "label": "Background",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20019,
+      "label": "Local_Heating",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20019,
+      "label": "Local_Cooling",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20019,
+      "label": "Periodic_Thermal",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20019,
+      "label": "Broad_Shift",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20019,
+      "label": "Sensor_Fault",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20020,
+      "label": "Background",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20020,
+      "label": "Local_Heating",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20020,
+      "label": "Local_Cooling",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20020,
+      "label": "Periodic_Thermal",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20020,
+      "label": "Broad_Shift",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20020,
+      "label": "Sensor_Fault",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20021,
+      "label": "Background",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20021,
+      "label": "Local_Heating",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20021,
+      "label": "Local_Cooling",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20021,
+      "label": "Periodic_Thermal",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20021,
+      "label": "Broad_Shift",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20021,
+      "label": "Sensor_Fault",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20022,
+      "label": "Background",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20022,
+      "label": "Local_Heating",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20022,
+      "label": "Local_Cooling",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20022,
+      "label": "Periodic_Thermal",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20022,
+      "label": "Broad_Shift",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20022,
+      "label": "Sensor_Fault",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20023,
+      "label": "Background",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20023,
+      "label": "Local_Heating",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20023,
+      "label": "Local_Cooling",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20023,
+      "label": "Periodic_Thermal",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20023,
+      "label": "Broad_Shift",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20023,
+      "label": "Sensor_Fault",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20024,
+      "label": "Background",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20024,
+      "label": "Local_Heating",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20024,
+      "label": "Local_Cooling",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20024,
+      "label": "Periodic_Thermal",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20024,
+      "label": "Broad_Shift",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20024,
+      "label": "Sensor_Fault",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20025,
+      "label": "Background",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20025,
+      "label": "Local_Heating",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20025,
+      "label": "Local_Cooling",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20025,
+      "label": "Periodic_Thermal",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20025,
+      "label": "Broad_Shift",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20025,
+      "label": "Sensor_Fault",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20026,
+      "label": "Background",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20026,
+      "label": "Local_Heating",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20026,
+      "label": "Local_Cooling",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20026,
+      "label": "Periodic_Thermal",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20026,
+      "label": "Broad_Shift",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20026,
+      "label": "Sensor_Fault",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20027,
+      "label": "Background",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20027,
+      "label": "Local_Heating",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20027,
+      "label": "Local_Cooling",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20027,
+      "label": "Periodic_Thermal",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20027,
+      "label": "Broad_Shift",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20027,
+      "label": "Sensor_Fault",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20028,
+      "label": "Background",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20028,
+      "label": "Local_Heating",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20028,
+      "label": "Local_Cooling",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20028,
+      "label": "Periodic_Thermal",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20028,
+      "label": "Broad_Shift",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20028,
+      "label": "Sensor_Fault",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20029,
+      "label": "Background",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20029,
+      "label": "Local_Heating",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20029,
+      "label": "Local_Cooling",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20029,
+      "label": "Periodic_Thermal",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20029,
+      "label": "Broad_Shift",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20029,
+      "label": "Sensor_Fault",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20030,
+      "label": "Background",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20030,
+      "label": "Local_Heating",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20030,
+      "label": "Local_Cooling",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20030,
+      "label": "Periodic_Thermal",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20030,
+      "label": "Broad_Shift",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20030,
+      "label": "Sensor_Fault",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20031,
+      "label": "Background",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20031,
+      "label": "Local_Heating",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20031,
+      "label": "Local_Cooling",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20031,
+      "label": "Periodic_Thermal",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20031,
+      "label": "Broad_Shift",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20031,
+      "label": "Sensor_Fault",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20032,
+      "label": "Background",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20032,
+      "label": "Local_Heating",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20032,
+      "label": "Local_Cooling",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20032,
+      "label": "Periodic_Thermal",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20032,
+      "label": "Broad_Shift",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20032,
+      "label": "Sensor_Fault",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20033,
+      "label": "Background",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20033,
+      "label": "Local_Heating",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20033,
+      "label": "Local_Cooling",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20033,
+      "label": "Periodic_Thermal",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20033,
+      "label": "Broad_Shift",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20033,
+      "label": "Sensor_Fault",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20034,
+      "label": "Background",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20034,
+      "label": "Local_Heating",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20034,
+      "label": "Local_Cooling",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20034,
+      "label": "Periodic_Thermal",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20034,
+      "label": "Broad_Shift",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20034,
+      "label": "Sensor_Fault",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20035,
+      "label": "Background",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20035,
+      "label": "Local_Heating",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20035,
+      "label": "Local_Cooling",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20035,
+      "label": "Periodic_Thermal",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20035,
+      "label": "Broad_Shift",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20035,
+      "label": "Sensor_Fault",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20036,
+      "label": "Background",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20036,
+      "label": "Local_Heating",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20036,
+      "label": "Local_Cooling",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20036,
+      "label": "Periodic_Thermal",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20036,
+      "label": "Broad_Shift",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20036,
+      "label": "Sensor_Fault",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20037,
+      "label": "Background",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20037,
+      "label": "Local_Heating",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20037,
+      "label": "Local_Cooling",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20037,
+      "label": "Periodic_Thermal",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20037,
+      "label": "Broad_Shift",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20037,
+      "label": "Sensor_Fault",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20038,
+      "label": "Background",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20038,
+      "label": "Local_Heating",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20038,
+      "label": "Local_Cooling",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20038,
+      "label": "Periodic_Thermal",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20038,
+      "label": "Broad_Shift",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20038,
+      "label": "Sensor_Fault",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20039,
+      "label": "Background",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20039,
+      "label": "Local_Heating",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20039,
+      "label": "Local_Cooling",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20039,
+      "label": "Periodic_Thermal",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20039,
+      "label": "Broad_Shift",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20039,
+      "label": "Sensor_Fault",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20040,
+      "label": "Background",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20040,
+      "label": "Local_Heating",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20040,
+      "label": "Local_Cooling",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20040,
+      "label": "Periodic_Thermal",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20040,
+      "label": "Broad_Shift",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20040,
+      "label": "Sensor_Fault",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20041,
+      "label": "Background",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20041,
+      "label": "Local_Heating",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20041,
+      "label": "Local_Cooling",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20041,
+      "label": "Periodic_Thermal",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20041,
+      "label": "Broad_Shift",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20041,
+      "label": "Sensor_Fault",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20042,
+      "label": "Background",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20042,
+      "label": "Local_Heating",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20042,
+      "label": "Local_Cooling",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20042,
+      "label": "Periodic_Thermal",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20042,
+      "label": "Broad_Shift",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20042,
+      "label": "Sensor_Fault",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20043,
+      "label": "Background",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20043,
+      "label": "Local_Heating",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20043,
+      "label": "Local_Cooling",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20043,
+      "label": "Periodic_Thermal",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20043,
+      "label": "Broad_Shift",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20043,
+      "label": "Sensor_Fault",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20044,
+      "label": "Background",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20044,
+      "label": "Local_Heating",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20044,
+      "label": "Local_Cooling",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20044,
+      "label": "Periodic_Thermal",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20044,
+      "label": "Broad_Shift",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20044,
+      "label": "Sensor_Fault",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20045,
+      "label": "Background",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20045,
+      "label": "Local_Heating",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20045,
+      "label": "Local_Cooling",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20045,
+      "label": "Periodic_Thermal",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20045,
+      "label": "Broad_Shift",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20045,
+      "label": "Sensor_Fault",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20046,
+      "label": "Background",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20046,
+      "label": "Local_Heating",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20046,
+      "label": "Local_Cooling",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20046,
+      "label": "Periodic_Thermal",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20046,
+      "label": "Broad_Shift",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20046,
+      "label": "Sensor_Fault",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20047,
+      "label": "Background",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20047,
+      "label": "Local_Heating",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20047,
+      "label": "Local_Cooling",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20047,
+      "label": "Periodic_Thermal",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20047,
+      "label": "Broad_Shift",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20047,
+      "label": "Sensor_Fault",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20048,
+      "label": "Background",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20048,
+      "label": "Local_Heating",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20048,
+      "label": "Local_Cooling",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20048,
+      "label": "Periodic_Thermal",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20048,
+      "label": "Broad_Shift",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20048,
+      "label": "Sensor_Fault",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20049,
+      "label": "Background",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20049,
+      "label": "Local_Heating",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20049,
+      "label": "Local_Cooling",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20049,
+      "label": "Periodic_Thermal",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20049,
+      "label": "Broad_Shift",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20049,
+      "label": "Sensor_Fault",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20050,
+      "label": "Background",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20050,
+      "label": "Local_Heating",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20050,
+      "label": "Local_Cooling",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20050,
+      "label": "Periodic_Thermal",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20050,
+      "label": "Broad_Shift",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20050,
+      "label": "Sensor_Fault",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20051,
+      "label": "Background",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20051,
+      "label": "Local_Heating",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20051,
+      "label": "Local_Cooling",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20051,
+      "label": "Periodic_Thermal",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20051,
+      "label": "Broad_Shift",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20051,
+      "label": "Sensor_Fault",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20052,
+      "label": "Background",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20052,
+      "label": "Local_Heating",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20052,
+      "label": "Local_Cooling",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20052,
+      "label": "Periodic_Thermal",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20052,
+      "label": "Broad_Shift",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20052,
+      "label": "Sensor_Fault",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20053,
+      "label": "Background",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20053,
+      "label": "Local_Heating",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20053,
+      "label": "Local_Cooling",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20053,
+      "label": "Periodic_Thermal",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20053,
+      "label": "Broad_Shift",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20053,
+      "label": "Sensor_Fault",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20054,
+      "label": "Background",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20054,
+      "label": "Local_Heating",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20054,
+      "label": "Local_Cooling",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20054,
+      "label": "Periodic_Thermal",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20054,
+      "label": "Broad_Shift",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20054,
+      "label": "Sensor_Fault",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20055,
+      "label": "Background",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20055,
+      "label": "Local_Heating",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20055,
+      "label": "Local_Cooling",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20055,
+      "label": "Periodic_Thermal",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20055,
+      "label": "Broad_Shift",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20055,
+      "label": "Sensor_Fault",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20056,
+      "label": "Background",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20056,
+      "label": "Local_Heating",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20056,
+      "label": "Local_Cooling",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20056,
+      "label": "Periodic_Thermal",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20056,
+      "label": "Broad_Shift",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20056,
+      "label": "Sensor_Fault",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20057,
+      "label": "Background",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20057,
+      "label": "Local_Heating",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20057,
+      "label": "Local_Cooling",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20057,
+      "label": "Periodic_Thermal",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20057,
+      "label": "Broad_Shift",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20057,
+      "label": "Sensor_Fault",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20058,
+      "label": "Background",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20058,
+      "label": "Local_Heating",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20058,
+      "label": "Local_Cooling",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20058,
+      "label": "Periodic_Thermal",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20058,
+      "label": "Broad_Shift",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20058,
+      "label": "Sensor_Fault",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20059,
+      "label": "Background",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20059,
+      "label": "Local_Heating",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20059,
+      "label": "Local_Cooling",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20059,
+      "label": "Periodic_Thermal",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20059,
+      "label": "Broad_Shift",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20059,
+      "label": "Sensor_Fault",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20060,
+      "label": "Background",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20060,
+      "label": "Local_Heating",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20060,
+      "label": "Local_Cooling",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20060,
+      "label": "Periodic_Thermal",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20060,
+      "label": "Broad_Shift",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20060,
+      "label": "Sensor_Fault",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20061,
+      "label": "Background",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20061,
+      "label": "Local_Heating",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20061,
+      "label": "Local_Cooling",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20061,
+      "label": "Periodic_Thermal",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20061,
+      "label": "Broad_Shift",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20061,
+      "label": "Sensor_Fault",
+      "cadence_s": 10.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20062,
+      "label": "Background",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20062,
+      "label": "Local_Heating",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20062,
+      "label": "Local_Cooling",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20062,
+      "label": "Periodic_Thermal",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20062,
+      "label": "Broad_Shift",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20062,
+      "label": "Sensor_Fault",
+      "cadence_s": 30.0,
+      "spacing_m": 0.1
+    },
+    {
+      "seed": 20063,
+      "label": "Background",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20063,
+      "label": "Local_Heating",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20063,
+      "label": "Local_Cooling",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20063,
+      "label": "Periodic_Thermal",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20063,
+      "label": "Broad_Shift",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    },
+    {
+      "seed": 20063,
+      "label": "Sensor_Fault",
+      "cadence_s": 120.0,
+      "spacing_m": 1.0
+    }
+  ]
+}

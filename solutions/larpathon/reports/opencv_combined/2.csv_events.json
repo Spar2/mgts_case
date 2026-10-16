@@ -1,0 +1,296 @@
+[
+  {
+    "meters": [
+      382.4025,
+      385.6538
+    ],
+    "duration_min": 36.0,
+    "amplitude": -4.0617,
+    "local_amplitude": -3.0844,
+    "confidence": 0.763,
+    "type_hypothesis": "local_cooling (AC / ventilation)",
+    "periodic": false,
+    "source": "detector",
+    "t_range": [
+      352,
+      369
+    ],
+    "s_range": [
+      1529,
+      1542
+    ]
+  },
+  {
+    "meters": [
+      449.6793,
+      451.6801
+    ],
+    "duration_min": 30.0,
+    "amplitude": -4.2944,
+    "local_amplitude": -3.8425,
+    "confidence": 0.7549,
+    "type_hypothesis": "local_cooling (AC / ventilation)",
+    "periodic": false,
+    "source": "detector",
+    "t_range": [
+      355,
+      369
+    ],
+    "s_range": [
+      1798,
+      1806
+    ]
+  },
+  {
+    "meters": [
+      450.1795,
+      452.1803
+    ],
+    "duration_min": 32.0,
+    "amplitude": -3.6646,
+    "local_amplitude": -3.2462,
+    "confidence": 0.7515,
+    "type_hypothesis": "local_cooling (AC / ventilation)",
+    "periodic": false,
+    "source": "detector",
+    "t_range": [
+      484,
+      499
+    ],
+    "s_range": [
+      1800,
+      1808
+    ]
+  },
+  {
+    "meters": [
+      374.3993,
+      377.4005
+    ],
+    "duration_min": 30.0,
+    "amplitude": -3.7791,
+    "local_amplitude": -2.6956,
+    "confidence": 0.7314,
+    "type_hypothesis": "local_cooling (AC / ventilation)",
+    "periodic": false,
+    "source": "detector",
+    "t_range": [
+      353,
+      367
+    ],
+    "s_range": [
+      1497,
+      1509
+    ]
+  },
+  {
+    "meters": [
+      382.6526,
+      386.154
+    ],
+    "duration_min": 40.0,
+    "amplitude": -2.6967,
+    "local_amplitude": -1.7667,
+    "confidence": 0.7187,
+    "type_hypothesis": "local_cooling (AC / ventilation)",
+    "periodic": false,
+    "source": "detector",
+    "t_range": [
+      484,
+      503
+    ],
+    "s_range": [
+      1530,
+      1544
+    ]
+  },
+  {
+    "meters": [
+      373.649,
+      376.9003
+    ],
+    "duration_min": 40.0,
+    "amplitude": -2.9849,
+    "local_amplitude": -1.963,
+    "confidence": 0.7185,
+    "type_hypothesis": "local_cooling (AC / ventilation)",
+    "periodic": false,
+    "source": "detector",
+    "t_range": [
+      484,
+      503
+    ],
+    "s_range": [
+      1494,
+      1507
+    ]
+  },
+  {
+    "meters": [
+      383.9031,
+      384.9035
+    ],
+    "duration_min": 14.0,
+    "amplitude": -3.8537,
+    "local_amplitude": -2.4802,
+    "confidence": 0.7093,
+    "type_hypothesis": "transient",
+    "periodic": false,
+    "source": "detector",
+    "t_range": [
+      73,
+      79
+    ],
+    "s_range": [
+      1535,
+      1539
+    ]
+  },
+  {
+    "meters": [
+      496.4479,
+      499.9493
+    ],
+    "duration_min": 128.0,
+    "amplitude": -4.7922,
+    "local_amplitude": -4.481,
+    "confidence": 0.7063,
+    "type_hypothesis": "local_cooling (AC / ventilation)",
+    "periodic": false,
+    "source": "detector",
+    "t_range": [
+      632,
+      695
+    ],
+    "s_range": [
+      1985,
+      1999
+    ]
+  },
+  {
+    "meters": [
+      375.1496,
+      376.4001
+    ],
+    "duration_min": 14.0,
+    "amplitude": -2.7057,
+    "local_amplitude": -1.2835,
+    "confidence": 0.6295,
+    "type_hypothesis": "transient",
+    "periodic": false,
+    "source": "detector",
+    "t_range": [
+      73,
+      79
+    ],
+    "s_range": [
+      1500,
+      1505
+    ]
+  },
+  {
+    "meters": [
+      582.7323,
+      587.2341
+    ],
+    "duration_min": 12.0,
+    "amplitude": -0.9713,
+    "local_amplitude": -1.1374,
+    "confidence": 0.6134,
+    "type_hypothesis": "transient",
+    "periodic": false,
+    "source": "detector",
+    "t_range": [
+      187,
+      192
+    ],
+    "s_range": [
+      2330,
+      2348
+    ]
+  },
+  {
+    "meters": [
+      470.9378,
+      473.1887
+    ],
+    "duration_min": 56.0,
+    "amplitude": 1.9746,
+    "local_amplitude": 0.7064,
+    "confidence": 0.5603,
+    "type_hypothesis": "local_heating (power cable / equipment)",
+    "periodic": false,
+    "source": "detector",
+    "t_range": [
+      187,
+      214
+    ],
+    "s_range": [
+      1883,
+      1892
+    ]
+  },
+  {
+    "meters": [
+      56.2724,
+      59.2736
+    ],
+    "duration_min": 16.0,
+    "amplitude": 0.7884,
+    "local_amplitude": 0.6142,
+    "confidence": 0.5075,
+    "type_hypothesis": "other",
+    "periodic": false,
+    "source": "detector",
+    "t_range": [
+      404,
+      411
+    ],
+    "s_range": [
+      225,
+      237
+    ]
+  },
+  {
+    "meters": [
+      68.0271,
+      69.5277
+    ],
+    "duration_min": 12.0,
+    "amplitude": 0.9877,
+    "local_amplitude": 0.4578,
+    "confidence": 0.4826,
+    "type_hypothesis": "transient",
+    "periodic": false,
+    "source": "detector",
+    "t_range": [
+      405,
+      410
+    ],
+    "s_range": [
+      272,
+      278
+    ]
+  },
+  {
+    "meters": [
+      52.2708,
+      54.0215
+    ],
+    "duration_min": 18.0,
+    "amplitude": 0.905,
+    "local_amplitude": 0.3904,
+    "confidence": 0.4673,
+    "type_hypothesis": "other",
+    "periodic": false,
+    "source": "detector",
+    "t_range": [
+      403,
+      411
+    ],
+    "s_range": [
+      209,
+      216
+    ]
+  }
+]

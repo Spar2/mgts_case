@@ -1,0 +1,19 @@
+{
+  "constructed_contract_probes_not_training": true,
+  "loader_filled_missing_meter_1_c": 22.0,
+  "loader_accepted_mixed_devices_channels": true,
+  "cv_permanent_8c_hot_strip_residual_abs_max": 0.0,
+  "cv_permanent_8c_hot_strip_mask_on": 0,
+  "stage2_component_across_20h_gap_count": 1,
+  "stage2_component_across_20h_duration_min": 1200.0,
+  "numeric_relative_60s_reported_duration_min": 60.0,
+  "same_early_component_periodicity_before": 0.0,
+  "same_early_component_periodicity_after_future_unrelated_runs": 1.7575757575757576,
+  "same_early_component_type_before": "Локальный нагрев силового кабеля/оборудования",
+  "same_early_component_type_after": "Кратковременная/периодическая аномалия",
+  "irregular_3_runs_positive_periodicity": 2.5135135135135136,
+  "cv_2c_local_event_mask_cells_before_distant_30c_event": 32,
+  "cv_2c_local_event_mask_cells_after_distant_30c_event": 0,
+  "streamlit_dataframe_accepts_alt_argument": true,
+  "expert_truth_available": false
+}

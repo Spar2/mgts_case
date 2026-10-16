@@ -1,0 +1,12 @@
+{
+  "schema": "real_data_verification_v1",
+  "verified_crops": 340,
+  "source_records": 6,
+  "all_crop_arrays_equal_native": true,
+  "all_patch_hashes_match": true,
+  "shortlist_train_development_only": true,
+  "expert_labels_created": 0,
+  "synthetic_training_used": false,
+  "reconstruction_model_sha256": "a7b03efedb80def81b004dc89a1b44c899ff25a5468ca4fabf2cba7067dc3356",
+  "pack_manifest_sha256": "83bb16fc4ad6e8277bb965eb9e6db040a91308c3e0903b7ee29e41c5e8d383e7"
+}

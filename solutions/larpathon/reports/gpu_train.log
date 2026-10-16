@@ -1,0 +1,39 @@
+device NVIDIA GeForce RTX 4080 SUPER
+hand labels are held out and are not read while patches are sampled
+train files 20/213 {'background': 797, 'heat': 560, 'cool': 160}
+train files 40/213 {'background': 800, 'heat': 800, 'cool': 360}
+train files 60/213 {'background': 800, 'heat': 800, 'cool': 600}
+train patches 2400 background=800 heat=800 cool=800
+val patches 600 background=200 heat=200 cool=200
+epoch 1/10 loss=1.2432 val_acc=0.395 val_macro=0.395 mae=1.135C recall={'background': 0.215, 'heat': 0.51, 'cool': 0.46}
+epoch 2/10 loss=1.1520 val_acc=0.430 val_macro=0.430 mae=0.804C recall={'background': 0.395, 'heat': 0.0, 'cool': 0.895}
+epoch 3/10 loss=1.0745 val_acc=0.352 val_macro=0.352 mae=0.655C recall={'background': 0.8, 'heat': 0.0, 'cool': 0.255}
+epoch 4/10 loss=1.0340 val_acc=0.510 val_macro=0.510 mae=0.599C recall={'background': 0.465, 'heat': 0.375, 'cool': 0.69}
+epoch 5/10 loss=0.9994 val_acc=0.460 val_macro=0.460 mae=0.571C recall={'background': 0.09, 'heat': 0.38, 'cool': 0.91}
+epoch 6/10 loss=0.9731 val_acc=0.480 val_macro=0.480 mae=0.590C recall={'background': 0.26, 'heat': 0.325, 'cool': 0.855}
+epoch 7/10 loss=0.9504 val_acc=0.452 val_macro=0.452 mae=0.558C recall={'background': 0.13, 'heat': 0.26, 'cool': 0.965}
+epoch 8/10 loss=0.9354 val_acc=0.487 val_macro=0.487 mae=0.550C recall={'background': 0.145, 'heat': 0.505, 'cool': 0.81}
+epoch 9/10 loss=0.9057 val_acc=0.482 val_macro=0.482 mae=0.556C recall={'background': 0.355, 'heat': 0.375, 'cool': 0.715}
+epoch 10/10 loss=0.9011 val_acc=0.453 val_macro=0.453 mae=0.555C recall={'background': 0.185, 'heat': 0.205, 'cool': 0.97}
+test patches 600 background=200 heat=200 cool=200
+test acc=0.465 macro=0.465 mae=0.853C
+hand match 6/17 quiet background 11/24
+  file 1 [514.3, 533.6] Local_Heating expected=heat predicted=background match=False
+  file 1 [110.4, 130.8] Local_Cooling expected=cool predicted=heat match=False
+  file 1 [433.2, 455.5] Local_Cooling expected=cool predicted=heat match=False
+  file 1 [834.5, 853.6] Local_Cooling expected=cool predicted=heat match=False
+  file 1 [923.4, 930.8] Local_Cooling expected=cool predicted=heat match=False
+  file 2 [46.7, 93.9] Local_Heating expected=heat predicted=heat match=True
+  file 3 [85.3, 94.7] Local_Cooling expected=cool predicted=cool match=True
+  file 3 [369.5, 386.2] Local_Heating expected=heat predicted=heat match=True
+  file 3 [111.4, 177.4] Broad_Shift expected=heat predicted=background match=False
+  file 3 [0.8, 32.2] Broad_Shift expected=heat predicted=heat match=True
+  file 4 [92.0, 96.0] Local_Heating expected=heat predicted=heat match=True
+  file 4 [104.0, 113.4] Local_Heating expected=heat predicted=background match=False
+  file 5 [297.0, 301.0] Local_Heating expected=heat predicted=background match=False
+  file 5 [1689.0, 2363.0] Background expected=background predicted=cool match=False
+  file 6 [245.7, 250.5] Local_Heating expected=heat predicted=heat match=True
+  file 6 [406.8, 411.6] Local_Heating expected=heat predicted=cool match=False
+  file 6 [594.1, 598.9] Local_Heating expected=heat predicted=background match=False
+wrote C:\Users\bobr\test2_larpathon\weights\synth_patch_net.pt
+wrote C:\Users\bobr\test2_larpathon\reports\gpu_train.json

@@ -1,0 +1,109 @@
+{
+  "files": [
+    {
+      "file": "1.csv",
+      "n_events": 17,
+      "local_heating": 2,
+      "local_cooling": 0,
+      "zone_cooling": 0,
+      "local_heating (power cable / equipment)": 2,
+      "local_cooling (AC / ventilation)": 0,
+      "zone_cooling (AC / occupancy)": 0,
+      "periodic_true": 0,
+      "max_confidence": 0.8549
+    },
+    {
+      "file": "2.csv",
+      "n_events": 21,
+      "local_heating": 2,
+      "local_cooling": 14,
+      "zone_cooling": 0,
+      "local_heating (power cable / equipment)": 2,
+      "local_cooling (AC / ventilation)": 14,
+      "zone_cooling (AC / occupancy)": 0,
+      "periodic_true": 1,
+      "max_confidence": 0.8316
+    },
+    {
+      "file": "3.csv",
+      "n_events": 13,
+      "local_heating": 2,
+      "local_cooling": 6,
+      "zone_cooling": 0,
+      "local_heating (power cable / equipment)": 2,
+      "local_cooling (AC / ventilation)": 6,
+      "zone_cooling (AC / occupancy)": 0,
+      "periodic_true": 1,
+      "max_confidence": 0.8285
+    },
+    {
+      "file": "4.csv",
+      "n_events": 9,
+      "local_heating": 8,
+      "local_cooling": 1,
+      "zone_cooling": 0,
+      "local_heating (power cable / equipment)": 8,
+      "local_cooling (AC / ventilation)": 1,
+      "zone_cooling (AC / occupancy)": 0,
+      "periodic_true": 1,
+      "max_confidence": 0.8089
+    },
+    {
+      "file": "5.csv",
+      "n_events": 69,
+      "local_heating": 3,
+      "local_cooling": 0,
+      "zone_cooling": 0,
+      "local_heating (power cable / equipment)": 3,
+      "local_cooling (AC / ventilation)": 0,
+      "zone_cooling (AC / occupancy)": 0,
+      "periodic_true": 0,
+      "max_confidence": 0.8177
+    },
+    {
+      "file": "6.csv",
+      "n_events": 27,
+      "local_heating": 3,
+      "local_cooling": 6,
+      "zone_cooling": 0,
+      "local_heating (power cable / equipment)": 3,
+      "local_cooling (AC / ventilation)": 6,
+      "zone_cooling (AC / occupancy)": 0,
+      "periodic_true": 0,
+      "max_confidence": 0.8411
+    }
+  ],
+  "zone_cooling": [],
+  "periodic_true": [
+    {
+      "file": "2.csv",
+      "meters": [
+        449.4292,
+        453.1807
+      ],
+      "duration_min": 222.0,
+      "type_hypothesis": "local_cooling (AC / ventilation)",
+      "amplitude": -4.3128
+    },
+    {
+      "file": "3.csv",
+      "meters": [
+        62.0167,
+        66.0178
+      ],
+      "duration_min": 442.0,
+      "type_hypothesis": "local_heating (power cable / equipment)",
+      "amplitude": 4.2063
+    },
+    {
+      "file": "4.csv",
+      "meters": [
+        74.2713,
+        79.0227
+      ],
+      "duration_min": 480.0,
+      "type_hypothesis": "local_heating (power cable / equipment)",
+      "amplitude": 2.2431
+    }
+  ]
+}

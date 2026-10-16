@@ -1,0 +1,657 @@
+{
+  "source_commit": "33e12ac19b7b6318dc48b5f3e8c1239aaaf9244e",
+  "report_sha256": "4a5e8d2f42d7c8fb9a46a718d7f791f199316078158a3f038c8b2afe04b94f6e",
+  "report_bytes": 17181811,
+  "report_git_blob_sha256": "fca224a660fd3a14e0b13928054b577a1973e84ec0a7747d435736514b38afce",
+  "report_git_blob_bytes": 17099729,
+  "checkout_newlines": "Windows CRLF; Git blob uses LF",
+  "records": [
+    {
+      "file": "MGTS_data/1.csv",
+      "catalog_rows": 5598,
+      "classes": {
+        "Кратковременная/периодическая аномалия": 5598
+      },
+      "zero_duration": 3228,
+      "zero_width": 3129,
+      "period_positive": 5273,
+      "long_periodic": 80,
+      "period_positive_single_row": 2976,
+      "nonfinite_numeric_rows": 0,
+      "negative_duration": 0,
+      "peak_abs_max_c": 29.20505668,
+      "duration_max_min": 695.1333333,
+      "periodicity_max": 24.99428571,
+      "examples": [
+        {
+          "incident_type": "Кратковременная/периодическая аномалия",
+          "cluster_label": "2",
+          "meter_start": "416.8527919",
+          "meter_end": "422.2335025",
+          "time_start": "2026-09-14 00:03:19+03",
+          "time_end": "2026-09-14 11:38:27+03",
+          "duration_min": "695.1333333",
+          "width_m": "5.38071066",
+          "mean_delta_t": "-6.509574623",
+          "peak_delta_t": "-21.7151325",
+          "elongation": "10.44444444",
+          "periodicity": "15.99095023"
+        },
+        {
+          "incident_type": "Кратковременная/периодическая аномалия",
+          "cluster_label": "1",
+          "meter_start": "420.8121827",
+          "meter_end": "421.0152284",
+          "time_start": "2026-09-14 00:03:19+03",
+          "time_end": "2026-09-14 00:15:23+03",
+          "duration_min": "12.06666667",
+          "width_m": "0.2030456853",
+          "mean_delta_t": "1.873360443",
+          "peak_delta_t": "2.451891514",
+          "elongation": "1.333333333",
+          "periodicity": "7.619512195"
+        },
+        {
+          "incident_type": "Кратковременная/периодическая аномалия",
+          "cluster_label": "2",
+          "meter_start": "425.177665",
+          "meter_end": "427.106599",
+          "time_start": "2026-09-14 00:03:19+03",
+          "time_end": "2026-09-14 07:58:55+03",
+          "duration_min": "475.6",
+          "width_m": "1.92893401",
+          "mean_delta_t": "4.254806324",
+          "peak_delta_t": "7.976529403",
+          "elongation": "6.9",
+          "periodicity": "9.645214521"
+        }
+      ],
+      "shape": [
+        615,
+        11707
+      ],
+      "consensus_on": 384521,
+      "consensus_sha256": "6176f46e56b80c891c881b3e9d40b91739ac10571d584a7d393a35b004aebf18",
+      "consensus_cell_fraction": 0.05340714088784349,
+      "cluster_summaries": {
+        "0": {
+          "rows": 3144,
+          "median_duration_min": 0.0,
+          "median_width_m": 0.0,
+          "median_mean_delta_c": -1.996939449,
+          "median_peak_delta_c": -2.181693219,
+          "median_periodicity": 7.40840169
+        },
+        "1": {
+          "rows": 2340,
+          "median_duration_min": 0.0,
+          "median_width_m": 0.0,
+          "median_mean_delta_c": 2.065971513,
+          "median_peak_delta_c": 2.217161452,
+          "median_periodicity": 4.827757721499999
+        },
+        "2": {
+          "rows": 3,
+          "median_duration_min": 685.9833333,
+          "median_width_m": 5.38071066,
+          "median_mean_delta_c": -6.509574623,
+          "median_peak_delta_c": -21.7151325,
+          "median_periodicity": 15.99095023
+        },
+        "3": {
+          "rows": 111,
+          "median_duration_min": 20.11666667,
+          "median_width_m": 0.4060913706,
+          "median_mean_delta_c": 1.25708691,
+          "median_peak_delta_c": 2.682191262,
+          "median_periodicity": 11.07881773
+        }
+      }
+    },
+    {
+      "file": "MGTS_data/2.csv",
+      "catalog_rows": 2139,
+      "classes": {
+        "Кратковременная/периодическая аномалия": 2139
+      },
+      "zero_duration": 1005,
+      "zero_width": 1116,
+      "period_positive": 1985,
+      "long_periodic": 114,
+      "period_positive_single_row": 883,
+      "nonfinite_numeric_rows": 0,
+      "negative_duration": 0,
+      "peak_abs_max_c": 9.861289,
+      "duration_max_min": 571.1666667,
+      "periodicity_max": 49.46242775,
+      "examples": [
+        {
+          "incident_type": "Кратковременная/периодическая аномалия",
+          "cluster_label": "1",
+          "meter_start": "3.806617085",
+          "meter_end": "3.806617085",
+          "time_start": "2026-04-10 00:01:41+00",
+          "time_end": "2026-04-10 00:01:41+00",
+          "duration_min": "0",
+          "width_m": "0",
+          "mean_delta_t": "1.253356114",
+          "peak_delta_t": "1.253356114",
+          "elongation": "1",
+          "periodicity": "6.325301205"
+        },
+        {
+          "incident_type": "Кратковременная/периодическая аномалия",
+          "cluster_label": "1",
+          "meter_start": "4.567940502",
+          "meter_end": "4.567940502",
+          "time_start": "2026-04-10 00:01:41+00",
+          "time_end": "2026-04-10 00:05:42+00",
+          "duration_min": "4.016666667",
+          "width_m": "0",
+          "mean_delta_t": "1.359004197",
+          "peak_delta_t": "1.36292893",
+          "elongation": "3",
+          "periodicity": "8.84"
+        },
+        {
+          "incident_type": "Кратковременная/периодическая аномалия",
+          "cluster_label": "1",
+          "meter_start": "13.19627256",
+          "meter_end": "13.19627256",
+          "time_start": "2026-04-10 00:01:41+00",
+          "time_end": "2026-04-10 00:03:42+00",
+          "duration_min": "2.016666667",
+          "width_m": "0",
+          "mean_delta_t": "1.278818224",
+          "peak_delta_t": "1.304438747",
+          "elongation": "2",
+          "periodicity": "4.626556017"
+        }
+      ],
+      "shape": [
+        696,
+        2315
+      ],
+      "consensus_on": 64866,
+      "consensus_sha256": "6d7ff62acae91f74926587f40d3ab6c1f2dae9ab2bc98298306f69c1a559b8a5",
+      "consensus_cell_fraction": 0.04025843449765398,
+      "cluster_summaries": {
+        "0": {
+          "rows": 1059,
+          "median_duration_min": 2.0,
+          "median_width_m": 0.0,
+          "median_mean_delta_c": -0.6697451469,
+          "median_peak_delta_c": -0.7199619003,
+          "median_periodicity": 11.18987342
+        },
+        "1": {
+          "rows": 1065,
+          "median_duration_min": 2.0,
+          "median_width_m": 0.0,
+          "median_mean_delta_c": 0.6249695859,
+          "median_peak_delta_c": 0.70040238,
+          "median_periodicity": 9.190140845
+        },
+        "2": {
+          "rows": 1,
+          "median_duration_min": 571.1666667,
+          "median_width_m": 57.35303074,
+          "median_mean_delta_c": 2.806863768,
+          "median_peak_delta_c": 6.227825379,
+          "median_periodicity": 17.6
+        },
+        "3": {
+          "rows": 14,
+          "median_duration_min": 171.35000000000002,
+          "median_width_m": 1.522646834,
+          "median_mean_delta_c": -0.8709070966,
+          "median_peak_delta_c": -1.322201803,
+          "median_periodicity": 21.562377595
+        }
+      }
+    },
+    {
+      "file": "MGTS_data/3.csv",
+      "catalog_rows": 2617,
+      "classes": {
+        "Кратковременная/периодическая аномалия": 2617
+      },
+      "zero_duration": 1387,
+      "zero_width": 1492,
+      "period_positive": 2548,
+      "long_periodic": 115,
+      "period_positive_single_row": 1337,
+      "nonfinite_numeric_rows": 0,
+      "negative_duration": 0,
+      "peak_abs_max_c": 5.868829229,
+      "duration_max_min": 1969.983333,
+      "periodicity_max": 35.16778523,
+      "examples": [
+        {
+          "incident_type": "Кратковременная/периодическая аномалия",
+          "cluster_label": "0",
+          "meter_start": "33.751548",
+          "meter_end": "33.751548",
+          "time_start": "2026-02-12 00:01:54+00",
+          "time_end": "2026-02-12 00:01:54+00",
+          "duration_min": "0",
+          "width_m": "0",
+          "mean_delta_t": "-0.0115794437",
+          "peak_delta_t": "-0.0115794437",
+          "elongation": "1",
+          "periodicity": "20.0311042"
+        },
+        {
+          "incident_type": "Кратковременная/периодическая аномалия",
+          "cluster_label": "0",
+          "meter_start": "36.03548734",
+          "meter_end": "36.28925838",
+          "time_start": "2026-02-12 00:01:54+00",
+          "time_end": "2026-02-12 00:03:54+00",
+          "duration_min": "2",
+          "width_m": "0.2537710376",
+          "mean_delta_t": "-1.267788137",
+          "peak_delta_t": "-1.316380732",
+          "elongation": "1",
+          "periodicity": "22.04701627"
+        },
+        {
+          "incident_type": "Кратковременная/периодическая аномалия",
+          "cluster_label": "0",
+          "meter_start": "48.97781026",
+          "meter_end": "49.2315813",
+          "time_start": "2026-02-12 00:01:54+00",
+          "time_end": "2026-02-12 00:01:54+00",
+          "duration_min": "0",
+          "width_m": "0.2537710376",
+          "mean_delta_t": "-1.219854773",
+          "peak_delta_t": "-1.259638324",
+          "elongation": "0.5",
+          "periodicity": "23.51351351"
+        }
+      ],
+      "shape": [
+        788,
+        1689
+      ],
+      "consensus_on": 139458,
+      "consensus_sha256": "f5d98ac75ecd684038fb270b0d001a89d4bdac6594b8d7fda412782f5b834796",
+      "consensus_cell_fraction": 0.1047822127651901,
+      "cluster_summaries": {
+        "0": {
+          "rows": 1123,
+          "median_duration_min": 0.0,
+          "median_width_m": 0.0,
+          "median_mean_delta_c": -1.23192167,
+          "median_peak_delta_c": -1.25853914,
+          "median_periodicity": 8.962264151
+        },
+        "1": {
+          "rows": 1457,
+          "median_duration_min": 0.0,
+          "median_width_m": 0.0,
+          "median_mean_delta_c": 1.127683474,
+          "median_peak_delta_c": 1.169786311,
+          "median_periodicity": 8.697674419
+        },
+        "2": {
+          "rows": 35,
+          "median_duration_min": 209.9166667,
+          "median_width_m": 3.299023489,
+          "median_mean_delta_c": -0.3087546272,
+          "median_peak_delta_c": -0.3612385616,
+          "median_periodicity": 14.02077151
+        },
+        "3": {
+          "rows": 2,
+          "median_duration_min": 1803.6416665,
+          "median_width_m": 47.45518403,
+          "median_mean_delta_c": 2.104364582,
+          "median_peak_delta_c": 3.370601406,
+          "median_periodicity": 34.148709595
+        }
+      }
+    },
+    {
+      "file": "MGTS_data/4.csv",
+      "catalog_rows": 674,
+      "classes": {
+        "Кратковременная/периодическая аномалия": 674
+      },
+      "zero_duration": 395,
+      "zero_width": 415,
+      "period_positive": 554,
+      "long_periodic": 27,
+      "period_positive_single_row": 295,
+      "nonfinite_numeric_rows": 0,
+      "negative_duration": 0,
+      "peak_abs_max_c": 9.785851549,
+      "duration_max_min": 1437.233333,
+      "periodicity_max": 37.62711864,
+      "examples": [
+        {
+          "incident_type": "Кратковременная/периодическая аномалия",
+          "cluster_label": "0",
+          "meter_start": "73.84737195",
+          "meter_end": "74.35491402",
+          "time_start": "2026-05-26 00:01:53+00",
+          "time_end": "2026-05-26 00:07:54+00",
+          "duration_min": "6.016666667",
+          "width_m": "0.5075420752",
+          "mean_delta_t": "-0.1303206295",
+          "peak_delta_t": "-0.1632636562",
+          "elongation": "1.333333333",
+          "periodicity": "37.62711864"
+        },
+        {
+          "incident_type": "Кратковременная/периодическая аномалия",
+          "cluster_label": "0",
+          "meter_start": "74.8624561",
+          "meter_end": "78.16147959",
+          "time_start": "2026-05-26 00:01:53+00",
+          "time_end": "2026-05-26 01:56:08+00",
+          "duration_min": "114.25",
+          "width_m": "3.299023489",
+          "mean_delta_t": "-1.47092425",
+          "peak_delta_t": "-2.469443124",
+          "elongation": "3.928571429",
+          "periodicity": "31.62962963"
+        },
+        {
+          "incident_type": "Кратковременная/периодическая аномалия",
+          "cluster_label": "2",
+          "meter_start": "83.74444241",
+          "meter_end": "123.3327243",
+          "time_start": "2026-05-26 00:01:53+00",
+          "time_end": "2026-05-26 23:59:07+00",
+          "duration_min": "1437.233333",
+          "width_m": "39.58828187",
+          "mean_delta_t": "3.186351548",
+          "peak_delta_t": "9.785851549",
+          "elongation": "4.50955414",
+          "periodicity": "20.33766234"
+        }
+      ],
+      "shape": [
+        708,
+        1691
+      ],
+      "consensus_on": 57783,
+      "consensus_sha256": "f1ad31d5c9494f1fbaeb5302809298cc1379dbe0256ae71bad79644fe08af103",
+      "consensus_cell_fraction": 0.04826398981647606,
+      "cluster_summaries": {
+        "0": {
+          "rows": 222,
+          "median_duration_min": 2.0,
+          "median_width_m": 0.0,
+          "median_mean_delta_c": -0.3717228151,
+          "median_peak_delta_c": -0.40484211174999996,
+          "median_periodicity": 11.4501992
+        },
+        "1": {
+          "rows": 8,
+          "median_duration_min": 202.46666664999998,
+          "median_width_m": 3.299023489,
+          "median_mean_delta_c": 1.0881234355,
+          "median_peak_delta_c": 1.5121612574999999,
+          "median_periodicity": 30.76453488
+        },
+        "2": {
+          "rows": 1,
+          "median_duration_min": 1437.233333,
+          "median_width_m": 39.58828187,
+          "median_mean_delta_c": 3.186351548,
+          "median_peak_delta_c": 9.785851549,
+          "median_periodicity": 20.33766234
+        },
+        "3": {
+          "rows": 443,
+          "median_duration_min": 0.0,
+          "median_width_m": 0.0,
+          "median_mean_delta_c": 0.6328192991,
+          "median_peak_delta_c": 0.6572675486,
+          "median_periodicity": 6.02259887
+        }
+      }
+    },
+    {
+      "file": "MGTS_data/5.csv",
+      "catalog_rows": 56652,
+      "classes": {
+        "Кратковременная/периодическая аномалия": 56652
+      },
+      "zero_duration": 29940,
+      "zero_width": 29322,
+      "period_positive": 56652,
+      "long_periodic": 8,
+      "period_positive_single_row": 29940,
+      "nonfinite_numeric_rows": 0,
+      "negative_duration": 0,
+      "peak_abs_max_c": 13.46958223,
+      "duration_max_min": 51.0,
+      "periodicity_max": 138.1118593,
+      "examples": [
+        {
+          "incident_type": "Кратковременная/периодическая аномалия",
+          "cluster_label": "2",
+          "meter_start": "12",
+          "meter_end": "12",
+          "time_start": "2025-10-16 12:00:06",
+          "time_end": "2025-10-16 12:00:06",
+          "duration_min": "0",
+          "width_m": "0",
+          "mean_delta_t": "0.6302861827",
+          "peak_delta_t": "0.6302861827",
+          "elongation": "1",
+          "periodicity": "41.82365989"
+        },
+        {
+          "incident_type": "Кратковременная/периодическая аномалия",
+          "cluster_label": "2",
+          "meter_start": "14",
+          "meter_end": "14",
+          "time_start": "2025-10-16 12:00:06",
+          "time_end": "2025-10-16 12:00:06",
+          "duration_min": "0",
+          "width_m": "0",
+          "mean_delta_t": "0.4494932988",
+          "peak_delta_t": "0.4494932988",
+          "elongation": "1",
+          "periodicity": "39.16403785"
+        },
+        {
+          "incident_type": "Кратковременная/периодическая аномалия",
+          "cluster_label": "2",
+          "meter_start": "23",
+          "meter_end": "23",
+          "time_start": "2025-10-16 12:00:06",
+          "time_end": "2025-10-16 12:00:06",
+          "duration_min": "0",
+          "width_m": "0",
+          "mean_delta_t": "0.4922813848",
+          "peak_delta_t": "0.4922813848",
+          "elongation": "1",
+          "periodicity": "45.71232877"
+        }
+      ],
+      "shape": [
+        2711,
+        2364
+      ],
+      "consensus_on": 207229,
+      "consensus_sha256": "e8163c170be99f2cc66f664b367a7d528e4451893eea6a2b3cf02b2b7f7a928b",
+      "consensus_cell_fraction": 0.03233505034636728,
+      "cluster_summaries": {
+        "0": {
+          "rows": 4692,
+          "median_duration_min": 0.3333333333,
+          "median_width_m": 0.0,
+          "median_mean_delta_c": -0.70961621645,
+          "median_peak_delta_c": -0.8333054555999999,
+          "median_periodicity": 71.43742467
+        },
+        "1": {
+          "rows": 29057,
+          "median_duration_min": 0.0,
+          "median_width_m": 1.0,
+          "median_mean_delta_c": -0.8808957379,
+          "median_peak_delta_c": -0.9625993771,
+          "median_periodicity": 72.23410066
+        },
+        "2": {
+          "rows": 22894,
+          "median_duration_min": 0.0,
+          "median_width_m": 0.0,
+          "median_mean_delta_c": 0.9425720468500001,
+          "median_peak_delta_c": 1.0086314555,
+          "median_periodicity": 71.98062172
+        },
+        "3": {
+          "rows": 9,
+          "median_duration_min": 29.43333333,
+          "median_width_m": 13.0,
+          "median_mean_delta_c": -0.7582417732,
+          "median_peak_delta_c": -1.998731436,
+          "median_periodicity": 138.1118593
+        }
+      }
+    },
+    {
+      "file": "MGTS_data/6.csv",
+      "catalog_rows": 14290,
+      "classes": {
+        "Кратковременная/периодическая аномалия": 14290
+      },
+      "zero_duration": 8102,
+      "zero_width": 8350,
+      "period_positive": 14000,
+      "long_periodic": 97,
+      "period_positive_single_row": 7871,
+      "nonfinite_numeric_rows": 0,
+      "negative_duration": 0,
+      "peak_abs_max_c": 8.950457242,
+      "duration_max_min": 830.7333333,
+      "periodicity_max": 66.86266447,
+      "examples": [
+        {
+          "incident_type": "Кратковременная/периодическая аномалия",
+          "cluster_label": "2",
+          "meter_start": "277.8830472",
+          "meter_end": "281.1821153",
+          "time_start": "2026-02-12 00:00:01+03",
+          "time_end": "2026-02-12 08:08:02+03",
+          "duration_min": "488.0166667",
+          "width_m": "3.29906814",
+          "mean_delta_t": "-3.081846058",
+          "peak_delta_t": "-6.044060305",
+          "elongation": "34.85714286",
+          "periodicity": "54.87009804"
+        },
+        {
+          "incident_type": "Кратковременная/периодическая аномалия",
+          "cluster_label": "1",
+          "meter_start": "297.4236816",
+          "meter_end": "298.185005",
+          "time_start": "2026-02-12 00:00:01+03",
+          "time_end": "2026-02-12 00:02:02+03",
+          "duration_min": "2.016666667",
+          "width_m": "0.761323417",
+          "mean_delta_t": "0.4459449366",
+          "peak_delta_t": "0.6092724977",
+          "elongation": "0.75",
+          "periodicity": "24.20343137"
+        },
+        {
+          "incident_type": "Кратковременная/периодическая аномалия",
+          "cluster_label": "2",
+          "meter_start": "297.9312305",
+          "meter_end": "302.2453965",
+          "time_start": "2026-02-12 00:00:01+03",
+          "time_end": "2026-02-12 08:09:02+03",
+          "duration_min": "489.0166667",
+          "width_m": "4.314166029",
+          "mean_delta_t": "-3.310419391",
+          "peak_delta_t": "-5.574343607",
+          "elongation": "27.16666667",
+          "periodicity": "36.1489555"
+        }
+      ],
+      "shape": [
+        1231,
+        4534
+      ],
+      "consensus_on": 124980,
+      "consensus_sha256": "b2d2abc4cd2392d06ae15ca246a2f8f1f8940be7d27b719e9db65c48438a8b0e",
+      "consensus_cell_fraction": 0.022392415890481056,
+      "cluster_summaries": {
+        "0": {
+          "rows": 6011,
+          "median_duration_min": 0.0,
+          "median_width_m": 0.0,
+          "median_mean_delta_c": -0.7495927326,
+          "median_peak_delta_c": -0.7770362869,
+          "median_periodicity": 10.86844526
+        },
+        "1": {
+          "rows": 6967,
+          "median_duration_min": 0.0,
+          "median_width_m": 0.0,
+          "median_mean_delta_c": 0.7556645297,
+          "median_peak_delta_c": 0.7864837479,
+          "median_periodicity": 10.86116505
+        },
+        "2": {
+          "rows": 13,
+          "median_duration_min": 488.0166667,
+          "median_width_m": 4.314166029,
+          "median_mean_delta_c": 1.271768094,
+          "median_peak_delta_c": 2.082090897,
+          "median_periodicity": 52.37201365
+        },
+        "3": {
+          "rows": 1299,
+          "median_duration_min": 2.0,
+          "median_width_m": 0.2537744723,
+          "median_mean_delta_c": -0.6580882631,
+          "median_peak_delta_c": -0.7517698789,
+          "median_periodicity": 47.99262899
+        }
+      }
+    }
+  ],
+  "total_catalog_rows": 81970,
+  "expert_truth_in_report": false,
+  "source_file_sha256": {
+    ".gitignore": "1602d9f484b325b2d51b6851c7fedaefac1e0c493ede4e2ad18f1145d309f666",
+    "README.md": "64797e3950fc977ef45cb709e81a1739fcf79f7f7a9491b2f5da46f7c46be8cc",
+    "REPORT.md": "4a5e8d2f42d7c8fb9a46a718d7f791f199316078158a3f038c8b2afe04b94f6e",
+    "app.py": "340de31a5ad67c8bb96ce901f256c065aa1876ddba0de99ceb0c318e5b1ff1a5",
+    "examples/sample_mgts.csv": "52b55a4a8169aac29f83c0bccf66ea6ef92101b865a9f2e49cab7492204570d9",
+    "main.py": "d4eb7f99ffc94fc272365b10cf5e4d36fb58fcbcd2b6dcd6426324cd54898841",
+    "plots/1_consensus_mask.png": "fffffe2318850640646f9e70fa0ed5deb562ce7c2d2f7d190ecd7318b4e743fe",
+    "plots/1_residual.png": "2caed598df8c493373880974e4bf5bf993b0ca902d26c18378cf913b778408bb",
+    "plots/2_consensus_mask.png": "bd3c0278d270fedf671ec5b88cfbdcb5d7349f5aa144901170ca354f0e8e114c",
+    "plots/2_residual.png": "65bedd54b35355411d5a87efd6c1684da9b5b2247f79c6fdea44ed4c13b0a227",
+    "plots/3_consensus_mask.png": "6019cd5dc148b87e828d6e79cdd263f33c77ff5fef5522d265ccdf42990ba8f9",
+    "plots/3_residual.png": "751d85475cead702fc7d0b18beb1c15ad648d485ffdf2e22548b4eeda3ceb618",
+    "plots/4_consensus_mask.png": "3dc552914d9f6964a1b97e854108c43533eaad9f2c6c3dbf38d89779c26f9f5b",
+    "plots/4_residual.png": "88bc3e99ead78fb61d6747b50fba33d7019c7c83ccef10fe800632f5dcf77af1",
+    "plots/5_consensus_mask.png": "60930ee3a07bce6c769ca5ff18930e1ee4e8b8a13b67f3ca74eda2729e3104b2",
+    "plots/5_residual.png": "6f7cfa00b542270723bd78367c8a7d0bb2d7675ddb0f569d8ef1c628b7ef14e0",
+    "plots/6_consensus_mask.png": "607726ee5cc4aa6e16b1bb79daae475bb69853b4ddd8d00d720334b8cbb38256",
+    "plots/6_residual.png": "6c14cf12dffc2b97d0d85b411badc8c3a80bc1f5d69844871f1295b8fc2ef63b",
+    "pytest.ini": "9967856c61c01559966a75195f5a4e9db078be8e2304e136ff389cde14833b70",
+    "scripts/launch_detector_ml.py": "7ff521fee91525ce028c6d50826eaa20e619d36a62841f23b7d484464e0291ed",
+    "src/__init__.py": "6d3a022312804309ffa87b8e660e633cd4f36747502ad1c7d0062a14e208d2b7",
+    "src/detector_cnn.py": "acc8796bf50dfebe01c6f72b85c1eedb7e0c19642a581e8b5aba247739958d08",
+    "src/detector_cv.py": "7665a3b8d96c9e2f20d1bd3724a1aa01a296ae87ca61d593a29f8161a57e1663",
+    "src/detector_ml.py": "73448a8295620ac0ca49e0343c644f6802fa636e5f74257e53e939fe93a00dbe",
+    "src/stage2_clustering.py": "ab2600f6235b02f0f10d94abace307b490fe4199bf028c54e72744a629f6e629",
+    "tests/__init__.py": "54da06873a3674f07ca626a4c2b1d412a5c936e8d7799ccf59a4e15437786924",
+    "tests/test_detector_cnn.py": "ce14b616ec771b7a64645d4688646582a765f5e398f047edfa01a196631a88b1",
+    "tests/test_detector_cv.py": "a6aca75b7bbb34be66318ab5312f17e3868d6cc0e571693f6ca8a6f441414adf",
+    "tests/test_detector_ml.py": "56e959743dbd24db68e0aecc09a61c7d8d26a41c811a669f869e6a2441e69fd9",
+    "tests/test_pipeline.py": "3c10117e717a90b089c4a7e20f8269484225313615c5d8d23d2ea646897ada52",
+    "tests/test_stage2_clustering.py": "9740993e4c90e1f9a30949ebe6f2e4ec1dbdae83f4d74d48184ff9434374784d"
+  }
+}

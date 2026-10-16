@@ -1,0 +1,634 @@
+{
+  "schema": "expert_seeds_v1",
+  "n_cards": 25,
+  "n_kept": 15,
+  "n_excluded": 7,
+  "n_unmapped": 3,
+  "cards": [
+    {
+      "id": "review-00034",
+      "record": "1",
+      "presence": "yes",
+      "class_name": "Local_Heating",
+      "weight": 10.0,
+      "split_code": 0,
+      "status": "kept",
+      "expert_confirmed": true,
+      "notes": "Весь участок — одно нагревание. Середина около 520 м чуть менее тёплая и относится к тому же участку, не отдельное остывание. По медиане за окно: теплее 28 °C с 515.2 до 524.2 м; промежуток 519.1–521.6 м около 24.7 °C при кабеле около 20 °C и боках 31–33 °C. За строки ядра температура стоит на месте. Голубой прямоугольник 517.77–523.25 м обрезает левый край.",
+      "recorded_shape": "Local_Heating",
+      "rows_half_open": [
+        310,
+        335
+      ],
+      "x_m": [
+        517.77,
+        523.25
+      ],
+      "time_iso": [
+        "2026-09-14T06:26:50+00:00",
+        "2026-09-14T06:39:02+00:00"
+      ]
+    },
+    {
+      "id": "review-00098",
+      "record": "1",
+      "presence": "yes",
+      "class_name": "Local_Heating",
+      "weight": 10.0,
+      "split_code": 0,
+      "status": "kept",
+      "expert_confirmed": true,
+      "notes": "Один горячий участок на всё окно, небольшие затухания внутри относятся к нему. По медиане: теплее 28 °C с 835.4 до 854.7 м, с провалами около 841 м (~27.6 °C) и 850 м (~26.7 °C); пики около 42–44 °C, кабель сбоку около 23 °C. За ~9 часов середина прямоугольника держится около 36 °C; падение до 29.8 °C только в последние ~7 минут. Другие жёлтые полосы левее 830 м к этому участку не относятся. Причина провалов по графику не видна.",
+      "recorded_shape": "Local_Heating",
+      "rows_half_open": [
+        0,
+        298
+      ],
+      "x_m": [
+        837.36,
+        851.98
+      ],
+      "time_iso": [
+        "2026-09-13T21:03:19+00:00",
+        "2026-09-14T06:20:14+00:00"
+      ]
+    },
+    {
+      "id": "review-00187",
+      "record": "1",
+      "presence": "yes",
+      "class_name": "Local_Heating",
+      "weight": 10.0,
+      "split_code": 0,
+      "status": "kept",
+      "expert_confirmed": true,
+      "notes": "Не один участок, а отдельные короткие нагревы. Пики медианы: 237.1 м (24.7 °C, выше 22 °C на 236.0–238.1), 244.9 м (25.2 °C, 243.4–246.7), 257.6 м (26.3 °C, 256.1–258.8), широкий 264.6–266.6 м (26.3 °C, выше 22 °C на 262.7–268.1). Ещё один пик 274.1 м (26.2 °C, 272.4–275.5) уже за правым краем голубого прямоугольника 230.4–270.4 м. Между ними провалы около 18–19 °C. Слабее остальных полоса около 254.4 м (23.2 °C). За ~28 минут полосы стоят на месте. Нижний график усредняет весь прямоугольник, поэтому контраст там только 1.6 °C.",
+      "recorded_shape": "несколько Local_Heating",
+      "rows_half_open": [
+        35,
+        43
+      ],
+      "x_m": [
+        230.36,
+        270.36
+      ],
+      "time_iso": [
+        "2026-09-13T23:24:07+00:00",
+        "2026-09-13T23:52:17+00:00"
+      ]
+    },
+    {
+      "id": "review-00223",
+      "record": "1",
+      "presence": "yes",
+      "class_name": "Local_Cooling",
+      "weight": 10.0,
+      "split_code": 0,
+      "status": "kept",
+      "expert_confirmed": true,
+      "notes": "Один холодный участок, без отдельных событий. Холоднее 19 °C: 338.3–357.2 м (медиана 17.4 °C, левее прямоугольника) и 378.2–397.2 м (18.2 °C). Между ними 363.6–375.8 м держится около 21 °C. Прямоугольник 363.1–403.1 м в целом только на 0.7 °C холоднее флангов. Жёлтые полосы около 418 м и дальше правее прямоугольника. За 30 минут холодный кусок 378–397 м стоит около 18 °C.",
+      "recorded_shape": "Local_Cooling",
+      "rows_half_open": [
+        234,
+        294
+      ],
+      "x_m": [
+        363.15,
+        403.15
+      ],
+      "time_iso": [
+        "2026-09-14T05:48:13+00:00",
+        "2026-09-14T06:18:12+00:00"
+      ]
+    },
+    {
+      "id": "next-0001",
+      "record": "3",
+      "presence": "yes",
+      "class_name": "Local_Heating",
+      "weight": 10.0,
+      "split_code": 2,
+      "status": "excluded",
+      "expert_confirmed": true,
+      "notes": "",
+      "recorded_shape": "Local_Heating, Local_Heating",
+      "rows_half_open": [
+        705,
+        788
+      ],
+      "x_m": [
+        372.028,
+        381.418
+      ],
+      "time_iso": [
+        "2026-02-13T21:15:05+00:00",
+        "2026-02-13T23:59:25+00:00"
+      ]
+    },
+    {
+      "id": "next-0002",
+      "record": "5",
+      "presence": "yes",
+      "class_name": "Local_Cooling",
+      "weight": 10.0,
+      "split_code": -1,
+      "status": "excluded",
+      "expert_confirmed": true,
+      "notes": "",
+      "recorded_shape": "Local_Cooling",
+      "rows_half_open": [
+        0,
+        2711
+      ],
+      "x_m": [
+        234.0,
+        273.0
+      ],
+      "time_iso": [
+        "2025-10-16T12:00:06+00:00",
+        "2025-10-16T21:07:00+00:00"
+      ]
+    },
+    {
+      "id": "next-0003",
+      "record": "3",
+      "presence": "yes",
+      "class_name": "Local_Heating",
+      "weight": 10.0,
+      "split_code": -1,
+      "status": "excluded",
+      "expert_confirmed": true,
+      "notes": "на самом деле широкий канал heating с кучей local heating, но как будто надо считать это все одним широким heating. не знаю. можно пометить как много local heating и по какому-то правилу объединить. надо думать",
+      "recorded_shape": "Local_Heating",
+      "rows_half_open": [
+        618,
+        788
+      ],
+      "x_m": [
+        111.405,
+        177.386
+      ],
+      "time_iso": [
+        "2026-02-13T18:20:43+00:00",
+        "2026-02-13T23:59:25+00:00"
+      ]
+    },
+    {
+      "id": "next-0004",
+      "record": "2",
+      "presence": "yes",
+      "class_name": "Local_Heating",
+      "weight": 10.0,
+      "split_code": 0,
+      "status": "kept",
+      "expert_confirmed": true,
+      "notes": "небольшое поднятие температуры после охлаждения.",
+      "recorded_shape": "Local_Heating",
+      "rows_half_open": [
+        225,
+        409
+      ],
+      "x_m": [
+        46.948,
+        93.897
+      ],
+      "time_iso": [
+        "2026-04-10T07:38:37+00:00",
+        "2026-04-10T13:51:23+00:00"
+      ]
+    },
+    {
+      "id": "next-0005",
+      "record": "4",
+      "presence": "no",
+      "class_name": "Background",
+      "weight": 10.0,
+      "split_code": 0,
+      "status": "kept",
+      "expert_confirmed": true,
+      "notes": "здесь типо кулинг относительно левого участка, но на общем фоне то что показано, скорее слева local_heating а тут просто кабель упал в свой обычный рабочий темп",
+      "recorded_shape": "",
+      "rows_half_open": [
+        50,
+        201
+      ],
+      "x_m": [
+        80.0,
+        84.0
+      ],
+      "time_iso": [
+        "2026-05-26T01:48:07+00:00",
+        "2026-05-26T06:48:48+00:00"
+      ]
+    },
+    {
+      "id": "next-0006",
+      "record": "1",
+      "presence": "no",
+      "class_name": "Background",
+      "weight": 10.0,
+      "split_code": -1,
+      "status": "excluded",
+      "expert_confirmed": true,
+      "notes": "тут либо относительно левого и правого участка широкий cooling либо слева и справа был local_heating а между ними кабель был в норме или типо того. я не знаю нормы температур для кабеля к сожалению",
+      "recorded_shape": "",
+      "rows_half_open": [
+        449,
+        508
+      ],
+      "x_m": [
+        944.162,
+        984.061
+      ],
+      "time_iso": [
+        "2026-09-14T07:40:01+00:00",
+        "2026-09-14T08:10:00+00:00"
+      ]
+    },
+    {
+      "id": "next-0007",
+      "record": "2",
+      "presence": "no",
+      "class_name": "Background",
+      "weight": 10.0,
+      "split_code": 0,
+      "status": "kept",
+      "expert_confirmed": true,
+      "notes": "тоже ниче непонятно. справа в упоре был local cooling как будто",
+      "recorded_shape": "",
+      "rows_half_open": [
+        65,
+        80
+      ],
+      "x_m": [
+        501.966,
+        541.555
+      ],
+      "time_iso": [
+        "2026-04-10T02:11:58+00:00",
+        "2026-04-10T02:40:01+00:00"
+      ]
+    },
+    {
+      "id": "next-0008",
+      "record": "6",
+      "presence": "yes",
+      "class_name": "Local_Heating",
+      "weight": 10.0,
+      "split_code": -1,
+      "status": "excluded",
+      "expert_confirmed": true,
+      "notes": "началось правее, чуть урезать бы этот участок и тогда будет явный local_heating",
+      "recorded_shape": "Local_Heating",
+      "rows_half_open": [
+        822,
+        1119
+      ],
+      "x_m": [
+        586.727,
+        598.4
+      ],
+      "time_iso": [
+        "2026-02-12T14:11:34+00:00",
+        "2026-02-12T19:07:47+00:00"
+      ]
+    },
+    {
+      "id": "next-0009",
+      "record": "4",
+      "presence": "yes",
+      "class_name": "Local_Heating",
+      "weight": 10.0,
+      "split_code": -1,
+      "status": "excluded",
+      "expert_confirmed": true,
+      "notes": "heating с понижениями температур либо не на всю длину(время) кабеля",
+      "recorded_shape": "Local_Heating",
+      "rows_half_open": [
+        326,
+        708
+      ],
+      "x_m": [
+        93.895,
+        120.541
+      ],
+      "time_iso": [
+        "2026-05-26T11:05:24+00:00",
+        "2026-05-26T23:59:07+00:00"
+      ]
+    },
+    {
+      "id": "next-0010",
+      "record": "2",
+      "presence": "no",
+      "class_name": "Background",
+      "weight": 10.0,
+      "split_code": 0,
+      "status": "kept",
+      "expert_confirmed": true,
+      "notes": "непонятно просадки какие-то типо а потом справа кстати подъем. но относительно левой и правой части как будто тут просто cooling был хз",
+      "recorded_shape": "",
+      "rows_half_open": [
+        0,
+        409
+      ],
+      "x_m": [
+        291.587,
+        317.979
+      ],
+      "time_iso": [
+        "2026-04-10T00:01:41+00:00",
+        "2026-04-10T13:51:23+00:00"
+      ]
+    },
+    {
+      "id": "next-0011",
+      "record": "1",
+      "presence": "yes",
+      "class_name": "Local_Heating",
+      "weight": 10.0,
+      "split_code": -1,
+      "status": "excluded",
+      "expert_confirmed": true,
+      "notes": "несколько участков local heating с просадками . в целом тут по графику даже левее видно два столба с подъемами температуры так же",
+      "recorded_shape": "несколько участков, Local_Heating",
+      "rows_half_open": [
+        479,
+        615
+      ],
+      "x_m": [
+        434.721,
+        455.228
+      ],
+      "time_iso": [
+        "2026-09-14T07:55:46+00:00",
+        "2026-09-14T09:04:22+00:00"
+      ]
+    },
+    {
+      "id": "gap-r1-x295.736-x358.173-t0-344",
+      "record": "1",
+      "presence": "yes",
+      "class_name": "Local_Cooling",
+      "weight": 10.0,
+      "split_code": 0,
+      "status": "kept",
+      "expert_confirmed": true,
+      "notes": "здесь в целом график довольно неспокойный, но наблюдается общее снижение температуры прямо внутри рамки, она идеальная почти",
+      "recorded_shape": "Local_Cooling",
+      "rows_half_open": [
+        0,
+        344
+      ],
+      "x_m": [
+        295.736,
+        358.173
+      ],
+      "time_iso": [
+        "2026-09-13T21:03:19+00:00",
+        "2026-09-14T06:43:36+00:00"
+      ]
+    },
+    {
+      "id": "gap-r2-x202.258-x266.971-t0-410",
+      "record": "2",
+      "presence": "no",
+      "class_name": "Background",
+      "weight": 10.0,
+      "split_code": 0,
+      "status": "kept",
+      "expert_confirmed": true,
+      "notes": "Здесь вообще можно сказать ничего нет. ну не настолько серьезные изменения как будто. всего на градус похолодало при этом чуть скачет вверх вниз. то есть как будто вполне норм",
+      "recorded_shape": "",
+      "rows_half_open": [
+        0,
+        410
+      ],
+      "x_m": [
+        202.258,
+        266.971
+      ],
+      "time_iso": [
+        "2026-04-10T00:01:41+00:00",
+        "2026-04-10T13:57:24+00:00"
+      ]
+    },
+    {
+      "id": "gap-r2-x271.285-x276.107-t0-246",
+      "record": "2",
+      "presence": "yes",
+      "class_name": "Local_Heating",
+      "weight": 10.0,
+      "split_code": 0,
+      "status": "kept",
+      "expert_confirmed": true,
+      "notes": "небольшой нагрев между двух просадок по градусам, я бы пометил как local_heating для подтверждения эксперта",
+      "recorded_shape": "Local_Heating",
+      "rows_half_open": [
+        0,
+        246
+      ],
+      "x_m": [
+        271.285,
+        276.107
+      ],
+      "time_iso": [
+        "2026-04-10T00:01:41+00:00",
+        "2026-04-10T08:18:42+00:00"
+      ]
+    },
+    {
+      "id": "gap-r2-x495.875-x500.443-t0-409",
+      "record": "2",
+      "presence": "yes",
+      "class_name": "Local_Cooling",
+      "weight": 10.0,
+      "split_code": 0,
+      "status": "kept",
+      "expert_confirmed": true,
+      "notes": "Сильный просадок охлаждения кабеля. точное одно остывание",
+      "recorded_shape": "Local_Cooling",
+      "rows_half_open": [
+        0,
+        409
+      ],
+      "x_m": [
+        495.875,
+        500.443
+      ],
+      "time_iso": [
+        "2026-04-10T00:01:41+00:00",
+        "2026-04-10T13:51:23+00:00"
+      ]
+    },
+    {
+      "id": "gap-r3-x0.000-x72.325-t0-465",
+      "record": "3",
+      "presence": "yes",
+      "class_name": "Local_Cooling",
+      "weight": 10.0,
+      "split_code": 0,
+      "status": "kept",
+      "expert_confirmed": true,
+      "notes": "тут либо большой cooling либо справа от прямоугольника большой нагрев. но выделенный прямоугольник я бы назвал кулингом, хотя конечно лучше взять правый прямоугольник и назвать его широким нагревом",
+      "recorded_shape": "Local_Cooling",
+      "rows_half_open": [
+        0,
+        465
+      ],
+      "x_m": [
+        0.0,
+        72.325
+      ],
+      "time_iso": [
+        "2026-02-12T00:01:54+00:00",
+        "2026-02-13T13:04:03+00:00"
+      ]
+    },
+    {
+      "id": "gap-r3-x388.523-x398.674-t0-330",
+      "record": "3",
+      "presence": "yes",
+      "class_name": "Local_Cooling",
+      "weight": 10.0,
+      "split_code": 0,
+      "status": "kept",
+      "expert_confirmed": true,
+      "notes": "заметное охлаждение, одно остывание в прямоугольнике, все правильно",
+      "recorded_shape": "Local_Cooling",
+      "rows_half_open": [
+        0,
+        330
+      ],
+      "x_m": [
+        388.523,
+        398.674
+      ],
+      "time_iso": [
+        "2026-02-12T00:01:54+00:00",
+        "2026-02-12T11:01:26+00:00"
+      ]
+    },
+    {
+      "id": "gap-r3-x388.777-x397.913-t419-451",
+      "record": "3",
+      "presence": "yes",
+      "class_name": "Local_Cooling",
+      "weight": 10.0,
+      "split_code": 0,
+      "status": "kept",
+      "expert_confirmed": true,
+      "notes": "да, одно остывание",
+      "recorded_shape": "Local_Cooling",
+      "rows_half_open": [
+        419,
+        451
+      ],
+      "x_m": [
+        388.777,
+        397.913
+      ],
+      "time_iso": [
+        "2026-02-12T14:11:18+00:00",
+        "2026-02-12T15:13:26+00:00"
+      ]
+    },
+    {
+      "id": "gap-r5-x0.000-x127.000-t0-1537",
+      "record": "5",
+      "presence": "unclear",
+      "class_name": null,
+      "weight": 10.0,
+      "split_code": 0,
+      "status": "unmapped",
+      "expert_confirmed": true,
+      "notes": "непонятно че это, какойто кусок кабеля с разрывами по температурам, причем в левой части очень горячий, я бы наверное ток самую левую часть пометил локал хитингом",
+      "recorded_shape": "",
+      "rows_half_open": [
+        0,
+        1537
+      ],
+      "x_m": [
+        0.0,
+        127.0
+      ],
+      "time_iso": [
+        "2025-10-16T12:00:06+00:00",
+        "2025-10-16T17:50:38+00:00"
+      ]
+    },
+    {
+      "id": "gap-r5-x155.000-x213.000-t0-1537",
+      "record": "5",
+      "presence": "yes",
+      "class_name": null,
+      "weight": 10.0,
+      "split_code": 0,
+      "status": "unmapped",
+      "expert_confirmed": true,
+      "notes": "да, широкий кусок, но относительно левой части в целом норм, плавно идет на снижение температура, как будто включили охлаждение",
+      "recorded_shape": "",
+      "rows_half_open": [
+        0,
+        1537
+      ],
+      "x_m": [
+        155.0,
+        213.0
+      ],
+      "time_iso": [
+        "2025-10-16T12:00:06+00:00",
+        "2025-10-16T17:50:38+00:00"
+      ]
+    },
+    {
+      "id": "gap-r6-x1116.100-x1129.296-t251-383",
+      "record": "6",
+      "presence": "yes",
+      "class_name": null,
+      "weight": 10.0,
+      "split_code": 0,
+      "status": "unmapped",
+      "expert_confirmed": true,
+      "notes": "в прямугольнике есть событие, это широкий нагрев. НО! Он должен быть еще шире налево и направо. то есть прям совсем огромный должен быть. считай вся правая половина кабеля это нагрев тут",
+      "recorded_shape": "",
+      "rows_half_open": [
+        251,
+        383
+      ],
+      "x_m": [
+        1116.1,
+        1129.296
+      ],
+      "time_iso": [
+        "2026-02-12T01:11:33+00:00",
+        "2026-02-12T03:22:49+00:00"
+      ]
+    }
+  ],
+  "generated_ids": [
+    "review-00034",
+    "review-00098",
+    "review-00187",
+    "review-00223",
+    "next-0004",
+    "next-0007",
+    "next-0010",
+    "next-0005",
+    "gap-r1-x295.736-x358.173-t0-344",
+    "gap-r2-x202.258-x266.971-t0-410",
+    "gap-r2-x271.285-x276.107-t0-246",
+    "gap-r2-x495.875-x500.443-t0-409",
+    "gap-r3-x0.000-x72.325-t0-465",
+    "gap-r3-x388.523-x398.674-t0-330",
+    "gap-r3-x388.777-x397.913-t419-451"
+  ],
+  "split_codes_emitted": [
+    0
+  ],
+  "holdout_used_for_generation": false,
+  "guard_used_for_generation": false,
+  "automatic_weight": 1.0,
+  "expert_weight": 10.0,
+  "automatic_jsonl_regenerated": false
+}

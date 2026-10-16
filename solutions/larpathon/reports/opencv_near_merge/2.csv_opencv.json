@@ -1,0 +1,420 @@
+[
+  {
+    "meters": [
+      496.698,
+      498.9489
+    ],
+    "duration_min": 296.0,
+    "area": 1426,
+    "t_range": [
+      548,
+      695
+    ],
+    "s_range": [
+      1986,
+      1995
+    ],
+    "source": "opencv",
+    "type_hypothesis": "cooling",
+    "overlaps_detector": true
+  },
+  {
+    "meters": [
+      382.4025,
+      385.4037
+    ],
+    "duration_min": 484.0,
+    "area": 1402,
+    "t_range": [
+      352,
+      593
+    ],
+    "s_range": [
+      1529,
+      1541
+    ],
+    "source": "opencv",
+    "type_hypothesis": "cooling",
+    "overlaps_detector": true
+  },
+  {
+    "meters": [
+      61.5245,
+      63.0251
+    ],
+    "duration_min": 290.0,
+    "area": 641,
+    "t_range": [
+      215,
+      359
+    ],
+    "s_range": [
+      246,
+      252
+    ],
+    "source": "opencv",
+    "type_hypothesis": "cooling",
+    "overlaps_detector": false
+  },
+  {
+    "meters": [
+      449.9294,
+      451.9302
+    ],
+    "duration_min": 282.0,
+    "area": 939,
+    "t_range": [
+      452,
+      592
+    ],
+    "s_range": [
+      1799,
+      1807
+    ],
+    "source": "opencv",
+    "type_hypothesis": "cooling",
+    "overlaps_detector": true
+  },
+  {
+    "meters": [
+      104.7918,
+      107.0427
+    ],
+    "duration_min": 136.0,
+    "area": 550,
+    "t_range": [
+      28,
+      95
+    ],
+    "s_range": [
+      419,
+      428
+    ],
+    "source": "opencv",
+    "type_hypothesis": "heating",
+    "overlaps_detector": false
+  },
+  {
+    "meters": [
+      449.9294,
+      451.9302
+    ],
+    "duration_min": 126.0,
+    "area": 469,
+    "t_range": [
+      620,
+      682
+    ],
+    "s_range": [
+      1799,
+      1807
+    ],
+    "source": "opencv",
+    "type_hypothesis": "cooling",
+    "overlaps_detector": false
+  },
+  {
+    "meters": [
+      383.1528,
+      385.4037
+    ],
+    "duration_min": 124.0,
+    "area": 467,
+    "t_range": [
+      620,
+      681
+    ],
+    "s_range": [
+      1532,
+      1541
+    ],
+    "source": "opencv",
+    "type_hypothesis": "cooling",
+    "overlaps_detector": false
+  },
+  {
+    "meters": [
+      104.5417,
+      106.7926
+    ],
+    "duration_min": 104.0,
+    "area": 377,
+    "t_range": [
+      172,
+      223
+    ],
+    "s_range": [
+      418,
+      427
+    ],
+    "source": "opencv",
+    "type_hypothesis": "heating",
+    "overlaps_detector": false
+  },
+  {
+    "meters": [
+      449.6793,
+      451.9302
+    ],
+    "duration_min": 448.0,
+    "area": 1147,
+    "t_range": [
+      208,
+      431
+    ],
+    "s_range": [
+      1798,
+      1807
+    ],
+    "source": "opencv",
+    "type_hypothesis": "cooling",
+    "overlaps_detector": true
+  },
+  {
+    "meters": [
+      468.937,
+      471.438
+    ],
+    "duration_min": 78.0,
+    "area": 249,
+    "t_range": [
+      184,
+      222
+    ],
+    "s_range": [
+      1875,
+      1885
+    ],
+    "source": "opencv",
+    "type_hypothesis": "heating",
+    "overlaps_detector": false
+  },
+  {
+    "meters": [
+      450.1795,
+      451.9302
+    ],
+    "duration_min": 78.0,
+    "area": 228,
+    "t_range": [
+      73,
+      111
+    ],
+    "s_range": [
+      1800,
+      1807
+    ],
+    "source": "opencv",
+    "type_hypothesis": "cooling",
+    "overlaps_detector": false
+  },
+  {
+    "meters": [
+      496.698,
+      498.9489
+    ],
+    "duration_min": 62.0,
+    "area": 207,
+    "t_range": [
+      181,
+      211
+    ],
+    "s_range": [
+      1986,
+      1995
+    ],
+    "source": "opencv",
+    "type_hypothesis": "cooling",
+    "overlaps_detector": false
+  },
+  {
+    "meters": [
+      383.4029,
+      385.4037
+    ],
+    "duration_min": 70.0,
+    "area": 173,
+    "t_range": [
+      182,
+      216
+    ],
+    "s_range": [
+      1533,
+      1541
+    ],
+    "source": "opencv",
+    "type_hypothesis": "cooling",
+    "overlaps_detector": false
+  },
+  {
+    "meters": [
+      374.3993,
+      376.9003
+    ],
+    "duration_min": 44.0,
+    "area": 156,
+    "t_range": [
+      352,
+      373
+    ],
+    "s_range": [
+      1497,
+      1507
+    ],
+    "source": "opencv",
+    "type_hypothesis": "cooling",
+    "overlaps_detector": true
+  },
+  {
+    "meters": [
+      450.4296,
+      451.9302
+    ],
+    "duration_min": 54.0,
+    "area": 154,
+    "t_range": [
+      164,
+      190
+    ],
+    "s_range": [
+      1801,
+      1807
+    ],
+    "source": "opencv",
+    "type_hypothesis": "cooling",
+    "overlaps_detector": false
+  },
+  {
+    "meters": [
+      374.1492,
+      376.6502
+    ],
+    "duration_min": 184.0,
+    "area": 524,
+    "t_range": [
+      423,
+      514
+    ],
+    "s_range": [
+      1496,
+      1506
+    ],
+    "source": "opencv",
+    "type_hypothesis": "cooling",
+    "overlaps_detector": true
+  },
+  {
+    "meters": [
+      383.4029,
+      385.1536
+    ],
+    "duration_min": 72.0,
+    "area": 168,
+    "t_range": [
+      248,
+      283
+    ],
+    "s_range": [
+      1533,
+      1540
+    ],
+    "source": "opencv",
+    "type_hypothesis": "cooling",
+    "overlaps_detector": false
+  },
+  {
+    "meters": [
+      496.698,
+      499.199
+    ],
+    "duration_min": 28.0,
+    "area": 114,
+    "t_range": [
+      298,
+      311
+    ],
+    "s_range": [
+      1986,
+      1996
+    ],
+    "source": "opencv",
+    "type_hypothesis": "cooling",
+    "overlaps_detector": false
+  },
+  {
+    "meters": [
+      374.8995,
+      375.8999
+    ],
+    "duration_min": 46.0,
+    "area": 79,
+    "t_range": [
+      0,
+      22
+    ],
+    "s_range": [
+      1499,
+      1503
+    ],
+    "source": "opencv",
+    "type_hypothesis": "cooling",
+    "overlaps_detector": false
+  },
+  {
+    "meters": [
+      450.4296,
+      451.9302
+    ],
+    "duration_min": 24.0,
+    "area": 71,
+    "t_range": [
+      42,
+      53
+    ],
+    "s_range": [
+      1801,
+      1807
+    ],
+    "source": "opencv",
+    "type_hypothesis": "cooling",
+    "overlaps_detector": false
+  },
+  {
+    "meters": [
+      496.698,
+      498.9489
+    ],
+    "duration_min": 16.0,
+    "area": 42,
+    "t_range": [
+      350,
+      357
+    ],
+    "s_range": [
+      1986,
+      1995
+    ],
+    "source": "opencv",
+    "type_hypothesis": "cooling",
+    "overlaps_detector": false
+  },
+  {
+    "meters": [
+      383.653,
+      385.1536
+    ],
+    "duration_min": 20.0,
+    "area": 41,
+    "t_range": [
+      44,
+      53
+    ],
+    "s_range": [
+      1534,
+      1540
+    ],
+    "source": "opencv",
+    "type_hypothesis": "cooling",
+    "overlaps_detector": false
+  }
+]

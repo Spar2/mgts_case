@@ -1,0 +1,1459 @@
+{
+  "device": "cuda",
+  "epochs": 6,
+  "percentile": 99.2,
+  "synthetic": [
+    {
+      "seq_id": "seq0073",
+      "seconds": 4.0,
+      "shape": [
+        346,
+        1720
+      ],
+      "events_in_loaded_window": 18,
+      "events_hit": 1,
+      "by_label": {
+        "coldspot": {
+          "hit": 1,
+          "n": 2
+        },
+        "slow_warming": {
+          "hit": 0,
+          "n": 2
+        },
+        "tracing": {
+          "hit": 0,
+          "n": 14
+        }
+      },
+      "detections": 23,
+      "false_alarms": 22,
+      "nuisance_only": 0
+    },
+    {
+      "seq_id": "seq0111",
+      "seconds": 2.2,
+      "shape": [
+        300,
+        1720
+      ],
+      "events_in_loaded_window": 22,
+      "events_hit": 6,
+      "by_label": {
+        "coldspot": {
+          "hit": 0,
+          "n": 1
+        },
+        "cooling": {
+          "hit": 1,
+          "n": 1
+        },
+        "hotspot": {
+          "hit": 0,
+          "n": 4
+        },
+        "section_heating": {
+          "hit": 4,
+          "n": 5
+        },
+        "slow_warming": {
+          "hit": 1,
+          "n": 3
+        },
+        "tracing": {
+          "hit": 0,
+          "n": 8
+        }
+      },
+      "detections": 18,
+      "false_alarms": 4,
+      "nuisance_only": 2
+    },
+    {
+      "seq_id": "seq0169",
+      "seconds": 1.7,
+      "shape": [
+        201,
+        1720
+      ],
+      "events_in_loaded_window": 19,
+      "events_hit": 5,
+      "by_label": {
+        "hotspot": {
+          "hit": 2,
+          "n": 4
+        },
+        "section_heating": {
+          "hit": 3,
+          "n": 3
+        },
+        "tracing": {
+          "hit": 0,
+          "n": 12
+        }
+      },
+      "detections": 16,
+      "false_alarms": 2,
+      "nuisance_only": 2
+    },
+    {
+      "seq_id": "seq0179",
+      "seconds": 2.7,
+      "shape": [
+        355,
+        1952
+      ],
+      "events_in_loaded_window": 8,
+      "events_hit": 0,
+      "by_label": {
+        "tracing": {
+          "hit": 0,
+          "n": 8
+        }
+      },
+      "detections": 14,
+      "false_alarms": 11,
+      "nuisance_only": 3
+    },
+    {
+      "seq_id": "seq0192",
+      "seconds": 1.5,
+      "shape": [
+        197,
+        1720
+      ],
+      "events_in_loaded_window": 14,
+      "events_hit": 1,
+      "by_label": {
+        "cooling": {
+          "hit": 1,
+          "n": 2
+        },
+        "hotspot": {
+          "hit": 0,
+          "n": 5
+        },
+        "tracing": {
+          "hit": 0,
+          "n": 7
+        }
+      },
+      "detections": 2,
+      "false_alarms": 1,
+      "nuisance_only": 0
+    },
+    {
+      "seq_id": "seq0194",
+      "seconds": 2.7,
+      "shape": [
+        288,
+        2346
+      ],
+      "events_in_loaded_window": 6,
+      "events_hit": 4,
+      "by_label": {
+        "hotspot": {
+          "hit": 1,
+          "n": 3
+        },
+        "section_heating": {
+          "hit": 3,
+          "n": 3
+        }
+      },
+      "detections": 18,
+      "false_alarms": 1,
+      "nuisance_only": 9
+    },
+    {
+      "seq_id": "seq0225",
+      "seconds": 2.1,
+      "shape": [
+        266,
+        1720
+      ],
+      "events_in_loaded_window": 5,
+      "events_hit": 3,
+      "by_label": {
+        "coldspot": {
+          "hit": 2,
+          "n": 2
+        },
+        "tracing": {
+          "hit": 1,
+          "n": 3
+        }
+      },
+      "detections": 25,
+      "false_alarms": 6,
+      "nuisance_only": 16
+    },
+    {
+      "seq_id": "seq0267",
+      "seconds": 3.2,
+      "shape": [
+        385,
+        1720
+      ],
+      "events_in_loaded_window": 2,
+      "events_hit": 2,
+      "by_label": {
+        "slow_warming": {
+          "hit": 2,
+          "n": 2
+        }
+      },
+      "detections": 70,
+      "false_alarms": 64,
+      "nuisance_only": 1
+    },
+    {
+      "seq_id": "seq0275",
+      "seconds": 2.0,
+      "shape": [
+        190,
+        2030
+      ],
+      "events_in_loaded_window": 4,
+      "events_hit": 1,
+      "by_label": {
+        "coldspot": {
+          "hit": 0,
+          "n": 1
+        },
+        "section_heating": {
+          "hit": 1,
+          "n": 3
+        }
+      },
+      "detections": 9,
+      "false_alarms": 8,
+      "nuisance_only": 0
+    },
+    {
+      "seq_id": "seq0278",
+      "seconds": 2.2,
+      "shape": [
+        325,
+        1720
+      ],
+      "events_in_loaded_window": 0,
+      "events_hit": 0,
+      "by_label": {},
+      "detections": 16,
+      "false_alarms": 3,
+      "nuisance_only": 13
+    }
+  ],
+  "real": [
+    {
+      "file": "2.csv",
+      "seconds": 7.0,
+      "shape": [
+        696,
+        2349
+      ],
+      "n_events": 42,
+      "events": [
+        {
+          "type": "other",
+          "duration_min": 1270.0,
+          "spatial_extent_m": 3.5,
+          "amplitude_c": -5.87,
+          "meters": [
+            496.2,
+            499.7
+          ],
+          "t_start": "2026-04-10 00:01:41+00:00",
+          "t_end": "2026-04-10 21:54:25+00:00"
+        },
+        {
+          "type": "other",
+          "duration_min": 974.0,
+          "spatial_extent_m": 1.5,
+          "amplitude_c": 1.01,
+          "meters": [
+            16.3,
+            17.8
+          ],
+          "t_start": "2026-04-10 00:01:41+00:00",
+          "t_end": "2026-04-10 16:49:46+00:00"
+        },
+        {
+          "type": "local_heating (power cable / equipment)",
+          "duration_min": 346.0,
+          "spatial_extent_m": 1.75,
+          "amplitude_c": 1.99,
+          "meters": [
+            471.4,
+            473.2
+          ],
+          "t_start": "2026-04-10 00:05:42+00:00",
+          "t_end": "2026-04-10 05:54:25+00:00"
+        },
+        {
+          "type": "other",
+          "duration_min": 144.0,
+          "spatial_extent_m": 3.75,
+          "amplitude_c": -3.27,
+          "meters": [
+            382.4,
+            386.2
+          ],
+          "t_start": "2026-04-10 17:57:55+00:00",
+          "t_end": "2026-04-10 20:20:13+00:00"
+        },
+        {
+          "type": "other",
+          "duration_min": 124.0,
+          "spatial_extent_m": 3.0,
+          "amplitude_c": -3.87,
+          "meters": [
+            383.2,
+            386.2
+          ],
+          "t_start": "2026-04-10 21:20:20+00:00",
+          "t_end": "2026-04-10 23:30:37+00:00"
+        },
+        {
+          "type": "other",
+          "duration_min": 186.0,
+          "spatial_extent_m": 1.5,
+          "amplitude_c": -3.82,
+          "meters": [
+            450.7,
+            452.2
+          ],
+          "t_start": "2026-04-10 17:53:54+00:00",
+          "t_end": "2026-04-10 20:58:18+00:00"
+        },
+        {
+          "type": "local_heating (power cable / equipment)",
+          "duration_min": 162.0,
+          "spatial_extent_m": 3.75,
+          "amplitude_c": 4.06,
+          "meters": [
+            104.3,
+            108.0
+          ],
+          "t_start": "2026-04-10 00:45:47+00:00",
+          "t_end": "2026-04-10 03:26:07+00:00"
+        },
+        {
+          "type": "local_heating (power cable / equipment)",
+          "duration_min": 242.0,
+          "spatial_extent_m": 4.75,
+          "amplitude_c": 3.39,
+          "meters": [
+            468.4,
+            473.2
+          ],
+          "t_start": "2026-04-10 02:30:00+00:00",
+          "t_end": "2026-04-10 06:36:30+00:00"
+        },
+        {
+          "type": "local_heating (power cable / equipment)",
+          "duration_min": 186.0,
+          "spatial_extent_m": 1.0,
+          "amplitude_c": 1.43,
+          "meters": [
+            472.2,
+            473.2
+          ],
+          "t_start": "2026-04-10 20:44:16+00:00",
+          "t_end": "2026-04-10 23:58:41+00:00"
+        },
+        {
+          "type": "local_heating (power cable / equipment)",
+          "duration_min": 168.0,
+          "spatial_extent_m": 1.75,
+          "amplitude_c": 1.96,
+          "meters": [
+            471.4,
+            473.2
+          ],
+          "t_start": "2026-04-10 07:34:37+00:00",
+          "t_end": "2026-04-10 10:20:57+00:00"
+        },
+        {
+          "type": "other",
+          "duration_min": 138.0,
+          "spatial_extent_m": 2.0,
+          "amplitude_c": -3.88,
+          "meters": [
+            450.2,
+            452.2
+          ],
+          "t_start": "2026-04-10 21:24:21+00:00",
+          "t_end": "2026-04-10 23:48:39+00:00"
+        },
+        {
+          "type": "local_heating (power cable / equipment)",
+          "duration_min": 148.0,
+          "spatial_extent_m": 1.0,
+          "amplitude_c": 1.27,
+          "meters": [
+            472.2,
+            473.2
+          ],
+          "t_start": "2026-04-10 18:09:56+00:00",
+          "t_end": "2026-04-10 20:36:15+00:00"
+        },
+        {
+          "type": "local_heating (power cable / equipment)",
+          "duration_min": 96.0,
+          "spatial_extent_m": 3.25,
+          "amplitude_c": 4.37,
+          "meters": [
+            104.3,
+            107.5
+          ],
+          "t_start": "2026-04-10 05:58:25+00:00",
+          "t_end": "2026-04-10 07:34:37+00:00"
+        },
+        {
+          "type": "other",
+          "duration_min": 76.0,
+          "spatial_extent_m": 3.5,
+          "amplitude_c": -2.62,
+          "meters": [
+            382.7,
+            386.2
+          ],
+          "t_start": "2026-04-10 16:33:44+00:00",
+          "t_end": "2026-04-10 17:47:53+00:00"
+        },
+        {
+          "type": "other",
+          "duration_min": 42.0,
+          "spatial_extent_m": 2.75,
+          "amplitude_c": -2.13,
+          "meters": [
+            374.4,
+            377.2
+          ],
+          "t_start": "2026-04-10 16:45:45+00:00",
+          "t_end": "2026-04-10 17:25:51+00:00"
+        },
+        {
+          "type": "other",
+          "duration_min": 32.0,
+          "spatial_extent_m": 3.25,
+          "amplitude_c": -3.61,
+          "meters": [
+            382.4,
+            385.7
+          ],
+          "t_start": "2026-04-10 11:53:09+00:00",
+          "t_end": "2026-04-10 12:23:12+00:00"
+        },
+        {
+          "type": "local_heating (power cable / equipment)",
+          "duration_min": 64.0,
+          "spatial_extent_m": 1.0,
+          "amplitude_c": 1.78,
+          "meters": [
+            472.2,
+            473.2
+          ],
+          "t_start": "2026-04-10 10:38:59+00:00",
+          "t_end": "2026-04-10 11:41:07+00:00"
+        },
+        {
+          "type": "other",
+          "duration_min": 54.0,
+          "spatial_extent_m": 1.25,
+          "amplitude_c": -4.12,
+          "meters": [
+            450.9,
+            452.2
+          ],
+          "t_start": "2026-04-10 02:40:01+00:00",
+          "t_end": "2026-04-10 03:32:07+00:00"
+        },
+        {
+          "type": "other",
+          "duration_min": 32.0,
+          "spatial_extent_m": 2.75,
+          "amplitude_c": -3.63,
+          "meters": [
+            374.4,
+            377.2
+          ],
+          "t_start": "2026-04-10 11:53:09+00:00",
+          "t_end": "2026-04-10 12:23:12+00:00"
+        },
+        {
+          "type": "other",
+          "duration_min": 44.0,
+          "spatial_extent_m": 2.0,
+          "amplitude_c": -3.19,
+          "meters": [
+            450.2,
+            452.2
+          ],
+          "t_start": "2026-04-10 16:33:44+00:00",
+          "t_end": "2026-04-10 17:15:49+00:00"
+        },
+        {
+          "type": "other",
+          "duration_min": 24.0,
+          "spatial_extent_m": 2.25,
+          "amplitude_c": -3.63,
+          "meters": [
+            449.9,
+            452.2
+          ],
+          "t_start": "2026-04-10 12:01:10+00:00",
+          "t_end": "2026-04-10 12:23:12+00:00"
+        },
+        {
+          "type": "local_heating (power cable / equipment)",
+          "duration_min": 44.0,
+          "spatial_extent_m": 1.0,
+          "amplitude_c": 1.76,
+          "meters": [
+            472.2,
+            473.2
+          ],
+          "t_start": "2026-04-10 11:49:08+00:00",
+          "t_end": "2026-04-10 12:31:13+00:00"
+        },
+        {
+          "type": "other",
+          "duration_min": 46.0,
+          "spatial_extent_m": 2.0,
+          "amplitude_c": -4.28,
+          "meters": [
+            384.2,
+            386.2
+          ],
+          "t_start": "2026-04-10 04:46:16+00:00",
+          "t_end": "2026-04-10 05:32:22+00:00"
+        },
+        {
+          "type": "other",
+          "duration_min": 40.0,
+          "spatial_extent_m": 1.25,
+          "amplitude_c": -4.18,
+          "meters": [
+            383.9,
+            385.2
+          ],
+          "t_start": "2026-04-10 06:32:29+00:00",
+          "t_end": "2026-04-10 07:10:34+00:00"
+        },
+        {
+          "type": "other",
+          "duration_min": 30.0,
+          "spatial_extent_m": 1.25,
+          "amplitude_c": -4.47,
+          "meters": [
+            383.9,
+            385.2
+          ],
+          "t_start": "2026-04-10 08:32:44+00:00",
+          "t_end": "2026-04-10 09:00:47+00:00"
+        },
+        {
+          "type": "local_heating (power cable / equipment)",
+          "duration_min": 32.0,
+          "spatial_extent_m": 1.0,
+          "amplitude_c": 3.19,
+          "meters": [
+            104.3,
+            105.3
+          ],
+          "t_start": "2026-04-10 23:10:35+00:00",
+          "t_end": "2026-04-10 23:40:38+00:00"
+        },
+        {
+          "type": "other",
+          "duration_min": 22.0,
+          "spatial_extent_m": 1.25,
+          "amplitude_c": -3.38,
+          "meters": [
+            450.9,
+            452.2
+          ],
+          "t_start": "2026-04-10 04:34:15+00:00",
+          "t_end": "2026-04-10 04:54:17+00:00"
+        },
+        {
+          "type": "other",
+          "duration_min": 20.0,
+          "spatial_extent_m": 1.25,
+          "amplitude_c": -3.59,
+          "meters": [
+            450.9,
+            452.2
+          ],
+          "t_start": "2026-04-10 17:25:51+00:00",
+          "t_end": "2026-04-10 17:43:53+00:00"
+        },
+        {
+          "type": "other",
+          "duration_min": 28.0,
+          "spatial_extent_m": 1.0,
+          "amplitude_c": -4.83,
+          "meters": [
+            384.2,
+            385.2
+          ],
+          "t_start": "2026-04-10 10:38:59+00:00",
+          "t_end": "2026-04-10 11:05:03+00:00"
+        },
+        {
+          "type": "other",
+          "duration_min": 18.0,
+          "spatial_extent_m": 1.25,
+          "amplitude_c": -3.38,
+          "meters": [
+            450.9,
+            452.2
+          ],
+          "t_start": "2026-04-10 15:09:33+00:00",
+          "t_end": "2026-04-10 15:25:35+00:00"
+        },
+        {
+          "type": "other",
+          "duration_min": 22.0,
+          "spatial_extent_m": 1.0,
+          "amplitude_c": -4.55,
+          "meters": [
+            384.2,
+            385.2
+          ],
+          "t_start": "2026-04-10 02:34:00+00:00",
+          "t_end": "2026-04-10 02:54:03+00:00"
+        },
+        {
+          "type": "other",
+          "duration_min": 20.0,
+          "spatial_extent_m": 1.25,
+          "amplitude_c": -3.76,
+          "meters": [
+            450.9,
+            452.2
+          ],
+          "t_start": "2026-04-10 10:38:59+00:00",
+          "t_end": "2026-04-10 10:57:02+00:00"
+        },
+        {
+          "type": "other",
+          "duration_min": 18.0,
+          "spatial_extent_m": 1.25,
+          "amplitude_c": -4.06,
+          "meters": [
+            450.9,
+            452.2
+          ],
+          "t_start": "2026-04-10 05:06:19+00:00",
+          "t_end": "2026-04-10 05:22:21+00:00"
+        },
+        {
+          "type": "transient",
+          "duration_min": 12.0,
+          "spatial_extent_m": 1.5,
+          "amplitude_c": 1.8,
+          "meters": [
+            471.2,
+            472.7
+          ],
+          "t_start": "2026-04-10 07:02:33+00:00",
+          "t_end": "2026-04-10 07:12:34+00:00"
+        },
+        {
+          "type": "other",
+          "duration_min": 16.0,
+          "spatial_extent_m": 1.0,
+          "amplitude_c": -4.52,
+          "meters": [
+            375.1,
+            376.1
+          ],
+          "t_start": "2026-04-10 17:57:55+00:00",
+          "t_end": "2026-04-10 18:11:56+00:00"
+        },
+        {
+          "type": "transient",
+          "duration_min": 14.0,
+          "spatial_extent_m": 1.0,
+          "amplitude_c": -3.77,
+          "meters": [
+            384.2,
+            385.2
+          ],
+          "t_start": "2026-04-10 15:49:38+00:00",
+          "t_end": "2026-04-10 16:01:40+00:00"
+        },
+        {
+          "type": "transient",
+          "duration_min": 12.0,
+          "spatial_extent_m": 1.25,
+          "amplitude_c": -3.13,
+          "meters": [
+            450.9,
+            452.2
+          ],
+          "t_start": "2026-04-10 15:55:39+00:00",
+          "t_end": "2026-04-10 16:05:40+00:00"
+        },
+        {
+          "type": "transient",
+          "duration_min": 8.0,
+          "spatial_extent_m": 1.25,
+          "amplitude_c": -3.54,
+          "meters": [
+            450.9,
+            452.2
+          ],
+          "t_start": "2026-04-10 21:04:18+00:00",
+          "t_end": "2026-04-10 21:12:19+00:00"
+        },
+        {
+          "type": "transient",
+          "duration_min": 14.0,
+          "spatial_extent_m": 1.0,
+          "amplitude_c": -4.34,
+          "meters": [
+            384.2,
+            385.2
+          ],
+          "t_start": "2026-04-10 04:26:14+00:00",
+          "t_end": "2026-04-10 04:38:16+00:00"
+        },
+        {
+          "type": "transient",
+          "duration_min": 10.0,
+          "spatial_extent_m": 1.0,
+          "amplitude_c": 3.79,
+          "meters": [
+            104.3,
+            105.3
+          ],
+          "t_start": "2026-04-10 03:34:08+00:00",
+          "t_end": "2026-04-10 03:42:09+00:00"
+        },
+        {
+          "type": "transient",
+          "duration_min": 8.0,
+          "spatial_extent_m": 1.25,
+          "amplitude_c": -1.63,
+          "meters": [
+            302.6,
+            303.9
+          ],
+          "t_start": "2026-04-10 06:28:29+00:00",
+          "t_end": "2026-04-10 06:34:30+00:00"
+        },
+        {
+          "type": "transient",
+          "duration_min": 8.0,
+          "spatial_extent_m": 1.0,
+          "amplitude_c": -1.09,
+          "meters": [
+            302.9,
+            303.9
+          ],
+          "t_start": "2026-04-10 06:46:31+00:00",
+          "t_end": "2026-04-10 06:52:32+00:00"
+        }
+      ]
+    },
+    {
+      "file": "3.csv",
+      "seconds": 5.9,
+      "shape": [
+        788,
+        1714
+      ],
+      "n_events": 38,
+      "events": [
+        {
+          "type": "local_heating (power cable / equipment)",
+          "duration_min": 484.0,
+          "spatial_extent_m": 4.0,
+          "amplitude_c": 1.81,
+          "meters": [
+            62.0,
+            66.0
+          ],
+          "t_start": "2026-02-13 15:56:25+00:00",
+          "t_end": "2026-02-13 23:59:25+00:00"
+        },
+        {
+          "type": "local_heating (power cable / equipment)",
+          "duration_min": 212.0,
+          "spatial_extent_m": 8.75,
+          "amplitude_c": 6.45,
+          "meters": [
+            372.4,
+            381.1
+          ],
+          "t_start": "2026-02-13 20:28:59+00:00",
+          "t_end": "2026-02-13 23:59:25+00:00"
+        },
+        {
+          "type": "other",
+          "duration_min": 58.0,
+          "spatial_extent_m": 9.5,
+          "amplitude_c": -1.41,
+          "meters": [
+            85.5,
+            95.0
+          ],
+          "t_start": "2026-02-12 10:59:25+00:00",
+          "t_end": "2026-02-12 11:55:33+00:00"
+        },
+        {
+          "type": "other",
+          "duration_min": 408.0,
+          "spatial_extent_m": 2.25,
+          "amplitude_c": -9.35,
+          "meters": [
+            35.8,
+            38.0
+          ],
+          "t_start": "2026-02-12 00:23:57+00:00",
+          "t_end": "2026-02-12 07:10:54+00:00"
+        },
+        {
+          "type": "other",
+          "duration_min": 380.0,
+          "spatial_extent_m": 3.5,
+          "amplitude_c": -1.69,
+          "meters": [
+            0.0,
+            3.5
+          ],
+          "t_start": "2026-02-12 11:49:32+00:00",
+          "t_end": "2026-02-13 15:48:24+00:00"
+        },
+        {
+          "type": "other",
+          "duration_min": 194.0,
+          "spatial_extent_m": 2.75,
+          "amplitude_c": -7.5,
+          "meters": [
+            35.3,
+            38.0
+          ],
+          "t_start": "2026-02-13 16:12:27+00:00",
+          "t_end": "2026-02-13 19:24:51+00:00"
+        },
+        {
+          "type": "other",
+          "duration_min": 382.0,
+          "spatial_extent_m": 1.0,
+          "amplitude_c": -1.37,
+          "meters": [
+            63.0,
+            64.0
+          ],
+          "t_start": "2026-02-12 00:01:54+00:00",
+          "t_end": "2026-02-12 06:22:47+00:00"
+        },
+        {
+          "type": "other",
+          "duration_min": 280.0,
+          "spatial_extent_m": 1.75,
+          "amplitude_c": 0.63,
+          "meters": [
+            404.6,
+            406.4
+          ],
+          "t_start": "2026-02-12 05:08:37+00:00",
+          "t_end": "2026-02-12 09:47:15+00:00"
+        },
+        {
+          "type": "other",
+          "duration_min": 146.0,
+          "spatial_extent_m": 2.75,
+          "amplitude_c": -7.57,
+          "meters": [
+            35.3,
+            38.0
+          ],
+          "t_start": "2026-02-13 13:32:07+00:00",
+          "t_end": "2026-02-13 16:04:26+00:00"
+        },
+        {
+          "type": "other",
+          "duration_min": 46.0,
+          "spatial_extent_m": 8.5,
+          "amplitude_c": -1.34,
+          "meters": [
+            85.8,
+            94.3
+          ],
+          "t_start": "2026-02-13 13:52:10+00:00",
+          "t_end": "2026-02-13 14:44:16+00:00"
+        },
+        {
+          "type": "other",
+          "duration_min": 182.0,
+          "spatial_extent_m": 2.75,
+          "amplitude_c": -9.17,
+          "meters": [
+            35.3,
+            38.0
+          ],
+          "t_start": "2026-02-12 07:18:55+00:00",
+          "t_end": "2026-02-12 10:19:19+00:00"
+        },
+        {
+          "type": "other",
+          "duration_min": 76.0,
+          "spatial_extent_m": 1.25,
+          "amplitude_c": 0.76,
+          "meters": [
+            404.6,
+            405.9
+          ],
+          "t_start": "2026-02-12 03:32:23+00:00",
+          "t_end": "2026-02-12 04:46:34+00:00"
+        },
+        {
+          "type": "other",
+          "duration_min": 18.0,
+          "spatial_extent_m": 6.25,
+          "amplitude_c": 0.52,
+          "meters": [
+            399.6,
+            405.9
+          ],
+          "t_start": "2026-02-12 14:59:24+00:00",
+          "t_end": "2026-02-13 12:37:59+00:00"
+        },
+        {
+          "type": "other",
+          "duration_min": 50.0,
+          "spatial_extent_m": 2.0,
+          "amplitude_c": -7.82,
+          "meters": [
+            35.3,
+            37.3
+          ],
+          "t_start": "2026-02-12 15:13:26+00:00",
+          "t_end": "2026-02-13 13:24:06+00:00"
+        },
+        {
+          "type": "other",
+          "duration_min": 16.0,
+          "spatial_extent_m": 3.5,
+          "amplitude_c": 0.07,
+          "meters": [
+            168.0,
+            171.5
+          ],
+          "t_start": "2026-02-12 15:09:26+00:00",
+          "t_end": "2026-02-13 12:46:00+00:00"
+        },
+        {
+          "type": "other",
+          "duration_min": 54.0,
+          "spatial_extent_m": 1.0,
+          "amplitude_c": -0.38,
+          "meters": [
+            72.0,
+            73.0
+          ],
+          "t_start": "2026-02-13 14:00:11+00:00",
+          "t_end": "2026-02-13 15:00:18+00:00"
+        },
+        {
+          "type": "other",
+          "duration_min": 44.0,
+          "spatial_extent_m": 1.25,
+          "amplitude_c": 0.67,
+          "meters": [
+            404.6,
+            405.9
+          ],
+          "t_start": "2026-02-12 00:09:55+00:00",
+          "t_end": "2026-02-12 00:52:01+00:00"
+        },
+        {
+          "type": "other",
+          "duration_min": 16.0,
+          "spatial_extent_m": 2.75,
+          "amplitude_c": 0.15,
+          "meters": [
+            159.0,
+            161.8
+          ],
+          "t_start": "2026-02-12 15:09:26+00:00",
+          "t_end": "2026-02-13 12:46:00+00:00"
+        },
+        {
+          "type": "other",
+          "duration_min": 58.0,
+          "spatial_extent_m": 1.25,
+          "amplitude_c": 0.65,
+          "meters": [
+            404.6,
+            405.9
+          ],
+          "t_start": "2026-02-12 01:40:07+00:00",
+          "t_end": "2026-02-12 02:36:15+00:00"
+        },
+        {
+          "type": "other",
+          "duration_min": 42.0,
+          "spatial_extent_m": 1.25,
+          "amplitude_c": 0.68,
+          "meters": [
+            404.6,
+            405.9
+          ],
+          "t_start": "2026-02-12 02:44:16+00:00",
+          "t_end": "2026-02-12 03:24:22+00:00"
+        },
+        {
+          "type": "other",
+          "duration_min": 36.0,
+          "spatial_extent_m": 1.0,
+          "amplitude_c": -0.52,
+          "meters": [
+            405.4,
+            406.4
+          ],
+          "t_start": "2026-02-12 12:43:05+00:00",
+          "t_end": "2026-02-12 13:17:10+00:00"
+        },
+        {
+          "type": "other",
+          "duration_min": 34.0,
+          "spatial_extent_m": 1.75,
+          "amplitude_c": 0.46,
+          "meters": [
+            404.6,
+            406.4
+          ],
+          "t_start": "2026-02-12 01:00:01+00:00",
+          "t_end": "2026-02-12 01:32:06+00:00"
+        },
+        {
+          "type": "local_heating (power cable / equipment)",
+          "duration_min": 24.0,
+          "spatial_extent_m": 2.0,
+          "amplitude_c": 1.72,
+          "meters": [
+            76.3,
+            78.3
+          ],
+          "t_start": "2026-02-12 11:09:27+00:00",
+          "t_end": "2026-02-12 11:31:30+00:00"
+        },
+        {
+          "type": "other",
+          "duration_min": 24.0,
+          "spatial_extent_m": 2.0,
+          "amplitude_c": -0.32,
+          "meters": [
+            404.6,
+            406.6
+          ],
+          "t_start": "2026-02-12 11:33:30+00:00",
+          "t_end": "2026-02-12 11:55:33+00:00"
+        },
+        {
+          "type": "other",
+          "duration_min": 16.0,
+          "spatial_extent_m": 1.5,
+          "amplitude_c": -1.29,
+          "meters": [
+            89.0,
+            90.5
+          ],
+          "t_start": "2026-02-13 14:24:14+00:00",
+          "t_end": "2026-02-13 14:38:15+00:00"
+        },
+        {
+          "type": "other",
+          "duration_min": 16.0,
+          "spatial_extent_m": 1.5,
+          "amplitude_c": 0.12,
+          "meters": [
+            151.8,
+            153.3
+          ],
+          "t_start": "2026-02-12 15:09:26+00:00",
+          "t_end": "2026-02-13 12:46:00+00:00"
+        },
+        {
+          "type": "other",
+          "duration_min": 18.0,
+          "spatial_extent_m": 1.5,
+          "amplitude_c": 0.79,
+          "meters": [
+            75.8,
+            77.3
+          ],
+          "t_start": "2026-02-13 15:44:24+00:00",
+          "t_end": "2026-02-13 16:00:25+00:00"
+        },
+        {
+          "type": "other",
+          "duration_min": 14.0,
+          "spatial_extent_m": 1.5,
+          "amplitude_c": 0.54,
+          "meters": [
+            404.9,
+            406.4
+          ],
+          "t_start": "2026-02-12 10:49:24+00:00",
+          "t_end": "2026-02-12 11:01:26+00:00"
+        },
+        {
+          "type": "other",
+          "duration_min": 12.0,
+          "spatial_extent_m": 1.5,
+          "amplitude_c": 0.53,
+          "meters": [
+            404.9,
+            406.4
+          ],
+          "t_start": "2026-02-12 14:13:18+00:00",
+          "t_end": "2026-02-12 14:23:20+00:00"
+        },
+        {
+          "type": "other",
+          "duration_min": 10.0,
+          "spatial_extent_m": 1.5,
+          "amplitude_c": 0.35,
+          "meters": [
+            404.9,
+            406.4
+          ],
+          "t_start": "2026-02-12 13:33:12+00:00",
+          "t_end": "2026-02-12 13:41:13+00:00"
+        },
+        {
+          "type": "transient",
+          "duration_min": 8.0,
+          "spatial_extent_m": 2.0,
+          "amplitude_c": -8.28,
+          "meters": [
+            36.0,
+            38.0
+          ],
+          "t_start": "2026-02-12 00:01:54+00:00",
+          "t_end": "2026-02-12 00:07:55+00:00"
+        },
+        {
+          "type": "transient",
+          "duration_min": 14.0,
+          "spatial_extent_m": 1.0,
+          "amplitude_c": 1.14,
+          "meters": [
+            404.6,
+            405.6
+          ],
+          "t_start": "2026-02-12 10:19:19+00:00",
+          "t_end": "2026-02-12 10:31:21+00:00"
+        },
+        {
+          "type": "transient",
+          "duration_min": 10.0,
+          "spatial_extent_m": 1.0,
+          "amplitude_c": 5.87,
+          "meters": [
+            116.3,
+            117.3
+          ],
+          "t_start": "2026-02-13 19:08:49+00:00",
+          "t_end": "2026-02-13 19:16:50+00:00"
+        },
+        {
+          "type": "transient",
+          "duration_min": 12.0,
+          "spatial_extent_m": 1.0,
+          "amplitude_c": 1.01,
+          "meters": [
+            404.6,
+            405.6
+          ],
+          "t_start": "2026-02-12 04:52:34+00:00",
+          "t_end": "2026-02-12 05:02:36+00:00"
+        },
+        {
+          "type": "transient",
+          "duration_min": 10.0,
+          "spatial_extent_m": 1.0,
+          "amplitude_c": 6.12,
+          "meters": [
+            377.4,
+            378.4
+          ],
+          "t_start": "2026-02-13 20:10:57+00:00",
+          "t_end": "2026-02-13 20:18:58+00:00"
+        },
+        {
+          "type": "transient",
+          "duration_min": 8.0,
+          "spatial_extent_m": 1.0,
+          "amplitude_c": 6.23,
+          "meters": [
+            116.3,
+            117.3
+          ],
+          "t_start": "2026-02-13 21:25:06+00:00",
+          "t_end": "2026-02-13 21:31:07+00:00"
+        },
+        {
+          "type": "transient",
+          "duration_min": 6.0,
+          "spatial_extent_m": 1.25,
+          "amplitude_c": 0.92,
+          "meters": [
+            160.0,
+            161.3
+          ],
+          "t_start": "2026-02-13 17:18:35+00:00",
+          "t_end": "2026-02-13 17:22:35+00:00"
+        },
+        {
+          "type": "transient",
+          "duration_min": 6.0,
+          "spatial_extent_m": 1.25,
+          "amplitude_c": 0.81,
+          "meters": [
+            76.0,
+            77.3
+          ],
+          "t_start": "2026-02-12 11:41:31+00:00",
+          "t_end": "2026-02-12 11:45:31+00:00"
+        }
+      ]
+    },
+    {
+      "file": "4.csv",
+      "seconds": 4.9,
+      "shape": [
+        708,
+        1716
+      ],
+      "n_events": 18,
+      "events": [
+        {
+          "type": "local_heating (power cable / equipment)",
+          "duration_min": 536.0,
+          "spatial_extent_m": 9.25,
+          "amplitude_c": 6.85,
+          "meters": [
+            104.8,
+            114.0
+          ],
+          "t_start": "2026-05-26 14:53:56+00:00",
+          "t_end": "2026-05-26 23:59:07+00:00"
+        },
+        {
+          "type": "local_heating (power cable / equipment)",
+          "duration_min": 286.0,
+          "spatial_extent_m": 8.0,
+          "amplitude_c": 4.76,
+          "meters": [
+            92.3,
+            100.3
+          ],
+          "t_start": "2026-05-26 11:37:29+00:00",
+          "t_end": "2026-05-26 16:22:07+00:00"
+        },
+        {
+          "type": "local_heating (power cable / equipment)",
+          "duration_min": 114.0,
+          "spatial_extent_m": 5.5,
+          "amplitude_c": 4.75,
+          "meters": [
+            84.8,
+            90.3
+          ],
+          "t_start": "2026-05-26 21:56:51+00:00",
+          "t_end": "2026-05-26 23:59:07+00:00"
+        },
+        {
+          "type": "local_heating (power cable / equipment)",
+          "duration_min": 54.0,
+          "spatial_extent_m": 3.25,
+          "amplitude_c": 3.95,
+          "meters": [
+            91.8,
+            95.0
+          ],
+          "t_start": "2026-05-26 21:58:51+00:00",
+          "t_end": "2026-05-26 22:56:59+00:00"
+        },
+        {
+          "type": "local_heating (power cable / equipment)",
+          "duration_min": 42.0,
+          "spatial_extent_m": 3.5,
+          "amplitude_c": 4.91,
+          "meters": [
+            85.0,
+            88.5
+          ],
+          "t_start": "2026-05-26 21:10:45+00:00",
+          "t_end": "2026-05-26 21:50:50+00:00"
+        },
+        {
+          "type": "local_heating (power cable / equipment)",
+          "duration_min": 42.0,
+          "spatial_extent_m": 3.25,
+          "amplitude_c": 5.17,
+          "meters": [
+            85.3,
+            88.5
+          ],
+          "t_start": "2026-05-26 20:22:39+00:00",
+          "t_end": "2026-05-26 21:02:44+00:00"
+        },
+        {
+          "type": "local_heating (power cable / equipment)",
+          "duration_min": 50.0,
+          "spatial_extent_m": 2.75,
+          "amplitude_c": 4.53,
+          "meters": [
+            74.8,
+            77.5
+          ],
+          "t_start": "2026-05-26 03:36:22+00:00",
+          "t_end": "2026-05-26 04:24:29+00:00"
+        },
+        {
+          "type": "other",
+          "duration_min": 14.0,
+          "spatial_extent_m": 5.0,
+          "amplitude_c": 0.53,
+          "meters": [
+            94.3,
+            99.3
+          ],
+          "t_start": "2026-05-26 10:59:24+00:00",
+          "t_end": "2026-05-26 11:11:25+00:00"
+        },
+        {
+          "type": "transient",
+          "duration_min": 14.0,
+          "spatial_extent_m": 3.25,
+          "amplitude_c": 3.89,
+          "meters": [
+            91.5,
+            94.8
+          ],
+          "t_start": "2026-05-26 21:18:46+00:00",
+          "t_end": "2026-05-26 21:30:47+00:00"
+        },
+        {
+          "type": "local_heating (power cable / equipment)",
+          "duration_min": 24.0,
+          "spatial_extent_m": 1.5,
+          "amplitude_c": 5.79,
+          "meters": [
+            75.3,
+            76.8
+          ],
+          "t_start": "2026-05-26 19:18:31+00:00",
+          "t_end": "2026-05-26 19:40:34+00:00"
+        },
+        {
+          "type": "other",
+          "duration_min": 18.0,
+          "spatial_extent_m": 1.75,
+          "amplitude_c": 5.42,
+          "meters": [
+            86.5,
+            88.3
+          ],
+          "t_start": "2026-05-26 19:34:33+00:00",
+          "t_end": "2026-05-26 19:50:35+00:00"
+        },
+        {
+          "type": "transient",
+          "duration_min": 10.0,
+          "spatial_extent_m": 2.5,
+          "amplitude_c": 4.94,
+          "meters": [
+            91.5,
+            94.0
+          ],
+          "t_start": "2026-05-26 20:22:39+00:00",
+          "t_end": "2026-05-26 20:30:40+00:00"
+        },
+        {
+          "type": "transient",
+          "duration_min": 12.0,
+          "spatial_extent_m": 2.25,
+          "amplitude_c": 1.78,
+          "meters": [
+            91.8,
+            94.0
+          ],
+          "t_start": "2026-05-26 19:06:29+00:00",
+          "t_end": "2026-05-26 19:16:31+00:00"
+        },
+        {
+          "type": "transient",
+          "duration_min": 12.0,
+          "spatial_extent_m": 1.25,
+          "amplitude_c": 2.42,
+          "meters": [
+            86.5,
+            87.8
+          ],
+          "t_start": "2026-05-26 19:06:29+00:00",
+          "t_end": "2026-05-26 19:16:31+00:00"
+        },
+        {
+          "type": "other",
+          "duration_min": 8.0,
+          "spatial_extent_m": 1.75,
+          "amplitude_c": -0.6,
+          "meters": [
+            91.3,
+            93.0
+          ],
+          "t_start": "2026-05-26 11:17:26+00:00",
+          "t_end": "2026-05-26 11:23:27+00:00"
+        },
+        {
+          "type": "transient",
+          "duration_min": 10.0,
+          "spatial_extent_m": 1.5,
+          "amplitude_c": 1.87,
+          "meters": [
+            118.8,
+            120.3
+          ],
+          "t_start": "2026-05-26 15:01:56+00:00",
+          "t_end": "2026-05-26 15:09:57+00:00"
+        },
+        {
+          "type": "transient",
+          "duration_min": 8.0,
+          "spatial_extent_m": 1.25,
+          "amplitude_c": 6.76,
+          "meters": [
+            92.0,
+            93.3
+          ],
+          "t_start": "2026-05-26 22:58:59+00:00",
+          "t_end": "2026-05-26 23:07:00+00:00"
+        },
+        {
+          "type": "transient",
+          "duration_min": 8.0,
+          "spatial_extent_m": 1.0,
+          "amplitude_c": 3.48,
+          "meters": [
+            93.0,
+            94.0
+          ],
+          "t_start": "2026-05-26 19:34:33+00:00",
+          "t_end": "2026-05-26 19:40:34+00:00"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,662 @@
+{
+  "1.csv": {
+    "n_events": 17,
+    "by_type": {
+      "local_heating": 2,
+      "zone_cooling": 0,
+      "transient": 12,
+      "extended_mild": 0,
+      "other": 3,
+      "broad_heating": 0,
+      "possible_fire": 0,
+      "broad_mild": 0
+    },
+    "top_events": [
+      {
+        "meters": [
+          522.1657,
+          534.5303
+        ],
+        "duration_min": 142.0833,
+        "amplitude": 19.6976,
+        "local_amplitude": 18.3134,
+        "confidence": 0.8549,
+        "type_hypothesis": "local_heating (power cable / equipment)",
+        "t_range": [
+          340,
+          614
+        ],
+        "s_range": [
+          1098,
+          1124
+        ]
+      },
+      {
+        "meters": [
+          93.6855,
+          96.5388
+        ],
+        "duration_min": 3.6167,
+        "amplitude": 8.4791,
+        "local_amplitude": 8.6125,
+        "confidence": 0.8316,
+        "type_hypothesis": "transient",
+        "t_range": [
+          464,
+          470
+        ],
+        "s_range": [
+          197,
+          203
+        ]
+      },
+      {
+        "meters": [
+          425.6269,
+          427.5291
+        ],
+        "duration_min": 7.75,
+        "amplitude": 13.5639,
+        "local_amplitude": 13.8751,
+        "confidence": 0.8296,
+        "type_hypothesis": "transient",
+        "t_range": [
+          134,
+          148
+        ],
+        "s_range": [
+          895,
+          899
+        ]
+      },
+      {
+        "meters": [
+          112.7079,
+          131.2548
+        ],
+        "duration_min": 13.95,
+        "amplitude": 8.976,
+        "local_amplitude": 10.178,
+        "confidence": 0.8246,
+        "type_hypothesis": "transient",
+        "t_range": [
+          285,
+          311
+        ],
+        "s_range": [
+          237,
+          276
+        ]
+      },
+      {
+        "meters": [
+          418.4935,
+          420.3957
+        ],
+        "duration_min": 11.3667,
+        "amplitude": 17.546,
+        "local_amplitude": 16.539,
+        "confidence": 0.8196,
+        "type_hypothesis": "transient",
+        "t_range": [
+          53,
+          74
+        ],
+        "s_range": [
+          880,
+          884
+        ]
+      }
+    ]
+  },
+  "2.csv": {
+    "n_events": 21,
+    "by_type": {
+      "local_heating": 2,
+      "zone_cooling": 0,
+      "transient": 0,
+      "extended_mild": 0,
+      "other": 19,
+      "broad_heating": 0,
+      "possible_fire": 0,
+      "broad_mild": 0
+    },
+    "top_events": [
+      {
+        "meters": [
+          383.4029,
+          385.1536
+        ],
+        "duration_min": 62.0,
+        "amplitude": -6.3181,
+        "local_amplitude": -5.0688,
+        "confidence": 0.8316,
+        "type_hypothesis": "other",
+        "t_range": [
+          621,
+          651
+        ],
+        "s_range": [
+          1533,
+          1540
+        ]
+      },
+      {
+        "meters": [
+          382.1524,
+          387.1544
+        ],
+        "duration_min": 220.0,
+        "amplitude": -4.2296,
+        "local_amplitude": -3.456,
+        "confidence": 0.8051,
+        "type_hypothesis": "other",
+        "t_range": [
+          482,
+          591
+        ],
+        "s_range": [
+          1528,
+          1548
+        ]
+      },
+      {
+        "meters": [
+          449.4292,
+          453.1807
+        ],
+        "duration_min": 222.0,
+        "amplitude": -4.3128,
+        "local_amplitude": -3.9644,
+        "confidence": 0.7795,
+        "type_hypothesis": "other",
+        "t_range": [
+          481,
+          591
+        ],
+        "s_range": [
+          1797,
+          1812
+        ]
+      },
+      {
+        "meters": [
+          382.4025,
+          386.154
+        ],
+        "duration_min": 40.0,
+        "amplitude": -3.7152,
+        "local_amplitude": -2.8042,
+        "confidence": 0.7653,
+        "type_hypothesis": "other",
+        "t_range": [
+          352,
+          371
+        ],
+        "s_range": [
+          1529,
+          1544
+        ]
+      },
+      {
+        "meters": [
+          450.4296,
+          451.43
+        ],
+        "duration_min": 18.0,
+        "amplitude": -4.9935,
+        "local_amplitude": -4.3119,
+        "confidence": 0.7542,
+        "type_hypothesis": "other",
+        "t_range": [
+          77,
+          85
+        ],
+        "s_range": [
+          1801,
+          1805
+        ]
+      }
+    ]
+  },
+  "3.csv": {
+    "n_events": 13,
+    "by_type": {
+      "local_heating": 2,
+      "zone_cooling": 0,
+      "transient": 0,
+      "extended_mild": 0,
+      "other": 11,
+      "broad_heating": 0,
+      "possible_fire": 0,
+      "broad_mild": 0
+    },
+    "top_events": [
+      {
+        "meters": [
+          62.0167,
+          66.0178
+        ],
+        "duration_min": 442.0,
+        "amplitude": 4.2063,
+        "local_amplitude": 5.3916,
+        "confidence": 0.8285,
+        "type_hypothesis": "local_heating (power cable / equipment)",
+        "t_range": [
+          567,
+          787
+        ],
+        "s_range": [
+          248,
+          264
+        ]
+      },
+      {
+        "meters": [
+          85.273,
+          95.0256
+        ],
+        "duration_min": 72.0,
+        "amplitude": -2.0423,
+        "local_amplitude": -2.9622,
+        "confidence": 0.7529,
+        "type_hypothesis": "other",
+        "t_range": [
+          488,
+          523
+        ],
+        "s_range": [
+          341,
+          380
+        ]
+      },
+      {
+        "meters": [
+          84.7729,
+          95.5258
+        ],
+        "duration_min": 118.0,
+        "amplitude": -1.7772,
+        "local_amplitude": -2.4098,
+        "confidence": 0.7202,
+        "type_hypothesis": "other",
+        "t_range": [
+          324,
+          382
+        ],
+        "s_range": [
+          339,
+          382
+        ]
+      },
+      {
+        "meters": [
+          159.293,
+          163.044
+        ],
+        "duration_min": 56.0,
+        "amplitude": -1.6962,
+        "local_amplitude": -1.8862,
+        "confidence": 0.7103,
+        "type_hypothesis": "other",
+        "t_range": [
+          448,
+          475
+        ],
+        "s_range": [
+          637,
+          652
+        ]
+      },
+      {
+        "meters": [
+          151.5409,
+          153.5414
+        ],
+        "duration_min": 50.0,
+        "amplitude": -1.8399,
+        "local_amplitude": -1.9898,
+        "confidence": 0.7069,
+        "type_hypothesis": "other",
+        "t_range": [
+          448,
+          472
+        ],
+        "s_range": [
+          606,
+          614
+        ]
+      }
+    ]
+  },
+  "4.csv": {
+    "n_events": 9,
+    "by_type": {
+      "local_heating": 8,
+      "zone_cooling": 0,
+      "transient": 0,
+      "extended_mild": 0,
+      "other": 1,
+      "broad_heating": 0,
+      "possible_fire": 0,
+      "broad_mild": 0
+    },
+    "top_events": [
+      {
+        "meters": [
+          91.0261,
+          93.5268
+        ],
+        "duration_min": 28.0,
+        "amplitude": 2.7099,
+        "local_amplitude": 4.3403,
+        "confidence": 0.8089,
+        "type_hypothesis": "local_heating (power cable / equipment)",
+        "t_range": [
+          604,
+          617
+        ],
+        "s_range": [
+          364,
+          374
+        ]
+      },
+      {
+        "meters": [
+          94.027,
+          100.0287
+        ],
+        "duration_min": 352.0,
+        "amplitude": 4.207,
+        "local_amplitude": 5.1652,
+        "confidence": 0.8081,
+        "type_hypothesis": "local_heating (power cable / equipment)",
+        "t_range": [
+          316,
+          491
+        ],
+        "s_range": [
+          376,
+          400
+        ]
+      },
+      {
+        "meters": [
+          86.2748,
+          88.2753
+        ],
+        "duration_min": 22.0,
+        "amplitude": 4.3049,
+        "local_amplitude": 5.1896,
+        "confidence": 0.8019,
+        "type_hypothesis": "local_heating (power cable / equipment)",
+        "t_range": [
+          602,
+          612
+        ],
+        "s_range": [
+          345,
+          353
+        ]
+      },
+      {
+        "meters": [
+          105.7804,
+          114.0327
+        ],
+        "duration_min": 32.0,
+        "amplitude": 4.1459,
+        "local_amplitude": 4.1277,
+        "confidence": 0.7969,
+        "type_hypothesis": "local_heating (power cable / equipment)",
+        "t_range": [
+          440,
+          455
+        ],
+        "s_range": [
+          423,
+          456
+        ]
+      },
+      {
+        "meters": [
+          106.2805,
+          113.0324
+        ],
+        "duration_min": 212.0,
+        "amplitude": 7.5846,
+        "local_amplitude": 5.0992,
+        "confidence": 0.7899,
+        "type_hypothesis": "local_heating (power cable / equipment)",
+        "t_range": [
+          546,
+          651
+        ],
+        "s_range": [
+          425,
+          452
+        ]
+      }
+    ]
+  },
+  "5.csv": {
+    "n_events": 69,
+    "by_type": {
+      "local_heating": 3,
+      "zone_cooling": 0,
+      "transient": 55,
+      "extended_mild": 0,
+      "other": 11,
+      "broad_heating": 0,
+      "possible_fire": 0,
+      "broad_mild": 0
+    },
+    "top_events": [
+      {
+        "meters": [
+          956.9252,
+          964.4898
+        ],
+        "duration_min": 2.6667,
+        "amplitude": 3.0496,
+        "local_amplitude": 3.3891,
+        "confidence": 0.8177,
+        "type_hypothesis": "transient",
+        "t_range": [
+          1412,
+          1427
+        ],
+        "s_range": [
+          1012,
+          1020
+        ]
+      },
+      {
+        "meters": [
+          292.1837,
+          307.3129
+        ],
+        "duration_min": 26.1667,
+        "amplitude": 6.0815,
+        "local_amplitude": 4.6871,
+        "confidence": 0.8121,
+        "type_hypothesis": "other",
+        "t_range": [
+          1804,
+          1960
+        ],
+        "s_range": [
+          309,
+          325
+        ]
+      },
+      {
+        "meters": [
+          1174.4082,
+          1183.8639
+        ],
+        "duration_min": 3.1667,
+        "amplitude": 2.5942,
+        "local_amplitude": 3.1343,
+        "confidence": 0.7998,
+        "type_hypothesis": "transient",
+        "t_range": [
+          1339,
+          1357
+        ],
+        "s_range": [
+          1242,
+          1252
+        ]
+      },
+      {
+        "meters": [
+          295.966,
+          303.5306
+        ],
+        "duration_min": 8.3333,
+        "amplitude": 5.6671,
+        "local_amplitude": 4.1981,
+        "confidence": 0.7983,
+        "type_hypothesis": "transient",
+        "t_range": [
+          1440,
+          1489
+        ],
+        "s_range": [
+          313,
+          321
+        ]
+      },
+      {
+        "meters": [
+          1260.4558,
+          1267.0748
+        ],
+        "duration_min": 2.6667,
+        "amplitude": 3.1663,
+        "local_amplitude": 3.3926,
+        "confidence": 0.7925,
+        "type_hypothesis": "transient",
+        "t_range": [
+          1360,
+          1375
+        ],
+        "s_range": [
+          1333,
+          1340
+        ]
+      }
+    ]
+  },
+  "6.csv": {
+    "n_events": 27,
+    "by_type": {
+      "local_heating": 3,
+      "zone_cooling": 0,
+      "transient": 12,
+      "extended_mild": 1,
+      "other": 11,
+      "broad_heating": 0,
+      "possible_fire": 0,
+      "broad_mild": 0
+    },
+    "top_events": [
+      {
+        "meters": [
+          595.2041,
+          597.0454
+        ],
+        "duration_min": 6.0,
+        "amplitude": 9.2178,
+        "local_amplitude": 7.9915,
+        "confidence": 0.8411,
+        "type_hypothesis": "transient",
+        "t_range": [
+          946,
+          951
+        ],
+        "s_range": [
+          1293,
+          1297
+        ]
+      },
+      {
+        "meters": [
+          246.2755,
+          249.9581
+        ],
+        "duration_min": 19.0,
+        "amplitude": 5.481,
+        "local_amplitude": 5.265,
+        "confidence": 0.7984,
+        "type_hypothesis": "other",
+        "t_range": [
+          891,
+          909
+        ],
+        "s_range": [
+          535,
+          543
+        ]
+      },
+      {
+        "meters": [
+          31.7626,
+          43.7312
+        ],
+        "duration_min": 41.0,
+        "amplitude": -5.2107,
+        "local_amplitude": -4.2095,
+        "confidence": 0.7838,
+        "type_hypothesis": "other",
+        "t_range": [
+          18,
+          58
+        ],
+        "s_range": [
+          69,
+          95
+        ]
+      },
+      {
+        "meters": [
+          31.7626,
+          37.7469
+        ],
+        "duration_min": 19.0,
+        "amplitude": -5.3573,
+        "local_amplitude": -2.4354,
+        "confidence": 0.7428,
+        "type_hypothesis": "other",
+        "t_range": [
+          852,
+          870
+        ],
+        "s_range": [
+          69,
+          82
+        ]
+      },
+      {
+        "meters": [
+          457.1057,
+          459.4073
+        ],
+        "duration_min": 21.0,
+        "amplitude": 1.9088,
+        "local_amplitude": 1.6632,
+        "confidence": 0.7286,
+        "type_hypothesis": "local_heating (power cable / equipment)",
+        "t_range": [
+          559,
+          579
+        ],
+        "s_range": [
+          993,
+          998
+        ]
+      }
+    ]
+  }
+}

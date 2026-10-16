@@ -1,0 +1,38 @@
+{
+  "1.csv": {
+    "detector": 17,
+    "opencv": 19,
+    "unique_opencv": 12,
+    "unknown": 0
+  },
+  "2.csv": {
+    "detector": 14,
+    "opencv": 36,
+    "unique_opencv": 29,
+    "unknown": 0
+  },
+  "3.csv": {
+    "detector": 9,
+    "opencv": 17,
+    "unique_opencv": 10,
+    "unknown": 0
+  },
+  "4.csv": {
+    "detector": 9,
+    "opencv": 12,
+    "unique_opencv": 8,
+    "unknown": 0
+  },
+  "5.csv": {
+    "detector": 48,
+    "opencv": 11,
+    "unique_opencv": 3,
+    "unknown": 0
+  },
+  "6.csv": {
+    "detector": 11,
+    "opencv": 11,
+    "unique_opencv": 9,
+    "unknown": 0
+  }
+}

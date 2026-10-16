@@ -1,0 +1,19 @@
+{
+  "schema": "blind_review_queue_v1",
+  "seed": 20261006,
+  "n_items": 268,
+  "n_detector_proposals": 232,
+  "n_random_review": 36,
+  "expert_confirmed": false,
+  "all_expert_labels_null": true,
+  "already_seen_files": true,
+  "independent_unseen_measurement_test": false,
+  "source_sha256": {
+    "1": "3101c6b2716d2a9e14cd32e2e5d758cb8628741cff6f265cc45db2d7e9e8257f",
+    "2": "f115579accd114e0c5a0d968aea3d2710da8ead421fc8c35c17472047cefdec4",
+    "3": "0acc4e41dc16dd829110881641cb17f94bffd0c2d5255d539d8f3589cd8cdde3",
+    "4": "d2f5b3d90078420aea45bac86df3656987a2ca9c548d478d134d3ee6349fde17",
+    "5": "98c1d629ed59478c81fa58b60e891f5587ef9d64ad435655e717a27f64767e46",
+    "6": "23e79988fcfb8a186dec06faffa60e6ed7c93ca7cd9969ac4989fd12b9f358c8"
+  }
+}

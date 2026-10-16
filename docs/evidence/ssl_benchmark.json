@@ -1,0 +1,199 @@
+{
+  "operational_pair": "median_x3 + spatial_z_halo at |Z| >= 3.5",
+  "operational_pair_unchanged": true,
+  "witness_promotion": false,
+  "device": "cpu",
+  "baselines": {
+    "denoise": "median_x3",
+    "detector": "spatial_z_halo",
+    "threshold_z": 3.5
+  },
+  "mad_bars_c": {
+    "small": 0.233,
+    "wide": 0.239
+  },
+  "spike_retention_min": 0.92,
+  "denoisers": {
+    "median_x3": {
+      "name": "median_x3",
+      "small": {
+        "error_mad_c": 0.233063,
+        "spike_retention": 0.952519,
+        "dead_finite": 0
+      },
+      "wide": {
+        "error_mad_c": 0.238562,
+        "spike_retention": 0.923883,
+        "dead_finite": 0
+      },
+      "band_contrast_c": 3.0464,
+      "hot_support_iou": 1.0,
+      "cold_support_iou": 1.0,
+      "dead_tail_alarms": 0,
+      "missing": null,
+      "status": "baseline",
+      "family": "standard"
+    },
+    "n2n_tsr": {
+      "name": "n2n_tsr",
+      "family": "research",
+      "small": {
+        "error_mad_c": 0.101579,
+        "spike_retention": 0.959668,
+        "dead_finite": 0
+      },
+      "wide": {
+        "error_mad_c": 0.101536,
+        "spike_retention": 0.933342,
+        "dead_finite": 0
+      },
+      "band_contrast_c": 3.192979,
+      "median_band_contrast_c": 3.0464,
+      "hot_support_iou": 0.8497,
+      "cold_support_iou": 0.8095,
+      "median_hot_support_iou": 1.0,
+      "median_cold_support_iou": 1.0,
+      "dead_tail_alarms": 0,
+      "missing": null,
+      "status": "не принят"
+    },
+    "blindspot_x": {
+      "name": "blindspot_x",
+      "family": "research",
+      "small": {
+        "error_mad_c": 0.105311,
+        "spike_retention": 0.353425,
+        "dead_finite": 0
+      },
+      "wide": {
+        "error_mad_c": 0.072815,
+        "spike_retention": 0.329987,
+        "dead_finite": 0
+      },
+      "band_contrast_c": 2.63815,
+      "median_band_contrast_c": 3.0464,
+      "hot_support_iou": 0.4788,
+      "cold_support_iou": 0.2793,
+      "median_hot_support_iou": 1.0,
+      "median_cold_support_iou": 1.0,
+      "dead_tail_alarms": 0,
+      "missing": null,
+      "status": "не принят"
+    },
+    "zsn2n": {
+      "name": "zsn2n",
+      "family": "research",
+      "small": {
+        "error_mad_c": 0.129064,
+        "spike_retention": 1.011359,
+        "dead_finite": 0
+      },
+      "wide": {
+        "error_mad_c": 0.130577,
+        "spike_retention": 0.981067,
+        "dead_finite": 0
+      },
+      "band_contrast_c": 3.108096,
+      "median_band_contrast_c": 3.0464,
+      "hot_support_iou": 0.9245,
+      "cold_support_iou": 0.8881,
+      "median_hot_support_iou": 1.0,
+      "median_cold_support_iou": 1.0,
+      "dead_tail_alarms": 0,
+      "missing": null,
+      "status": "не принят"
+    }
+  },
+  "detectors": {
+    "spatial_z_halo": {
+      "name": "spatial_z_halo",
+      "clean_channel": "median_x3",
+      "threshold_z": 3.5,
+      "local_hot_iou": 1.0,
+      "local_cold_iou": 1.0,
+      "half_iou": 0.111111,
+      "alarm_fraction_inside": 0.125,
+      "zones": 2,
+      "status": "baseline",
+      "missing": null
+    },
+    "rpca": {
+      "name": "rpca",
+      "local_hot_iou": 0.135762,
+      "local_cold_iou": 0.060241,
+      "half_iou": 0.026396,
+      "alarm_fraction_inside": 0.027083,
+      "zones": 1,
+      "baseline_local_hot_iou": 1.0,
+      "baseline_local_cold_iou": 1.0,
+      "baseline_half_iou": 0.111111,
+      "baseline_alarm_fraction_inside": 0.125,
+      "missing": null,
+      "status": "не принят"
+    },
+    "matrix_profile": {
+      "name": "matrix_profile",
+      "local_hot_iou": 0.054138,
+      "local_cold_iou": 0.047393,
+      "half_iou": 0.042,
+      "alarm_fraction_inside": 0.04375,
+      "zones": 2,
+      "baseline_local_hot_iou": 1.0,
+      "baseline_local_cold_iou": 1.0,
+      "baseline_half_iou": 0.111111,
+      "baseline_alarm_fraction_inside": 0.125,
+      "missing": null,
+      "status": "не принят"
+    },
+    "chronos_bolt": {
+      "name": "chronos_bolt",
+      "local_hot_iou": 0.013423,
+      "local_cold_iou": 0.016529,
+      "half_iou": 0.0,
+      "alarm_fraction_inside": 0.0,
+      "zones": 0,
+      "baseline_local_hot_iou": 1.0,
+      "baseline_local_cold_iou": 1.0,
+      "baseline_half_iou": 0.111111,
+      "baseline_alarm_fraction_inside": 0.125,
+      "missing": null,
+      "status": "не принят",
+      "requested_quantile_levels": [
+        0.05,
+        0.95
+      ],
+      "quantile_levels": [
+        0.1,
+        0.9
+      ]
+    },
+    "patchcore": {
+      "name": "patchcore",
+      "local_hot_iou": 0.191406,
+      "local_cold_iou": 0.154948,
+      "half_iou": 0.166667,
+      "alarm_fraction_inside": 0.2,
+      "zones": 4,
+      "baseline_local_hot_iou": 1.0,
+      "baseline_local_cold_iou": 1.0,
+      "baseline_half_iou": 0.111111,
+      "baseline_alarm_fraction_inside": 0.125,
+      "missing": null,
+      "status": "не принят"
+    }
+  },
+  "threshold": {
+    "risk": 0.05,
+    "percentile_threshold": 1.6252299216034563,
+    "pot_threshold": 1.6252299216034563,
+    "percentile_exceedance": 0.0518,
+    "pot_exceedance": 0.0518,
+    "operational_threshold_unchanged": 3.5,
+    "status": "не принят",
+    "note": "research report only; operational |Z| stays 3.5"
+  },
+  "annotation_queue": {
+    "labels_present": false,
+    "note": "очередь разметки без экспертных меток; precision/recall против spatial Z не считается"
+  }
+}

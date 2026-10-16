@@ -1,0 +1,154 @@
+[
+  {
+    "meters": [
+      34.9849,
+      42.3502
+    ],
+    "duration_min": 1231.0,
+    "area": 17974,
+    "t_range": [
+      0,
+      1230
+    ],
+    "s_range": [
+      76,
+      92
+    ],
+    "source": "opencv",
+    "type_hypothesis": "cooling",
+    "overlaps_detector": true
+  },
+  {
+    "meters": [
+      594.7438,
+      597.9661
+    ],
+    "duration_min": 638.0,
+    "area": 4180,
+    "t_range": [
+      470,
+      1107
+    ],
+    "s_range": [
+      1292,
+      1299
+    ],
+    "source": "opencv",
+    "type_hypothesis": "heating",
+    "overlaps_detector": false
+  },
+  {
+    "meters": [
+      1104.3269,
+      1108.4698
+    ],
+    "duration_min": 143.0,
+    "area": 825,
+    "t_range": [
+      611,
+      753
+    ],
+    "s_range": [
+      2399,
+      2408
+    ],
+    "source": "opencv",
+    "type_hypothesis": "cooling",
+    "overlaps_detector": false
+  },
+  {
+    "meters": [
+      408.7713,
+      409.6919
+    ],
+    "duration_min": 235.0,
+    "area": 475,
+    "t_range": [
+      606,
+      840
+    ],
+    "s_range": [
+      888,
+      890
+    ],
+    "source": "opencv",
+    "type_hypothesis": "heating",
+    "overlaps_detector": false
+  },
+  {
+    "meters": [
+      408.7713,
+      409.6919
+    ],
+    "duration_min": 65.0,
+    "area": 134,
+    "t_range": [
+      1038,
+      1102
+    ],
+    "s_range": [
+      888,
+      890
+    ],
+    "source": "opencv",
+    "type_hypothesis": "heating",
+    "overlaps_detector": false
+  },
+  {
+    "meters": [
+      408.7713,
+      409.2316
+    ],
+    "duration_min": 66.0,
+    "area": 118,
+    "t_range": [
+      969,
+      1034
+    ],
+    "s_range": [
+      888,
+      889
+    ],
+    "source": "opencv",
+    "type_hypothesis": "heating",
+    "overlaps_detector": false
+  },
+  {
+    "meters": [
+      408.7713,
+      409.2316
+    ],
+    "duration_min": 42.0,
+    "area": 81,
+    "t_range": [
+      845,
+      886
+    ],
+    "s_range": [
+      888,
+      889
+    ],
+    "source": "opencv",
+    "type_hypothesis": "heating",
+    "overlaps_detector": false
+  },
+  {
+    "meters": [
+      408.7713,
+      409.2316
+    ],
+    "duration_min": 33.0,
+    "area": 64,
+    "t_range": [
+      914,
+      946
+    ],
+    "s_range": [
+      888,
+      889
+    ],
+    "source": "opencv",
+    "type_hypothesis": "heating",
+    "overlaps_detector": false
+  }
+]

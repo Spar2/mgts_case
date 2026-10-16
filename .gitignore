@@ -1,0 +1,44 @@
+# Локальные переопределения инвентаря (IP стенда и т.п.) — не коммитить.
+ansible/inventory/host_vars/
+# Мусор прогонов.
+*.retry
+.ansible/
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+# Локальный рантайм data-стенда: CSV-данные и env не коммитятся.
+*.csv
+stack/data/
+stack/.env
+
+# Сырые CSV кейса и производные массивы — не в git.
+MGTS_data/
+artifacts/
+*.npy
+*.npz
+*.joblib
+*.pkl
+*.onnx
+
+# Веса сетей. Архитектура и манифесты остаются в репо.
+models/weights/*
+!models/weights/README.md
+*.pt
+*.pth
+*.ckpt
+!research/ml-test-review/weights/*.pt
+
+# Локальные отчёты с абсолютными путями.
+docs/_local/
+
+node_modules/
+dist/
+.runtime/
+output/
+*.sqlite3*
+.env
+.playwright-cli/
+*.tsbuildinfo

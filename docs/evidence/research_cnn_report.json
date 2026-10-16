@@ -1,0 +1,790 @@
+{
+  "schema": "research_cnn_report_v1",
+  "serve": "research",
+  "operational": false,
+  "architecture": "residual2d",
+  "weights": "models/weights/research_residual_cnn.pt",
+  "weights_sha256": "601a2b5633a986738f9df4d60a33b08a1424286571a0e558a88aa68346ae59b5",
+  "weights_bytes": 119569,
+  "steps": 390,
+  "holdout_used_for_fit": false,
+  "guard_used_for_fit": false,
+  "fit_split_codes": [
+    0
+  ],
+  "checkpoint_split_codes": [
+    1
+  ],
+  "development_loss": 1.2622790808022157,
+  "cards": [
+    {
+      "id": "review-00034",
+      "record": "1",
+      "presence": "yes",
+      "recorded": "Local_Heating",
+      "expert_class": "Local_Heating",
+      "recorded_shape": "Local_Heating",
+      "notes": "Весь участок — одно нагревание. Середина около 520 м чуть менее тёплая и относится к тому же участку, не отдельное остывание. По медиане за окно: теплее 28 °C с 515.2 до 524.2 м; промежуток 519.1–521.6 м около 24.7 °C при кабеле около 20 °C и боках 31–33 °C. За строки ядра температура стоит на месте. Голубой прямоугольник 517.77–523.25 м обрезает левый край.",
+      "structure": "one_span",
+      "polarity": "hot",
+      "predicted": "Local_Heating",
+      "network_class": "Local_Heating",
+      "previous_network_class": "Local_Heating",
+      "match": true,
+      "split_code": 0,
+      "used_as_fit_seed": true,
+      "untouched_holdout": false,
+      "fit_despite_split": false,
+      "rows_half_open": [
+        310,
+        335
+      ],
+      "x_m": [
+        517.77,
+        523.25
+      ],
+      "baseline_overlaps": true,
+      "baseline_contrast_c": 13.077,
+      "baseline_zones": [
+        {
+          "shape_hypothesis": "Local_Heating",
+          "contrast_c": 13.077,
+          "median_contrast_c": 13.077,
+          "start_m": 517.766,
+          "end_m": 523.249,
+          "polarity": "hot"
+        }
+      ],
+      "baseline_zone": "Local_Heating",
+      "baseline_note": "spatial_z kept a zone here (Local_Heating 13.077 C).",
+      "example": "docs/images/research-cnn/review-00034.png"
+    },
+    {
+      "id": "review-00098",
+      "record": "1",
+      "presence": "yes",
+      "recorded": "Local_Heating",
+      "expert_class": "Local_Heating",
+      "recorded_shape": "Local_Heating",
+      "notes": "Один горячий участок на всё окно, небольшие затухания внутри относятся к нему. По медиане: теплее 28 °C с 835.4 до 854.7 м, с провалами около 841 м (~27.6 °C) и 850 м (~26.7 °C); пики около 42–44 °C, кабель сбоку около 23 °C. За ~9 часов середина прямоугольника держится около 36 °C; падение до 29.8 °C только в последние ~7 минут. Другие жёлтые полосы левее 830 м к этому участку не относятся. Причина провалов по графику не видна.",
+      "structure": "one_span",
+      "polarity": "hot",
+      "predicted": "Local_Heating",
+      "network_class": "Local_Heating",
+      "previous_network_class": "Local_Heating",
+      "match": true,
+      "split_code": 0,
+      "used_as_fit_seed": true,
+      "untouched_holdout": false,
+      "fit_despite_split": false,
+      "rows_half_open": [
+        0,
+        298
+      ],
+      "x_m": [
+        837.36,
+        851.98
+      ],
+      "baseline_overlaps": true,
+      "baseline_contrast_c": 17.016,
+      "baseline_zones": [
+        {
+          "shape_hypothesis": "Local_Heating",
+          "contrast_c": 17.016,
+          "median_contrast_c": 17.016,
+          "start_m": 837.36,
+          "end_m": 851.98,
+          "polarity": "hot"
+        }
+      ],
+      "baseline_zone": "Local_Heating",
+      "baseline_note": "spatial_z kept a zone here (Local_Heating 17.016 C).",
+      "example": "docs/images/research-cnn/review-00098.png"
+    },
+    {
+      "id": "review-00187",
+      "record": "1",
+      "presence": "yes",
+      "recorded": "Local_Heating",
+      "expert_class": "Local_Heating",
+      "recorded_shape": "несколько Local_Heating",
+      "notes": "Не один участок, а отдельные короткие нагревы. Пики медианы: 237.1 м (24.7 °C, выше 22 °C на 236.0–238.1), 244.9 м (25.2 °C, 243.4–246.7), 257.6 м (26.3 °C, 256.1–258.8), широкий 264.6–266.6 м (26.3 °C, выше 22 °C на 262.7–268.1). Ещё один пик 274.1 м (26.2 °C, 272.4–275.5) уже за правым краем голубого прямоугольника 230.4–270.4 м. Между ними провалы около 18–19 °C. Слабее остальных полоса около 254.4 м (23.2 °C). За ~28 минут полосы стоят на месте. Нижний график усредняет весь прямоугольник, поэтому контраст там только 1.6 °C.",
+      "structure": "several_peaks",
+      "polarity": "hot",
+      "predicted": "Local_Heating",
+      "network_class": "Local_Heating",
+      "previous_network_class": "Local_Heating",
+      "match": true,
+      "split_code": 0,
+      "used_as_fit_seed": true,
+      "untouched_holdout": false,
+      "fit_despite_split": false,
+      "rows_half_open": [
+        35,
+        43
+      ],
+      "x_m": [
+        230.36,
+        270.36
+      ],
+      "baseline_overlaps": false,
+      "baseline_contrast_c": null,
+      "baseline_zones": [],
+      "baseline_zone": "no spatial_z zone",
+      "baseline_note": "spatial_z kept no zone on this span.",
+      "example": "docs/images/research-cnn/review-00187.png"
+    },
+    {
+      "id": "review-00223",
+      "record": "1",
+      "presence": "yes",
+      "recorded": "Local_Cooling",
+      "expert_class": "Local_Cooling",
+      "recorded_shape": "Local_Cooling",
+      "notes": "Один холодный участок, без отдельных событий. Холоднее 19 °C: 338.3–357.2 м (медиана 17.4 °C, левее прямоугольника) и 378.2–397.2 м (18.2 °C). Между ними 363.6–375.8 м держится около 21 °C. Прямоугольник 363.1–403.1 м в целом только на 0.7 °C холоднее флангов. Жёлтые полосы около 418 м и дальше правее прямоугольника. За 30 минут холодный кусок 378–397 м стоит около 18 °C.",
+      "structure": "one_span",
+      "polarity": "cold",
+      "predicted": "Local_Cooling",
+      "network_class": "Local_Cooling",
+      "previous_network_class": "Local_Heating",
+      "match": true,
+      "split_code": 0,
+      "used_as_fit_seed": true,
+      "untouched_holdout": false,
+      "fit_despite_split": false,
+      "rows_half_open": [
+        234,
+        294
+      ],
+      "x_m": [
+        363.15,
+        403.15
+      ],
+      "baseline_overlaps": false,
+      "baseline_contrast_c": null,
+      "baseline_zones": [],
+      "baseline_zone": "no spatial_z zone",
+      "baseline_note": "spatial_z kept no zone on this span.",
+      "example": "docs/images/research-cnn/review-00223.png"
+    },
+    {
+      "id": "next-0001",
+      "record": "3",
+      "presence": "yes",
+      "recorded": "Local_Heating",
+      "expert_class": "Local_Heating",
+      "recorded_shape": "Local_Heating, Local_Heating",
+      "notes": "",
+      "structure": "several_peaks",
+      "polarity": "hot",
+      "predicted": "Local_Cooling",
+      "network_class": "Local_Cooling",
+      "previous_network_class": "Background",
+      "match": false,
+      "split_code": 2,
+      "used_as_fit_seed": true,
+      "untouched_holdout": false,
+      "fit_despite_split": true,
+      "rows_half_open": [
+        705,
+        788
+      ],
+      "x_m": [
+        372.028,
+        381.418
+      ],
+      "baseline_overlaps": true,
+      "baseline_contrast_c": 7.148,
+      "baseline_zones": [
+        {
+          "shape_hypothesis": "Periodic_Thermal",
+          "contrast_c": 7.148,
+          "median_contrast_c": 7.148,
+          "start_m": 372.028,
+          "end_m": 381.164,
+          "polarity": "hot"
+        },
+        {
+          "shape_hypothesis": "Periodic_Thermal",
+          "contrast_c": 7.108,
+          "median_contrast_c": 7.108,
+          "start_m": 373.297,
+          "end_m": 381.418,
+          "polarity": "hot"
+        },
+        {
+          "shape_hypothesis": "Periodic_Thermal",
+          "contrast_c": 6.916,
+          "median_contrast_c": 6.916,
+          "start_m": 374.059,
+          "end_m": 381.164,
+          "polarity": "hot"
+        }
+      ],
+      "baseline_zone": "Periodic_Thermal",
+      "baseline_note": "spatial_z kept a zone here (Periodic_Thermal 7.148 C, Periodic_Thermal 7.108 C, Periodic_Thermal 6.916 C).",
+      "example": "docs/images/research-cnn/next-0001.png"
+    },
+    {
+      "id": "next-0002",
+      "record": "5",
+      "presence": "yes",
+      "recorded": "Local_Cooling",
+      "expert_class": "Local_Cooling",
+      "recorded_shape": "Local_Cooling",
+      "notes": "",
+      "structure": "one_span",
+      "polarity": "cold",
+      "predicted": "Local_Cooling",
+      "network_class": "Local_Cooling",
+      "previous_network_class": "Background",
+      "match": true,
+      "split_code": -1,
+      "used_as_fit_seed": true,
+      "untouched_holdout": false,
+      "fit_despite_split": true,
+      "rows_half_open": [
+        0,
+        2711
+      ],
+      "x_m": [
+        234.0,
+        273.0
+      ],
+      "baseline_overlaps": true,
+      "baseline_contrast_c": -3.33,
+      "baseline_zones": [
+        {
+          "shape_hypothesis": "Local_Cooling",
+          "contrast_c": -3.33,
+          "median_contrast_c": -3.33,
+          "start_m": 234.0,
+          "end_m": 273.0,
+          "polarity": "cold"
+        }
+      ],
+      "baseline_zone": "Local_Cooling",
+      "baseline_note": "spatial_z kept a zone here (Local_Cooling -3.33 C).",
+      "example": "docs/images/research-cnn/next-0002.png"
+    },
+    {
+      "id": "next-0003",
+      "record": "3",
+      "presence": "yes",
+      "recorded": "Local_Heating",
+      "expert_class": "Local_Heating",
+      "recorded_shape": "Local_Heating",
+      "notes": "на самом деле широкий канал heating с кучей local heating, но как будто надо считать это все одним широким heating. не знаю. можно пометить как много local heating и по какому-то правилу объединить. надо думать",
+      "structure": "one_span",
+      "polarity": "hot",
+      "predicted": "Local_Heating",
+      "network_class": "Local_Heating",
+      "previous_network_class": "Local_Heating",
+      "match": true,
+      "split_code": -1,
+      "used_as_fit_seed": true,
+      "untouched_holdout": false,
+      "fit_despite_split": true,
+      "rows_half_open": [
+        618,
+        788
+      ],
+      "x_m": [
+        111.405,
+        177.386
+      ],
+      "baseline_overlaps": false,
+      "baseline_contrast_c": null,
+      "baseline_zones": [],
+      "baseline_zone": "no spatial_z zone",
+      "baseline_note": "spatial_z kept no zone on this span.",
+      "example": "docs/images/research-cnn/next-0003.png"
+    },
+    {
+      "id": "next-0004",
+      "record": "2",
+      "presence": "yes",
+      "recorded": "Local_Heating",
+      "expert_class": "Local_Heating",
+      "recorded_shape": "Local_Heating",
+      "notes": "небольшое поднятие температуры после охлаждения.",
+      "structure": "one_span",
+      "polarity": "hot",
+      "predicted": "Local_Cooling",
+      "network_class": "Local_Cooling",
+      "previous_network_class": "Local_Heating",
+      "match": false,
+      "split_code": 0,
+      "used_as_fit_seed": true,
+      "untouched_holdout": false,
+      "fit_despite_split": false,
+      "rows_half_open": [
+        225,
+        409
+      ],
+      "x_m": [
+        46.948,
+        93.897
+      ],
+      "baseline_overlaps": false,
+      "baseline_contrast_c": null,
+      "baseline_zones": [],
+      "baseline_zone": "no spatial_z zone",
+      "baseline_note": "spatial_z kept no zone on this span.",
+      "example": "docs/images/research-cnn/next-0004.png"
+    },
+    {
+      "id": "next-0005",
+      "record": "4",
+      "presence": "no",
+      "recorded": "Background",
+      "expert_class": "Background",
+      "recorded_shape": "",
+      "notes": "здесь типо кулинг относительно левого участка, но на общем фоне то что показано, скорее слева local_heating а тут просто кабель упал в свой обычный рабочий темп",
+      "structure": null,
+      "polarity": null,
+      "predicted": "Local_Heating",
+      "network_class": "Local_Heating",
+      "previous_network_class": "Background",
+      "match": false,
+      "split_code": 0,
+      "used_as_fit_seed": true,
+      "untouched_holdout": false,
+      "fit_despite_split": false,
+      "rows_half_open": [
+        50,
+        201
+      ],
+      "x_m": [
+        80.0,
+        84.0
+      ],
+      "baseline_overlaps": false,
+      "baseline_contrast_c": null,
+      "baseline_zones": [],
+      "baseline_zone": "no spatial_z zone",
+      "baseline_note": "spatial_z kept no zone on this span. The expert called this span normal.",
+      "example": "docs/images/research-cnn/next-0005.png"
+    },
+    {
+      "id": "next-0006",
+      "record": "1",
+      "presence": "no",
+      "recorded": "Background",
+      "expert_class": "Background",
+      "recorded_shape": "",
+      "notes": "тут либо относительно левого и правого участка широкий cooling либо слева и справа был local_heating а между ними кабель был в норме или типо того. я не знаю нормы температур для кабеля к сожалению",
+      "structure": null,
+      "polarity": null,
+      "predicted": "Local_Heating",
+      "network_class": "Local_Heating",
+      "previous_network_class": "Local_Heating",
+      "match": false,
+      "split_code": -1,
+      "used_as_fit_seed": true,
+      "untouched_holdout": false,
+      "fit_despite_split": true,
+      "rows_half_open": [
+        449,
+        508
+      ],
+      "x_m": [
+        944.162,
+        984.061
+      ],
+      "baseline_overlaps": false,
+      "baseline_contrast_c": null,
+      "baseline_zones": [],
+      "baseline_zone": "no spatial_z zone",
+      "baseline_note": "spatial_z kept no zone on this span. The expert called this span normal.",
+      "example": "docs/images/research-cnn/next-0006.png"
+    },
+    {
+      "id": "next-0007",
+      "record": "2",
+      "presence": "no",
+      "recorded": "Background",
+      "expert_class": "Background",
+      "recorded_shape": "",
+      "notes": "тоже ниче непонятно. справа в упоре был local cooling как будто",
+      "structure": null,
+      "polarity": null,
+      "predicted": "Local_Cooling",
+      "network_class": "Local_Cooling",
+      "previous_network_class": "Background",
+      "match": false,
+      "split_code": 0,
+      "used_as_fit_seed": true,
+      "untouched_holdout": false,
+      "fit_despite_split": false,
+      "rows_half_open": [
+        65,
+        80
+      ],
+      "x_m": [
+        501.966,
+        541.555
+      ],
+      "baseline_overlaps": false,
+      "baseline_contrast_c": null,
+      "baseline_zones": [],
+      "baseline_zone": "no spatial_z zone",
+      "baseline_note": "spatial_z kept no zone on this span. The expert called this span normal.",
+      "example": "docs/images/research-cnn/next-0007.png"
+    },
+    {
+      "id": "next-0008",
+      "record": "6",
+      "presence": "yes",
+      "recorded": "Local_Heating",
+      "expert_class": "Local_Heating",
+      "recorded_shape": "Local_Heating",
+      "notes": "началось правее, чуть урезать бы этот участок и тогда будет явный local_heating",
+      "structure": "one_span",
+      "polarity": "hot",
+      "predicted": "Local_Heating",
+      "network_class": "Local_Heating",
+      "previous_network_class": "Local_Heating",
+      "match": true,
+      "split_code": -1,
+      "used_as_fit_seed": true,
+      "untouched_holdout": false,
+      "fit_despite_split": true,
+      "rows_half_open": [
+        822,
+        1119
+      ],
+      "x_m": [
+        586.727,
+        598.4
+      ],
+      "baseline_overlaps": true,
+      "baseline_contrast_c": 8.347,
+      "baseline_zones": [
+        {
+          "shape_hypothesis": "Local_Heating",
+          "contrast_c": 8.347,
+          "median_contrast_c": 8.347,
+          "start_m": 586.727,
+          "end_m": 598.4,
+          "polarity": "hot"
+        }
+      ],
+      "baseline_zone": "Local_Heating",
+      "baseline_note": "spatial_z kept a zone here (Local_Heating 8.347 C).",
+      "example": "docs/images/research-cnn/next-0008.png"
+    },
+    {
+      "id": "next-0009",
+      "record": "4",
+      "presence": "yes",
+      "recorded": "Local_Heating",
+      "expert_class": "Local_Heating",
+      "recorded_shape": "Local_Heating",
+      "notes": "heating с понижениями температур либо не на всю длину(время) кабеля",
+      "structure": "one_span",
+      "polarity": "hot",
+      "predicted": "Local_Heating",
+      "network_class": "Local_Heating",
+      "previous_network_class": "Local_Heating",
+      "match": true,
+      "split_code": -1,
+      "used_as_fit_seed": true,
+      "untouched_holdout": false,
+      "fit_despite_split": true,
+      "rows_half_open": [
+        326,
+        708
+      ],
+      "x_m": [
+        93.895,
+        120.541
+      ],
+      "baseline_overlaps": true,
+      "baseline_contrast_c": 5.465,
+      "baseline_zones": [
+        {
+          "shape_hypothesis": "Local_Heating",
+          "contrast_c": 5.465,
+          "median_contrast_c": 5.465,
+          "start_m": 93.895,
+          "end_m": 120.541,
+          "polarity": "hot"
+        }
+      ],
+      "baseline_zone": "Local_Heating",
+      "baseline_note": "spatial_z kept a zone here (Local_Heating 5.465 C).",
+      "example": "docs/images/research-cnn/next-0009.png"
+    },
+    {
+      "id": "next-0010",
+      "record": "2",
+      "presence": "no",
+      "recorded": "Background",
+      "expert_class": "Background",
+      "recorded_shape": "",
+      "notes": "непонятно просадки какие-то типо а потом справа кстати подъем. но относительно левой и правой части как будто тут просто cooling был хз",
+      "structure": null,
+      "polarity": null,
+      "predicted": "Local_Cooling",
+      "network_class": "Local_Cooling",
+      "previous_network_class": "Local_Cooling",
+      "match": false,
+      "split_code": 0,
+      "used_as_fit_seed": true,
+      "untouched_holdout": false,
+      "fit_despite_split": false,
+      "rows_half_open": [
+        0,
+        409
+      ],
+      "x_m": [
+        291.587,
+        317.979
+      ],
+      "baseline_overlaps": true,
+      "baseline_contrast_c": -4.295,
+      "baseline_zones": [
+        {
+          "shape_hypothesis": "Local_Cooling",
+          "contrast_c": -3.905,
+          "median_contrast_c": -3.905,
+          "start_m": 291.587,
+          "end_m": 317.979,
+          "polarity": "cold"
+        },
+        {
+          "shape_hypothesis": "Local_Cooling",
+          "contrast_c": -3.96,
+          "median_contrast_c": -3.96,
+          "start_m": 306.052,
+          "end_m": 317.472,
+          "polarity": "cold"
+        },
+        {
+          "shape_hypothesis": "Local_Cooling",
+          "contrast_c": -4.295,
+          "median_contrast_c": -4.295,
+          "start_m": 309.097,
+          "end_m": 313.919,
+          "polarity": "cold"
+        },
+        {
+          "shape_hypothesis": "Local_Cooling",
+          "contrast_c": -4.274,
+          "median_contrast_c": -4.274,
+          "start_m": 310.112,
+          "end_m": 314.427,
+          "polarity": "cold"
+        },
+        {
+          "shape_hypothesis": "Local_Cooling",
+          "contrast_c": -4.254,
+          "median_contrast_c": -4.254,
+          "start_m": 310.112,
+          "end_m": 313.919,
+          "polarity": "cold"
+        },
+        {
+          "shape_hypothesis": "Local_Cooling",
+          "contrast_c": -4.267,
+          "median_contrast_c": -4.267,
+          "start_m": 310.112,
+          "end_m": 314.173,
+          "polarity": "cold"
+        }
+      ],
+      "baseline_zone": "Local_Cooling",
+      "baseline_note": "spatial_z kept a zone here (Local_Cooling -3.905 C, Local_Cooling -3.96 C, Local_Cooling -4.295 C, Local_Cooling -4.274 C, Local_Cooling -4.254 C, Local_Cooling -4.267 C). The expert called this span normal.",
+      "example": "docs/images/research-cnn/next-0010.png"
+    },
+    {
+      "id": "next-0011",
+      "record": "1",
+      "presence": "yes",
+      "recorded": "Local_Heating",
+      "expert_class": "Local_Heating",
+      "recorded_shape": "несколько участков, Local_Heating",
+      "notes": "несколько участков local heating с просадками . в целом тут по графику даже левее видно два столба с подъемами температуры так же",
+      "structure": "several_peaks",
+      "polarity": "hot",
+      "predicted": "Local_Heating",
+      "network_class": "Local_Heating",
+      "previous_network_class": "Local_Heating",
+      "match": true,
+      "split_code": -1,
+      "used_as_fit_seed": true,
+      "untouched_holdout": false,
+      "fit_despite_split": true,
+      "rows_half_open": [
+        479,
+        615
+      ],
+      "x_m": [
+        434.721,
+        455.228
+      ],
+      "baseline_overlaps": true,
+      "baseline_contrast_c": 19.482,
+      "baseline_zones": [
+        {
+          "shape_hypothesis": "Local_Heating",
+          "contrast_c": 19.482,
+          "median_contrast_c": 19.482,
+          "start_m": 434.721,
+          "end_m": 455.228,
+          "polarity": "hot"
+        }
+      ],
+      "baseline_zone": "Local_Heating",
+      "baseline_note": "spatial_z kept a zone here (Local_Heating 19.482 C).",
+      "example": "docs/images/research-cnn/next-0011.png"
+    }
+  ],
+  "match_count": 9,
+  "n_cards": 15,
+  "previous_match_count": 10,
+  "previous_n_cards": 15,
+  "previous_match_label": "10/15",
+  "previous_weights_sha256": "fed62abe36d24bdce9a07be14677506e41606dc4491f00bd3f80462cd87f4e51",
+  "new_weights_sha256": "601a2b5633a986738f9df4d60a33b08a1424286571a0e558a88aa68346ae59b5",
+  "comparison_cards": [
+    {
+      "id": "review-00223",
+      "expert_class": "Local_Cooling",
+      "previous_network_class": "Local_Heating",
+      "network_class": "Local_Cooling",
+      "presence": "yes"
+    },
+    {
+      "id": "next-0002",
+      "expert_class": "Local_Cooling",
+      "previous_network_class": "Background",
+      "network_class": "Local_Cooling",
+      "presence": "yes"
+    },
+    {
+      "id": "next-0010",
+      "expert_class": "Background",
+      "previous_network_class": "Local_Cooling",
+      "network_class": "Local_Cooling",
+      "presence": "no"
+    },
+    {
+      "id": "next-0006",
+      "expert_class": "Background",
+      "previous_network_class": "Local_Heating",
+      "network_class": "Local_Heating",
+      "presence": "no"
+    }
+  ],
+  "comparison_lines": [
+    "review-00223 expert Local_Cooling previous Local_Heating new Local_Cooling previous_fit 10/15 sha256 fed62abe36d24bdce9a07be14677506e41606dc4491f00bd3f80462cd87f4e51 new_sha256 601a2b5633a986738f9df4d60a33b08a1424286571a0e558a88aa68346ae59b5",
+    "next-0002 expert Local_Cooling previous Background new Local_Cooling previous_fit 10/15 sha256 fed62abe36d24bdce9a07be14677506e41606dc4491f00bd3f80462cd87f4e51 new_sha256 601a2b5633a986738f9df4d60a33b08a1424286571a0e558a88aa68346ae59b5",
+    "next-0010 expert Background previous Local_Cooling new Local_Cooling previous_fit 10/15 sha256 fed62abe36d24bdce9a07be14677506e41606dc4491f00bd3f80462cd87f4e51 new_sha256 601a2b5633a986738f9df4d60a33b08a1424286571a0e558a88aa68346ae59b5",
+    "next-0006 expert Background previous Local_Heating new Local_Heating previous_fit 10/15 sha256 fed62abe36d24bdce9a07be14677506e41606dc4491f00bd3f80462cd87f4e51 new_sha256 601a2b5633a986738f9df4d60a33b08a1424286571a0e558a88aa68346ae59b5"
+  ],
+  "not_operational_accuracy": true,
+  "expert_seeds_still_fit_on_split_2_or_minus_1": [
+    {
+      "id": "next-0001",
+      "record": "3",
+      "split_code": 2,
+      "class_name": "Local_Heating",
+      "presence": "yes"
+    },
+    {
+      "id": "next-0002",
+      "record": "5",
+      "split_code": -1,
+      "class_name": "Local_Cooling",
+      "presence": "yes"
+    },
+    {
+      "id": "next-0003",
+      "record": "3",
+      "split_code": -1,
+      "class_name": "Local_Heating",
+      "presence": "yes"
+    },
+    {
+      "id": "next-0006",
+      "record": "1",
+      "split_code": -1,
+      "class_name": "Background",
+      "presence": "no"
+    },
+    {
+      "id": "next-0008",
+      "record": "6",
+      "split_code": -1,
+      "class_name": "Local_Heating",
+      "presence": "yes"
+    },
+    {
+      "id": "next-0009",
+      "record": "4",
+      "split_code": -1,
+      "class_name": "Local_Heating",
+      "presence": "yes"
+    },
+    {
+      "id": "next-0011",
+      "record": "1",
+      "split_code": -1,
+      "class_name": "Local_Heating",
+      "presence": "yes"
+    }
+  ],
+  "expert_cards_are_not_an_untouched_holdout": true,
+  "baseline_zone_overlap": 0.137409,
+  "positive_hit_fraction": 0.137409,
+  "overlap_counts": {
+    "n_windows": 19351,
+    "n_positive": 19351,
+    "n_zone_windows": 2659,
+    "intersection": 2659,
+    "union": 19351
+  },
+  "quiet_control": {
+    "id": "4-early-quiet-control",
+    "n": 14,
+    "counts": {
+      "Background": 0,
+      "Local_Heating": 3,
+      "Local_Cooling": 11,
+      "Periodic_Thermal": 0,
+      "Broad_Shift": 0,
+      "Sensor_Fault": 0
+    }
+  },
+  "holdout": {
+    "n": 3168,
+    "counts": {
+      "Background": 0,
+      "Local_Heating": 970,
+      "Local_Cooling": 2198,
+      "Periodic_Thermal": 0,
+      "Broad_Shift": 0,
+      "Sensor_Fault": 0
+    }
+  },
+  "examples": [
+    "docs/images/research-cnn/review-00034.png",
+    "docs/images/research-cnn/review-00098.png",
+    "docs/images/research-cnn/review-00187.png",
+    "docs/images/research-cnn/review-00223.png",
+    "docs/images/research-cnn/next-0001.png",
+    "docs/images/research-cnn/next-0002.png",
+    "docs/images/research-cnn/next-0003.png",
+    "docs/images/research-cnn/next-0004.png",
+    "docs/images/research-cnn/next-0005.png",
+    "docs/images/research-cnn/next-0006.png",
+    "docs/images/research-cnn/next-0007.png",
+    "docs/images/research-cnn/next-0008.png",
+    "docs/images/research-cnn/next-0009.png",
+    "docs/images/research-cnn/next-0010.png",
+    "docs/images/research-cnn/next-0011.png"
+  ],
+  "note": "Measurements of a research network. Card recovery is not operational accuracy and not an untouched holdout score: expert cards on split 2 or -1 were fit as seeds. analyze_field stays median_x3 + spatial_z_halo at |Z| >= 3.5. Previous fit was 10/15 at sha256 fed62abe36d24bdce9a07be14677506e41606dc4491f00bd3f80462cd87f4e51. This fit matches 9/15. Expert classes are not relabeled."
+}

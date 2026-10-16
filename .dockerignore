@@ -1,0 +1,16 @@
+.git
+**/node_modules
+**/dist
+**/.venv
+**/__pycache__
+**/*.pyc
+.runtime
+output
+design
+artifacts
+*.csv
+MGTS_data
+models/weights
+zakhar-real-data-v2
+haklolarp.zip
+haklolarp_ml.egg-info
